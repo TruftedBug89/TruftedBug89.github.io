@@ -134,3 +134,4 @@ To add new vocabulary: edit the `data/*.js` files. Each follows a consistent `{ 
 ## License
 
 MIT — use freely for personal, classroom, or commercial purposes.
+
