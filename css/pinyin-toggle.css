@@ -1,0 +1,176 @@
+/* ============================================
+   CHINESE MASTER - Pinyin Toggle Styles
+   (moved out of js/pinyin-toggle.js so the strict
+    Content-Security-Policy can use style-src 'self')
+   ============================================ */
+
+/* Global Toggles */
+.global-toggles {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 12px;
+}
+
+.toggle-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.toggle-btn.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.toggle-icon {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.toggle-label {
+    font-size: 10px;
+}
+
+/* Hide pinyin when toggled off */
+.hide-pinyin .pinyin-element {
+    display: none !important;
+}
+
+/* Hide translation when toggled off */
+.hide-translation .translation-element {
+    display: none !important;
+}
+
+/* Word Display */
+.word-display {
+    text-align: center;
+    padding: 8px;
+}
+
+.word-display-small .word-character {
+    font-size: 24px;
+}
+
+.word-display-small .word-pinyin {
+    font-size: 12px;
+}
+
+.word-display-medium .word-character {
+    font-size: 36px;
+}
+
+.word-display-medium .word-pinyin {
+    font-size: 14px;
+}
+
+.word-display-large .word-character {
+    font-size: 48px;
+}
+
+.word-display-large .word-pinyin {
+    font-size: 16px;
+}
+
+.word-character {
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-bottom: 4px;
+}
+
+.word-pinyin {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.word-meaning {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+}
+
+.word-display.clickable {
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.word-display.clickable:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Sentence Display */
+.sentence-display {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+}
+
+.sentence-chinese {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.sentence-pinyin {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.sentence-english {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+}
+
+/* Passage Display */
+.passage-display {
+    padding: 16px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+
+.passage-sentence {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.passage-sentence:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.passage-chinese {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.passage-pinyin {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.passage-english {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    font-style: italic;
+}

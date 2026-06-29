@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中文大师 — A free Chinese learning tool with vocabulary (HSK 1-5), listening, reading, grammar, and speaking practice, with spaced-repetition flashcards and per-learner progress saved locally.">
+    <meta name="theme-color" content="#16213e">
+    <meta name="color-scheme" content="dark light">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Strict Content-Security-Policy.
+         script-src 'self' is the main protection (no inline scripts, no eval).
+         style-src includes 'unsafe-inline' because the app generates inline style
+         attributes (e.g. progress bars, score circles). Inline styles cannot execute JS;
+         external resources are locked down by img-src/connect-src/font-src below. -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com data:;
+        img-src 'self' data:;
+        connect-src 'self';
+        base-uri 'self';
+        form-action 'self';
+        frame-ancestors 'none';
+        object-src 'none';
+    ">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="中文大师 — Chinese Learning Tool">
+    <meta property="og:description" content="Learn Chinese with HSK-aligned vocabulary, listening, reading, grammar, and speaking exercises.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+
+    <title>中文大师 - Chinese Master | HSK 1-5 Learning Tool</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/activity-ui.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="stylesheet" href="css/pinyin-toggle.css">
+    <link rel="stylesheet" href="css/components-learner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Service worker for offline-first PWA (registered externally so the strict CSP allows it) -->
+    <script src="js/register-sw.js" defer></script>
+</head>
+<body class="theme-dark">
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
+            <div class="loading-content">
+                <div class="loading-logo">
+                    <span class="chinese-char" lang="zh">中</span>
+                    <span class="chinese-char" lang="zh">文</span>
+                    <span class="chinese-char" lang="zh">大</span>
+                    <span class="chinese-char" lang="zh">师</span>
+                </div>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+                <p class="loading-text">Loading your Chinese journey...</p>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav id="main-nav" class="main-nav hidden" aria-label="Main">
+            <div class="nav-header">
+                <div class="nav-logo">
+                    <span class="logo-char" lang="zh">中</span>
+                    <span class="logo-text">中文大师</span>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-module="dashboard" aria-label="Dashboard">
+                    <span class="nav-icon" aria-hidden="true">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#" class="nav-link" data-module="listening" aria-label="Listening">
+                    <span class="nav-icon" aria-hidden="true">🎧</span>
+                    <span class="nav-text">Listening</span>
+                </a>
+                <a href="#" class="nav-link" data-module="reading" aria-label="Reading">
+                    <span class="nav-icon" aria-hidden="true">📖</span>
+                    <span class="nav-text">Reading</span>
+                </a>
+                <a href="#" class="nav-link" data-module="vocabulary" aria-label="Vocabulary">
+                    <span class="nav-icon" aria-hidden="true">📝</span>
+                    <span class="nav-text">Vocabulary</span>
+                </a>
+                <a href="#" class="nav-link" data-module="grammar" aria-label="Grammar">
+                    <span class="nav-icon" aria-hidden="true">🔤</span>
+                    <span class="nav-text">Grammar</span>
+                </a>
+                <a href="#" class="nav-link" data-module="speaking" aria-label="Speaking">
+                    <span class="nav-icon" aria-hidden="true">🎤</span>
+                    <span class="nav-text">Speaking</span>
+                </a>
+                <a href="#" class="nav-link" data-module="achievements" aria-label="Achievements">
+                    <span class="nav-icon" aria-hidden="true">🏆</span>
+                    <span class="nav-text">Achievements</span>
+                </a>
+            </div>
+            <div class="nav-footer">
+                <div class="user-level">
+                    <div class="level-badge">LVL <span id="user-level">1</span></div>
+                    <div class="xp-bar">
+                        <div id="xp-progress" class="xp-fill"></div>
+                    </div>
+                    <span class="xp-text"><span id="current-xp">0</span> / <span id="next-level-xp">100</span> XP</span>
+                </div>
+                <div class="streak-display" title="Daily streak">
+                    <span class="streak-icon" aria-hidden="true">🔥</span>
+                    <span class="streak-count" id="streak-count" aria-label="Day streak">0</span>
+                    <span class="streak-label">day streak</span>
+                </div>
+                <button id="profile-btn" class="profile-btn" aria-label="Switch learner">
+                    <span class="profile-icon" aria-hidden="true">👤</span>
+                    <span class="profile-name" id="profile-name">Learner</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="main-content">
+            <!-- Dashboard Module -->
+            <section id="module-dashboard" class="module active">
+                <div class="module-header">
+                    <h1>Welcome back, <span id="user-name">Learner</span>!</h1>
+                    <p class="module-subtitle">Continue your Chinese learning journey</p>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="stats-card">
+                        <div class="stats-icon" aria-hidden="true">📚</div>
+                        <div class="stats-value" id="total-words">0</div>
+                        <div class="stats-label">Words Learned</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon" aria-hidden="true">🎧</div>
+                        <div class="stats-value" id="listening-completed">0</div>
+                        <div class="stats-label">Listening Done</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon" aria-hidden="true">📖</div>
+                        <div class="stats-value" id="reading-completed">0</div>
+                        <div class="stats-label">Reading Done</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-icon" aria-hidden="true">⭐</div>
+                        <div class="stats-value" id="total-xp">0</div>
+                        <div class="stats-label">Total XP</div>
+                    </div>
+                </div>
+
+                <div class="daily-goal-section">
+                    <h2>Today's Goal</h2>
+                    <div class="goal-progress">
+                        <div class="goal-ring" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="goal-bg" cx="50" cy="50" r="40"></circle>
+                                <circle id="goal-fill" class="goal-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="goal-text">
+                                <span id="goal-percent">0</span>%
+                            </div>
+                        </div>
+                        <div class="goal-details">
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">🎧</span>
+                                <span>Listening: <span id="goal-listening">0</span>/5 exercises</span>
+                            </div>
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">📖</span>
+                                <span>Reading: <span id="goal-reading">0</span>/3 passages</span>
+                            </div>
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">📝</span>
+                                <span>Vocabulary: <span id="goal-vocab">0</span>/10 words</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <h2>Quick Start</h2>
+                    <div class="action-cards">
+                        <div class="action-card" data-action="listening-challenge" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">🎧</div>
+                            <h3>Listening Challenge</h3>
+                            <p>Test your listening skills</p>
+                        </div>
+                        <div class="action-card" data-action="vocab-review" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">📝</div>
+                            <h3>Review Vocabulary</h3>
+                            <p>Practice with flashcards</p>
+                        </div>
+                        <div class="action-card" data-action="reading-quiz" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">📖</div>
+                            <h3>Reading Quiz</h3>
+                            <p>Test your comprehension</p>
+                        </div>
+                        <div class="action-card" data-action="grammar-practice" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">🔤</div>
+                            <h3>Grammar Practice</h3>
+                            <p>Master sentence patterns</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div id="activity-list" class="activity-list">
+                        <div class="activity-empty">
+                            <p>Start learning to see your activity here!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Section -->
+                <div class="analytics-dashboard">
+                    <div id="analytics-content">
+                        <!-- Analytics loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Smart Review Section -->
+                <div class="smart-review-section">
+                    <h2>🧠 Smart Review</h2>
+                    <p class="section-desc">AI-powered review based on your mistakes and learning patterns</p>
+                    <div class="review-actions">
+                        <button class="btn btn-primary" id="start-smart-review" type="button">Start Smart Review</button>
+                        <button class="btn btn-secondary" id="view-mistakes" type="button">View Mistakes</button>
+                    </div>
+                    <div id="review-stats" class="review-stats">
+                        <!-- Review stats loaded dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Listening Module -->
+            <section id="module-listening" class="module">
+                <div class="module-header">
+                    <h1>🎧 Listening Module</h1>
+                    <p class="module-subtitle">Train your ear to understand Chinese</p>
+                </div>
+                <div id="listening-menu" class="listening-menu">
+                    <div class="exercise-type-card" data-type="dictation">
+                        <div class="type-icon" aria-hidden="true">✍️</div>
+                        <h3>Dictation</h3>
+                        <p>Listen and type what you hear</p>
+                        <div class="type-difficulty">Medium-Hard</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="comprehension">
+                        <div class="type-icon" aria-hidden="true">🤔</div>
+                        <h3>Comprehension</h3>
+                        <p>Listen and answer questions</p>
+                        <div class="type-difficulty">Medium</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="minimal-pairs">
+                        <div class="type-icon" aria-hidden="true">👂</div>
+                        <h3>Minimal Pairs</h3>
+                        <p>Distinguish similar sounds</p>
+                        <div class="type-difficulty">Easy-Medium</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="dialogue">
+                        <div class="type-icon" aria-hidden="true">💬</div>
+                        <h3>Dialogue Practice</h3>
+                        <p>Understand conversations</p>
+                        <div class="type-difficulty">Medium-Hard</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="speed-listening">
+                        <div class="type-icon" aria-hidden="true">⚡</div>
+                        <h3>Speed Listening</h3>
+                        <p>Challenge at faster speeds</p>
+                        <div class="type-difficulty">Hard</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="shadowing">
+                        <div class="type-icon" aria-hidden="true">🎤</div>
+                        <h3>Shadowing</h3>
+                        <p>Listen and repeat in real-time</p>
+                        <div class="type-difficulty">Medium</div>
+                    </div>
+                </div>
+
+                <div id="listening-exercise" class="exercise-container hidden">
+                    <div class="exercise-header">
+                        <button class="back-btn" data-back="listening-menu" type="button">← Back</button>
+                        <div class="exercise-title" id="listening-title">Dictation Exercise</div>
+                        <div class="exercise-progress">
+                            <span id="listening-current">1</span> / <span id="listening-total">10</span>
+                        </div>
+                    </div>
+                    <div class="exercise-body">
+                        <div id="listening-content" class="listening-content">
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button id="listen-again-btn" class="btn btn-secondary" type="button">🔊 Listen Again</button>
+                        <button id="check-answer-btn" class="btn btn-primary" type="button">Check Answer</button>
+                        <button id="next-exercise-btn" class="btn btn-primary hidden" type="button">Next →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reading Module -->
+            <section id="module-reading" class="module">
+                <div class="module-header">
+                    <h1>📖 Reading Module</h1>
+                    <p class="module-subtitle">Improve your character recognition and comprehension</p>
+                </div>
+                <div id="reading-menu" class="reading-menu">
+                    <div class="exercise-type-card" data-type="character-match">
+                        <div class="type-icon" aria-hidden="true">🔤</div>
+                        <h3>Character Matching</h3>
+                        <p>Match characters to meanings</p>
+                        <div class="type-difficulty">Easy</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="sentence-complete">
+                        <div class="type-icon" aria-hidden="true">📝</div>
+                        <h3>Sentence Completion</h3>
+                        <p>Fill in missing characters</p>
+                        <div class="type-difficulty">Medium</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="passage-reading">
+                        <div class="type-icon" aria-hidden="true">📄</div>
+                        <h3>Passage Reading</h3>
+                        <p>Read and answer questions</p>
+                        <div class="type-difficulty">Medium-Hard</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="speed-reading">
+                        <div class="type-icon" aria-hidden="true">⚡</div>
+                        <h3>Speed Reading</h3>
+                        <p>Timed reading challenges</p>
+                        <div class="type-difficulty">Hard</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="radical-learn">
+                        <div class="type-icon" aria-hidden="true">🧩</div>
+                        <h3>Radical Learning</h3>
+                        <p>Learn character components</p>
+                        <div class="type-difficulty">Medium</div>
+                    </div>
+                    <div class="exercise-type-card" data-type="context-clues">
+                        <div class="type-icon" aria-hidden="true">🔍</div>
+                        <h3>Context Clues</h3>
+                        <p>Infer meaning from context</p>
+                        <div class="type-difficulty">Medium-Hard</div>
+                    </div>
+                </div>
+
+                <div id="reading-exercise" class="exercise-container hidden">
+                    <div class="exercise-header">
+                        <button class="back-btn" data-back="reading-menu" type="button">← Back</button>
+                        <div class="exercise-title" id="reading-title">Reading Exercise</div>
+                        <div class="exercise-progress">
+                            <span id="reading-current">1</span> / <span id="reading-total">10</span>
+                        </div>
+                    </div>
+                    <div class="exercise-body">
+                        <div id="reading-content" class="reading-content">
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button id="check-reading-btn" class="btn btn-primary" type="button">Check Answer</button>
+                        <button id="next-reading-btn" class="btn btn-primary hidden" type="button">Next →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vocabulary Module -->
+            <section id="module-vocabulary" class="module">
+                <div id="vocabulary-learner">
+                </div>
+            </section>
+
+            <!-- Grammar Module -->
+            <section id="module-grammar" class="module">
+                <div class="module-header">
+                    <h1>🔤 Grammar Module</h1>
+                    <p class="module-subtitle">Master Chinese sentence patterns</p>
+                </div>
+                <div id="grammar-menu" class="grammar-menu">
+                    <div class="grammar-lessons-list" id="grammar-lessons-list">
+                    </div>
+                </div>
+
+                <div id="grammar-lesson" class="exercise-container hidden">
+                    <div class="exercise-header">
+                        <button class="back-btn" data-back="grammar-menu" type="button">← Back</button>
+                        <div class="exercise-title" id="grammar-lesson-title">Grammar Lesson</div>
+                    </div>
+                    <div class="grammar-content" id="grammar-content">
+                    </div>
+                    <div class="exercise-controls">
+                        <button id="grammar-practice-btn" class="btn btn-primary" type="button">Practice This Pattern</button>
+                    </div>
+                </div>
+
+                <div id="grammar-practice" class="exercise-container hidden">
+                    <div class="exercise-header">
+                        <button class="back-btn" data-back="grammar-lesson" type="button">← Back</button>
+                        <div class="exercise-title">Grammar Practice</div>
+                        <div class="exercise-progress">
+                            <span id="grammar-current">1</span> / <span id="grammar-total">5</span>
+                        </div>
+                    </div>
+                    <div class="exercise-body">
+                        <div id="grammar-practice-content" class="grammar-practice-content">
+                        </div>
+                    </div>
+                    <div class="exercise-controls">
+                        <button id="check-grammar-btn" class="btn btn-primary" type="button">Check Answer</button>
+                        <button id="next-grammar-btn" class="btn btn-primary hidden" type="button">Next →</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Speaking Module -->
+            <section id="module-speaking" class="module">
+                <div class="module-header">
+                    <h1>🎤 Speaking Module</h1>
+                    <p class="module-subtitle">Practice your pronunciation and speaking skills</p>
+                </div>
+                <div id="speaking-menu" class="speaking-menu">
+                    <div class="exercise-type-card" data-type="pronunciation">
+                        <div class="type-icon" aria-hidden="true">🗣️</div>
+                        <h3>Pronunciation</h3>
+                        <p>Tone drills and practice</p>
+                    </div>
+                    <div class="exercise-type-card" data-type="shadowing-practice">
+                        <div class="type-icon" aria-hidden="true">👥</div>
+                        <h3>Shadowing</h3>
+                        <p>Repeat after the audio</p>
+                    </div>
+                    <div class="exercise-type-card" data-type="sentence-reading">
+                        <div class="type-icon" aria-hidden="true">📖</div>
+                        <h3>Sentence Reading</h3>
+                        <p>Read sentences aloud</p>
+                    </div>
+                </div>
+
+                <div id="speaking-exercise" class="exercise-container hidden">
+                    <div class="exercise-header">
+                        <button class="back-btn" data-back="speaking-menu" type="button">← Back</button>
+                        <div class="exercise-title" id="speaking-title">Speaking Exercise</div>
+                    </div>
+                    <div class="speaking-content" id="speaking-content">
+                    </div>
+                    <div class="exercise-controls">
+                        <button id="speak-btn" class="btn btn-primary" type="button">🎤 Start Speaking</button>
+                        <button id="listen-model-btn" class="btn btn-secondary" type="button">🔊 Listen to Model</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Module -->
+            <section id="module-achievements" class="module">
+                <div class="module-header">
+                    <h1>🏆 Achievements</h1>
+                    <p class="module-subtitle">Track your milestones and rewards</p>
+                </div>
+                <div class="achievements-grid" id="achievements-grid">
+                </div>
+            </section>
+        </main>
+
+        <!-- Toast Notifications -->
+        <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Dialog">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" type="button" aria-label="Close dialog">×</button>
+                <div id="modal-body" class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts - Data Files -->
+    <script src="data/vocabulary.js"></script>
+    <script src="data/vocabulary-extended.js"></script>
+    <script src="data/mega-vocabulary.js"></script>
+    <script src="data/vocabulary-mega.js"></script>
+    <script src="data/hsk1.js"></script>
+    <script src="data/hsk1-examples.js"></script>
+    <script src="data/hsk1-massive.js"></script>
+    <script src="data/hsk2.js"></script>
+    <script src="data/hsk2-massive.js"></script>
+    <script src="data/hsk3.js"></script>
+    <script src="data/hsk3-massive.js"></script>
+    <script src="data/hsk4-5.js"></script>
+    <script src="data/hsk4-massive.js"></script>
+    <script src="data/hsk-reading-massive.js"></script>
+    <script src="data/reading-examples.js"></script>
+    <script src="data/reading-massive-extra.js"></script>
+    <script src="data/listening.js"></script>
+    <script src="data/listening-extended.js"></script>
+    <script src="data/reading.js"></script>
+    <script src="data/advanced-reading.js"></script>
+    <script src="data/mega-reading.js"></script>
+    <script src="data/real-world-phrases.js"></script>
+    <script src="data/grammar.js"></script>
+    <script src="data/dialogues.js"></script>
+    <script src="data/cultural.js"></script>
+
+    <!-- Scripts - Core JS -->
+    <script src="js/utils.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/advanced-learning.js"></script>
+    <script src="js/level-tracker.js"></script>
+    <script src="js/sm2.js"></script>
+    <script src="js/pinyin-toggle.js"></script>
+    <script src="js/daily-streak.js"></script>
+    <script src="js/tone-practice.js"></script>
+
+    <!-- Scripts - Components -->
+    <script src="components/dashboard.js"></script>
+    <script src="components/listening-module.js"></script>
+    <script src="components/reading-module.js"></script>
+    <script src="components/grammar-module.js"></script>
+    <script src="components/speaking-module.js"></script>
+    <script src="components/achievements.js"></script>
+    <script src="components/analytics.js"></script>
+    <script src="components/vocabulary-learner.js"></script>
+    <script src="components/session-manager-ui.js"></script>
+
+    <!-- Scripts - Main App -->
+    <script src="js/app.js"></script>
+</body>
+</html>

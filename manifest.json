@@ -1,0 +1,20 @@
+{
+    "name": "中文大师 — Chinese Learning Tool",
+    "short_name": "中文大师",
+    "description": "Learn Chinese with HSK-aligned vocabulary, listening, reading, grammar, and speaking exercises.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#0f172a",
+    "theme_color": "#16213e",
+    "lang": "en",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ]
+}

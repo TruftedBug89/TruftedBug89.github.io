@@ -1,0 +1,847 @@
+/* ============================================
+   CHINESE MASTER - Theme Styles
+   ============================================ */
+
+/* Dark Theme (Default) */
+.theme-dark {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-tertiary: #1a1a2e;
+    --bg-card: #16161f;
+    --bg-hover: #1e1e2d;
+    --bg-input: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0b0;
+    --text-muted: #606070;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.2);
+    --color-primary: #e63946;
+    --color-primary-dark: #c5303c;
+    --color-primary-light: #ff6b6b;
+    --color-secondary: #ffd700;
+    --color-secondary-dark: #daa520;
+    --color-accent: #00b4d8;
+    --color-accent-dark: #0096c7;
+    --color-success: #2ecc71;
+    --color-success-dark: #27ae60;
+    --color-warning: #f39c12;
+    --color-warning-dark: #e67e22;
+    --color-danger: #e74c3c;
+    --color-danger-dark: #c0392b;
+    --color-info: #3498db;
+    --color-info-dark: #2980b9;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --gradient-primary: linear-gradient(135deg, #e63946 0%, #c5303c 100%);
+    --gradient-secondary: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+    --gradient-accent: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+    --gradient-success: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    --gradient-bg: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1a1a2e 100%);
+    --glass-bg: rgba(22, 22, 31, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --loading-bg: #0a0a0f;
+    --loading-bar-bg: rgba(255, 255, 255, 0.1);
+    --loading-progress: var(--gradient-primary);
+    --loading-char-color: var(--color-primary);
+    --loading-text-color: var(--text-secondary);
+    --nav-bg: #0d0d14;
+    --nav-border: rgba(255, 255, 255, 0.05);
+    --nav-link-hover: rgba(255, 255, 255, 0.05);
+    --nav-link-active-bg: rgba(230, 57, 70, 0.1);
+    --nav-link-active-color: var(--color-primary);
+    --nav-link-active-icon: var(--color-primary);
+    --xp-bar-bg: rgba(255, 255, 255, 0.1);
+    --xp-fill-bg: var(--gradient-secondary);
+    --stats-card-bg: var(--bg-card);
+    --stats-card-border: var(--glass-border);
+    --stats-card-hover-border: var(--border-hover);
+    --goal-ring-bg: rgba(255, 255, 255, 0.1);
+    --goal-ring-fill: var(--gradient-primary);
+    --goal-item-bg: rgba(255, 255, 255, 0.05);
+    --action-card-bg: var(--bg-card);
+    --action-card-border: var(--glass-border);
+    --action-card-hover-border: var(--color-primary);
+    --activity-list-bg: var(--bg-card);
+    --activity-item-border: rgba(255, 255, 255, 0.05);
+    --exercise-type-card-bg: var(--bg-card);
+    --exercise-type-card-border: var(--glass-border);
+    --exercise-type-card-hover-border: var(--color-primary);
+    --difficulty-easy-bg: rgba(46, 204, 113, 0.2);
+    --difficulty-easy-color: var(--color-success);
+    --difficulty-medium-bg: rgba(243, 156, 18, 0.2);
+    --difficulty-medium-color: var(--color-warning);
+    --difficulty-hard-bg: rgba(231, 76, 60, 0.2);
+    --difficulty-hard-color: var(--color-danger);
+    --exercise-header-border: rgba(255, 255, 255, 0.1);
+    --flashcard-front-bg: var(--bg-card);
+    --flashcard-front-border: var(--glass-border);
+    --flashcard-back-bg: var(--bg-tertiary);
+    --flashcard-back-border: var(--glass-border);
+    --matching-card-bg: var(--bg-card);
+    --matching-card-border: var(--glass-border);
+    --matching-card-hover-border: var(--color-primary);
+    --listening-option-bg: var(--bg-card);
+    --listening-option-border: var(--glass-border);
+    --listening-option-hover-border: var(--color-primary);
+    --reading-passage-bg: var(--bg-card);
+    --reading-passage-border: var(--glass-border);
+    --word-hover-bg: rgba(255, 255, 255, 0.1);
+    --grammar-pattern-bg: var(--bg-card);
+    --grammar-pattern-border: var(--glass-border);
+    --grammar-example-bg: rgba(255, 255, 255, 0.05);
+    --grammar-lesson-item-bg: var(--bg-card);
+    --grammar-lesson-item-border: var(--glass-border);
+    --grammar-lesson-item-hover-border: var(--color-primary);
+    --grammar-lesson-number-bg: var(--color-primary);
+    --achievement-card-bg: var(--bg-card);
+    --achievement-card-border: var(--glass-border);
+    --achievement-card-hover-border: var(--color-secondary);
+    --achievement-locked-bg: rgba(255, 255, 255, 0.03);
+    --input-bg: var(--bg-input);
+    --input-border: var(--border-color);
+    --input-focus-border: var(--color-primary);
+    --input-correct-border: var(--color-success);
+    --input-incorrect-border: var(--color-danger);
+    --modal-bg: var(--bg-secondary);
+    --modal-overlay-bg: rgba(0, 0, 0, 0.7);
+    --toast-success-bg: var(--color-success);
+    --toast-error-bg: var(--color-danger);
+    --toast-info-bg: var(--color-primary);
+    --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+    --btn-secondary-hover-bg: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.3);
+}
+
+/* Light Theme */
+.theme-light {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8e8e8;
+    --bg-card: #ffffff;
+    --bg-hover: #f0f0f0;
+    --bg-input: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-hover: rgba(0, 0, 0, 0.2);
+    --color-primary: #e63946;
+    --color-primary-dark: #c5303c;
+    --color-primary-light: #ff6b6b;
+    --color-secondary: #ffd700;
+    --color-secondary-dark: #daa520;
+    --color-accent: #00b4d8;
+    --color-accent-dark: #0096c7;
+    --color-success: #2ecc71;
+    --color-success-dark: #27ae60;
+    --color-warning: #f39c12;
+    --color-warning-dark: #e67e22;
+    --color-danger: #e74c3c;
+    --color-danger-dark: #c0392b;
+    --color-info: #3498db;
+    --color-info-dark: #2980b9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #e63946 0%, #c5303c 100%);
+    --gradient-secondary: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+    --gradient-accent: linear-gradient(135deg, #00b4d8 0%, #0096c7 100%);
+    --gradient-success: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    --gradient-bg: linear-gradient(135deg, #f5f5f5 0%, #ffffff 50%, #f5f5f5 100%);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --loading-bg: #f5f5f5;
+    --loading-bar-bg: rgba(0, 0, 0, 0.1);
+    --loading-progress: var(--gradient-primary);
+    --loading-char-color: var(--color-primary);
+    --loading-text-color: var(--text-secondary);
+    --nav-bg: #ffffff;
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --nav-link-hover: rgba(0, 0, 0, 0.05);
+    --nav-link-active-bg: rgba(230, 57, 70, 0.1);
+    --nav-link-active-color: var(--color-primary);
+    --nav-link-active-icon: var(--color-primary);
+    --xp-bar-bg: rgba(0, 0, 0, 0.1);
+    --xp-fill-bg: var(--gradient-secondary);
+    --stats-card-bg: var(--bg-card);
+    --stats-card-border: var(--glass-border);
+    --stats-card-hover-border: var(--border-hover);
+    --goal-ring-bg: rgba(0, 0, 0, 0.1);
+    --goal-ring-fill: var(--gradient-primary);
+    --goal-item-bg: rgba(0, 0, 0, 0.05);
+    --action-card-bg: var(--bg-card);
+    --action-card-border: var(--glass-border);
+    --action-card-hover-border: var(--color-primary);
+    --activity-list-bg: var(--bg-card);
+    --activity-item-border: rgba(0, 0, 0, 0.1);
+    --exercise-type-card-bg: var(--bg-card);
+    --exercise-type-card-border: var(--glass-border);
+    --exercise-type-card-hover-border: var(--color-primary);
+    --difficulty-easy-bg: rgba(46, 204, 113, 0.2);
+    --difficulty-easy-color: var(--color-success);
+    --difficulty-medium-bg: rgba(243, 156, 18, 0.2);
+    --difficulty-medium-color: var(--color-warning);
+    --difficulty-hard-bg: rgba(231, 76, 60, 0.2);
+    --difficulty-hard-color: var(--color-danger);
+    --exercise-header-border: rgba(0, 0, 0, 0.1);
+    --flashcard-front-bg: var(--bg-card);
+    --flashcard-front-border: var(--glass-border);
+    --flashcard-back-bg: var(--bg-tertiary);
+    --flashcard-back-border: var(--glass-border);
+    --matching-card-bg: var(--bg-card);
+    --matching-card-border: var(--glass-border);
+    --matching-card-hover-border: var(--color-primary);
+    --listening-option-bg: var(--bg-card);
+    --listening-option-border: var(--glass-border);
+    --listening-option-hover-border: var(--color-primary);
+    --reading-passage-bg: var(--bg-card);
+    --reading-passage-border: var(--glass-border);
+    --word-hover-bg: rgba(0, 0, 0, 0.05);
+    --grammar-pattern-bg: var(--bg-card);
+    --grammar-pattern-border: var(--glass-border);
+    --grammar-example-bg: rgba(0, 0, 0, 0.05);
+    --grammar-lesson-item-bg: var(--bg-card);
+    --grammar-lesson-item-border: var(--glass-border);
+    --grammar-lesson-item-hover-border: var(--color-primary);
+    --grammar-lesson-number-bg: var(--color-primary);
+    --achievement-card-bg: var(--bg-card);
+    --achievement-card-border: var(--glass-border);
+    --achievement-card-hover-border: var(--color-secondary);
+    --achievement-locked-bg: rgba(0, 0, 0, 0.03);
+    --input-bg: var(--bg-input);
+    --input-border: var(--border-color);
+    --input-focus-border: var(--color-primary);
+    --input-correct-border: var(--color-success);
+    --input-incorrect-border: var(--color-danger);
+    --modal-bg: var(--bg-secondary);
+    --modal-overlay-bg: rgba(0, 0, 0, 0.5);
+    --toast-success-bg: var(--color-success);
+    --toast-error-bg: var(--color-danger);
+    --toast-info-bg: var(--color-primary);
+    --btn-secondary-bg: rgba(0, 0, 0, 0.1);
+    --btn-secondary-hover-bg: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+    --scrollbar-thumb-hover: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply Theme Variables */
+.theme-dark,
+.theme-light {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Loading Screen */
+.loading-screen {
+    background: var(--loading-bg);
+}
+
+.loading-logo .chinese-char {
+    color: var(--loading-char-color);
+}
+
+.loading-bar {
+    background: var(--loading-bar-bg);
+}
+
+.loading-progress {
+    background: var(--loading-progress);
+}
+
+.loading-text {
+    color: var(--loading-text-color);
+}
+
+/* Navigation */
+.main-nav {
+    background: var(--nav-bg);
+    border-right: 1px solid var(--nav-border);
+}
+
+.nav-header {
+    border-bottom-color: var(--nav-border);
+}
+
+.logo-char,
+.logo-text {
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    color: var(--text-secondary);
+}
+
+.theme-toggle:hover {
+    background: var(--nav-link-hover);
+}
+
+.nav-link {
+    color: var(--text-secondary);
+}
+
+.nav-link:hover {
+    background: var(--nav-link-hover);
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    color: var(--nav-link-active-color);
+    background: var(--nav-link-active-bg);
+}
+
+.nav-link.active .nav-icon {
+    color: var(--nav-link-active-icon);
+}
+
+.nav-link.active::before {
+    background: var(--color-primary);
+}
+
+.nav-footer {
+    border-top-color: var(--nav-border);
+}
+
+.level-badge {
+    color: var(--text-primary);
+}
+
+.xp-bar {
+    background: var(--xp-bar-bg);
+}
+
+.xp-fill {
+    background: var(--xp-fill-bg);
+}
+
+.xp-text {
+    color: var(--text-secondary);
+}
+
+.streak-display {
+    color: var(--text-primary);
+}
+
+.streak-label {
+    color: var(--text-secondary);
+}
+
+/* Main Content */
+.main-content {
+    background: var(--gradient-bg);
+}
+
+/* Module Headers */
+.module-header h1 {
+    color: var(--text-primary);
+}
+
+.module-subtitle {
+    color: var(--text-secondary);
+}
+
+/* Stats Cards */
+.stats-card {
+    background: var(--stats-card-bg);
+    border: 1px solid var(--stats-card-border);
+}
+
+.stats-card:hover {
+    border-color: var(--stats-card-hover-border);
+}
+
+.stats-icon {
+    color: var(--color-primary);
+}
+
+.stats-value {
+    color: var(--text-primary);
+}
+
+.stats-label {
+    color: var(--text-secondary);
+}
+
+/* Daily Goal */
+.daily-goal-section h2 {
+    color: var(--text-primary);
+}
+
+.goal-ring svg .goal-bg {
+    stroke: var(--goal-ring-bg);
+}
+
+.goal-ring svg .goal-fill {
+    stroke: url(#goal-gradient);
+}
+
+.goal-text span {
+    color: var(--text-primary);
+}
+
+.goal-item {
+    background: var(--goal-item-bg);
+    color: var(--text-primary);
+}
+
+.goal-icon {
+    color: var(--color-primary);
+}
+
+/* Quick Actions */
+.quick-actions h2 {
+    color: var(--text-primary);
+}
+
+.action-card {
+    background: var(--action-card-bg);
+    border: 1px solid var(--action-card-border);
+}
+
+.action-card:hover {
+    border-color: var(--action-card-hover-border);
+}
+
+.action-icon {
+    color: var(--color-primary);
+}
+
+.action-card h3 {
+    color: var(--text-primary);
+}
+
+.action-card p {
+    color: var(--text-secondary);
+}
+
+/* Recent Activity */
+.recent-activity h2 {
+    color: var(--text-primary);
+}
+
+.activity-list {
+    background: var(--activity-list-bg);
+}
+
+.activity-empty {
+    color: var(--text-secondary);
+}
+
+.activity-item {
+    border-bottom-color: var(--activity-item-border);
+    color: var(--text-primary);
+}
+
+.activity-icon {
+    color: var(--color-primary);
+}
+
+.activity-time {
+    color: var(--text-muted);
+}
+
+/* Exercise Type Cards */
+.exercise-type-card,
+.vocab-mode-card,
+.game-card {
+    background: var(--exercise-type-card-bg);
+    border: 1px solid var(--exercise-type-card-border);
+}
+
+.exercise-type-card:hover,
+.vocab-mode-card:hover,
+.game-card:hover {
+    border-color: var(--exercise-type-card-hover-border);
+}
+
+.type-icon,
+.mode-icon {
+    color: var(--color-primary);
+}
+
+.exercise-type-card h3,
+.vocab-mode-card h3,
+.game-card h3 {
+    color: var(--text-primary);
+}
+
+.exercise-type-card p,
+.vocab-mode-card p,
+.game-card p {
+    color: var(--text-secondary);
+}
+
+.type-difficulty {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    display: inline-block;
+}
+
+.type-difficulty.easy {
+    background: var(--difficulty-easy-bg);
+    color: var(--difficulty-easy-color);
+}
+
+.type-difficulty.medium {
+    background: var(--difficulty-medium-bg);
+    color: var(--difficulty-medium-color);
+}
+
+.type-difficulty.hard {
+    background: var(--difficulty-hard-bg);
+    color: var(--difficulty-hard-color);
+}
+
+/* Exercise Header */
+.exercise-header {
+    border-bottom-color: var(--exercise-header-border);
+}
+
+.back-btn {
+    color: var(--text-secondary);
+}
+
+.back-btn:hover {
+    background: var(--nav-link-hover);
+    color: var(--text-primary);
+}
+
+.exercise-title {
+    color: var(--text-primary);
+}
+
+.exercise-progress {
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--btn-secondary-hover-bg);
+}
+
+.btn-success {
+    background: var(--gradient-success);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--color-danger);
+    color: white;
+}
+
+/* Flashcards */
+.flashcard {
+    background: var(--flashcard-front-bg);
+    border: 1px solid var(--flashcard-front-border);
+}
+
+.flashcard-front {
+    background: var(--flashcard-front-bg);
+    border: 1px solid var(--flashcard-front-border);
+}
+
+.flashcard-back {
+    background: var(--flashcard-back-bg);
+    border: 1px solid var(--flashcard-back-border);
+}
+
+.flashcard-character {
+    color: var(--text-primary);
+}
+
+.flashcard-pinyin {
+    color: var(--text-secondary);
+}
+
+.flashcard-meaning {
+    color: var(--text-primary);
+}
+
+.example-cn {
+    color: var(--text-primary);
+}
+
+.example-en {
+    color: var(--text-secondary);
+}
+
+.flashcard-counter {
+    color: var(--text-secondary);
+}
+
+/* Matching Cards */
+.matching-card {
+    background: var(--matching-card-bg);
+    border: 1px solid var(--matching-card-border);
+    color: var(--text-primary);
+}
+
+.matching-card:hover {
+    border-color: var(--matching-card-hover-border);
+}
+
+.matching-card.flipped {
+    background: var(--color-primary);
+    color: white;
+}
+
+.matching-card.matched {
+    background: var(--color-success);
+    color: white;
+}
+
+/* Listening */
+.audio-btn {
+    background: var(--bg-card);
+    color: var(--color-primary);
+}
+
+.listening-input {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+.listening-input:focus {
+    border-color: var(--input-focus-border);
+}
+
+.listening-input.correct {
+    border-color: var(--input-correct-border);
+}
+
+.listening-input.incorrect {
+    border-color: var(--input-incorrect-border);
+}
+
+.listening-option {
+    background: var(--listening-option-bg);
+    border: 1px solid var(--listening-option-border);
+    color: var(--text-primary);
+}
+
+.listening-option:hover {
+    border-color: var(--listening-option-hover-border);
+}
+
+.listening-option.selected {
+    border-color: var(--color-primary);
+    background: rgba(230, 57, 70, 0.1);
+}
+
+.listening-option.correct {
+    background: rgba(46, 204, 113, 0.2);
+    border-color: var(--color-success);
+}
+
+.listening-option.incorrect {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: var(--color-danger);
+}
+
+.option-letter {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* Reading */
+.reading-passage {
+    background: var(--reading-passage-bg);
+    border: 1px solid var(--reading-passage-border);
+    color: var(--text-primary);
+}
+
+.reading-passage .word:hover {
+    background: var(--word-hover-bg);
+}
+
+.reading-question h3 {
+    color: var(--text-primary);
+}
+
+/* Grammar */
+.grammar-pattern {
+    background: var(--grammar-pattern-bg);
+    border: 1px solid var(--grammar-pattern-border);
+    color: var(--text-primary);
+}
+
+.grammar-explanation h3 {
+    color: var(--text-primary);
+}
+
+.grammar-examples li {
+    background: var(--grammar-example-bg);
+    color: var(--text-primary);
+}
+
+.grammar-examples li .example-pinyin {
+    color: var(--text-secondary);
+}
+
+.grammar-examples li .example-meaning {
+    color: var(--text-secondary);
+}
+
+.grammar-lesson-item {
+    background: var(--grammar-lesson-item-bg);
+    border: 1px solid var(--grammar-lesson-item-border);
+}
+
+.grammar-lesson-item:hover {
+    border-color: var(--grammar-lesson-item-hover-border);
+}
+
+.grammar-lesson-number {
+    background: var(--grammar-lesson-number-bg);
+    color: white;
+}
+
+.grammar-lesson-info h3 {
+    color: var(--text-primary);
+}
+
+.grammar-lesson-info p {
+    color: var(--text-secondary);
+}
+
+/* Speaking */
+.speaking-text {
+    color: var(--text-primary);
+}
+
+.speaking-pinyin {
+    color: var(--text-secondary);
+}
+
+.record-btn {
+    background: var(--color-danger);
+    color: white;
+}
+
+.record-btn.recording {
+    background: var(--color-danger-dark);
+}
+
+/* Achievements */
+.achievement-card {
+    background: var(--achievement-card-bg);
+    border: 1px solid var(--achievement-card-border);
+}
+
+.achievement-card:hover {
+    border-color: var(--achievement-card-hover-border);
+}
+
+.achievement-card.locked {
+    background: var(--achievement-locked-bg);
+}
+
+.achievement-icon {
+    color: var(--color-secondary);
+}
+
+.achievement-card h3 {
+    color: var(--text-primary);
+}
+
+.achievement-card p {
+    color: var(--text-secondary);
+}
+
+.achievement-date {
+    color: var(--text-muted);
+}
+
+/* Input Fields */
+.input-field {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+.input-field:focus {
+    border-color: var(--input-focus-border);
+}
+
+.input-field.correct {
+    border-color: var(--input-correct-border);
+}
+
+.input-field.incorrect {
+    border-color: var(--input-incorrect-border);
+}
+
+/* Modal */
+.modal-content {
+    background: var(--modal-bg);
+    color: var(--text-primary);
+}
+
+.modal-overlay {
+    background: var(--modal-overlay-bg);
+}
+
+.modal-close {
+    color: var(--text-secondary);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+/* Toast */
+.toast.success {
+    background: var(--toast-success-bg);
+}
+
+.toast.error {
+    background: var(--toast-error-bg);
+}
+
+.toast.info {
+    background: var(--toast-info-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Theme Toggle Icon */
+.theme-dark .theme-icon::after {
+    content: '☀️';
+}
+
+.theme-light .theme-icon::after {
+    content: '🌙';
+}
+
+.theme-dark .theme-icon {
+    font-size: 0;
+}
+
+.theme-light .theme-icon {
+    font-size: 0;
+}
+
+.theme-dark .theme-icon::after,
+.theme-light .theme-icon::after {
+    font-size: var(--font-size-xl);
+}
