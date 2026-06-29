@@ -508,6 +508,1177 @@ const ListeningData = {
             hint: 'Technology impact',
             category: 'Technology'
         }
+        ,
+        {
+            id: 'l091',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '早上好',
+            pinyin: 'zǎoshang hǎo',
+            meaning: 'Good morning',
+            hint: 'Morning greeting',
+            category: 'Greetings'
+        },
+        {
+            id: 'l092',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '晚上好',
+            pinyin: 'wǎnshang hǎo',
+            meaning: 'Good evening',
+            hint: 'Evening greeting',
+            category: 'Greetings'
+        },
+        {
+            id: 'l093',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '晚安',
+            pinyin: 'wǎn\'ān',
+            meaning: 'Good night',
+            hint: 'Night farewell',
+            category: 'Greetings'
+        },
+        {
+            id: 'l094',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '好久不见',
+            pinyin: 'hǎojiǔ bùjiàn',
+            meaning: 'Long time no see',
+            hint: 'Reunion greeting',
+            category: 'Greetings'
+        },
+        {
+            id: 'l095',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '你吃饭了吗',
+            pinyin: 'nǐ chīfàn le ma',
+            meaning: 'Have you eaten?',
+            hint: 'Common Chinese greeting',
+            category: 'Greetings'
+        },
+        {
+            id: 'l096',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '欢迎光临',
+            pinyin: 'huānyíng guānglín',
+            meaning: 'Welcome (to a shop)',
+            hint: 'Shop greeting',
+            category: 'Greetings'
+        },
+        {
+            id: 'l097',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '请多多关照',
+            pinyin: 'qǐng duōduō guānzhào',
+            meaning: 'Please take care of me',
+            hint: 'Formal introduction',
+            category: 'Greetings'
+        },
+        {
+            id: 'l098',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '很高兴又见到你',
+            pinyin: 'hěn gāoxìng yòu jiàndào nǐ',
+            meaning: 'Very happy to see you again',
+            hint: 'Reunion expression',
+            category: 'Greetings'
+        },
+        {
+            id: 'l099',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '一',
+            pinyin: 'yī',
+            meaning: 'One',
+            hint: 'First number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l100',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '二',
+            pinyin: 'èr',
+            meaning: 'Two',
+            hint: 'Second number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l101',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '三',
+            pinyin: 'sān',
+            meaning: 'Three',
+            hint: 'Third number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l102',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '十',
+            pinyin: 'shí',
+            meaning: 'Ten',
+            hint: 'Basic number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l103',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '一百',
+            pinyin: 'yībǎi',
+            meaning: 'One hundred',
+            hint: 'Hundred number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l104',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '第一',
+            pinyin: 'dìyī',
+            meaning: 'First (ordinal)',
+            hint: 'Ordinal form',
+            category: 'Numbers'
+        },
+        {
+            id: 'l105',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '电话号码是多少',
+            pinyin: 'diànhuà hàomǎ shì duōshao',
+            meaning: 'What is your phone number?',
+            hint: 'Asking for number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l106',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我的手机号是13800138000',
+            pinyin: 'wǒ de shǒujī hào shì yāo sān bā líng líng yāo sān bā líng líng líng',
+            meaning: 'My phone number is 13800138000',
+            hint: 'Giving phone number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l107',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '一共三百五十块钱',
+            pinyin: 'yīgòng sānbǎi wǔshí kuài qián',
+            meaning: '350 yuan in total',
+            hint: 'Total amount',
+            category: 'Numbers'
+        },
+        {
+            id: 'l108',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我住在十五楼',
+            pinyin: 'wǒ zhù zài shíwǔ lóu',
+            meaning: 'I live on the 15th floor',
+            hint: 'Floor number',
+            category: 'Numbers'
+        },
+        {
+            id: 'l109',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '米饭',
+            pinyin: 'mǐfàn',
+            meaning: 'Rice',
+            hint: 'Staple food',
+            category: 'Food'
+        },
+        {
+            id: 'l110',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '面条',
+            pinyin: 'miàntiáo',
+            meaning: 'Noodles',
+            hint: 'Staple food',
+            category: 'Food'
+        },
+        {
+            id: 'l111',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '饺子',
+            pinyin: 'jiǎozi',
+            meaning: 'Dumplings',
+            hint: 'Traditional food',
+            category: 'Food'
+        },
+        {
+            id: 'l112',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '火锅',
+            pinyin: 'huǒguō',
+            meaning: 'Hotpot',
+            hint: 'Popular dish',
+            category: 'Food'
+        },
+        {
+            id: 'l113',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '包子',
+            pinyin: 'bāozi',
+            meaning: 'Steamed bun',
+            hint: 'Breakfast food',
+            category: 'Food'
+        },
+        {
+            id: 'l114',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '豆浆',
+            pinyin: 'dòujiāng',
+            meaning: 'Soy milk',
+            hint: 'Breakfast drink',
+            category: 'Food'
+        },
+        {
+            id: 'l115',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '服务员，请给我菜单',
+            pinyin: 'fúwùyuán, qǐng gěi wǒ càidān',
+            meaning: 'Waiter, please give me the menu',
+            hint: 'At a restaurant',
+            category: 'Food'
+        },
+        {
+            id: 'l116',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我想点一份宫保鸡丁',
+            pinyin: 'wǒ xiǎng diǎn yī fèn gōngbǎo jīdīng',
+            meaning: 'I want to order Kung Pao chicken',
+            hint: 'Ordering food',
+            category: 'Food'
+        },
+        {
+            id: 'l117',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '买单，请问可以刷卡吗',
+            pinyin: 'mǎidān, qǐngwèn kěyǐ shuākǎ ma',
+            meaning: 'Check please, can I pay by card?',
+            hint: 'Paying bill',
+            category: 'Food'
+        },
+        {
+            id: 'l118',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这个菜太辣了',
+            pinyin: 'zhège cài tài là le',
+            meaning: 'This dish is too spicy',
+            hint: 'Food comment',
+            category: 'Food'
+        },
+        {
+            id: 'l119',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '爸爸',
+            pinyin: 'bàba',
+            meaning: 'Dad',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l120',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '妈妈',
+            pinyin: 'māma',
+            meaning: 'Mom',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l121',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '哥哥',
+            pinyin: 'gēge',
+            meaning: 'Older brother',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l122',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '姐姐',
+            pinyin: 'jiějie',
+            meaning: 'Older sister',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l123',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '弟弟',
+            pinyin: 'dìdi',
+            meaning: 'Younger brother',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l124',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '妹妹',
+            pinyin: 'mèimei',
+            meaning: 'Younger sister',
+            hint: 'Family member',
+            category: 'Family'
+        },
+        {
+            id: 'l125',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我家有四口人',
+            pinyin: 'wǒ jiā yǒu sì kǒu rén',
+            meaning: 'My family has four people',
+            hint: 'Family size',
+            category: 'Family'
+        },
+        {
+            id: 'l126',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '爷爷奶奶住在老家',
+            pinyin: 'yéye nǎinai zhù zài lǎojiā',
+            meaning: 'Grandpa and grandma live in the hometown',
+            hint: 'Extended family',
+            category: 'Family'
+        },
+        {
+            id: 'l127',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我丈夫是工程师',
+            pinyin: 'wǒ zhàngfu shì gōngchéngshī',
+            meaning: 'My husband is an engineer',
+            hint: 'Spouse occupation',
+            category: 'Family'
+        },
+        {
+            id: 'l128',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我妻子是护士',
+            pinyin: 'wǒ qīzi shì hùshi',
+            meaning: 'My wife is a nurse',
+            hint: 'Spouse occupation',
+            category: 'Family'
+        },
+        {
+            id: 'l129',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '今天',
+            pinyin: 'jīntiān',
+            meaning: 'Today',
+            hint: 'Time word',
+            category: 'Time'
+        },
+        {
+            id: 'l130',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '明天',
+            pinyin: 'míngtiān',
+            meaning: 'Tomorrow',
+            hint: 'Time word',
+            category: 'Time'
+        }
+        {
+            id: 'l131',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '昨天',
+            pinyin: 'zuótiān',
+            meaning: 'Yesterday',
+            hint: 'Time word',
+            category: 'Time'
+        },
+        {
+            id: 'l132',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '现在几点了',
+            pinyin: 'xiànzài jǐ diǎn le',
+            meaning: 'What time is it now?',
+            hint: 'Asking time',
+            category: 'Time'
+        },
+        {
+            id: 'l133',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我每天早上七点起床',
+            pinyin: 'wǒ měitiān zǎoshang qī diǎn qǐchuáng',
+            meaning: 'I get up at 7am every day',
+            hint: 'Daily routine',
+            category: 'Time'
+        },
+        {
+            id: 'l134',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '晚上十点睡觉',
+            pinyin: 'wǎnshang shí diǎn shuìjiào',
+            meaning: 'Go to bed at 10pm',
+            hint: 'Bedtime',
+            category: 'Time'
+        },
+        {
+            id: 'l135',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '会议从下午两点到四点',
+            pinyin: 'huìyì cóng xiàwǔ liǎng diǎn dào sì diǎn',
+            meaning: 'Meeting from 2pm to 4pm',
+            hint: 'Schedule',
+            category: 'Time'
+        },
+        {
+            id: 'l136',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '下个星期五是我的生日',
+            pinyin: 'xià gè xīngqīwǔ shì wǒ de shēngrì',
+            meaning: 'Next Friday is my birthday',
+            hint: 'Future date',
+            category: 'Time'
+        },
+        {
+            id: 'l137',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我在这里住了三年了',
+            pinyin: 'wǒ zài zhèlǐ zhù le sān nián le',
+            meaning: 'I have lived here for three years',
+            hint: 'Duration',
+            category: 'Time'
+        },
+        {
+            id: 'l138',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '时间过得真快',
+            pinyin: 'shíjiān guò de zhēn kuài',
+            meaning: 'Time flies',
+            hint: 'Common phrase',
+            category: 'Time'
+        },
+        {
+            id: 'l139',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '晴天',
+            pinyin: 'qíngtiān',
+            meaning: 'Sunny day',
+            hint: 'Weather type',
+            category: 'Weather'
+        },
+        {
+            id: 'l140',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '下雨',
+            pinyin: 'xiàyǔ',
+            meaning: 'Rain',
+            hint: 'Weather type',
+            category: 'Weather'
+        },
+        {
+            id: 'l141',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '刮风了',
+            pinyin: 'guāfēng le',
+            meaning: 'It\'s windy',
+            hint: 'Weather condition',
+            category: 'Weather'
+        },
+        {
+            id: 'l142',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '下雪',
+            pinyin: 'xiàxuě',
+            meaning: 'Snow',
+            hint: 'Winter weather',
+            category: 'Weather'
+        },
+        {
+            id: 'l143',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '今天很冷',
+            pinyin: 'jīntiān hěn lěng',
+            meaning: 'Today is very cold',
+            hint: 'Temperature comment',
+            category: 'Weather'
+        },
+        {
+            id: 'l144',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '夏天很热',
+            pinyin: 'xiàtiān hěn rè',
+            meaning: 'Summer is very hot',
+            hint: 'Seasonal comment',
+            category: 'Weather'
+        },
+        {
+            id: 'l145',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '天气预报说明天会下大雨',
+            pinyin: 'tiānqì yùbào shuō míngtiān huì xià dàyǔ',
+            meaning: 'The weather forecast says it will rain heavily tomorrow',
+            hint: 'Weather forecast',
+            category: 'Weather'
+        },
+        {
+            id: 'l146',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '今天温度是零下五度',
+            pinyin: 'jīntiān wēndù shì língxià wǔ dù',
+            meaning: 'Today\'s temperature is minus 5 degrees',
+            hint: 'Temperature detail',
+            category: 'Weather'
+        },
+        {
+            id: 'l147',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '秋天是北京最好的季节',
+            pinyin: 'qiūtiān shì běijīng zuì hǎo de jìjié',
+            meaning: 'Autumn is the best season in Beijing',
+            hint: 'Seasonal opinion',
+            category: 'Weather'
+        },
+        {
+            id: 'l148',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '雨后出现了彩虹',
+            pinyin: 'yǔ hòu chūxiàn le cǎihóng',
+            meaning: 'A rainbow appeared after the rain',
+            hint: 'Weather phenomenon',
+            category: 'Weather'
+        },
+        {
+            id: 'l149',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '多少钱',
+            pinyin: 'duōshao qián',
+            meaning: 'How much?',
+            hint: 'Price question',
+            category: 'Shopping'
+        },
+        {
+            id: 'l150',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '便宜',
+            pinyin: 'piányi',
+            meaning: 'Cheap',
+            hint: 'Price description',
+            category: 'Shopping'
+        },
+        {
+            id: 'l151',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '太贵了',
+            pinyin: 'tài guì le',
+            meaning: 'Too expensive',
+            hint: 'Price complaint',
+            category: 'Shopping'
+        },
+        {
+            id: 'l152',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '可以打折吗',
+            pinyin: 'kěyǐ dǎzhé ma',
+            meaning: 'Can you give a discount?',
+            hint: 'Bargaining',
+            category: 'Shopping'
+        },
+        {
+            id: 'l153',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我想试穿一下',
+            pinyin: 'wǒ xiǎng shìchuān yīxià',
+            meaning: 'I want to try it on',
+            hint: 'Fitting clothes',
+            category: 'Shopping'
+        },
+        {
+            id: 'l154',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '请问可以用微信支付吗',
+            pinyin: 'qǐngwèn kěyǐ yòng wēixìn zhīfù ma',
+            meaning: 'Can I pay with WeChat Pay?',
+            hint: 'Payment method',
+            category: 'Shopping'
+        },
+        {
+            id: 'l155',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我要退货，这是我的收据',
+            pinyin: 'wǒ yào tuìhuò, zhè shì wǒ de shōujù',
+            meaning: 'I want to return this, here is my receipt',
+            hint: 'Returning items',
+            category: 'Shopping'
+        },
+        {
+            id: 'l156',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '有大一号的吗',
+            pinyin: 'yǒu dà yī hào de ma',
+            meaning: 'Do you have a larger size?',
+            hint: 'Size question',
+            category: 'Shopping'
+        },
+        {
+            id: 'l157',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这个颜色不适合我',
+            pinyin: 'zhège yánsè bù shìhé wǒ',
+            meaning: 'This color doesn\'t suit me',
+            hint: 'Color opinion',
+            category: 'Shopping'
+        },
+        {
+            id: 'l158',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我去超市买了一些日用品',
+            pinyin: 'wǒ qù chāoshì mǎi le yīxiē rìyòngpǐn',
+            meaning: 'I went to the supermarket and bought some daily necessities',
+            hint: 'Shopping trip',
+            category: 'Shopping'
+        },
+        {
+            id: 'l159',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '左边',
+            pinyin: 'zuǒbiān',
+            meaning: 'Left side',
+            hint: 'Direction',
+            category: 'Directions'
+        },
+        {
+            id: 'l160',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '右边',
+            pinyin: 'yòubiān',
+            meaning: 'Right side',
+            hint: 'Direction',
+            category: 'Directions'
+        },
+        {
+            id: 'l161',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '一直往前走',
+            pinyin: 'yīzhí wǎng qián zǒu',
+            meaning: 'Go straight ahead',
+            hint: 'Direction instruction',
+            category: 'Directions'
+        },
+        {
+            id: 'l162',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '在红绿灯那里左转',
+            pinyin: 'zài hónglǜdēng nàlǐ zuǒ zhuǎn',
+            meaning: 'Turn left at the traffic light',
+            hint: 'Direction instruction',
+            category: 'Directions'
+        },
+        {
+            id: 'l163',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '地铁站在前面',
+            pinyin: 'dìtiě zhàn zài qiánmiàn',
+            meaning: 'The subway station is ahead',
+            hint: 'Location info',
+            category: 'Directions'
+        },
+        {
+            id: 'l164',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '请问最近的医院怎么走',
+            pinyin: 'qǐngwèn zuìjìn de yīyuàn zěnme zǒu',
+            meaning: 'Excuse me, how do I get to the nearest hospital?',
+            hint: 'Asking direction',
+            category: 'Directions'
+        },
+        {
+            id: 'l165',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '过了十字路口就到了',
+            pinyin: 'guò le shízì lùkǒu jiù dào le',
+            meaning: 'You\'ll be there after the intersection',
+            hint: 'Landmark direction',
+            category: 'Directions'
+        },
+        {
+            id: 'l166',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '在第二个路口右转',
+            pinyin: 'zài dì èr gè lùkǒu yòu zhuǎn',
+            meaning: 'Turn right at the second intersection',
+            hint: 'Detailed direction',
+            category: 'Directions'
+        },
+        {
+            id: 'l167',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '离这里远不远',
+            pinyin: 'lí zhèlǐ yuǎn bù yuǎn',
+            meaning: 'Is it far from here?',
+            hint: 'Distance question',
+            category: 'Directions'
+        },
+        {
+            id: 'l168',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我用手机地图导航',
+            pinyin: 'wǒ yòng shǒujī dìtú dǎoháng',
+            meaning: 'I use my phone map for navigation',
+            hint: 'Navigation method',
+            category: 'Directions'
+        }
+        {
+            id: 'l169',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '医院',
+            pinyin: 'yīyuàn',
+            meaning: 'Hospital',
+            hint: 'Medical place',
+            category: 'Health'
+        },
+        {
+            id: 'l170',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '药',
+            pinyin: 'yào',
+            meaning: 'Medicine',
+            hint: 'Health item',
+            category: 'Health'
+        },
+        {
+            id: 'l171',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我生病了',
+            pinyin: 'wǒ shēngbìng le',
+            meaning: 'I am sick',
+            hint: 'Health status',
+            category: 'Health'
+        },
+        {
+            id: 'l172',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我发烧了',
+            pinyin: 'wǒ fāshāo le',
+            meaning: 'I have a fever',
+            hint: 'Symptom',
+            category: 'Health'
+        },
+        {
+            id: 'l173',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '多喝水多休息',
+            pinyin: 'duō hē shuǐ duō xiūxi',
+            meaning: 'Drink more water and rest more',
+            hint: 'Health advice',
+            category: 'Health'
+        },
+        {
+            id: 'l174',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我需要去看牙医',
+            pinyin: 'wǒ xūyào qù kàn yáyī',
+            meaning: 'I need to see a dentist',
+            hint: 'Dental care',
+            category: 'Health'
+        },
+        {
+            id: 'l175',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '你对什么药物过敏吗',
+            pinyin: 'nǐ duì shénme yàowù guòmǐn ma',
+            meaning: 'Are you allergic to any medications?',
+            hint: 'Medical question',
+            category: 'Health'
+        },
+        {
+            id: 'l176',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '每天锻炼对身体有好处',
+            pinyin: 'měitiān duànliàn duì shēntǐ yǒu hǎochù',
+            meaning: 'Daily exercise is good for your health',
+            hint: 'Health advice',
+            category: 'Health'
+        },
+        {
+            id: 'l177',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我感到头晕和恶心',
+            pinyin: 'wǒ gǎndào tóuyūn hé ěxīn',
+            meaning: 'I feel dizzy and nauseous',
+            hint: 'Symptoms description',
+            category: 'Health'
+        },
+        {
+            id: 'l178',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '请帮我叫救护车',
+            pinyin: 'qǐng bāng wǒ jiào jiùhùchē',
+            meaning: 'Please call an ambulance for me',
+            hint: 'Emergency',
+            category: 'Health'
+        },
+        {
+            id: 'l179',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '上班',
+            pinyin: 'shàngbān',
+            meaning: 'Go to work',
+            hint: 'Work activity',
+            category: 'Work'
+        },
+        {
+            id: 'l180',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '下班',
+            pinyin: 'xiàbān',
+            meaning: 'Get off work',
+            hint: 'Work activity',
+            category: 'Work'
+        },
+        {
+            id: 'l181',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '今天要开会',
+            pinyin: 'jīntiān yào kāihuì',
+            meaning: 'There is a meeting today',
+            hint: 'Work schedule',
+            category: 'Work'
+        },
+        {
+            id: 'l182',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我的老板很严格',
+            pinyin: 'wǒ de lǎobǎn hěn yángé',
+            meaning: 'My boss is very strict',
+            hint: 'Work comment',
+            category: 'Work'
+        },
+        {
+            id: 'l183',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我和同事关系很好',
+            pinyin: 'wǒ hé tóngshì guānxì hěn hǎo',
+            meaning: 'I have a good relationship with my colleagues',
+            hint: 'Work relationship',
+            category: 'Work'
+        },
+        {
+            id: 'l184',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '最近工作太忙了总加班',
+            pinyin: 'zuìjìn gōngzuò tài máng le zǒng jiābān',
+            meaning: 'Work has been too busy lately, always working overtime',
+            hint: 'Work complaint',
+            category: 'Work'
+        },
+        {
+            id: 'l185',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我想请假两天去看家人',
+            pinyin: 'wǒ xiǎng qǐngjià liǎng tiān qù kàn jiārén',
+            meaning: 'I want to take two days off to visit family',
+            hint: 'Leave request',
+            category: 'Work'
+        },
+        {
+            id: 'l186',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '下个月我要换工作了',
+            pinyin: 'xià gè yuè wǒ yào huàn gōngzuò le',
+            meaning: 'Next month I will change jobs',
+            hint: 'Career change',
+            category: 'Work'
+        },
+        {
+            id: 'l187',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这份工作的工资不高',
+            pinyin: 'zhè fèn gōngzuò de gōngzī bù gāo',
+            meaning: 'The salary for this job is not high',
+            hint: 'Salary comment',
+            category: 'Work'
+        },
+        {
+            id: 'l188',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我每天坐地铁去公司上班',
+            pinyin: 'wǒ měitiān zuò dìtiě qù gōngsī shàngbān',
+            meaning: 'I take the subway to the office every day',
+            hint: 'Commute routine',
+            category: 'Work'
+        },
+        {
+            id: 'l189',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '飞机',
+            pinyin: 'fēijī',
+            meaning: 'Airplane',
+            hint: 'Transport',
+            category: 'Travel'
+        },
+        {
+            id: 'l190',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '机场',
+            pinyin: 'jīchǎng',
+            meaning: 'Airport',
+            hint: 'Travel place',
+            category: 'Travel'
+        },
+        {
+            id: 'l191',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '请出示护照',
+            pinyin: 'qǐng chūshì hùzhào',
+            meaning: 'Please show your passport',
+            hint: 'At the airport',
+            category: 'Travel'
+        },
+        {
+            id: 'l192',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我的行李丢了',
+            pinyin: 'wǒ de xíngli diū le',
+            meaning: 'My luggage is lost',
+            hint: 'Travel problem',
+            category: 'Travel'
+        },
+        {
+            id: 'l193',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我需要办一个旅游签证',
+            pinyin: 'wǒ xūyào bàn yīgè lǚyóu qiānzhèng',
+            meaning: 'I need to apply for a tourist visa',
+            hint: 'Visa application',
+            category: 'Travel'
+        },
+        {
+            id: 'l194',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这个景点很有名',
+            pinyin: 'zhège jǐngdiǎn hěn yǒumíng',
+            meaning: 'This scenic spot is very famous',
+            hint: 'Tourist attraction',
+            category: 'Travel'
+        },
+        {
+            id: 'l195',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我们请了一个导游',
+            pinyin: 'wǒmen qǐng le yīgè dǎoyóu',
+            meaning: 'We hired a tour guide',
+            hint: 'Tour arrangement',
+            category: 'Travel'
+        },
+        {
+            id: 'l196',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我想买一张去上海的机票',
+            pinyin: 'wǒ xiǎng mǎi yī zhāng qù shànghǎi de jīpiào',
+            meaning: 'I want to buy a plane ticket to Shanghai',
+            hint: 'Ticket purchase',
+            category: 'Travel'
+        },
+        {
+            id: 'l197',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '登机口在几号',
+            pinyin: 'dēngjīkǒu zài jǐ hào',
+            meaning: 'Which gate is the boarding gate?',
+            hint: 'At the airport',
+            category: 'Travel'
+        },
+        {
+            id: 'l198',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这次旅行让我难忘',
+            pinyin: 'zhè cì lǚxíng ràng wǒ nánwàng',
+            meaning: 'This trip was unforgettable',
+            hint: 'Travel memory',
+            category: 'Travel'
+        },
+        {
+            id: 'l199',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '高兴',
+            pinyin: 'gāoxìng',
+            meaning: 'Happy',
+            hint: 'Positive emotion',
+            category: 'Emotions'
+        },
+        {
+            id: 'l200',
+            type: 'dictation',
+            difficulty: 'easy',
+            chinese: '难过',
+            pinyin: 'nánguò',
+            meaning: 'Sad',
+            hint: 'Negative emotion',
+            category: 'Emotions'
+        },
+        {
+            id: 'l201',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我很生气',
+            pinyin: 'wǒ hěn shēngqì',
+            meaning: 'I am very angry',
+            hint: 'Emotion expression',
+            category: 'Emotions'
+        },
+        {
+            id: 'l202',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '别担心',
+            pinyin: 'bié dānxīn',
+            meaning: 'Don\'t worry',
+            hint: 'Reassurance',
+            category: 'Emotions'
+        },
+        {
+            id: 'l203',
+            type: 'dictation',
+            difficulty: 'medium',
+            chinese: '我感到很紧张',
+            pinyin: 'wǒ gǎndào hěn jǐnzhāng',
+            meaning: 'I feel very nervous',
+            hint: 'Emotion expression',
+            category: 'Emotions'
+        },
+        {
+            id: 'l204',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '这个消息让我很惊讶',
+            pinyin: 'zhège xiāoxi ràng wǒ hěn jīngyà',
+            meaning: 'This news surprised me',
+            hint: 'Surprise reaction',
+            category: 'Emotions'
+        },
+        {
+            id: 'l205',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '我对结果感到很失望',
+            pinyin: 'wǒ duì jiéguǒ gǎndào hěn shīwàng',
+            meaning: 'I feel very disappointed with the result',
+            hint: 'Disappointment',
+            category: 'Emotions'
+        },
+        {
+            id: 'l206',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '你的话让我很感动',
+            pinyin: 'nǐ de huà ràng wǒ hěn gǎndòng',
+            meaning: 'Your words touched me deeply',
+            hint: 'Being moved',
+            category: 'Emotions'
+        },
+        {
+            id: 'l207',
+            type: 'dictation',
+            difficulty: 'hard',
+            chinese: '不知道为什么心里很烦',
+            pinyin: 'bù zhīdào wèi shénme xīnlǐ hěn fán',
+            meaning: 'Don\'t know why I feel annoyed',
+            hint: 'Annoyance',
+            category: 'Emotions'
+        }
     ],
 
     // ============================================

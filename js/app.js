@@ -106,7 +106,11 @@ const App = {
             });
         });
 
+        // Mobile nav toggle
+        this.setupMobileNav();
+
         // Theme toggle
+
         const themeBtn = document.getElementById('theme-toggle');
         if (themeBtn) themeBtn.addEventListener('click', () => this.toggleTheme());
 
@@ -162,8 +166,11 @@ const App = {
 
         // Reset any sub-containers that might be stuck in an exercise view
         this.resetModuleSubviews(module);
-
+        
         this.currentModule = module;
+
+        // Close mobile nav on navigation
+        this.closeMobileNav();
 
         // Auto-populate module content on first navigation
         this.populateModule(module);
@@ -325,7 +332,17 @@ const App = {
     hideLoadingScreen() {
         const loadingScreen = document.getElementById('loading-screen');
         const mainNav = document.getElementById('main-nav');
+        const mobileToggle = document.getElementById('mobile-nav-toggle');
+        const mobileOverlay = document.getElementById('mobile-nav-overlay');
         
+        // On mobile, keep nav hidden until toggled; on desktop, show it
+        if (window.innerWidth > 768) {
+            if (mainNav) mainNav.classList.remove('hidden');
+        } else {
+            if (mainNav) mainNav.classList.add('hidden');
+            if (mobileToggle) mobileToggle.style.display = 'flex';
+        }
+         
         if (loadingScreen) {
             loadingScreen.classList.add('fade-out');
             setTimeout(() => {
@@ -333,12 +350,53 @@ const App = {
             }, 500);
         }
         
-        if (mainNav) {
-            mainNav.classList.remove('hidden');
-        }
-        
         // Initialize dashboard
         Dashboard.init();
+    },
+
+    // Mobile nav
+    setupMobileNav() {
+        const toggle = document.getElementById('mobile-nav-toggle');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        const nav = document.getElementById('main-nav');
+
+        if (!toggle || !nav) return;
+
+        const closeNav = () => {
+            nav.classList.remove('mobile-open');
+            nav.classList.add('hidden');
+            if (overlay) overlay.classList.remove('visible');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+
+        const openNav = () => {
+            nav.classList.add('mobile-open');
+            nav.classList.remove('hidden');
+            if (overlay) overlay.classList.add('visible');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        };
+
+        toggle.addEventListener('click', () => {
+            if (nav.classList.contains('mobile-open')) {
+                closeNav();
+            } else {
+                openNav();
+            }
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', closeNav);
+        }
+    },
+
+    // Close mobile nav (called on navigate)
+    closeMobileNav() {
+        const nav = document.getElementById('main-nav');
+        if (nav && nav.classList.contains('mobile-open')) {
+            document.getElementById('mobile-nav-toggle')?.click();
+        }
     },
 
     // Handle keyboard shortcuts

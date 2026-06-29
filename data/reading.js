@@ -70,9 +70,659 @@ const ReadingData = {
                 { character: '历', meaning: 'history' },
                 { character: '史', meaning: 'history' }
             ]
-        }
+        },
+    {
+        id: 'r046',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '烧', meaning: 'to burn' },
+            { character: '灯', meaning: 'lamp' },
+            { character: '炒', meaning: 'to stir-fry' },
+            { character: '烤', meaning: 'to roast' },
+            { character: '烟', meaning: 'smoke' },
+            { character: '热', meaning: 'hot' }
+        ]
+    },
+    {
+        id: 'r047',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '地', meaning: 'ground' },
+            { character: '场', meaning: 'field' },
+            { character: '城', meaning: 'city' },
+            { character: '墙', meaning: 'wall' },
+            { character: '块', meaning: 'piece' },
+            { character: '塔', meaning: 'tower' }
+        ]
+    },
+    {
+        id: 'r048',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '钱', meaning: 'money' },
+            { character: '银', meaning: 'silver' },
+            { character: '铁', meaning: 'iron' },
+            { character: '钟', meaning: 'clock' },
+            { character: '针', meaning: 'needle' },
+            { character: '错', meaning: 'wrong' }
+        ]
+    },
+    {
+        id: 'r049',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '想', meaning: 'to think' },
+            { character: '忘', meaning: 'to forget' },
+            { character: '急', meaning: 'urgent' },
+            { character: '忙', meaning: 'busy' },
+            { character: '快', meaning: 'fast' },
+            { character: '慢', meaning: 'slow' }
+        ]
+    },
+    {
+        id: 'r050',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '打', meaning: 'to hit' },
+            { character: '把', meaning: 'handle' },
+            { character: '找', meaning: 'to find' },
+            { character: '报', meaning: 'to report' },
+            { character: '拉', meaning: 'to pull' },
+            { character: '推', meaning: 'to push' }
+        ]
+    },
+    {
+        id: 'r051',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '看', meaning: 'to see' },
+            { character: '眼', meaning: 'eye' },
+            { character: '睡', meaning: 'to sleep' },
+            { character: '睛', meaning: 'eyeball' },
+            { character: '盲', meaning: 'blind' },
+            { character: '相', meaning: 'mutual' }
+        ]
+    },
+    {
+        id: 'r052',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '跑', meaning: 'to run' },
+            { character: '跳', meaning: 'to jump' },
+            { character: '路', meaning: 'road' },
+            { character: '跟', meaning: 'to follow' },
+            { character: '踢', meaning: 'to kick' },
+            { character: '距', meaning: 'distance' }
+        ]
+    },
+    {
+        id: 'r053',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '说', meaning: 'to speak' },
+            { character: '话', meaning: 'speech' },
+            { character: '读', meaning: 'to read' },
+            { character: '记', meaning: 'to remember' },
+            { character: '让', meaning: 'to let' },
+            { character: '谢', meaning: 'to thank' }
+        ]
+    },
+    {
+        id: 'r054',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '饭', meaning: 'rice/meal' },
+            { character: '饱', meaning: 'full (eating)' },
+            { character: '饿', meaning: 'hungry' },
+            { character: '饺', meaning: 'dumpling' },
+            { character: '饼', meaning: 'pancake' },
+            { character: '馆', meaning: 'restaurant' }
+        ]
+    },
+    {
+        id: 'r055',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '买', meaning: 'to buy' },
+            { character: '卖', meaning: 'to sell' },
+            { character: '贵', meaning: 'expensive' },
+            { character: '货', meaning: 'goods' },
+            { character: '费', meaning: 'fee' },
+            { character: '赚', meaning: 'to earn' }
+        ]
+    },
+    {
+        id: 'r056',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '门', meaning: 'door' },
+            { character: '开', meaning: 'to open' },
+            { character: '关', meaning: 'to close' },
+            { character: '间', meaning: 'between' },
+            { character: '问', meaning: 'to ask' },
+            { character: '闻', meaning: 'to smell' }
+        ]
+    },
+    {
+        id: 'r057',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '花', meaning: 'flower' },
+            { character: '草', meaning: 'grass' },
+            { character: '叶', meaning: 'leaf' },
+            { character: '果', meaning: 'fruit' },
+            { character: '茶', meaning: 'tea' },
+            { character: '药', meaning: 'medicine' }
+        ]
+    },
+    {
+        id: 'r058',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '鱼', meaning: 'fish' },
+            { character: '鸟', meaning: 'bird' },
+            { character: '马', meaning: 'horse' },
+            { character: '牛', meaning: 'cow' },
+            { character: '羊', meaning: 'sheep' },
+            { character: '狗', meaning: 'dog' }
+        ]
+    },
+    {
+        id: 'r059',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '猫', meaning: 'cat' },
+            { character: '鸡', meaning: 'chicken' },
+            { character: '鸭', meaning: 'duck' },
+            { character: '猪', meaning: 'pig' },
+            { character: '龙', meaning: 'dragon' },
+            { character: '虎', meaning: 'tiger' }
+        ]
+    },
+    {
+        id: 'r060',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '车', meaning: 'car' },
+            { character: '船', meaning: 'boat' },
+            { character: '机', meaning: 'machine' },
+            { character: '飞', meaning: 'to fly' },
+            { character: '行', meaning: 'to walk' },
+            { character: '走', meaning: 'to walk' }
+        ]
+    },
+    {
+        id: 'r061',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '来', meaning: 'to come' },
+            { character: '去', meaning: 'to go' },
+            { character: '进', meaning: 'to enter' },
+            { character: '出', meaning: 'to exit' },
+            { character: '回', meaning: 'to return' },
+            { character: '到', meaning: 'to arrive' }
+        ]
+    },
+    {
+        id: 'r062',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '东', meaning: 'east' },
+            { character: '西', meaning: 'west' },
+            { character: '南', meaning: 'south' },
+            { character: '北', meaning: 'north' },
+            { character: '左', meaning: 'left' },
+            { character: '右', meaning: 'right' }
+        ]
+    },
+    {
+        id: 'r063',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '前', meaning: 'front' },
+            { character: '后', meaning: 'back' },
+            { character: '里', meaning: 'inside' },
+            { character: '外', meaning: 'outside' },
+            { character: '旁', meaning: 'side' },
+            { character: '边', meaning: 'side' }
+        ]
+    },
+    {
+        id: 'r064',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '春', meaning: 'spring' },
+            { character: '夏', meaning: 'summer' },
+            { character: '秋', meaning: 'autumn' },
+            { character: '冬', meaning: 'winter' },
+            { character: '冷', meaning: 'cold' },
+            { character: '暖', meaning: 'warm' }
+        ]
+    },
+    {
+        id: 'r065',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '红', meaning: 'red' },
+            { character: '黄', meaning: 'yellow' },
+            { character: '蓝', meaning: 'blue' },
+            { character: '绿', meaning: 'green' },
+            { character: '白', meaning: 'white' },
+            { character: '黑', meaning: 'black' }
+        ]
+    },
+    {
+        id: 'r066',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '身', meaning: 'body' },
+            { character: '体', meaning: 'body' },
+            { character: '头', meaning: 'head' },
+            { character: '手', meaning: 'hand' },
+            { character: '脚', meaning: 'foot' },
+            { character: '心', meaning: 'heart' }
+        ]
+    },
+    {
+        id: 'r067',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '晴', meaning: 'clear/sunny' },
+            { character: '阴', meaning: 'cloudy' },
+            { character: '雷', meaning: 'thunder' },
+            { character: '雾', meaning: 'fog' },
+            { character: '霜', meaning: 'frost' },
+            { character: '雪', meaning: 'snow' }
+        ]
+    },
+    {
+        id: 'r068',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '百', meaning: 'hundred' },
+            { character: '千', meaning: 'thousand' },
+            { character: '万', meaning: 'ten thousand' },
+            { character: '年', meaning: 'year' },
+            { character: '岁', meaning: 'age' },
+            { character: '时', meaning: 'time' }
+        ]
+    },
+    {
+        id: 'r069',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '菜', meaning: 'dish/vegetable' },
+            { character: '肉', meaning: 'meat' },
+            { character: '面', meaning: 'noodle' },
+            { character: '汤', meaning: 'soup' },
+            { character: '蛋', meaning: 'egg' },
+            { character: '米', meaning: 'rice' }
+        ]
+    },
+    {
+        id: 'r070',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '笔', meaning: 'pen' },
+            { character: '纸', meaning: 'paper' },
+            { character: '书', meaning: 'book' },
+            { character: '画', meaning: 'picture' },
+            { character: '歌', meaning: 'song' },
+            { character: '舞', meaning: 'dance' }
+        ]
+    },
+    {
+        id: 'r071',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '医', meaning: 'medicine' },
+            { character: '病', meaning: 'sick' },
+            { character: '疼', meaning: 'pain' },
+            { character: '死', meaning: 'to die' },
+            { character: '活', meaning: 'to live' },
+            { character: '治', meaning: 'to treat' }
+        ]
+    },
+    {
+        id: 'r072',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '桌', meaning: 'table' },
+            { character: '椅', meaning: 'chair' },
+            { character: '床', meaning: 'bed' },
+            { character: '窗', meaning: 'window' },
+            { character: '房', meaning: 'house' },
+            { character: '屋', meaning: 'room' }
+        ]
+    },
+    {
+        id: 'r073',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '衣', meaning: 'clothing' },
+            { character: '裤', meaning: 'pants' },
+            { character: '鞋', meaning: 'shoes' },
+            { character: '帽', meaning: 'hat' },
+            { character: '袜', meaning: 'socks' },
+            { character: '裙', meaning: 'skirt' }
+        ]
+    },
+    {
+        id: 'r074',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '教', meaning: 'to teach' },
+            { character: '懂', meaning: 'to understand' },
+            { character: '知', meaning: 'to know' },
+            { character: '识', meaning: 'knowledge' },
+            { character: '认', meaning: 'to recognize' },
+            { character: '习', meaning: 'to practice' }
+        ]
+    },
+    {
+        id: 'r075',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '爱', meaning: 'to love' },
+            { character: '恨', meaning: 'to hate' },
+            { character: '喜', meaning: 'to like' },
+            { character: '怒', meaning: 'angry' },
+            { character: '哀', meaning: 'sorrow' },
+            { character: '乐', meaning: 'happy' }
+        ]
+    },
+    {
+        id: 'r076',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '高', meaning: 'tall/high' },
+            { character: '矮', meaning: 'short' },
+            { character: '胖', meaning: 'fat' },
+            { character: '瘦', meaning: 'thin' },
+            { character: '美', meaning: 'beautiful' },
+            { character: '丑', meaning: 'ugly' }
+        ]
+    },
+    {
+        id: 'r077',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '男', meaning: 'male' },
+            { character: '女', meaning: 'female' },
+            { character: '老', meaning: 'old' },
+            { character: '少', meaning: 'young' },
+            { character: '长', meaning: 'long' },
+            { character: '短', meaning: 'short' }
+        ]
+    },
+    {
+        id: 'r078',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '多', meaning: 'many' },
+            { character: '深', meaning: 'deep' },
+            { character: '浅', meaning: 'shallow' },
+            { character: '厚', meaning: 'thick' },
+            { character: '薄', meaning: 'thin' },
+            { character: '轻', meaning: 'light' }
+        ]
+    },
+    {
+        id: 'r079',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '重', meaning: 'heavy' },
+            { character: '新', meaning: 'new' },
+            { character: '旧', meaning: 'old (thing)' },
+            { character: '远', meaning: 'far' },
+            { character: '近', meaning: 'near' },
+            { character: '平', meaning: 'flat' }
+        ]
+    },
+    {
+        id: 'r080',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '早', meaning: 'early' },
+            { character: '晚', meaning: 'late' },
+            { character: '快', meaning: 'fast' },
+            { character: '久', meaning: 'long time' },
+            { character: '永', meaning: 'forever' },
+            { character: '刚', meaning: 'just now' }
+        ]
+    },
+    {
+        id: 'r081',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '父', meaning: 'father' },
+            { character: '母', meaning: 'mother' },
+            { character: '儿', meaning: 'son' },
+            { character: '兄', meaning: 'elder brother' },
+            { character: '弟', meaning: 'younger brother' },
+            { character: '妹', meaning: 'younger sister' }
+        ]
+    },
+    {
+        id: 'r082',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '工', meaning: 'work' },
+            { character: '农', meaning: 'farming' },
+            { character: '商', meaning: 'business' },
+            { character: '军', meaning: 'army' },
+            { character: '政', meaning: 'politics' },
+            { character: '法', meaning: 'law' }
+        ]
+    },
+    {
+        id: 'r083',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '海', meaning: 'sea' },
+            { character: '河', meaning: 'river' },
+            { character: '湖', meaning: 'lake' },
+            { character: '江', meaning: 'large river' },
+            { character: '洋', meaning: 'ocean' },
+            { character: '泉', meaning: 'spring' }
+        ]
+    },
+    {
+        id: 'r084',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '金', meaning: 'gold' },
+            { character: '玉', meaning: 'jade' },
+            { character: '石', meaning: 'stone' },
+            { character: '土', meaning: 'earth' },
+            { character: '沙', meaning: 'sand' },
+            { character: '泥', meaning: 'mud' }
+        ]
+    },
+    {
+        id: 'r085',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '风', meaning: 'wind' },
+            { character: '雨', meaning: 'rain' },
+            { character: '云', meaning: 'cloud' },
+            { character: '星', meaning: 'star' },
+            { character: '光', meaning: 'light' },
+            { character: '明', meaning: 'bright' }
+        ]
+    },
+    {
+        id: 'r086',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '国', meaning: 'country' },
+            { character: '家', meaning: 'family' },
+            { character: '族', meaning: 'clan' },
+            { character: '村', meaning: 'village' },
+            { character: '市', meaning: 'city' },
+            { character: '省', meaning: 'province' }
+        ]
+    },
+    {
+        id: 'r087',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '思', meaning: 'to think' },
+            { character: '念', meaning: 'to miss' },
+            { character: '意', meaning: 'meaning' },
+            { character: '愿', meaning: 'wish' },
+            { character: '志', meaning: 'will' },
+            { character: '德', meaning: 'virtue' }
+        ]
+    },
+    {
+        id: 'r088',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '文', meaning: 'language' },
+            { character: '字', meaning: 'character' },
+            { character: '词', meaning: 'word' },
+            { character: '句', meaning: 'sentence' },
+            { character: '篇', meaning: 'article' },
+            { character: '章', meaning: 'chapter' }
+        ]
+    },
+    {
+        id: 'r089',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '力', meaning: 'strength' },
+            { character: '气', meaning: 'energy' },
+            { character: '功', meaning: 'achievement' },
+            { character: '动', meaning: 'to move' },
+            { character: '劳', meaning: 'labor' },
+            { character: '努', meaning: 'to strive' }
+        ]
+    },
+    {
+        id: 'r090',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '安', meaning: 'peace' },
+            { character: '全', meaning: 'complete' },
+            { character: '定', meaning: 'stable' },
+            { character: '宁', meaning: 'tranquil' },
+            { character: '静', meaning: 'quiet' },
+            { character: '清', meaning: 'clear' }
+        ]
+    },
+    {
+        id: 'r091',
+        type: 'character-match',
+        difficulty: 'hard',
+        pairs: [
+            { character: '发', meaning: 'to send out' },
+            { character: '收', meaning: 'to receive' },
+            { character: '取', meaning: 'to take' },
+            { character: '给', meaning: 'to give' },
+            { character: '送', meaning: 'to deliver' },
+            { character: '还', meaning: 'to return' }
+        ]
+    },
+    {
+        id: 'r092',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '一', meaning: 'one' },
+            { character: '二', meaning: 'two' },
+            { character: '三', meaning: 'three' },
+            { character: '四', meaning: 'four' },
+            { character: '五', meaning: 'five' },
+            { character: '六', meaning: 'six' }
+        ]
+    },
+    {
+        id: 'r093',
+        type: 'character-match',
+        difficulty: 'easy',
+        pairs: [
+            { character: '七', meaning: 'seven' },
+            { character: '八', meaning: 'eight' },
+            { character: '九', meaning: 'nine' },
+            { character: '十', meaning: 'ten' },
+            { character: '零', meaning: 'zero' },
+            { character: '半', meaning: 'half' }
+        ]
+    },
+    {
+        id: 'r094',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '口', meaning: 'mouth' },
+            { character: '耳', meaning: 'ear' },
+            { character: '鼻', meaning: 'nose' },
+            { character: '舌', meaning: 'tongue' },
+            { character: '牙', meaning: 'tooth' },
+            { character: '发', meaning: 'hair' }
+        ]
+    },
+    {
+        id: 'r095',
+        type: 'character-match',
+        difficulty: 'medium',
+        pairs: [
+            { character: '王', meaning: 'king' },
+            { character: '民', meaning: 'people' },
+            { character: '主', meaning: 'master' },
+            { character: '自', meaning: 'self' },
+            { character: '由', meaning: 'freedom' },
+            { character: '义', meaning: 'justice' }
+        ]
+    },
     ],
-
+    
     // Sentence completion exercises
     sentenceComplete: [
         {
@@ -209,7 +859,367 @@ const ReadingData = {
             options: ['哪', '那', '这', '什'],
             correct: 0,
             meaning: 'Where is he from? (What person?)'
-        }
+        },
+    {
+        id: 'r096',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我每天___公共汽车去上班。',
+        options: ['坐', '开', '骑', '走'],
+        correct: 0,
+        meaning: 'I take the bus to work every day.'
+    },
+    {
+        id: 'r097',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '他比我___三岁。',
+        options: ['大', '多', '高', '老'],
+        correct: 0,
+        meaning: 'He is three years older than me.'
+    },
+    {
+        id: 'r098',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '这个苹果___那个苹果大。',
+        options: ['比', '跟', '和', '像'],
+        correct: 0,
+        meaning: 'This apple is bigger than that apple.'
+    },
+    {
+        id: 'r099',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我已经___完这本书了。',
+        options: ['看', '读', '写', '学'],
+        correct: 0,
+        meaning: 'I have already finished reading this book.'
+    },
+    {
+        id: 'r100',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '你能___我一下吗？',
+        options: ['帮', '给', '让', '叫'],
+        correct: 0,
+        meaning: 'Can you help me for a moment?'
+    },
+    {
+        id: 'r101',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '外面___下雨了，带把伞吧。',
+        options: ['在', '要', '会', '能'],
+        correct: 0,
+        meaning: 'It is raining outside, bring an umbrella.'
+    },
+    {
+        id: 'r102',
+        type: 'sentence-complete',
+        difficulty: 'hard',
+        sentence: '他___汉语说得很好。',
+        options: ['的', '得', '地', '了'],
+        correct: 0,
+        meaning: 'His Chinese is spoken very well.'
+    },
+    {
+        id: 'r103',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我们___点出发？',
+        options: ['几', '什', '多', '哪'],
+        correct: 0,
+        meaning: 'What time shall we set off?'
+    },
+    {
+        id: 'r104',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '你___什么没来上课？',
+        options: ['为', '因', '做', '干'],
+        correct: 0,
+        meaning: 'Why didn\'t you come to class?'
+    },
+    {
+        id: 'r105',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '这件衣服___漂亮！',
+        options: ['真', '很', '太', '非'],
+        correct: 0,
+        meaning: 'This clothing is really beautiful!'
+    },
+    {
+        id: 'r106',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我___好了，可以走了。',
+        options: ['准备', '预备', '打算', '计划'],
+        correct: 0,
+        meaning: 'I\'m ready, we can go.'
+    },
+    {
+        id: 'r107',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '请___我介绍一下。',
+        options: ['给', '为', '对', '向'],
+        correct: 0,
+        meaning: 'Please introduce me.'
+    },
+    {
+        id: 'r108',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '从这儿___火车站怎么走？',
+        options: ['到', '去', '往', '在'],
+        correct: 0,
+        meaning: 'How do I get to the train station from here?'
+    },
+    {
+        id: 'r109',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '这个字怎么___？',
+        options: ['读', '说', '讲', '念'],
+        correct: 0,
+        meaning: 'How do you read this character?'
+    },
+    {
+        id: 'r110',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我___得这个菜很好吃。',
+        options: ['觉', '想', '看', '认'],
+        correct: 0,
+        meaning: 'I feel that this dish is very delicious.'
+    },
+    {
+        id: 'r111',
+        type: 'sentence-complete',
+        difficulty: 'hard',
+        sentence: '她唱歌唱___很好听。',
+        options: ['得', '的', '地', '了'],
+        correct: 0,
+        meaning: 'She sings very beautifully.'
+    },
+    {
+        id: 'r112',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '快___，要迟到了！',
+        options: ['点', '些', '走', '跑'],
+        correct: 0,
+        meaning: 'Hurry up, we\'re going to be late!'
+    },
+    {
+        id: 'r113',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '别___了，快起来！',
+        options: ['睡', '躺', '坐', '站'],
+        correct: 0,
+        meaning: 'Stop sleeping, get up quickly!'
+    },
+    {
+        id: 'r114',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '这个问题太难___。',
+        options: ['了', '的', '啊', '吗'],
+        correct: 0,
+        meaning: 'This question is too difficult.'
+    },
+    {
+        id: 'r115',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '你把窗户打开___吗？',
+        options: ['好', '了', '过', '着'],
+        correct: 0,
+        meaning: 'Did you finish opening the window?'
+    },
+    {
+        id: 'r116',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '我___过他，他很高。',
+        options: ['见', '看', '找', '遇'],
+        correct: 0,
+        meaning: 'I have seen him before, he is very tall.'
+    },
+    {
+        id: 'r117',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '等一下，我还___准备好。',
+        options: ['没', '不', '别', '未'],
+        correct: 0,
+        meaning: 'Wait a moment, I\'m not ready yet.'
+    },
+    {
+        id: 'r118',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '你___哪儿来的？',
+        options: ['从', '在', '到', '往'],
+        correct: 0,
+        meaning: 'Where did you come from?'
+    },
+    {
+        id: 'r119',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '这里可以___照片吗？',
+        options: ['拍', '照', '看', '画'],
+        correct: 0,
+        meaning: 'Can I take photos here?'
+    },
+    {
+        id: 'r120',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '我们___电影院门口见面吧。',
+        options: ['在', '到', '去', '从'],
+        correct: 0,
+        meaning: 'Let\'s meet at the cinema entrance.'
+    },
+    {
+        id: 'r121',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '他___着书包出去了。',
+        options: ['背', '拿', '带', '提'],
+        correct: 0,
+        meaning: 'He went out carrying a backpack.'
+    },
+    {
+        id: 'r122',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我___了两个小时才到。',
+        options: ['开', '走', '坐', '骑'],
+        correct: 0,
+        meaning: 'I drove for two hours to arrive.'
+    },
+    {
+        id: 'r123',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '这个故事很有意思，___再讲一遍。',
+        options: ['请', '让', '叫', '给'],
+        correct: 0,
+        meaning: 'This story is very interesting, please tell it again.'
+    },
+    {
+        id: 'r124',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '放心吧，没___大问题。',
+        options: ['什么', '怎么', '那么', '这么'],
+        correct: 0,
+        meaning: 'Don\'t worry, there\'s no big problem.'
+    },
+    {
+        id: 'r125',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '你___试试这件衣服。',
+        options: ['可以', '可能', '应该', '必须'],
+        correct: 0,
+        meaning: 'You can try on this clothing.'
+    },
+    {
+        id: 'r126',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '大家___来了，我们开始吧。',
+        options: ['都', '也', '还', '就'],
+        correct: 0,
+        meaning: 'Everyone has arrived, let\'s begin.'
+    },
+    {
+        id: 'r127',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '他把杯子打___了。',
+        options: ['破', '坏', '碎', '断'],
+        correct: 0,
+        meaning: 'He broke the cup.'
+    },
+    {
+        id: 'r128',
+        type: 'sentence-complete',
+        difficulty: 'hard',
+        sentence: '我对中国历史很___兴趣。',
+        options: ['感', '有', '兴', '爱'],
+        correct: 0,
+        meaning: 'I am very interested in Chinese history.'
+    },
+    {
+        id: 'r129',
+        type: 'sentence-complete',
+        difficulty: 'hard',
+        sentence: '虽然下雨了，___是他还是来了。',
+        options: ['但', '可', '却', '而'],
+        correct: 0,
+        meaning: 'Although it rained, he still came.'
+    },
+    {
+        id: 'r130',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '他___会说三种语言。',
+        options: ['能', '会', '可以', '想'],
+        correct: 0,
+        meaning: 'He can speak three languages.'
+    },
+    {
+        id: 'r131',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '我打算___中国留学。',
+        options: ['去', '到', '来', '在'],
+        correct: 0,
+        meaning: 'I plan to study abroad in China.'
+    },
+    {
+        id: 'r132',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '请___往前走，就到了。',
+        options: ['一直', '继续', '直接', '接着'],
+        correct: 0,
+        meaning: 'Please go straight ahead and you\'ll arrive.'
+    },
+    {
+        id: 'r133',
+        type: 'sentence-complete',
+        difficulty: 'medium',
+        sentence: '那___楼就是图书馆。',
+        options: ['座', '个', '栋', '间'],
+        correct: 0,
+        meaning: 'That building is the library.'
+    },
+    {
+        id: 'r134',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '我们___周末去爬山吧？',
+        options: ['这个', '那个', '哪个', '什么'],
+        correct: 0,
+        meaning: 'Shall we go hiking this weekend?'
+    },
+    {
+        id: 'r135',
+        type: 'sentence-complete',
+        difficulty: 'easy',
+        sentence: '这个菜___好吃，你尝尝。',
+        options: ['很', '真', '太', '好'],
+        correct: 0,
+        meaning: 'This dish is very delicious, try some.'
+    },
     ],
 
     // Passage reading exercises

@@ -1,6 +1,6 @@
 // ============================================
 // CHINESE MASTER - Real-World Phrases Dataset
-// 500+ Practical phrases organized by situation
+// 750+ Practical phrases organized by situation
 // ============================================
 
 const RealWorldPhrases = {
@@ -310,6 +310,290 @@ const RealWorldPhrases = {
         { id: 'rw270', chinese: '什么时候交货', pinyin: 'shénme shíhou jiāo huò', meaning: 'When is delivery?', difficulty: 2, category: 'business' }
     ],
 
+
+    // ============================================
+    // TRANSIT & URBAN MOBILITY (33 phrases)
+    // ============================================
+    transit: [
+        { id: 'rw271', chinese: '地铁站怎么走', pinyin: 'dìtiě zhàn zěnme zǒu', meaning: 'How to get to the subway station?', difficulty: 1, category: 'directions' },
+        { id: 'rw272', chinese: '我要去市中心', pinyin: 'wǒ yào qù shì zhōngxīn', meaning: 'I want to go to the city center', difficulty: 1, category: 'taxi' },
+        { id: 'rw273', chinese: '坐几号线', pinyin: 'zuò jǐ hào xiàn', meaning: 'Which line do I take?', difficulty: 1, category: 'subway' },
+        { id: 'rw274', chinese: '在哪里换乘', pinyin: 'zài nǎlǐ huànchéng', meaning: 'Where to transfer?', difficulty: 1, category: 'subway' },
+        { id: 'rw275', chinese: '打车去机场', pinyin: 'dǎchē qù jīchǎng', meaning: 'Take a taxi to the airport', difficulty: 1, category: 'taxi' },
+        { id: 'rw276', chinese: '到火车站多少钱', pinyin: 'dào huǒchēzhàn duōshao qián', meaning: 'How much to the train station?', difficulty: 1, category: 'taxi' },
+        { id: 'rw277', chinese: '请打表', pinyin: 'qǐng dǎ biǎo', meaning: 'Please use the meter', difficulty: 1, category: 'taxi' },
+        { id: 'rw278', chinese: '师傅，麻烦开快一点', pinyin: 'shīfu, máfan kāi kuài yīdiǎn', meaning: 'Driver, please go a bit faster', difficulty: 2, category: 'taxi' },
+        { id: 'rw279', chinese: '在这里停就可以了', pinyin: 'zài zhèlǐ tíng jiù kěyǐ le', meaning: 'You can stop right here', difficulty: 1, category: 'taxi' },
+        { id: 'rw280', chinese: '可以叫滴滴吗', pinyin: 'kěyǐ jiào Dīdī ma', meaning: 'Can you call a Didi?', difficulty: 1, category: 'rideshare' },
+        { id: 'rw281', chinese: '我叫了个滴滴', pinyin: 'wǒ jiào le gè Dīdī', meaning: 'I called a Didi', difficulty: 1, category: 'rideshare' },
+        { id: 'rw282', chinese: '拼车还是专车', pinyin: 'pīnchē háishì zhuānchē', meaning: 'Carpool or private car?', difficulty: 2, category: 'rideshare' },
+        { id: 'rw283', chinese: '顺风车多少钱', pinyin: 'shùnfēngchē duōshao qián', meaning: 'How much for ride-sharing?', difficulty: 2, category: 'rideshare' },
+        { id: 'rw284', chinese: '末班车几点', pinyin: 'mòbānchē jǐ diǎn', meaning: 'When is the last train?', difficulty: 1, category: 'subway' },
+        { id: 'rw285', chinese: '首班车几点', pinyin: 'shǒubānchē jǐ diǎn', meaning: 'When is the first train?', difficulty: 2, category: 'subway' },
+        { id: 'rw286', chinese: '刷码进站', pinyin: 'shuā mǎ jìn zhàn', meaning: 'Scan QR code to enter station', difficulty: 1, category: 'subway' },
+        { id: 'rw287', chinese: '这个方向对吗', pinyin: 'zhège fāngxiàng duì ma', meaning: 'Is this direction correct?', difficulty: 1, category: 'subway' },
+        { id: 'rw288', chinese: '坐反了', pinyin: 'zuò fǎn le', meaning: 'I am going the wrong way', difficulty: 1, category: 'subway' },
+        { id: 'rw289', chinese: '下一站是哪里', pinyin: 'xià yī zhàn shì nǎlǐ', meaning: 'What is the next stop?', difficulty: 1, category: 'subway' },
+        { id: 'rw290', chinese: '我要下车', pinyin: 'wǒ yào xià chē', meaning: 'I want to get off', difficulty: 1, category: 'bus' },
+        { id: 'rw291', chinese: '请让一下', pinyin: 'qǐng ràng yīxià', meaning: 'Please let me through', difficulty: 1, category: 'subway' },
+        { id: 'rw292', chinese: '高铁站怎么走', pinyin: 'gāotiě zhàn zěnme zǒu', meaning: 'How to get to the high-speed rail station?', difficulty: 1, category: 'train' },
+        { id: 'rw293', chinese: '二等座还是一等座', pinyin: 'èr děng zuò háishì yī děng zuò', meaning: 'Second class or first class?', difficulty: 2, category: 'train' },
+        { id: 'rw294', chinese: '靠窗还是靠过道', pinyin: 'kào chuāng háishì kào guòdào', meaning: 'Window or aisle?', difficulty: 2, category: 'train' },
+        { id: 'rw295', chinese: '扫码骑车', pinyin: 'sǎo mǎ qí chē', meaning: 'Scan to ride a shared bike', difficulty: 1, category: 'bike' },
+        { id: 'rw296', chinese: '共享单车在哪里', pinyin: 'gòngxiǎng dānchē zài nǎlǐ', meaning: 'Where are the shared bikes?', difficulty: 1, category: 'bike' },
+        { id: 'rw297', chinese: '堵车了', pinyin: 'dǔchē le', meaning: 'There is a traffic jam', difficulty: 1, category: 'traffic' },
+        { id: 'rw298', chinese: '高峰期要多久', pinyin: 'gāofēngqī yào duō jiǔ', meaning: 'How long during rush hour?', difficulty: 2, category: 'traffic' },
+        { id: 'rw299', chinese: '有直达的吗', pinyin: 'yǒu zhídá de ma', meaning: 'Is there a direct one?', difficulty: 1, category: 'asking' },
+        { id: 'rw300', chinese: '需要转车吗', pinyin: 'xūyào zhuǎn chē ma', meaning: 'Do I need to transfer?', difficulty: 1, category: 'asking' },
+        { id: 'rw301', chinese: '可以用支付宝坐地铁吗', pinyin: 'kěyǐ yòng Zhīfùbǎo zuò dìtiě ma', meaning: 'Can I use Alipay for the subway?', difficulty: 2, category: 'subway' },
+        { id: 'rw302', chinese: '这趟车到上海吗', pinyin: 'zhè tàng chē dào Shànghǎi ma', meaning: 'Does this train go to Shanghai?', difficulty: 1, category: 'train' },
+        { id: 'rw303', chinese: '有充电宝可以借吗', pinyin: 'yǒu chōngdiànbǎo kěyǐ jiè ma', meaning: 'Is there a power bank to borrow?', difficulty: 2, category: 'station' }
+    ],
+
+    // ============================================
+    // ACCOMMODATION (28 phrases)
+    // ============================================
+    accommodation: [
+        { id: 'rw304', chinese: '我要订一个房间', pinyin: 'wǒ yào dìng yī gè fángjiān', meaning: 'I want to book a room', difficulty: 1, category: 'booking' },
+        { id: 'rw305', chinese: '有单人间吗', pinyin: 'yǒu dānrénjiān ma', meaning: 'Do you have a single room?', difficulty: 1, category: 'booking' },
+        { id: 'rw306', chinese: '包括早餐吗', pinyin: 'bāokuò zǎocān ma', meaning: 'Is breakfast included?', difficulty: 1, category: 'amenities' },
+        { id: 'rw307', chinese: '退房时间是几点', pinyin: 'tuìfáng shíjiān shì jǐ diǎn', meaning: 'What time is checkout?', difficulty: 1, category: 'checkout' },
+        { id: 'rw308', chinese: '空调坏了', pinyin: 'kōngtiáo huài le', meaning: 'The AC is broken', difficulty: 1, category: 'problems' },
+        { id: 'rw309', chinese: '我要多住一晚', pinyin: 'wǒ yào duō zhù yī wǎn', meaning: 'I want to stay one more night', difficulty: 1, category: 'booking' },
+        { id: 'rw310', chinese: '可以提前入住吗', pinyin: 'kěyǐ tíqián rùzhù ma', meaning: 'Can I check in early?', difficulty: 2, category: 'checkin' },
+        { id: 'rw311', chinese: '我需要牙刷', pinyin: 'wǒ xūyào yáshuā', meaning: 'I need a toothbrush', difficulty: 1, category: 'amenities' },
+        { id: 'rw312', chinese: '没有卫生纸了', pinyin: 'méiyǒu wèishēngzhǐ le', meaning: 'There is no toilet paper', difficulty: 1, category: 'problems' },
+        { id: 'rw313', chinese: '门卡打不开', pinyin: 'ménkǎ dǎ bù kāi', meaning: 'The key card will not open', difficulty: 1, category: 'problems' },
+        { id: 'rw314', chinese: '可以加一床被子吗', pinyin: 'kěyǐ jiā yī chuáng bèizi ma', meaning: 'Can I have an extra blanket?', difficulty: 2, category: 'requests' },
+        { id: 'rw315', chinese: '枕头太软了', pinyin: 'zhěntou tài ruǎn le', meaning: 'The pillow is too soft', difficulty: 2, category: 'complaints' },
+        { id: 'rw316', chinese: '有吹风机吗', pinyin: 'yǒu chuīfēngjī ma', meaning: 'Is there a hair dryer?', difficulty: 1, category: 'amenities' },
+        { id: 'rw317', chinese: '空调怎么调', pinyin: 'kōngtiáo zěnme tiáo', meaning: 'How to adjust the AC?', difficulty: 1, category: 'amenities' },
+        { id: 'rw318', chinese: '可以帮我拿行李吗', pinyin: 'kěyǐ bāng wǒ ná xínglǐ ma', meaning: 'Can you help me with luggage?', difficulty: 2, category: 'services' },
+        { id: 'rw319', chinese: '附近有什么好玩的', pinyin: 'fùjìn yǒu shénme hǎowán de', meaning: 'What is fun nearby?', difficulty: 1, category: 'asking' },
+        { id: 'rw320', chinese: '可以叫外卖到房间吗', pinyin: 'kěyǐ jiào wàimài dào fángjiān ma', meaning: 'Can I order delivery to my room?', difficulty: 2, category: 'services' },
+        { id: 'rw321', chinese: '隔音不太好', pinyin: 'géyīn bù tài hǎo', meaning: 'The soundproofing is not great', difficulty: 2, category: 'complaints' },
+        { id: 'rw322', chinese: '有拖鞋吗', pinyin: 'yǒu tuōxié ma', meaning: 'Are there slippers?', difficulty: 1, category: 'amenities' },
+        { id: 'rw323', chinese: '早餐几点开始', pinyin: 'zǎocān jǐ diǎn kāishǐ', meaning: 'What time does breakfast start?', difficulty: 1, category: 'amenities' },
+        { id: 'rw324', chinese: '我要开发票', pinyin: 'wǒ yào kāi fāpiào', meaning: 'I need an invoice', difficulty: 1, category: 'checkout' },
+        { id: 'rw325', chinese: '押金什么时候退', pinyin: 'yājīn shénme shíhou tuì', meaning: 'When is the deposit returned?', difficulty: 2, category: 'checkout' },
+        { id: 'rw326', chinese: '有没有便宜点的房间', pinyin: 'yǒu méiyǒu piányi diǎn de fángjiān', meaning: 'Any cheaper rooms?', difficulty: 1, category: 'booking' },
+        { id: 'rw327', chinese: '房间号是多少', pinyin: 'fángjiān hào shì duōshao', meaning: 'What is the room number?', difficulty: 1, category: 'checkin' },
+        { id: 'rw328', chinese: '有禁烟房吗', pinyin: 'yǒu jìnyān fáng ma', meaning: 'Do you have non-smoking rooms?', difficulty: 2, category: 'booking' },
+        { id: 'rw329', chinese: '我想换个房间', pinyin: 'wǒ xiǎng huàn gè fángjiān', meaning: 'I want to switch rooms', difficulty: 1, category: 'requests' },
+        { id: 'rw330', chinese: '洗发水用完了', pinyin: 'xǐfàshuǐ yòng wán le', meaning: 'The shampoo is finished', difficulty: 2, category: 'problems' },
+        { id: 'rw331', chinese: '洗澡水不热', pinyin: 'xǐzǎo shuǐ bù rè', meaning: 'The shower water is not hot', difficulty: 1, category: 'problems' }
+    ],
+
+    // ============================================
+    // MORE SHOPPING (35 phrases)
+    // ============================================
+    shoppingMore: [
+        { id: 'rw332', chinese: '可以试穿吗', pinyin: 'kěyǐ shìchuān ma', meaning: 'Can I try it on?', difficulty: 1, category: 'trying' },
+        { id: 'rw333', chinese: '有别的颜色吗', pinyin: 'yǒu biéde yánsè ma', meaning: 'Do you have other colors?', difficulty: 1, category: 'colors' },
+        { id: 'rw334', chinese: '太贵了，便宜点吧', pinyin: 'tài guì le, piányi diǎn ba', meaning: 'Too expensive, make it cheaper', difficulty: 1, category: 'bargaining' },
+        { id: 'rw335', chinese: '打折吗', pinyin: 'dǎzhé ma', meaning: 'Is there a discount?', difficulty: 1, category: 'discounts' },
+        { id: 'rw336', chinese: '我要退货', pinyin: 'wǒ yào tuìhuò', meaning: 'I want to return this', difficulty: 1, category: 'returns' },
+        { id: 'rw337', chinese: '有XL号吗', pinyin: 'yǒu XL hào ma', meaning: 'Do you have size XL?', difficulty: 1, category: 'sizes' },
+        { id: 'rw338', chinese: '这个是什么料子的', pinyin: 'zhège shì shénme liàozi de', meaning: 'What material is this?', difficulty: 2, category: 'quality' },
+        { id: 'rw339', chinese: '会缩水吗', pinyin: 'huì suōshuǐ ma', meaning: 'Will it shrink?', difficulty: 2, category: 'quality' },
+        { id: 'rw340', chinese: '可以帮我包起来吗', pinyin: 'kěyǐ bāng wǒ bāo qǐlái ma', meaning: 'Can you wrap it for me?', difficulty: 2, category: 'service' },
+        { id: 'rw341', chinese: '我要一个购物袋', pinyin: 'wǒ yào yī gè gòuwù dài', meaning: 'I want a shopping bag', difficulty: 1, category: 'service' },
+        { id: 'rw342', chinese: '可以帮我量一下吗', pinyin: 'kěyǐ bāng wǒ liáng yīxià ma', meaning: 'Can you measure it for me?', difficulty: 2, category: 'sizes' },
+        { id: 'rw343', chinese: '有没有情侣款', pinyin: 'yǒu méiyǒu qínglǚ kuǎn', meaning: 'Do you have a couples version?', difficulty: 2, category: 'styles' },
+        { id: 'rw344', chinese: '这是最新款吗', pinyin: 'zhè shì zuìxīn kuǎn ma', meaning: 'Is this the latest style?', difficulty: 2, category: 'styles' },
+        { id: 'rw345', chinese: '双十一有活动吗', pinyin: 'shuāngshíyī yǒu huódòng ma', meaning: 'Any Singles Day promotions?', difficulty: 2, category: 'promotions' },
+        { id: 'rw346', chinese: '可以领优惠券吗', pinyin: 'kěyǐ lǐng yōuhuìquàn ma', meaning: 'Can I get a coupon?', difficulty: 2, category: 'promotions' },
+        { id: 'rw347', chinese: '满多少包邮', pinyin: 'mǎn duōshao bāoyóu', meaning: 'How much for free shipping?', difficulty: 2, category: 'delivery' },
+        { id: 'rw348', chinese: '七天无理由退货吗', pinyin: 'qī tiān wú lǐyóu tuìhuò ma', meaning: 'Seven-day no-questions-asked return?', difficulty: 3, category: 'returns' },
+        { id: 'rw349', chinese: '这个适合送人吗', pinyin: 'zhège shìhé sòng rén ma', meaning: 'Is this suitable as a gift?', difficulty: 2, category: 'gifts' },
+        { id: 'rw350', chinese: '可以帮我挑一个吗', pinyin: 'kěyǐ bāng wǒ tiāo yī gè ma', meaning: 'Can you help me pick one?', difficulty: 2, category: 'service' },
+        { id: 'rw351', chinese: '支持七天无理由吗', pinyin: 'zhīchí qī tiān wú lǐyóu ma', meaning: 'Do you support 7-day returns?', difficulty: 2, category: 'returns' },
+        { id: 'rw352', chinese: '这个颜色显白吗', pinyin: 'zhège yánsè xiǎn bái ma', meaning: 'Does this color make me look fair?', difficulty: 3, category: 'colors' },
+        { id: 'rw353', chinese: '有没有推荐的', pinyin: 'yǒu méiyǒu tuījiàn de', meaning: 'Do you have any recommendations?', difficulty: 1, category: 'browsing' },
+        { id: 'rw354', chinese: '我随便看看', pinyin: 'wǒ suíbiàn kàn kàn', meaning: 'I am just browsing casually', difficulty: 1, category: 'browsing' },
+        { id: 'rw355', chinese: '这个现在很火', pinyin: 'zhège xiànzài hěn huǒ', meaning: 'This is really trendy right now', difficulty: 2, category: 'trends' },
+        { id: 'rw356', chinese: '有没有同款', pinyin: 'yǒu méiyǒu tóng kuǎn', meaning: 'Do you have the same style?', difficulty: 2, category: 'styles' },
+        { id: 'rw357', chinese: '可以拍个照吗', pinyin: 'kěyǐ pāi gè zhào ma', meaning: 'Can I take a photo?', difficulty: 1, category: 'browsing' },
+        { id: 'rw358', chinese: '是正品吗', pinyin: 'shì zhèngpǐn ma', meaning: 'Is it authentic?', difficulty: 2, category: 'quality' },
+        { id: 'rw359', chinese: '有防伪码吗', pinyin: 'yǒu fángwěi mǎ ma', meaning: 'Is there an anti-counterfeit code?', difficulty: 3, category: 'quality' },
+        { id: 'rw360', chinese: '是纯棉的吗', pinyin: 'shì chúnmián de ma', meaning: 'Is it 100% cotton?', difficulty: 2, category: 'quality' },
+        { id: 'rw361', chinese: '可以刻字吗', pinyin: 'kěyǐ kè zì ma', meaning: 'Can it be engraved?', difficulty: 2, category: 'service' },
+        { id: 'rw362', chinese: '有没有小一点的', pinyin: 'yǒu méiyǒu xiǎo yīdiǎn de', meaning: 'Do you have something smaller?', difficulty: 1, category: 'sizes' },
+        { id: 'rw363', chinese: '这个是男款还是女款', pinyin: 'zhège shì nán kuǎn háishì nǚ kuǎn', meaning: 'Is this for men or women?', difficulty: 2, category: 'styles' },
+        { id: 'rw364', chinese: '可以订做吗', pinyin: 'kěyǐ dìngzuò ma', meaning: 'Can it be custom-made?', difficulty: 2, category: 'service' },
+        { id: 'rw365', chinese: '现在买划算吗', pinyin: 'xiànzài mǎi huásuàn ma', meaning: 'Is it a good deal to buy now?', difficulty: 2, category: 'bargaining' },
+        { id: 'rw366', chinese: '能送个赠品吗', pinyin: 'néng sòng gè zèngpǐn ma', meaning: 'Can you throw in a free gift?', difficulty: 2, category: 'bargaining' }
+    ],
+
+    // ============================================
+    // HEALTH & EMERGENCY (32 phrases)
+    // ============================================
+    health: [
+        { id: 'rw367', chinese: '我不舒服', pinyin: 'wǒ bù shūfu', meaning: 'I don\'t feel well', difficulty: 1, category: 'symptoms' },
+        { id: 'rw368', chinese: '我要看医生', pinyin: 'wǒ yào kàn yīshēng', meaning: 'I need to see a doctor', difficulty: 1, category: 'medical' },
+        { id: 'rw369', chinese: '我发烧了', pinyin: 'wǒ fāshāo le', meaning: 'I have a fever', difficulty: 1, category: 'symptoms' },
+        { id: 'rw370', chinese: '我对花生过敏', pinyin: 'wǒ duì huāshēng guòmǐn', meaning: 'I\'m allergic to peanuts', difficulty: 2, category: 'allergies' },
+        { id: 'rw371', chinese: '请叫救护车', pinyin: 'qǐng jiào jiùhùchē', meaning: 'Please call an ambulance', difficulty: 1, category: 'emergency' },
+        { id: 'rw372', chinese: '我的钱包丢了', pinyin: 'wǒ de qiánbāo diū le', meaning: 'I lost my wallet', difficulty: 1, category: 'emergency' },
+        { id: 'rw373', chinese: '附近有医院吗', pinyin: 'fùjìn yǒu yīyuàn ma', meaning: 'Is there a hospital nearby?', difficulty: 1, category: 'medical' },
+        { id: 'rw374', chinese: '我需要挂急诊', pinyin: 'wǒ xūyào guà jízhěn', meaning: 'I need emergency treatment', difficulty: 2, category: 'medical' },
+        { id: 'rw375', chinese: '我拉肚子了', pinyin: 'wǒ lādùzi le', meaning: 'I have diarrhea', difficulty: 1, category: 'symptoms' },
+        { id: 'rw376', chinese: '我咳嗽得很厉害', pinyin: 'wǒ késou de hěn lìhai', meaning: 'I\'m coughing badly', difficulty: 2, category: 'symptoms' },
+        { id: 'rw377', chinese: '有退烧药吗', pinyin: 'yǒu tuìshāo yào ma', meaning: 'Do you have fever medicine?', difficulty: 2, category: 'pharmacy' },
+        { id: 'rw378', chinese: '这个药怎么吃', pinyin: 'zhège yào zěnme chī', meaning: 'How do I take this medicine?', difficulty: 2, category: 'pharmacy' },
+        { id: 'rw379', chinese: '一天几次', pinyin: 'yī tiān jǐ cì', meaning: 'How many times a day?', difficulty: 1, category: 'pharmacy' },
+        { id: 'rw380', chinese: '我对青霉素过敏', pinyin: 'wǒ duì qīngméisù guòmǐn', meaning: 'I\'m allergic to penicillin', difficulty: 3, category: 'allergies' },
+        { id: 'rw381', chinese: '我怀孕了', pinyin: 'wǒ huáiyùn le', meaning: 'I\'m pregnant', difficulty: 2, category: 'medical' },
+        { id: 'rw382', chinese: '我需要休息一下', pinyin: 'wǒ xūyào xiūxi yīxià', meaning: 'I need to rest a bit', difficulty: 1, category: 'symptoms' },
+        { id: 'rw383', chinese: '我头晕', pinyin: 'wǒ tóuyūn', meaning: 'I feel dizzy', difficulty: 1, category: 'symptoms' },
+        { id: 'rw384', chinese: '有没有创可贴', pinyin: 'yǒu méiyǒu chuāngkětiē', meaning: 'Do you have a band-aid?', difficulty: 2, category: 'pharmacy' },
+        { id: 'rw385', chinese: '请帮我处理一下伤口', pinyin: 'qǐng bāng wǒ chǔlǐ yīxià shāngkǒu', meaning: 'Please help me treat this wound', difficulty: 2, category: 'emergency' },
+        { id: 'rw386', chinese: '我需要翻译', pinyin: 'wǒ xūyào fānyì', meaning: 'I need a translator', difficulty: 2, category: 'medical' },
+        { id: 'rw387', chinese: '可以帮我联系大使馆吗', pinyin: 'kěyǐ bāng wǒ liánxì dàshǐguǎn ma', meaning: 'Can you contact the embassy for me?', difficulty: 3, category: 'emergency' },
+        { id: 'rw388', chinese: '我的护照丢了', pinyin: 'wǒ de hùzhào diū le', meaning: 'I lost my passport', difficulty: 1, category: 'emergency' },
+        { id: 'rw389', chinese: '请帮我报警', pinyin: 'qǐng bāng wǒ bàojǐng', meaning: 'Please help me call the police', difficulty: 1, category: 'emergency' },
+        { id: 'rw390', chinese: '我被偷了', pinyin: 'wǒ bèi tōu le', meaning: 'I was robbed', difficulty: 2, category: 'emergency' },
+        { id: 'rw391', chinese: '这里不安全', pinyin: 'zhèlǐ bù ānquán', meaning: 'It\'s not safe here', difficulty: 2, category: 'emergency' },
+        { id: 'rw392', chinese: '我找不到我的手机了', pinyin: 'wǒ zhǎo bù dào wǒ de shǒujī le', meaning: 'I can\'t find my phone', difficulty: 1, category: 'problems' },
+        { id: 'rw393', chinese: '可以借一下手机吗', pinyin: 'kěyǐ jiè yīxià shǒujī ma', meaning: 'Can I borrow your phone?', difficulty: 1, category: 'emergency' },
+        { id: 'rw394', chinese: '我需要轮椅', pinyin: 'wǒ xūyào lúnyǐ', meaning: 'I need a wheelchair', difficulty: 2, category: 'medical' },
+        { id: 'rw395', chinese: '有没有会说英语的医生', pinyin: 'yǒu méiyǒu huì shuō Yīngyǔ de yīshēng', meaning: 'Is there a doctor who speaks English?', difficulty: 2, category: 'medical' },
+        { id: 'rw396', chinese: '我需要保险理赔', pinyin: 'wǒ xūyào bǎoxiǎn lǐpéi', meaning: 'I need an insurance claim', difficulty: 3, category: 'medical' },
+        { id: 'rw397', chinese: '救护车到了吗', pinyin: 'jiùhùchē dào le ma', meaning: 'Has the ambulance arrived?', difficulty: 2, category: 'emergency' },
+        { id: 'rw398', chinese: '我有点中暑', pinyin: 'wǒ yǒudiǎn zhòngshǔ', meaning: 'I have a bit of heatstroke', difficulty: 2, category: 'symptoms' }
+    ],
+
+    // ============================================
+    // WORK & BUSINESS (32 phrases)
+    // ============================================
+    business: [
+        { id: 'rw399', chinese: '我要请假', pinyin: 'wǒ yào qǐngjià', meaning: 'I need to take leave', difficulty: 1, category: 'leave' },
+        { id: 'rw400', chinese: '这是我的名片', pinyin: 'zhè shì wǒ de míngpiàn', meaning: 'Here is my business card', difficulty: 1, category: 'introductions' },
+        { id: 'rw401', chinese: '请问您贵姓', pinyin: 'qǐng wèn nín guìxìng', meaning: 'May I ask your surname?', difficulty: 2, category: 'introductions' },
+        { id: 'rw402', chinese: '合作愉快', pinyin: 'hézuò yúkuài', meaning: 'Pleasant cooperation', difficulty: 2, category: 'business' },
+        { id: 'rw403', chinese: '下次再聊', pinyin: 'xià cì zài liáo', meaning: 'Let\'s chat again next time', difficulty: 1, category: 'farewell' },
+        { id: 'rw404', chinese: '我可以加您微信吗', pinyin: 'wǒ kěyǐ jiā nín Wēixìn ma', meaning: 'May I add you on WeChat?', difficulty: 2, category: 'networking' },
+        { id: 'rw405', chinese: '扫一下我的二维码', pinyin: 'sǎo yīxià wǒ de èrwéimǎ', meaning: 'Scan my QR code', difficulty: 2, category: 'networking' },
+        { id: 'rw406', chinese: '这个方案需要修改', pinyin: 'zhège fāng\'àn xūyào xiūgǎi', meaning: 'This proposal needs revision', difficulty: 3, category: 'feedback' },
+        { id: 'rw407', chinese: '预算是多少', pinyin: 'yùsuàn shì duōshao', meaning: 'What is the budget?', difficulty: 2, category: 'finance' },
+        { id: 'rw408', chinese: '什么时候可以签合同', pinyin: 'shénme shíhou kěyǐ qiān hétong', meaning: 'When can we sign the contract?', difficulty: 2, category: 'contracts' },
+        { id: 'rw409', chinese: '我发文件给你', pinyin: 'wǒ fā wénjiàn gěi nǐ', meaning: 'I\'ll send you the documents', difficulty: 1, category: 'communication' },
+        { id: 'rw410', chinese: '麻烦您看一下', pinyin: 'máfan nín kàn yīxià', meaning: 'Please take a look', difficulty: 1, category: 'communication' },
+        { id: 'rw411', chinese: '有什么问题随时联系我', pinyin: 'yǒu shénme wèntí suíshí liánxì wǒ', meaning: 'Contact me anytime if you have questions', difficulty: 3, category: 'communication' },
+        { id: 'rw412', chinese: '我们在开会', pinyin: 'wǒmen zài kāihuì', meaning: 'We are in a meeting', difficulty: 1, category: 'meetings' },
+        { id: 'rw413', chinese: '麻烦您等一下', pinyin: 'máfan nín děng yīxià', meaning: 'Please wait a moment', difficulty: 1, category: 'meetings' },
+        { id: 'rw414', chinese: '我下午有空', pinyin: 'wǒ xiàwǔ yǒu kòng', meaning: 'I\'m free in the afternoon', difficulty: 1, category: 'scheduling' },
+        { id: 'rw415', chinese: '改天再约', pinyin: 'gǎitiān zài yuē', meaning: 'Let\'s reschedule for another day', difficulty: 2, category: 'scheduling' },
+        { id: 'rw416', chinese: '我们需要加班', pinyin: 'wǒmen xūyào jiābān', meaning: 'We need to work overtime', difficulty: 2, category: 'work' },
+        { id: 'rw417', chinese: '汇报一下工作进度', pinyin: 'huìbào yīxià gōngzuò jìndù', meaning: 'Let me report on work progress', difficulty: 3, category: 'meetings' },
+        { id: 'rw418', chinese: '这个项目很急', pinyin: 'zhège xiàngmù hěn jí', meaning: 'This project is very urgent', difficulty: 2, category: 'deadlines' },
+        { id: 'rw419', chinese: '能按时完成吗', pinyin: 'néng ànshí wánchéng ma', meaning: 'Can you finish on time?', difficulty: 2, category: 'deadlines' },
+        { id: 'rw420', chinese: '我需要确认一下', pinyin: 'wǒ xūyào quèrèn yīxià', meaning: 'I need to confirm', difficulty: 2, category: 'communication' },
+        { id: 'rw421', chinese: '到时候通知你', pinyin: 'dào shíhou tōngzhī nǐ', meaning: 'I\'ll let you know then', difficulty: 2, category: 'communication' },
+        { id: 'rw422', chinese: '这个想法不错', pinyin: 'zhège xiǎngfǎ bùcuò', meaning: 'This is a good idea', difficulty: 1, category: 'feedback' },
+        { id: 'rw423', chinese: '我们再讨论一下', pinyin: 'wǒmen zài tǎolùn yīxià', meaning: 'Let\'s discuss it more', difficulty: 2, category: 'meetings' },
+        { id: 'rw424', chinese: '有结果了吗', pinyin: 'yǒu jiéguǒ le ma', meaning: 'Is there a result yet?', difficulty: 1, category: 'followup' },
+        { id: 'rw425', chinese: '收到，谢谢', pinyin: 'shōudào, xièxie', meaning: 'Received, thank you', difficulty: 1, category: 'communication' },
+        { id: 'rw426', chinese: '马上处理', pinyin: 'mǎshàng chǔlǐ', meaning: 'I\'ll handle it right away', difficulty: 2, category: 'work' },
+        { id: 'rw427', chinese: '不好意思打扰了', pinyin: 'bù hǎoyìsi dǎrǎo le', meaning: 'Sorry to bother you', difficulty: 2, category: 'politeness' },
+        { id: 'rw428', chinese: '辛苦了', pinyin: 'xīnkǔ le', meaning: 'Thanks for your hard work', difficulty: 1, category: 'politeness' },
+        { id: 'rw429', chinese: '没问题', pinyin: 'méi wèntí', meaning: 'No problem', difficulty: 1, category: 'communication' },
+        { id: 'rw430', chinese: '就这么定了', pinyin: 'jiù zhème dìng le', meaning: 'It\'s settled then', difficulty: 2, category: 'decisions' }
+    ],
+
+    // ============================================
+    // SOCIAL MEDIA & INTERNET (25 phrases)
+    // ============================================
+    socialMedia: [
+        { id: 'rw431', chinese: '加我微信', pinyin: 'jiā wǒ Wēixìn', meaning: 'Add me on WeChat', difficulty: 1, category: 'wechat' },
+        { id: 'rw432', chinese: '扫一扫', pinyin: 'sǎo yī sǎo', meaning: 'Scan this', difficulty: 1, category: 'wechat' },
+        { id: 'rw433', chinese: '发朋友圈', pinyin: 'fā péngyou quān', meaning: 'Post to Moments', difficulty: 1, category: 'wechat' },
+        { id: 'rw434', chinese: '点赞', pinyin: 'diǎnzàn', meaning: 'Like', difficulty: 1, category: 'social' },
+        { id: 'rw435', chinese: '关注我', pinyin: 'guānzhù wǒ', meaning: 'Follow me', difficulty: 1, category: 'social' },
+        { id: 'rw436', chinese: '私信我', pinyin: 'sīxìn wǒ', meaning: 'DM me', difficulty: 1, category: 'social' },
+        { id: 'rw437', chinese: '你有小红书吗', pinyin: 'nǐ yǒu Xiǎohóngshū ma', meaning: 'Do you have Xiaohongshu?', difficulty: 1, category: 'platforms' },
+        { id: 'rw438', chinese: '抖音刷到停不下来', pinyin: 'Dǒuyīn shuā dào tíng bù xiàlái', meaning: 'Can\'t stop scrolling Douyin', difficulty: 3, category: 'platforms' },
+        { id: 'rw439', chinese: '这个视频火了', pinyin: 'zhège shìpín huǒ le', meaning: 'This video went viral', difficulty: 2, category: 'trends' },
+        { id: 'rw440', chinese: '收藏了', pinyin: 'shōucáng le', meaning: 'Bookmarked', difficulty: 1, category: 'social' },
+        { id: 'rw441', chinese: '转发一下', pinyin: 'zhuǎnfā yīxià', meaning: 'Repost this', difficulty: 1, category: 'social' },
+        { id: 'rw442', chinese: '评论区见', pinyin: 'pínglùn qū jiàn', meaning: 'See you in the comments', difficulty: 2, category: 'social' },
+        { id: 'rw443', chinese: '这个博主很有意思', pinyin: 'zhège bózhǔ hěn yǒuyìsi', meaning: 'This content creator is really interesting', difficulty: 2, category: 'platforms' },
+        { id: 'rw444', chinese: '关注了', pinyin: 'guānzhù le', meaning: 'Followed', difficulty: 1, category: 'social' },
+        { id: 'rw445', chinese: '取关了', pinyin: 'qǔguān le', meaning: 'Unfollowed', difficulty: 2, category: 'social' },
+        { id: 'rw446', chinese: '拉黑', pinyin: 'lāhēi', meaning: 'Block', difficulty: 1, category: 'social' },
+        { id: 'rw447', chinese: '发弹幕', pinyin: 'fā dànmù', meaning: 'Send a danmaku comment', difficulty: 2, category: 'video' },
+        { id: 'rw448', chinese: '开直播了吗', pinyin: 'kāi zhíbō le ma', meaning: 'Have you started live streaming?', difficulty: 2, category: 'video' },
+        { id: 'rw449', chinese: '有WiFi吗', pinyin: 'yǒu WiFi ma', meaning: 'Is there WiFi?', difficulty: 1, category: 'internet' },
+        { id: 'rw450', chinese: '密码是多少', pinyin: 'mìmǎ shì duōshao', meaning: 'What is the password?', difficulty: 1, category: 'internet' },
+        { id: 'rw451', chinese: '信号不太好', pinyin: 'xìnhào bù tài hǎo', meaning: 'The signal is not great', difficulty: 1, category: 'internet' },
+        { id: 'rw452', chinese: '流量不够了', pinyin: 'liúliàng bù gòu le', meaning: 'I\'m running out of data', difficulty: 2, category: 'internet' },
+        { id: 'rw453', chinese: '帮我连一下热点', pinyin: 'bāng wǒ lián yīxià rèdiǎn', meaning: 'Help me connect to the hotspot', difficulty: 2, category: 'internet' },
+        { id: 'rw454', chinese: '这个APP怎么下载', pinyin: 'zhège APP zěnme xiàzài', meaning: 'How to download this app?', difficulty: 1, category: 'apps' },
+        { id: 'rw455', chinese: '要翻墙才能用', pinyin: 'yào fānqiáng cáinéng yòng', meaning: 'Need a VPN to use it', difficulty: 3, category: 'internet' }
+    ],
+
+    // ============================================
+    // DATING & RELATIONSHIPS (25 phrases)
+    // ============================================
+    dating: [
+        { id: 'rw456', chinese: '你有男朋友吗', pinyin: 'nǐ yǒu nánpéngyou ma', meaning: 'Do you have a boyfriend?', difficulty: 1, category: 'asking' },
+        { id: 'rw457', chinese: '你有女朋友吗', pinyin: 'nǐ yǒu nǚpéngyou ma', meaning: 'Do you have a girlfriend?', difficulty: 1, category: 'asking' },
+        { id: 'rw458', chinese: '我喜欢你', pinyin: 'wǒ xǐhuan nǐ', meaning: 'I like you', difficulty: 1, category: 'confession' },
+        { id: 'rw459', chinese: '我们在一起吧', pinyin: 'wǒmen zài yīqǐ ba', meaning: 'Let\'s be together', difficulty: 1, category: 'confession' },
+        { id: 'rw460', chinese: '你很漂亮', pinyin: 'nǐ hěn piàoliang', meaning: 'You\'re beautiful', difficulty: 1, category: 'compliments' },
+        { id: 'rw461', chinese: '你很帅', pinyin: 'nǐ hěn shuài', meaning: 'You\'re handsome', difficulty: 1, category: 'compliments' },
+        { id: 'rw462', chinese: '有空一起吃饭吗', pinyin: 'yǒu kòng yīqǐ chīfàn ma', meaning: 'Free for a meal together?', difficulty: 1, category: 'invitations' },
+        { id: 'rw463', chinese: '你结婚了吗', pinyin: 'nǐ jiéhūn le ma', meaning: 'Are you married?', difficulty: 1, category: 'asking' },
+        { id: 'rw464', chinese: '我觉得你很特别', pinyin: 'wǒ juéde nǐ hěn tèbié', meaning: 'I think you\'re very special', difficulty: 2, category: 'compliments' },
+        { id: 'rw465', chinese: '可以请你喝杯咖啡吗', pinyin: 'kěyǐ qǐng nǐ hē bēi kāfēi ma', meaning: 'Can I buy you a coffee?', difficulty: 2, category: 'invitations' },
+        { id: 'rw466', chinese: '你看起来很眼熟', pinyin: 'nǐ kàn qǐlái hěn yǎnshú', meaning: 'You look familiar', difficulty: 2, category: 'opening' },
+        { id: 'rw467', chinese: '你的眼睛很漂亮', pinyin: 'nǐ de yǎnjing hěn piàoliang', meaning: 'Your eyes are beautiful', difficulty: 2, category: 'compliments' },
+        { id: 'rw468', chinese: '我想你了', pinyin: 'wǒ xiǎng nǐ le', meaning: 'I miss you', difficulty: 1, category: 'affection' },
+        { id: 'rw469', chinese: '在干嘛呢', pinyin: 'zài gàn má ne', meaning: 'What are you up to?', difficulty: 1, category: 'texting' },
+        { id: 'rw470', chinese: '晚安', pinyin: 'wǎn\'ān', meaning: 'Good night', difficulty: 1, category: 'affection' },
+        { id: 'rw471', chinese: '早点休息', pinyin: 'zǎo diǎn xiūxi', meaning: 'Get some rest early', difficulty: 1, category: 'affection' },
+        { id: 'rw472', chinese: '你喜欢什么样的', pinyin: 'nǐ xǐhuan shénme yàng de', meaning: 'What type do you like?', difficulty: 2, category: 'asking' },
+        { id: 'rw473', chinese: '我们可以先做朋友', pinyin: 'wǒmen kěyǐ xiān zuò péngyou', meaning: 'We can be friends first', difficulty: 2, category: 'boundaries' },
+        { id: 'rw474', chinese: '对不起，我有对象了', pinyin: 'duìbuqǐ, wǒ yǒu duìxiàng le', meaning: 'Sorry, I\'m taken', difficulty: 2, category: 'rejection' },
+        { id: 'rw475', chinese: '我们不合适', pinyin: 'wǒmen bù héshì', meaning: 'We\'re not compatible', difficulty: 2, category: 'rejection' },
+        { id: 'rw476', chinese: '分手吧', pinyin: 'fēnshǒu ba', meaning: 'Let\'s break up', difficulty: 2, category: 'breakup' },
+        { id: 'rw477', chinese: '我还没准备好', pinyin: 'wǒ hái méi zhǔnbèi hǎo', meaning: 'I\'m not ready yet', difficulty: 2, category: 'boundaries' },
+        { id: 'rw478', chinese: '你相信一见钟情吗', pinyin: 'nǐ xiāngxìn yī jiàn zhōngqíng ma', meaning: 'Do you believe in love at first sight?', difficulty: 3, category: 'flirting' },
+        { id: 'rw479', chinese: '我觉得我们很配', pinyin: 'wǒ juéde wǒmen hěn pèi', meaning: 'I think we\'re a good match', difficulty: 2, category: 'flirting' },
+        { id: 'rw480', chinese: '以后常联系', pinyin: 'yǐhòu cháng liánxì', meaning: 'Let\'s stay in touch', difficulty: 1, category: 'farewell' }
+    ],
+
+    // ============================================
+    // WEATHER & SMALL TALK (25 phrases)
+    // ============================================
+    smallTalk: [
+        { id: 'rw481', chinese: '今天真热啊', pinyin: 'jīntiān zhēn rè a', meaning: 'It\'s so hot today', difficulty: 1, category: 'weather' },
+        { id: 'rw482', chinese: '听说要下雨', pinyin: 'tīngshuō yào xiàyǔ', meaning: 'I heard it\'ll rain', difficulty: 1, category: 'weather' },
+        { id: 'rw483', chinese: '你最近忙吗', pinyin: 'nǐ zuìjìn máng ma', meaning: 'Have you been busy lately?', difficulty: 1, category: 'greetings' },
+        { id: 'rw484', chinese: '好久不见', pinyin: 'hǎojiǔ bùjiàn', meaning: 'Long time no see', difficulty: 1, category: 'greetings' },
+        { id: 'rw485', chinese: '今天真冷啊', pinyin: 'jīntiān zhēn lěng a', meaning: 'It\'s so cold today', difficulty: 1, category: 'weather' },
+        { id: 'rw486', chinese: '空气质量怎么样', pinyin: 'kōngqì zhìliàng zěnmeyàng', meaning: 'How\'s the air quality?', difficulty: 2, category: 'weather' },
+        { id: 'rw487', chinese: '出门记得带伞', pinyin: 'chūmén jìde dài sǎn', meaning: 'Remember to bring an umbrella', difficulty: 2, category: 'weather' },
+        { id: 'rw488', chinese: '周末有什么安排', pinyin: 'zhōumò yǒu shénme ānpái', meaning: 'Any plans for the weekend?', difficulty: 1, category: 'social' },
+        { id: 'rw489', chinese: '最近在忙什么', pinyin: 'zuìjìn zài máng shénme', meaning: 'What have you been busy with?', difficulty: 1, category: 'social' },
+        { id: 'rw490', chinese: '有空出来聚一下', pinyin: 'yǒu kòng chūlái jù yīxià', meaning: 'Let\'s hang out when free', difficulty: 2, category: 'social' },
+        { id: 'rw491', chinese: '你变帅了', pinyin: 'nǐ biàn shuài le', meaning: 'You\'ve gotten more handsome', difficulty: 1, category: 'compliments' },
+        { id: 'rw492', chinese: '你瘦了吗', pinyin: 'nǐ shòu le ma', meaning: 'Have you lost weight?', difficulty: 1, category: 'compliments' },
+        { id: 'rw493', chinese: '最近过得怎么样', pinyin: 'zuìjìn guò de zěnmeyàng', meaning: 'How have you been lately?', difficulty: 1, category: 'greetings' },
+        { id: 'rw494', chinese: '还行吧', pinyin: 'hái xíng ba', meaning: 'It\'s okay I guess', difficulty: 1, category: 'responses' },
+        { id: 'rw495', chinese: '马马虎虎', pinyin: 'mǎmǎhūhū', meaning: 'So-so', difficulty: 2, category: 'responses' },
+        { id: 'rw496', chinese: '还不错', pinyin: 'hái bùcuò', meaning: 'Not bad', difficulty: 1, category: 'responses' },
+        { id: 'rw497', chinese: '挺好的', pinyin: 'tǐng hǎo de', meaning: 'Pretty good', difficulty: 1, category: 'responses' },
+        { id: 'rw498', chinese: '差不多', pinyin: 'chàbuduō', meaning: 'About the same', difficulty: 1, category: 'responses' },
+        { id: 'rw499', chinese: '一般般', pinyin: 'yībānbān', meaning: 'Just average', difficulty: 1, category: 'responses' },
+        { id: 'rw500', chinese: '今天运气真好', pinyin: 'jīntiān yùnqì zhēn hǎo', meaning: 'Today\'s luck is really good', difficulty: 1, category: 'expressions' },
+        { id: 'rw501', chinese: '真倒霉', pinyin: 'zhēn dǎoméi', meaning: 'What bad luck', difficulty: 1, category: 'expressions' },
+        { id: 'rw502', chinese: '太巧了吧', pinyin: 'tài qiǎo le ba', meaning: 'What a coincidence!', difficulty: 1, category: 'expressions' },
+        { id: 'rw503', chinese: '随便', pinyin: 'suíbiàn', meaning: 'Whatever / Up to you', difficulty: 1, category: 'responses' },
+        { id: 'rw504', chinese: '无所谓', pinyin: 'wúsuǒwèi', meaning: 'Doesn\'t matter', difficulty: 1, category: 'responses' },
+        { id: 'rw505', chinese: '听你的', pinyin: 'tīng nǐ de', meaning: 'Up to you / I\'ll follow you', difficulty: 1, category: 'responses' }
+    ],
+
     // Helper methods
     getAll() {
         return [
@@ -318,7 +602,15 @@ const RealWorldPhrases = {
             ...this.transportation,
             ...this.hotel,
             ...this.dailyLife,
-            ...this.work
+            ...this.work,
+            ...this.transit,
+            ...this.accommodation,
+            ...this.shoppingMore,
+            ...this.health,
+            ...this.business,
+            ...this.socialMedia,
+            ...this.dating,
+            ...this.smallTalk
         ];
     },
 
@@ -347,7 +639,7 @@ const RealWorldPhrases = {
     },
 
     get categories() {
-        return ['restaurant', 'shopping', 'transportation', 'hotel', 'dailyLife', 'work'];
+        return ['restaurant', 'shopping', 'transportation', 'hotel', 'dailyLife', 'work', 'transit', 'accommodation', 'shoppingMore', 'health', 'business', 'socialMedia', 'dating', 'smallTalk'];
     }
 };
 

@@ -1,6 +1,6 @@
 // ============================================
 // CHINESE MASTER - Cultural Notes Data
-// 40+ Cultural insights and context
+// 75 Cultural insights and context
 // ============================================
 
 const CulturalData = {
@@ -404,6 +404,356 @@ const CulturalData = {
             content: '中国人见面时通常握手或点头。称呼别人要用"您"表示尊敬。吃饭时要注意座位安排，主人会坐在面向门的位置。敬酒时要碰杯。',
             keyPhrases: ['握手', '您', '座位', '敬酒'],
             significance: '社交礼仪体现了中国人的修养。'
+        },
+        {
+            id: 'c041',
+            title: '元宵节 (Lantern Festival)',
+            titleMeaning: 'Lantern Festival',
+            category: 'Festivals',
+            icon: '🏮',
+            content: '元宵节在农历正月十五，是春节后的第一个重要节日。这一天人们会吃元宵或汤圆，象征着团圆和美满。晚上，人们会出门赏花灯、猜灯谜。花灯的形状各种各样，有动物的、有花卉的，非常漂亮。有些地方还会举办灯会，热闹极了。元宵节也标志着春节庆祝活动的正式结束。',
+            keyPhrases: ['元宵', '汤圆', '花灯', '灯谜', '团圆'],
+            significance: '象征着团圆美满，是春节庆祝活动的高潮和结尾。'
+        },
+        {
+            id: 'c042',
+            title: '七夕节 (Qixi Festival)',
+            titleMeaning: 'Chinese Valentine\'s Day',
+            category: 'Festivals',
+            icon: '💕',
+            content: '七夕节在农历七月初七，是中国传统的情人节。这个节日有一个美丽的传说：牛郎和织女的爱情故事。传说中，牛郎和织女被银河隔开，只有每年的七月初七才能在鹊桥上相会。现在，年轻人会在这一天送礼物、约会。七夕节也被称为"中国的情人节"。',
+            keyPhrases: ['七夕', '牛郎织女', '鹊桥', '情人节', '爱情'],
+            significance: '象征着忠贞不渝的爱情，是中国最具浪漫色彩的传统节日。'
+        },
+        {
+            id: 'c043',
+            title: '腊八节 (Laba Festival)',
+            titleMeaning: 'Laba Festival',
+            category: 'Festivals',
+            icon: '🥣',
+            content: '腊八节在农历十二月初八，是春节前的一个重要节日。这一天，人们会喝腊八粥。腊八粥由多种谷物、豆类和干果熬制而成，营养丰富。腊八节起源于佛教，传说释迦牟尼在这一天成道。民间有"过了腊八就是年"的说法，意味着从这一天开始，人们就开始准备过年了。',
+            keyPhrases: ['腊八', '腊八粥', '谷物', '佛教', '过年'],
+            significance: '标志着春节准备的开始，体现了中国人对传统饮食文化的重视。'
+        },
+        {
+            id: 'c044',
+            title: '冬至 (Winter Solstice)',
+            titleMeaning: 'Winter Solstice',
+            category: 'Festivals',
+            icon: '❄️',
+            content: '冬至是二十四节气中最重要的节气之一，通常在12月21日或22日。这一天是北半球白天最短、夜晚最长的一天。在中国北方，人们有冬至吃饺子的习俗，传说吃了饺子耳朵就不会冻坏。在南方，人们会吃汤圆，象征团圆。冬至也是一个祭祖的日子。民间有"冬至大如年"的说法。',
+            keyPhrases: ['冬至', '饺子', '汤圆', '祭祖', '节气'],
+            significance: '体现了中国人顺应自然、重视家庭团聚的传统观念。'
+        },
+        {
+            id: 'c045',
+            title: '清明节习俗与意义 (Qingming Customs)',
+            titleMeaning: 'Qingming Festival Customs & Meaning',
+            category: 'Festivals',
+            icon: '🪦',
+            content: '清明节不仅是扫墓祭祖的日子，还有很多传统习俗。除了扫墓，人们还会在清明节踏青、放风筝、荡秋千。清明时节，春暖花开，是外出游玩的好时候。有些地方会吃青团，一种用艾草汁做的绿色糯米团子。清明节也体现了中国人"慎终追远"的文化传统——追念祖先，珍惜现在的生活。',
+            keyPhrases: ['扫墓', '踏青', '青团', '慎终追远', '祖先'],
+            significance: '体现了中国人对祖先的尊敬和对生命延续的重视。'
+        },
+        {
+            id: 'c046',
+            title: '重阳节敬老文化 (Double Ninth Elders Culture)',
+            titleMeaning: 'Double Ninth Festival & Respect for Elders',
+            category: 'Festivals',
+            icon: '🌺',
+            content: '重阳节在农历九月初九，现在也是中国的"老人节"。这一天，人们会登高望远、赏菊花、喝菊花酒、佩戴茱萸。登高有避灾祈福的意义。因为"九九"和"久久"谐音，重阳节也象征着长寿和健康。现在，很多年轻人会在重阳节回家看望父母、祖父母，表达对老人的关爱。尊老敬老是中华民族的传统美德。',
+            keyPhrases: ['重阳', '登高', '菊花', '长寿', '敬老'],
+            significance: '体现了中华民族尊老敬老的传统美德和对健康长寿的美好祝愿。'
+        },
+        {
+            id: 'c047',
+            title: '送礼的讲究 (Gift-Giving Etiquette)',
+            titleMeaning: 'Gift-Giving Etiquette',
+            category: 'Traditions',
+            icon: '🎁',
+            content: '在中国，送礼有很多讲究和禁忌。首先，送礼要看场合和对象——春节送年货，生日送寿礼，看望病人送水果。其次，包装很重要，红色和金色是吉祥的颜色。有一些礼物不能送：不能送钟（谐音"送终"），不能送伞（谐音"散"），不能送梨（谐音"离"）。送礼时要用双手递送，表示尊重。收礼的人通常会推辞一下再接受，这是中国人的谦虚。',
+            keyPhrases: ['送礼', '讲究', '禁忌', '谐音', '包装', '双手'],
+            significance: '送礼文化体现了中国人重情义、讲礼节的社交传统。'
+        },
+        {
+            id: 'c048',
+            title: '餐桌礼仪 (Table Manners)',
+            titleMeaning: 'Table Manners',
+            category: 'Traditions',
+            icon: '🍽️',
+            content: '中国餐桌礼仪非常丰富。吃饭时，要让长辈先动筷子。不能用筷子指着别人，也不能把筷子竖插在饭里。夹菜时要用公筷，不要用自己的筷子在菜盘里翻来翻去。吃饭时不要发出太大的声音。主人会热情地给客人夹菜。如果别人给你倒茶，你要用手指轻轻敲桌子表示感谢。这些礼仪体现了中国人的修养和对他人的尊重。',
+            keyPhrases: ['筷子', '长辈', '公筷', '夹菜', '倒茶', '尊重'],
+            significance: '餐桌礼仪体现了中国人的教养和对人际关系的重视。'
+        },
+        {
+            id: 'c049',
+            title: '面子文化 (Face Culture)',
+            titleMeaning: 'Face Culture in Depth',
+            category: 'Social',
+            icon: '😊',
+            content: '"面子"是中国社会中最复杂、最重要的概念之一。"有面子"意味着受到他人的尊重和认可；"丢面子"则是失去了尊严和地位。"给面子"是给别人尊重和体面，"留面子"是不让别人难堪。在商务谈判中，中国人很注意给对方留面子。在公共场合批评别人会让人很丢面子。理解和尊重面子文化，是在中国社交成功的关键。',
+            keyPhrases: ['面子', '有面子', '丢面子', '给面子', '留面子', '尊重'],
+            significance: '面子文化深深影响着中国人的社交方式、商务交往和日常生活。'
+        },
+        {
+            id: 'c050',
+            title: '关系 (Guanxi)',
+            titleMeaning: 'Guanxi - Relationships & Networks',
+            category: 'Social',
+            icon: '🤝',
+            content: '"关系"是中国社会中非常重要的概念，指的是人际关系网络。在中国，很多事情的办理都离不开关系。建立关系需要时间和真诚，而不是简单的利益交换。关系建立在互相信任和互相帮助的基础上。朋友之间、同事之间、同学之间的关系都很重要。过年过节送礼、请客吃饭都是维护关系的重要方式。有了好的关系，办事会更顺利。',
+            keyPhrases: ['关系', '人脉', '信任', '互相帮助', '请客'],
+            significance: '关系文化反映了中国社会中人际信任和互助的重要性。'
+        },
+        {
+            id: 'c051',
+            title: '尊老爱幼 (Respecting Elders)',
+            titleMeaning: 'Respecting Elders & Cherishing the Young',
+            category: 'Traditions',
+            icon: '👴',
+            content: '尊老爱幼是中华民族的传统美德。在公共汽车上，年轻人要给老人让座。吃饭时，长辈要坐在上座，先动筷子。重要的决定要听取老人的意见。同时，中国人也非常爱护孩子。父母会为孩子付出很多，包括教育、生活等各个方面。"老吾老以及人之老，幼吾幼以及人之幼"是中国人理想的社会关系。',
+            keyPhrases: ['尊老', '爱幼', '让座', '长辈', '孝道'],
+            significance: '尊老爱幼体现了中华文化中家庭和社会的和谐理念。'
+        },
+        {
+            id: 'c052',
+            title: '中国人的谦虚 (Chinese Modesty)',
+            titleMeaning: 'Chinese Modesty',
+            category: 'Social',
+            icon: '🙏',
+            content: '谦虚是中国人非常看重的品质。当别人夸奖你时，中国人通常会回答"哪里哪里"或"不敢当"。即使取得了很大的成就，中国人也很少自夸。在介绍自己的工作时，会用"一般般"、"马马虎虎"这样的词语。这种谦虚不是虚伪，而是一种文化传统——"满招损，谦受益"。适当的谦虚让人更受欢迎。',
+            keyPhrases: ['谦虚', '哪里哪里', '不敢当', '满招损谦受益', '低调'],
+            significance: '谦虚体现了中国人的处世哲学和文化修养。'
+        },
+        {
+            id: 'c053',
+            title: '数字的文化意义 (Cultural Meaning of Numbers)',
+            titleMeaning: 'Cultural Meaning of Numbers',
+            category: 'Culture',
+            icon: '🔢',
+            content: '在中国文化中，数字有丰富的含义。8是最吉利的数字，因为"八"和"发"谐音，象征发财。人们喜欢选带8的电话号码、车牌号。6也很吉利，代表"顺"，六六大顺。9代表长久。相反，4是最不吉利的数字，因为"四"和"死"谐音。很多大楼没有4楼、14楼。双数通常比单数吉利，因为"好事成双"。',
+            keyPhrases: ['数字', '八', '发', '四', '谐音', '吉利'],
+            significance: '数字文化反映了中国人对语言谐音和吉祥寓意的重视。'
+        },
+        {
+            id: 'c054',
+            title: '双十一购物节 (Singles Day Shopping)',
+            titleMeaning: 'Singles\' Day Shopping Festival',
+            category: 'Modern',
+            icon: '🛒',
+            content: '双十一原本是"光棍节"（11月11日，四个"1"像四个光棍），但现在已经成为中国最大的网络购物节。从2009年开始，阿里巴巴把这一天变成了购物狂欢节。每年的双十一，各大电商平台都会推出大量优惠活动，交易额不断创新高。很多人在这一天熬夜抢购。双十一已经成为中国消费文化的标志性事件。',
+            keyPhrases: ['双十一', '光棍节', '网购', '优惠', '消费'],
+            significance: '双十一购物节展示了中国电子商务的巨大活力和消费文化的变迁。'
+        },
+        {
+            id: 'c055',
+            title: '外卖文化 (Food Delivery Culture)',
+            titleMeaning: 'Food Delivery Culture',
+            category: 'Modern',
+            icon: '🛵',
+            content: '中国的外卖文化非常发达，美团和饿了么是最主要的外卖平台。在城市里，你可以用手机随时点餐，从美食到日用品都可以送上门。外卖小哥骑着电动车穿梭在大街小巷，成为城市的一道风景线。外卖不仅方便了生活，也改变了中国人的饮食方式。很多年轻人几乎天天点外卖，都不怎么做饭了。',
+            keyPhrases: ['外卖', '美团', '饿了么', '点餐', '方便'],
+            significance: '外卖文化体现了中国互联网经济和快节奏生活方式的结合。'
+        },
+        {
+            id: 'c056',
+            title: '共享单车 (Shared Bikes)',
+            titleMeaning: 'Shared Bikes',
+            category: 'Modern',
+            icon: '🚲',
+            content: '共享单车是中国城市交通的一大创新。摩拜、ofo等共享单车品牌改变了人们的出行方式。用手机扫一下二维码就可以骑走，到了目的地锁车就行，非常方便。共享单车解决了"最后一公里"的问题，也减少了对环境的影响。不过共享单车也带来了一些问题，比如乱停乱放。现在共享单车已经成为中国城市生活的一部分。',
+            keyPhrases: ['共享单车', '扫码', '摩拜', '出行', '环保'],
+            significance: '共享单车是中国共享经济和绿色出行理念的典型代表。'
+        },
+        {
+            id: 'c057',
+            title: '高铁 (High-Speed Rail)',
+            titleMeaning: 'High-Speed Rail',
+            category: 'Modern',
+            icon: '🚄',
+            content: '中国高铁是世界上规模最大的高速铁路网络，总里程超过4万公里。从北京到上海只需要四个多小时。高铁不仅速度快，而且准时、舒适、安全。高铁改变了中国人的出行方式，也促进了经济发展。很多外国游客到中国都会体验高铁。高铁已经成为中国现代化的一个象征。',
+            keyPhrases: ['高铁', '快速', '网络', '出行', '现代化'],
+            significance: '高铁体现了中国基础设施建设的成就和科技发展水平。'
+        },
+        {
+            id: 'c058',
+            title: '移动支付 (Mobile Payment)',
+            titleMeaning: 'Mobile Payment',
+            category: 'Modern',
+            icon: '📱',
+            content: '中国的移动支付非常普及，微信支付和支付宝是最主要的支付方式。现在，从商场购物到路边小摊，几乎都可以用手机支付。很多人出门已经不带钱包了，一部手机就够了。移动支付还支持转账、缴费、投资等功能。甚至乞丐也用二维码收钱！移动支付彻底改变了中国人的消费习惯。',
+            keyPhrases: ['移动支付', '微信支付', '支付宝', '二维码', '无现金'],
+            significance: '移动支付代表了中国的科技创新和数字化生活方式的变革。'
+        },
+        {
+            id: 'c059',
+            title: '直播文化 (Live Streaming Culture)',
+            titleMeaning: 'Live Streaming Culture',
+            category: 'Modern',
+            icon: '📺',
+            content: '直播在中国非常流行，是一种新的娱乐和购物方式。主播们可以直播唱歌、跳舞、聊天、玩游戏，也可以直播带货（推销商品）。李佳琦和薇娅是著名的带货主播，一场直播可以卖出几亿元的商品。很多人喜欢看直播，给喜欢的主播送虚拟礼物。直播文化改变了中国人的娱乐和消费方式。',
+            keyPhrases: ['直播', '主播', '带货', '李佳琦', '打赏'],
+            significance: '直播文化反映了中国互联网娱乐和电商融合的新趋势。'
+        },
+        {
+            id: 'c060',
+            title: '广场舞 (Square Dancing)',
+            titleMeaning: 'Square Dancing',
+            category: 'Modern',
+            icon: '💃',
+            content: '广场舞是中国中老年人最喜欢的健身活动之一。每天清晨和傍晚，在城市的公园和广场上，你可以看到一群群阿姨（有时也有叔叔）跟着音乐跳舞。广场舞不仅锻炼身体，也是社交的方式。不过，广场舞的噪音有时会引起附近居民的不满。广场舞已经成为中国城市文化的一个独特现象。',
+            keyPhrases: ['广场舞', '阿姨', '健身', '公园', '社交'],
+            significance: '广场舞体现了中国中老年人积极的生活态度和社区文化。'
+        },
+        {
+            id: 'c061',
+            title: '京剧 (Beijing Opera)',
+            titleMeaning: 'Beijing Opera',
+            category: 'Art',
+            icon: '🎭',
+            content: '京剧是中国的"国粹"，有200多年历史。京剧融合了唱、念、做、打四种表演方式。演员的脸上画着色彩丰富的脸谱——红色代表忠勇，白色代表奸诈，黑色代表正直。京剧的音乐用京胡、锣鼓等乐器伴奏。虽然现在年轻人看京剧的不多，但京剧仍然是中国最重要的传统艺术形式之一。梅兰芳是最著名的京剧表演艺术家。',
+            keyPhrases: ['京剧', '国粹', '脸谱', '唱念做打', '梅兰芳'],
+            significance: '京剧是中国传统表演艺术的巅峰，被誉为东方戏剧的瑰宝。'
+        },
+        {
+            id: 'c062',
+            title: '功夫文化与精神 (Kung Fu Culture & Spirit)',
+            titleMeaning: 'Kung Fu Culture & Spirit',
+            category: 'Art',
+            icon: '🥋',
+            content: '中国功夫不仅是一种格斗技术，更是一种文化精神。功夫的核心是"武德"——习武之人要有高尚的品德。少林功夫刚猛有力，武当功夫柔中带刚，峨眉功夫灵动飘逸。功夫讲究"内外兼修"，既要练外功（身体技巧），也要修内功（气息和精神）。通过练功夫，人们可以达到身心合一的境界。李小龙把中国功夫推向了世界。',
+            keyPhrases: ['功夫', '武德', '少林', '武当', '内外兼修', '李小龙'],
+            significance: '功夫体现了中国"以武修德"的哲学理念和自强不息的精神。'
+        },
+        {
+            id: 'c063',
+            title: '太极拳的哲学 (Tai Chi Philosophy)',
+            titleMeaning: 'Tai Chi Philosophy',
+            category: 'Health',
+            icon: '☯️',
+            content: '太极拳不仅是健身运动，更蕴含着深刻的哲学思想。太极拳的核心概念来自道家哲学——"太极生两仪"，阴阳相生相克。太极拳的动作以柔克刚、以静制动，看似缓慢柔软，实则蕴含着强大的内在力量。练太极拳讲究"用意不用力"，通过意念引导动作。现在，太极拳已经成为世界性的健身运动，受到各国人民的喜爱。',
+            keyPhrases: ['太极', '阴阳', '以柔克刚', '道家', '意念'],
+            significance: '太极拳体现了中国古代哲学智慧与身体修行的完美结合。'
+        },
+        {
+            id: 'c064',
+            title: '四大名著 (Four Great Classics)',
+            titleMeaning: 'Four Great Classics of Chinese Literature',
+            category: 'Literature',
+            icon: '📖',
+            content: '中国文学的四大名著是：《三国演义》、《水浒传》、《西游记》、《红楼梦》。每一部都是中国文学的瑰宝。《三国演义》讲的是三国时期的英雄故事；《水浒传》讲的是一百零八位好汉起义的故事；《西游记》是唐僧师徒去西天取经的神话故事；《红楼梦》描写了贾府的兴衰和宝黛的爱情悲剧。这四部书影响了一代又一代中国人。',
+            keyPhrases: ['三国演义', '水浒传', '西游记', '红楼梦', '经典'],
+            significance: '四大名著是中国文学的最高成就，反映了中国社会的方方面面。'
+        },
+        {
+            id: 'c065',
+            title: '唐诗宋词 (Tang Poetry & Song Lyrics)',
+            titleMeaning: 'Tang Poetry & Song Lyrics',
+            category: 'Literature',
+            icon: '📜',
+            content: '唐诗和宋词是中国古代文学的巅峰。唐诗以五言、七言绝句和律诗为主，代表诗人有李白（诗仙）、杜甫（诗圣）、白居易。李白的诗豪放浪漫，杜甫的诗沉郁深刻。宋词则更加婉约优美，代表词人有苏轼、李清照、辛弃疾。唐诗宋词讲究意境和韵律。直到今天，很多中国人还能背诵几十首唐诗宋词。',
+            keyPhrases: ['唐诗', '宋词', '李白', '杜甫', '苏轼', '意境'],
+            significance: '唐诗宋词是中华文化的瑰宝，展现了汉语的极致之美。'
+        },
+        {
+            id: 'c066',
+            title: '书法艺术之美 (The Beauty of Calligraphy)',
+            titleMeaning: 'The Beauty of Calligraphy Art',
+            category: 'Art',
+            icon: '✍️',
+            content: '中国书法是汉字的书写艺术，被誉为"无言的诗，无行的舞，无图的画"。书法有五体：篆书古朴、隶书庄重、楷书端正、行书流畅、草书奔放。学习书法不仅要练字，更要修身养性。书法讲究"意在笔先"，下笔之前心中已有字的形态。王羲之被称为"书圣"，他的《兰亭序》被誉为天下第一行书。',
+            keyPhrases: ['书法', '篆书', '楷书', '行书', '王羲之', '兰亭序'],
+            significance: '书法是中国文化核心的艺术形式，体现了中国人的审美和精神追求。'
+        },
+        {
+            id: 'c067',
+            title: '中国画的意境之美 (Chinese Painting Spirit)',
+            titleMeaning: 'The Artistic Spirit of Chinese Painting',
+            category: 'Art',
+            icon: '🎨',
+            content: '中国画不同于西方油画，它强调"写意"而非"写实"。中国画讲究"诗中有画，画中有诗"的意境。山水画是中国画的代表，画家通过山水来表达自己的情感和哲学思考。中国画常用毛笔、墨汁在宣纸上作画，讲究笔墨的浓淡干湿变化。花鸟画、人物画也都是重要的题材。齐白石和张大千是近现代最著名的中国画大师。',
+            keyPhrases: ['中国画', '写意', '山水画', '笔墨', '齐白石', '张大千'],
+            significance: '中国画体现了中国人"天人合一"的哲学观念和独特的审美情趣。'
+        },
+        {
+            id: 'c068',
+            title: '北京胡同 (Beijing Hutongs)',
+            titleMeaning: 'Beijing Hutongs',
+            category: 'Regional',
+            icon: '🏘️',
+            content: '胡同是老北京的城市肌理，是北京特有的传统街巷。胡同大多形成于元、明、清三个朝代，已经有七八百年的历史。在胡同里，有四合院——一种四面围合的传统住宅。胡同生活充满了人情味，邻居之间互相认识、互相帮助。现在北京的胡同越来越少，很多被拆除了。剩下的胡同成为旅游景点，比如南锣鼓巷。胡同是老北京文化的活化石。',
+            keyPhrases: ['胡同', '四合院', '老北京', '南锣鼓巷', '人情味'],
+            significance: '胡同代表了老北京的生活方式和文化记忆。'
+        },
+        {
+            id: 'c069',
+            title: '上海外滩 (Shanghai Bund)',
+            titleMeaning: 'Shanghai Bund',
+            category: 'Regional',
+            icon: '🌃',
+            content: '上海外滩位于黄浦江畔，是上海最著名的地标之一。外滩一边是百年历史的欧式建筑群——"万国建筑博览群"，另一边是浦东的现代化摩天大楼。夜晚的外滩灯火辉煌，非常美丽。外滩见证了上海从一个小渔村发展为国际大都市的历史。每天都有无数游客在外滩拍照留念。外滩代表着上海的过去、现在和未来。',
+            keyPhrases: ['外滩', '黄浦江', '浦东', '万国建筑', '夜景'],
+            significance: '外滩是上海城市精神的象征——中西交融，古今辉映。'
+        },
+        {
+            id: 'c070',
+            title: '四川火锅文化 (Sichuan Hotpot Culture)',
+            titleMeaning: 'Sichuan Hotpot Culture',
+            category: 'Regional',
+            icon: '🫕',
+            content: '四川火锅是中国最受欢迎的饮食方式之一。火锅的汤底用大量的辣椒和花椒，吃起来又麻又辣，让人欲罢不能。吃火锅是一种社交活动——大家围坐在一起，把各种食材放进沸腾的锅里涮着吃。常见的火锅食材有牛肉、羊肉、毛肚、豆腐、蔬菜等。四川人吃火锅不分季节，夏天开着空调也要吃。重庆火锅和成都火锅各有特色。',
+            keyPhrases: ['火锅', '麻辣', '辣椒', '花椒', '毛肚', '重庆'],
+            significance: '四川火锅体现了四川人热情豪爽的性格和独特的饮食文化。'
+        },
+        {
+            id: 'c071',
+            title: '广东早茶 (Cantonese Morning Tea)',
+            titleMeaning: 'Cantonese Morning Tea Culture',
+            category: 'Regional',
+            icon: '🫖',
+            content: '广东早茶是广东饮食文化中最有特色的部分。喝早茶不只是喝茶，更是吃各种精致的点心——虾饺、烧卖、叉烧包、凤爪、肠粉等等。广东人喜欢在周末和家人朋友一起去茶楼"饮茶"。茶楼里热闹非凡，服务员推着小车来回送点心。喝早茶是广东人社交和休闲的重要方式。',
+            keyPhrases: ['早茶', '点心', '虾饺', '烧卖', '叉烧包', '饮茶'],
+            significance: '广东早茶文化体现了岭南饮食文化的精致和广东人对生活的热爱。'
+        },
+        {
+            id: 'c072',
+            title: '云南少数民族 (Yunnan Ethnic Minorities)',
+            titleMeaning: 'Yunnan Ethnic Minorities',
+            category: 'Regional',
+            icon: '🌄',
+            content: '云南是中国少数民族最多的省份，有25个少数民族。其中比较有名的有傣族（泼水节）、白族（大理古城）、彝族（火把节）、纳西族（东巴文化）。每个民族都有自己的语言、服装、节日和习俗。云南的民族多样性形成了丰富多彩的文化景观。丽江古城和香格里拉是著名的旅游目的地。保护少数民族文化是中国的重要政策。',
+            keyPhrases: ['少数民族', '傣族', '彝族', '泼水节', '丽江', '多样性'],
+            significance: '云南的民族文化多样性是中华文化宝库中的璀璨明珠。'
+        },
+        {
+            id: 'c073',
+            title: '中国园林艺术 (Chinese Garden Art)',
+            titleMeaning: 'Chinese Garden Art',
+            category: 'Culture',
+            icon: '🏯',
+            content: '中国园林是世界园林艺术的重要流派。苏州园林是中国园林的代表，如拙政园、留园、狮子林等。中国园林讲究"虽由人作，宛自天开"，追求自然与人工的完美结合。园林中有假山、水池、亭台、楼阁、曲径通幽。中国园林体现了道家"天人合一"的哲学思想。苏州园林被联合国列为世界文化遗产。',
+            keyPhrases: ['园林', '苏州', '拙政园', '假山', '天人合一'],
+            significance: '中国园林艺术体现了中国人对自然美的追求和哲学智慧。'
+        },
+        {
+            id: 'c074',
+            title: '中国瓷器文化 (Chinese Porcelain)',
+            titleMeaning: 'Chinese Porcelain Culture',
+            category: 'Culture',
+            icon: '🏺',
+            content: '中国是瓷器的故乡，英文"China"就是瓷器的意思。中国瓷器有几千年的历史，景德镇是"瓷都"。瓷器分为青花瓷、粉彩瓷、白瓷等多种类型。青花瓷蓝白相间，典雅大方，是最有名的中国瓷器。古代中国瓷器通过丝绸之路出口到世界各地，是中国文化的重要使者。现在，精美的古瓷器在拍卖会上价值连城。',
+            keyPhrases: ['瓷器', '景德镇', '青花瓷', '丝绸之路', 'China'],
+            significance: '瓷器是中国古代文明的象征，代表了中国工艺技术的巅峰。'
+        },
+        {
+            id: 'c075',
+            title: '中国春节庙会 (Temple Fair)',
+            titleMeaning: 'Chinese New Year Temple Fair',
+            category: 'Festivals',
+            icon: '🎪',
+            content: '庙会是春节期间最热闹的民俗活动之一。在庙会上，有各种传统的表演——舞龙、舞狮、踩高跷、扭秧歌。还有很多小吃摊位——糖葫芦、炸糕、羊肉串等等。孩子们可以在庙会上买玩具、玩游戏。庙会充满了浓浓的年味，是中国人春节记忆中不可缺少的一部分。北京的地坛庙会和龙潭庙会最有名。',
+            keyPhrases: ['庙会', '舞龙', '舞狮', '糖葫芦', '年味'],
+            significance: '庙会集中展示了中国民间艺术的活力和春节的喜庆氛围。'
         }
     ],
 

@@ -452,6 +452,19 @@ select:focus,
 
 /* -- Tablet: 769-1024px -- */
 @media (max-width: 1024px) {
+    /* Dashboard columns stack on tablet */
+    .dashboard-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-col-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    
+    .greeting { font-size: 24px; }
+    
     .main-nav {
         width: 240px;
     }
@@ -465,22 +478,6 @@ select:focus,
         margin-left: 240px;
         padding: 16px 20px 20px;
         padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-    }
-
-    .dashboard-columns {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .dashboard-col-side {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-
-    .dashboard-col-side .smart-review-section,
-    .dashboard-col-side .analytics-dashboard {
-        margin-top: 0;
     }
 
     .action-cards {
@@ -512,6 +509,10 @@ select:focus,
 
 /* -- Phone: max-width 768px -- */
 @media (max-width: 768px) {
+    .dashboard-hero { margin-bottom: 20px; }
+    .greeting { font-size: 22px; }
+    .greeting-subtitle { font-size: 14px; }
+    
     /* Show hamburger */
     .mobile-nav-toggle {
         display: flex;
@@ -565,11 +566,6 @@ select:focus,
     .dashboard-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-    }
-
-    .dashboard-columns {
-        grid-template-columns: 1fr;
-        gap: 16px;
     }
 
     .dashboard-col-side {
@@ -1049,6 +1045,8 @@ select:focus,
 
 /* -- Small phone: max-width 480px -- */
 @media (max-width: 480px) {
+    .greeting { font-size: 19px; }
+    
     .main-nav {
         width: 100%;
         padding-bottom: env(safe-area-inset-bottom, 0px);
