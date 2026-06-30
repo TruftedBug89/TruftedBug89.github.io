@@ -395,7 +395,7 @@
 
 .tone-number.active {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+    box-shadow: 0 0 20px rgba(196, 32, 32, 0.5);
 }
 
 .tone-1 { background: #e74c3c; color: white; }
@@ -767,8 +767,8 @@
 }
 
 .achievement-badge.gold {
-    background: linear-gradient(135deg, #ffd700, #daa520);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background: var(--gradient-secondary, linear-gradient(135deg, #c9a84c, #a88a3a));
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
 }
 
 .achievement-badge.silver {
@@ -1205,7 +1205,7 @@
 .level-chinese {
     display: block;
     font-size: var(--font-size-sm);
-    color: rgba(255,255,255,0.8);
+    color: var(--text-primary, #e8e0d5);
 }
 
 .level-details {

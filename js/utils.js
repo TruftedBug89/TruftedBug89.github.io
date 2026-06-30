@@ -271,8 +271,20 @@ const Utils = {
         oscillator.stop(audioContext.currentTime + 0.5);
     },
 
-    // Animate number counting
+    // Animate number counting (GSAP if available, vanilla fallback)
     animateNumber(element, target, duration = 1000) {
+        if (!element) return;
+        if (typeof gsap !== 'undefined') {
+            var gsapStart = parseInt(element.textContent) || 0;
+            gsap.fromTo(element, { textContent: gsapStart }, {
+                textContent: target,
+                duration: duration / 1000,
+                ease: 'power3.out',
+                snap: { textContent: 1 },
+                onUpdate: function() { element.textContent = Math.round(element.textContent); }
+            });
+            return;
+        }
         const start = parseInt(element.textContent) || 0;
         const increment = (target - start) / (duration / 16);
         let current = start;

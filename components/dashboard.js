@@ -6,6 +6,9 @@ const Dashboard = {
     // Initialize dashboard
     init() {
         this.update();
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.textSplitReveal) {
+            InkAnimations.textSplitReveal('.greeting');
+        }
     },
 
     // Update dashboard data
@@ -49,10 +52,16 @@ const Dashboard = {
             'total-xp': stats.totalXp
         };
 
-        Object.entries(elements).forEach(([id, value]) => {
+        var useGSAP = typeof InkAnimations !== 'undefined' && InkAnimations.countUp;
+
+        Object.entries(elements).forEach(([id, value], idx) => {
             const element = document.getElementById(id);
             if (element) {
-                Utils.animateNumber(element, value);
+                if (useGSAP) {
+                    InkAnimations.countUp(element, value, 1.0 + idx * 0.15);
+                } else {
+                    Utils.animateNumber(element, value);
+                }
             }
         });
     },
@@ -65,24 +74,37 @@ const Dashboard = {
         const nextLevelXp = document.getElementById('next-level-xp');
 
         if (levelElement) levelElement.textContent = levelInfo.level;
-        if (xpProgress) xpProgress.style.width = `${levelInfo.progress}%`;
+        var useGSAP = typeof InkAnimations !== 'undefined' && InkAnimations.animateXP;
+        var fromPct = xpProgress ? parseFloat(xpProgress.style.width) || 0 : 0;
+        if (xpProgress) {
+            if (useGSAP) {
+                InkAnimations.animateXP(fromPct, levelInfo.progress);
+            } else {
+                xpProgress.style.width = `${levelInfo.progress}%`;
+            }
+        }
         if (currentXp) currentXp.textContent = levelInfo.currentXp;
         if (nextLevelXp) nextLevelXp.textContent = levelInfo.nextLevelXp;
     },
 
     // Update daily goal
     updateDailyGoal(dailyGoal) {
-        // Update goal ring
-        const goalFill = document.getElementById('goal-fill');
-        if (goalFill) {
-            const circumference = 2 * Math.PI * 40;
-            const offset = circumference - (dailyGoal.overall / 100) * circumference;
-            goalFill.style.strokeDashoffset = offset;
-        }
+        var goalFill = document.getElementById('goal-fill');
+        var goalPercent = document.getElementById('goal-percent');
 
-        // Update goal percentage
-        const goalPercent = document.getElementById('goal-percent');
-        if (goalPercent) goalPercent.textContent = dailyGoal.overall;
+        if (goalFill) {
+            var circumference = 2 * Math.PI * 40;
+            goalFill.style.strokeDasharray = circumference;
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.animateGoalRing && !this._goalRingAnimated) {
+                this._goalRingAnimated = true;
+                InkAnimations.animateGoalRing(dailyGoal.overall);
+            } else {
+                goalFill.style.strokeDashoffset = circumference - (dailyGoal.overall / 100) * circumference;
+                if (goalPercent) goalPercent.textContent = dailyGoal.overall;
+            }
+        } else if (goalPercent) {
+            goalPercent.textContent = dailyGoal.overall;
+        }
 
         // Update individual goals
         const goalListening = document.getElementById('goal-listening');

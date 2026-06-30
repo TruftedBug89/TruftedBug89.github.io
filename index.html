@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="中文大师 — A free Chinese learning tool with vocabulary (HSK 1-5), listening, reading, grammar, and speaking practice, with spaced-repetition flashcards and per-learner progress saved locally.">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#080812">
     <meta name="color-scheme" content="dark light">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
@@ -42,22 +42,27 @@
     <link rel="stylesheet" href="css/pinyin-toggle.css">
     <link rel="stylesheet" href="css/components-learner.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Service worker for offline-first PWA -->
     <script src="js/register-sw.js" defer></script>
 </head>
 <body class="theme-dark">
-    <!-- Ambient Background -->
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Ink Wash Ambient Background -->
     <div class="ambient-bg" aria-hidden="true">
         <div class="ambient-orb"></div>
         <div class="ambient-orb"></div>
         <div class="ambient-orb"></div>
     </div>
     <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="ink-texture" aria-hidden="true"></div>
 
     <div id="app">
-        <!-- Loading Screen -->
+        <!-- Loading Screen — Brush-stroke reveal -->
         <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
             <div class="loading-content">
                 <div class="loading-logo">
@@ -71,7 +76,10 @@
                     <div class="loading-pulse-ring"></div>
                     <div class="loading-pulse-ring"></div>
                 </div>
-                <p class="loading-text">Preparing your Chinese journey…</p>
+                <p class="loading-text">磨墨 · Preparing your journey…</p>
+                <div class="ink-loading-bar">
+                    <div class="ink-loading-fill" id="ink-loading-fill"></div>
+                </div>
             </div>
         </div>
 
@@ -173,10 +181,14 @@
         </nav>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content">
+            <!-- Scroll Progress Bar -->
+            <div class="scroll-progress" aria-hidden="true">
+                <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
+            </div>
             <!-- Dashboard Module -->
             <section id="module-dashboard" class="module active">
-                <div class="dashboard-hero">
+                <div class="dashboard-hero gsap-reveal">
                     <div class="greeting-row">
                         <h1 class="greeting" id="greeting">Welcome back!</h1>
                         <span class="greeting-emoji" aria-hidden="true">👋</span>
@@ -185,38 +197,50 @@
                 </div>
 
                 <!-- Stats Grid -->
+                <svg class="brush-divider" viewBox="0 0 800 12" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:14px;margin:8px 0 24px;">
+                    <path class="brush-stroke-path" d="M0,6 Q100,2 200,5 Q350,9 500,4 Q650,1 800,6" fill="none" stroke="#c42020" stroke-width="1.5" opacity="0.3"/>
+                </svg>
                 <div class="dashboard-grid stagger-children">
-                    <div class="stats-card card-glow">
+                    <div class="stats-card card-glow gsap-reveal-scale">
                         <div class="stats-icon" aria-hidden="true">📚</div>
                         <div class="stats-value" id="total-words">0</div>
                         <div class="stats-label">Words Learned</div>
                     </div>
-                    <div class="stats-card card-glow">
+                    <div class="stats-card card-glow gsap-reveal-scale">
                         <div class="stats-icon" aria-hidden="true">🎧</div>
                         <div class="stats-value" id="listening-completed">0</div>
                         <div class="stats-label">Listening Done</div>
                     </div>
-                    <div class="stats-card card-glow">
+                    <div class="stats-card card-glow gsap-reveal-scale">
                         <div class="stats-icon" aria-hidden="true">📖</div>
                         <div class="stats-value" id="reading-completed">0</div>
                         <div class="stats-label">Reading Done</div>
                     </div>
-                    <div class="stats-card card-glow">
+                    <div class="stats-card card-glow gsap-reveal-scale">
                         <div class="stats-icon" aria-hidden="true">⭐</div>
                         <div class="stats-value" id="total-xp">0</div>
                         <div class="stats-label">Total XP</div>
                     </div>
                 </div>
+                <svg class="brush-divider" viewBox="0 0 800 12" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:14px;margin:24px 0 12px;">
+                    <path class="brush-stroke-path" d="M0,5 Q250,8 400,3 Q550,1 800,6" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.25"/>
+                </svg>
 
-                <!-- Two-column layout for goal + quick actions -->
+                <!-- Two-column layout -->
                 <div class="dashboard-columns">
                     <div class="dashboard-col-main">
                         <!-- Daily Goal -->
-                        <div class="daily-goal-section card-lift">
+                        <div class="daily-goal-section card-lift gsap-reveal">
                             <h2>Today's Goal</h2>
                             <div class="goal-progress">
                                 <div class="goal-ring" aria-hidden="true">
                                     <svg viewBox="0 0 100 100">
+                                        <defs>
+                                            <linearGradient id="goal-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                <stop offset="0%" stop-color="#c42020"/>
+                                                <stop offset="100%" stop-color="#e84040"/>
+                                            </linearGradient>
+                                        </defs>
                                         <circle class="goal-bg" cx="50" cy="50" r="40"></circle>
                                         <circle id="goal-fill" class="goal-fill" cx="50" cy="50" r="40"></circle>
                                     </svg>
@@ -242,7 +266,7 @@
                         </div>
 
                         <!-- Quick Start -->
-                        <div class="quick-actions">
+                        <div class="quick-actions gsap-reveal">
                             <h2>Quick Start</h2>
                             <div class="action-cards">
                                 <div class="action-card card-glow" data-action="listening-challenge" role="button" tabindex="0">
@@ -271,7 +295,7 @@
 
                     <div class="dashboard-col-side">
                         <!-- Smart Review -->
-                        <div class="smart-review-section card-lift">
+                        <div class="smart-review-section card-lift gsap-reveal-right">
                             <h2>🧠 Smart Review</h2>
                             <p class="section-desc">AI-powered review based on your mistakes and learning patterns</p>
                             <div class="review-actions">
@@ -279,22 +303,20 @@
                                 <button class="btn btn-secondary btn-press" id="view-mistakes" type="button">View Mistakes</button>
                             </div>
                             <div id="review-stats" class="review-stats">
-                                <!-- Review stats loaded dynamically -->
                             </div>
                         </div>
 
                         <!-- Analytics -->
-                        <div class="analytics-dashboard card-lift">
+                        <div class="analytics-dashboard card-lift gsap-reveal-right">
                             <h2>📈 Performance</h2>
                             <div id="analytics-content">
-                                <!-- Analytics loaded dynamically -->
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Recent Activity -->
-                <div class="recent-activity">
+                <div class="recent-activity gsap-reveal">
                     <h2>Recent Activity</h2>
                     <div id="activity-list" class="activity-list">
                         <div class="activity-empty">
@@ -311,42 +333,42 @@
                     <h1>🎧 Listening Module</h1>
                     <p class="module-subtitle">Train your ear to understand Chinese</p>
                 </div>
-                <div id="listening-menu" class="listening-menu">
+                <div id="listening-menu" class="listening-menu ink-stagger">
                     <div class="exercise-type-card card-glow" data-type="dictation">
                         <div class="type-icon" aria-hidden="true">✍️</div>
                         <h3>Dictation</h3>
                         <p>Listen and type what you hear</p>
-                        <div class="type-difficulty">Medium-Hard</div>
+                        <div class="type-difficulty medium-hard">Medium-Hard</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="comprehension">
                         <div class="type-icon" aria-hidden="true">🤔</div>
                         <h3>Comprehension</h3>
                         <p>Listen and answer questions</p>
-                        <div class="type-difficulty">Medium</div>
+                        <div class="type-difficulty medium">Medium</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="minimal-pairs">
                         <div class="type-icon" aria-hidden="true">🔊</div>
                         <h3>Minimal Pairs</h3>
                         <p>Distinguish similar sounds</p>
-                        <div class="type-difficulty">Medium</div>
+                        <div class="type-difficulty medium">Medium</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="dialogue">
                         <div class="type-icon" aria-hidden="true">💬</div>
                         <h3>Dialogue Practice</h3>
                         <p>Listen to conversations</p>
-                        <div class="type-difficulty">Medium-Hard</div>
+                        <div class="type-difficulty medium-hard">Medium-Hard</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="speed-listening">
                         <div class="type-icon" aria-hidden="true">⚡</div>
                         <h3>Speed Listening</h3>
                         <p>Train for fast speech</p>
-                        <div class="type-difficulty">Hard</div>
+                        <div class="type-difficulty hard">Hard</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="shadowing">
                         <div class="type-icon" aria-hidden="true">👥</div>
                         <h3>Shadowing</h3>
                         <p>Repeat after the audio</p>
-                        <div class="type-difficulty">Medium</div>
+                        <div class="type-difficulty medium">Medium</div>
                     </div>
                 </div>
 
@@ -375,42 +397,42 @@
                     <h1>📖 Reading Module</h1>
                     <p class="module-subtitle">Build your Chinese reading skills</p>
                 </div>
-                <div id="reading-menu" class="reading-menu">
+                <div id="reading-menu" class="reading-menu ink-stagger">
                     <div class="exercise-type-card card-glow" data-type="character-match">
                         <div class="type-icon" aria-hidden="true">🔤</div>
                         <h3>Character Match</h3>
                         <p>Match characters to meanings</p>
-                        <div class="type-difficulty">Easy</div>
+                        <div class="type-difficulty easy">Easy</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="sentence-completion">
                         <div class="type-icon" aria-hidden="true">✏️</div>
                         <h3>Sentence Completion</h3>
                         <p>Fill in the blanks</p>
-                        <div class="type-difficulty">Medium</div>
+                        <div class="type-difficulty medium">Medium</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="passage-reading">
                         <div class="type-icon" aria-hidden="true">📄</div>
                         <h3>Passage Reading</h3>
                         <p>Read and understand texts</p>
-                        <div class="type-difficulty">Medium-Hard</div>
+                        <div class="type-difficulty medium-hard">Medium-Hard</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="speed-reading">
                         <div class="type-icon" aria-hidden="true">⚡</div>
                         <h3>Speed Reading</h3>
                         <p>Timed reading challenges</p>
-                        <div class="type-difficulty">Hard</div>
+                        <div class="type-difficulty hard">Hard</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="radical-learn">
                         <div class="type-icon" aria-hidden="true">🧩</div>
                         <h3>Radical Learning</h3>
                         <p>Learn character components</p>
-                        <div class="type-difficulty">Medium</div>
+                        <div class="type-difficulty medium">Medium</div>
                     </div>
                     <div class="exercise-type-card card-glow" data-type="context-clues">
                         <div class="type-icon" aria-hidden="true">🔍</div>
                         <h3>Context Clues</h3>
                         <p>Infer meaning from context</p>
-                        <div class="type-difficulty">Medium-Hard</div>
+                        <div class="type-difficulty medium-hard">Medium-Hard</div>
                     </div>
                 </div>
 
@@ -487,7 +509,7 @@
                     <h1>🎤 Speaking Module</h1>
                     <p class="module-subtitle">Practice your pronunciation and speaking skills</p>
                 </div>
-                <div id="speaking-menu" class="speaking-menu">
+                <div id="speaking-menu" class="speaking-menu ink-stagger">
                     <div class="exercise-type-card card-glow" data-type="pronunciation">
                         <div class="type-icon" aria-hidden="true">🗣️</div>
                         <h3>Pronunciation</h3>
@@ -525,7 +547,7 @@
                     <h1>🏆 Achievements</h1>
                     <p class="module-subtitle">Track your milestones and rewards</p>
                 </div>
-                <div class="achievements-grid" id="achievements-grid">
+                <div class="achievements-grid ink-stagger" id="achievements-grid">
                 </div>
             </section>
 
@@ -583,6 +605,13 @@
     <script src="data/dialogues.js"></script>
     <script src="data/cultural.js"></script>
 
+    <!-- Vendor Libraries (self-hosted, CSP-safe) -->
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
+
+    <!-- Error Logger -->
+    <script src="js/error-logger.js"></script>
+
     <!-- Scripts - Core JS -->
     <script src="js/utils.js"></script>
     <script src="js/session.js"></script>
@@ -606,6 +635,10 @@
     <script src="components/analytics.js"></script>
     <script src="components/vocabulary-learner.js"></script>
     <script src="components/session-manager-ui.js"></script>
+    <script src="components/cookie-banner.js"></script>
+
+    <!-- Scripts - Animation Engine -->
+    <script src="js/animations.js"></script>
 
     <!-- Scripts - Main App -->
     <script src="js/app.js"></script>

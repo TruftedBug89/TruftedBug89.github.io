@@ -145,6 +145,9 @@ const App = {
 
     // Navigate to a module
     navigateTo(module) {
+        // Capture old module for animated transition
+        var oldModuleEl = document.querySelector('.module.active');
+
         // Update active states
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
@@ -164,6 +167,11 @@ const App = {
             targetModule.classList.add('active');
         }
 
+        // Animated page transition (GSAP if available)
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.pageTransition && oldModuleEl && oldModuleEl !== targetModule) {
+            InkAnimations.pageTransition(oldModuleEl, targetModule);
+        }
+
         // Reset any sub-containers that might be stuck in an exercise view
         this.resetModuleSubviews(module);
         
@@ -178,6 +186,11 @@ const App = {
         // Update dashboard if needed
         if (module === 'dashboard') {
             Dashboard.update();
+        }
+
+        // Trigger scroll-reveal on new module's gsap-reveal elements
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
         }
     },
 
@@ -342,16 +355,28 @@ const App = {
             if (mainNav) mainNav.classList.add('hidden');
             if (mobileToggle) mobileToggle.style.display = 'flex';
         }
-         
-        if (loadingScreen) {
-            loadingScreen.classList.add('fade-out');
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }
         
-        // Initialize dashboard
-        Dashboard.init();
+        // Use GSAP-powered loader if available, otherwise fall back to CSS
+        const onHidden = () => {
+            if (mainNav && window.innerWidth > 768) {
+                mainNav.classList.add('fade-in');
+            }
+            Dashboard.init();
+        };
+        
+        if (loadingScreen) {
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.hideLoader) {
+                InkAnimations.hideLoader(onHidden);
+            } else {
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    onHidden();
+                }, 500);
+            }
+        } else {
+            onHidden();
+        }
     },
 
     // Mobile nav
