@@ -177,3 +177,14 @@ const TopicTravel = {
 };
 
 window.TopicTravel = TopicTravel;
+
+(function() {
+    if (typeof VocabularyData !== 'undefined' && TopicTravel.words) {
+        TopicTravel.words.forEach(function(w) {
+            if (!VocabularyData.words.find(function(vw) { return vw.character === w.character; })) {
+                VocabularyData.words.push(w);
+            }
+        });
+        VocabularyData.count = VocabularyData.words.length;
+    }
+})();

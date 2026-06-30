@@ -754,6 +754,166 @@ const GrammarData = {
                     options: ['越...越', '又...又', '很...很', '非常...非常']
                 }
             ]
+        },
+        {
+            id: 'g026',
+            title: '除了...以外 (chúle...yǐwài)',
+            titleMeaning: 'Except / besides',
+            level: 'HSK 4',
+            pattern: '除了 + Noun/Verb + 以外, ...都/也...',
+            explanation: '"除了...以外"表示排除或补充。后面加"都"表示"除了...都(不)"，加"也"或"还"表示"除了...也/还"。',
+            examples: [
+                {
+                    chinese: '除了我以外，大家都去了。',
+                    pinyin: 'chúle wǒ yǐwài, dàjiā dōu qù le.',
+                    meaning: 'Except for me, everyone went.'
+                },
+                {
+                    chinese: '除了中文以外，他还会说日文。',
+                    pinyin: 'chúle zhōngwén yǐwài, tā hái huì shuō rìwén.',
+                    meaning: 'Besides Chinese, he can also speak Japanese.'
+                },
+                {
+                    chinese: '除了看书以外，我也喜欢运动。',
+                    pinyin: 'chúle kàn shū yǐwài, wǒ yě xǐhuān yùndòng.',
+                    meaning: 'Besides reading, I also like sports.'
+                }
+            ],
+            practice: [
+                {
+                    question: '___中文___，他___说英文。',
+                    answer: '除了...以外...还',
+                    options: ['除了...以外...还', '不但...而且...', '虽然...但是...', '因为...所以...']
+                }
+            ]
+        },
+        {
+            id: 'g027',
+            title: '被 (bèi) - Passive voice',
+            titleMeaning: 'Passive marker',
+            level: 'HSK 4',
+            pattern: 'Receiver + 被 + Doer + Verb + Complement',
+            explanation: '"被"表示被动，动作的承受者在前，动作的发出者在后。用于描述不好的或出乎意料的情况。',
+            examples: [
+                {
+                    chinese: '我的手机被偷了。',
+                    pinyin: 'wǒ de shǒujī bèi tōu le.',
+                    meaning: 'My phone was stolen.'
+                },
+                {
+                    chinese: '他被老师批评了。',
+                    pinyin: 'tā bèi lǎoshī pīpíng le.',
+                    meaning: 'He was criticized by the teacher.'
+                },
+                {
+                    chinese: '窗户被风吹开了。',
+                    pinyin: 'chuānghu bèi fēng chuī kāi le.',
+                    meaning: 'The window was blown open by the wind.'
+                }
+            ],
+            practice: [
+                {
+                    question: '我的书___他拿走__。',
+                    answer: '被...了',
+                    options: ['被...了', '把...了', '让...了', '给...了']
+                }
+            ]
+        },
+        {
+            id: 'g028',
+            title: '只要...就 (zhǐyào...jiù)',
+            titleMeaning: 'As long as / if only',
+            level: 'HSK 4',
+            pattern: '只要 + Condition + 就 + Result',
+            explanation: '"只要...就"表示充分条件，只要前面的条件满足，后面的结果就会出现。',
+            examples: [
+                {
+                    chinese: '只要你努力，就一定能成功。',
+                    pinyin: 'zhǐyào nǐ nǔlì, jiù yīdìng néng chénggōng.',
+                    meaning: 'As long as you work hard, you will definitely succeed.'
+                },
+                {
+                    chinese: '只要不下雨，我们就去公园。',
+                    pinyin: 'zhǐyào bù xià yǔ, wǒmen jiù qù gōngyuán.',
+                    meaning: 'As long as it doesn\'t rain, we\'ll go to the park.'
+                },
+                {
+                    chinese: '只要每天练习，中文就会进步。',
+                    pinyin: 'zhǐyào měitiān liànxí, zhōngwén jiù huì jìnbù.',
+                    meaning: 'As long as you practice every day, your Chinese will improve.'
+                }
+            ],
+            practice: [
+                {
+                    question: '___多听___能提高听力。',
+                    answer: '只要...就',
+                    options: ['只要...就', '只有...才', '因为...所以', '虽然...但是']
+                }
+            ]
+        },
+        {
+            id: 'g029',
+            title: '连...都/也 (lián...dōu/yě)',
+            titleMeaning: 'Even',
+            level: 'HSK 4',
+            pattern: '连 + ExtremeExample + 都/也 + Verb',
+            explanation: '"连...都/也"用来举出一个极端的例子，强调连这个最不可能的情况都发生了，其他更不用说了。',
+            examples: [
+                {
+                    chinese: '他连早饭都没吃就去上班了。',
+                    pinyin: 'tā lián zǎofàn dōu méi chī jiù qù shàngbān le.',
+                    meaning: 'He went to work without even eating breakfast.'
+                },
+                {
+                    chinese: '连小孩都知道这个道理。',
+                    pinyin: 'lián xiǎohái dōu zhīdào zhège dàolǐ.',
+                    meaning: 'Even children know this principle.'
+                },
+                {
+                    chinese: '我连他的名字都忘了。',
+                    pinyin: 'wǒ lián tā de míngzi dōu wàng le.',
+                    meaning: 'I even forgot his name.'
+                }
+            ],
+            practice: [
+                {
+                    question: '他___谢谢___没说就走了。',
+                    answer: '连...都',
+                    options: ['连...都', '虽然...但', '不但...而且', '除了...以外']
+                }
+            ]
+        },
+        {
+            id: 'g030',
+            title: '既...又 (jì...yòu)',
+            titleMeaning: 'Both...and',
+            level: 'HSK 4',
+            pattern: '既 + Adj/Verb1 + 又 + Adj/Verb2',
+            explanation: '"既...又"用来连接两个并列的成分，表示同时具有两种性质或同时进行两个动作。',
+            examples: [
+                {
+                    chinese: '这个房间既干净又漂亮。',
+                    pinyin: 'zhège fángjiān jì gānjìng yòu piàoliang.',
+                    meaning: 'This room is both clean and beautiful.'
+                },
+                {
+                    chinese: '她既聪明又努力。',
+                    pinyin: 'tā jì cōngmíng yòu nǔlì.',
+                    meaning: 'She is both smart and hardworking.'
+                },
+                {
+                    chinese: '这家餐厅既好吃又便宜。',
+                    pinyin: 'zhè jiā cāntīng jì hǎochī yòu piányi.',
+                    meaning: 'This restaurant is both delicious and cheap.'
+                }
+            ],
+            practice: [
+                {
+                    question: '他___高___帅。',
+                    answer: '既...又',
+                    options: ['既...又', '又...又', '越...越', '连...都']
+                }
+            ]
         }
     ],
 

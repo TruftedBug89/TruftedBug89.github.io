@@ -1562,6 +1562,128 @@ const ReadingData = {
                     correct: 1
                 }
             ]
+        },
+        {
+            id: 'r106',
+            type: 'speed-reading',
+            difficulty: 'medium',
+            title: 'Shopping',
+            passage: '我去超市买东西。买了一斤苹果、两瓶牛奶和三个面包。一共花了五十块钱。',
+            timeLimit: 15,
+            questions: [
+                { question: '他买了什么水果？', options: ['苹果', '香蕉', '橘子', '西瓜'], correct: 0 },
+                { question: '花了多少钱？', options: ['三十块', '四十块', '五十块', '六十块'], correct: 2 }
+            ]
+        },
+        {
+            id: 'r107',
+            type: 'speed-reading',
+            difficulty: 'medium',
+            title: 'Weather Report',
+            passage: '明天北京天气晴，温度二十到二十五度。上海有小雨，温度十八到二十二度。广州多云，温度二十五到三十度。',
+            timeLimit: 15,
+            questions: [
+                { question: '明天北京天气怎么样？', options: ['下雨', '晴天', '多云', '下雪'], correct: 1 },
+                { question: '哪个城市最热？', options: ['北京', '上海', '广州', '都一样'], correct: 2 }
+            ]
+        },
+        {
+            id: 'r108',
+            type: 'speed-reading',
+            difficulty: 'medium',
+            title: 'Dining Out',
+            passage: '晚上我和三个朋友去餐厅吃饭。我们要了四个菜：鸡肉、牛肉、青菜和豆腐。还喝了两瓶啤酒。这家餐厅的菜很好吃，也不贵。',
+            timeLimit: 15,
+            questions: [
+                { question: '几个人去吃饭？', options: ['两个', '三个', '四个', '五个'], correct: 2 },
+                { question: '他们喝什么？', options: ['水', '啤酒', '茶', '咖啡'], correct: 1 }
+            ]
+        },
+        {
+            id: 'r109',
+            type: 'speed-reading',
+            difficulty: 'hard',
+            title: 'Travel Plan',
+            passage: '下个月我要去中国旅行。先坐飞机到北京，在北京玩三天。然后坐高铁去上海，在上海待两天。最后从上海飞回美国。我很期待这次旅行。',
+            timeLimit: 20,
+            questions: [
+                { question: '他先去哪个城市？', options: ['上海', '北京', '广州', '深圳'], correct: 1 },
+                { question: '他怎么去上海？', options: ['飞机', '火车', '高铁', '汽车'], correct: 2 },
+                { question: '一共旅行几天？', options: ['三天', '四天', '五天', '七天'], correct: 2 }
+            ]
+        },
+        {
+            id: 'r110',
+            type: 'speed-reading',
+            difficulty: 'hard',
+            title: 'Job Interview',
+            passage: '王先生去一家公司面试。面试官问了他很多问题，比如工作经验、学历和爱好。王先生回答得很好，面试官很满意。下周一他会知道结果。',
+            timeLimit: 20,
+            questions: [
+                { question: '王先生去做什么？', options: ['上班', '面试', '开会', '旅行'], correct: 1 },
+                { question: '面试官觉得怎么样？', options: ['不满意', '有点满意', '很满意', '没说话'], correct: 2 },
+                { question: '什么时候知道结果？', options: ['明天', '下周一', '下个月', '明年'], correct: 1 }
+            ]
+        },
+        {
+            id: 'r111',
+            type: 'speed-reading',
+            difficulty: 'medium',
+            title: 'Library Rules',
+            passage: '图书馆里不能大声说话，不能吃东西，也不能打电话。可以看书、学习和用电脑。一次可以借五本书，三个星期后要还。',
+            timeLimit: 15,
+            questions: [
+                { question: '图书馆可以做什么？', options: ['打电话', '吃东西', '大声说话', '用电脑'], correct: 3 },
+                { question: '能借几本书？', options: ['三本', '四本', '五本', '六本'], correct: 2 }
+            ]
+        },
+        {
+            id: 'r112',
+            type: 'speed-reading',
+            difficulty: 'easy',
+            title: 'Daily Routine',
+            passage: '小明每天早上七点起床。他先刷牙洗脸，然后吃早饭。八点坐公交车去学校。上午上四节课，中午在学校吃饭，下午再上两节课。四点放学回家。',
+            timeLimit: 15,
+            questions: [
+                { question: '小明怎么去学校？', options: ['走路', '坐公交车', '骑自行车', '坐地铁'], correct: 1 },
+                { question: '他几点放学？', options: ['三点', '四点', '五点', '六点'], correct: 1 }
+            ]
+        },
+        {
+            id: 'r113',
+            type: 'speed-reading',
+            difficulty: 'hard',
+            title: 'Technology Talk',
+            passage: '现在的手机功能很多，不但可以打电话、发短信，还可以上网、拍照、看视频、导航。很多年轻人每天花很多时间在手机上。有人说手机让我们的生活更方便，也有人说手机让我们更孤独。',
+            timeLimit: 25,
+            questions: [
+                { question: '手机不能做什么？', options: ['打电话', '拍照', '做饭', '导航'], correct: 2 },
+                { question: '有人认为手机让我们更__？', options: ['开心', '孤独', '健康', '聪明'], correct: 1 }
+            ]
+        },
+        {
+            id: 'r114',
+            type: 'speed-reading',
+            difficulty: 'medium',
+            title: 'Market Shopping',
+            passage: '周末我喜欢去菜市场买菜。那里的菜比超市新鲜，也便宜一点。我经常买青菜、土豆和鸡蛋。有时候也买鱼和豆腐。老板人很好，总是多给我一点。',
+            timeLimit: 18,
+            questions: [
+                { question: '他为什么去菜市场？', options: ['近', '便宜新鲜', '大', '好玩'], correct: 1 },
+                { question: '老板怎么样？', options: ['很凶', '很好', '很忙', '不说话'], correct: 1 }
+            ]
+        },
+        {
+            id: 'r115',
+            type: 'speed-reading',
+            difficulty: 'easy',
+            title: 'Birthday Party',
+            passage: '今天是我的生日。妈妈给我做了一个蛋糕，爸爸送我一本书。朋友们来我家玩，我们一起唱歌、吃蛋糕、做游戏。今天我过得非常开心。',
+            timeLimit: 12,
+            questions: [
+                { question: '谁给他做了蛋糕？', options: ['爸爸', '妈妈', '朋友', '自己'], correct: 1 },
+                { question: '他今天感觉怎么样？', options: ['不开心', '一般', '非常开心', '很累'], correct: 2 }
+            ]
         }
     ],
 
@@ -1646,6 +1768,166 @@ const ReadingData = {
                 { char: '她', meaning: 'she' },
                 { char: '姓', meaning: 'surname' }
             ]
+        },
+        {
+            id: 'r116',
+            type: 'radical-learn',
+            difficulty: 'medium',
+            radical: '讠',
+            radicalName: '言字旁',
+            radicalMeaning: 'speech',
+            characters: [
+                { char: '说', meaning: 'to speak' },
+                { char: '语', meaning: 'language' },
+                { char: '话', meaning: 'speech/words' },
+                { char: '请', meaning: 'please' },
+                { char: '谢', meaning: 'to thank' },
+                { char: '讲', meaning: 'to explain' }
+            ]
+        },
+        {
+            id: 'r117',
+            type: 'radical-learn',
+            difficulty: 'medium',
+            radical: '扌',
+            radicalName: '提手旁',
+            radicalMeaning: 'hand',
+            characters: [
+                { char: '打', meaning: 'to hit/call' },
+                { char: '把', meaning: 'to hold' },
+                { char: '找', meaning: 'to look for' },
+                { char: '扫', meaning: 'to sweep' },
+                { char: '拉', meaning: 'to pull' },
+                { char: '推', meaning: 'to push' }
+            ]
+        },
+        {
+            id: 'r118',
+            type: 'radical-learn',
+            difficulty: 'medium',
+            radical: '火',
+            radicalName: '火字旁',
+            radicalMeaning: 'fire',
+            characters: [
+                { char: '灯', meaning: 'lamp' },
+                { char: '烧', meaning: 'to burn' },
+                { char: '烤', meaning: 'to roast' },
+                { char: '炒', meaning: 'to stir-fry' },
+                { char: '烟', meaning: 'smoke' },
+                { char: '热', meaning: 'hot' }
+            ]
+        },
+        {
+            id: 'r119',
+            type: 'radical-learn',
+            difficulty: 'medium',
+            radical: '饣',
+            radicalName: '食字旁',
+            radicalMeaning: 'food/eat',
+            characters: [
+                { char: '饭', meaning: 'rice/meal' },
+                { char: '饿', meaning: 'hungry' },
+                { char: '饱', meaning: 'full (eaten)' },
+                { char: '饺', meaning: 'dumplings' },
+                { char: '饼', meaning: 'flatbread' },
+                { char: '馆', meaning: 'restaurant/building' }
+            ]
+        },
+        {
+            id: 'r120',
+            type: 'radical-learn',
+            difficulty: 'hard',
+            radical: '心',
+            radicalName: '心字底',
+            radicalMeaning: 'heart/mind',
+            characters: [
+                { char: '想', meaning: 'to think' },
+                { char: '忘', meaning: 'to forget' },
+                { char: '急', meaning: 'urgent' },
+                { char: '思', meaning: 'to ponder' },
+                { char: '念', meaning: 'to miss/read' },
+                { char: '意', meaning: 'meaning/idea' }
+            ]
+        },
+        {
+            id: 'r121',
+            type: 'radical-learn',
+            difficulty: 'hard',
+            radical: '辶',
+            radicalName: '走之底',
+            radicalMeaning: 'movement/walk',
+            characters: [
+                { char: '过', meaning: 'to pass/experience' },
+                { char: '进', meaning: 'to enter' },
+                { char: '远', meaning: 'far' },
+                { char: '近', meaning: 'near' },
+                { char: '通', meaning: 'to pass through' },
+                { char: '送', meaning: 'to send' }
+            ]
+        },
+        {
+            id: 'r122',
+            type: 'radical-learn',
+            difficulty: 'medium',
+            radical: '目',
+            radicalName: '目字旁',
+            radicalMeaning: 'eye',
+            characters: [
+                { char: '看', meaning: 'to see' },
+                { char: '眼', meaning: 'eye' },
+                { char: '睡', meaning: 'to sleep' },
+                { char: '睛', meaning: 'eyeball' },
+                { char: '盯', meaning: 'to stare' },
+                { char: '盲', meaning: 'blind' }
+            ]
+        },
+        {
+            id: 'r123',
+            type: 'radical-learn',
+            difficulty: 'hard',
+            radical: '钅',
+            radicalName: '金字旁',
+            radicalMeaning: 'metal/gold',
+            characters: [
+                { char: '钱', meaning: 'money' },
+                { char: '银', meaning: 'silver' },
+                { char: '铁', meaning: 'iron' },
+                { char: '钟', meaning: 'clock' },
+                { char: '错', meaning: 'wrong' },
+                { char: '钢', meaning: 'steel' }
+            ]
+        },
+        {
+            id: 'r124',
+            type: 'radical-learn',
+            difficulty: 'easy',
+            radical: '日',
+            radicalName: '日字旁',
+            radicalMeaning: 'sun/day',
+            characters: [
+                { char: '明', meaning: 'bright' },
+                { char: '时', meaning: 'time' },
+                { char: '早', meaning: 'morning' },
+                { char: '晚', meaning: 'evening' },
+                { char: '昨', meaning: 'yesterday' },
+                { char: '星', meaning: 'star' }
+            ]
+        },
+        {
+            id: 'r125',
+            type: 'radical-learn',
+            difficulty: 'easy',
+            radical: '月',
+            radicalName: '月字旁',
+            radicalMeaning: 'moon/flesh',
+            characters: [
+                { char: '胖', meaning: 'fat' },
+                { char: '脸', meaning: 'face' },
+                { char: '脚', meaning: 'foot' },
+                { char: '腿', meaning: 'leg' },
+                { char: '脑', meaning: 'brain' },
+                { char: '期', meaning: 'period' }
+            ]
         }
     ],
 
@@ -1705,6 +1987,116 @@ const ReadingData = {
             options: ['finally', 'never', 'always', 'sometimes'],
             correct: 0,
             explanation: '从"很努力"和"成功了"可以推断，经过努力后达到了目标，所以"终于"的意思是"finally"。'
+        },
+        {
+            id: 'r126',
+            type: 'context-clues',
+            difficulty: 'hard',
+            sentence: '她每天坚持跑步，身体越来越好了。',
+            unknownWord: '坚持',
+            contextClues: ['每天', '越来越好了'],
+            options: ['to persist', 'to stop', 'to begin', 'to finish'],
+            correct: 0,
+            explanation: '从"每天"和"越来越好了"可以推断，是持续不断的行为，所以"坚持"的意思是"to persist"。'
+        },
+        {
+            id: 'r127',
+            type: 'context-clues',
+            difficulty: 'hard',
+            sentence: '这个问题比较复杂，我们需要仔细考虑。',
+            unknownWord: '复杂',
+            contextClues: ['仔细考虑'],
+            options: ['complicated', 'simple', 'easy', 'funny'],
+            correct: 0,
+            explanation: '从需要"仔细考虑"可以推断这个问题不简单，所以"复杂"的意思是"complicated"。'
+        },
+        {
+            id: 'r128',
+            type: 'context-clues',
+            difficulty: 'hard',
+            sentence: '外面的风很大，你出门记得戴上帽子。',
+            unknownWord: '风',
+            contextClues: ['很大', '戴上帽子'],
+            options: ['wind', 'rain', 'snow', 'sun'],
+            correct: 0,
+            explanation: '从"很大"和"戴上帽子"可以推断是天气现象，所以"风"的意思是"wind"。'
+        },
+        {
+            id: 'r129',
+            type: 'context-clues',
+            difficulty: 'medium',
+            sentence: '我最近太忙了，连吃饭的时间都没有。',
+            unknownWord: '连',
+            contextClues: ['太忙了', '都没有'],
+            options: ['even', 'also', 'always', 'only'],
+            correct: 0,
+            explanation: '"连...都"表示强调，说明情况超出预期，所以"连"在这里是"even"的意思。'
+        },
+        {
+            id: 'r130',
+            type: 'context-clues',
+            difficulty: 'medium',
+            sentence: '虽然外面下雨，但是他还是去跑步了。',
+            unknownWord: '虽然',
+            contextClues: ['下雨', '但是', '还是'],
+            options: ['although', 'because', 'if', 'when'],
+            correct: 0,
+            explanation: '"虽然...但是"表示转折关系，所以"虽然"的意思是"although"。'
+        },
+        {
+            id: 'r131',
+            type: 'context-clues',
+            difficulty: 'medium',
+            sentence: '不管多困难，我们都要继续前进。',
+            unknownWord: '前进',
+            contextClues: ['多困难', '都要继续'],
+            options: ['move forward', 'stop', 'go back', 'stay'],
+            correct: 0,
+            explanation: '从"不管多困难"和"都要继续"可以推断是往前的意思，所以"前进"是"move forward"。'
+        },
+        {
+            id: 'r132',
+            type: 'context-clues',
+            difficulty: 'easy',
+            sentence: '我非常喜欢这个礼物，谢谢你！',
+            unknownWord: '礼物',
+            contextClues: ['非常喜欢', '谢谢你'],
+            options: ['gift', 'food', 'book', 'friend'],
+            correct: 0,
+            explanation: '从"非常喜欢"和"谢谢你"可以推断是别人送的东西，所以"礼物"的意思是"gift"。'
+        },
+        {
+            id: 'r133',
+            type: 'context-clues',
+            difficulty: 'medium',
+            sentence: '老师让我们互相帮助，一起解决问题。',
+            unknownWord: '互相',
+            contextClues: ['一起', '帮助'],
+            options: ['each other', 'alone', 'quickly', 'always'],
+            correct: 0,
+            explanation: '从"一起"和"帮助"可以推断是双向的行为，所以"互相"的意思是"each other"。'
+        },
+        {
+            id: 'r134',
+            type: 'context-clues',
+            difficulty: 'hard',
+            sentence: '这次考试他准备得很充分，所以成绩很好。',
+            unknownWord: '充分',
+            contextClues: ['准备', '成绩很好'],
+            options: ['thoroughly', 'poorly', 'quickly', 'never'],
+            correct: 0,
+            explanation: '从"准备"和"成绩很好"可以推断准备做得足够好，所以"充分"的意思是"thoroughly"。'
+        },
+        {
+            id: 'r135',
+            type: 'context-clues',
+            difficulty: 'easy',
+            sentence: '这件衣服的质量非常好，穿了一年还没坏。',
+            unknownWord: '质量',
+            contextClues: ['非常好', '还没坏'],
+            options: ['quality', 'color', 'size', 'price'],
+            correct: 0,
+            explanation: '从"非常好"和"还没坏"可以推断是物品好坏的程度，所以"质量"的意思是"quality"。'
         }
     ],
 

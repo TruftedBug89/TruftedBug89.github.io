@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/components-learner.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cookie-banner.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Service worker for offline-first PWA -->
@@ -200,7 +201,7 @@
                 <svg class="brush-divider" viewBox="0 0 800 12" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:14px;margin:8px 0 24px;">
                     <path class="brush-stroke-path" d="M0,6 Q100,2 200,5 Q350,9 500,4 Q650,1 800,6" fill="none" stroke="#c42020" stroke-width="1.5" opacity="0.3"/>
                 </svg>
-                <div class="dashboard-grid stagger-children">
+                <div class="dashboard-grid stagger-children" aria-live="polite" aria-label="Learning statistics">
                     <div class="stats-card card-glow gsap-reveal-scale">
                         <div class="stats-icon" aria-hidden="true">📚</div>
                         <div class="stats-value" id="total-words">0</div>
@@ -460,8 +461,12 @@
                     <p class="module-subtitle">Master Chinese sentence patterns</p>
                 </div>
                 <div id="grammar-menu" class="grammar-menu">
+                    <div class="grammar-search-wrap">
+                        <input type="text" class="grammar-search" id="grammar-search" placeholder="Search lessons by title, pattern, or level..." maxlength="60">
+                    </div>
                     <div class="grammar-lessons-list" id="grammar-lessons-list">
                     </div>
+                    <div class="grammar-no-results hidden" id="grammar-no-results">No lessons match your search.</div>
                 </div>
 
                 <div id="grammar-lesson" class="exercise-container hidden">
@@ -526,10 +531,6 @@
                     </div>
                     <div class="speaking-content" id="speaking-content">
                     </div>
-                    <div class="exercise-controls">
-                        <button id="speak-btn" class="btn btn-primary btn-press" type="button">🎤 Start Speaking</button>
-                        <button id="listen-model-btn" class="btn btn-secondary btn-press" type="button">🔊 Listen to Model</button>
-                    </div>
                 </div>
             </section>
 
@@ -546,7 +547,7 @@
             <!-- Site Footer -->
             <footer class="site-footer">
                 <div class="footer-content">
-                    <span class="footer-brand">中文大师 &copy; 2026 — Free &amp; Open Source</span>
+                    <span class="footer-brand">中文大师 &copy; <span id="footer-year"></span> — Free &amp; Open Source</span>
                     <div class="footer-links">
                         <a href="legal/privacy.html">Privacy</a>
                         <a href="legal/terms.html">Terms</a>
@@ -570,6 +571,10 @@
         </div>
     </div>
 
+    <!-- Vendor Libraries (self-hosted, CSP-safe) -->
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
+
     <!-- Scripts - Data Files -->
     <script src="data/vocabulary.js"></script>
     <script src="data/vocabulary-extended.js"></script>
@@ -584,6 +589,10 @@
     <script src="data/hsk3-massive.js"></script>
     <script src="data/hsk4-5.js"></script>
     <script src="data/hsk4-massive.js"></script>
+    <script src="data/hsk1-2.js"></script>
+    <script src="data/topic-daily.js"></script>
+    <script src="data/topic-food.js"></script>
+    <script src="data/topic-travel.js"></script>
     <script src="data/hsk-reading-massive.js"></script>
     <script src="data/reading-examples.js"></script>
     <script src="data/reading-massive-extra.js"></script>
@@ -601,10 +610,6 @@
     <script src="data/grammar.js"></script>
     <script src="data/dialogues.js"></script>
     <script src="data/cultural.js"></script>
-
-    <!-- Vendor Libraries (self-hosted, CSP-safe) -->
-    <script src="vendor/gsap.min.js"></script>
-    <script src="vendor/ScrollTrigger.min.js"></script>
 
     <!-- Error Logger -->
     <script src="js/error-logger.js"></script>
@@ -632,7 +637,7 @@
     <script src="components/analytics.js"></script>
     <script src="components/vocabulary-learner.js"></script>
     <script src="components/session-manager-ui.js"></script>
-    <script src="components/cookie-banner.js"></script>
+    <script src="components/cookie-banner.js" defer></script>
 
     <!-- Scripts - Animation Engine -->
     <script src="js/animations.js"></script>

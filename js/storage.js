@@ -163,6 +163,12 @@ const StorageManager = {
         data.totalXp += amount;
 
         // Check for level up
+        const levelTitles = [
+            'Beginner', 'Novice', 'Student', 'Scholar', 'Apprentice',
+            'Journeyman', 'Adept', 'Expert', 'Master', 'Grandmaster',
+            'Sage', 'Wizard', 'Oracle', 'Philosopher', 'Legend',
+            'Mythic', 'Celestial', 'Transcendent', 'Immortal', 'Dragon'
+        ];
         const levelThresholds = [
             0, 100, 250, 500, 1000, 1750, 2750, 4000, 5500, 7500,
             10000, 13000, 16500, 20500, 25000, 30000, 35500, 41500, 48000, 55000
@@ -170,12 +176,24 @@ const StorageManager = {
 
         while (data.level < 20 && data.xp >= levelThresholds[data.level]) {
             data.level++;
-            Utils.showToast(`Level Up! You're now level ${data.level}!`, 'success');
-            Utils.playSound('levelup');
-            Utils.showConfetti();
+            var lvl = data.level;
+            var title = levelTitles[lvl] || ('Level ' + lvl);
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.showLevelUp) {
+                InkAnimations.showLevelUp(lvl, title, data.totalXp);
+            } else {
+                Utils.showToast('Level Up! ' + title + ' (Level ' + lvl + ')', 'success');
+                Utils.playSound('levelup');
+                Utils.showConfetti();
+            }
         }
 
         this.setUserData(data);
+
+        /* Update nav footer level display */
+        if (typeof updateNavFooter === 'function') {
+            updateNavFooter();
+        }
+
         return data.level;
     },
 
@@ -198,6 +216,10 @@ const StorageManager = {
         }
 
         this.setUserData(data);
+
+        if (typeof updateNavFooter === 'function') {
+            updateNavFooter();
+        }
     },
 
     // Get daily stats
@@ -383,6 +405,8 @@ const StorageManager = {
             listeningCompleted: data.progress.listening.completed.length,
             readingCompleted: data.progress.reading.completed.length,
             grammarCompleted: data.progress.grammar.completed.length,
+            speakingCompleted: data.progress.speaking.completed.length,
+            perfectScores: data.perfectScores || 0,
             totalXp: data.totalXp,
             level: data.level,
             streak: data.streak,

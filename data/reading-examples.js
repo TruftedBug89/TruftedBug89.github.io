@@ -283,3 +283,15 @@ const ReadingExamples = {
 };
 
 window.ReadingExamples = ReadingExamples;
+
+(function() {
+    if (typeof ReadingData !== 'undefined' && ReadingExamples.passages) {
+        ReadingExamples.passages.forEach(function(p) {
+            var ex = { id: p.id, title: p.titleCn || p.title, passage: p.passage, pinyin: p.pinyin, questions: p.questions };
+            if (!ReadingData.passageReading.find(function(r) { return r.id === p.id; })) {
+                ReadingData.passageReading.push(ex);
+            }
+        });
+        ReadingData.totalCount = ReadingData.passageReading.length + ReadingData.characterMatch.length + ReadingData.sentenceCompletion.length + ReadingData.speedReading.length + ReadingData.radicalLearn.length + ReadingData.contextClues.length;
+    }
+})();

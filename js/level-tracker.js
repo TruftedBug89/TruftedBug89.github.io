@@ -119,9 +119,13 @@ const LevelTracker = {
     // Level up event
     onLevelUp(newLevel) {
         const levelInfo = this.levels[newLevel];
-        Utils.showToast(`🎉 Level Up! You are now ${levelInfo.name} (${levelInfo.chinese})`, 'success');
-        Utils.playSound('levelup');
-        Utils.showConfetti();
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.showLevelUp) {
+            InkAnimations.showLevelUp(newLevel, levelInfo.name + ' (' + levelInfo.chinese + ')', this.userData.totalXP);
+        } else {
+            Utils.showToast(`🎉 Level Up! You are now ${levelInfo.name} (${levelInfo.chinese})`, 'success');
+            Utils.playSound('levelup');
+            Utils.showConfetti();
+        }
     },
 
     // ============================================

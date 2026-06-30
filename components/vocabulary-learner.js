@@ -66,20 +66,20 @@ const VocabularyLearner = {
 
         // Add event listeners
         document.querySelectorAll('.level-card').forEach(card => {
-            card.onclick = () => {
+            card.addEventListener('click', () => {
                 const level = parseInt(card.dataset.level);
                 this.selectLevel(level);
-            };
+            });
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
             });
         });
 
         const startBtn = document.getElementById('start-review-btn');
-        if (startBtn) startBtn.onclick = () => this.startReviewSession();
+        if (startBtn) startBtn.addEventListener('click', () => this.startReviewSession());
 
         const browseBtn = document.getElementById('browse-words-btn');
-        if (browseBtn) browseBtn.onclick = () => this.showWordBrowser();
+        if (browseBtn) browseBtn.addEventListener('click', () => this.showWordBrowser());
     },
     
     // Get word count for HSK level
@@ -328,8 +328,23 @@ const VocabularyLearner = {
             </div>`;
         }
         
-        // Example sentences
-        const examples = wordData && wordData.examples && wordData.examples.length ? wordData.examples : (card.back.examples || []);
+        // Example sentences - check HSK1Examples first, then card data
+        var examples = [];
+        if (wordData && typeof HSK1Examples !== 'undefined') {
+            var hskEx = HSK1Examples.examples;
+            if (hskEx && hskEx[card.front.character]) {
+                examples = hskEx[card.front.character].map(function(ex) {
+                    return { cn: ex.cn, en: ex.en };
+                });
+            }
+        }
+        if (examples.length === 0) {
+            if (wordData && wordData.examples && wordData.examples.length) {
+                examples = wordData.examples;
+            } else if (card.back.examples && card.back.examples.length) {
+                examples = card.back.examples;
+            }
+        }
         if (examples && examples.length) {
             detailsHtml += `<div class="detail-section">
                 <div class="detail-label">Example Sentences</div>
@@ -546,10 +561,10 @@ const VocabularyLearner = {
             </div>
         `;
 
-        // Wire up search (avoid inline oninput stacking)
+        // Wire up search
         const searchEl = document.getElementById('word-search');
         if (searchEl) {
-            searchEl.oninput = (e) => this.filterWords(e.target.value);
+            searchEl.addEventListener('input', (e) => this.filterWords(e.target.value));
         }
 
         // Tap any card to hear it (CSP-safe addEventListener + keyboard)

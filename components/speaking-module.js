@@ -1,5 +1,6 @@
 // ============================================
 // CHINESE MASTER - Speaking Module Component
+// Reference tool: listen & repeat on your own
 // ============================================
 
 const SpeakingModule = {
@@ -8,7 +9,6 @@ const SpeakingModule = {
     currentExercise: null,
     exercises: [],
     currentIndex: 0,
-    score: 0,
 
     // Show menu
     showMenu() {
@@ -41,7 +41,6 @@ const SpeakingModule = {
         this.currentType = type;
         this.exercises = this.getExercises(type);
         this.currentIndex = 0;
-        this.score = 0;
 
         document.getElementById('speaking-menu').classList.add('hidden');
         document.getElementById('speaking-exercise').classList.remove('hidden');
@@ -86,14 +85,19 @@ const SpeakingModule = {
         const content = document.getElementById('speaking-content');
         content.innerHTML = this.getExerciseHTML(exercise);
 
-        const scoreEl = document.createElement('div');
-        scoreEl.className = 'speaking-score-display';
-        scoreEl.id = 'speaking-score-display';
-        scoreEl.innerHTML = '<span class="score-label">Score:</span> <span class="score-value" id="speaking-score-value">' + this.score + '</span>';
-        content.prepend(scoreEl);
+        // Progress indicator
+        const progress = document.createElement('div');
+        progress.className = 'speaking-progress';
+        progress.innerHTML = '<span class="progress-label">' + (this.currentIndex + 1) + ' / ' + this.exercises.length + '</span>';
+        content.prepend(progress);
 
         if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
             InkAnimations.slideInPanel(content);
+        }
+
+        // Auto-speak for pronunciation & shadowing
+        if (['pronunciation', 'shadowing-practice'].includes(this.currentType)) {
+            setTimeout(() => AudioManager.speak(exercise.chinese), 500);
         }
 
         // Setup controls
@@ -124,7 +128,7 @@ const SpeakingModule = {
                 <div class="activity-prompt">
                     <span class="activity-eyebrow">🗣️ Pronunciation</span>
                     <h2 class="activity-title">Say it out loud</h2>
-                    <p class="activity-subtitle">Listen, then record yourself repeating the word.</p>
+                    <p class="activity-subtitle">Listen to the model, then speak the word yourself.</p>
                 </div>
 
                 <div class="speaking-display">
@@ -169,11 +173,9 @@ const SpeakingModule = {
                     <p>${Utils.escapeHtml(this._getNativeSpeakerTip(exercise))}</p>
                 </div>
 
-                <button class="record-btn-large" id="record-btn" aria-label="Start recording">🎤</button>
-                <p class="speaking-instruction">Tap to start · auto-stops in 3s</p>
-
                 <div class="speaking-actions">
                     <button class="btn" id="listen-model">🔊 Hear it again</button>
+                    <button class="btn btn-primary" id="next-speaking">Next →</button>
                 </div>
             </div>
         `;
@@ -189,7 +191,7 @@ const SpeakingModule = {
                 <div class="activity-prompt">
                     <span class="activity-eyebrow">👥 Shadowing</span>
                     <h2 class="activity-title">Match the rhythm</h2>
-                    <p class="activity-subtitle">Listen and repeat in real-time to mimic the speaker.</p>
+                    <p class="activity-subtitle">Listen closely, then repeat at the same pace as the speaker.</p>
                 </div>
 
                 <div class="speaking-display">
@@ -198,21 +200,14 @@ const SpeakingModule = {
                     <div class="sp-meaning">${en}</div>
                 </div>
 
-                <div class="shadowing-wave paused" id="shadowing-wave">
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
+                <div class="native-tip-card activity-card" style="margin-top:12px;">
+                    <div class="section-title">💡 Shadowing Tip</div>
+                    <p>Focus on matching the rhythm and intonation of the native speaker. Pay attention to how tones connect between characters — the pinyin shows you the exact contours to follow.</p>
                 </div>
-
-                <button class="record-btn-large" id="record-btn" aria-label="Start shadowing">🎤</button>
-                <p class="speaking-instruction">Tap to start · auto-stops in 3s</p>
 
                 <div class="speaking-actions">
                     <button class="btn" id="listen-model">🔊 Hear model</button>
+                    <button class="btn btn-primary" id="next-speaking">Next →</button>
                 </div>
             </div>
         `;
@@ -250,11 +245,9 @@ const SpeakingModule = {
                     <p>${Utils.escapeHtml(this._getNativeSpeakerTip(exercise))}</p>
                 </div>
 
-                <button class="record-btn-large" id="record-btn" aria-label="Start recording">🎤</button>
-                <p class="speaking-instruction">Tap to start · auto-stops in 3s</p>
-
                 <div class="speaking-actions">
                     <button class="btn" id="listen-model">🔊 Hear it first</button>
+                    <button class="btn btn-primary" id="next-speaking">Next →</button>
                 </div>
             </div>
         `;
@@ -262,28 +255,20 @@ const SpeakingModule = {
 
     // Setup controls
     setupControls(exercise) {
-        // Record button
-        const recordBtn = document.getElementById('record-btn');
-        if (recordBtn) {
-            let isRecording = false;
-            recordBtn.onclick = () => {
-                if (isRecording) {
-                    this.stopRecording();
-                    recordBtn.classList.remove('recording');
-                    isRecording = false;
-                } else {
-                    this.startRecording();
-                    recordBtn.classList.add('recording');
-                    isRecording = true;
-                }
-            };
-        }
-
         // Listen model button
         const listenBtn = document.getElementById('listen-model');
         if (listenBtn) {
             listenBtn.onclick = () => {
                 AudioManager.speak(exercise.chinese);
+            };
+        }
+
+        // Next button
+        const nextBtn = document.getElementById('next-speaking');
+        if (nextBtn) {
+            nextBtn.onclick = () => {
+                this.currentIndex++;
+                this.showCurrentExercise();
             };
         }
 
@@ -304,80 +289,6 @@ const SpeakingModule = {
         });
     },
 
-    // Start recording
-    startRecording() {
-        // Guard against double-firing from manual stop + auto-stop
-        if (this._recordingHandled) return;
-        this._recordingHandled = false;
-        Utils.showToast('🎤 Recording... speak now!', 'info');
-
-        const recordBtn = document.getElementById('record-btn');
-        if (recordBtn) recordBtn.classList.add('recording');
-
-        const wave = document.getElementById('shadowing-wave');
-        if (wave) wave.classList.remove('paused');
-
-        if (typeof gsap !== 'undefined' && recordBtn) {
-            gsap.to(recordBtn, {
-                scale: 1.08,
-                duration: 0.4,
-                repeat: -1,
-                yoyo: true,
-                ease: 'power1.inOut'
-            });
-        }
-
-        this._animateWaveform(wave, true);
-
-        // Auto-stop after 3 seconds
-        this._autoStopTimer = setTimeout(() => {
-            const btn = document.getElementById('record-btn');
-            if (btn) btn.classList.remove('recording');
-            this.stopRecording();
-        }, 3000);
-    },
-
-    // Stop recording
-    stopRecording() {
-        // Guard against double-firing (manual click + auto-stop)
-        if (this._recordingHandled) return;
-        this._recordingHandled = true;
-
-        if (this._autoStopTimer) {
-            clearTimeout(this._autoStopTimer);
-            this._autoStopTimer = null;
-        }
-
-        const recordBtn = document.getElementById('record-btn');
-        if (recordBtn) recordBtn.classList.remove('recording');
-        const wave = document.getElementById('shadowing-wave');
-        if (wave) wave.classList.add('paused');
-
-        if (typeof gsap !== 'undefined' && recordBtn) {
-            gsap.killTweensOf(recordBtn);
-            gsap.to(recordBtn, { scale: 1, duration: 0.2 });
-        }
-        this._animateWaveform(wave, false);
-
-        Utils.showToast('✅ Nice work! Recorded successfully.', 'success');
-        this.score++;
-
-        const scoreEl = document.getElementById('speaking-score-value');
-        if (scoreEl) {
-            scoreEl.textContent = this.score;
-            if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
-                InkAnimations.counterBounce(scoreEl);
-            }
-        }
-
-        // Auto-advance after 1 second
-        setTimeout(() => {
-            this._recordingHandled = false;
-            this.currentIndex++;
-            this.showCurrentExercise();
-        }, 1000);
-    },
-
     // Play tone
     playTone(toneNum) {
         const tones = {
@@ -389,7 +300,7 @@ const SpeakingModule = {
 
         AudioManager.speak(tones[toneNum] || 'ma');
 
-        // Highlight active tone (only if tones exist on this exercise type)
+        // Highlight active tone
         const target = document.querySelector(`[data-tone="${toneNum}"]`);
         if (target) {
             document.querySelectorAll('.tone-number').forEach(t => t.classList.remove('active'));
@@ -400,16 +311,15 @@ const SpeakingModule = {
     // Finish exercise
     finishExercise() {
         const totalExercises = this.exercises.length;
-        const result = ProgressTracker.trackExercise('speaking', `speaking-${this.currentType}-${Date.now()}`, this.score, totalExercises);
         const capturedType = this.currentType;
 
         App.showCompletionModal({
             title: 'Speaking Practice Complete!',
-            score: this.score,
+            score: totalExercises,
             total: totalExercises,
-            percentage: result.percentage,
-            xp: result.xp,
-            isPerfect: result.isPerfect,
+            percentage: 100,
+            xp: 5,
+            isPerfect: false,
             backLabel: 'Back to Menu',
             retryLabel: 'Practice Again',
             onBack: () => SpeakingModule.showMenu(),
@@ -448,7 +358,7 @@ const SpeakingModule = {
     },
 
     _getNativeSpeakerTip(exercise) {
-        return 'Record yourself and compare with the model audio. Focus on one tone at a time — most learners try to perfect all tones simultaneously, which slows progress. Master the 4th tone first (it comes naturally to English speakers), then the 1st tone (steady pitch). The 3rd tone is the hardest — practice it last.';
+        return 'Listen to the model audio, then try to match it yourself. Focus on one tone at a time — most learners try to perfect all tones simultaneously, which slows progress. Master the 4th tone first (it comes naturally to English speakers), then the 1st tone (steady pitch). The 3rd tone is the hardest — practice it last.';
     },
 
     _getRhythmBreakdown(exercise) {
@@ -465,27 +375,6 @@ const SpeakingModule = {
                 '<span class="rs-pinyin">' + Utils.escapeHtml(syl) + '</span>' +
             '</div>'
         ).join('');
-    },
-
-    _animateWaveform(waveEl, active) {
-        if (typeof gsap === 'undefined' || !waveEl) return;
-        const bars = waveEl.querySelectorAll('.wave-bar');
-        if (!bars.length) return;
-        if (active) {
-            bars.forEach((bar, i) => {
-                gsap.to(bar, {
-                    scaleY: gsap.utils.random(0.3, 1),
-                    duration: gsap.utils.random(0.3, 0.7),
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'power1.inOut',
-                    delay: i * 0.08
-                });
-            });
-        } else {
-            bars.forEach(bar => gsap.killTweensOf(bar));
-            gsap.to(bars, { scaleY: 0.2, duration: 0.3, ease: 'power2.out' });
-        }
     }
 };
 

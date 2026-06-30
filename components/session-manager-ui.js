@@ -24,6 +24,7 @@ const SessionManagerUI = {
                         ${isActive ? '' : `<button type="button" class="btn btn-secondary btn-sm" data-cm-action="delete" data-sid="${safeId}">Delete</button>`}
                         ${isActive ? `<button type="button" class="btn btn-secondary btn-sm" data-cm-action="rename" data-sid="${safeId}">Rename</button>` : ''}
                         ${isActive ? `<button type="button" class="btn btn-secondary btn-sm" data-cm-action="export">Export</button>` : ''}
+                        ${isActive ? `<button type="button" class="btn btn-secondary btn-sm" data-cm-action="import">Import</button>` : ''}
                     </div>
                 </div>
             `;
@@ -31,8 +32,8 @@ const SessionManagerUI = {
 
         App.showModal(`
             <div class="session-modal">
-                <h2 style="margin:0 0 6px; color:white;">👤 Switch learner</h2>
-                <p style="color:rgba(255,255,255,0.6); margin:0 0 18px; font-size:13px;">
+                <h2 style="margin:0 0 6px; color:var(--text-primary);">👤 Switch learner</h2>
+                <p style="color:var(--text-secondary); margin:0 0 18px; font-size:13px;">
                     Each learner has their own progress, XP, streaks and SRS state on this device.
                 </p>
                 <div class="session-list">${list}</div>
@@ -115,6 +116,31 @@ const SessionManagerUI = {
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
             Utils.showToast('Backup downloaded', 'success');
+        });
+
+        // Import
+        const importBtn = modal.querySelector('[data-cm-action="import"]');
+        if (importBtn) importBtn.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.addEventListener('change', () => {
+                const file = input.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        SessionManager.importIntoActiveSession(e.target.result);
+                        Utils.showToast('Backup imported successfully', 'success');
+                        App.closeModal();
+                        location.reload();
+                    } catch (ex) {
+                        Utils.showToast('Failed to import: invalid backup file', 'error');
+                    }
+                };
+                reader.readAsText(file);
+            });
+            input.click();
         });
 
         // Close

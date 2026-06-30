@@ -203,3 +203,14 @@ const TopicDaily = {
 };
 
 window.TopicDaily = TopicDaily;
+
+(function() {
+    if (typeof VocabularyData !== 'undefined' && TopicDaily.words) {
+        TopicDaily.words.forEach(function(w) {
+            if (!VocabularyData.words.find(function(vw) { return vw.character === w.character; })) {
+                VocabularyData.words.push(w);
+            }
+        });
+        VocabularyData.count = VocabularyData.words.length;
+    }
+})();

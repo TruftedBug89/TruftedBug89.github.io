@@ -12,6 +12,10 @@ const App = {
     init() {
         if (this.DEBUG) console.log('Initializing Chinese Master App...');
 
+        // Set dynamic footer year
+        var footerYear = document.getElementById('footer-year');
+        if (footerYear) footerYear.textContent = new Date().getFullYear();
+
         // Initialize storage (which in turn initializes SessionManager)
         StorageManager.init();
 
@@ -141,6 +145,16 @@ const App = {
         document.addEventListener('keydown', (e) => {
             this.handleKeyboardShortcut(e);
         });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (docHeight <= 0) return;
+            const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+            const fill = document.getElementById('scroll-progress-fill');
+            if (fill) fill.style.transform = 'scaleX(' + (pct / 100) + ')';
+        }, { passive: true });
     },
 
     // Navigate to a module
@@ -322,6 +336,9 @@ const App = {
             body.classList.add('theme-dark');
             StorageManager.updateUserData('settings.theme', 'dark');
         }
+
+        const icon = document.querySelector('#theme-toggle .toggle-icon');
+        if (icon) icon.textContent = body.classList.contains('theme-dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
     },
 
     // Load user preferences
@@ -334,6 +351,10 @@ const App = {
             document.body.classList.add('theme-light');
         }
         
+        // Update theme toggle icon
+        const icon = document.querySelector('#theme-toggle .toggle-icon');
+        if (icon) icon.textContent = document.body.classList.contains('theme-dark') ? '\u2600\uFE0F' : '\uD83C\uDF19';
+
         // Update user name
         const userNameElement = document.getElementById('user-name');
         if (userNameElement) {
@@ -426,6 +447,13 @@ const App = {
 
     // Handle keyboard shortcuts
     handleKeyboardShortcut(e) {
+        // Shift+? opens keyboard shortcut help
+        if ((e.key === '?' || e.key === '/') && e.shiftKey) {
+            e.preventDefault();
+            this.showShortcutHelp();
+            return;
+        }
+
         // Ctrl/Cmd + number for navigation
         if (e.ctrlKey || e.metaKey) {
             const shortcuts = {
@@ -443,6 +471,29 @@ const App = {
                 this.navigateTo(shortcuts[e.key]);
             }
         }
+    },
+
+    showShortcutHelp() {
+        this.showModal(`
+            <div style="text-align:center; max-width:440px;">
+                <h2 style="margin:0 0 16px; color:var(--text-primary);">Keyboard Shortcuts</h2>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; text-align:left; font-size:14px;">
+                    <div><kbd>Ctrl+1</kbd></div><div>Dashboard</div>
+                    <div><kbd>Ctrl+2</kbd></div><div>Listening</div>
+                    <div><kbd>Ctrl+3</kbd></div><div>Reading</div>
+                    <div><kbd>Ctrl+4</kbd></div><div>Vocabulary</div>
+                    <div><kbd>Ctrl+5</kbd></div><div>Grammar</div>
+                    <div><kbd>Ctrl+6</kbd></div><div>Speaking</div>
+                    <div><kbd>Ctrl+7</kbd></div><div>Achievements</div>
+                    <div><kbd>Shift+?</kbd></div><div>This help</div>
+                    <div><kbd>Esc</kbd></div><div>Close modal</div>
+                </div>
+                <button type="button" class="btn btn-primary" data-cm-action="close-help" style="margin-top:16px;">Got it</button>
+            </div>
+        `);
+        const modal = document.getElementById('modal');
+        const closeBtn = modal.querySelector('[data-cm-action="close-help"]');
+        if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
     },
 
     // Show toast notification
@@ -504,31 +555,58 @@ const App = {
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = `
             <div class="activity-card" style="text-align:center; max-width:460px;">
-                <div style="font-size:64px; margin-bottom:8px;">${safeEmoji}</div>
-                <h2 style="margin:0 0 6px; color:white; font-size:24px;">${safeTitle}</h2>
-                <p style="color:rgba(255,255,255,0.65); margin:0 0 18px; font-size:14px;">${safeMessage}</p>
-                <div style="margin: 18px auto; width:140px; height:140px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column;
-                    background: conic-gradient(${scoreColor} ${pctNum * 3.6}deg, rgba(255,255,255,0.08) ${pctNum * 3.6}deg);
-                    box-shadow: 0 0 30px ${scoreColor}40;">
-                    <div style="width:110px; height:110px; border-radius:50%; background:rgba(20,20,30,0.9); display:flex; align-items:center; justify-content:center;">
+                <div style="font-size:64px; margin-bottom:8px;" class="completion-emoji">${safeEmoji}</div>
+                <h2 style="margin:0 0 6px; color:var(--text-primary); font-size:24px;">${safeTitle}</h2>
+                <p style="color:var(--text-secondary); margin:0 0 18px; font-size:14px;">${safeMessage}</p>
+                <div class="completion-ring" style="margin:18px auto;width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;
+                    background:conic-gradient(${scoreColor} 0deg, rgba(255,255,255,0.08) 0deg);
+                    box-shadow:0 0 30px ${scoreColor}40;--pct:0;">
+                    <div style="width:110px;height:110px;border-radius:50%;background:rgba(20,20,30,0.9);display:flex;align-items:center;justify-content:center;">
                         <div>
-                            <div style="font-size:36px; font-weight:800; color:${scoreColor}; line-height:1;">${pctNum}%</div>
-                            <div style="font-size:12px; color:rgba(255,255,255,0.55); margin-top:4px;">${scoreNum}/${totalNum}</div>
+                            <div class="completion-pct" style="font-size:36px;font-weight:800;color:${scoreColor};line-height:1;">0%</div>
+                            <div class="completion-score" style="font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;" data-score="${scoreNum}">0/${totalNum}</div>
                         </div>
                     </div>
                 </div>
-                ${xpNum > 0 ? `
-                    <div style="display:inline-flex; align-items:center; gap:6px; padding:8px 18px; background:rgba(241,196,15,0.12); border:1px solid rgba(241,196,15,0.3); border-radius:999px; color:#ffd86b; font-weight:600; font-size:14px;">
-                        ⭐ +${xpNum} XP earned
-                    </div>
-                ` : ''}
-                <div class="completion-actions" style="display:flex; gap:10px; justify-content:center; margin-top:22px; flex-wrap:wrap;">
-                    ${onBack ? `<button type="button" class="btn btn-primary" data-cm-action="back">${safeBackLabel}</button>` : ''}
-                    ${onRetry ? `<button type="button" class="btn btn-secondary" data-cm-action="retry">${safeRetryLabel}</button>` : ''}
+                ${xpNum > 0 ? '<div style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:rgba(241,196,15,0.12);border:1px solid rgba(241,196,15,0.3);border-radius:999px;color:#ffd86b;font-weight:600;font-size:14px;">⭐ +' + xpNum + ' XP earned</div>' : ''}
+                <div class="completion-actions" style="display:flex;gap:10px;justify-content:center;margin-top:22px;flex-wrap:wrap;">
+                    ${onBack ? '<button type="button" class="btn btn-primary" data-cm-action="back">' + safeBackLabel + '</button>' : ''}
+                    ${onRetry ? '<button type="button" class="btn btn-secondary" data-cm-action="retry">' + safeRetryLabel + '</button>' : ''}
                 </div>
             </div>
         `;
         modal.classList.remove('hidden');
+
+        /* GSAP ring fill animation */
+        var ringEl = modalBody.querySelector('.completion-ring');
+        if (ringEl && typeof InkAnimations !== 'undefined' && InkAnimations.animateCompletionRing) {
+            InkAnimations.animateCompletionRing(ringEl, pctNum, scoreColor);
+        } else {
+            ringEl.style.background = 'conic-gradient(' + scoreColor + ' ' + (pctNum * 3.6) + 'deg, rgba(255,255,255,0.08) ' + (pctNum * 3.6) + 'deg)';
+            var pctDisplay = ringEl.querySelector('.completion-pct');
+            if (pctDisplay) pctDisplay.textContent = pctNum + '%';
+            var scDisplay = ringEl.querySelector('.completion-score');
+            if (scDisplay) scDisplay.textContent = scoreNum + '/' + totalNum;
+        }
+
+        /* Emoji entrance */
+        var emojiEl = modalBody.querySelector('.completion-emoji');
+        if (emojiEl && typeof InkAnimations !== 'undefined') {
+            var gs = window.gsap;
+            if (gs) gs.fromTo(emojiEl, { scale: 0, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.6, ease: 'back.out(2)', delay: 0.2 });
+        }
+
+        /* Confetti on perfect or >80% */
+        if (isPerfect || pctNum >= 80) {
+            Utils.showConfetti({ count: isPerfect ? 120 : 60 });
+        }
+
+        /* Play appropriate sound */
+        if (isPerfect) {
+            Utils.playSound('levelup');
+        } else if (pctNum >= 60) {
+            Utils.playSound('correct');
+        }
 
         // Wire button handlers via addEventListener (no inline onclick → CSP-safe)
         if (onBack) {
@@ -636,8 +714,8 @@ App.confirmModal = function (opts) {
         const safeCancel = Utils.escapeHtml(cancelLabel);
         modalBody.innerHTML = `
             <div class="activity-card" style="text-align:center; max-width:440px;">
-                <h2 style="margin:0 0 10px; color:white;">${safeTitle}</h2>
-                <p style="color:rgba(255,255,255,0.7); margin:0 0 22px; line-height:1.5;">${safeMessage}</p>
+                <h2 style="margin:0 0 10px; color:var(--text-primary);">${safeTitle}</h2>
+                <p style="color:var(--text-secondary); margin:0 0 22px; line-height:1.5;">${safeMessage}</p>
                 <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
                     <button type="button" class="btn ${destructive ? 'btn-danger' : 'btn-primary'}" data-cm-action="confirm-yes">${safeConfirm}</button>
                     <button type="button" class="btn btn-secondary" data-cm-action="confirm-no">${safeCancel}</button>

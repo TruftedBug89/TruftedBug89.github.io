@@ -98,37 +98,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         radial-gradient(ellipse at 50% 80%, #c42020 0%, transparent 45%);
 }
 
-/* === AMBIENT INK ORBS === */
-.ink-ambient {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none; z-index: 0; overflow: hidden;
-}
-.ink-orb {
-    position: absolute; border-radius: 50%;
-    filter: blur(140px); opacity: 0.06;
-    animation: inkDrift 24s ease-in-out infinite;
-}
-.ink-orb:nth-child(1) {
-    width: 600px; height: 600px;
-    background: #c42020; top: -150px; left: -200px;
-}
-.ink-orb:nth-child(2) {
-    width: 450px; height: 450px;
-    background: #4a9680; bottom: -120px; right: -150px;
-    animation-delay: -8s;
-}
-.ink-orb:nth-child(3) {
-    width: 350px; height: 350px;
-    background: #c9a84c; top: 40%; left: 55%;
-    animation-delay: -16s;
-}
-@keyframes inkDrift {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25%  { transform: translate(40px, -50px) scale(1.08); }
-    50%  { transform: translate(-50px, 30px) scale(0.93); }
-    75%  { transform: translate(-30px, -20px) scale(1.04); }
-}
+/* === AMBIENT INK ORBS (layout in animations.css) === */
 
 /* === INK-BRUSH DIVIDER === */
 .ink-brush-divider {
@@ -427,9 +397,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .module.active { display: block; }
 
 /* === DASHBOARD HERO === */
-.dashboard-hero { margin-bottom: var(--spacing-2xl); }
+.dashboard-hero { margin-bottom: var(--spacing-2xl); text-align: center; }
 .greeting-row {
-    display: flex; align-items: center; gap: var(--spacing-sm);
+    display: flex; align-items: center; justify-content: center;
+    gap: var(--spacing-sm);
     margin-bottom: var(--spacing-xs);
 }
 .greeting {
@@ -441,6 +412,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .greeting-subtitle {
     font-size: 15px;
     color: var(--text-secondary);
+    text-align: center;
 }
 
 /* === BRUSH-DECORATED SECTION HEADERS === */
@@ -462,6 +434,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
+    justify-items: center;
 }
 .stats-card {
     background: var(--bg-card);
@@ -577,11 +550,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .goal-icon { font-size: 16px; }
 
 /* Quick Actions */
-.quick-actions { margin-bottom: var(--spacing-lg); }
+.quick-actions { margin-bottom: var(--spacing-lg); text-align: center; }
 .action-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-sm);
+    justify-content: center;
 }
 .action-card {
     background: var(--bg-card);
@@ -603,12 +577,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 /* Smart Review */
 .smart-review-section {
     margin-bottom: var(--spacing-lg);
+    text-align: center;
 }
-.review-actions { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.review-actions { display: flex; flex-direction: column; gap: var(--spacing-sm); align-items: center; }
 .review-stats { margin-top: var(--spacing-md); }
 
 /* Recent Activity */
-.recent-activity { margin-top: var(--spacing-2xl); }
+.recent-activity { margin-top: var(--spacing-2xl); text-align: center; }
 .activity-list {
     background: var(--bg-card);
     border: 1px solid rgba(200, 184, 160, 0.06);
@@ -636,6 +611,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 /* === MODULE HEADERS === */
 .module-header {
     margin-bottom: var(--spacing-2xl);
+    text-align: center;
 }
 .module-header h1 {
     font-size: 32px; font-weight: 700;
@@ -652,6 +628,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: var(--spacing-md);
     margin: 0 auto;
+    justify-items: center;
 }
 .exercise-type-card, .vocab-mode-card, .game-card {
     background: var(--bg-card);
@@ -997,6 +974,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
+    justify-content: center;
 }
 .achievement-card {
     background: var(--bg-card);
@@ -1093,10 +1071,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     max-width: calc(100vw - 260px);
 }
 .footer-content {
-    display: flex; justify-content: space-between;
-    align-items: center; font-size: 13px;
+    display: flex; justify-content: center; gap: var(--spacing-xl);
+    align-items: center; font-size: 13px; flex-wrap: wrap;
 }
-.footer-brand { color: var(--text-muted); }
+.footer-brand { color: var(--text-muted); text-align: center; }
 .footer-links { display: flex; gap: var(--spacing-lg); }
 .footer-links a {
     color: var(--text-muted); text-decoration: none;

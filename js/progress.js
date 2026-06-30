@@ -192,6 +192,198 @@ const ProgressTracker = {
                 const hour = new Date().getHours();
                 return hour >= 5 && hour < 7;
             }
+        },
+        {
+            id: 'grammar-20',
+            title: 'Grammar Sensei',
+            description: 'Complete 20 grammar lessons',
+            icon: '🎓',
+            condition: (stats) => stats.grammarCompleted >= 20
+        },
+        {
+            id: 'grammar-50',
+            title: 'Grammar Grandmaster',
+            description: 'Complete 50 grammar lessons',
+            icon: '🏛️',
+            condition: (stats) => stats.grammarCompleted >= 50
+        },
+        {
+            id: 'speaking-10',
+            title: 'Speaker\'s Voice',
+            description: 'Complete 10 speaking exercises',
+            icon: '🗣️',
+            condition: (stats) => stats.speakingCompleted >= 10
+        },
+        {
+            id: 'speaking-30',
+            title: 'Orator\'s Guild',
+            description: 'Complete 30 speaking exercises',
+            icon: '📢',
+            condition: (stats) => stats.speakingCompleted >= 30
+        },
+        {
+            id: 'total-50',
+            title: 'Dedicated Learner',
+            description: 'Complete 50 total exercises',
+            icon: '📋',
+            condition: (stats) => stats.totalCompleted >= 50
+        },
+        {
+            id: 'total-100',
+            title: 'Study Machine',
+            description: 'Complete 100 total exercises',
+            icon: '⚙️',
+            condition: (stats) => stats.totalCompleted >= 100
+        },
+        {
+            id: 'total-250',
+            title: 'Knowledge Engine',
+            description: 'Complete 250 total exercises',
+            icon: '🚂',
+            condition: (stats) => stats.totalCompleted >= 250
+        },
+        {
+            id: 'total-500',
+            title: 'Legendary Scholar',
+            description: 'Complete 500 total exercises',
+            icon: '🏛️',
+            condition: (stats) => stats.totalCompleted >= 500
+        },
+        {
+            id: 'perfect-3',
+            title: 'Triple Crown',
+            description: 'Achieve 3 perfect scores',
+            icon: '👑',
+            condition: (stats) => stats.perfectScores >= 3
+        },
+        {
+            id: 'perfect-10',
+            title: 'Flawless',
+            description: 'Achieve 10 perfect scores',
+            icon: '💎',
+            condition: (stats) => stats.perfectScores >= 10
+        },
+        {
+            id: 'perfect-25',
+            title: 'Untouchable',
+            description: 'Achieve 25 perfect scores',
+            icon: '🌟',
+            condition: (stats) => stats.perfectScores >= 25
+        },
+        {
+            id: 'vocab-500',
+            title: 'Walking Dictionary',
+            description: 'Learn 500 vocabulary words',
+            icon: '📚',
+            condition: (stats) => stats.totalWords >= 500
+        },
+        {
+            id: 'vocab-1000',
+            title: 'Human Lexicon',
+            description: 'Learn 1000 vocabulary words',
+            icon: '📖',
+            condition: (stats) => stats.totalWords >= 1000
+        },
+        {
+            id: 'level-15',
+            title: 'Sage of Learning',
+            description: 'Reach level 15',
+            icon: '🧘',
+            condition: (stats) => stats.level >= 15
+        },
+        {
+            id: 'level-20',
+            title: 'Master of Arts',
+            description: 'Reach level 20',
+            icon: '🏅',
+            condition: (stats) => stats.level >= 20
+        },
+        {
+            id: 'xp-10000',
+            title: 'XP Titan',
+            description: 'Earn 10000 XP',
+            icon: '💰',
+            condition: (stats) => stats.totalXp >= 10000
+        },
+        {
+            id: 'xp-25000',
+            title: 'XP Legend',
+            description: 'Earn 25000 XP',
+            icon: '💎',
+            condition: (stats) => stats.totalXp >= 25000
+        },
+        {
+            id: 'streak-60',
+            title: 'Iron Will',
+            description: 'Maintain a 60-day streak',
+            icon: '⚡',
+            condition: (stats) => stats.streak >= 60
+        },
+        {
+            id: 'streak-100',
+            title: 'Centurion',
+            description: 'Maintain a 100-day streak',
+            icon: '🛡️',
+            condition: (stats) => stats.streak >= 100
+        },
+        {
+            id: 'listening-100',
+            title: 'Ear of the Dragon',
+            description: 'Complete 100 listening exercises',
+            icon: '🐉',
+            condition: (stats) => stats.listeningCompleted >= 100
+        },
+        {
+            id: 'reading-100',
+            title: 'Eye of the Phoenix',
+            description: 'Complete 100 reading exercises',
+            icon: '🐦‍🔥',
+            condition: (stats) => stats.readingCompleted >= 100
+        },
+        {
+            id: 'hsk-complete',
+            title: 'HSK Graduate',
+            description: 'Master all words in one HSK level',
+            icon: '🎓',
+            condition: () => {
+                try {
+                    var ud = typeof StorageManager !== 'undefined' ? StorageManager.getUserData() : null;
+                    var mastered = (ud && ud.progress && ud.progress.vocabulary && ud.progress.vocabulary.mastered) ? ud.progress.vocabulary.mastered.length : 0;
+                    return mastered >= 50;
+                } catch(e) { return false; }
+            }
+        },
+        {
+            id: 'all-modules',
+            title: 'Renaissance Scholar',
+            description: 'Complete at least 5 exercises in every module',
+            icon: '🎨',
+            condition: (stats) => stats.listeningCompleted >= 5 && stats.readingCompleted >= 5 && stats.grammarCompleted >= 5 && stats.speakingCompleted >= 5
+        },
+        {
+            id: 'midnight-marathon',
+            title: 'Night Scholar',
+            description: 'Complete 10 exercises between midnight and 5 AM',
+            icon: '🌙',
+            condition: () => {
+                try {
+                    var data = typeof StorageManager !== 'undefined' ? StorageManager.getUserData() : null;
+                    if (!data || !data.activityLog) return false;
+                    var count = 0;
+                    data.activityLog.forEach(function(a) {
+                        var h = new Date(a.timestamp).getHours();
+                        if (h >= 0 && h < 5) count++;
+                    });
+                    return count >= 10;
+                } catch(e) { return false; }
+            }
+        },
+        {
+            id: 'seven-day-power',
+            title: 'Weekend Warrior',
+            description: 'Study 7 days in a row with at least 1 exercise each day',
+            icon: '📅',
+            condition: (stats) => stats.streak >= 7
         }
     ],
 
@@ -216,6 +408,23 @@ const ProgressTracker = {
         
         // Add XP
         StorageManager.addXP(xp);
+
+        // Track perfect scores
+        if (isPerfect) {
+            var userData = StorageManager.getUserData();
+            if (userData) {
+                userData.perfectScores = (userData.perfectScores || 0) + 1;
+                StorageManager.setUserData(userData);
+            }
+        }
+
+        /* Float +XP animation */
+        if (xp > 0 && typeof InkAnimations !== 'undefined' && InkAnimations.floatXP) {
+            var target = document.querySelector('.module.active .exercise-header') ||
+                        document.querySelector('.module.active') ||
+                        document.body;
+            InkAnimations.floatXP(target, xp);
+        }
         
         // Update daily stats
         StorageManager.updateDailyStats(module, 1);
@@ -253,6 +462,14 @@ const ProgressTracker = {
         StorageManager.addXP(xp);
         StorageManager.updateDailyStats('vocabulary', 1);
         StorageManager.updateDailyStats('xp', xp);
+
+        /* Float +XP */
+        if (xp > 0 && typeof InkAnimations !== 'undefined' && InkAnimations.floatXP) {
+            var targetEl = document.querySelector('.flashcard-container .flashcard') ||
+                          document.querySelector('#module-vocabulary.active') ||
+                          document.body;
+            InkAnimations.floatXP(targetEl, xp);
+        }
         
         // Check achievements
         this.checkAchievements();
@@ -280,7 +497,7 @@ const ProgressTracker = {
         
         const fullStats = {
             ...stats,
-            totalCompleted: stats.listeningCompleted + stats.readingCompleted + stats.grammarCompleted,
+            totalCompleted: stats.listeningCompleted + stats.readingCompleted + stats.grammarCompleted + stats.speakingCompleted,
             hasPerfectScore: Object.values(listeningScores).some(s => s === 100) ||
                            Object.values(readingScores).some(s => s === 100),
             dailyGoalComplete

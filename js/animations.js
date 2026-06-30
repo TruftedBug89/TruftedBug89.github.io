@@ -459,7 +459,7 @@ var InkAnimations = (function() {
         });
     };
 
-    /* === FEEDBACK PULSE (correct/incorrect) === */
+    /* === FEEDBACK PULSE (correct/incorrect) + particle burst === */
     window.InkAnimations.feedbackPulse = function(element, type) {
         if (!gsap || !element) return;
         var color = type === 'correct' ? '#4a9680' : type === 'close' ? '#d4a84b' : '#c42020';
@@ -472,6 +472,10 @@ var InkAnimations = (function() {
             duration: 0.6,
             ease: 'power2.out'
         });
+        /* Particle burst on correct */
+        if (type === 'correct') {
+            burstParticles(element, 10, ['#4a9680','#7bed9f','#fff','#58d68d']);
+        }
     };
 
     /* === SHAKE ELEMENT (for incorrect answers) === */
@@ -616,6 +620,158 @@ var InkAnimations = (function() {
             gsap.to(card, { rotationY: 0, duration: 0.7, ease: 'power3.inOut' });
         } else {
             gsap.to(card, { rotationY: 180, duration: 0.7, ease: 'power3.inOut' });
+        }
+    };
+
+    /* === CORRECT ANSWER CELEBRATE (pop + glow + sparkle) === */
+    window.InkAnimations.celebrateCorrect = function(element) {
+        if (!gsap || !element) return;
+        var tl = gsap.timeline();
+        tl.to(element, { scale: 1.06, duration: 0.12, ease: 'power2.out' });
+        tl.to(element, { scale: 1, duration: 0.35, ease: 'elastic.out(1, 0.3)' });
+        gsap.to(element, {
+            boxShadow: '0 0 0 0 rgba(74,150,128,0.6)',
+            duration: 0.01
+        });
+        gsap.to(element, {
+            boxShadow: '0 0 0 16px rgba(74,150,128,0)',
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 0.05
+        });
+        /* mini particles */
+        burstParticles(element, 12, ['#4a9680','#7bed9f','#fff']);
+    };
+
+    /* === FLOATING +XP (rises and fades) === */
+    window.InkAnimations.floatXP = function(element, xpAmount) {
+        if (!gsap || !element) return;
+        var float = document.createElement('div');
+        float.className = 'xp-float';
+        float.textContent = '+' + xpAmount + ' XP';
+        float.style.cssText = 'position:fixed;z-index:99999;pointer-events:none;' +
+            'font-weight:800;font-size:20px;' +
+            'background:linear-gradient(135deg,#f1c40f,#e67e22);' +
+            '-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;' +
+            'text-shadow:0 0 12px rgba(241,196,15,0.6);';
+        document.body.appendChild(float);
+        var rect = element.getBoundingClientRect();
+        gsap.set(float, {
+            left: rect.left + rect.width / 2,
+            top: rect.top,
+            xPercent: -50,
+            opacity: 1,
+            scale: 0.5
+        });
+        gsap.to(float, {
+            y: -80,
+            scale: 1.2,
+            opacity: 0,
+            duration: 1.2,
+            ease: 'power3.out',
+            onComplete: function() { float.remove(); }
+        });
+        Utils.playSound('xp');
+    };
+
+    /* === PARTICLE BURST from element === */
+    function burstParticles(element, count, colors) {
+        if (!gsap || !element) return;
+        var rect = element.getBoundingClientRect();
+        var cx = rect.left + rect.width / 2;
+        var cy = rect.top + rect.height / 2;
+        colors = colors || ['#c42020','#c9a84c','#4a9680','#e8e0d5','#fff'];
+        for (var i = 0; i < (count || 16); i++) {
+            var p = document.createElement('div');
+            p.style.cssText = 'position:fixed;z-index:99998;pointer-events:none;' +
+                'width:' + (3 + Math.random() * 5) + 'px;height:' + (3 + Math.random() * 5) + 'px;' +
+                'border-radius:' + (Math.random() > 0.5 ? '50%' : '1px') + ';' +
+                'background:' + colors[Math.floor(Math.random() * colors.length)] + ';';
+            document.body.appendChild(p);
+            var angle = Math.random() * Math.PI * 2;
+            var dist = 30 + Math.random() * 80;
+            gsap.fromTo(p, { x: cx, y: cy, opacity: 1, scale: 1 }, {
+                x: cx + Math.cos(angle) * dist,
+                y: cy + Math.sin(angle) * dist,
+                opacity: 0,
+                scale: 0,
+                duration: 0.6 + Math.random() * 0.6,
+                ease: 'power3.out',
+                onComplete: function() { p.remove(); }
+            });
+        }
+    }
+
+    /* === LEVEL UP OVERLAY === */
+    window.InkAnimations.showLevelUp = function(level, title, xp) {
+        if (!gsap) {
+            Utils.showToast('Level Up! ' + title, 'success');
+            return;
+        }
+        var overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;pointer-events:none;';
+        overlay.innerHTML = '<div style="position:absolute;inset:0;background:radial-gradient(circle,rgba(201,168,76,0.15),rgba(0,0,0,0.85));"></div>' +
+            '<div class="levelup-card" style="position:relative;text-align:center;z-index:1;">' +
+                '<div class="levelup-badge" style="display:inline-flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c9a84c,#f1c40f);box-shadow:0 0 60px rgba(241,196,15,0.6);font-size:48px;font-weight:900;color:#0a0a0a;">' + level + '</div>' +
+                '<h2 style="color:#f1c40f;font-size:32px;margin:16px 0 8px;font-weight:800;">LEVEL UP!</h2>' +
+                '<p style="color:#e8e0d5;font-size:18px;margin:0 0 8px;">' + Utils.escapeHtml(title || '') + '</p>' +
+                '<p style="color:#c9a84c;font-size:14px;">⭐ +' + (xp || 0) + ' XP total</p>' +
+            '</div>';
+        document.body.appendChild(overlay);
+
+        var card = overlay.querySelector('.levelup-card');
+        var badge = overlay.querySelector('.levelup-badge');
+        var tl = gsap.timeline({ onComplete: function() {
+            gsap.to(overlay, { opacity: 0, duration: 0.5, delay: 0.6, ease: 'power2.in', onComplete: function() { overlay.remove(); } });
+        }});
+        tl.fromTo(overlay.firstElementChild, { opacity: 0 }, { opacity: 1, duration: 0.3 });
+        tl.fromTo(badge, { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.7, ease: 'back.out(2)' }, '-=0.1');
+        tl.fromTo(card.querySelectorAll('h2,p'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out' });
+
+        /* Golden particles */
+        for (var i = 0; i < 30; i++) {
+            var gp = document.createElement('div');
+            gp.style.cssText = 'position:fixed;z-index:99998;pointer-events:none;width:4px;height:4px;border-radius:50%;background:#f1c40f;box-shadow:0 0 8px 2px rgba(241,196,15,0.8);';
+            overlay.appendChild(gp);
+            var a = Math.random() * Math.PI * 2;
+            var d = 120 + Math.random() * 350;
+            gsap.fromTo(gp, { x: window.innerWidth/2, y: window.innerHeight/2, scale: 1, opacity: 1 }, {
+                x: window.innerWidth/2 + Math.cos(a) * d,
+                y: window.innerHeight/2 + Math.sin(a) * d,
+                scale: 0, opacity: 0,
+                duration: 1.8 + Math.random() * 2,
+                ease: 'power3.out',
+                delay: 0.3 + Math.random() * 0.5,
+                onComplete: function() { gp.remove(); }
+            });
+        }
+        Utils.playSound('levelup');
+    };
+
+    /* === COMPLETION RING GSAP FILL === */
+    window.InkAnimations.animateCompletionRing = function(ringEl, pctNum, color) {
+        if (!gsap || !ringEl) return;
+        var pctEl = ringEl.querySelector('.completion-pct');
+        var scoreEl = ringEl.querySelector('.completion-score');
+        var totalEl = ringEl.querySelector('.completion-total');
+        gsap.fromTo(ringEl, { '--pct': 0 }, {
+            '--pct': pctNum,
+            duration: 1.5,
+            ease: 'power3.out',
+            onUpdate: function() {
+                var v = Math.round(gsap.getProperty(ringEl, '--pct'));
+                ringEl.style.background = 'conic-gradient(' + color + ' ' + (v * 3.6) + 'deg, rgba(255,255,255,0.08) ' + (v * 3.6) + 'deg)';
+                if (pctEl) pctEl.textContent = v + '%';
+            }
+        });
+        if (scoreEl && parseInt(scoreEl.textContent) === 0) {
+            gsap.fromTo(scoreEl, { textContent: 0 }, {
+                textContent: parseInt(scoreEl.dataset.score || 0),
+                duration: 1.5,
+                ease: 'power3.out',
+                snap: { textContent: 1 },
+                onUpdate: function() { scoreEl.textContent = Math.round(scoreEl.textContent); }
+            });
         }
     };
 

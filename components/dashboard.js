@@ -5,10 +5,37 @@
 const Dashboard = {
     // Initialize dashboard
     init() {
+        this._setGreeting();
         this.update();
+        this._checkBackupReminder();
         if (typeof InkAnimations !== 'undefined' && InkAnimations.textSplitReveal) {
             InkAnimations.textSplitReveal('.greeting');
         }
+    },
+
+    _checkBackupReminder() {
+        var now = Date.now();
+        var lastReminder = parseInt(Utils.storage.get('lastBackupReminder', '0'));
+        var sevenDays = 7 * 24 * 60 * 60 * 1000;
+        if (now - lastReminder > sevenDays) {
+            var userData = StorageManager.getUserData();
+            if (userData && userData.level >= 3) {
+                setTimeout(function() {
+                    Utils.showToast('\uD83D\uDCBE Remember to export your progress backup! Open Settings \u2192 Export', 'info');
+                }, 6000);
+            }
+            Utils.storage.set('lastBackupReminder', String(now));
+        }
+    },
+
+    _setGreeting() {
+        var greetingEl = document.getElementById('greeting');
+        if (!greetingEl) return;
+        var hour = new Date().getHours();
+        var text = hour < 12 ? '\u65e9\u4e0a\u597d \u00b7 Good morning'
+            : hour < 18 ? '\u4e0b\u5348\u597d \u00b7 Good afternoon'
+            : '\u665a\u4e0a\u597d \u00b7 Good evening';
+        greetingEl.textContent = text;
     },
 
     // Update dashboard data
@@ -26,6 +53,9 @@ const Dashboard = {
         this.updateAnalytics();
         this.updateReviewStats();
         this.setupSmartReview();
+
+        // Update action card progress badges
+        this._updateActionCardBadges();
 
         if (typeof InkAnimations !== 'undefined') {
             var dashboardModule = document.getElementById('module-dashboard');
@@ -89,6 +119,9 @@ const Dashboard = {
         const currentXp = document.getElementById('current-xp');
         const nextLevelXp = document.getElementById('next-level-xp');
 
+        var prevLevel = this._prevLevel || 0;
+        var justLeveledUp = levelInfo.level > prevLevel && prevLevel > 0;
+
         if (levelElement) levelElement.textContent = levelInfo.level;
         var useGSAP = typeof InkAnimations !== 'undefined' && InkAnimations.animateXP;
         var fromPct = xpProgress ? parseFloat(xpProgress.style.width) || 0 : 0;
@@ -101,6 +134,13 @@ const Dashboard = {
         }
         if (currentXp) currentXp.textContent = levelInfo.currentXp;
         if (nextLevelXp) nextLevelXp.textContent = levelInfo.nextLevelXp;
+
+        if (justLeveledUp) {
+            this._prevLevel = levelInfo.level;
+            Utils.showConfetti({ count: 100 });
+            Utils.showToast('\uD83C\uDFC6 Level ' + levelInfo.level + '! Back up your progress in Settings \u2192 Export', 'success');
+        }
+        if (prevLevel === 0) this._prevLevel = levelInfo.level;
     },
 
     // Update daily goal
@@ -181,9 +221,43 @@ const Dashboard = {
                 if (typeof InkAnimations !== 'undefined' && InkAnimations.attentionPulse) {
                     InkAnimations.attentionPulse(streakCount);
                 }
+                try { Utils.showToast('\uD83D\uDD25 ' + streak + '-day streak!', 'success'); } catch (_) {}
+                try { Utils.showConfetti({ count: 80 }); } catch (_) {}
             }
             this._prevStreak = streak;
         }
+    },
+
+    // Standalone nav-footer updater — callable from anywhere
+    updateNavFooter() {
+        var userData = typeof StorageManager !== 'undefined' ? StorageManager.getUserData() : null;
+        if (!userData) return;
+
+        var levelEl = document.getElementById('user-level');
+        var currentXpEl = document.getElementById('current-xp');
+        var nextLevelXpEl = document.getElementById('next-level-xp');
+        var xpBar = document.getElementById('xp-progress');
+        var streakEl = document.getElementById('streak-count');
+        var profileNameEl = document.getElementById('profile-name');
+        var profileTextEl = document.getElementById('profile-name-text');
+
+        if (levelEl) levelEl.textContent = userData.level || 1;
+        if (profileNameEl) profileNameEl.textContent = (userData.name || 'L').charAt(0).toUpperCase();
+        if (profileTextEl) profileTextEl.textContent = userData.name || 'Learner';
+        if (streakEl) streakEl.textContent = userData.streak || 0;
+
+        var thresholds = [0, 100, 250, 500, 1000, 1750, 2750, 4000, 5500, 7500,
+            10000, 13000, 16500, 20500, 25000, 30000, 35500, 41500, 48000, 55000];
+        var lvl = userData.level || 1;
+        var currentThreshold = thresholds[lvl - 1] || 0;
+        var nextThreshold = thresholds[lvl] || thresholds[thresholds.length - 1];
+        var xpInLevel = (userData.xp || 0) - currentThreshold;
+        var xpNeeded = nextThreshold - currentThreshold;
+        var pct = xpNeeded > 0 ? Math.min(100, Math.round((xpInLevel / xpNeeded) * 100)) : 100;
+
+        if (currentXpEl) currentXpEl.textContent = userData.xp || 0;
+        if (nextLevelXpEl) nextLevelXpEl.textContent = nextThreshold;
+        if (xpBar) xpBar.style.width = pct + '%';
     },
 
     // Update analytics
@@ -271,9 +345,9 @@ const Dashboard = {
         ` + this._buildLearningExtras(safeMistakes);
         var reviewNowBtn = analyticsContent.querySelector('[data-cm-action="review-now-analytics"]');
         if (reviewNowBtn) {
-            reviewNowBtn.onclick = function() {
+            reviewNowBtn.addEventListener('click', function() {
                 if (typeof App !== 'undefined') App.navigateTo('vocabulary');
-            };
+            });
         }
     },
 
@@ -283,7 +357,7 @@ const Dashboard = {
         if (!reviewStats) return;
 
         if (typeof AdvancedLearning === 'undefined') {
-            reviewStats.innerHTML = '<p style="color:rgba(255,255,255,0.5);">Review stats loading...</p>';
+            reviewStats.innerHTML = '<p style="color:var(--text-secondary);">Review stats loading...</p>';
             return;
         }
 
@@ -318,11 +392,14 @@ const Dashboard = {
 
     // Setup smart review
     setupSmartReview() {
+        if (this._smartReviewSetup) return;
+        this._smartReviewSetup = true;
+
         const startBtn = document.getElementById('start-smart-review');
         const viewBtn = document.getElementById('view-mistakes');
 
         if (startBtn) {
-            startBtn.onclick = () => {
+            startBtn.addEventListener('click', () => {
                 const session = AdvancedLearning.generateReviewSession({
                     module: 'vocabulary',
                     duration: 10,
@@ -333,8 +410,8 @@ const Dashboard = {
 
                 App.showModal(`
                     <div class="smart-review-modal">
-                        <h2>🧠 Smart Review Session</h2>
-                        <p>Personalized review based on your learning patterns</p>
+                        <h2 style="color:var(--text-primary);">🧠 Smart Review Session</h2>
+                        <p style="color:var(--text-secondary);">Personalized review based on your learning patterns</p>
                         <div class="session-stats">
                             <div class="session-stat">
                                 <span class="stat-value">${Utils.escapeHtml(session.types.new)}</span>
@@ -364,11 +441,11 @@ const Dashboard = {
                 const cancelBtn = modal.querySelector('[data-cm-action="cancel-review"]');
                 if (startBtn) startBtn.addEventListener('click', () => { App.closeModal(); App.navigateTo('vocabulary'); });
                 if (cancelBtn) cancelBtn.addEventListener('click', () => App.closeModal());
-            };
+            });
         }
 
         if (viewBtn) {
-            viewBtn.onclick = () => {
+            viewBtn.addEventListener('click', () => {
                 const mistakes = AdvancedLearning.getMistakeStats();
                 const topMistakes = mistakes.topMistakes;
 
@@ -393,7 +470,7 @@ const Dashboard = {
                 const modal = document.getElementById('modal');
                 const closeBtn = modal.querySelector('[data-cm-action="close-mistakes"]');
                 if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
-            };
+            });
         }
     },
 
@@ -545,8 +622,43 @@ const Dashboard = {
         }
 
         return html;
+    },
+
+    _updateActionCardBadges() {
+        if (typeof StorageManager === 'undefined') return;
+        var userData = StorageManager.getUserData();
+        var progress = userData && userData.progress ? userData.progress : {};
+        var mappings = {
+            'listening-challenge': 'listening',
+            'vocab-review': 'vocabulary',
+            'reading-quiz': 'reading',
+            'grammar-practice': 'grammar'
+        };
+        var labels = { listening: 'Listening', vocabulary: 'Vocab', reading: 'Reading', grammar: 'Grammar' };
+
+        Object.keys(mappings).forEach(function(action) {
+            var card = document.querySelector('.action-card[data-action="' + action + '"]');
+            if (!card) return;
+            var existing = card.querySelector('.action-progress-badge');
+            if (existing) existing.remove();
+
+            var mod = mappings[action];
+            var completed = (progress[mod] && progress[mod].completed) ? progress[mod].completed.length : 0;
+            var total = { vocabulary: 500, listening: 200, reading: 300, grammar: 100 }[mod] || 100;
+            var pct = Math.min(100, Math.round((completed / total) * 100));
+
+            var badge = document.createElement('span');
+            badge.className = 'action-progress-badge';
+            var color = pct >= 60 ? '#2ecc71' : pct >= 30 ? '#f39c12' : '#e74c3c';
+            badge.style.cssText = 'display:inline-block;margin-top:6px;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600;background:' + color + '20;color:' + color + ';border:1px solid ' + color + '40';
+            badge.textContent = (labels[mod] || mod) + ': ' + completed + '/' + total;
+            card.appendChild(badge);
+        });
     }
 };
+
+// Expose standalone nav updater globally
+window.updateNavFooter = function() { Dashboard.updateNavFooter(); };
 
 // Export for use in other modules
 window.Dashboard = Dashboard;

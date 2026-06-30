@@ -447,35 +447,7 @@
     color: var(--text-secondary);
 }
 
-.chart-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: var(--spacing-sm);
-    height: 150px;
-    padding-bottom: var(--spacing-md);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.chart-bar {
-    flex: 1;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-    transition: height var(--transition-normal);
-    position: relative;
-}
-
-.chart-bar:hover {
-    opacity: 0.8;
-}
-
-.chart-bar-label {
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: var(--font-size-xs);
-    color: var(--text-secondary);
-}
+/* Chart container - bars defined in analytics section below */
 
 /* Word Search Game */
 .word-search-grid {
@@ -940,6 +912,7 @@
     position: relative;
     min-height: 10px;
 }
+.chart-bar:hover { opacity: 0.8; }
 
 .chart-bar-value {
     position: absolute;

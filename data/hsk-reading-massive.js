@@ -301,3 +301,20 @@ const HSKReadingMassive = {
 };
 
 window.HSKReadingMassive = HSKReadingMassive;
+
+(function() {
+    if (typeof ReadingData !== 'undefined') {
+        var allLevels = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5'];
+        allLevels.forEach(function(lvl) {
+            var passages = HSKReadingMassive[lvl];
+            if (!passages) return;
+            passages.forEach(function(p) {
+                var ex = { id: p.id, title: p.titleEn || p.title, passage: p.passage, questions: p.questions };
+                if (!ReadingData.passageReading.find(function(r) { return r.id === p.id; })) {
+                    ReadingData.passageReading.push(ex);
+                }
+            });
+        });
+        ReadingData.totalCount = ReadingData.passageReading.length + ReadingData.characterMatch.length + ReadingData.sentenceCompletion.length + ReadingData.speedReading.length + ReadingData.radicalLearn.length + ReadingData.contextClues.length;
+    }
+})();

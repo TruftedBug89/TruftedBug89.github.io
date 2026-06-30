@@ -25,6 +25,9 @@ const PinyinToggle = {
     createToggles() {
         const navHeader = document.querySelector('.nav-header');
         if (!navHeader) return;
+
+        // Do not duplicate if already injected
+        if (document.getElementById('pinyin-toggle-btn')) return;
         
         const toggleContainer = document.createElement('div');
         toggleContainer.className = 'nav-toggle-controls';

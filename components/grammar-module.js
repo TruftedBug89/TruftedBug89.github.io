@@ -26,6 +26,15 @@ const GrammarModule = {
         // Populate lessons list
         this.populateLessonsList();
 
+        // Wire search input
+        const searchInput = document.getElementById('grammar-search');
+        if (searchInput) {
+            searchInput.value = '';
+            searchInput.oninput = () => this.filterLessons(searchInput.value);
+        }
+        const noResults = document.getElementById('grammar-no-results');
+        if (noResults) noResults.classList.add('hidden');
+
         if (typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger) {
             const list = document.getElementById('grammar-lessons-list');
             if (list) InkAnimations.entranceStagger(list);
@@ -48,14 +57,15 @@ const GrammarModule = {
             const safeTitle = Utils.escapeHtml(lesson.title);
             const safeTitleMeaning = Utils.escapeHtml(lesson.titleMeaning);
             const safeLevel = Utils.escapeHtml(lesson.level);
+            const safePattern = Utils.escapeAttr(lesson.pattern || '');
             return `
-                <div class="grammar-lesson-item ${isCompleted ? 'completed' : ''}" data-id="${safeId}" role="button" tabindex="0">
-                    <div class="grammar-lesson-number">${isCompleted ? '✓' : (i + 1)}</div>
+                <div class="grammar-lesson-item ${isCompleted ? 'completed' : ''}" data-id="${safeId}" data-pattern="${safePattern}" data-search-index="${i}" role="button" tabindex="0">
+                    <div class="grammar-lesson-number">${isCompleted ? '\u2713' : (i + 1)}</div>
                     <div class="grammar-lesson-info">
                         <h3>${safeTitle}</h3>
-                        <p>${safeTitleMeaning} · ${safeLevel}</p>
+                        <p>${safeTitleMeaning} \u00b7 ${safeLevel}</p>
                     </div>
-                    <div class="grammar-lesson-arrow">›</div>
+                    <div class="grammar-lesson-arrow">\u203a</div>
                 </div>
             `;
         }).join('');
@@ -80,6 +90,40 @@ const GrammarModule = {
                     gsap.to(item, { scale: 1, duration: 0.25, ease: 'power2.out' });
                 });
             });
+        }
+    },
+
+    // Filter lessons by search query
+    filterLessons(query) {
+        const lowerQuery = (query || '').toLowerCase().trim();
+        const items = document.querySelectorAll('.grammar-lesson-item');
+        const noResults = document.getElementById('grammar-no-results');
+        let visibleCount = 0;
+
+        if (!lowerQuery) {
+            items.forEach(item => { item.style.display = ''; visibleCount++; });
+            if (noResults) noResults.classList.add('hidden');
+            return;
+        }
+
+        items.forEach(item => {
+            const id = item.dataset.id || '';
+            const pattern = item.dataset.pattern || '';
+            const infoEl = item.querySelector('.grammar-lesson-info');
+            const text = infoEl ? infoEl.textContent.toLowerCase() : '';
+
+            const matches = text.includes(lowerQuery) || id.toLowerCase().includes(lowerQuery) || pattern.toLowerCase().includes(lowerQuery);
+
+            if (matches) {
+                item.style.display = '';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        if (noResults) {
+            noResults.classList.toggle('hidden', visibleCount > 0);
         }
     },
 

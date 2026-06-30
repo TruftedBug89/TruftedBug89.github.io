@@ -79,11 +79,11 @@ const Achievements = {
         // Header summary
         let html = `
             <div style="text-align:center; margin-bottom:24px;">
-                <h2 style="margin:0 0 6px; color:white;">🏆 Achievements</h2>
-                <p style="color:rgba(255,255,255,0.6); margin:0;">
+                <h2 style="margin:0 0 6px; color:var(--text-primary);">🏆 Achievements</h2>
+                <p style="color:var(--text-secondary); margin:0;">
                     ${safeUnlocked} of ${safeTotal} unlocked · ${safePercent}%
                 </p>
-                <div style="margin: 12px auto 0; max-width: 280px; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                <div style="margin: 12px auto 0; max-width: 280px; height: 6px; background: var(--bg-tertiary); border-radius: 999px; overflow: hidden;">
                     <div id="achievement-progress-fill" style="width:0%; height:100%; background: linear-gradient(90deg, #f1c40f, #e67e22);"></div>
                 </div>
             </div>
@@ -94,23 +94,26 @@ const Achievements = {
             html += `
             <div class="next-achievement" style="
                 background: linear-gradient(135deg, rgba(${nextTier.color === '#cd7f32' ? '205,127,50' : nextTier.color === '#c0c0c0' ? '192,192,192' : nextTier.color === '#ffd700' ? '255,215,0' : '229,228,226'},0.12), transparent);
-                border: 1px solid rgba(255,255,255,0.1);
+                border: 1px solid var(--glass-border);
                 border-radius: 12px;
                 padding: 14px 18px;
                 margin-bottom: 18px;
                 display: flex;
                 align-items: center;
                 gap: 14px;
+                max-width: 520px;
+                margin-left: auto;
+                margin-right: auto;
             ">
                 <div style="font-size:32px;">${Utils.escapeHtml(nextAchievement.icon)}</div>
                 <div style="flex:1;">
-                    <div style="color:rgba(255,255,255,0.5); font-size:11px; text-transform: uppercase; letter-spacing: 1px;">Next Achievement ${nextTier.icon} ${nextTier.name} Tier</div>
-                    <div style="color:white; font-weight:600; font-size:15px; margin: 2px 0;">${Utils.escapeHtml(nextAchievement.title)}</div>
-                    <div style="color:rgba(255,255,255,0.5); font-size:12px;">${Utils.escapeHtml(nextAchievement.description)}</div>
+                    <div style="color:var(--text-muted); font-size:11px; text-transform: uppercase; letter-spacing: 1px;">Next Achievement ${nextTier.icon} ${nextTier.name} Tier</div>
+                    <div style="color:var(--text-primary); font-weight:600; font-size:15px; margin: 2px 0;">${Utils.escapeHtml(nextAchievement.title)}</div>
+                    <div style="color:var(--text-secondary); font-size:12px;">${Utils.escapeHtml(nextAchievement.description)}</div>
                 </div>
                 <div style="text-align:center;">
-                    <div style="color:rgba(255,255,255,0.35); font-size:11px;">remaining</div>
-                    <div style="color:white; font-size:22px; font-weight:700;">${Utils.escapeHtml(remaining)}</div>
+                    <div style="color:var(--text-muted); font-size:11px;">remaining</div>
+                    <div style="color:var(--text-primary); font-size:22px; font-weight:700;">${Utils.escapeHtml(remaining)}</div>
                 </div>
             </div>
             `;
@@ -127,7 +130,7 @@ const Achievements = {
             if (achievement.unlocked) {
                 const ts = this.getAchievementUnlockDate(achievement.id);
                 if (ts) {
-                    unlockDateHtml = `<div class="achievement-unlock-date" style="font-size:10px; color:rgba(255,255,255,0.4); margin-top:4px;" data-timestamp="${Utils.escapeAttr(String(ts))}">${Utils.escapeHtml(this.formatUnlockDate(ts))}</div>`;
+                    unlockDateHtml = `<div class="achievement-unlock-date" style="font-size:10px; color:var(--text-muted); margin-top:4px;" data-timestamp="${Utils.escapeAttr(String(ts))}">${Utils.escapeHtml(this.formatUnlockDate(ts))}</div>`;
                 }
             }
 
@@ -138,10 +141,10 @@ const Achievements = {
                 const tierUnlocked = achievements.filter((a, i) => a.unlocked && i <= idx).length;
                 const tierTotal = idx + 1;
                 progressHtml = `<div class="achievement-tier-progress" style="margin-top:8px;">
-                    <div style="height:3px; background:rgba(255,255,255,0.06); border-radius:999px; overflow:hidden;">
+                    <div style="height:3px; background:var(--bg-tertiary); border-radius:999px; overflow:hidden;">
                         <div style="width:${(tierUnlocked/tierTotal)*100}%; height:100%; background:${tier.color}; border-radius:999px;"></div>
                     </div>
-                    <div style="font-size:10px; color:rgba(255,255,255,0.3); margin-top:3px;">${Utils.escapeHtml(tierUnlocked)}/${Utils.escapeHtml(tierTotal)} in ${Utils.escapeHtml(tier.name)}</div>
+                    <div style="font-size:10px; color:var(--text-muted); margin-top:3px;">${Utils.escapeHtml(tierUnlocked)}/${Utils.escapeHtml(tierTotal)} in ${Utils.escapeHtml(tier.name)}</div>
                 </div>`;
             }
 
@@ -149,8 +152,8 @@ const Achievements = {
             <div class="achievement-card ${achievement.unlocked ? '' : 'locked'}" data-achievement-id="${Utils.escapeAttr(achievement.id)}" style="
                 background: ${achievement.unlocked
                     ? `linear-gradient(135deg, rgba(241,196,15,0.18), rgba(230,126,34,0.06))`
-                    : 'rgba(255,255,255,0.03)'};
-                border: 1px solid ${achievement.unlocked ? `rgba(${tier.color === '#cd7f32' ? '205,127,50' : tier.color === '#c0c0c0' ? '192,192,192' : tier.color === '#ffd700' ? '255,215,0' : '229,228,226'},0.4)` : 'rgba(255,255,255,0.06)'};
+                    : 'var(--bg-card)'};
+                border: 1px solid ${achievement.unlocked ? `rgba(${tier.color === '#cd7f32' ? '205,127,50' : tier.color === '#c0c0c0' ? '192,192,192' : tier.color === '#ffd700' ? '255,215,0' : '229,228,226'},0.4)` : 'var(--glass-border)'};
                 border-radius: 16px;
                 padding: 20px;
                 text-align: center;
@@ -167,11 +170,11 @@ const Achievements = {
                     font-weight: 700;
                 ">${tier.icon} ${Utils.escapeHtml(tier.name)}</div>
                 <div class="achievement-icon" style="font-size:48px; margin-bottom:8px;">${safeIcon}</div>
-                <h3 style="margin:0 0 6px; color:white; font-size:15px;">${safeTitle}</h3>
-                <p style="margin:0 0 10px; color:rgba(255,255,255,0.6); font-size:12px;">${safeDesc}</p>
+                <h3 style="margin:0 0 6px; color:var(--text-primary); font-size:15px;">${safeTitle}</h3>
+                <p style="margin:0 0 10px; color:var(--text-secondary); font-size:12px;">${safeDesc}</p>
                 ${achievement.unlocked
                     ? '<span class="achievement-badge" style="display:inline-block; padding:3px 10px; border-radius:999px; background:rgba(241,196,15,0.18); color:#ffd86b; font-size:11px; font-weight:600;">✓ Unlocked</span>'
-                    : '<span class="achievement-badge locked" style="display:inline-block; padding:3px 10px; border-radius:999px; background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.45); font-size:11px; font-weight:600;">🔒 Locked</span>'
+                    : '<span class="achievement-badge locked" style="display:inline-block; padding:3px 10px; border-radius:999px; background:var(--bg-hover); color:var(--text-muted); font-size:11px; font-weight:600;">🔒 Locked</span>'
                 }
                 ${unlockDateHtml}
                 ${progressHtml}

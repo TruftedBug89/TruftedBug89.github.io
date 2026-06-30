@@ -391,8 +391,6 @@
 /* Speaking */
 .speaking-text { color: var(--text-primary); }
 .speaking-pinyin { color: var(--text-secondary); }
-.record-btn { background: var(--color-danger); color: white; }
-.record-btn.recording { background: var(--color-danger-dark); }
 
 /* Achievements */
 .achievement-card { background: var(--achievement-card-bg); border: 1px solid var(--achievement-card-border); }

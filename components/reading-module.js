@@ -424,11 +424,15 @@ const ReadingModule = {
 
         document.querySelectorAll('.character-item').forEach(item => {
             item.onclick = () => {
+                if (item.classList.contains('matched')) return;
                 document.querySelectorAll('.character-item').forEach(i => i.classList.remove('selected'));
                 item.classList.add('selected');
                 selectedCharacter = item.dataset.character;
-                this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                selectedMeaning = null;
+                if (selectedMeaning) {
+                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
+                    selectedCharacter = null;
+                    selectedMeaning = null;
+                }
             };
             item.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
@@ -437,11 +441,15 @@ const ReadingModule = {
 
         document.querySelectorAll('.meaning-item').forEach(item => {
             item.onclick = () => {
+                if (item.classList.contains('matched')) return;
                 document.querySelectorAll('.meaning-item').forEach(i => i.classList.remove('selected'));
                 item.classList.add('selected');
                 selectedMeaning = item.dataset.meaning;
-                this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                selectedCharacter = null;
+                if (selectedCharacter) {
+                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
+                    selectedCharacter = null;
+                    selectedMeaning = null;
+                }
             };
             item.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }

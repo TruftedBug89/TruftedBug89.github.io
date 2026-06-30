@@ -5,7 +5,7 @@
 
 /* === BASE TYPOGRAPHY (bigger, more readable) === */
 html {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 body {
@@ -165,7 +165,7 @@ select:focus,
 .footer-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
     max-width: 1300px;
@@ -201,8 +201,8 @@ select:focus,
 .mobile-nav-toggle {
     display: none;
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
     z-index: 200;
     width: 44px;
     height: 44px;
@@ -813,12 +813,6 @@ select:focus,
     .shadowing-display .sh-cn,
     .speaking-display .sp-cn {
         font-size: 2rem;
-    }
-
-    .record-btn-large {
-        width: 70px;
-        height: 70px;
-        font-size: 28px;
     }
 
     /* Tone display */

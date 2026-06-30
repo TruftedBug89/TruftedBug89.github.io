@@ -1,5 +1,5 @@
 // Chinese Master — Service Worker (offline-first)
-const CACHE_VERSION = 'cm-v1';
+const CACHE_VERSION = 'cm-v3';
 const STATIC_ASSETS = [
     './',
     'index.html',
@@ -12,6 +12,9 @@ const STATIC_ASSETS = [
     'css/modern-theme.css',
     'css/pinyin-toggle.css',
     'css/components-learner.css',
+    'css/animations.css',
+    'css/responsive.css',
+    'css/cookie-banner.css',
     'js/utils.js',
     'js/session.js',
     'js/storage.js',
@@ -25,6 +28,8 @@ const STATIC_ASSETS = [
     'js/tone-practice.js',
     'js/app.js',
     'js/register-sw.js',
+    'js/error-logger.js',
+    'js/animations.js',
     'components/dashboard.js',
     'components/listening-module.js',
     'components/reading-module.js',
@@ -33,7 +38,10 @@ const STATIC_ASSETS = [
     'components/achievements.js',
     'components/analytics.js',
     'components/vocabulary-learner.js',
-    'components/session-manager-ui.js'
+    'components/session-manager-ui.js',
+    'components/cookie-banner.js',
+    'vendor/gsap.min.js',
+    'vendor/ScrollTrigger.min.js'
 ];
 
 self.addEventListener('install', (event) => {
