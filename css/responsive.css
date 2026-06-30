@@ -158,8 +158,8 @@ select:focus,
     padding: 18px 32px 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     background: rgba(0, 0, 0, 0.15);
-    /* iPhone X+ safe area */
     padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 260px);
 }
 
 .footer-content {
@@ -452,15 +452,9 @@ select:focus,
 
 /* -- Tablet: 769-1024px -- */
 @media (max-width: 1024px) {
-    /* Dashboard columns stack on tablet */
-    .dashboard-columns {
+    /* Dashboard insight row stacks on tablet */
+    .dashboard-insight-row {
         grid-template-columns: 1fr;
-    }
-    
-    .dashboard-col-side {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
     }
     
     .greeting { font-size: 24px; }
@@ -472,12 +466,14 @@ select:focus,
     .main-content {
         margin-left: 240px;
         padding: 24px 20px;
+        max-width: calc(100vw - 240px);
     }
 
     .site-footer {
         margin-left: 240px;
         padding: 16px 20px 20px;
         padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        max-width: calc(100vw - 240px);
     }
 
     .action-cards {
@@ -543,13 +539,15 @@ select:focus,
     .main-content {
         margin-left: 0;
         padding: 16px 12px;
-        padding-top: 70px; /* room for hamburger */
+        padding-top: 70px;
+        max-width: 100%;
     }
 
     .site-footer {
         margin-left: 0;
         padding: 14px 12px 20px;
         padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        max-width: 100%;
     }
 
     .footer-content {
@@ -566,12 +564,6 @@ select:focus,
     .dashboard-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-    }
-
-    .dashboard-col-side {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
     }
 
     .goal-progress {
@@ -850,12 +842,12 @@ select:focus,
     }
 
     /* Smart review: stack buttons vertically on mobile */
-    .dashboard-col-side .review-actions {
+    .review-actions {
         flex-direction: column;
         gap: 8px;
     }
 
-    .dashboard-col-side .review-actions .btn {
+    .review-actions .btn {
         width: 100%;
         min-width: unset;
         flex: unset;
@@ -905,12 +897,12 @@ select:focus,
         max-width: 120px;
     }
 
-    /* Analytics sidebar adjustments */
-    .dashboard-col-side .stats-grid {
+    /* Analytics adjustments */
+    .analytics-dashboard .stats-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .dashboard-col-side .category-grid {
+    .analytics-dashboard .category-grid {
         grid-template-columns: 1fr 1fr;
     }
 

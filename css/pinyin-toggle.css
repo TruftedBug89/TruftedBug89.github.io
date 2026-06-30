@@ -9,40 +9,46 @@
     display: flex;
     gap: 8px;
     padding: 8px 0;
+    justify-content: center;
 }
 
 .toggle-btn {
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 4px 8px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    background: transparent;
-    color: rgba(255,255,255,0.6);
+    gap: 5px;
+    padding: 6px 14px;
+    border: 1px solid rgba(200, 184, 160, 0.12);
+    border-radius: var(--radius-full);
+    background: rgba(200, 184, 160, 0.05);
+    color: var(--text-secondary);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.25s ease;
     font-size: 12px;
+    font-weight: 500;
+    font-family: inherit;
 }
 
 .toggle-btn:hover {
-    background: rgba(255,255,255,0.1);
-    color: white;
+    background: rgba(200, 184, 160, 0.12);
+    color: var(--text-primary);
+    border-color: rgba(200, 184, 160, 0.25);
 }
 
 .toggle-btn.active {
-    background: rgba(255,255,255,0.2);
-    color: white;
-    border-color: rgba(255,255,255,0.4);
+    background: rgba(196, 32, 32, 0.15);
+    color: #e8a0a0;
+    border-color: rgba(196, 32, 32, 0.35);
 }
 
 .toggle-icon {
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 .toggle-label {
-    font-size: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Hide pinyin when toggled off */

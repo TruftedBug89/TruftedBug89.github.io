@@ -403,6 +403,222 @@ var InkAnimations = (function() {
         });
     };
 
+    /* === ENTRANCE STAGGER (for any container) === */
+    window.InkAnimations.entranceStagger = function(container, opts) {
+        if (!gsap || !container) return;
+        opts = opts || {};
+        var children = container.children;
+        if (!children.length) return;
+        gsap.fromTo(children, {
+            opacity: 0,
+            y: opts.y || 30,
+            scale: opts.scale || 1
+        }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: opts.duration || 0.5,
+            stagger: opts.stagger || 0.06,
+            ease: opts.ease || 'power3.out',
+            delay: opts.delay || 0
+        });
+    };
+
+    /* === EXERCISE CARD REVEAL === */
+    window.InkAnimations.exerciseCardReveal = function(container) {
+        if (!gsap || !container) return;
+        var cards = container.querySelectorAll('.exercise-type-card, .vocab-mode-card, .game-card');
+        if (!cards.length) return;
+        gsap.fromTo(cards, {
+            opacity: 0,
+            y: 40,
+            scale: 0.92,
+            rotateX: 4
+        }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotateX: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'back.out(1.4)'
+        });
+    };
+
+    /* === SCORE POP-UP === */
+    window.InkAnimations.scorePopup = function(element, score) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, {
+            scale: 0.3,
+            opacity: 0
+        }, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'back.out(2)'
+        });
+    };
+
+    /* === FEEDBACK PULSE (correct/incorrect) === */
+    window.InkAnimations.feedbackPulse = function(element, type) {
+        if (!gsap || !element) return;
+        var color = type === 'correct' ? '#4a9680' : type === 'close' ? '#d4a84b' : '#c42020';
+        gsap.fromTo(element, {
+            borderColor: 'transparent',
+            boxShadow: '0 0 0 0 ' + color
+        }, {
+            borderColor: color,
+            boxShadow: '0 0 0 8px rgba(' + (type === 'correct' ? '74,150,128' : type === 'close' ? '212,168,75' : '196,32,32') + ',0)',
+            duration: 0.6,
+            ease: 'power2.out'
+        });
+    };
+
+    /* === SHAKE ELEMENT (for incorrect answers) === */
+    window.InkAnimations.shakeElement = function(element) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, { x: 0 }, {
+            x: 8,
+            duration: 0.07,
+            repeat: 4,
+            yoyo: true,
+            ease: 'power2.inOut',
+            onComplete: function() { gsap.set(element, { x: 0 }); }
+        });
+    };
+
+    /* === SLIDE IN PANEL === */
+    window.InkAnimations.slideInPanel = function(element, direction) {
+        if (!gsap || !element) return;
+        var x = direction === 'left' ? -60 : direction === 'right' ? 60 : 0;
+        var y = direction === 'up' ? -40 : direction === 'down' ? 40 : 0;
+        gsap.fromTo(element, {
+            opacity: 0,
+            x: x,
+            y: y
+        }, {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 0.55,
+            ease: 'power3.out'
+        });
+    };
+
+    /* === COUNTER BOUNCE === */
+    window.InkAnimations.counterBounce = function(element) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, { scale: 0.5, opacity: 0 }, {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.4)'
+        });
+    };
+
+    /* === ATTENTION PULSE === */
+    window.InkAnimations.attentionPulse = function(element) {
+        if (!gsap || !element) return;
+        gsap.to(element, {
+            scale: 1.05,
+            duration: 0.3,
+            repeat: 1,
+            yoyo: true,
+            ease: 'power2.inOut'
+        });
+    };
+
+    /* === HIGHLIGHT FLASH === */
+    window.InkAnimations.highlightFlash = function(element) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, {
+            backgroundColor: 'rgba(74,150,128,0.25)'
+        }, {
+            backgroundColor: 'rgba(74,150,128,0)',
+            duration: 1.2,
+            ease: 'power2.out'
+        });
+    };
+
+    /* === PROGRESS BAR FILL === */
+    window.InkAnimations.progressBarFill = function(element, fromPct, toPct) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, { width: fromPct + '%' }, {
+            width: toPct + '%',
+            duration: 0.8,
+            ease: 'power3.inOut'
+        });
+    };
+
+    /* === DOT INDICATOR PULSE === */
+    window.InkAnimations.dotPulse = function(element) {
+        if (!gsap || !element) return;
+        gsap.fromTo(element, { scale: 0.8 }, {
+            scale: 1.4,
+            duration: 0.35,
+            ease: 'back.out(2)'
+        });
+    };
+
+    /* === MODULE HERO REVEAL === */
+    window.InkAnimations.moduleHeroReveal = function(moduleEl) {
+        if (!gsap || !moduleEl) return;
+        var h1 = moduleEl.querySelector('h1');
+        var subtitle = moduleEl.querySelector('.module-subtitle');
+        var tl = gsap.timeline();
+        if (h1) {
+            tl.fromTo(h1, { opacity: 0, y: -20, filter: 'blur(4px)' }, {
+                opacity: 1, y: 0, filter: 'blur(0px)',
+                duration: 0.6, ease: 'power3.out'
+            });
+        }
+        if (subtitle) {
+            tl.fromTo(subtitle, { opacity: 0, y: 10 }, {
+                opacity: 1, y: 0,
+                duration: 0.5, ease: 'power2.out'
+            }, '-=0.3');
+        }
+    };
+
+    /* === ACHIEVEMENT UNLOCK === */
+    window.InkAnimations.achievementUnlock = function(card) {
+        if (!gsap || !card) return;
+        var tl = gsap.timeline();
+        tl.fromTo(card, { scale: 0, rotation: -15, opacity: 0 }, {
+            scale: 1.1, rotation: 2, opacity: 1,
+            duration: 0.5, ease: 'back.out(2)'
+        });
+        tl.to(card, {
+            scale: 1, rotation: 0,
+            duration: 0.3, ease: 'power2.out'
+        });
+        var icon = card.querySelector('.achievement-icon');
+        if (icon) {
+            tl.fromTo(icon, { scale: 0 }, {
+                scale: 1.2,
+                duration: 0.4, ease: 'back.out(2)'
+            }, '-=0.2');
+            tl.to(icon, { scale: 1, duration: 0.2, ease: 'power2.out' });
+        }
+        /* Golden glow pulse */
+        gsap.fromTo(card, { boxShadow: '0 0 0 0 rgba(201,168,76,0)' }, {
+            boxShadow: '0 0 30px 8px rgba(201,168,76,0.4)',
+            duration: 0.8,
+            delay: 0.8,
+            ease: 'power2.out'
+        });
+    };
+
+    /* === FLASHCARD 3D FLIP (GSAP-powered) === */
+    window.InkAnimations.flashcardFlip = function(card, toFront) {
+        if (!gsap || !card) return;
+        if (toFront) {
+            gsap.to(card, { rotationY: 0, duration: 0.7, ease: 'power3.inOut' });
+        } else {
+            gsap.to(card, { rotationY: 180, duration: 0.7, ease: 'power3.inOut' });
+        }
+    };
+
     /* Initialize */
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);

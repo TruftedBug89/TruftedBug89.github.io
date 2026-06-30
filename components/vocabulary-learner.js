@@ -100,7 +100,11 @@ const VocabularyLearner = {
         
         // Highlight selected level
         document.querySelectorAll('.level-card').forEach(card => {
-            card.classList.toggle('selected', parseInt(card.dataset.level) === level);
+            const isSelected = parseInt(card.dataset.level) === level;
+            card.classList.toggle('selected', isSelected);
+            if (isSelected && typeof InkAnimations !== 'undefined' && InkAnimations.attentionPulse) {
+                InkAnimations.attentionPulse(card);
+            }
         });
     },
     
@@ -174,6 +178,11 @@ const VocabularyLearner = {
         const total = this.sessionCards.length;
         const remaining = total - this.sessionIndex;
         const lvl = this.currentLevel || 1;
+        
+        // HSK badge
+        const wordData = this.findWordData(card);
+        const hskBadge = wordData && wordData.hsk ? `<span class="hsk-card-badge">HSK ${Utils.escapeHtml(wordData.hsk)}</span>` : '';
+        
         container.innerHTML = `
             <div class="review-header">
                 <button class="back-btn" data-cm-action="back-levels">← Back</button>
@@ -187,6 +196,7 @@ const VocabularyLearner = {
             </div>
 
             <div class="flashcard-container">
+                ${hskBadge}
                 <div id="flashcard" class="flashcard" role="button" tabindex="0" aria-label="Flashcard - click or press space to flip">
                     <div class="flashcard-front">
                         <div class="flashcard-character" lang="zh">${safeChar}</div>
@@ -203,6 +213,8 @@ const VocabularyLearner = {
                     </div>
                 </div>
             </div>
+
+            <div id="learning-details" class="learning-details-panel" style="display: none;"></div>
 
             <div class="rating-buttons" id="rating-buttons" style="display: none;">
                 <p class="rating-label">How well did you know this?</p>
@@ -257,7 +269,12 @@ const VocabularyLearner = {
         if (!flashcard) return;
         
         this.isFlipped = !this.isFlipped;
-        flashcard.classList.toggle('flipped', this.isFlipped);
+        
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.flashcardFlip) {
+            InkAnimations.flashcardFlip(flashcard, this.isFlipped);
+        } else {
+            flashcard.classList.toggle('flipped', this.isFlipped);
+        }
         
         // Show rating buttons when flipped
         const ratingButtons = document.getElementById('rating-buttons');
@@ -270,12 +287,108 @@ const VocabularyLearner = {
         if (hint) {
             hint.style.display = 'none';
         }
+        
+        // Show/hide learning details panel
+        const detailsPanel = document.getElementById('learning-details');
+        if (detailsPanel) {
+            detailsPanel.style.display = this.isFlipped ? 'block' : 'none';
+        }
+        
+        // Populate learning details when card is flipped
+        if (this.isFlipped && this.currentCard) {
+            this.showLearningDetails();
+        }
+    },
+    
+    // Show learning details after flip
+    showLearningDetails() {
+        const detailsContainer = document.getElementById('learning-details');
+        if (!detailsContainer) return;
+        
+        const card = this.currentCard;
+        const wordData = this.findWordData(card);
+        
+        let detailsHtml = '';
+        
+        // HSK level badge
+        if (wordData && wordData.hsk) {
+            detailsHtml += `<div class="detail-badge hsk-badge">HSK ${Utils.escapeHtml(wordData.hsk)}</div>`;
+        }
+        
+        // Frequency rank
+        if (wordData && wordData.frequency) {
+            detailsHtml += `<div class="detail-badge freq-badge">Top ${Utils.escapeHtml(wordData.frequency)} most common</div>`;
+        }
+        
+        // Radical/component breakdown
+        if (wordData && wordData.radicals && wordData.radicals.length) {
+            detailsHtml += `<div class="detail-section">
+                <div class="detail-label">Character Breakdown</div>
+                <div class="detail-radicals">${wordData.radicals.map(r => `<span class="radical-chip"><span class="radical-char">${Utils.escapeHtml(r.char)}</span><span class="radical-name">${Utils.escapeHtml(r.name)}</span></span>`).join('')}</div>
+            </div>`;
+        }
+        
+        // Example sentences
+        const examples = wordData && wordData.examples && wordData.examples.length ? wordData.examples : (card.back.examples || []);
+        if (examples && examples.length) {
+            detailsHtml += `<div class="detail-section">
+                <div class="detail-label">Example Sentences</div>
+                <div class="detail-examples">${examples.slice(0, 3).map(ex => {
+                    if (typeof ex === 'object' && ex.cn) {
+                        return `<div class="example-row"><span class="example-cn" lang="zh">${Utils.escapeHtml(ex.cn)}</span><span class="example-en">${Utils.escapeHtml(ex.en)}</span></div>`;
+                    }
+                    return `<div class="example-row"><span class="example-cn">${Utils.escapeHtml(typeof ex === 'string' ? ex : '')}</span></div>`;
+                }).join('')}</div>
+            </div>`;
+        }
+        
+        // Related words
+        if (wordData && wordData.related && wordData.related.length) {
+            detailsHtml += `<div class="detail-section">
+                <div class="detail-label">Related Words</div>
+                <div class="detail-related">${wordData.related.map(w => `<span class="related-chip" lang="zh">${Utils.escapeHtml(w)}</span>`).join('')}</div>
+            </div>`;
+        }
+        
+        detailsContainer.innerHTML = detailsHtml;
+        
+        if (detailsHtml && typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
+            InkAnimations.slideInPanel(detailsContainer, 'up');
+        }
+    },
+    
+    // Find word data from HSK sources and vocabulary data
+    findWordData(card) {
+        const character = card.front.character;
+        const level = this.currentLevel || 1;
+        
+        // Search in HSK word lists
+        const words = this.getWordsForLevel(level);
+        let match = words.find(w => w.character === character);
+        
+        // Search in extended vocabulary data
+        if (!match && typeof VocabularyData !== 'undefined') {
+            match = VocabularyData.words.find(w => w.character === character);
+        }
+        
+        // Search in HSK1_2 data
+        if (!match && typeof HSK1_2 !== 'undefined') {
+            match = HSK1_2.words.find(w => w.character === character);
+        }
+        
+        return match;
     },
     
     // Rate card
     rateCard(quality) {
         const card = this.currentCard;
         const deckName = `hsk${this.currentLevel || 1}`;
+        
+        // Animate the clicked rating button
+        const clickedBtn = document.querySelector(`[data-rate="${quality}"]`);
+        if (clickedBtn && typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
+            InkAnimations.counterBounce(clickedBtn);
+        }
         
         // Update card with SM-2
         const updatedCard = SM2.processReview(card, quality);
@@ -287,6 +400,12 @@ const VocabularyLearner = {
             this.sessionStats.correct++;
         } else {
             this.sessionStats.incorrect++;
+        }
+        
+        // Track low-quality words for review suggestions
+        if (!this.lowQualityWords) this.lowQualityWords = [];
+        if (quality <= 2) {
+            this.lowQualityWords.push({ character: card.front.character, pinyin: card.front.pinyin, meaning: card.back.meaning, quality: quality });
         }
         
         // Show feedback
@@ -310,6 +429,10 @@ const VocabularyLearner = {
         
         flashcard.appendChild(feedback);
         
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
+            InkAnimations.slideInPanel(feedback, 'up');
+        }
+        
         setTimeout(() => {
             feedback.remove();
         }, 700);
@@ -321,6 +444,7 @@ const VocabularyLearner = {
         const total = this.sessionStats.total;
         const correct = this.sessionStats.correct;
         const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const lowQualityWords = this.lowQualityWords || [];
         
         container.innerHTML = `
             <div class="session-complete">
@@ -328,7 +452,7 @@ const VocabularyLearner = {
 
                 <div class="session-results">
                     <div class="result-circle">
-                        <span class="result-number">${Utils.escapeHtml(percentage)}%</span>
+                        <span class="result-number" id="result-percentage">${Utils.escapeHtml(percentage)}%</span>
                     </div>
                     <div class="result-details">
                         <p><strong>Total cards:</strong> ${Utils.escapeHtml(total)}</p>
@@ -337,11 +461,31 @@ const VocabularyLearner = {
                     </div>
                 </div>
 
+                <div class="session-progress-bar" id="session-progress-bar">
+                    <div class="session-progress-fill" id="session-progress-fill" style="width: 0%;"></div>
+                </div>
+
                 <div class="session-message">
                     ${percentage >= 80 ? '🌟 Great job! Keep up the good work!' :
                       percentage >= 60 ? '👍 Good effort! Review more to improve.' :
                       '💪 Keep practicing! You\'ll get better.'}
                 </div>
+
+                ${lowQualityWords.length > 0 ? `
+                <div class="review-suggestions">
+                    <h3>📋 Words to Review</h3>
+                    <p class="review-suggestion-hint">These need more practice:</p>
+                    <div class="review-word-list">
+                        ${lowQualityWords.map(w => `
+                            <div class="review-word-card">
+                                <span class="review-word-char" lang="zh">${Utils.escapeHtml(w.character)}</span>
+                                <span class="review-word-py">${Utils.escapeHtml(w.pinyin)}</span>
+                                <span class="review-word-en">${Utils.escapeHtml(w.meaning)}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : ''}
 
                 <div class="session-actions">
                     <button type="button" class="btn btn-primary" data-cm-action="review-again">
@@ -353,6 +497,17 @@ const VocabularyLearner = {
                 </div>
             </div>
         `;
+
+        // GSAP animations
+        const percentageEl = document.getElementById('result-percentage');
+        if (percentageEl && typeof InkAnimations !== 'undefined' && InkAnimations.scorePopup) {
+            InkAnimations.scorePopup(percentageEl, percentage);
+        }
+        
+        const progressFill = document.getElementById('session-progress-fill');
+        if (progressFill && typeof InkAnimations !== 'undefined' && InkAnimations.progressBarFill) {
+            InkAnimations.progressBarFill(progressFill, 0, percentage);
+        }
 
         const reviewAgainBtn = container.querySelector('[data-cm-action="review-again"]');
         const backBtn = container.querySelector('[data-cm-action="back-levels-2"]');
@@ -380,10 +535,12 @@ const VocabularyLearner = {
             <div class="browser-grid" id="word-grid">
                 ${words.map(word => `
                     <div class="word-card" data-id="${Utils.escapeAttr(word.id)}" data-character="${Utils.escapeAttr(word.character)}" role="button" tabindex="0">
+                        ${word.hsk ? `<span class="word-card-hsk">HSK ${Utils.escapeHtml(word.hsk)}</span>` : ''}
                         <div class="word-card-character" lang="zh">${Utils.escapeHtml(word.character)}</div>
                         <div class="word-card-pinyin pinyin-element">${Utils.escapeHtml(word.pinyin)}</div>
                         <div class="word-card-meaning translation-element">${Utils.escapeHtml(word.meaning)}</div>
                         <div class="word-card-category">${Utils.escapeHtml(word.category || '')}</div>
+                        ${word.frequency ? `<div class="word-card-freq">Top ${Utils.escapeHtml(word.frequency)}</div>` : ''}
                     </div>
                 `).join('')}
             </div>
@@ -411,6 +568,12 @@ const VocabularyLearner = {
                 }
             });
         });
+
+        // Entrance stagger animation
+        const browserGrid = document.getElementById('word-grid');
+        if (browserGrid && typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger) {
+            InkAnimations.entranceStagger(browserGrid);
+        }
 
         const backBtn = container.querySelector('[data-cm-action="back-levels-3"]');
         if (backBtn) backBtn.addEventListener('click', () => VocabularyLearner.showLevelSelector());

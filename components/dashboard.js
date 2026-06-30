@@ -18,29 +18,33 @@ const Dashboard = {
         const dailyGoal = ProgressTracker.getDailyGoalProgress();
         const recentActivities = StorageManager.getRecentActivities(5);
 
-        // Update stats
         this.updateStats(stats);
-        
-        // Update level info
         this.updateLevelInfo(levelInfo);
-        
-        // Update daily goal
         this.updateDailyGoal(dailyGoal);
-        
-        // Update recent activities
         this.updateRecentActivities(recentActivities);
-        
-        // Update streak
         this.updateStreak(stats.streak);
-
-        // Update analytics
         this.updateAnalytics();
-
-        // Update review stats
         this.updateReviewStats();
-
-        // Setup smart review buttons
         this.setupSmartReview();
+
+        if (typeof InkAnimations !== 'undefined') {
+            var dashboardModule = document.getElementById('module-dashboard');
+            if (dashboardModule && InkAnimations.moduleHeroReveal) {
+                InkAnimations.moduleHeroReveal(dashboardModule);
+            }
+            var statsGrid = document.querySelector('.dashboard-grid');
+            if (statsGrid && InkAnimations.entranceStagger) {
+                InkAnimations.entranceStagger(statsGrid, { y: 24, duration: 0.5, stagger: 0.08, delay: 0.2 });
+            }
+            var analyticsSection = document.querySelector('.analytics-dashboard');
+            if (analyticsSection && InkAnimations.slideInPanel) {
+                InkAnimations.slideInPanel(analyticsSection, 'right');
+            }
+            var smartReviewSection = document.querySelector('.smart-review-section');
+            if (smartReviewSection && InkAnimations.slideInPanel) {
+                InkAnimations.slideInPanel(smartReviewSection, 'down');
+            }
+        }
     },
 
     // Update statistics cards
@@ -53,6 +57,7 @@ const Dashboard = {
         };
 
         var useGSAP = typeof InkAnimations !== 'undefined' && InkAnimations.countUp;
+        var prevValues = this._prevStatValues || {};
 
         Object.entries(elements).forEach(([id, value], idx) => {
             const element = document.getElementById(id);
@@ -62,8 +67,19 @@ const Dashboard = {
                 } else {
                     Utils.animateNumber(element, value);
                 }
+                if (prevValues[id] !== undefined && prevValues[id] !== value) {
+                    if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
+                        var el = element;
+                        var delay = (1.0 + idx * 0.15) * 1000;
+                        (function(e) {
+                            setTimeout(function() { InkAnimations.counterBounce(e); }, delay);
+                        })(el);
+                    }
+                }
             }
+            prevValues[id] = value;
         });
+        this._prevStatValues = prevValues;
     },
 
     // Update level information
@@ -148,13 +164,25 @@ const Dashboard = {
                 <span class="activity-xp">+${Utils.escapeHtml(activity.xp)} XP</span>
             </div>
         `).join('');
+
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger && activities.length > 0) {
+            InkAnimations.entranceStagger(activityList, { y: 16, duration: 0.4, stagger: 0.05 });
+        }
     },
 
     // Update streak
     updateStreak(streak) {
         const streakCount = document.getElementById('streak-count');
         if (streakCount) {
+            var prevStreak = this._prevStreak || 0;
             streakCount.textContent = streak;
+            var milestones = [3, 7, 10, 14, 21, 30, 50, 100];
+            if (streak > prevStreak && milestones.indexOf(streak) !== -1) {
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.attentionPulse) {
+                    InkAnimations.attentionPulse(streakCount);
+                }
+            }
+            this._prevStreak = streak;
         }
     },
 
@@ -240,7 +268,13 @@ const Dashboard = {
                     ${weakAreas.characters.length === 0 && weakAreas.words.length === 0 && weakAreas.categories.length === 0 ? '<p class="no-weak">Great job! No weak areas detected.</p>' : ''}
                 </div>
             </div>
-        `;
+        ` + this._buildLearningExtras(safeMistakes);
+        var reviewNowBtn = analyticsContent.querySelector('[data-cm-action="review-now-analytics"]');
+        if (reviewNowBtn) {
+            reviewNowBtn.onclick = function() {
+                if (typeof App !== 'undefined') App.navigateTo('vocabulary');
+            };
+        }
     },
 
     // Update review stats
@@ -361,6 +395,156 @@ const Dashboard = {
                 if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
             };
         }
+    },
+
+    _getWordOfTheDay() {
+        var words = [
+            { chinese: '学习', pinyin: 'xuéxí', meaning: 'to study, to learn' },
+            { chinese: '坚持', pinyin: 'jiānchí', meaning: 'to persist, perseverance' },
+            { chinese: '进步', pinyin: 'jìnbù', meaning: 'to progress, improvement' },
+            { chinese: '努力', pinyin: 'nǔlì', meaning: 'hard work, to strive' },
+            { chinese: '练习', pinyin: 'liànxí', meaning: 'to practice' },
+            { chinese: '阅读', pinyin: 'yuèdú', meaning: 'to read' },
+            { chinese: '听力', pinyin: 'tīnglì', meaning: 'listening comprehension' },
+            { chinese: '成功', pinyin: 'chénggōng', meaning: 'success' },
+            { chinese: '智慧', pinyin: 'zhìhuì', meaning: 'wisdom' },
+            { chinese: '知识', pinyin: 'zhīshi', meaning: 'knowledge' },
+            { chinese: '耐心', pinyin: 'nàixīn', meaning: 'patience' },
+            { chinese: '勇气', pinyin: 'yǒngqì', meaning: 'courage' },
+            { chinese: '自信', pinyin: 'zìxìn', meaning: 'self-confidence' },
+            { chinese: '友谊', pinyin: 'yǒuyì', meaning: 'friendship' },
+            { chinese: '时间', pinyin: 'shíjiān', meaning: 'time' },
+            { chinese: '目标', pinyin: 'mùbiāo', meaning: 'goal, target' },
+            { chinese: '方法', pinyin: 'fāngfǎ', meaning: 'method, way' },
+            { chinese: '习惯', pinyin: 'xíguàn', meaning: 'habit' },
+            { chinese: '思考', pinyin: 'sīkǎo', meaning: 'to think, ponder' },
+            { chinese: '记忆', pinyin: 'jìyì', meaning: 'memory' },
+            { chinese: '语言', pinyin: 'yǔyán', meaning: 'language' },
+            { chinese: '文化', pinyin: 'wénhuà', meaning: 'culture' },
+            { chinese: '文字', pinyin: 'wénzì', meaning: 'characters, script' },
+            { chinese: '发音', pinyin: 'fāyīn', meaning: 'pronunciation' },
+            { chinese: '语法', pinyin: 'yǔfǎ', meaning: 'grammar' },
+            { chinese: '理解', pinyin: 'lǐjiě', meaning: 'to understand' },
+            { chinese: '每天', pinyin: 'měitiān', meaning: 'every day' },
+            { chinese: '开始', pinyin: 'kāishǐ', meaning: 'to start' },
+            { chinese: '完成', pinyin: 'wánchéng', meaning: 'to complete' },
+            { chinese: '世界', pinyin: 'shìjiè', meaning: 'world' }
+        ];
+        var now = new Date();
+        var start = new Date(now.getFullYear(), 0, 0);
+        var diff = now - start;
+        var dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+        return words[dayOfYear % words.length];
+    },
+
+    _getStudyProverb() {
+        var proverbs = [
+            { chinese: '学如逆水行舟，不进则退。', pinyin: 'Xué rú nì shuǐ xíng zhōu, bù jìn zé tuì.', meaning: 'Learning is like rowing upstream; not to advance is to drop back.' },
+            { chinese: '千里之行，始于足下。', pinyin: 'Qiān lǐ zhī xíng, shǐ yú zú xià.', meaning: 'A journey of a thousand miles begins with a single step.' },
+            { chinese: '温故而知新，可以为师矣。', pinyin: 'Wēn gù ér zhī xīn, kě yǐ wéi shī yǐ.', meaning: 'Review the old to learn the new — then you can be a teacher.' },
+            { chinese: '学而不思则罔，思而不学则殆。', pinyin: 'Xué ér bù sī zé wǎng, sī ér bù xué zé dài.', meaning: 'Learning without thinking is labor lost; thinking without learning is perilous.' },
+            { chinese: '不积跬步，无以至千里。', pinyin: 'Bù jī kuǐ bù, wú yǐ zhì qiān lǐ.', meaning: 'Without accumulating small steps, one cannot reach a thousand miles.' },
+            { chinese: '读书破万卷，下笔如有神。', pinyin: 'Dú shū pò wàn juàn, xià bǐ rú yǒu shén.', meaning: 'Read ten thousand books, and your writing will be inspired.' },
+            { chinese: '勤能补拙。', pinyin: 'Qín néng bǔ zhuō.', meaning: 'Diligence can make up for lack of talent.' },
+            { chinese: '只要功夫深，铁杵磨成针。', pinyin: 'Zhǐ yào gōngfū shēn, tiě chǔ mó chéng zhēn.', meaning: 'With enough effort, an iron pestle can be ground into a needle.' },
+            { chinese: '学无止境。', pinyin: 'Xué wú zhǐ jìng.', meaning: 'Learning has no end.' },
+            { chinese: '活到老，学到老。', pinyin: 'Huó dào lǎo, xué dào lǎo.', meaning: 'Live until old, learn until old.' },
+            { chinese: '三人行，必有我师焉。', pinyin: 'Sān rén xíng, bì yǒu wǒ shī yān.', meaning: 'Among any three people walking, one can be my teacher.' },
+            { chinese: '读书百遍，其义自见。', pinyin: 'Dú shū bǎi biàn, qí yì zì xiàn.', meaning: 'Read a book a hundred times, its meaning will reveal itself.' }
+        ];
+        var d = new Date();
+        return proverbs[d.getDate() % proverbs.length];
+    },
+
+    _getTodayFocus() {
+        if (typeof LevelTracker === 'undefined') return null;
+        var weakAreas = LevelTracker.getWeakAreas();
+        var categories = weakAreas.categories || [];
+        if (categories.length > 0) {
+            var worst = categories[0];
+            return { name: worst.category, reason: 'Your weakest category at ' + (Number(worst.accuracy) || 0) + '% accuracy' };
+        }
+        var chars = weakAreas.characters || [];
+        if (chars.length > 0) {
+            return { name: 'Character Review', reason: chars.length + ' characters need practice' };
+        }
+        var words = weakAreas.words || [];
+        if (words.length > 0) {
+            return { name: 'Vocabulary Review', reason: words.length + ' words need practice' };
+        }
+        return { name: 'Keep Learning', reason: 'All areas look strong — keep going!' };
+    },
+
+    _getEstimatedTimeToNextLevel() {
+        if (typeof AdvancedLearning === 'undefined') return null;
+        var velocity = AdvancedLearning.getLearningVelocity();
+        var avgXpPerDay = velocity.avgXpPerDay || 0;
+        if (avgXpPerDay <= 0) return null;
+        var levelInfo = (typeof StorageManager !== 'undefined') ? StorageManager.getLevelInfo() : null;
+        if (!levelInfo) return null;
+        var xpNeeded = (levelInfo.nextLevelXp || 0) - (levelInfo.currentXp || 0);
+        if (xpNeeded <= 0) return { nextLevel: levelInfo.level + 1, estimatedDays: 0, xpPerDay: avgXpPerDay };
+        var estimatedDays = Math.ceil(xpNeeded / avgXpPerDay);
+        return { nextLevel: levelInfo.level + 1, estimatedDays: estimatedDays, xpPerDay: avgXpPerDay };
+    },
+
+    _getMiniModulePreviews() {
+        if (typeof StorageManager === 'undefined') return '';
+        var modules = ['vocabulary', 'listening', 'reading', 'grammar'];
+        var labels = { vocabulary: 'Vocabulary', listening: 'Listening', reading: 'Reading', grammar: 'Grammar' };
+        var icons = { vocabulary: '📝', listening: '🎧', reading: '📖', grammar: '🔤' };
+        var totalCounts = { vocabulary: 500, listening: 200, reading: 300, grammar: 100 };
+
+        var cards = modules.map(function(mod) {
+            var progressed = 0;
+            var totalItems = totalCounts[mod] || 100;
+            try {
+                var data = StorageManager.getUserData();
+                if (data && data.progress && data.progress[mod] && data.progress[mod].completed) {
+                    progressed = data.progress[mod].completed.length;
+                }
+            } catch(e) {}
+            var pct = Math.min(100, Math.round((progressed / totalItems) * 100));
+            var barColor = pct >= 60 ? '#2ecc71' : pct >= 30 ? '#f39c12' : '#e74c3c';
+            return '<div class="module-preview-card">' +
+                '<span class="mp-icon">' + (icons[mod] || '📚') + '</span>' +
+                '<div class="mp-info">' +
+                    '<div class="mp-name">' + (labels[mod] || mod) + '</div>' +
+                    '<div class="mp-bar"><div class="mp-fill" style="width:' + pct + '%; background:' + barColor + '"></div></div>' +
+                    '<div class="mp-count">' + progressed + ' / ' + totalItems + '</div>' +
+                '</div>' +
+            '</div>';
+        }).join('');
+
+        return '<div class="analytics-section"><h2>📊 Module Progress</h2><div class="module-previews-grid">' + cards + '</div></div>';
+    },
+
+    _buildLearningExtras(mistakesToReview) {
+        var html = '';
+
+        var wordOfDay = this._getWordOfTheDay();
+        html += '<div class="analytics-section"><h2>📖 Word of the Day</h2><div class="word-of-day-card"><div class="wod-chinese" lang="zh">' + Utils.escapeHtml(wordOfDay.chinese) + '</div><div class="wod-pinyin">' + Utils.escapeHtml(wordOfDay.pinyin) + '</div><div class="wod-meaning">' + Utils.escapeHtml(wordOfDay.meaning) + '</div></div></div>';
+
+        var focusModule = this._getTodayFocus();
+        if (focusModule) {
+            html += '<div class="analytics-section"><h2>🎯 Today\'s Focus</h2><div class="focus-card"><div class="focus-name">' + Utils.escapeHtml(focusModule.name) + '</div><div class="focus-reason">' + Utils.escapeHtml(focusModule.reason) + '</div></div></div>';
+        }
+
+        var proverb = this._getStudyProverb();
+        html += '<div class="analytics-section"><h2>🏮 Study Streak Tip</h2><div class="proverb-card"><div class="proverb-chinese" lang="zh">' + Utils.escapeHtml(proverb.chinese) + '</div><div class="proverb-pinyin">' + Utils.escapeHtml(proverb.pinyin) + '</div><div class="proverb-meaning">' + Utils.escapeHtml(proverb.meaning) + '</div></div></div>';
+
+        var timeToNext = this._getEstimatedTimeToNextLevel();
+        if (timeToNext !== null) {
+            html += '<div class="analytics-section"><h2>⏱️ Next Level</h2><div class="next-level-card"><p>Level ' + timeToNext.nextLevel + ' in ~' + timeToNext.estimatedDays + ' days at your current pace (' + timeToNext.xpPerDay + ' XP/day)</p></div></div>';
+        }
+
+        html += this._getMiniModulePreviews();
+
+        if (mistakesToReview > 0) {
+            html += '<div class="analytics-section"><h2>🔄 Review Queue</h2><div class="review-queue-card"><div class="mistakes-count">' + mistakesToReview + ' items need review</div><button class="btn btn-primary btn-press review-now-btn" data-cm-action="review-now-analytics" type="button">Review Now</button></div></div>';
+        }
+
+        return html;
     }
 };
 

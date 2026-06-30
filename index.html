@@ -226,92 +226,84 @@
                     <path class="brush-stroke-path" d="M0,5 Q250,8 400,3 Q550,1 800,6" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.25"/>
                 </svg>
 
-                <!-- Two-column layout -->
-                <div class="dashboard-columns">
-                    <div class="dashboard-col-main">
-                        <!-- Daily Goal -->
-                        <div class="daily-goal-section card-lift gsap-reveal">
-                            <h2>Today's Goal</h2>
-                            <div class="goal-progress">
-                                <div class="goal-ring" aria-hidden="true">
-                                    <svg viewBox="0 0 100 100">
-                                        <defs>
-                                            <linearGradient id="goal-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                                <stop offset="0%" stop-color="#c42020"/>
-                                                <stop offset="100%" stop-color="#e84040"/>
-                                            </linearGradient>
-                                        </defs>
-                                        <circle class="goal-bg" cx="50" cy="50" r="40"></circle>
-                                        <circle id="goal-fill" class="goal-fill" cx="50" cy="50" r="40"></circle>
-                                    </svg>
-                                    <div class="goal-text">
-                                        <span id="goal-percent">0</span><span class="goal-percent-sign">%</span>
-                                    </div>
-                                </div>
-                                <div class="goal-details">
-                                    <div class="goal-item">
-                                        <span class="goal-icon" aria-hidden="true">🎧</span>
-                                        <span>Listening: <strong id="goal-listening">0</strong>/5 exercises</span>
-                                    </div>
-                                    <div class="goal-item">
-                                        <span class="goal-icon" aria-hidden="true">📖</span>
-                                        <span>Reading: <strong id="goal-reading">0</strong>/3 passages</span>
-                                    </div>
-                                    <div class="goal-item">
-                                        <span class="goal-icon" aria-hidden="true">📝</span>
-                                        <span>Vocabulary: <strong id="goal-vocab">0</strong>/10 words</span>
-                                    </div>
-                                </div>
+                <!-- Dashboard flow -->
+                <!-- Daily Goal — centered -->
+                <div class="daily-goal-section card-lift gsap-reveal">
+                    <h2>Today's Goal</h2>
+                    <div class="goal-progress">
+                        <div class="goal-ring" aria-hidden="true">
+                            <svg viewBox="0 0 100 100">
+                                <defs>
+                                    <linearGradient id="goal-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#c42020"/>
+                                        <stop offset="100%" stop-color="#e84040"/>
+                                    </linearGradient>
+                                </defs>
+                                <circle class="goal-bg" cx="50" cy="50" r="40"></circle>
+                                <circle id="goal-fill" class="goal-fill" cx="50" cy="50" r="40"></circle>
+                            </svg>
+                            <div class="goal-text">
+                                <span id="goal-percent">0</span><span class="goal-percent-sign">%</span>
                             </div>
                         </div>
-
-                        <!-- Quick Start -->
-                        <div class="quick-actions gsap-reveal">
-                            <h2>Quick Start</h2>
-                            <div class="action-cards">
-                                <div class="action-card card-glow" data-action="listening-challenge" role="button" tabindex="0">
-                                    <div class="action-icon" aria-hidden="true">🎧</div>
-                                    <h3>Listening Challenge</h3>
-                                    <p>Test your listening skills</p>
-                                </div>
-                                <div class="action-card card-glow" data-action="vocab-review" role="button" tabindex="0">
-                                    <div class="action-icon" aria-hidden="true">📝</div>
-                                    <h3>Review Vocabulary</h3>
-                                    <p>Practice with flashcards</p>
-                                </div>
-                                <div class="action-card card-glow" data-action="reading-quiz" role="button" tabindex="0">
-                                    <div class="action-icon" aria-hidden="true">📖</div>
-                                    <h3>Reading Quiz</h3>
-                                    <p>Test your comprehension</p>
-                                </div>
-                                <div class="action-card card-glow" data-action="grammar-practice" role="button" tabindex="0">
-                                    <div class="action-icon" aria-hidden="true">🔤</div>
-                                    <h3>Grammar Practice</h3>
-                                    <p>Master sentence patterns</p>
-                                </div>
+                        <div class="goal-details">
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">🎧</span>
+                                <span>Listening: <strong id="goal-listening">0</strong>/5</span>
+                            </div>
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">📖</span>
+                                <span>Reading: <strong id="goal-reading">0</strong>/3</span>
+                            </div>
+                            <div class="goal-item">
+                                <span class="goal-icon" aria-hidden="true">📝</span>
+                                <span>Vocabulary: <strong id="goal-vocab">0</strong>/10</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="dashboard-col-side">
-                        <!-- Smart Review -->
-                        <div class="smart-review-section card-lift gsap-reveal-right">
-                            <h2>🧠 Smart Review</h2>
-                            <p class="section-desc">AI-powered review based on your mistakes and learning patterns</p>
-                            <div class="review-actions">
-                                <button class="btn btn-primary btn-press" id="start-smart-review" type="button">Start Smart Review</button>
-                                <button class="btn btn-secondary btn-press" id="view-mistakes" type="button">View Mistakes</button>
-                            </div>
-                            <div id="review-stats" class="review-stats">
-                            </div>
+                <!-- Quick Start — full width -->
+                <div class="quick-actions gsap-reveal">
+                    <h2>Quick Start</h2>
+                    <div class="action-cards">
+                        <div class="action-card card-glow" data-action="listening-challenge" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">🎧</div>
+                            <h3>Listening Challenge</h3>
+                            <p>Test your listening skills</p>
                         </div>
+                        <div class="action-card card-glow" data-action="vocab-review" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">📝</div>
+                            <h3>Review Vocabulary</h3>
+                            <p>Practice with flashcards</p>
+                        </div>
+                        <div class="action-card card-glow" data-action="reading-quiz" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">📖</div>
+                            <h3>Reading Quiz</h3>
+                            <p>Test your comprehension</p>
+                        </div>
+                        <div class="action-card card-glow" data-action="grammar-practice" role="button" tabindex="0">
+                            <div class="action-icon" aria-hidden="true">🔤</div>
+                            <h3>Grammar Practice</h3>
+                            <p>Master sentence patterns</p>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Analytics -->
-                        <div class="analytics-dashboard card-lift gsap-reveal-right">
-                            <h2>📈 Performance</h2>
-                            <div id="analytics-content">
-                            </div>
+                <!-- Review + Analytics — side by side -->
+                <div class="dashboard-insight-row">
+                    <div class="smart-review-section card-lift gsap-reveal-right">
+                        <h2>🧠 Smart Review</h2>
+                        <p class="section-desc">AI-powered review based on your mistakes</p>
+                        <div class="review-actions">
+                            <button class="btn btn-primary btn-press" id="start-smart-review" type="button">Start Smart Review</button>
+                            <button class="btn btn-secondary btn-press" id="view-mistakes" type="button">View Mistakes</button>
                         </div>
+                        <div id="review-stats" class="review-stats"></div>
+                    </div>
+                    <div class="analytics-dashboard card-lift gsap-reveal-right">
+                        <h2>📈 Performance</h2>
+                        <div id="analytics-content"></div>
                     </div>
                 </div>
 
@@ -597,6 +589,11 @@
     <script src="data/reading-massive-extra.js"></script>
     <script src="data/listening.js"></script>
     <script src="data/listening-extended.js"></script>
+    <script src="data/listening-comp-extra.js"></script>
+    <script src="data/listening-minimalpairs.js"></script>
+    <script src="data/listening-dialogue-extra.js"></script>
+    <script src="data/listening-speed.js"></script>
+    <script src="data/listening-shadow.js"></script>
     <script src="data/reading.js"></script>
     <script src="data/advanced-reading.js"></script>
     <script src="data/mega-reading.js"></script>

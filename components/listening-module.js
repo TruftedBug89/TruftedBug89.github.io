@@ -19,6 +19,10 @@ const ListeningModule = {
 
         // Setup exercise type cards
         this.setupTypeCards();
+
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.exerciseCardReveal) {
+            InkAnimations.exerciseCardReveal(menu);
+        }
     },
 
     // Setup type cards
@@ -54,7 +58,12 @@ const ListeningModule = {
         }
 
         document.getElementById('listening-menu').classList.add('hidden');
-        document.getElementById('listening-exercise').classList.remove('hidden');
+        const exerciseContainer = document.getElementById('listening-exercise');
+        exerciseContainer.classList.remove('hidden');
+
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
+            InkAnimations.slideInPanel(exerciseContainer);
+        }
 
         // Update title
         const titles = {
@@ -90,6 +99,12 @@ const ListeningModule = {
 
         // Setup controls
         this.setupControls(exercise);
+
+        // Pulse the current progress dot
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.dotPulse) {
+            const currentDot = document.querySelector('.dot.current');
+            if (currentDot) InkAnimations.dotPulse(currentDot);
+        }
 
         // Auto-speak for some types
         if (['dictation', 'shadowing'].includes(this.currentType)) {
@@ -188,13 +203,22 @@ const ListeningModule = {
                                     <div class="listening-option" data-question="${i}" data-option="${j}" role="button" tabindex="0">
                                         <span class="option-letter">${String.fromCharCode(65 + j)}</span>
                                         <span class="option-text">${Utils.escapeHtml(opt)}</span>
-                                   </div>
+                                    </div>
                                 `).join('')}
-                           </div>
-                       </div>
+                            </div>
+                            <div class="comprehension-tip" id="comp-tip-${i}" style="display:none;"></div>
+                        </div>
                     `).join('')}
-               </div>
-           </div>
+                </div>
+
+                <div class="vocabulary-highlight" id="vocabulary-highlight" style="display:none;">
+                    <div class="vocab-header">
+                        <span class="vocab-icon">📖</span>
+                        <strong>Key Vocabulary</strong>
+                    </div>
+                    <div class="vocab-list" id="vocab-list"></div>
+                </div>
+            </div>
         `;
     },
 
@@ -282,6 +306,18 @@ const ListeningModule = {
                     <button class="icon-btn" id="reveal-meanings">👁 Show meanings</button>
                     <button class="icon-btn" id="play-each-btn">🔊 Hear each line</button>
                 </div>
+
+                ${exercise.culturalNote ? `
+                <div class="cultural-note" id="cultural-note" style="display:none;">
+                    <div class="cultural-note-content">
+                        <span class="tip-icon">🏮</span>
+                        <div class="tip-body">
+                            <strong>Cultural Note</strong>
+                            <p>${Utils.escapeHtml(exercise.culturalNote)}</p>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
             </div>
         `;
     },
@@ -358,6 +394,16 @@ const ListeningModule = {
                     <div class="wave-bar"></div>
                     <div class="wave-bar"></div>
                     <div class="wave-bar"></div>
+                </div>
+
+                <div class="shadowing-tips">
+                    <div class="learning-tip-content">
+                        <span class="tip-icon">🗣</span>
+                        <div class="tip-body">
+                            <strong>Pronunciation Tips</strong>
+                            <p id="shadowing-tip-text">Focus on matching the rhythm and intonation of the native speaker. Pay attention to how tones connect between characters — the ${exercise.pinyin ? 'pinyin "' + Utils.escapeHtml(exercise.pinyin) + '"' : 'pinyin'} shows you the exact contours to follow.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="speaking-actions">
@@ -469,8 +515,15 @@ const ListeningModule = {
                     el.classList.remove('dialogue-hidden');
                     el.classList.add('revealed');
                 });
+                const culturalNote = document.getElementById('cultural-note');
+                if (culturalNote) culturalNote.style.display = 'block';
                 this.showNextButton();
             };
+        }
+
+        // Dialogue entrance animation
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger) {
+            InkAnimations.entranceStagger(document.querySelector('.dialogue-list'), { y: 24, stagger: 0.06, duration: 0.45 });
         }
 
         // Dialogue: play each turn in sequence
@@ -543,16 +596,31 @@ const ListeningModule = {
             input.classList.add('correct');
             this.score++;
             Utils.playSound('correct');
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.feedbackPulse) {
+                InkAnimations.feedbackPulse(input, 'correct');
+            }
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
+                InkAnimations.counterBounce(document.getElementById('listening-score'));
+            }
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.countUp) {
+                InkAnimations.countUp(document.getElementById('listening-score'), this.score);
+            }
+            this._showLearningTip(feedback, this.currentType, exercise);
         } else if (result === 'close') {
             feedback.innerHTML = '🟡 So close — double-check tones and characters.';
             feedback.className = 'answer-feedback close';
             input.classList.add('close');
+            this._showLearningTip(feedback, this.currentType, exercise);
         } else {
-            feedback.innerHTML = `❌ Not quite. The answer is below — study it then continue.`;
+            feedback.innerHTML = '❌ Not quite. The answer is below — study it then continue.';
             feedback.className = 'answer-feedback incorrect';
             input.classList.add('incorrect');
             this._revealDictationAnswer();
             Utils.playSound('incorrect');
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
+                InkAnimations.shakeElement(input);
+            }
+            this._showLearningTip(feedback, this.currentType, exercise);
         }
 
         input.disabled = true;
@@ -591,6 +659,131 @@ const ListeningModule = {
         wrap.appendChild(reveal);
     },
 
+    // Show learning tip after answer feedback
+    _showLearningTip(parentEl, type, exercise) {
+        if (!parentEl || !exercise) return;
+        const existing = parentEl.parentNode ? parentEl.parentNode.querySelector('.learning-tip') : null;
+        if (existing) existing.remove();
+
+        const tipHtml = this._getLearningTipHtml(type, exercise);
+        if (!tipHtml) return;
+
+        const tip = document.createElement('div');
+        tip.className = 'learning-tip';
+        tip.innerHTML = tipHtml;
+        parentEl.insertAdjacentElement('afterend', tip);
+    },
+
+    // Get learning tip HTML by exercise type
+    _getLearningTipHtml(type, exercise) {
+        switch(type) {
+            case 'dictation':
+            case 'speed-listening':
+                return this._getDictationTip(exercise);
+            case 'minimal-pairs':
+                return this._getMinimalPairsTip(exercise);
+            case 'shadowing':
+                return this._getShadowingTip(exercise);
+            default:
+                return null;
+        }
+    },
+
+    // Tone marking and character tips for dictation / speed-listening
+    _getDictationTip(exercise) {
+        const pinyin = Utils.escapeHtml(exercise.pinyin || '');
+        const chars = Utils.escapeHtml(exercise.chinese || '');
+        const toneMarks = pinyin.match(/[1-4]/g) || [];
+        const toneNames = {1:'high-level', 2:'rising', 3:'dipping', 4:'falling'};
+        const toneDesc = toneMarks.length ? toneMarks.map(t => toneNames[t] || 'tone ' + t).join(', ') : '';
+
+        return `
+            <div class="learning-tip-content">
+                <span class="tip-icon">💡</span>
+                <div class="tip-body">
+                    <strong>Tone Tip</strong>
+                    <p>"<strong>${chars}</strong>" (${pinyin})${toneDesc ? ' — carries ' + toneDesc + ' tone(s).' : '.'} In Chinese, the same syllable with a different tone can mean a completely different word. Practice saying each tone contour out loud.</p>
+                </div>
+            </div>
+        `;
+    },
+
+    // Tone comparison tip for minimal pairs
+    _getMinimalPairsTip(exercise) {
+        const w1 = exercise.pairs[0] || {};
+        const w2 = exercise.pairs[1] || {};
+        const t1 = w1.tone1;
+        const t2 = w2.tone2;
+        const toneNames = {1:'first tone (high-level)', 2:'second tone (rising)', 3:'third tone (dipping)', 4:'fourth tone (falling)'};
+        const t1Name = toneNames[t1] || 'tone ' + t1;
+        const t2Name = toneNames[t2] || 'tone ' + t2;
+
+        return `
+            <div class="learning-tip-content">
+                <span class="tip-icon">👂</span>
+                <div class="tip-body">
+                    <strong>Tone Difference</strong>
+                    <p><strong>${Utils.escapeHtml(w1.word1 || '')}</strong> (${Utils.escapeHtml(w1.pinyin1 || '')}) uses the ${t1Name}, while <strong>${Utils.escapeHtml(w2.word2 || '')}</strong> (${Utils.escapeHtml(w2.pinyin2 || '')}) uses the ${t2Name}. Minimal pairs like these train your ear to distinguish tones that may sound similar to non-native speakers.</p>
+                </div>
+            </div>
+        `;
+    },
+
+    // Pronunciation tips for shadowing
+    _getShadowingTip(exercise) {
+        const py = Utils.escapeHtml(exercise.pinyin || '');
+        return `
+            <div class="learning-tip-content">
+                <span class="tip-icon">🗣</span>
+                <div class="tip-body">
+                    <strong>Pronunciation Focus</strong>
+                    <p>Shadowing tip: "${Utils.escapeHtml(exercise.chinese || '')}" (${py}) — listen to the recording once first, then try to speak along at the exact same pace. Focus on matching the speaker's intonation, rhythm, and tone transitions. Repeat until your delivery feels natural.</p>
+                </div>
+            </div>
+        `;
+    },
+
+    // Populate vocabulary highlight for comprehension exercises
+    _populateComprehensionVocab(exercise) {
+        const vocabSection = document.getElementById('vocabulary-highlight');
+        if (!vocabSection) return;
+
+        // Use exercise vocab if available, otherwise generate from passage
+        let vocabItems;
+        if (exercise.vocab && exercise.vocab.length) {
+            vocabItems = exercise.vocab;
+        } else {
+            // Tokenize the Chinese passage into rough word boundaries
+            const text = exercise.chinese || '';
+            const pinyinParts = (exercise.pinyin || '').split(/\s+/);
+            const chars = text.replace(/[，。！？、；：""（）\s]/g, '');
+
+            // Simple grouping: pair consecutive characters
+            vocabItems = [];
+            let pi = 0;
+            for (let i = 0; i < chars.length; i += 2) {
+                const group = chars.slice(i, i + 2);
+                const py = pinyinParts[pi] || '';
+                pi++;
+                if (group) {
+                    vocabItems.push({ word: group, pinyin: py });
+                }
+            }
+        }
+
+        const vocabList = document.getElementById('vocab-list');
+        if (vocabList && vocabItems.length) {
+            vocabList.innerHTML = vocabItems.map(item => `
+                <div class="vocab-item">
+                    <span class="vocab-word" lang="zh">${Utils.escapeHtml(item.word || '')}</span>
+                    <span class="vocab-pinyin">${Utils.escapeHtml(item.pinyin || '')}</span>
+                    ${item.meaning ? '<span class="vocab-meaning">' + Utils.escapeHtml(item.meaning) + '</span>' : ''}
+                </div>
+            `).join('');
+            vocabSection.style.display = 'block';
+        }
+    },
+
     // Progress dots for the current session
     _progressDots() {
         const total = this.exercises.length;
@@ -624,17 +817,46 @@ const ListeningModule = {
                 selectedOption.classList.add('correct');
                 this.score++;
                 Utils.playSound('correct');
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.feedbackPulse) {
+                    InkAnimations.feedbackPulse(selectedOption, 'correct');
+                }
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
+                    InkAnimations.counterBounce(document.getElementById('listening-score'));
+                }
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.countUp) {
+                    InkAnimations.countUp(document.getElementById('listening-score'), this.score);
+                }
             } else {
                 selectedOption.classList.add('incorrect');
                 const correctOption = document.querySelector(`[data-question="${questionIndex}"][data-option="${question.correct}"]`);
                 if (correctOption) correctOption.classList.add('correct');
                 Utils.playSound('incorrect');
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
+                    InkAnimations.shakeElement(selectedOption);
+                }
             }
             // Disable further clicks on this question
             document.querySelectorAll(`[data-question="${questionIndex}"]`).forEach(o => {
                 o.style.pointerEvents = 'none';
                 o.style.cursor = 'default';
             });
+
+            // Populate comprehension tip for this question
+            const tipDiv = document.getElementById('comp-tip-' + questionIndex);
+            if (tipDiv) {
+                const correctLetter = String.fromCharCode(65 + question.correct);
+                const correctText = Utils.escapeHtml(question.options[question.correct] || '');
+                tipDiv.innerHTML = `
+                    <div class="learning-tip-content">
+                        <span class="tip-icon">💡</span>
+                        <div class="tip-body">
+                            <strong>${isCorrect ? 'Correct!' : 'Answer'}: ${correctLetter}) ${correctText}</strong>
+                            ${question.explanation ? '<p>' + Utils.escapeHtml(question.explanation) + '</p>' : ''}
+                        </div>
+                    </div>
+                `;
+                tipDiv.style.display = 'block';
+            }
         }
 
         // Only advance when every question has been answered
@@ -646,6 +868,7 @@ const ListeningModule = {
             if (sel) answered.add(idx);
         });
         if (answered.size === total) {
+            this._populateComprehensionVocab(exercise);
             // Brief delay so user can see the last feedback
             setTimeout(() => this.showNextButton(), 600);
         }
@@ -678,6 +901,15 @@ const ListeningModule = {
                 selectedOption.classList.add('correct');
                 this.score++;
                 Utils.playSound('correct');
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.feedbackPulse) {
+                    InkAnimations.feedbackPulse(selectedOption, 'correct');
+                }
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
+                    InkAnimations.counterBounce(document.getElementById('listening-score'));
+                }
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.countUp) {
+                    InkAnimations.countUp(document.getElementById('listening-score'), this.score);
+                }
                 if (feedback) {
                     feedback.textContent = '✅ Correct! Great ear.';
                     feedback.className = 'answer-feedback correct';
@@ -685,11 +917,15 @@ const ListeningModule = {
             } else {
                 selectedOption.classList.add('incorrect');
                 Utils.playSound('incorrect');
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
+                    InkAnimations.shakeElement(selectedOption);
+                }
                 if (feedback) {
                     feedback.textContent = '❌ Not quite — try playing again to compare.';
                     feedback.className = 'answer-feedback incorrect';
                 }
             }
+            this._showLearningTip(feedback || selectedOption, this.currentType, exercise);
         }
 
         this.showNextButton();
@@ -751,6 +987,13 @@ const ListeningModule = {
             onBack: () => ListeningModule.showMenu(),
             onRetry: () => ListeningModule.startExercise(capturedType)
         });
+
+        if (typeof InkAnimations !== 'undefined' && InkAnimations.scorePopup) {
+            setTimeout(() => {
+                const ring = document.querySelector('#modal-body [style*="conic-gradient"]');
+                if (ring) InkAnimations.scorePopup(ring, result.percentage);
+            }, 150);
+        }
     }
 };
 

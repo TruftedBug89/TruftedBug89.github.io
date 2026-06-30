@@ -564,6 +564,7 @@
 
 /* === BRUSH-STROKE SVG DIVIDER === */
 .brush-divider { display: block; opacity: 0.6; }
+.gsap-reveal {
     opacity: 0;
     transform: translateY(36px);
 }

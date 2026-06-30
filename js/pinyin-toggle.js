@@ -27,15 +27,15 @@ const PinyinToggle = {
         if (!navHeader) return;
         
         const toggleContainer = document.createElement('div');
-        toggleContainer.className = 'global-toggles';
+        toggleContainer.className = 'nav-toggle-controls';
         toggleContainer.innerHTML = `
-            <button id="pinyin-toggle-btn" class="toggle-btn ${this.showPinyin ? 'active' : ''}" title="Toggle Pinyin">
+            <button id="pinyin-toggle-btn" class="toggle-btn ${this.showPinyin ? 'active' : ''}" title="Toggle Pinyin" aria-pressed="${this.showPinyin}">
                 <span class="toggle-icon">拼</span>
                 <span class="toggle-label">Pinyin</span>
             </button>
-            <button id="translation-toggle-btn" class="toggle-btn ${this.showTranslation ? 'active' : ''}" title="Toggle Translation">
-                <span class="toggle-icon">EN</span>
-                <span class="toggle-label">Translation</span>
+            <button id="translation-toggle-btn" class="toggle-btn ${this.showTranslation ? 'active' : ''}" title="Toggle Translation" aria-pressed="${this.showTranslation}">
+                <span class="toggle-icon">A</span>
+                <span class="toggle-label">EN</span>
             </button>
         `;
         
@@ -80,6 +80,7 @@ const PinyinToggle = {
         const btn = document.getElementById(btnId);
         if (btn) {
             btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-pressed', isActive);
         }
     },
     

@@ -290,7 +290,10 @@ body {
     margin-left: 260px;
     padding: var(--spacing-2xl);
     min-height: 100vh;
+    max-width: calc(100vw - 260px);
     transition: margin-left var(--transition-normal);
+    position: relative;
+    z-index: 1;
 }
 
 .main-content.expanded {

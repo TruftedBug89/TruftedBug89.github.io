@@ -10,7 +10,7 @@
     border-radius: 18px;
     padding: 28px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    max-width: 760px;
+    max-width: 820px;
     margin: 0 auto;
     animation: fadeInUp 0.35s ease both;
 }
@@ -1732,9 +1732,8 @@
 .speaking-menu,
 .grammar-menu {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 16px;
-    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -1807,7 +1806,7 @@
 
 /* ===== Exercise container header ===== */
 .exercise-container {
-    max-width: 820px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
