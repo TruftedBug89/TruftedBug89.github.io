@@ -20,8 +20,8 @@
     --text-muted:      #64748b;  /* Slate gray — WCAG AA compliant */
 
     /* Semantic accent colors */
-    --color-primary:       #ff6b6b;   /* Vibrant coral */
-    --color-primary-dark:  #ef4444;
+    --color-primary:       #e85555;   /* Darkened coral — WCAG AA with white */
+    --color-primary-dark:  #d94444;
     --color-primary-light: #fca5a5;
     --color-secondary:     #a78bfa;   /* Soft lavender */
     --color-secondary-dark:#8b5cf6;
@@ -41,7 +41,7 @@
     --border-hover:  rgba(148, 163, 184, 0.2);
 
     /* Gradients */
-    --gradient-primary:   linear-gradient(135deg, #ff6b6b 0%, #ef4444 100%);
+    --gradient-primary:   linear-gradient(135deg, #e85555 0%, #d94444 100%);
     --gradient-secondary: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
     --gradient-accent:    linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
     --gradient-success:   linear-gradient(135deg, #10b981 0%, #059669 100%);

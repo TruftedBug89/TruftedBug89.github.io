@@ -12,7 +12,6 @@
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
     font-size: 13px;
     line-height: 1.5;
-    white-space: nowrap;
     max-width: calc(100vw - 24px);
     word-break: break-word;
     opacity: 1;

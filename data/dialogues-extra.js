@@ -1541,7 +1541,7 @@
                 { speaker: 'A', chinese: '我要转账到另一个账户。', pinyin: 'wǒ yào zhuǎnzhàng dào lìng yī gè zhànghù.', meaning: 'I want to transfer to another account.' },
                 { speaker: 'B', chinese: '请提供对方的账号和姓名。', pinyin: 'qǐng tígōng duìfāng de zhànghào hé xìngmíng.', meaning: 'Please provide the recipient\'s account number and name.' },
                 { speaker: 'A', chinese: '账号是6222021234567890，名字是李华。', pinyin: 'zhànghào shì 6222021234567890, míngzì shì lǐhuá.', meaning: 'The account number is 6222021234567890, name is Li Hua.' },
-                { speaker: 'B', chinese: '转账金额是多少？', pinyin: 'zhuǎnzhàng jīn\\'é shì duōshao?', meaning: 'What is the transfer amount?' },
+                { speaker: 'B', chinese: '转账金额是多少？', pinyin: "zhuǎnzhàng jīn'é shì duōshao?", meaning: 'What is the transfer amount?' },
                 { speaker: 'A', chinese: '三千块。', pinyin: 'sān qiān kuài.', meaning: '3000 yuan.' },
                 { speaker: 'B', chinese: '转账成功，这是凭证。', pinyin: 'zhuǎnzhàng chénggōng, zhè shì píngzhèng.', meaning: 'Transfer successful, here is the receipt.' }
             ]
@@ -1582,10 +1582,10 @@
             category: 'Bank',
             difficulty: 'easy',
             turns: [
-                { speaker: 'A', chinese: '你好，帮我查一下余额。', pinyin: 'nǐ hǎo, bāng wǒ chá yīxià yú\\'é.', meaning: 'Hello, help me check the balance.' },
+                { speaker: 'A', chinese: '你好，帮我查一下余额。', pinyin: "nǐ hǎo, bāng wǒ chá yīxià yú'é.", meaning: 'Hello, help me check the balance.' },
                 { speaker: 'B', chinese: '请把卡给我。', pinyin: 'qǐng bǎ kǎ gěi wǒ.', meaning: 'Please give me your card.' },
                 { speaker: 'A', chinese: '给。', pinyin: 'gěi.', meaning: 'Here.' },
-                { speaker: 'B', chinese: '您的余额是两万三千五百块。', pinyin: 'nín de yú\\'é shì liǎng wàn sān qiān wǔ bǎi kuài.', meaning: 'Your balance is 23,500 yuan.' },
+                { speaker: 'B', chinese: '您的余额是两万三千五百块。', pinyin: "nín de yú'é shì liǎng wàn sān qiān wǔ bǎi kuài.", meaning: 'Your balance is 23,500 yuan.' },
                 { speaker: 'A', chinese: '好的，谢谢。', pinyin: 'hǎo de, xièxie.', meaning: 'OK, thanks.' }
             ]
         },
@@ -1657,7 +1657,7 @@
                 { speaker: 'A', chinese: '这个ATM机怎么用？', pinyin: 'zhège ATM jī zěnme yòng?', meaning: 'How do I use this ATM?' },
                 { speaker: 'B', chinese: '插卡，输入密码就可以了。', pinyin: 'chā kǎ, shūrù mìmǎ jiù kěyǐ le.', meaning: 'Insert your card, enter the password, and you\'re done.' },
                 { speaker: 'A', chinese: '我要取一千块。', pinyin: 'wǒ yào qǔ yī qiān kuài.', meaning: 'I want to withdraw 1000 yuan.' },
-                { speaker: 'B', chinese: '按取款，输入金额就行了。', pinyin: 'àn qǔkuǎn, shūrù jīn\\'é jiù xíng le.', meaning: 'Press withdraw, enter the amount.' },
+                { speaker: 'B', chinese: '按取款，输入金额就行了。', pinyin: "àn qǔkuǎn, shūrù jīn'é jiù xíng le.", meaning: 'Press withdraw, enter the amount.' },
                 { speaker: 'A', chinese: '好的，出来了，谢谢。', pinyin: 'hǎo de, chūlái le, xièxie.', meaning: 'OK, it came out, thanks.' }
             ]
         },
@@ -1945,7 +1945,7 @@
                 { speaker: 'A', chinese: '师傅，打表吗？', pinyin: 'shīfu, dǎ biǎo ma?', meaning: 'Driver, do you use the meter?' },
                 { speaker: 'B', chinese: '当然打表，放心。', pinyin: 'dāngrán dǎ biǎo, fàngxīn.', meaning: 'Of course I use the meter, don\'t worry.' },
                 { speaker: 'A', chinese: '起步价是多少？', pinyin: 'qǐbù jià shì duōshao?', meaning: 'What is the starting fare?' },
-                { speaker: 'B', chinese: '起步价十二块。', pinyin: 'qǐbù jià shí\\'èr kuài.', meaning: 'Starting fare is 12 yuan.' },
+                { speaker: 'B', chinese: '起步价十二块。', pinyin: "qǐbù jià shí'èr kuài.", meaning: 'Starting fare is 12 yuan.' },
                 { speaker: 'A', chinese: '好的。', pinyin: 'hǎo de.', meaning: 'OK.' }
             ]
         },
@@ -2032,7 +2032,7 @@
                 { speaker: 'A', chinese: '师傅，到了，多少钱？', pinyin: 'shīfu, dào le, duōshao qián?', meaning: 'Driver, we\'re here, how much?' },
                 { speaker: 'B', chinese: '三十八块。', pinyin: 'sānshíbā kuài.', meaning: '38 yuan.' },
                 { speaker: 'A', chinese: '给您五十。', pinyin: 'gěi nín wǔshí.', meaning: 'Here is 50.' },
-                { speaker: 'B', chinese: '找您十二块。', pinyin: 'zhǎo nín shí\\'èr kuài.', meaning: 'Here is 12 yuan change.' },
+                { speaker: 'B', chinese: '找您十二块。', pinyin: "zhǎo nín shí'èr kuài.", meaning: 'Here is 12 yuan change.' },
                 { speaker: 'A', chinese: '谢谢师傅。', pinyin: 'xièxie shīfu.', meaning: 'Thanks, driver.' }
             ]
         },
@@ -2202,7 +2202,7 @@
                 { speaker: 'A', chinese: '一百块。', pinyin: 'yībǎi kuài.', meaning: '100 yuan.' },
                 { speaker: 'B', chinese: '请把卡放在这里。', pinyin: 'qǐng bǎ kǎ fàng zài zhèlǐ.', meaning: 'Please put the card here.' },
                 { speaker: 'A', chinese: '好了，充值成功了吗？', pinyin: 'hǎo le, chōngzhí chénggōng le ma?', meaning: 'Done, was it successful?' },
-                { speaker: 'B', chinese: '成功了，余额一百五十。', pinyin: 'chénggōng le, yú\\'é yībǎi wǔshí.', meaning: 'Successful, balance is 150.' }
+                { speaker: 'B', chinese: '成功了，余额一百五十。', pinyin: "chénggōng le, yú'é yībǎi wǔshí.", meaning: 'Successful, balance is 150.' }
             ]
         },
         {
@@ -3631,4 +3631,9 @@
                 { speaker: 'A', chinese: '汇了两千块。', pinyin: 'huì le liǎng qiān kuài.', meaning: 'I sent 2000 yuan.' },
                 { speaker: 'B', chinese: '快报警！打110！', pinyin: 'kuài bàojǐng! dǎ yī yī líng!', meaning: 'Call the police now! Dial 110!' }
             ]
-        },
+        }
+    ];
+    if (typeof DialoguesData !== 'undefined' && DialoguesData.scenarios) {
+        DialoguesData.scenarios = DialoguesData.scenarios.concat(items);
+    }
+})();

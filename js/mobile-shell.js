@@ -102,10 +102,9 @@ var MobileShell = (function () {
         var initial = 'L';
 
         try {
-            var sid = typeof StorageManager !== 'undefined' ? StorageManager.getSessionId() : null;
-            if (sid) {
-                var progress = typeof StorageManager !== 'undefined' ?
-                    StorageManager.getProgress(sid) : null;
+            var sid = typeof SessionManager !== 'undefined' ? SessionManager.getActiveSessionId() : null;
+            if (sid && typeof StorageManager !== 'undefined') {
+                var progress = StorageManager.getUserData();
                 if (progress) {
                     streakCount = typeof DailyStreak !== 'undefined' ?
                         DailyStreak.getStreakCount(progress) :

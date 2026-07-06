@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, speaking practice, and spaced-repetition flashcards. Everything runs locally — no account needed.">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Chinese Master">
+    <link rel="canonical" href="https://truftedbug89.github.io/">
+    <link rel="manifest" href="/manifest.json">
+    <title>Chinese Master</title>
+
+    <meta property="og:title" content="Chinese Master">
+    <meta property="og:description" content="Free Chinese learning tool — HSK 1-5, listening, reading, grammar, SRS flashcards. No account needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://truftedbug89.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Chinese Master",
+        "description": "Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, and spaced-repetition flashcards.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "browserRequirements": "Requires JavaScript"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/activity-ui.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/components-learner.css">
+    <link rel="stylesheet" href="css/bottom-sheet.css">
+    <link rel="stylesheet" href="css/character-tooltip.css">
+    <link rel="stylesheet" href="css/consent-ui.css">
+    <link rel="stylesheet" href="css/mobile-shell.css">
+    <link rel="stylesheet" href="css/mobile-tabbar.css">
+    <link rel="stylesheet" href="css/offline-banner.css">
+    <link rel="stylesheet" href="css/pinyin-toggle.css">
+
+    <style>
+        #loading-screen {
+            position: fixed; inset: 0; z-index: 99999;
+            background: #0f172a;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 24px;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #loading-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loading-logo {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: 56px; font-weight: 700;
+            background: linear-gradient(135deg, #e85555, #d94444);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .loading-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px; color: #64748b;
+            letter-spacing: 0.05em;
+        }
+        .loading-bar-track {
+            width: 200px; height: 3px; background: #334155;
+            border-radius: 9999px; overflow: hidden;
+        }
+        .loading-bar-fill {
+            width: 0%; height: 100%;
+            background: linear-gradient(90deg, #e85555, #a78bfa);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="theme-dark">
+    <div id="loading-screen" class="loading-screen" aria-hidden="true">
+        <div class="loading-logo"></div>
+        <div class="loading-subtitle">Chinese Master</div>
+        <div class="loading-bar-track">
+            <div class="loading-bar-fill" id="ink-loading-fill"></div>
+        </div>
+    </div>
+
+    <div class="scroll-progress">
+        <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
+    </div>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+
+    <main id="main-content">
+        <div id="module-dashboard" class="module module--active" role="tabpanel"></div>
+        <div id="module-listening" class="module" role="tabpanel" hidden></div>
+        <div id="module-reading" class="module" role="tabpanel" hidden></div>
+        <div id="module-grammar" class="module" role="tabpanel" hidden></div>
+        <div id="module-speaking" class="module" role="tabpanel" hidden></div>
+        <div id="module-vocabulary" class="module" role="tabpanel" hidden></div>
+        <div id="module-achievements" class="module" role="tabpanel" hidden></div>
+    </main>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" id="modal-content"></div>
+    </div>
+
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p class="footer-text">&copy; <span id="footer-year">2026</span> Chinese Master</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="legal/privacy.html">Privacy</a>
+                <a href="legal/terms.html">Terms</a>
+                <a href="legal/cookies.html">Cookies</a>
+            </nav>
+        </div>
+    </footer>
+
+    <link rel="preload" as="font" href="https://fonts.gstatic.com/s/notosanssc/v36/k3kCo84MPvpLmixcA63oeAL7Iqp5IZJF9bmaG9_EnYxNbPzS5HE.ttf" crossorigin id="google-fonts">
+
+    <script src="vendor/gsap.min.js"></script>
+    <script src="vendor/ScrollTrigger.min.js"></script>
+
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/error-logger.js"></script>
+    <script src="js/analytics-engine.js"></script>
+
+    <script src="js/audio.js"></script>
+    <script src="js/sm2.js"></script>
+    <script src="js/data-loader.js"></script>
+    <script src="js/pinyin-toggle.js"></script>
+    <script src="js/daily-streak.js"></script>
+    <script src="js/tone-practice.js"></script>
+    <script src="js/advanced-learning.js"></script>
+    <script src="js/level-tracker.js"></script>
+    <script src="js/recurring-rewards.js"></script>
+    <script src="js/missions.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/load-progress.js"></script>
+
+    <script src="data/vocabulary.js"></script>
+    <script src="data/vocabulary-extended.js"></script>
+    <script src="data/vocabulary-mega.js"></script>
+    <script src="data/hsk1.js"></script>
+    <script src="data/hsk2.js"></script>
+    <script src="data/hsk3.js"></script>
+    <script src="data/hsk4.js"></script>
+    <script src="data/hsk5.js"></script>
+    <script src="data/grammar.js"></script>
+    <script src="data/listening.js"></script>
+    <script src="data/reading.js"></script>
+    <script src="data/dialogues.js"></script>
+    <script src="data/cultural.js"></script>
+    <script src="data/speaking.js"></script>
+    <script src="data/real-world-phrases.js"></script>
+
+    <script src="js/animations.js"></script>
+
+    <script src="components/bottom-sheet.js"></script>
+    <script src="components/character-tooltip.js"></script>
+    <script src="components/word-of-the-day.js"></script>
+    <script src="components/consent-ui.js"></script>
+    <script src="components/offline-banner.js"></script>
+    <script src="components/session-manager-ui.js"></script>
+    <script src="components/mobile-tabbar.js"></script>
+    <script src="components/mobile-shell.js"></script>
+    <script src="components/dashboard.js"></script>
+    <script src="components/grammar-module.js"></script>
+    <script src="components/listening-module.js"></script>
+    <script src="components/reading-module.js"></script>
+    <script src="components/speaking-module.js"></script>
+    <script src="components/vocabulary-learner.js"></script>
+    <script src="components/achievements.js"></script>
+    <script src="components/analytics.js"></script>
+    <script src="components/admin-panel.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/register-sw.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof App !== 'undefined' && typeof App.init === 'function') {
+                App.init();
+            } else {
+                var loading = document.getElementById('loading-screen');
+                if (loading) {
+                    loading.innerHTML = '<p style="color:#fca5a5;font-family:Inter,sans-serif;font-size:14px;">Failed to initialize. Please check your browser settings.</p>';
+                }
+            }
+        });
+    </script>
+
+    <noscript>
+        <div style="position:fixed;inset:0;background:#0f172a;display:flex;align-items:center;justify-content:center;z-index:999999;">
+            <div style="text-align:center;color:#f8fafc;font-family:Inter,sans-serif;">
+                <h1 style="font-size:24px;margin-bottom:12px;">Chinese Master</h1>
+                <p style="color:#94a3b8;font-size:14px;">JavaScript is required to run this application.</p>
+            </div>
+        </div>
+    </noscript>
+</body>
+</html>

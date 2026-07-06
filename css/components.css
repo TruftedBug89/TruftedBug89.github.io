@@ -395,11 +395,11 @@
 
 .tone-number.active {
     transform: scale(1.2);
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 20px rgba(232, 85, 85, 0.5);
 }
 
 .tone-1 { background: #e74c3c; color: white; }
-.tone-2 { background: #f39c12; color: white; }
+.tone-2 { background: #d97706; color: white; }
 .tone-3 { background: #2ecc71; color: white; }
 .tone-4 { background: #3498db; color: white; }
 .tone-5 { background: #a78bfa; color: white; }

@@ -547,9 +547,13 @@ const ListeningModule = {
         if (playEachBtn) {
             playEachBtn.addEventListener('click', async () => {
                 playEachBtn.disabled = true;
-                for (const turn of exercise.turns) {
-                    await AudioManager.speak(turn.chinese);
-                    await AudioManager.delay(400);
+                try {
+                    for (const turn of exercise.turns) {
+                        await AudioManager.speak(turn.chinese);
+                        await new Promise(function(resolve) { setTimeout(resolve, 400); });
+                    }
+                } catch (e) {
+                    // Speech synthesis may fail gracefully
                 }
                 playEachBtn.disabled = false;
             });

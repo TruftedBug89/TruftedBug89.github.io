@@ -2,3 +2,37 @@
 /tools
 /.agents
 AGENTS.md
+
+# AI agent state
+/.deepseek/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp
+*.tmp
+*.bak

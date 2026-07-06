@@ -10,6 +10,7 @@ const AnalyticsDashboard = {
 
     // Render analytics
     render() {
+        if (typeof AdvancedLearning === 'undefined') return;
         const analytics = AdvancedLearning.getAnalytics();
         const velocity = AdvancedLearning.getLearningVelocity();
         const recommendations = AdvancedLearning.getRecommendations();

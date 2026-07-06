@@ -60,7 +60,8 @@ const AudioManager = {
             utterance.lang = options.lang || 'zh-CN';
             
             // Set rate (speed)
-            utterance.rate = options.rate || StorageManager.getUserData().settings.audioSpeed || 0.8;
+            var userData = StorageManager.getUserData();
+            utterance.rate = options.rate || (userData && userData.settings && userData.settings.audioSpeed) || 0.8;
             
             // Set pitch
             utterance.pitch = options.pitch || 1;
@@ -170,7 +171,8 @@ const AudioManager = {
     
     // Get current speed
     getSpeed() {
-        return StorageManager.getUserData().settings.audioSpeed || 0.8;
+        var userData = StorageManager.getUserData();
+        return (userData && userData.settings && userData.settings.audioSpeed) || 0.8;
     },
     
     // Check if speech synthesis is supported

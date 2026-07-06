@@ -202,6 +202,7 @@ const Utils = {
     // Show toast notification
     showToast(message, type = 'info', duration = 3000) {
         const container = document.getElementById('toast-container');
+        if (!container) return;
         const toast = this.createElement('div', { className: `toast ${type}` }, message);
         container.appendChild(toast);
 

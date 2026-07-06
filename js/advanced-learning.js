@@ -78,7 +78,8 @@ const AdvancedLearning = {
             userAnswer,
             correctAnswer,
             timestamp: new Date().toISOString(),
-            context
+            context,
+            correct: false
         });
 
         // Keep only last 10 attempts
@@ -101,10 +102,19 @@ const AdvancedLearning = {
         if (this.mistakes[module][itemId]) {
             const mistake = this.mistakes[module][itemId];
             mistake.lastCorrect = new Date().toISOString();
-            
+            mistake.attempts.push({
+                userAnswer: '[correct]',
+                correctAnswer: '[correct]',
+                timestamp: new Date().toISOString(),
+                context: context || {},
+                correct: true
+            });
+            if (mistake.attempts.length > 10) {
+                mistake.attempts = mistake.attempts.slice(-10);
+            }
             // Check if mastered (3 consecutive correct)
             const recentAttempts = mistake.attempts.slice(-3);
-            if (recentAttempts.length >= 3 && recentAttempts.every(a => a.correct)) {
+            if (recentAttempts.length >= 3 && recentAttempts.every(function(a) { return a.correct; })) {
                 mistake.mastered = true;
             }
         }
