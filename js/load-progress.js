@@ -46,8 +46,8 @@
         if (fill) fill.style.width = '100%';
     });
 
-    // CSS animation fallback fills bar slowly
-    if (fill) fill.classList.add('load-progress-active');
+    // Width is driven solely by the PerformanceObserver updates + app-ready above.
+    // (No CSS keyframe fallback — it conflicted with these inline updates.)
 
     // CSP-safe Google Fonts loading (no inline onload)
     var gf = document.getElementById('google-fonts');

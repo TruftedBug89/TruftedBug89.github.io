@@ -62,7 +62,7 @@ Zero configuration. Edit any file and refresh.
 ├── data/          Learning content (~100 files)
 ├── vendor/        GSAP animation library
 ├── legal/         Privacy, terms, cookie policy
-├── scripts/       Build and validation tools
+├── tests/         Pre-production test suite (node --test)
 ├── index.html     Entry point
 ├── manifest.json  PWA manifest
 ├── sw.js          Service worker
@@ -95,7 +95,7 @@ Zero configuration. Edit any file and refresh.
 
 **Reading** — Character match, sentence reconstruction, passage comprehension, radicals.
 
-See `scripts/check-data.js` for dataset validation.
+Run `cd tests && node --test` for dataset validation and pre-production checks.
 
 ## Tech Stack
 

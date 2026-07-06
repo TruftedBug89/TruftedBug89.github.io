@@ -81,6 +81,18 @@ const App = {
         this.hideLoadingScreen();
         this.isInitialized = true;
         if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
+
+        // Fail-safe: if GSAP/InkAnimations never loaded, reveal hidden content
+        setTimeout(() => {
+            if (typeof InkAnimations === 'undefined' || !window.gsap) {
+                document.querySelectorAll(
+                    '.gsap-reveal, .gsap-reveal-left, .gsap-reveal-right, .gsap-reveal-scale, .gsap-reveal-fade'
+                ).forEach(el => el.classList.add('gsap-reveal-visible'));
+                document.querySelectorAll('.stagger-children > *, .ink-stagger > *').forEach(el => {
+                    el.style.opacity = '1'; el.style.transform = 'none'; el.style.filter = 'none';
+                });
+            }
+        }, 2000);
     },
 
     // Surface uncaught errors to the user instead of failing silently
@@ -176,15 +188,8 @@ const App = {
             this.handleKeyboardShortcut(e);
         });
 
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            if (docHeight <= 0) return;
-            const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
-            const fill = document.getElementById('scroll-progress-fill');
-            if (fill) fill.style.transform = 'scaleX(' + (pct / 100) + ')';
-        }, { passive: true });
+        // Scroll progress bar is GSAP-scrub-driven (see InkAnimations.initScrollProgressBar).
+        // No manual scroll listener here to avoid a double-driver on #scroll-progress-fill.
     },
 
     // Navigate to a module

@@ -15,11 +15,18 @@ var InkAnimations = (function() {
     function init() {
         if (!gsap || !ScrollTrigger) {
             console.warn('GSAP not loaded — animations disabled');
+            revealAllWithoutGSAP();
             return;
         }
         gsap.registerPlugin(ScrollTrigger);
         isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            revealAllWithoutGSAP();
+            initPageTransitions();   /* defines pageTransition (instant-set under reduced motion) */
+            initLoadingAnimation();  /* defines hideLoader (GSAP fade, short) */
+            return;
+        }
         initScrollReveals();
         initPageTransitions();
         if (!prefersReducedMotion) initParticles();
@@ -31,6 +38,20 @@ var InkAnimations = (function() {
         if (!prefersReducedMotion) initParallaxOrbs();
         initScrollProgressBar();
         initSVGBrushStrokes();
+    }
+
+    /* === NO-GSAP / REDUCED-MOTION FALLBACK: reveal everything === */
+    function revealAllWithoutGSAP() {
+        document.querySelectorAll(
+            '.gsap-reveal, .gsap-reveal-left, .gsap-reveal-right, .gsap-reveal-scale, .gsap-reveal-fade'
+        ).forEach(function(el) { el.classList.add('gsap-reveal-visible'); });
+        document.querySelectorAll('.stagger-children > *, .ink-stagger > *').forEach(function(el) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.filter = 'none';
+        });
+        var bar = document.getElementById('scroll-progress-fill');
+        if (bar) bar.style.transform = 'scaleX(1)';
     }
 
     /* === SCROLL-TRIGGERED REVEALS === */
@@ -73,6 +94,14 @@ var InkAnimations = (function() {
         window.InkAnimations.pageTransition = function(oldModule, newModule) {
             if (!gsap) return;
             if (!newModule) return;
+            if (prefersReducedMotion) {
+                if (oldModule && oldModule !== newModule) gsap.set(oldModule, { opacity: 0, y: 0 });
+                gsap.set(newModule, { opacity: 1, y: 0 });
+                var ch = newModule.querySelectorAll(':scope > *');
+                if (ch.length) gsap.set(ch, { opacity: 1, y: 0 });
+                gsap.delayedCall(0.1, function() { ScrollTrigger.refresh(); });
+                return;
+            }
             var tl = gsap.timeline();
             if (oldModule && oldModule !== newModule) {
                 tl.to(oldModule, { opacity: 0, y: -12, duration: 0.2, ease: 'power2.in' });
@@ -125,9 +154,8 @@ var InkAnimations = (function() {
         window.InkAnimations.hideLoader = function(callback) {
             var loader = document.getElementById('loading-screen');
             if (!loader) { if (callback) callback(); return; }
-            var fill = document.getElementById('ink-loading-fill');
-            if (fill && gsap) { gsap.to(fill, { width: '100%', duration: 0.35, ease: 'power2.in' }); }
-            if (gsap) {
+            // Fill-bar width is owned by load-progress.js (app-ready → 100%). Don't tween it here.
+            if (gsap && !prefersReducedMotion) {
                 gsap.to(loader, { opacity: 0, duration: 0.55, ease: 'power3.inOut', delay: 0.15, onComplete: function() {
                     loader.classList.add('fade-out');
                     initNavEntrance();
@@ -208,7 +236,17 @@ var InkAnimations = (function() {
         if (themeToggle) {
             themeToggle.addEventListener('click', function() {
                 var ico = themeToggle.querySelector('.toggle-icon');
-                if (ico) { gsap.fromTo(ico, { rotation: 0, scale: 1 }, { rotation: 180, scale: 1.25, duration: 0.5, ease: 'back.out(1.7)' }); }
+                if (!ico) return;
+                // Read current theme state to decide target rotation (0 = dark, 180 = light)
+                var isLight = document.body.classList.contains('theme-light');
+                var targetRot = isLight ? 180 : 0;
+                gsap.fromTo(ico, { scale: 1 }, {
+                    rotation: targetRot,
+                    scale: 1.25,
+                    duration: 0.5,
+                    ease: 'back.out(1.7)',
+                    onComplete: function() { gsap.to(ico, { scale: 1, duration: 0.2, ease: 'power2.out' }); }
+                });
             });
         }
     }
@@ -218,6 +256,7 @@ var InkAnimations = (function() {
         if (!gsap || isTouch) return;
         var cards = document.querySelectorAll('.stats-card, .action-card, .exercise-type-card');
         cards.forEach(function(card) {
+            card.classList.add('tilt-active');
             gsap.set(card, { rotateX: 0, rotateY: 0, z: 0 });
             var qX = gsap.quickTo(card, 'rotateX', { duration: 0.4, ease: 'power2.out' });
             var qY = gsap.quickTo(card, 'rotateY', { duration: 0.4, ease: 'power2.out' });
@@ -246,7 +285,7 @@ var InkAnimations = (function() {
     /* === MAGNETIC BUTTONS === */
     function initMagneticButtons() {
         if (!gsap || isTouch) return;
-        document.querySelectorAll('.btn').forEach(function(btn) {
+        document.querySelectorAll('.btn:not(.nav-link):not(.modal-close):not([data-no-magnetic])').forEach(function(btn) {
             var qX = gsap.quickTo(btn, 'x', { duration: 0.5, ease: 'power3.out' });
             var qY = gsap.quickTo(btn, 'y', { duration: 0.5, ease: 'power3.out' });
             btn.addEventListener('mousemove', function(e) {
@@ -262,16 +301,29 @@ var InkAnimations = (function() {
         });
     }
 
-    /* === PARALLAX ORBS (mouse + scroll) === */
+    /* === PARALLAX ORBS (GSAP drift + mouse + scroll, single owner) === */
     function initParallaxOrbs() {
         if (!gsap) return;
         var orbs = document.querySelectorAll('.ambient-orb');
         if (!orbs.length) return;
+        /* Organic drift on x/y (px) — re-rolled each cycle so it never repeats */
+        orbs.forEach(function(orb, i) {
+            gsap.to(orb, {
+                x: 'random(-45,45)',
+                y: 'random(-35,35)',
+                duration: 14 + i * 4,
+                ease: 'sine.inOut',
+                repeat: -1,
+                repeatRefresh: true,
+                yoyo: true
+            });
+        });
+        /* Mouse parallax on xPercent/yPercent — composes with drift (different sub-properties) */
         var qOrbs = [];
         orbs.forEach(function(orb, i) {
             qOrbs.push({
-                x: gsap.quickTo(orb, 'x', { duration: 1.2, ease: 'power2.out' }),
-                y: gsap.quickTo(orb, 'y', { duration: 1.2, ease: 'power2.out' })
+                x: gsap.quickTo(orb, 'xPercent', { duration: 1.2, ease: 'power2.out' }),
+                y: gsap.quickTo(orb, 'yPercent', { duration: 1.2, ease: 'power2.out' })
             });
         });
         document.addEventListener('mousemove', function(e) {
@@ -282,18 +334,19 @@ var InkAnimations = (function() {
                 q.y(my * (i + 1) * 0.5);
             });
         });
-        /* Scroll-driven depth */
+        /* Scroll depth via scale (no conflict with x/y/xPercent/yPercent) */
         if (ScrollTrigger) {
-            ScrollTrigger.create({
-                trigger: 'body',
-                start: 'top top',
-                end: 'bottom bottom',
-                onUpdate: function(self) {
-                    var p = self.progress;
-                    orbs.forEach(function(orb, i) {
-                        orb.style.transform = orb.style.transform.replace(/translateY\([^)]*\)/, '') + ' translateY(' + (p * 40 * (i + 1)) + 'px)';
-                    });
-                }
+            orbs.forEach(function(orb, i) {
+                gsap.to(orb, {
+                    scale: 1 + 0.12 * (i + 1),
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: 'body',
+                        start: 'top top',
+                        end: 'bottom bottom',
+                        scrub: 0.5
+                    }
+                });
             });
         }
     }
@@ -319,7 +372,8 @@ var InkAnimations = (function() {
     function initSVGBrushStrokes() {
         if (!gsap || !ScrollTrigger) return;
         document.querySelectorAll('.brush-stroke-path').forEach(function(path) {
-            var len = path.getTotalLength();
+            var len;
+            try { len = path.getTotalLength(); } catch(e) { return; }
             if (!len) return;
             path.style.strokeDasharray = len;
             path.style.strokeDashoffset = len;
@@ -346,6 +400,11 @@ var InkAnimations = (function() {
         if (!goalFill) return;
         var circumference = 2 * Math.PI * 40;
         goalFill.style.strokeDasharray = circumference;
+        if (prefersReducedMotion) {
+            goalFill.style.strokeDashoffset = circumference - (targetPercent / 100) * circumference;
+            if (goalPercent) goalPercent.textContent = targetPercent;
+            return;
+        }
         goalFill.style.strokeDashoffset = circumference;
         gsap.to(goalFill, {
             strokeDashoffset: circumference - (targetPercent / 100) * circumference,
@@ -368,6 +427,7 @@ var InkAnimations = (function() {
         var el = typeof selector === 'string' ? document.querySelector(selector) : selector;
         if (!el || el.dataset.splitDone) return;
         el.dataset.splitDone = '1';
+        if (prefersReducedMotion) { return; } /* leave text intact, no char animation */
         var text = el.textContent.trim();
         el.textContent = '';
         var chars = text.split('');
@@ -389,12 +449,14 @@ var InkAnimations = (function() {
         if (!gsap) return;
         var fill = document.getElementById('xp-progress');
         if (!fill) return;
+        if (prefersReducedMotion) { fill.style.width = toPct + '%'; return; }
         gsap.fromTo(fill, { width: fromPct + '%' }, { width: toPct + '%', duration: 1.2, ease: 'power3.inOut' });
     };
 
     /* === NUMBER COUNTER === */
     window.InkAnimations.countUp = function(element, target, duration) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) { element.textContent = target; return; }
         duration = duration || 1.4;
         var start = parseInt(element.textContent) || 0;
         gsap.fromTo(element, { textContent: start }, {
@@ -412,6 +474,7 @@ var InkAnimations = (function() {
         opts = opts || {};
         var children = container.children;
         if (!children.length) return;
+        if (prefersReducedMotion) { gsap.set(children, { opacity: 1, y: 0, scale: 1 }); return; }
         gsap.fromTo(children, {
             opacity: 0,
             y: opts.y || 30,
@@ -432,6 +495,7 @@ var InkAnimations = (function() {
         if (!gsap || !container) return;
         var cards = container.querySelectorAll('.exercise-type-card, .vocab-mode-card, .game-card');
         if (!cards.length) return;
+        if (prefersReducedMotion) { gsap.set(cards, { opacity: 1, y: 0, scale: 1, rotateX: 0 }); return; }
         gsap.fromTo(cards, {
             opacity: 0,
             y: 40,
@@ -451,6 +515,7 @@ var InkAnimations = (function() {
     /* === SCORE POP-UP === */
     window.InkAnimations.scorePopup = function(element, score) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) { gsap.set(element, { scale: 1, opacity: 1 }); return; }
         gsap.fromTo(element, {
             scale: 0.3,
             opacity: 0
@@ -465,6 +530,7 @@ var InkAnimations = (function() {
     /* === FEEDBACK PULSE (correct/incorrect) + particle burst === */
     window.InkAnimations.feedbackPulse = function(element, type) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         var color = type === 'correct' ? '#5aab8a' : type === 'close' ? '#d4952b' : '#d4432d';
         gsap.fromTo(element, {
             borderColor: 'transparent',
@@ -484,6 +550,7 @@ var InkAnimations = (function() {
     /* === SHAKE ELEMENT (for incorrect answers) === */
     window.InkAnimations.shakeElement = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         gsap.fromTo(element, { x: 0 }, {
             x: 8,
             duration: 0.07,
@@ -497,6 +564,7 @@ var InkAnimations = (function() {
     /* === SLIDE IN PANEL === */
     window.InkAnimations.slideInPanel = function(element, direction) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) { gsap.set(element, { opacity: 1, x: 0, y: 0 }); return; }
         var x = direction === 'left' ? -60 : direction === 'right' ? 60 : 0;
         var y = direction === 'up' ? -40 : direction === 'down' ? 40 : 0;
         gsap.fromTo(element, {
@@ -515,6 +583,7 @@ var InkAnimations = (function() {
     /* === COUNTER BOUNCE === */
     window.InkAnimations.counterBounce = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) { gsap.set(element, { scale: 1, opacity: 1 }); return; }
         gsap.fromTo(element, { scale: 0.5, opacity: 0 }, {
             scale: 1,
             opacity: 1,
@@ -526,6 +595,7 @@ var InkAnimations = (function() {
     /* === ATTENTION PULSE === */
     window.InkAnimations.attentionPulse = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         gsap.to(element, {
             scale: 1.05,
             duration: 0.3,
@@ -538,6 +608,7 @@ var InkAnimations = (function() {
     /* === HIGHLIGHT FLASH === */
     window.InkAnimations.highlightFlash = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         gsap.fromTo(element, {
             backgroundColor: 'rgba(90, 171, 138,0.25)'
         }, {
@@ -550,6 +621,7 @@ var InkAnimations = (function() {
     /* === PROGRESS BAR FILL === */
     window.InkAnimations.progressBarFill = function(element, fromPct, toPct) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) { element.style.width = toPct + '%'; return; }
         gsap.fromTo(element, { width: fromPct + '%' }, {
             width: toPct + '%',
             duration: 0.8,
@@ -560,6 +632,7 @@ var InkAnimations = (function() {
     /* === DOT INDICATOR PULSE === */
     window.InkAnimations.dotPulse = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         gsap.fromTo(element, { scale: 0.8 }, {
             scale: 1.4,
             duration: 0.35,
@@ -572,6 +645,11 @@ var InkAnimations = (function() {
         if (!gsap || !moduleEl) return;
         var h1 = moduleEl.querySelector('h1');
         var subtitle = moduleEl.querySelector('.module-subtitle');
+        if (prefersReducedMotion) {
+            if (h1) gsap.set(h1, { opacity: 1, y: 0, filter: 'blur(0px)' });
+            if (subtitle) gsap.set(subtitle, { opacity: 1, y: 0 });
+            return;
+        }
         var tl = gsap.timeline();
         if (h1) {
             tl.fromTo(h1, { opacity: 0, y: -20, filter: 'blur(4px)' }, {
@@ -590,16 +668,15 @@ var InkAnimations = (function() {
     /* === FLASHCARD 3D FLIP (GSAP-powered) === */
     window.InkAnimations.flashcardFlip = function(card, toFront) {
         if (!gsap || !card) return;
-        if (toFront) {
-            gsap.to(card, { rotationY: 0, duration: 0.7, ease: 'power3.inOut' });
-        } else {
-            gsap.to(card, { rotationY: 180, duration: 0.7, ease: 'power3.inOut' });
-        }
+        gsap.set(card, { rotationY: toFront ? 0 : 180 });
+        if (prefersReducedMotion) return;
+        gsap.to(card, { rotationY: toFront ? 0 : 180, duration: 0.7, ease: 'power3.inOut' });
     };
 
     /* === CORRECT ANSWER CELEBRATE (pop + glow + sparkle) === */
     window.InkAnimations.celebrateCorrect = function(element) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         var tl = gsap.timeline();
         tl.to(element, { scale: 1.06, duration: 0.12, ease: 'power2.out' });
         tl.to(element, { scale: 1, duration: 0.35, ease: 'elastic.out(1, 0.3)' });
@@ -652,7 +729,12 @@ var InkAnimations = (function() {
         if (!gsap || !ringEl) return;
         var pctEl = ringEl.querySelector('.completion-pct');
         var scoreEl = ringEl.querySelector('.completion-score');
-        var totalEl = ringEl.querySelector('.completion-total');
+        if (prefersReducedMotion) {
+            ringEl.style.background = 'conic-gradient(' + color + ' ' + (pctNum * 3.6) + 'deg, rgba(255,255,255,0.08) ' + (pctNum * 3.6) + 'deg)';
+            if (pctEl) pctEl.textContent = pctNum + '%';
+            if (scoreEl) scoreEl.textContent = parseInt(scoreEl.dataset.score || 0);
+            return;
+        }
         gsap.fromTo(ringEl, { '--pct': 0 }, {
             '--pct': pctNum,
             duration: 1.5,
@@ -677,6 +759,10 @@ var InkAnimations = (function() {
     /* === MISSION COMPLETE CELEBRATION === */
     window.InkAnimations.celebrateMissionComplete = function(mission) {
         if (!gsap) return;
+        if (prefersReducedMotion) {
+            try { Utils.showToast((mission.icon || '🎯') + ' Mission Complete! +' + mission.reward + ' XP', 'success'); } catch (_) {}
+            return;
+        }
         var overlay = document.createElement('div');
         overlay.style.cssText = 'position:fixed;inset:0;z-index:99998;pointer-events:none;display:flex;align-items:center;justify-content:center;';
         overlay.innerHTML = '<div class="mission-celebrate" style="text-align:center;opacity:0;">' +
@@ -698,6 +784,10 @@ var InkAnimations = (function() {
     /* === STREAK MILESTONE CELEBRATION === */
     window.InkAnimations.celebrateStreakMilestone = function(days) {
         if (!gsap) return;
+        if (prefersReducedMotion) {
+            try { Utils.showToast('🔥 ' + days + ' Day Streak!', 'success'); } catch (_) {}
+            return;
+        }
         var overlay = document.createElement('div');
         overlay.style.cssText = 'position:fixed;inset:0;z-index:99998;pointer-events:none;display:flex;align-items:center;justify-content:center;';
         overlay.innerHTML = '<div class="streak-celebrate" style="text-align:center;opacity:0;">' +
@@ -735,13 +825,14 @@ var InkAnimations = (function() {
     /* === LOGIN REWARD CELEBRATION === */
     window.InkAnimations.celebrateLoginReward = function(result) {
         if (!gsap) return;
+        if (prefersReducedMotion) return;
         burstParticles(document.body, 25, ['#ffd86b', '#f1c40f', '#5aab8a', '#a78bfa', '#fff']);
     };
 
     /* === ENHANCED LEVEL UP (more particles, subtle glow) === */
     window.InkAnimations.showLevelUp = function(level, title, xp) {
-        if (!gsap) {
-            Utils.showToast('Level Up! ' + (title || ''), 'success');
+        if (!gsap || prefersReducedMotion) {
+            Utils.showToast('Level Up! ' + (title || '') + ' (L' + level + ')', 'success');
             return;
         }
         var overlay = document.createElement('div');
@@ -791,6 +882,7 @@ var InkAnimations = (function() {
     /* === ENHANCED ACHIEVEMENT UNLOCK (shimmer overlay) === */
     window.InkAnimations.achievementUnlock = function(card) {
         if (!gsap || !card) return;
+        if (prefersReducedMotion) { gsap.set(card, { scale: 1, rotation: 0, opacity: 1 }); return; }
         var tl = gsap.timeline();
         tl.fromTo(card, { scale: 0, rotation: -15, opacity: 0 }, {
             scale: 1.1, rotation: 2, opacity: 1,
@@ -827,6 +919,7 @@ var InkAnimations = (function() {
     /* === ENHANCED FLOAT XP (scale bounce) === */
     window.InkAnimations.floatXP = function(element, xpAmount) {
         if (!gsap || !element) return;
+        if (prefersReducedMotion) return;
         var float = document.createElement('div');
         float.className = 'xp-float';
         float.textContent = '+' + xpAmount + ' XP';
@@ -874,10 +967,11 @@ var InkAnimations = (function() {
         var st = ScrollTrigger.getAll();
         if (st && st.length) {
             st.forEach(function(t) {
-                try { if (el.contains(t.trigger)) t.kill(); } catch(_) {}
+                try { if (t.trigger && el.contains(t.trigger)) t.kill(); } catch(_) {}
             });
         }
-        gsap.killTweensOf(el.querySelectorAll ? el.querySelectorAll('*') : []);
+        // Kill tweens on the module element itself only (wildcard '*' was expensive
+        // and could kill tweens on shared appended nodes like toasts/particles).
         gsap.killTweensOf(el);
         gsap.to(el, { opacity: 0, duration: 0.2, ease: 'power2.in', onComplete: function() {
             if (done) done();

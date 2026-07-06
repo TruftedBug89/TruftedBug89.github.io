@@ -175,9 +175,6 @@ const DailyStreak = {
 
         // Update today's progress
         const progress = this.getTodayProgress();
-        
-        const goalPercent = document.getElementById('goal-percent');
-        if (goalPercent) goalPercent.textContent = progress.overall;
 
         const goalListening = document.getElementById('goal-listening');
         if (goalListening) goalListening.textContent = progress.listening.current;
@@ -188,12 +185,21 @@ const DailyStreak = {
         const goalVocab = document.getElementById('goal-vocab');
         if (goalVocab) goalVocab.textContent = progress.vocabulary.current;
 
-        // Update goal ring
+        // Update goal ring + percent (single owner: GSAP via InkAnimations when available)
         const goalFill = document.getElementById('goal-fill');
         if (goalFill) {
-            const circumference = 2 * Math.PI * 40;
-            const offset = circumference - (progress.overall / 100) * circumference;
-            goalFill.style.strokeDashoffset = offset;
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.animateGoalRing && window.gsap) {
+                InkAnimations.animateGoalRing(progress.overall);
+            } else {
+                const circumference = 2 * Math.PI * 40;
+                goalFill.style.strokeDasharray = circumference;
+                goalFill.style.strokeDashoffset = circumference - (progress.overall / 100) * circumference;
+                const goalPercent = document.getElementById('goal-percent');
+                if (goalPercent) goalPercent.textContent = progress.overall;
+            }
+        } else {
+            const goalPercent = document.getElementById('goal-percent');
+            if (goalPercent) goalPercent.textContent = progress.overall;
         }
     },
 
