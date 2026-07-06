@@ -1,0 +1,502 @@
+[
+  {
+    "id": "h5_023",
+    "character": "抄",
+    "pinyin": "chāo",
+    "meaning": "to copy; to transcribe",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "老师让学生把生词抄写五遍。",
+        "pinyin": "lǎoshī ràng xuéshēng bǎ shēngcí chāoxiě wǔ biàn.",
+        "en": "The teacher asked students to copy the new words five times."
+      },
+      {
+        "cn": "他抄了同学的作业，被老师发现了。",
+        "pinyin": "tā chāo le tóngxué de zuòyè, bèi lǎoshī fāxiàn le.",
+        "en": "He copied his classmate's homework and was caught by the teacher."
+      },
+      {
+        "cn": "请把你的电话号码抄给我。",
+        "pinyin": "qǐng bǎ nǐ de diànhuà hàomǎ chāo gěi wǒ.",
+        "en": "Please copy down your phone number for me."
+      }
+    ]
+  },
+  {
+    "id": "h5_024",
+    "character": "吵",
+    "pinyin": "chǎo",
+    "meaning": "to quarrel; noisy",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "别吵了，我们好好谈谈。",
+        "pinyin": "bié chǎo le, wǒmen hǎohǎo tántan.",
+        "en": "Stop quarreling, let us have a good talk."
+      },
+      {
+        "cn": "楼上的邻居装修，吵得我睡不着觉。",
+        "pinyin": "lóu shàng de línjū zhuāngxiū, chǎo de wǒ shuì bù zháo jiào.",
+        "en": "The neighbor upstairs is renovating, the noise keeps me from sleeping."
+      },
+      {
+        "cn": "孩子们在院子里大声吵闹。",
+        "pinyin": "háizi men zài yuànzi lǐ dàshēng chǎonào.",
+        "en": "The children are making a lot of noise in the yard."
+      }
+    ]
+  },
+  {
+    "id": "h5_025",
+    "character": "称赞",
+    "pinyin": "chēngzàn",
+    "meaning": "to praise; to compliment",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "老师称赞了他的进步。",
+        "pinyin": "lǎoshī chēngzàn le tā de jìnbù.",
+        "en": "The teacher praised his progress."
+      },
+      {
+        "cn": "顾客称赞这家店的服务非常好。",
+        "pinyin": "gùkè chēngzàn zhè jiā diàn de fúwù fēicháng hǎo.",
+        "en": "Customers praised the excellent service of this store."
+      },
+      {
+        "cn": "他的努力得到了大家的称赞。",
+        "pinyin": "tā de nǔlì dédào le dàjiā de chēngzàn.",
+        "en": "His efforts received everyone's praise."
+      }
+    ]
+  },
+  {
+    "id": "h5_026",
+    "character": "成立",
+    "pinyin": "chénglì",
+    "meaning": "to establish; to found",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "这家公司成立于2005年。",
+        "pinyin": "zhè jiā gōngsī chénglì yú èr líng líng wǔ nián.",
+        "en": "This company was founded in 2005."
+      },
+      {
+        "cn": "他们成立了一个研究小组。",
+        "pinyin": "tāmen chénglì le yī gè yánjiū xiǎozǔ.",
+        "en": "They established a research group."
+      },
+      {
+        "cn": "这个理论还需要更多的证据才能成立。",
+        "pinyin": "zhège lǐlùn hái xūyào gèng duō de zhèngjù cáinéng chénglì.",
+        "en": "This theory needs more evidence to be established."
+      }
+    ]
+  },
+  {
+    "id": "h5_027",
+    "character": "成长",
+    "pinyin": "chéngzhǎng",
+    "meaning": "to grow up; growth",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "孩子在健康的环境中成长很重要。",
+        "pinyin": "háizi zài jiànkāng de huánjìng zhōng chéngzhǎng hěn zhòngyào.",
+        "en": "It is important for children to grow up in a healthy environment."
+      },
+      {
+        "cn": "这家公司近年来快速成长。",
+        "pinyin": "zhè jiā gōngsī jìn nián lái kuàisù chéngzhǎng.",
+        "en": "This company has grown rapidly in recent years."
+      },
+      {
+        "cn": "人生的经历让我们不断成长。",
+        "pinyin": "rénshēng de jīnglì ràng wǒmen bùduàn chéngzhǎng.",
+        "en": "Life experiences help us grow continuously."
+      }
+    ]
+  },
+  {
+    "id": "h5_028",
+    "character": "承担",
+    "pinyin": "chéngdān",
+    "meaning": "to bear responsibility",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "每个人都应该承担自己的责任。",
+        "pinyin": "měi gè rén dōu yīnggāi chéngdān zìjǐ de zérèn.",
+        "en": "Everyone should bear their own responsibility."
+      },
+      {
+        "cn": "公司承担了这次事故的全部损失。",
+        "pinyin": "gōngsī chéngdān le zhè cì shìgù de quánbù sǔnshī.",
+        "en": "The company bore the full loss of this accident."
+      },
+      {
+        "cn": "他主动承担起照顾老人的任务。",
+        "pinyin": "tā zhǔdòng chéngdān qǐ zhàogù lǎorén de rènwù.",
+        "en": "He took the initiative to bear the task of caring for the elderly."
+      }
+    ]
+  },
+  {
+    "id": "h5_029",
+    "character": "承认",
+    "pinyin": "chéngrèn",
+    "meaning": "to admit; to acknowledge",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "他承认了自己的错误。",
+        "pinyin": "tā chéngrèn le zìjǐ de cuòwù.",
+        "en": "He admitted his mistake."
+      },
+      {
+        "cn": "我们必须承认，这是一个巨大的挑战。",
+        "pinyin": "wǒmen bìxū chéngrèn, zhè shì yī gè jùdà de tiǎozhàn.",
+        "en": "We must admit that this is a huge challenge."
+      },
+      {
+        "cn": "他被公认为最优秀的科学家之一。",
+        "pinyin": "tā bèi gōngrèn wéi zuì yōuxiù de kēxuéjiā zhī yī.",
+        "en": "He is widely recognized as one of the best scientists."
+      }
+    ]
+  },
+  {
+    "id": "h5_030",
+    "character": "吃亏",
+    "pinyin": "chīkuī",
+    "meaning": "to suffer losses; to be at a disadvantage",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "做生意有赚有赔，不怕吃亏。",
+        "pinyin": "zuò shēngyì yǒu zhuàn yǒu péi, bù pà chīkuī.",
+        "en": "Business has profits and losses, do not be afraid of taking a loss."
+      },
+      {
+        "cn": "他觉得自己在这次交易中吃了大亏。",
+        "pinyin": "tā juéde zìjǐ zài zhè cì jiāoyì zhōng chī le dà kuī.",
+        "en": "He felt he suffered a big loss in this deal."
+      },
+      {
+        "cn": "老实人在生活中容易吃亏。",
+        "pinyin": "lǎoshi rén zài shēnghuó zhōng róngyì chīkuī.",
+        "en": "Honest people tend to end up at a disadvantage in life."
+      }
+    ]
+  },
+  {
+    "id": "h5_031",
+    "character": "持续",
+    "pinyin": "chíxù",
+    "meaning": "to continue; to persist",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "这场雨持续了一个星期。",
+        "pinyin": "zhè chǎng yǔ chíxù le yī gè xīngqī.",
+        "en": "This rain persisted for a week."
+      },
+      {
+        "cn": "学习需要持续的努力。",
+        "pinyin": "xuéxí xūyào chíxù de nǔlì.",
+        "en": "Learning requires continuous effort."
+      },
+      {
+        "cn": "经济持续增长给人们带来了信心。",
+        "pinyin": "jīngjì chíxù zēngzhǎng gěi rénmen dàilái le xìnxīn.",
+        "en": "Sustained economic growth has brought confidence to people."
+      }
+    ]
+  },
+  {
+    "id": "h5_032",
+    "character": "充满",
+    "pinyin": "chōngmǎn",
+    "meaning": "to be full of; filled with",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "她对未来充满了希望。",
+        "pinyin": "tā duì wèilái chōngmǎn le xīwàng.",
+        "en": "She is full of hope for the future."
+      },
+      {
+        "cn": "房间里充满了花香。",
+        "pinyin": "fángjiān lǐ chōngmǎn le huā xiāng.",
+        "en": "The room is filled with the fragrance of flowers."
+      },
+      {
+        "cn": "这场比赛充满了悬念。",
+        "pinyin": "zhè chǎng bǐsài chōngmǎn le xuánniàn.",
+        "en": "This game is full of suspense."
+      }
+    ]
+  },
+  {
+    "id": "h5_033",
+    "character": "重复",
+    "pinyin": "chóngfù",
+    "meaning": "to repeat",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "请重复一遍你的问题。",
+        "pinyin": "qǐng chóngfù yī biàn nǐ de wèntí.",
+        "en": "Please repeat your question."
+      },
+      {
+        "cn": "不要重复犯同样的错误。",
+        "pinyin": "bùyào chóngfù fàn tóngyàng de cuòwù.",
+        "en": "Do not repeat the same mistakes."
+      },
+      {
+        "cn": "他每天重复着同样的生活。",
+        "pinyin": "tā měitiān chóngfù zhe tóngyàng de shēnghuó.",
+        "en": "He repeats the same life every day."
+      }
+    ]
+  },
+  {
+    "id": "h5_034",
+    "character": "出版",
+    "pinyin": "chūbǎn",
+    "meaning": "to publish",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "他的第一本小说去年出版了。",
+        "pinyin": "tā de dì yī běn xiǎoshuō qùnián chūbǎn le.",
+        "en": "His first novel was published last year."
+      },
+      {
+        "cn": "这家出版社每年出版大量图书。",
+        "pinyin": "zhè jiā chūbǎnshè měinián chūbǎn dàliàng túshū.",
+        "en": "This publishing house publishes a large number of books every year."
+      },
+      {
+        "cn": "这篇论文发表在一本国际期刊上。",
+        "pinyin": "zhè piān lùnwén fābiǎo zài yī běn guójì qīkān shàng.",
+        "en": "This paper was published in an international journal."
+      }
+    ]
+  },
+  {
+    "id": "h5_035",
+    "character": "出席",
+    "pinyin": "chūxí",
+    "meaning": "to attend",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "所有员工都必须出席今天的会议。",
+        "pinyin": "suǒyǒu yuángōng dōu bìxū chūxí jīntiān de huìyì.",
+        "en": "All employees must attend today's meeting."
+      },
+      {
+        "cn": "很多知名人士出席了开幕式。",
+        "pinyin": "hěn duō zhīmíng rénshì chūxí le kāimùshì.",
+        "en": "Many famous people attended the opening ceremony."
+      },
+      {
+        "cn": "他因病未能出席晚宴。",
+        "pinyin": "tā yīn bìng wèi néng chūxí wǎnyàn.",
+        "en": "He was unable to attend the dinner due to illness."
+      }
+    ]
+  },
+  {
+    "id": "h5_036",
+    "character": "处理",
+    "pinyin": "chǔlǐ",
+    "meaning": "to handle; to deal with",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "我们会尽快处理你的申请。",
+        "pinyin": "wǒmen huì jǐnkuài chǔlǐ nǐ de shēnqǐng.",
+        "en": "We will process your application as soon as possible."
+      },
+      {
+        "cn": "他善于处理复杂的人际关系。",
+        "pinyin": "tā shànyú chǔlǐ fùzá de rénjì guānxi.",
+        "en": "He is good at handling complex interpersonal relationships."
+      },
+      {
+        "cn": "这个问题需要立即处理。",
+        "pinyin": "zhège wèntí xūyào lìjí chǔlǐ.",
+        "en": "This problem needs to be dealt with immediately."
+      }
+    ]
+  },
+  {
+    "id": "h5_037",
+    "character": "创造",
+    "pinyin": "chuàngzào",
+    "meaning": "to create",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "艺术家的使命是创造美。",
+        "pinyin": "yìshùjiā de shǐmìng shì chuàngzào měi.",
+        "en": "The mission of artists is to create beauty."
+      },
+      {
+        "cn": "科技创造了更便利的生活。",
+        "pinyin": "kējì chuàngzào le gèng biànlì de shēnghuó.",
+        "en": "Technology has created a more convenient life."
+      },
+      {
+        "cn": "我们要努力创造更美好的未来。",
+        "pinyin": "wǒmen yào nǔlì chuàngzào gèng měihǎo de wèilái.",
+        "en": "We must strive to create a better future."
+      }
+    ]
+  },
+  {
+    "id": "h5_038",
+    "character": "促进",
+    "pinyin": "cùjìn",
+    "meaning": "to promote; to advance",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "贸易促进了各国的经济发展。",
+        "pinyin": "màoyì cùjìn le gè guó de jīngjì fāzhǎn.",
+        "en": "Trade has promoted the economic development of all countries."
+      },
+      {
+        "cn": "体育锻炼促进身体健康。",
+        "pinyin": "tǐyù duànliàn cùjìn shēntǐ jiànkāng.",
+        "en": "Physical exercise promotes good health."
+      },
+      {
+        "cn": "两国领导人会面，促进了双方合作。",
+        "pinyin": "liǎng guó lǐngdǎorén huìmiàn, cùjìn le shuāngfāng hézuò.",
+        "en": "The meeting of the two leaders promoted bilateral cooperation."
+      }
+    ]
+  },
+  {
+    "id": "h5_039",
+    "character": "存在",
+    "pinyin": "cúnzài",
+    "meaning": "to exist; existence",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "这个问题一直存在，但没有人注意到。",
+        "pinyin": "zhège wèntí yīzhí cúnzài, dàn méiyǒu rén zhùyì dào.",
+        "en": "This problem has always existed, but no one noticed it."
+      },
+      {
+        "cn": "我们之间存在着严重的分歧。",
+        "pinyin": "wǒmen zhī jiān cúnzài zhe yánzhòng de fēnqí.",
+        "en": "There are serious differences between us."
+      },
+      {
+        "cn": "目前还存在很多不确定因素。",
+        "pinyin": "mùqián hái cúnzài hěn duō bù quèdìng yīnsù.",
+        "en": "There are still many uncertain factors at present."
+      }
+    ]
+  },
+  {
+    "id": "h5_040",
+    "character": "答应",
+    "pinyin": "dāying",
+    "meaning": "to agree; to promise",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "他答应帮我完成这个项目。",
+        "pinyin": "tā dāying bāng wǒ wánchéng zhège xiàngmù.",
+        "en": "He agreed to help me complete this project."
+      },
+      {
+        "cn": "既然答应了，就一定要做到。",
+        "pinyin": "jìrán dāying le, jiù yīdìng yào zuò dào.",
+        "en": "Since you promised, you must follow through."
+      },
+      {
+        "cn": "她终于答应了我们的邀请。",
+        "pinyin": "tā zhōngyú dāying le wǒmen de yāoqǐng.",
+        "en": "She finally accepted our invitation."
+      }
+    ]
+  },
+  {
+    "id": "h5_041",
+    "character": "达到",
+    "pinyin": "dádào",
+    "meaning": "to reach; to achieve",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "他的中文水平已经达到了高级。",
+        "pinyin": "tā de zhōngwén shuǐpíng yǐjīng dádào le gāojí.",
+        "en": "His Chinese level has already reached advanced."
+      },
+      {
+        "cn": "公司的年度目标已经提前达到。",
+        "pinyin": "gōngsī de niándù mùbiāo yǐjīng tíqián dádào.",
+        "en": "The company's annual goal has been achieved ahead of schedule."
+      },
+      {
+        "cn": "这座山海拔达到三千多米。",
+        "pinyin": "zhè zuò shān hǎibá dádào sān qiān duō mǐ.",
+        "en": "This mountain reaches an altitude of over three thousand meters."
+      }
+    ]
+  },
+  {
+    "id": "h5_042",
+    "character": "打交道",
+    "pinyin": "dǎ jiāodào",
+    "meaning": "to deal with people; to have contact with",
+    "hsk": 5,
+    "category": "verbs",
+    "examples": [
+      {
+        "cn": "我不喜欢和他打交道。",
+        "pinyin": "wǒ bù xǐhuān hé tā dǎ jiāodào.",
+        "en": "I do not like dealing with him."
+      },
+      {
+        "cn": "做销售需要经常和客户打交道。",
+        "pinyin": "zuò xiāoshòu xūyào jīngcháng hé kèhù dǎ jiāodào.",
+        "en": "Sales work requires frequent contact with customers."
+      },
+      {
+        "cn": "他这个人很难打交道。",
+        "pinyin": "tā zhège rén hěn nán dǎ jiāodào.",
+        "en": "This person is very difficult to deal with."
+      }
+    ]
+  }
+]

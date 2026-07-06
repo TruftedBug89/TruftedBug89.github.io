@@ -1,0 +1,544 @@
+/* ============================================
+   Chinese Master - Mobile App Shell
+   iOS-style top bar + layout + transitions
+   Active at: max-width 844px
+   ============================================ */
+
+/* --- Top Bar --- */
+@media (min-width: 845px) {
+    .mobile-topbar { display: none !important; }
+    .mobile-topbar-spacer { display: none !important; }
+}
+
+@media (max-width: 844px) {
+
+    /* === Top Bar === */
+    .mobile-topbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 52px;
+        padding: 0 16px;
+        padding-top: env(safe-area-inset-top, 0px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(15, 23, 42, 0.72);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+        z-index: 310;
+        -webkit-user-select: none;
+        user-select: none;
+        box-sizing: content-box;
+    }
+
+    .mobile-topbar-spacer {
+        height: 52px;
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    /* Top bar left: avatar */
+    .topbar-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--gradient-primary);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        transition: transform 0.15s ease;
+        border: none;
+        line-height: 1;
+    }
+
+    .topbar-avatar:active {
+        transform: scale(0.9);
+    }
+
+    .topbar-avatar:focus-visible {
+        outline: 2px solid #f1c40f;
+        outline-offset: 2px;
+    }
+
+    /* Top bar center: brand */
+    .topbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
+
+    .topbar-brand-icon {
+        font-family: var(--font-cn);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .topbar-brand-text {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-primary);
+        letter-spacing: 0.02em;
+    }
+
+    /* Top bar right: streak + level chip */
+    .topbar-chips {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    .topbar-chip {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        white-space: nowrap;
+    }
+
+    .topbar-chip-icon {
+        font-size: 13px;
+    }
+
+    .topbar-chip-value {
+        color: var(--text-primary);
+    }
+
+    /* === Hide desktop nav on mobile === */
+    #main-nav {
+        display: none !important;
+    }
+
+    #mobile-nav-toggle {
+        display: none !important;
+    }
+
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+
+    /* === Main Content === */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 12px 14px;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 16px));
+        max-width: 100% !important;
+        transition: none;
+    }
+
+    .site-footer {
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        padding: 14px 16px calc(88px + env(safe-area-inset-bottom, 16px)) !important;
+    }
+
+    /* === Layout: vertical stack === */
+    #app {
+        flex-direction: column;
+    }
+
+    /* === Hide ambient decorations (battery) === */
+    .ambient-bg,
+    .grid-overlay {
+        display: none;
+    }
+
+    .ink-texture {
+        opacity: 0.3;
+    }
+
+    /* === Scroll progress bar: hide on mobile (tiny) === */
+    .scroll-progress {
+        display: none;
+    }
+
+    /* === Module Enters (slide from right, iOS easing) === */
+    .module {
+        animation: none;
+    }
+
+    .module.active {
+        animation: moduleSlideIn 280ms cubic-bezier(0.32, 0.72, 0, 1) both;
+    }
+
+    @keyframes moduleSlideIn {
+        from {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* === Dashboard compact === */
+    .dashboard-hero {
+        padding: 14px 12px 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .hero-top-row {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .hero-greeting .greeting {
+        font-size: 20px !important;
+    }
+
+    .greeting-subtitle {
+        font-size: 13px !important;
+    }
+
+    .hero-metrics {
+        flex-shrink: 0;
+        gap: 6px !important;
+    }
+
+    .hero-metric {
+        min-width: 54px !important;
+        padding: 5px 10px !important;
+    }
+
+    .hero-metric-value {
+        font-size: 15px !important;
+    }
+
+    .hero-metric-label {
+        font-size: 9px !important;
+    }
+
+    .hero-level-bar {
+        padding: 6px 10px !important;
+    }
+
+    /* === Dashboard grid: 2 columns === */
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    .stats-card {
+        padding: 14px 10px !important;
+        min-height: 90px !important;
+    }
+
+    .stats-value {
+        font-size: 24px !important;
+    }
+
+    .stats-icon {
+        font-size: 22px !important;
+    }
+
+    .stats-label {
+        font-size: 0.6rem !important;
+    }
+
+    .stats-trend {
+        display: none;
+    }
+
+    /* === Quick Actions: horizontal snap carousel === */
+    .action-cards {
+        display: flex !important;
+        gap: 10px !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 4px 0 10px !important;
+        scrollbar-width: none !important;
+        margin: 0 -14px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+    .action-cards::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .action-card {
+        flex: 0 0 160px !important;
+        scroll-snap-align: start !important;
+        min-height: 126px !important;
+        padding: 18px 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .action-card:active {
+        transform: scale(0.95) !important;
+    }
+
+    /* === Dashboard snapshot: stack === */
+    .dashboard-snapshot {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md) !important;
+    }
+
+    .dashboard-snapshot .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .daily-goal-section {
+        padding: var(--spacing-md) !important;
+    }
+
+    .goal-progress {
+        flex-direction: row !important;
+        gap: 16px !important;
+        align-items: center !important;
+    }
+
+    .goal-ring {
+        width: 90px !important;
+        height: 90px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .goal-ring .goal-text span {
+        font-size: 20px !important;
+    }
+
+    /* === Weekly chart === */
+    .weekly-chart-section {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: var(--spacing-md) !important;
+        gap: var(--spacing-md) !important;
+    }
+
+    .weekly-chart {
+        height: 90px !important;
+    }
+
+    .weekly-summary {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+    }
+
+    /* === Missions & challenges: stack === */
+    .missions-challenge-row {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md) !important;
+    }
+
+    .missions-sidebar {
+        order: -1 !important;
+    }
+
+    /* === Insights row: stack === */
+    .dashboard-insight-row {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md) !important;
+    }
+
+    /* === Review actions: stack buttons === */
+    .review-actions {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .review-actions .btn {
+        width: 100% !important;
+        min-width: unset !important;
+    }
+
+    /* === Exercise type cards: 2 columns === */
+    .listening-menu,
+    .reading-menu,
+    .speaking-menu {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .exercise-type-card {
+        padding: 20px 14px !important;
+    }
+
+    .exercise-type-card:hover {
+        transform: none !important;
+    }
+
+    .exercise-type-card:active {
+        transform: scale(0.96) !important;
+        transition: transform 0.1s ease !important;
+    }
+
+    /* === Flashcard: larger on mobile === */
+    .flashcard {
+        width: 100% !important;
+        height: 340px !important;
+        margin: 0 auto !important;
+    }
+
+    .flashcard-character {
+        font-size: 44px !important;
+    }
+
+    /* === Exercise controls: stack === */
+    .exercise-controls {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .exercise-controls .btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        justify-content: center !important;
+    }
+
+    /* === Grammar lessons: single column === */
+    .grammar-lessons-list {
+        gap: 8px !important;
+    }
+
+    .grammar-lesson-item {
+        padding: 14px !important;
+        gap: 12px !important;
+    }
+
+    /* === Achievements: 2 columns === */
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .achievement-card {
+        padding: 16px 12px !important;
+    }
+
+    /* === Comprehension options: single column === */
+    .comprehension-options,
+    .passage-options,
+    .grammar-options,
+    .sentence-options,
+    .context-options {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* === SRS buttons: stack === */
+    .srs-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    .srs-btn {
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+
+    /* === Modal: full-width on phone === */
+    .modal-content {
+        margin: 10px !important;
+        padding: 22px 18px !important;
+        max-height: 85vh !important;
+        max-height: 85dvh !important;
+        border-radius: 18px !important;
+    }
+
+    /* === Toast: bottom-center === */
+    .toast-container {
+        top: auto !important;
+        bottom: 80px !important;
+        right: 10px !important;
+        left: 10px !important;
+        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    }
+
+    .toast {
+        min-width: auto !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* === Module header compact === */
+    .module-header {
+        margin-bottom: 16px !important;
+    }
+
+    .module-header h1 {
+        font-size: 1.4rem !important;
+    }
+
+    .module-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    /* === Back button: large touch target === */
+    .back-btn {
+        min-height: 44px !important;
+        padding: 10px 16px !important;
+    }
+
+    /* === Fill-in-blank options === */
+    .fill-blank-options {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .fill-blank-option {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+    }
+
+    /* === Word cards: better touch === */
+    .word-card:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s ease !important;
+    }
+
+    /* === Profile button in nav (hidden since nav is hidden) === */
+    .nav-footer {
+        display: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .module.active {
+            animation: none !important;
+        }
+    }
+}
+
+/* ============================================
+   SHARED: Hide hover-lift effects on touch
+   (both 768 and 844 breakpoints)
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    .stats-card:hover,
+    .action-card:hover,
+    .exercise-type-card:hover,
+    .vocab-mode-card:hover,
+    .game-card:hover,
+    .achievement-card:hover,
+    .grammar-lesson-item:hover {
+        transform: none !important;
+    }
+}

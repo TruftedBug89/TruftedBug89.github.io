@@ -1,0 +1,31 @@
+/* ============================================
+   Chinese Character Tooltip Styles
+   ============================================ */
+.cn-tooltip {
+    position: absolute;
+    z-index: 10003;
+    background: #1b263b;
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    border-radius: 8px;
+    padding: 8px 14px;
+    pointer-events: auto;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: nowrap;
+    max-width: calc(100vw - 24px);
+    word-break: break-word;
+    opacity: 1;
+    transition: opacity 0.15s ease;
+}
+.cn-tooltip--hidden { opacity: 0; pointer-events: none; }
+.cn-tooltip__pinyin {
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+.cn-tooltip__meaning {
+    color: var(--text-primary);
+    font-size: 13px;
+}

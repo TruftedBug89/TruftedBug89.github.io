@@ -1,0 +1,70 @@
+/* ============================================
+   Word of the Day Styles
+   ============================================ */
+.wotd-section {
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: center;
+}
+.wotd-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.wotd-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.4), transparent);
+}
+.wotd-badge {
+    font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+}
+.wotd-character {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    font-size: 56px; font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+.wotd-pinyin {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.wotd-meaning {
+    font-size: 18px; font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+}
+.wotd-example {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: rgba(180, 160, 140, 0.04);
+    border-radius: var(--radius-md);
+}
+.wotd-speak-btn {
+    padding: 8px 20px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: var(--radius-full);
+    background: rgba(167, 139, 250, 0.08);
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 13px; font-weight: 500;
+    transition: all 0.2s ease;
+}
+.wotd-speak-btn:hover {
+    background: rgba(167, 139, 250, 0.18);
+    border-color: rgba(167, 139, 250, 0.5);
+}

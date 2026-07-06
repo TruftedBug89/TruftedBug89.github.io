@@ -1,0 +1,1000 @@
+{"id":"h2_001","character":"起床","pinyin":"qǐchuáng","meaning":"to get up","hsk":2,"category":"daily","examples":["我每天七点起床。 - I get up at 7am every day.","快起床！ - Get up quickly!","起床了。 - Time to get up."]}
+{"id":"h2_002","character":"刷牙","pinyin":"shuāyá","meaning":"to brush teeth","hsk":2,"category":"daily","examples":["我每天刷牙两次。 - I brush my teeth twice a day.","请刷牙。 - Please brush your teeth."]}
+{"id":"h2_003","character":"洗脸","pinyin":"xǐliǎn","meaning":"to wash face","hsk":2,"category":"daily","examples":["洗脸洗手。 - Wash face and hands.","早上洗脸。 - Wash face in the morning."]}
+{"id":"h2_004","character":"洗澡","pinyin":"xǐzǎo","meaning":"to take a bath/shower","hsk":2,"category":"daily","examples":["我每天洗澡。 - I take a shower every day.","洗澡很舒服。 - Taking a bath is comfortable."]}
+{"id":"h2_005","character":"穿衣服","pinyin":"chuān yīfu","meaning":"to get dressed","hsk":2,"category":"daily","examples":["穿衣服出门。 - Get dressed and go out.","穿什么衣服？ - What clothes to wear?"]}
+{"id":"h2_006","character":"吃早饭","pinyin":"chī zǎofàn","meaning":"to eat breakfast","hsk":2,"category":"daily","examples":["吃早饭了吗？ - Have you eaten breakfast?","我不吃早饭。 - I don't eat breakfast."]}
+{"id":"h2_007","character":"上班","pinyin":"shàngbān","meaning":"to go to work","hsk":2,"category":"daily","examples":["我八点上班。 - I go to work at 8am.","上班很忙。 - Work is very busy."]}
+{"id":"h2_008","character":"下班","pinyin":"xiàbān","meaning":"to get off work","hsk":2,"category":"daily","examples":["我五点下班。 - I get off work at 5pm.","下班后做什么？ - What to do after work?"]}
+{"id":"h2_009","character":"做饭","pinyin":"zuòfàn","meaning":"to cook","hsk":2,"category":"daily","examples":["我做饭很好吃。 - I cook very well.","谁做饭？ - Who cooks?"]}
+{"id":"h2_010","character":"洗衣服","pinyin":"xǐ yīfu","meaning":"to wash clothes","hsk":2,"category":"daily","examples":["我洗衣服。 - I wash clothes.","洗衣服很累。 - Washing clothes is tiring."]}
+{"id":"h2_011","character":"便宜","pinyin":"piányi","meaning":"cheap","hsk":2,"category":"shopping","examples":["很便宜。 - Very cheap.","便宜一点。 - A little cheaper."]}
+{"id":"h2_012","character":"贵","pinyin":"guì","meaning":"expensive","hsk":2,"category":"shopping","examples":["太贵了！ - Too expensive!","不贵。 - Not expensive."]}
+{"id":"h2_013","character":"头疼","pinyin":"tóuténg","meaning":"headache","hsk":2,"category":"health","examples":["我头疼。 - I have a headache.","头很疼。 - Head hurts a lot."]}
+{"id":"h2_014","character":"发烧","pinyin":"fāshāo","meaning":"fever","hsk":2,"category":"health","examples":["发烧了。 - Have a fever.","量体温。 - Take temperature."]}
+{"id":"h2_015","character":"感冒","pinyin":"gǎnmào","meaning":"cold (illness)","hsk":2,"category":"health","examples":["感冒了。 - Caught a cold.","吃感冒药。 - Take cold medicine."]}
+{"id":"h2_016","character":"肚子疼","pinyin":"dùzi téng","meaning":"stomachache","hsk":2,"category":"health","examples":["肚子疼。 - Stomach hurts.","吃坏肚子了。 - Ate something bad."]}
+{"id":"h2_017","character":"看病","pinyin":"kàn bìng","meaning":"to see a doctor","hsk":2,"category":"health","examples":["去看病。 - Go see a doctor.","看病很贵。 - Seeing a doctor is expensive."]}
+{"id":"h2_018","character":"吃药","pinyin":"chī yào","meaning":"to take medicine","hsk":2,"category":"health","examples":["请吃药。 - Please take medicine.","吃药了吗？ - Have you taken medicine?"]}
+{"id":"h2_019","character":"晴天","pinyin":"qíng tiān","meaning":"sunny day","hsk":2,"category":"weather","examples":["今天晴天。 - Today is sunny.","晴天很热。 - Sunny days are hot."]}
+{"id":"h2_020","character":"阴天","pinyin":"yīn tiān","meaning":"cloudy day","hsk":2,"category":"weather","examples":["今天阴天。 - Today is cloudy.","阴天很闷。 - Cloudy days are stuffy."]}
+{"id":"h2_021","character":"开车","pinyin":"kāi chē","meaning":"to drive","hsk":2,"category":"transport","examples":["开车去。 - Drive there.","开车很累。 - Driving is tiring."]}
+{"id":"h2_022","character":"骑车","pinyin":"qí chē","meaning":"to ride (bicycle)","hsk":2,"category":"transport","examples":["骑车去。 - Ride a bike there.","骑车很健康。 - Cycling is healthy."]}
+{"id":"h2_023","character":"坐车","pinyin":"zuò chē","meaning":"to take a vehicle","hsk":2,"category":"transport","examples":["坐车去。 - Take a vehicle.","坐车很累。 - Sitting in a car is tiring."]}
+{"id":"h2_024","character":"等车","pinyin":"děng chē","meaning":"to wait for vehicle","hsk":2,"category":"transport","examples":["等车。 - Wait for the bus.","等了很久。 - Waited a long time."]}
+{"id":"h2_025","character":"上课","pinyin":"shàng kè","meaning":"to attend class","hsk":2,"category":"education","examples":["上课了。 - Class started.","上课很认真。 - Attend class seriously."]}
+{"id":"h2_026","character":"下课","pinyin":"xià kè","meaning":"class ends","hsk":2,"category":"education","examples":["下课了。 - Class is over.","下课后做什么？ - What to do after class?"]}
+{"id":"h2_027","character":"考试","pinyin":"kǎoshì","meaning":"exam","hsk":2,"category":"education","examples":["考试了。 - Exam time.","考试很难。 - Exam is difficult."]}
+{"id":"h2_028","character":"作业","pinyin":"zuòyè","meaning":"homework","hsk":2,"category":"education","examples":["做作业。 - Do homework.","作业很多。 - A lot of homework."]}
+{"id":"h2_029","character":"开心","pinyin":"kāixīn","meaning":"happy","hsk":2,"category":"emotions","examples":["很开心。 - Very happy.","不开心。 - Unhappy."]}
+{"id":"h2_030","character":"累","pinyin":"lèi","meaning":"tired","hsk":2,"category":"emotions","examples":["很累。 - Very tired.","累了就休息。 - Rest when tired."]}
+{"id":"h2_031","character":"困","pinyin":"kùn","meaning":"sleepy","hsk":2,"category":"emotions","examples":["很困。 - Very sleepy.","困了就睡。 - Sleep when sleepy."]}
+{"id":"h2_032","character":"上午","pinyin":"shàngwǔ","meaning":"morning","hsk":2,"category":"time","examples":["上午好。 - Good morning.","上午开会。 - Meeting in the morning."]}
+{"id":"h2_033","character":"中午","pinyin":"zhōngwǔ","meaning":"noon","hsk":2,"category":"time","examples":["中午吃饭。 - Eat lunch at noon.","中午休息。 - Rest at noon."]}
+{"id":"h2_034","character":"下午","pinyin":"xiàwǔ","meaning":"afternoon","hsk":2,"category":"time","examples":["下午好。 - Good afternoon.","下午开会。 - Meeting in the afternoon."]}
+{"id":"h2_035","character":"以前","pinyin":"yǐqián","meaning":"before","hsk":2,"category":"time","examples":["以前。 - Before.","以前不知道。 - Didn't know before."]}
+{"id":"h2_036","character":"以后","pinyin":"yǐhòu","meaning":"after","hsk":2,"category":"time","examples":["以后再说。 - Talk about it later.","以后会好的。 - It will be better later."]}
+{"id":"h2_037","character":"里面","pinyin":"lǐmiàn","meaning":"inside","hsk":2,"category":"places","examples":["在里面。 - Inside.","房子里面。 - Inside the house."]}
+{"id":"h2_038","character":"外面","pinyin":"wàimiàn","meaning":"outside","hsk":2,"category":"places","examples":["在外面。 - Outside.","外面很冷。 - It's cold outside."]}
+{"id":"h2_039","character":"左边","pinyin":"zuǒbiān","meaning":"left side","hsk":2,"category":"places","examples":["在左边。 - On the left.","左边是银行。 - Bank is on the left."]}
+{"id":"h2_040","character":"右边","pinyin":"yòubiān","meaning":"right side","hsk":2,"category":"places","examples":["在右边。 - On the right.","右边是商店。 - Store is on the right."]}
+{"id":"h2_041","character":"打电话","pinyin":"dǎ diànhuà","meaning":"to make a call","hsk":2,"category":"communication","examples":["打电话。 - Make a call.","打电话给我。 - Call me."]}
+{"id":"h2_042","character":"但是","pinyin":"dànshì","meaning":"but","hsk":2,"category":"grammar","examples":["虽然...但是... - Although...but..."]}
+{"id":"h2_043","character":"因为","pinyin":"yīnwèi","meaning":"because","hsk":2,"category":"grammar","examples":["因为下雨。 - Because it's raining."]}
+{"id":"h2_044","character":"所以","pinyin":"suǒyǐ","meaning":"so/therefore","hsk":2,"category":"grammar","examples":["所以我不去。 - So I won't go."]}
+{"id":"h2_045","character":"吧","pinyin":"ba","meaning":"suggestion particle","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_046","character":"红","pinyin":"hóng","meaning":"red","hsk":2,"category":"adjectives","examples":["红色的苹果。 - Red apple.","红灯。 - Red light.","她穿了一件红色的衣服。 - She wore a red outfit.","中国红。 - Chinese red.","红绿灯怎么走？ - How to navigate traffic lights?","红叶很漂亮。 - Red leaves are very beautiful.","脸红。 - Face turns red (blushing).","红花绿叶。 - Red flowers and green leaves."]}
+{"id":"h2_047","character":"啊","pinyin":"a","meaning":"exclamation","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_048","character":"白","pinyin":"bái","meaning":"white","hsk":2,"category":"adjectives","examples":["白色的花。 - White flower.","白天。 - Daytime.","他穿了一件白衬衫。 - He wore a white shirt.","白云。 - White clouds.","不明白。 - Don't understand.","黑板和粉笔。 - Blackboard and chalk.","白头发。 - White/grey hair.","一清二白。 - Perfectly clear and pure."]}
+{"id":"h2_049","character":"黑","pinyin":"hēi","meaning":"black","hsk":2,"category":"adjectives","examples":["黑色的猫。 - Black cat.","天黑。 - Dark (sky).","他喜欢穿黑衣服。 - He likes wearing black clothes.","黑板。 - Blackboard.","黑头发。 - Black hair.","天黑了，我们回家吧。 - It's getting dark, let's go home.","黑白的照片。 - Black and white photo.","黑夜。 - Dark night."]}
+{"id":"h2_050","character":"蓝","pinyin":"lán","meaning":"blue","hsk":2,"category":"adjectives","examples":["蓝色的天。 - Blue sky.","大海很蓝。 - The ocean is very blue.","他的眼睛是蓝色的。 - His eyes are blue.","蓝天白云。 - Blue sky and white clouds.","蓝色是我最喜欢的颜色。 - Blue is my favorite color.","你穿蓝色很好看。 - You look good in blue.","深蓝色。 - Dark blue.","浅蓝色。 - Light blue."]}
+{"id":"h2_051","character":"绿","pinyin":"lǜ","meaning":"green","hsk":2,"category":"adjectives","examples":["绿色的草。 - Green grass.","树叶很绿。 - The leaves are very green.","绿灯。 - Green light.","绿化很重要。 - Greenery is very important.","春天到处都是绿的。 - Everything is green in spring.","我喜欢绿茶。 - I like green tea.","绿色的山。 - Green mountains.","绿色生活。 - Green living."]}
+{"id":"h2_052","character":"黄","pinyin":"huáng","meaning":"yellow","hsk":2,"category":"adjectives","examples":["黄色的花。 - Yellow flower.","秋天树叶变黄了。 - In autumn leaves turn yellow.","黄色的衣服。 - Yellow clothes.","黄河。 - Yellow River.","他买了一辆黄色的车。 - He bought a yellow car.","黄昏。 - Dusk.","小心黄灯。 - Watch out for yellow light.","金黄的麦田。 - Golden yellow wheat field."]}
+{"id":"h2_053","character":"甜","pinyin":"tián","meaning":"sweet","hsk":2,"category":"adjectives","examples":["很甜。 - Very sweet.","这个苹果很甜。 - This apple is very sweet.","甜品。 - Dessert.","我不太喜欢甜的。 - I don't really like sweet things.","甜食吃多了不好。 - Eating too many sweets isn't good.","这个蛋糕很甜。 - This cake is very sweet.","甜水。 - Sweet water.","生活甜甜蜜蜜。 - A sweet and happy life."]}
+{"id":"h2_054","character":"苦","pinyin":"kǔ","meaning":"bitter","hsk":2,"category":"adjectives","examples":["很苦。 - Very bitter.","这种药很苦。 - This medicine is very bitter.","咖啡有点苦。 - Coffee is a bit bitter.","苦瓜。 - Bitter melon.","吃苦。 - Endure hardship.","他吃了很多苦。 - He endured a lot of hardship.","先苦后甜。 - First bitter, then sweet (proverb).","这个菜太苦了。 - This dish is too bitter."]}
+{"id":"h2_055","character":"辣","pinyin":"là","meaning":"spicy","hsk":2,"category":"adjectives","examples":["很辣。 - Very spicy.","四川菜很辣。 - Sichuan food is very spicy.","我不能吃辣。 - I can't eat spicy food.","辣死了！ - So spicy!","你喜欢吃辣的吗？ - Do you like eating spicy food?","这个火锅太辣了。 - This hotpot is too spicy.","辣条很好吃。 - Spicy strips are very tasty.","放点辣椒。 - Add some chili."]}
+{"id":"h2_056","character":"咸","pinyin":"xián","meaning":"salty","hsk":2,"category":"adjectives","examples":["很咸。 - Very salty.","这个菜太咸了。 - This dish is too salty.","咸鱼。 - Salted fish.","不要太咸。 - Don't make it too salty.","我喜欢咸的。 - I like salty food.","咸水湖。 - Saltwater lake.","北方人吃的比较咸。 - Northerners eat more salty food.","盐太多了。 - Too much salt."]}
+{"id":"h2_057","character":"酸","pinyin":"suān","meaning":"sour","hsk":2,"category":"adjectives","examples":["很酸。 - Very sour.","柠檬很酸。 - Lemons are very sour.","酸菜。 - Pickled vegetables.","这个橘子太酸了。 - This orange is too sour.","酸甜的。 - Sweet and sour.","酸奶很好喝。 - Yogurt is very tasty.","心里酸酸的。 - Feeling sad/heartbroken.","酸辣汤。 - Hot and sour soup."]}
+{"id":"h2_058","character":"新鲜","pinyin":"xīnxiān","meaning":"fresh","hsk":2,"category":"adjectives","examples":["很新鲜。 - Very fresh.","新鲜的水果。 - Fresh fruit.","空气很新鲜。 - The air is very fresh.","这条鱼很新鲜。 - This fish is very fresh.","每天吃新鲜蔬菜。 - Eat fresh vegetables every day.","新鲜事。 - Something new/exciting.","买新鲜的菜最好。 - It's best to buy fresh vegetables.","这个面包很新鲜。 - This bread is very fresh."]}
+{"id":"h2_059","character":"比","pinyin":"bǐ","meaning":"compared to","hsk":2,"category":"prepositions","examples":[]}
+{"id":"h2_060","character":"从","pinyin":"cóng","meaning":"from","hsk":2,"category":"prepositions","examples":[]}
+{"id":"h2_061","character":"安静","pinyin":"ānjìng","meaning":"quiet","hsk":2,"category":"adjectives","examples":["很安静。 - Very quiet.","请安静。 - Please be quiet.","图书馆里很安静。 - It's very quiet in the library.","安静的地方。 - A quiet place.","这个小区很安静。 - This neighborhood is very quiet.","保持安静。 - Keep quiet.","我需要一个安静的环境。 - I need a quiet environment.","教室里很安静。 - The classroom is very quiet."]}
+{"id":"h2_062","character":"到","pinyin":"dào","meaning":"to/until","hsk":2,"category":"prepositions","examples":[]}
+{"id":"h2_063","character":"热闹","pinyin":"rènao","meaning":"lively","hsk":2,"category":"adjectives","examples":["很热闹。 - Very lively.","街上很热闹。 - The streets are very lively.","春节很热闹。 - Spring Festival is very lively.","我喜欢热闹的地方。 - I like lively places.","这个市场真热闹。 - This market is really lively.","热闹的晚上。 - A lively evening.","这里比以前更热闹了。 - It's more lively here than before.","婚礼很热闹。 - The wedding was very lively."]}
+{"id":"h2_064","character":"干净","pinyin":"gānjìng","meaning":"clean","hsk":2,"category":"adjectives","examples":["很干净。 - Very clean.","这个房间很干净。 - This room is very clean.","请把桌子擦干净。 - Please wipe the table clean.","干净的水。 - Clean water.","保持干净。 - Keep clean.","他穿得很干净。 - He dresses very cleanly.","一个干净的城市。 - A clean city.","洗干净了。 - Washed clean."]}
+{"id":"h2_065","character":"脏","pinyin":"zāng","meaning":"dirty","hsk":2,"category":"adjectives","examples":["很脏。 - Very dirty.","衣服脏了。 - The clothes are dirty.","这里太脏了。 - It's too dirty here.","脏东西。 - Dirty things.","手脏了，去洗洗。 - Your hands are dirty, go wash them.","地板很脏。 - The floor is very dirty.","别把衣服弄脏了。 - Don't get your clothes dirty.","脏水不能喝。 - Dirty water can't be drunk."]}
+{"id":"h2_066","character":"舒服","pinyin":"shūfu","meaning":"comfortable","hsk":2,"category":"adjectives","examples":["很舒服。 - Very comfortable.","这件衣服很舒服。 - This clothing is very comfortable.","休息一下很舒服。 - It's comfortable to rest a bit.","这张床很舒服。 - This bed is very comfortable.","不舒服。 - Uncomfortable / Not feeling well.","你哪里不舒服？ - Where do you feel unwell?","今天天气很舒服。 - The weather is very comfortable today.","洗个热水澡真舒服。 - Taking a hot shower is really comfortable."]}
+{"id":"h2_067","character":"简单","pinyin":"jiǎndān","meaning":"simple","hsk":2,"category":"adjectives","examples":["很简单。 - Very simple.","这个问题很简单。 - This question is very simple.","简单的生活。 - A simple life.","不难，很简单。 - Not hard, very simple.","简单说一说。 - Briefly explain.","中国菜不简单。 - Chinese cuisine is not simple.","这个工作很简单。 - This job is very simple.","说简单，做难。 - Easy to say, hard to do."]}
+{"id":"h2_068","character":"快乐","pinyin":"kuàilè","meaning":"happy","hsk":2,"category":"adjectives","examples":["很快乐。 - Very happy.","生日快乐。 - Happy birthday.","祝大家快乐。 - Wishing everyone happiness.","快乐的一天。 - A happy day.","和朋友们在一起很快乐。 - Being with friends is happy.","快乐最重要。 - Happiness is most important.","快乐的孩子。 - Happy children.","新年快乐。 - Happy New Year."]}
+{"id":"h2_069","character":"健康","pinyin":"jiànkāng","meaning":"healthy","hsk":2,"category":"adjectives","examples":["很健康。 - Very healthy.","身体健康最重要。 - Physical health is most important.","健康饮食。 - Healthy diet.","他看起来很健康。 - He looks very healthy.","祝你健康。 - Wishing you health.","每天运动对健康好。 - Daily exercise is good for health.","健康的生活方式。 - A healthy lifestyle.","吃蔬菜水果很健康。 - Eating vegetables and fruit is healthy."]}
+{"id":"h2_070","character":"重要","pinyin":"zhòngyào","meaning":"important","hsk":2,"category":"adjectives","examples":["很重要。 - Very important.","这件事非常重要。 - This matter is very important.","重要的是结果。 - What's important is the result.","不重要。 - Not important.","学习对每个人都很重要。 - Learning is important for everyone.","重要的决定。 - An important decision.","健康比什么都重要。 - Health is more important than anything.","机会很重要。 - Opportunity is important."]}
+{"id":"h2_071","character":"聪明","pinyin":"cōngmíng","meaning":"smart","hsk":2,"category":"adjectives","examples":["很聪明。 - Very smart.","聪明的孩子。 - A smart child.","你真聪明。 - You are really smart.","他从小就很聪明。 - He has been smart since childhood.","聪明人不会这样做。 - A smart person would not do this.","聪明反被聪明误。 - Too clever for your own good (proverb).","你不只是聪明，还很努力。 - You're not just smart, you're also hardworking.","多读书会更聪明。 - Reading more makes you smarter."]}
+{"id":"h2_072","character":"努力","pinyin":"nǔlì","meaning":"hardworking","hsk":2,"category":"adjectives","examples":["很努力。 - Very hardworking.","努力学习。 - Study hard.","他工作很努力。 - He works very hard.","努力就有结果。 - Hard work yields results.","我一定会努力的。 - I will definitely work hard.","大家一起努力。 - Everyone work hard together.","努力不一定成功，不努力一定不成功。 - Hard work may not guarantee success, but not working hard certainly fails.","他很努力学中文。 - He works hard at learning Chinese."]}
+{"id":"h2_073","character":"认真","pinyin":"rènzhēn","meaning":"serious/careful","hsk":2,"category":"adjectives","examples":["很认真。 - Very careful/serious.","认真学习。 - Study seriously.","他做事很认真。 - He does things very carefully.","认真听老师说话。 - Listen carefully to the teacher.","态度认真。 - A serious attitude.","他是个认真的人。 - He is a serious person.","认真一点。 - Be more careful.","做事情要认真。 - Be serious about doing things."]}
+{"id":"h2_074","character":"年轻","pinyin":"niánqīng","meaning":"young","hsk":2,"category":"adjectives","examples":["很年轻。 - Very young.","他看起来很年轻。 - He looks very young.","年轻人。 - Young people.","你还年轻，还有很多机会。 - You are still young, there are many opportunities.","年轻时多学东西。 - Learn more things while young.","年轻一代。 - The younger generation.","她比我年轻。 - She is younger than me.","年轻就是好。 - Being young is great."]}
+{"id":"h2_075","character":"老","pinyin":"lǎo","meaning":"old (people)","hsk":2,"category":"adjectives","examples":["很老。 - Very old.","老人。 - Old person / elderly.","他的爷爷很老了。 - His grandfather is very old.","老朋友。 - Old friend.","我家有一只老猫。 - I have an old cat at home.","中国有很多古老的文化。 - China has many ancient cultures.","老办法不一定不好。 - Old methods are not necessarily bad.","老地方见。 - Meet at the usual place."]}
+{"id":"h2_076","character":"饿","pinyin":"è","meaning":"hungry","hsk":2,"category":"adjectives","examples":["我很饿。 - I am hungry.","你饿了吗？ - Are you hungry?","饿死了。 - I'm starving.","不饿。 - Not hungry.","我有点饿。 - I'm a bit hungry.","饿的时候什么都好吃。 - When hungry, everything tastes good.","别饿着肚子工作。 - Don't work on an empty stomach.","从早到现在都没吃东西，太饿了。 - Haven't eaten since morning, so hungry."]}
+{"id":"h2_077","character":"渴","pinyin":"kě","meaning":"thirsty","hsk":2,"category":"adjectives","examples":["我很渴。 - I am thirsty.","你渴吗？ - Are you thirsty?","渴死了。 - I'm dying of thirst.","又饿又渴。 - Both hungry and thirsty.","跑完步后很渴。 - Very thirsty after running.","多喝水就不渴了。 - Drink more water and you won't be thirsty.","夏天容易渴。 - It's easy to get thirsty in summer.","我渴得想喝水。 - I'm so thirsty I want water."]}
+{"id":"h2_078","character":"饱","pinyin":"bǎo","meaning":"full (after eating)","hsk":2,"category":"adjectives","examples":["我吃饱了。 - I am full.","你吃饱了吗？ - Are you full?","吃饱了就想睡觉。 - Feel sleepy after eating full.","饱了。 - I'm full.","还没吃饱。 - Haven't eaten enough yet.","吃得饱饱的。 - Ate until very full.","饱了眼福。 - Feasted one's eyes (enjoyed seeing something).","今天吃得太饱了。 - Ate too much today."]}
+{"id":"h2_079","character":"晴","pinyin":"qíng","meaning":"sunny","hsk":2,"category":"adjectives","examples":["今天晴天。 - Today is sunny.","天气晴了。 - The weather cleared up.","天气预报说明天会晴。 - The weather forecast says it will be sunny tomorrow.","雨过天晴。 - After rain comes sunshine.","晴天多好啊。 - Sunny days are so nice.","一连晴了好几天。 - It's been sunny for several days straight.","晴空万里。 - Clear skies for miles.","希望明天是晴天。 - Hope tomorrow is sunny."]}
+{"id":"h2_080","character":"就","pinyin":"jiù","meaning":"then/just","hsk":2,"category":"adverbs","examples":["我就来。 - I'm coming right now.","吃完饭就走。 - Leave right after eating.","就是这个。 - This is it.","我就不去。 - I just won't go.","他就是我的老师。 - He is my teacher.","马上就来。 - Coming right away.","一学就会。 - Learn it right away.","我就知道你会来。 - I just knew you would come.","他说完就走了。 - He left as soon as he finished speaking."]}
+{"id":"h2_081","character":"还","pinyin":"hái","meaning":"still/also","hsk":2,"category":"adverbs","examples":["我还要。 - I also want.","他还在工作。 - He is still working.","还有别的吗？ - Is there anything else?","还是不行。 - Still not working.","我还想去。 - I still want to go.","还是你厉害。 - You are still more impressive.","你还要什么？ - What else do you want?","外面还在下雨。 - It's still raining outside.","他还没回来。 - He hasn't come back yet."]}
+{"id":"h2_082","character":"已经","pinyin":"yǐjīng","meaning":"already","hsk":2,"category":"adverbs","examples":["我已经吃了。 - I have already eaten.","他已经走了。 - He has already left.","已经十点了。 - It's already ten o'clock.","已经晚了。 - It's already late.","我已经学了两年中文。 - I have already studied Chinese for two years.","已经完成了。 - Already completed.","已经来不及了。 - It's already too late.","他已经不是小孩子了。 - He is no longer a child."]}
+{"id":"h2_083","character":"一起","pinyin":"yīqǐ","meaning":"together","hsk":2,"category":"adverbs","examples":["我们一起去。 - Let's go together.","一起吃饭。 - Eat together.","他们一起工作。 - They work together.","一起学习中文。 - Study Chinese together.","我们住在一起。 - We live together.","一起去看电影吧。 - Let's go watch a movie together.","把东西放在一起。 - Put things together.","大家一起努力。 - Everyone work hard together.","我们一起玩吧。 - Let's play together."]}
+{"id":"h2_084","character":"再","pinyin":"zài","meaning":"again","hsk":2,"category":"adverbs","examples":["再说一遍。 - Say it again.","再见。 - Goodbye (see you again).","再做一次。 - Do it one more time.","下次再来。 - Come again next time.","我一定会再来的。 - I will definitely come again.","别再说了。 - Don't say it again.","我再想想。 - Let me think again.","明天再谈吧。 - Let's talk again tomorrow."]}
+{"id":"h2_085","character":"又","pinyin":"yòu","meaning":"again (past)","hsk":2,"category":"adverbs","examples":["他又来了。 - He came again.","又下雨了。 - It's raining again.","我又忘了。 - I forgot again.","他又迟到了。 - He is late again.","我又饿了。 - I'm hungry again.","今年又丰收了。 - Another bumper harvest this year.","又便宜又好。 - Both cheap and good.","弟弟又长高了。 - Younger brother grew taller again."]}
+{"id":"h2_086","character":"真","pinyin":"zhēn","meaning":"really","hsk":2,"category":"adverbs","examples":["真好！ - Really good!","真漂亮。 - Really beautiful.","真好吃。 - Really delicious.","真高兴见到你。 - Really happy to see you.","真有意思。 - Really interesting.","今天真冷。 - Today is really cold.","你真聪明。 - You are really smart.","真不容易。 - Really not easy.","这个电影真好看。 - This movie is really good."]}
+{"id":"h2_087","character":"最","pinyin":"zuì","meaning":"most","hsk":2,"category":"adverbs","examples":["最好。 - The best.","最重要。 - Most important.","她最漂亮。 - She is the most beautiful.","我最喜欢这个。 - I like this the most.","最大的城市。 - The biggest city.","北京是我最想去的地方。 - Beijing is the place I want to go most.","最快的方法。 - The fastest method.","今天是今年最热的一天。 - Today is the hottest day of the year."]}
+{"id":"h2_088","character":"更","pinyin":"gèng","meaning":"more","hsk":2,"category":"adverbs","examples":["更好。 - Better.","更大了。 - Even bigger.","我想了解更多。 - I want to understand more.","更快一点。 - A bit faster.","这个更便宜。 - This one is cheaper.","今天比昨天更冷。 - Today is colder than yesterday.","我更喜欢这个颜色。 - I prefer this color.","学习中文越来越有意思了。 - Learning Chinese is becoming more and more interesting.","你有没有更好的办法？ - Do you have a better method?"]}
+{"id":"h2_089","character":"非常","pinyin":"fēicháng","meaning":"very","hsk":2,"category":"adverbs","examples":["非常好。 - Very good.","非常感谢。 - Very grateful.","非常漂亮。 - Very beautiful.","我非常喜欢中国。 - I like China very much.","今天非常热。 - Today is very hot.","他工作非常努力。 - He works very hard.","这道菜非常好吃。 - This dish is very delicious.","我非常想家。 - I miss home very much.","非常高兴认识你。 - Very happy to meet you."]}
+{"id":"h2_090","character":"得","pinyin":"de","meaning":"complement marker","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_091","character":"特别","pinyin":"tèbié","meaning":"especially","hsk":2,"category":"adverbs","examples":["特别好。 - Especially good.","特别感谢。 - Special thanks.","这个特别好吃。 - This is especially delicious.","今天特别忙。 - Today is especially busy.","特别的日子。 - A special day.","没有什么特别的。 - Nothing special.","他对中文特别感兴趣。 - He is especially interested in Chinese.","北京特别大。 - Beijing is especially big.","我特别想学中文。 - I especially want to learn Chinese."]}
+{"id":"h2_092","character":"地","pinyin":"de","meaning":"adverb marker","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_093","character":"比较","pinyin":"bǐjiào","meaning":"relatively","hsk":2,"category":"adverbs","examples":["比较好。 - Relatively good.","比较便宜。 - Relatively cheap.","比较近。 - Relatively close.","这个比较难。 - This is relatively difficult.","比较一下价格。 - Compare the prices.","今天比较冷。 - Today is relatively cold.","我比较喜欢喝茶。 - I relatively prefer drinking tea.","他的中文比较好。 - His Chinese is relatively good.","这个城市比较小。 - This city is relatively small."]}
+{"id":"h2_094","character":"一定","pinyin":"yīdìng","meaning":"certainly","hsk":2,"category":"adverbs","examples":["我一定去。 - I will certainly go.","一定要来。 - You must come.","一定没问题。 - Certainly no problem.","他一定会成功的。 - He will certainly succeed.","不一定是真的。 - Not necessarily true.","我一定帮你。 - I will certainly help you.","明天一定会更好。 - Tomorrow will certainly be better.","你一定要小心。 - You must be careful."]}
+{"id":"h2_095","character":"着","pinyin":"zhe","meaning":"continuous marker","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_096","character":"可能","pinyin":"kěnéng","meaning":"maybe","hsk":2,"category":"adverbs","examples":["可能吧。 - Maybe.","可能下雨。 - It might rain.","他可能不来了。 - He might not come.","有可能。 - It's possible.","不可能。 - Impossible.","可能是真的。 - It might be true.","这个问题可能很严重。 - This problem might be very serious.","明天可能不会下雪。 - It might not snow tomorrow."]}
+{"id":"h2_097","character":"过","pinyin":"guò","meaning":"experience marker","hsk":2,"category":"particles","examples":[]}
+{"id":"h2_098","character":"当然","pinyin":"dāngrán","meaning":"of course","hsk":2,"category":"adverbs","examples":["当然可以。 - Of course.","当然好。 - Of course it's good.","当然要去。 - Of course I'll go.","你当然可以来。 - Of course you can come.","当然不是。 - Of course not.","当然了，他是最棒的。 - Of course, he is the best.","这当然是好事。 - This is of course a good thing.","当然没问题。 - Of course no problem."]}
+{"id":"h2_099","character":"其实","pinyin":"qíshí","meaning":"actually","hsk":2,"category":"adverbs","examples":["其实不是。 - Actually no.","其实我知道。 - Actually I know.","其实很容易。 - Actually it's very easy.","其实他很好。 - Actually he is very nice.","其实我不太饿。 - Actually I'm not very hungry.","其实你应该去。 - Actually you should go.","他说不难，其实很难。 - He said it's not hard, actually it is very hard.","其实我昨天就来了。 - Actually I came yesterday."]}
+{"id":"h2_100","character":"正在","pinyin":"zhèngzài","meaning":"in the process of","hsk":2,"category":"adverbs","examples":["我正在学习。 - I am studying.","他正在吃饭。 - He is eating.","妈妈正在做饭。 - Mom is cooking.","外面正在下雨。 - It's raining outside.","警察正在调查这件事。 - The police are investigating this matter.","他们正在开会。 - They are having a meeting.","他正在找工作。 - He is looking for a job.","我正忙着呢。 - I am busy right now."]}
+{"id":"h2_101","character":"一会儿","pinyin":"yīhuìr","meaning":"a little while","hsk":2,"category":"time","examples":[]}
+{"id":"h2_102","character":"一直","pinyin":"yīzhí","meaning":"always/continuously","hsk":2,"category":"adverbs","examples":["我一直在这里。 - I have always been here.","一直往前走。 - Keep going straight ahead.","我一直在等你。 - I have been waiting for you.","一直下雨。 - It's been raining continuously.","他一直很努力。 - He has always been hardworking.","这个问题一直没有解决。 - This problem has never been solved.","我一直想学中文。 - I have always wanted to learn Chinese.","从这里一直走就到了。 - Walk straight from here and you'll arrive."]}
+{"id":"h2_103","character":"有时候","pinyin":"yǒushíhou","meaning":"sometimes","hsk":2,"category":"adverbs","examples":["有时候我去。 - Sometimes I go.","有时候会下雨。 - Sometimes it rains.","我有时候在家工作。 - Sometimes I work from home.","有时候他也会生气。 - Sometimes he also gets angry.","有时候走路比坐车快。 - Sometimes walking is faster than taking a car.","我有时候会忘记带手机。 - Sometimes I forget to bring my phone.","有时候周末我们会去公园。 - Sometimes on weekends we go to the park.","有时候不说话也是一种回答。 - Sometimes not speaking is also a kind of answer."]}
+{"id":"h2_104","character":"终于","pinyin":"zhōngyú","meaning":"finally","hsk":2,"category":"adverbs","examples":["终于到了！ - Finally arrived!","我终于明白了。 - I finally understand.","终于可以回家了。 - Finally can go home.","终于下雨了。 - It's finally raining.","他终于找到了工作。 - He finally found a job.","等了好久，终于来了。 - Waited a long time, finally came.","考试终于结束了。 - The exam is finally over.","春天终于来了。 - Spring has finally arrived."]}
+{"id":"h2_105","character":"旁边","pinyin":"pángbiān","meaning":"beside","hsk":2,"category":"nouns","examples":["在旁边。 - Beside.","他坐在我旁边。 - He sits beside me.","旁边的人。 - The person beside.","医院旁边有一个公园。 - There is a park beside the hospital.","我旁边的座位是空的。 - The seat beside me is empty.","超市就在银行旁边。 - The supermarket is right beside the bank.","你旁边的那个东西是什么？ - What is that thing beside you?","站在我旁边。 - Stand beside me."]}
+{"id":"h2_106","character":"对面","pinyin":"duìmiàn","meaning":"opposite","hsk":2,"category":"nouns","examples":["在对面。 - Across the street.","学校在银行对面。 - The school is opposite the bank.","我家对面有个超市。 - There is a supermarket opposite my house.","坐在我对面的人是谁？ - Who is the person sitting opposite me?","请去对面等我。 - Please wait for me across the street.","对面的山上有很多树。 - There are many trees on the mountain opposite.","他就住在对面。 - He lives right opposite.","对面的那个人你认识吗？ - Do you know that person across the street?"]}
+{"id":"h2_107","character":"中间","pinyin":"zhōngjiān","meaning":"middle","hsk":2,"category":"nouns","examples":["在中间。 - In the middle.","坐中间的那排。 - Sit in the middle row.","中间那个人是我哥哥。 - The person in the middle is my older brother.","把桌子放在房间中间。 - Put the table in the middle of the room.","两座楼中间有个花园。 - There's a garden between the two buildings.","请站在中间。 - Please stand in the middle.","从中间开始。 - Start from the middle.","中间休息十分钟。 - Take a ten-minute break in the middle."]}
+{"id":"h2_108","character":"里","pinyin":"lǐ","meaning":"inside","hsk":2,"category":"nouns","examples":["在家里。 - At home.","房间里有人吗？ - Is there anyone in the room?","书包里有书。 - There are books in the backpack.","杯子里的水。 - The water in the cup.","你心里怎么想？ - What do you think in your heart?","城市里有很多高楼。 - There are many tall buildings in the city.","在黑暗里看不太清楚。 - Can't see clearly in the dark.","冰箱里什么都没有。 - There's nothing in the refrigerator."]}
+{"id":"h2_109","character":"外","pinyin":"wài","meaning":"outside","hsk":2,"category":"nouns","examples":["在外面。 - Outside.","门外有人。 - There's someone outside the door.","窗户外面。 - Outside the window.","出了学校大门往左走。 - After leaving the school gate, go left.","除了他以外。 - Besides him.","天外有天。 - There's always someone better.","另外的事情。 - Other matters.","校外活动。 - Extracurricular activities."]}
+{"id":"h2_110","character":"上","pinyin":"shàng","meaning":"on/above","hsk":2,"category":"nouns","examples":["在上面。 - On top.","桌子上有一本书。 - There is a book on the table.","马上就来。 - Coming right away.","路上小心。 - Be careful on the road.","天上的星星很亮。 - The stars in the sky are very bright.","他在地板上坐着。 - He is sitting on the floor.","墙上挂着一幅画。 - A painting hangs on the wall.","世界上没有完全一样的东西。 - There is nothing completely identical in the world."]}
+{"id":"h2_111","character":"下","pinyin":"xià","meaning":"under/below","hsk":2,"category":"nouns","examples":["在下面。 - Below.","树下很凉快。 - It's cool under the tree.","椅子下面有东西。 - There's something under the chair.","下个星期。 - Next week.","他的眼神向下看。 - His eyes looked downward.","在楼下的商店。 - The store downstairs.","猫在桌子下面睡觉。 - The cat is sleeping under the table.","往下走一层就到了。 - Go down one floor and you're there."]}
+{"id":"h2_112","character":"左","pinyin":"zuǒ","meaning":"left","hsk":2,"category":"nouns","examples":["在左边。 - On the left.","往左拐。 - Turn left.","左手边。 - Left-hand side.","请举左手。 - Please raise your left hand.","从左边数第三个。 - The third one from the left.","邮局在银行的左边。 - The post office is to the left of the bank.","请向左转。 - Please turn left.","他的左眼有点不舒服。 - His left eye feels a bit uncomfortable."]}
+{"id":"h2_113","character":"右","pinyin":"yòu","meaning":"right","hsk":2,"category":"nouns","examples":["在右边。 - On the right.","往右拐。 - Turn right.","右手边。 - Right-hand side.","大多数人用右手写字。 - Most people write with their right hand.","在十字路口向右转。 - Turn right at the intersection.","右边那个是大楼。 - The one on the right is the big building.","桌子右边放着电脑。 - The computer is on the right side of the desk.","右边的门是出口。 - The door on the right is the exit."]}
+{"id":"h2_114","character":"越","pinyin":"yuè","meaning":"more and more","hsk":2,"category":"adverbs","examples":[]}
+{"id":"h2_115","character":"东","pinyin":"dōng","meaning":"east","hsk":2,"category":"nouns","examples":["往东走。 - Go east.","东边。 - East side.","中国在亚洲的东部。 - China is in eastern Asia.","太阳从东边升起。 - The sun rises from the east.","东风。 - East wind.","东京是日本的首都。 - Tokyo is the capital of Japan.","东北方向。 - Northeast direction.","北京的东城区。 - The Dongcheng District of Beijing."]}
+{"id":"h2_116","character":"西","pinyin":"xī","meaning":"west","hsk":2,"category":"nouns","examples":["往西走。 - Go west.","西边。 - West side.","太阳在西边落下。 - The sun sets in the west.","西方文化。 - Western culture.","西安是个古城。 - Xi'an is an ancient city.","我们往西北方向走。 - We're heading northwest.","西瓜很好吃。 - Watermelon is very tasty.","我喜欢吃西餐。 - I like eating Western food."]}
+{"id":"h2_117","character":"南","pinyin":"nán","meaning":"south","hsk":2,"category":"nouns","examples":["往南走。 - Go south.","南边。 - South side.","中国的南方很热。 - Southern China is very hot.","南京是个美丽的城市。 - Nanjing is a beautiful city.","向南走两公里。 - Walk two kilometers south.","南方人喜欢吃米饭。 - Southerners like to eat rice.","窗户朝南。 - The window faces south.","云南的风景很美。 - Yunnan's scenery is very beautiful."]}
+{"id":"h2_118","character":"北","pinyin":"běi","meaning":"north","hsk":2,"category":"nouns","examples":["往北走。 - Go north.","北边。 - North side.","中国的北方很冷。 - Northern China is very cold.","北京在中国的北部。 - Beijing is in northern China.","他住在城北。 - He lives in the north of the city.","北方人吃面比较多。 - Northerners eat more noodles.","北极很冷。 - The North Pole is very cold.","北京欢迎你。 - Beijing welcomes you."]}
+{"id":"h2_119","character":"手机","pinyin":"shǒujī","meaning":"mobile phone","hsk":2,"category":"nouns","examples":["我的手机。 - My phone.","手机没电了。 - The phone is out of battery.","买了个新手机。 - Bought a new phone.","请把手机给我。 - Please give me the phone.","手机响了。 - The phone is ringing.","现在谁没有手机？ - Who doesn't have a phone nowadays?","用手机可以学习中文。 - You can learn Chinese with your phone.","手机很方便。 - Mobile phones are very convenient."]}
+{"id":"h2_120","character":"电脑","pinyin":"diànnǎo","meaning":"computer","hsk":2,"category":"nouns","examples":["用电脑。 - Use a computer.","我的电脑坏了。 - My computer broke.","打开电脑。 - Turn on the computer.","他买了一台新电脑。 - He bought a new computer.","在电脑上写作业。 - Write homework on the computer.","电脑可以帮助我们很多。 - Computers can help us a lot.","关掉电脑休息一下。 - Turn off the computer and rest a bit.","他整天坐在电脑前面。 - He sits in front of the computer all day."]}
+{"id":"h2_121","character":"电视","pinyin":"diànshì","meaning":"television","hsk":2,"category":"nouns","examples":["看电视。 - Watch TV.","这个电视节目很好看。 - This TV program is very good.","把电视关掉。 - Turn off the TV.","孩子很喜欢看电视。 - Children like watching TV very much.","打开电视看看新闻。 - Turn on the TV to watch the news.","这台电视太贵了。 - This TV is too expensive.","现在的电视都很薄。 - Modern TVs are all very thin.","晚上我想在家看电视。 - In the evening I want to watch TV at home."]}
+{"id":"h2_122","character":"电影","pinyin":"diànyǐng","meaning":"movie","hsk":2,"category":"nouns","examples":["看电影。 - Watch a movie.","这个电影很好看。 - This movie is very good.","我们一起去看电影。 - Let's go watch a movie together.","我最喜欢的电影。 - My favorite movie.","电影院。 - Movie theater.","昨晚看了一部好电影。 - Watched a good movie last night.","这部电影是中国拍的。 - This movie was made in China.","你觉得这电影怎么样？ - What do you think of this movie?"]}
+{"id":"h2_123","character":"前","pinyin":"qián","meaning":"front/before","hsk":2,"category":"nouns","examples":[]}
+{"id":"h2_124","character":"音乐","pinyin":"yīnyuè","meaning":"music","hsk":2,"category":"nouns","examples":["听音乐。 - Listen to music.","我喜欢音乐。 - I like music.","这首音乐很动听。 - This piece of music is very pleasant.","中国音乐。 - Chinese music.","放点音乐吧。 - Let's put on some music.","你会弹音乐吗？ - Can you play music?","音乐让心情变好。 - Music improves your mood.","他学音乐十几年了。 - He has studied music for over ten years."]}
+{"id":"h2_125","character":"后","pinyin":"hòu","meaning":"back/after","hsk":2,"category":"nouns","examples":[]}
+{"id":"h2_126","character":"颜色","pinyin":"yánsè","meaning":"color","hsk":2,"category":"nouns","examples":["什么颜色？ - What color?","我喜欢这个颜色。 - I like this color.","颜色太深了。 - The color is too dark.","彩虹有七种颜色。 - A rainbow has seven colors.","有没有别的颜色？ - Are there other colors?","这种颜色很适合你。 - This color suits you very well.","他喜欢很亮的颜色。 - He likes very bright colors.","颜色的变化很漂亮。 - The change of colors is very beautiful."]}
+{"id":"h2_127","character":"春天","pinyin":"chūntiān","meaning":"spring","hsk":2,"category":"nouns","examples":["春天很美。 - Spring is beautiful.","春天到了。 - Spring has arrived.","我喜欢春天。 - I like spring.","春天来了，花都开了。 - Spring is here, the flowers are blooming.","春天是播种的季节。 - Spring is the season for sowing.","每年春天我们都去旅游。 - Every spring we go traveling.","春天天气变暖和了。 - The weather gets warmer in spring.","春天的风很舒服。 - The spring breeze is very comfortable."]}
+{"id":"h2_128","character":"夏天","pinyin":"xiàtiān","meaning":"summer","hsk":2,"category":"nouns","examples":["夏天很热。 - Summer is hot.","夏天到了。 - Summer has arrived.","我喜欢夏天的夜晚。 - I like summer nights.","夏天太热了。 - Summer is too hot.","夏天去游泳很好。 - Going swimming in summer is great.","夏天有很多水果吃。 - There are many fruits to eat in summer.","北京的夏天又热又干。 - Beijing summers are both hot and dry.","这个夏天我想去海边。 - This summer I want to go to the beach."]}
+{"id":"h2_129","character":"秋天","pinyin":"qiūtiān","meaning":"autumn","hsk":2,"category":"nouns","examples":["秋天很凉快。 - Autumn is cool.","秋天来了。 - Autumn has come.","北京的秋天最好。 - Beijing's autumn is the best.","秋天树叶变黄了。 - In autumn the leaves turn yellow.","秋天是收获的季节。 - Autumn is the harvest season.","秋天很适合旅行。 - Autumn is very suitable for travel.","秋天的天空特别蓝。 - The autumn sky is especially blue.","九月份就是秋天了。 - September is autumn."]}
+{"id":"h2_130","character":"冬天","pinyin":"dōngtiān","meaning":"winter","hsk":2,"category":"nouns","examples":["冬天很冷。 - Winter is cold.","冬天来了。 - Winter has come.","冬天会下雪。 - It snows in winter.","我不喜欢冬天。 - I don't like winter.","冬天要多穿衣服。 - Wear more clothes in winter.","冬天最适合吃火锅。 - Winter is the best time for hotpot.","东北的冬天特别冷。 - Winter in the northeast is especially cold.","冬天太阳下山很早。 - The sun sets very early in winter."]}
+{"id":"h2_131","character":"公共汽车","pinyin":"gōnggòngqìchē","meaning":"bus","hsk":2,"category":"nouns","examples":["坐公共汽车。 - Take the bus.","我每天坐公共汽车上班。 - I take the bus to work every day.","公共汽车几点来？ - What time does the bus come?","公共汽车站。 - Bus stop.","公共汽车比地铁慢。 - The bus is slower than the subway.","这趟公共汽车去哪里？ - Where does this bus go?","公共汽车上有很多人。 - There are many people on the bus.","最后一班公共汽车是几点？ - What time is the last bus?"]}
+{"id":"h2_132","character":"出租车","pinyin":"chūzūchē","meaning":"taxi","hsk":2,"category":"nouns","examples":["坐出租车。 - Take a taxi.","叫了一辆出租车。 - Called a taxi.","坐出租车更快。 - Taking a taxi is faster.","出租车司机很友好。 - The taxi driver is very friendly.","出租车太贵了。 - Taxis are too expensive.","请帮我叫一辆出租车。 - Please help me call a taxi.","我坐出租车去机场。 - I'll take a taxi to the airport.","北京的出租车是黄色的。 - Beijing's taxis are yellow."]}
+{"id":"h2_133","character":"飞机","pinyin":"fēijī","meaning":"airplane","hsk":2,"category":"nouns","examples":["坐飞机。 - Take a plane.","飞机起飞了。 - The plane took off.","飞机要飞多久？ - How long is the flight?","第一次坐飞机很兴奋。 - First time on a plane is very exciting.","飞机上的饭还不错。 - The food on the plane is not bad.","飞机票已经买好了。 - The plane ticket has been purchased.","从北京飞到上海要两个小时。 - Flying from Beijing to Shanghai takes two hours.","飞机是我最喜欢的交通工具。 - Airplanes are my favorite form of transportation."]}
+{"id":"h2_134","character":"火车","pinyin":"huǒchē","meaning":"train","hsk":2,"category":"nouns","examples":["坐火车。 - Take a train.","火车几点的？ - What time is the train?","坐火车去很方便。 - Going by train is very convenient.","火车正在进站。 - The train is arriving at the station.","我喜欢坐火车旅行。 - I like traveling by train.","这趟火车经过很多城市。 - This train passes through many cities.","高铁比普通火车快得多。 - High-speed rail is much faster than regular trains.","火车站的票很便宜。 - Train station tickets are cheap."]}
+{"id":"h2_135","character":"地铁","pinyin":"dìtiě","meaning":"subway","hsk":2,"category":"nouns","examples":["坐地铁。 - Take the subway.","地铁很快。 - The subway is fast.","地铁站在那边。 - The subway station is over there.","北京的地铁很方便。 - Beijing's subway is very convenient.","我坐地铁上班。 - I take the subway to work.","地铁站人很多。 - There are many people at the subway station.","这趟地铁去不去市中心？ - Does this subway go to the city center?","地铁比公共汽车快。 - The subway is faster than the bus."]}
+{"id":"h2_136","character":"自行车","pinyin":"zìxíngchē","meaning":"bicycle","hsk":2,"category":"nouns","examples":["骑自行车。 - Ride a bicycle.","买了一辆自行车。 - Bought a bicycle.","骑自行车对身体好。 - Riding a bicycle is good for your health.","自行车很便宜。 - Bicycles are cheap.","他会骑自行车上班。 - He rides a bicycle to work.","我的自行车坏了。 - My bicycle broke.","小孩子学骑自行车很快。 - Kids learn to ride a bicycle quickly.","这里有很多共享自行车。 - There are many shared bicycles here."]}
+{"id":"h2_137","character":"机场","pinyin":"jīchǎng","meaning":"airport","hsk":2,"category":"nouns","examples":["去机场。 - Go to the airport.","机场很大。 - The airport is very big.","我去机场接人。 - I go to the airport to pick someone up.","机场离这里远吗？ - Is the airport far from here?","机场的免税店。 - The duty-free shop at the airport.","请送我去机场。 - Please take me to the airport.","在机场等行李。 - Waiting for luggage at the airport.","上海有两个机场。 - Shanghai has two airports."]}
+{"id":"h2_138","character":"火车站","pinyin":"huǒchēzhàn","meaning":"train station","hsk":2,"category":"nouns","examples":["去火车站。 - Go to the train station.","火车站在哪里？ - Where is the train station?","火车站人很多。 - The train station is very crowded.","坐地铁去火车站。 - Take the subway to the train station.","在火车站买票。 - Buy tickets at the train station.","这个城市的火车站很漂亮。 - This city's train station is very beautiful.","火车站在东边。 - The train station is on the east side.","我朋友在火车站等我。 - My friend is waiting for me at the train station."]}
+{"id":"h2_139","character":"超市","pinyin":"chāoshì","meaning":"supermarket","hsk":2,"category":"nouns","examples":["去超市。 - Go to the supermarket.","超市里有很多东西。 - There are many things in the supermarket.","我去超市买菜。 - I go to the supermarket to buy vegetables.","这家超市很大。 - This supermarket is very big.","超市几点关门？ - What time does the supermarket close?","超市就在对面。 - The supermarket is right across the street.","在超市买东西很方便。 - Shopping at the supermarket is very convenient.","这家超市的东西很便宜。 - This supermarket's goods are very cheap."]}
+{"id":"h2_140","character":"银行","pinyin":"yínháng","meaning":"bank","hsk":2,"category":"nouns","examples":["去银行。 - Go to the bank.","银行旁边是邮局。 - Next to the bank is the post office.","我去银行取钱。 - I go to the bank to withdraw money.","银行几点开门？ - What time does the bank open?","中国的银行很多。 - There are many banks in China.","在银行排队等了很久。 - Waited in line at the bank for a long time.","我的银行卡丢了。 - I lost my bank card.","银行工作人员很热情。 - The bank staff are very warm."]}
+{"id":"h2_141","character":"邮局","pinyin":"yóujú","meaning":"post office","hsk":2,"category":"nouns","examples":["去邮局。 - Go to the post office.","邮局在哪里？ - Where is the post office?","我去邮局寄信。 - I go to the post office to mail a letter.","邮局就在学校旁边。 - The post office is right next to the school.","邮局下午几点下班？ - What time does the post office close in the afternoon?","在邮局可以寄包裹。 - You can send packages at the post office.","邮局的服务很好。 - The post office's service is very good.","北京的邮局有很多。 - There are many post offices in Beijing."]}
+{"id":"h2_142","character":"图书馆","pinyin":"túshūguǎn","meaning":"library","hsk":2,"category":"nouns","examples":["去图书馆。 - Go to the library.","图书馆很安静。 - The library is very quiet.","我在图书馆看书。 - I read books at the library.","学校图书馆很大。 - The school library is very big.","图书馆有很多中文书。 - The library has many Chinese books.","周末去图书馆学习。 - Go to the library to study on the weekend.","请保持图书馆的安静。 - Please keep the library quiet.","图书馆里有免费的网络。 - There is free internet in the library."]}
+{"id":"h2_143","character":"公园","pinyin":"gōngyuán","meaning":"park","hsk":2,"category":"nouns","examples":["去公园。 - Go to the park.","公园很大很漂亮。 - The park is big and beautiful.","早上很多人去公园锻炼。 - Many people go to the park to exercise in the morning.","周末带孩子去公园玩。 - Take the kids to the park to play on the weekend.","公园里有湖。 - There is a lake in the park.","这个公园不收钱。 - This park is free.","在北京，公园很多。 - In Beijing, there are many parks.","公园里的花开了。 - The flowers in the park have bloomed."]}
+{"id":"h2_144","character":"电影院","pinyin":"diànyǐngyuàn","meaning":"cinema","hsk":2,"category":"nouns","examples":["去电影院。 - Go to the cinema.","电影院在楼上。 - The cinema is upstairs.","我们一起去电影院。 - Let's go to the cinema together.","这家电影院很大。 - This cinema is very big.","电影院的票不贵。 - Cinema tickets are not expensive.","新电影院开张了。 - A new cinema has opened.","电影院离我家很近。 - The cinema is very close to my home.","在电影院不能大声说话。 - You can't speak loudly in the cinema."]}
+{"id":"h2_145","character":"办公室","pinyin":"bàngōngshì","meaning":"office","hsk":2,"category":"nouns","examples":["在办公室。 - In the office.","他在办公室工作。 - He works in the office.","办公室在二楼。 - The office is on the second floor.","我去办公室找老师。 - I go to the office to find the teacher.","办公室很大很干净。 - The office is big and clean.","请到我的办公室来。 - Please come to my office.","办公室里没有人。 - There is no one in the office.","经理的办公室在右边。 - The manager's office is on the right."]}
+{"id":"h2_146","character":"教室","pinyin":"jiàoshì","meaning":"classroom","hsk":2,"category":"nouns","examples":["在教室。 - In the classroom.","教室里有很多学生。 - There are many students in the classroom.","我们的教室在五楼。 - Our classroom is on the fifth floor.","请把教室打扫干净。 - Please clean the classroom.","教室很安静。 - The classroom is very quiet.","老师走进了教室。 - The teacher walked into the classroom.","我喜欢我们的教室。 - I like our classroom.","下课后教室就空了。 - The classroom is empty after class."]}
+{"id":"h2_147","character":"房间","pinyin":"fángjiān","meaning":"room","hsk":2,"category":"nouns","examples":["我的房间。 - My room.","请打扫房间。 - Please clean the room.","你的房间很大。 - Your room is very big.","每个房间都有窗户。 - Every room has a window.","房间里有电视吗？ - Is there a TV in the room?","请到我的房间来。 - Please come to my room.","这间房间很舒服。 - This room is very comfortable.","酒店的房间不错。 - The hotel room is not bad."]}
+{"id":"h2_148","character":"船","pinyin":"chuán","meaning":"boat/ship","hsk":2,"category":"transport","examples":["坐船。 - Take a boat.","大船。 - Big ship.","坐船去。 - Go by boat.","小船。 - Small boat.","船上有很多人。 - There are many people on the boat.","船来了。 - The boat has arrived.","这条船很旧。 - This boat is very old.","乘风破浪。 - Ride the wind and break the waves (idiom)."]}
+{"id":"h2_149","character":"票","pinyin":"piào","meaning":"ticket","hsk":2,"category":"transport","examples":["买票。 - Buy a ticket.","一张票。 - One ticket.","请给我票。 - Please give me the ticket.","飞机票。 - Plane ticket.","电影票。 - Movie ticket.","票没了。 - Tickets are sold out.","买不到票。 - Can't get tickets.","多少钱一张票？ - How much is a ticket?"]}
+{"id":"h2_150","character":"站","pinyin":"zhàn","meaning":"station/stop","hsk":2,"category":"transport","examples":["到站了。 - Arrived at the station.","下一站。 - Next stop.","公交车站。 - Bus stop.","地铁站。 - Subway station.","你在哪一站下？ - At which stop do you get off?","起点站。 - Starting station.","终点站。 - Terminal station.","我要在这个站下车。 - I want to get off at this stop."]}
+{"id":"h2_151","character":"路","pinyin":"lù","meaning":"road","hsk":2,"category":"transport","examples":["这条路。 - This road.","路上小心。 - Be careful on the road.","问路。 - Ask for directions.","大路。 - Main road.","顺着这条路走。 - Walk along this road.","路不远。 - The road isn't far.","一路上都是风景。 - Scenery all along the way.","迷路了。 - Lost the way."]}
+{"id":"h2_152","character":"条","pinyin":"tiáo","meaning":"measure word for roads","hsk":2,"category":"transport","examples":["一条路。 - A road.","三条鱼。 - Three fish.","一条河。 - A river.","一条狗。 - A dog.","一条裙子。 - A skirt.","条件。 - Conditions.","这条街。 - This street.","一条新闻。 - A piece of news."]}
+{"id":"h2_153","character":"辆","pinyin":"liàng","meaning":"measure word for vehicles","hsk":2,"category":"transport","examples":["一辆车。 - A car.","一辆自行车。 - A bicycle.","这一辆车。 - This car.","几辆车。 - A few cars.","停车场有很多辆车。 - There are many cars in the parking lot.","这辆公车很新。 - This bus is very new.","你买了辆什么车？ - What kind of car did you buy?","每辆车都有自己的故事。 - Every car has its own story."]}
+{"id":"h2_154","character":"张","pinyin":"zhāng","meaning":"measure word for tickets","hsk":2,"category":"transport","examples":["一张票。 - A ticket.","一张纸。 - A piece of paper.","一张桌子。 - A table.","一张床。 - A bed.","一张照片。 - A photo.","这纸张。 - This piece of paper.","地图有一张。 - There is one map.","考卷一张。 - One exam paper."]}
+{"id":"h2_155","character":"次","pinyin":"cì","meaning":"measure word for times","hsk":2,"category":"transport","examples":["第一次。 - The first time.","每次。 - Every time.","一次两次。 - Once or twice.","下次再来。 - Come again next time.","这次怎么样？ - How was it this time?","多少次了？ - How many times?","一次就够了。 - Once is enough.","第一次去中国很开心。 - First time going to China was very happy."]}
+{"id":"h2_156","character":"遍","pinyin":"biàn","meaning":"measure word for actions","hsk":2,"category":"transport","examples":["再说一遍。 - Say it again.","读一遍。 - Read it once.","一遍一遍地练习。 - Practice over and over.","看了三遍。 - Watched it three times.","从头到尾听了一遍。 - Listened from beginning to end once.","写两遍。 - Write it twice.","一遍比一遍好。 - Better each time.","遍体鳞伤。 - Covered with wounds (idiom)."]}
+{"id":"h2_157","character":"趟","pinyin":"tàng","meaning":"measure word for trips","hsk":2,"category":"transport","examples":["去一趟。 - Go once.","跑一趟。 - Make a trip.","我来一趟不容易。 - It's not easy for me to come this once.","每天走一趟。 - Walk once every day.","一趟火车。 - One train trip.","这趟车去哪里？ - Where does this train/bus go?","最后一趟。 - The last trip.","白跑了一趟。 - Wasted a trip (went for nothing)."]}
+{"id":"h2_158","character":"给","pinyin":"gěi","meaning":"to give","hsk":2,"category":"verbs","examples":["给你。 - Here you are.","请给我一杯水。 - Please give me a cup of water.","他给了我一份礼物。 - He gave me a gift.","我给你打电话。 - I'll give you a call.","妈妈给我买了新衣服。 - Mom bought me new clothes.","请给我看一下。 - Please let me take a look.","给钱。 - Give money.","你能给我一点时间吗？ - Can you give me some time?"]}
+{"id":"h2_159","character":"让","pinyin":"ràng","meaning":"to let/allow","hsk":2,"category":"verbs","examples":["让我看看。 - Let me take a look.","让他进来。 - Let him come in.","别让他走。 - Don't let him leave.","这件事让大家都开心。 - This makes everyone happy.","让我来帮你。 - Let me help you.","不要让父母担心。 - Don't make your parents worry.","这个消息让我很难过。 - This news made me very sad.","让我想想。 - Let me think.","请让一下，谢谢。 - Please let me pass, thank you."]}
+{"id":"h2_160","character":"问","pinyin":"wèn","meaning":"to ask","hsk":2,"category":"verbs","examples":["我问你。 - I ask you.","请问。 - Excuse me / May I ask.","问问题。 - Ask a question.","他问了我很多问题。 - He asked me many questions.","有问题就问老师。 - If you have questions, ask the teacher.","别问了，我不知道。 - Stop asking, I don't know.","我想问你一件事。 - I want to ask you something.","问路怎么走？ - Ask for directions?"]}
+{"id":"h2_161","character":"找","pinyin":"zhǎo","meaning":"to look for","hsk":2,"category":"verbs","examples":["我在找我的手机。 - I'm looking for my phone.","你找谁？ - Who are you looking for?","找不到了。 - Can't find it.","我在找一份新工作。 - I am looking for a new job.","找到答案了。 - Found the answer.","你能帮我找一下吗？ - Can you help me look for it?","慢慢找，不着急。 - Take your time looking, no rush.","我找了很久才找到。 - I looked for a long time before finding it."]}
+{"id":"h2_162","character":"进","pinyin":"jìn","meaning":"to enter","hsk":2,"category":"verbs","examples":["请进来。 - Please come in.","你进来吧。 - Come in.","进去看看。 - Go in and take a look.","他走进了教室。 - He walked into the classroom.","不要进去。 - Don't go in.","进门请换鞋。 - Please change shoes when entering.","汽车开进了车库。 - The car drove into the garage.","他把书放进了书包。 - He put the book into his backpack."]}
+{"id":"h2_163","character":"出","pinyin":"chū","meaning":"to go out","hsk":2,"category":"verbs","examples":["我出去一下。 - I'm going out for a moment.","太阳出来了。 - The sun came out.","出问题了。 - A problem came up.","他出门了。 - He went out.","我从家里出来。 - I came out from home.","这本书是什么时候出的？ - When was this book published?","请拿出你的证件。 - Please take out your ID.","又出事了。 - Something happened again."]}
+{"id":"h2_164","character":"回","pinyin":"huí","meaning":"to return","hsk":2,"category":"verbs","examples":["我回家。 - I go home.","你什么时候回来？ - When will you come back?","他回国了。 - He returned to his country.","回头见。 - See you later.","我马上就回来。 - I'll be right back.","周末回老家。 - Return to hometown on the weekend.","请给我回电话。 - Please call me back.","这个东西从哪里来的回哪里去。 - This thing goes back where it came from."]}
+{"id":"h2_165","character":"开","pinyin":"kāi","meaning":"to open/start","hsk":2,"category":"verbs","examples":["开门。 - Open the door.","请打开窗户。 - Please open the window.","你开车去吗？ - Are you driving there?","会议开始了。 - The meeting has started.","开灯。 - Turn on the light.","商店几点开门？ - What time does the store open?","花开得很漂亮。 - The flowers bloom beautifully.","开电脑。 - Turn on the computer."]}
+{"id":"h2_166","character":"关","pinyin":"guān","meaning":"to close/turn off","hsk":2,"category":"verbs","examples":["关门。 - Close the door.","请关窗。 - Please close the window.","关灯。 - Turn off the light.","把电视关掉。 - Turn off the TV.","电脑关了没有？ - Is the computer turned off?","商店关门了。 - The store is closed.","这个问题跟他没关系。 - This problem has nothing to do with him.","请把门关上。 - Please close the door."]}
+{"id":"h2_167","character":"穿","pinyin":"chuān","meaning":"to wear","hsk":2,"category":"verbs","examples":["穿衣服。 - Wear clothes / Get dressed.","今天穿什么？ - What to wear today?","穿鞋。 - Put on shoes.","她穿了一条漂亮的裙子。 - She wore a beautiful dress.","天冷了，多穿点衣服。 - It's cold, wear more clothes.","这件衣服穿起来很舒服。 - This clothing feels comfortable to wear.","他不喜欢穿牛仔裤。 - He doesn't like wearing jeans.","穿好了吗？我们走吧。 - Are you dressed? Let's go."]}
+{"id":"h2_168","character":"洗","pinyin":"xǐ","meaning":"to wash","hsk":2,"category":"verbs","examples":["洗手。 - Wash hands.","洗衣服。 - Wash clothes.","洗脸。 - Wash face.","我去洗澡。 - I'm going to take a shower.","把碗洗干净。 - Wash the dishes clean.","吃饭前要洗手。 - Wash hands before eating.","这件衣服需要手洗。 - This clothing needs to be hand-washed.","洗完澡舒服多了。 - Feel much more comfortable after showering."]}
+{"id":"h2_169","character":"难","pinyin":"nán","meaning":"difficult","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_170","character":"容易","pinyin":"róngyì","meaning":"easy","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_171","character":"教","pinyin":"jiāo","meaning":"to teach","hsk":2,"category":"verbs","examples":["他教中文。 - He teaches Chinese.","你教教我怎么用。 - Teach me how to use it.","妈妈教我做饭。 - Mom teaches me to cook.","谁教你中文？ - Who teaches you Chinese?","老师教得很好。 - The teacher teaches very well.","这个很难教。 - This is very hard to teach.","你可以教我说中文吗？ - Can you teach me to speak Chinese?","教会了徒弟，饿死了师傅。 - Teach the apprentice and starve the master."]}
+{"id":"h2_172","character":"方便","pinyin":"fāngbiàn","meaning":"convenient","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_173","character":"用","pinyin":"yòng","meaning":"to use","hsk":2,"category":"verbs","examples":["用这个。 - Use this.","我用手机拍照。 - I use my phone to take photos.","这个怎么用？ - How do you use this?","不用谢。 - No need to thank me.","用筷子吃饭。 - Use chopsticks to eat.","用不了那么多。 - Don't need that much.","这个办法很有用。 - This method is very useful.","我用中文写日记。 - I write my diary in Chinese."]}
+{"id":"h2_174","character":"有名","pinyin":"yǒumíng","meaning":"famous","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_175","character":"等","pinyin":"děng","meaning":"to wait","hsk":2,"category":"verbs","examples":["请等一下。 - Please wait a moment.","我在等朋友。 - I'm waiting for a friend.","等等我。 - Wait for me.","等了好久。 - Waited for a long time.","我等不及了。 - I can't wait any longer.","你在等谁？ - Who are you waiting for?","等一会儿再说。 - Let's wait a bit before talking.","不等了，我们走吧。 - Let's not wait anymore, let's go."]}
+{"id":"h2_176","character":"可爱","pinyin":"kě'ài","meaning":"cute","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_177","character":"帮","pinyin":"bāng","meaning":"to help","hsk":2,"category":"verbs","examples":["请帮我。 - Please help me.","我可以帮你吗？ - Can I help you?","谢谢你的帮助。 - Thank you for your help.","帮帮忙。 - Give me a hand.","他帮了我很多忙。 - He helped me a lot.","我们一起帮你。 - We will help you together.","帮我把这个拿过来。 - Help me bring this over.","不用帮，我自己来。 - No need to help, I'll do it myself."]}
+{"id":"h2_178","character":"告诉","pinyin":"gàosù","meaning":"to tell","hsk":2,"category":"verbs","examples":["请告诉我。 - Please tell me.","我告诉你一件事。 - I'll tell you something.","别告诉他。 - Don't tell him.","谁告诉你的？ - Who told you?","老师告诉我们要好好学习。 - The teacher told us to study hard.","你不能告诉别人。 - You can't tell others.","告诉你一个好消息。 - Tell you some good news.","我已经告诉过你了。 - I already told you."]}
+{"id":"h2_179","character":"准备","pinyin":"zhǔnbèi","meaning":"to prepare","hsk":2,"category":"verbs","examples":["准备好了。 - It's ready.","准备考试。 - Prepare for the exam.","妈妈在准备晚饭。 - Mom is preparing dinner.","你准备好了吗？ - Are you ready?","开始准备行李。 - Start preparing luggage.","需要准备什么？ - What needs to be prepared?","我已经准备好了。 - I am already prepared.","没有准备好就不能开始。 - Can't start without being prepared."]}
+{"id":"h2_180","character":"开始","pinyin":"kāishǐ","meaning":"to begin","hsk":2,"category":"verbs","examples":["开始吧。 - Let's start.","电影开始了。 - The movie has started.","新学期开始了。 - The new semester has begun.","从零开始。 - Start from zero.","开始工作。 - Start working.","一切重新开始。 - Everything starts anew.","你什么时候开始学中文的？ - When did you start learning Chinese?","一个好的开始很重要。 - A good start is very important."]}
+{"id":"h2_181","character":"觉得","pinyin":"juéde","meaning":"to feel/think","hsk":2,"category":"verbs","examples":["我觉得很好。 - I think it's good.","你觉得呢？ - What do you think?","我觉得不舒服。 - I feel uncomfortable.","你觉得冷吗？ - Do you feel cold?","我不觉得难。 - I don't think it's difficult.","你觉得这菜好吃吗？ - Do you think this dish is delicious?","我觉得你很聪明。 - I think you are very smart.","他觉得自己是对的。 - He thinks he is right."]}
+{"id":"h2_182","character":"希望","pinyin":"xīwàng","meaning":"to hope","hsk":2,"category":"verbs","examples":["我希望你快乐。 - I hope you are happy.","希望明天不下雨。 - I hope it doesn't rain tomorrow.","我希望学好中文。 - I hope to learn Chinese well.","有希望。 - There is hope.","别抱太大希望。 - Don't get your hopes too high.","希望你能来。 - I hope you can come.","希望能成功。 - Hope to succeed.","希望你一切顺利。 - Hope everything goes well for you."]}
+{"id":"h2_183","character":"可以","pinyin":"kěyǐ","meaning":"can/may","hsk":2,"category":"verbs","examples":["可以吗？ - Is it okay?","当然可以。 - Of course you can.","我可以坐这里吗？ - Can I sit here?","不可以用手机。 - Cannot use mobile phones.","这个可以吃吗？ - Can this be eaten?","你可以帮我吗？ - Can you help me?","我觉得可以。 - I think it's okay.","这样做可不可以？ - Is it okay to do it this way?","你可以走了。 - You can leave now."]}
+{"id":"h2_184","character":"错","pinyin":"cuò","meaning":"wrong","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_185","character":"对","pinyin":"duì","meaning":"correct","hsk":2,"category":"adjectives","examples":[]}
+{"id":"h2_186","character":"要","pinyin":"yào","meaning":"to want/need","hsk":2,"category":"verbs","examples":["我要这个。 - I want this.","你要什么？ - What do you want?","要下雨了。 - It's going to rain.","我要学中文。 - I want to learn Chinese.","需要多长时间？ - How long does it take?","不要着急。 - Don't worry.","马上就要到了。 - Almost there.","你要不要喝水？ - Do you want to drink water?"]}
+{"id":"h2_187","character":"会","pinyin":"huì","meaning":"can/will","hsk":2,"category":"verbs","examples":["我会说中文。 - I can speak Chinese.","你会不会游泳？ - Can you swim?","明天会下雨。 - It will rain tomorrow.","他一定会来的。 - He will definitely come.","我不会做饭。 - I can't cook.","学会了吗？ - Have you learned it?","机会会来的。 - The opportunity will come.","你会开车吗？ - Can you drive?"]}
+{"id":"h2_188","character":"能","pinyin":"néng","meaning":"can/able to","hsk":2,"category":"verbs","examples":["我能去吗？ - Can I go?","你不能这样。 - You can't do this.","能不能便宜一点？ - Can it be a bit cheaper?","我现在不能走。 - I can't leave now.","你能说中文吗？ - Can you speak Chinese?","他不能吃辣的东西。 - He cannot eat spicy food.","能不能帮我一下？ - Can you help me a bit?","一次只能做一件事。 - Can only do one thing at a time."]}
+{"id":"h2_189","character":"应该","pinyin":"yīnggāi","meaning":"should","hsk":2,"category":"verbs","examples":["你应该去。 - You should go.","应该没问题。 - Should be no problem.","我不应该说那些话。 - I shouldn't have said those words.","你应该多休息。 - You should rest more.","现在应该到了吧？ - Should have arrived by now?","我们应该互相帮助。 - We should help each other.","孩子应该早睡早起。 - Children should go to bed early and get up early.","这件事你应该知道。 - You should know about this."]}
+{"id":"h2_190","character":"愿意","pinyin":"yuànyì","meaning":"willing","hsk":2,"category":"verbs","examples":["我愿意。 - I am willing.","你愿意嫁给我吗？ - Will you marry me?","谁愿意去？ - Who is willing to go?","我不愿意做这件事。 - I am not willing to do this.","他愿意帮我。 - He is willing to help me.","只要你愿意，什么都可以。 - As long as you're willing, anything is possible.","我很愿意加入你们。 - I am very willing to join you.","他不太愿意说话。 - He is not very willing to talk."]}
+{"id":"h2_191","character":"认识","pinyin":"rènshi","meaning":"to know (someone)","hsk":2,"category":"verbs","examples":["我认识他。 - I know him.","很高兴认识你。 - Nice to meet you.","我不认识路。 - I don't know the way.","你认识这个人吗？ - Do you know this person?","我们认识很久了。 - We have known each other for a long time.","他认识很多中文字。 - He knows many Chinese characters.","通过朋友认识的。 - Met through a friend.","我不太认识这两个字。 - I don't really know these two characters."]}
+{"id":"h2_192","character":"了解","pinyin":"liǎojiě","meaning":"to understand","hsk":2,"category":"verbs","examples":["我不了解。 - I don't understand.","你了解中国吗？ - Do you understand China?","我想多了解你。 - I want to get to know you better.","了解一下情况。 - Get a sense of the situation.","他非常了解这件事。 - He understands this matter very well.","我不太了解中国文化。 - I don't really understand Chinese culture.","了解自己才能了解别人。 - Understand yourself before you can understand others.","你最好先了解一下。 - You'd better understand first."]}
+{"id":"h2_193","character":"相信","pinyin":"xiāngxìn","meaning":"to believe","hsk":2,"category":"verbs","examples":["我相信你。 - I believe you.","你相信我吗？ - Do you believe me?","我不相信。 - I don't believe it.","相信自己的力量。 - Believe in your own strength.","他相信自己的判断。 - He believes in his own judgment.","很难相信这是真的。 - Hard to believe this is true.","请相信我一次。 - Please believe me this once.","相信自己能行。 - Believe you can do it."]}
+{"id":"h2_194","character":"需要","pinyin":"xūyào","meaning":"to need","hsk":2,"category":"verbs","examples":["我需要帮助。 - I need help.","你需要什么？ - What do you need?","不需要。 - Not needed.","我需要更多时间。 - I need more time.","你需要休息一下。 - You need to rest a bit.","需要多少钱？ - How much money is needed?","这个工作需要很多耐心。 - This job requires a lot of patience.","学中文需要天天练习。 - Learning Chinese requires daily practice."]}
+{"id":"h2_195","character":"担心","pinyin":"dānxīn","meaning":"to worry","hsk":2,"category":"verbs","examples":["别担心。 - Don't worry.","我担心他。 - I worry about him.","不用担心。 - No need to worry.","父母总是担心孩子。 - Parents always worry about their children.","你在担心什么？ - What are you worried about?","别太担心了。 - Don't worry too much.","担心也没用。 - Worrying is useless.","他担心考试不及格。 - He's worried about failing the exam."]}
+{"id":"h2_196","character":"害怕","pinyin":"hàipà","meaning":"to be afraid","hsk":2,"category":"verbs","examples":["我害怕。 - I am afraid.","别害怕。 - Don't be afraid.","你害怕什么？ - What are you afraid of?","她害怕黑暗。 - She is afraid of the dark.","不要害怕失败。 - Don't be afraid of failure.","我害怕一个人在家。 - I'm afraid of being home alone.","他害怕做错事。 - He is afraid of doing things wrong.","没什么好害怕的。 - There's nothing to be afraid of."]}
+{"id":"h2_197","character":"生气","pinyin":"shēngqì","meaning":"to be angry","hsk":2,"category":"verbs","examples":["他生气了。 - He is angry.","别生气。 - Don't be angry.","你为什么生气？ - Why are you angry?","妈妈真的生气了。 - Mom is really angry.","他的话让我很生气。 - His words made me very angry.","生气对身体不好。 - Getting angry is bad for your health.","我不是故意惹你生气的。 - I didn't mean to make you angry.","他又生气了。 - He got angry again."]}
+{"id":"h2_198","character":"着急","pinyin":"zháojí","meaning":"to be anxious","hsk":2,"category":"verbs","examples":["别着急。 - Don't be anxious.","我很着急。 - I am very anxious.","着急也没有用。 - Being anxious is useless.","他急着要回家。 - He is anxious to go home.","慢慢来，别着急。 - Take it slow, don't be anxious.","你在着急什么？ - What are you anxious about?","时间还早，不用着急。 - It's still early, no need to be anxious.","他着急是因为迟到了。 - He is anxious because he is late."]}
+{"id":"h2_199","character":"满意","pinyin":"mǎnyì","meaning":"to be satisfied","hsk":2,"category":"verbs","examples":["我很满意。 - I am very satisfied.","你满意吗？ - Are you satisfied?","不满意。 - Not satisfied.","他对结果很满意。 - He is very satisfied with the result.","老板对员工很满意。 - The boss is very satisfied with the employees.","这个答案你满意吗？ - Are you satisfied with this answer?","令人满意的结果。 - A satisfying result.","我不太满意这个安排。 - I'm not very satisfied with this arrangement."]}
+{"id":"h2_200","character":"习惯","pinyin":"xíguàn","meaning":"to be used to","hsk":2,"category":"verbs","examples":["我习惯了。 - I'm used to it.","我不习惯早起。 - I'm not used to getting up early.","慢慢就习惯了。 - You'll get used to it gradually.","好习惯很重要。 - Good habits are very important.","你习惯这里的生活吗？ - Are you used to life here?","坏习惯很难改。 - Bad habits are hard to change.","我已经习惯了中国的饭菜。 - I've gotten used to Chinese food.","从小养成的习惯。 - A habit formed since childhood."]}
+{"id":"h2_201","character":"感兴趣","pinyin":"gǎn xìngqù","meaning":"to be interested","hsk":2,"category":"verbs","examples":["我很感兴趣。 - I am very interested.","不感兴趣。 - Not interested.","我对中国很感兴趣。 - I am very interested in China.","他对外语很感兴趣。 - He is very interested in foreign languages.","你对什么感兴趣？ - What are you interested in?","我渐渐对历史感兴趣了。 - I'm gradually becoming interested in history.","他好像不太感兴趣。 - He doesn't seem very interested.","大家都对这个项目很感兴趣。 - Everyone is very interested in this project."]}
+{"id":"h2_202","character":"同意","pinyin":"tóngyì","meaning":"to agree","hsk":2,"category":"verbs","examples":["我同意。 - I agree.","你同意吗？ - Do you agree?","不同意。 - Disagree.","大家都同意这个决定。 - Everyone agrees with this decision.","我同意你的看法。 - I agree with your view.","如果你同意的话。 - If you agree.","爸爸终于同意了。 - Dad finally agreed.","我不能同意这个方案。 - I cannot agree with this plan."]}
+{"id":"h2_203","character":"反对","pinyin":"fǎnduì","meaning":"to oppose","hsk":2,"category":"verbs","examples":["我反对。 - I oppose.","很多人反对这个计划。 - Many people oppose this plan.","反对的声音很大。 - The opposing voices are loud.","我反对这种做法。 - I oppose this approach.","有没有人反对？ - Is there anyone opposed?","他反对我的建议。 - He opposes my suggestion.","反对的人请举手。 - Those opposed, please raise your hand.","你不能反对所有人的意见。 - You can't oppose everyone's opinions."]}
+{"id":"h2_204","character":"支持","pinyin":"zhīchí","meaning":"to support","hsk":2,"category":"verbs","examples":["我支持你。 - I support you.","谢谢你的支持。 - Thank you for your support.","父母一直支持我。 - My parents have always supported me.","大家都很支持他。 - Everyone supports him.","你的支持对我很重要。 - Your support is very important to me.","不支持这个决定。 - Do not support this decision.","我们需要互相支持。 - We need to support each other.","公司支持员工学习新技能。 - The company supports employees in learning new skills."]}
+{"id":"h2_205","character":"阴","pinyin":"yīn","meaning":"cloudy","hsk":2,"category":"weather","examples":["今天阴天。 - Today is cloudy.","天阴了。 - The sky turned cloudy.","阴天没有太阳。 - There's no sun on cloudy days.","阴转晴。 - Cloudy turning sunny.","阴沉沉的。 - Gloomy and overcast.","阴天可能会下雨。 - It might rain on a cloudy day.","今天天气阴阴的。 - Today's weather is overcast.","阴凉的地方。 - A shady place."]}
+{"id":"h2_206","character":"刮风","pinyin":"guāfēng","meaning":"windy","hsk":2,"category":"weather","examples":["外面刮风。 - It's windy outside.","今天刮大风。 - It's very windy today.","刮风下雨。 - Windy and rainy.","外面刮风了，多穿点。 - It's windy outside, wear more.","刮风的时候别出门。 - Don't go out when it's windy.","这里经常刮风。 - It's often windy here.","刮风的声音很大。 - The sound of the wind is very loud.","春风刮起来了。 - The spring wind has started blowing."]}
+{"id":"h2_207","character":"下雨","pinyin":"xiàyǔ","meaning":"rainy","hsk":2,"category":"weather","examples":["今天下雨。 - It's raining today.","下雨了。 - It's raining.","外面在下雨。 - It's raining outside.","下雨天。 - A rainy day.","下雨的时候我喜欢在家。 - I like being at home when it rains.","好像要下雨了。 - Looks like it might rain.","昨天下了一天的雨。 - It rained all day yesterday.","下雨别忘了带伞。 - Don't forget to bring an umbrella when it rains."]}
+{"id":"h2_208","character":"下雪","pinyin":"xiàxuě","meaning":"snowy","hsk":2,"category":"weather","examples":["今天下雪。 - It's snowing today.","下雪了。 - It's snowing.","外面在下雪。 - It's snowing outside.","北京冬天会下雪吗？ - Does Beijing get snow in winter?","下雪天很美。 - Snowy days are beautiful.","第一次见到下雪。 - First time seeing snow.","下了很大的雪。 - It snowed heavily.","孩子最喜欢下雪了。 - Children love snow the most."]}
+{"id":"h2_209","character":"温度","pinyin":"wēndù","meaning":"temperature","hsk":2,"category":"weather","examples":["温度很高。 - The temperature is high.","今天的温度是多少？ - What is today's temperature?","温度计。 - Thermometer.","室内温度。 - Indoor temperature.","温度太低了。 - The temperature is too low.","温度上升。 - Temperature rise.","这里冬天的温度在零下。 - Winter temperatures here are below zero.","温度变化很大。 - The temperature change is significant."]}
+{"id":"h2_210","character":"度","pinyin":"dù","meaning":"degree","hsk":2,"category":"weather","examples":["三十度。 - Thirty degrees.","今天三十几度。 - It's over thirty degrees today.","零度。 - Zero degrees.","一度两度。 - One or two degrees.","温度到了四十度。 - The temperature reached forty degrees.","中度。 - Moderate.","速度很快。 - The speed is very fast.","度数不高。 - The degree is not high (alcohol)."]}
+{"id":"h2_211","character":"天气","pinyin":"tiānqì","meaning":"weather","hsk":2,"category":"weather","examples":["天气很好。 - The weather is good.","今天天气怎么样？ - How's the weather today?","天气预报。 - Weather forecast.","天气越来越热。 - The weather is getting hotter and hotter.","北京秋天的天气最好。 - Beijing's autumn weather is the best.","天气不好就别出去了。 - If the weather is bad, don't go out.","天气变化很快。 - The weather changes quickly.","我很喜欢这种天气。 - I really like this kind of weather."]}
+{"id":"h2_212","character":"风","pinyin":"fēng","meaning":"wind","hsk":2,"category":"weather","examples":["风很大。 - The wind is strong.","春天的风很舒服。 - The spring wind is very comfortable.","大风。 - Strong wind.","风停了。 - The wind stopped.","冷风吹过。 - A cold wind blows through.","风的方向。 - Wind direction.","风太大了。 - The wind is too strong.","听风的声音。 - Listen to the sound of the wind."]}
+{"id":"h2_213","character":"雨","pinyin":"yǔ","meaning":"rain","hsk":2,"category":"weather","examples":["大雨。 - Heavy rain.","小雨。 - Light rain.","下雨了。 - It's raining.","今天有雨。 - There is rain today.","雨后彩虹。 - Rainbow after the rain.","雨很大。 - The rain is heavy.","暴雨。 - Rainstorm.","小雨点。 - Little raindrops."]}
+{"id":"h2_214","character":"桌子","pinyin":"zhuōzi","meaning":"table/desk","hsk":2,"category":"furniture","examples":[]}
+{"id":"h2_215","character":"雪","pinyin":"xuě","meaning":"snow","hsk":2,"category":"weather","examples":["大雪。 - Heavy snow.","下雪了。 - It's snowing.","雪花。 - Snowflakes.","白雪。 - White snow.","雪很大。 - The snow is heavy.","山上有很多雪。 - There is a lot of snow on the mountain.","我喜欢看雪。 - I like watching snow.","雪人。 - Snowman."]}
+{"id":"h2_216","character":"祝贺","pinyin":"zhùhè","meaning":"to congratulate","hsk":2,"category":"verbs","examples":["祝贺你毕业！- Congratulations on graduating!"]}
+{"id":"h2_217","character":"庆祝","pinyin":"qìngzhù","meaning":"to celebrate","hsk":2,"category":"verbs","examples":["庆祝生日。- Celebrate birthday."]}
+{"id":"h2_218","character":"批评","pinyin":"pīpíng","meaning":"to criticize","hsk":2,"category":"verbs","examples":["老师批评了他。- Teacher criticized him."]}
+{"id":"h2_219","character":"表扬","pinyin":"biǎoyáng","meaning":"to praise","hsk":2,"category":"verbs","examples":["老师表扬了我。- Teacher praised me."]}
+{"id":"h2_220","character":"原谅","pinyin":"yuánliàng","meaning":"to forgive","hsk":2,"category":"verbs","examples":["请原谅我。- Please forgive me."]}
+{"id":"h2_221","character":"道歉","pinyin":"dàoqiàn","meaning":"to apologize","hsk":2,"category":"verbs","examples":["我向你道歉。- I apologize to you."]}
+{"id":"h2_222","character":"后悔","pinyin":"hòuhuǐ","meaning":"to regret","hsk":2,"category":"verbs","examples":["我后悔了。- I regret it."]}
+{"id":"h2_223","character":"羡慕","pinyin":"xiànmù","meaning":"to envy","hsk":2,"category":"verbs","examples":["我羡慕你。- I envy you."]}
+{"id":"h2_224","character":"讨厌","pinyin":"tǎoyàn","meaning":"to hate/dislike","hsk":2,"category":"verbs","examples":["我讨厌他。- I dislike him."]}
+{"id":"h2_225","character":"尊重","pinyin":"zūnzhòng","meaning":"to respect","hsk":2,"category":"verbs","examples":["尊重别人。- Respect others."]}
+{"id":"h2_226","character":"怀疑","pinyin":"huáiyí","meaning":"to doubt/suspect","hsk":2,"category":"verbs","examples":["我怀疑他。- I suspect him."]}
+{"id":"h2_227","character":"否认","pinyin":"fǒurèn","meaning":"to deny","hsk":2,"category":"verbs","examples":["他否认了。- He denied it."]}
+{"id":"h2_228","character":"承认","pinyin":"chéngrèn","meaning":"to admit","hsk":2,"category":"verbs","examples":["我承认错误。- I admit my mistake."]}
+{"id":"h2_229","character":"取消","pinyin":"qǔxiāo","meaning":"to cancel","hsk":2,"category":"verbs","examples":["会议取消了。- The meeting is canceled."]}
+{"id":"h2_230","character":"推迟","pinyin":"tuīchí","meaning":"to postpone","hsk":2,"category":"verbs","examples":["推迟会议。- Postpone the meeting."]}
+{"id":"h2_231","character":"提醒","pinyin":"tíxǐng","meaning":"to remind","hsk":2,"category":"verbs","examples":["请提醒我。- Please remind me."]}
+{"id":"h2_232","character":"证明","pinyin":"zhèngmíng","meaning":"to prove","hsk":2,"category":"verbs","examples":["证明自己。- Prove oneself."]}
+{"id":"h2_233","character":"调查","pinyin":"diàochá","meaning":"to investigate","hsk":2,"category":"verbs","examples":["警察在调查。- Police are investigating."]}
+{"id":"h2_234","character":"合作","pinyin":"hézuò","meaning":"to cooperate","hsk":2,"category":"verbs","examples":["我们合作吧。- Let's cooperate."]}
+{"id":"h2_235","character":"竞争","pinyin":"jìngzhēng","meaning":"to compete","hsk":2,"category":"verbs","examples":["竞争很激烈。- Competition is fierce."]}
+{"id":"h2_236","character":"保护","pinyin":"bǎohù","meaning":"to protect","hsk":2,"category":"verbs","examples":["保护环境。- Protect the environment."]}
+{"id":"h2_237","character":"破坏","pinyin":"pòhuài","meaning":"to destroy","hsk":2,"category":"verbs","examples":["破坏公物。- Destroy public property."]}
+{"id":"h2_238","character":"伤害","pinyin":"shānghài","meaning":"to hurt/harm","hsk":2,"category":"verbs","examples":["不要伤害动物。- Don't hurt animals."]}
+{"id":"h2_239","character":"照顾","pinyin":"zhàogù","meaning":"to take care of","hsk":2,"category":"verbs","examples":["照顾孩子。- Take care of children."]}
+{"id":"h2_240","character":"培养","pinyin":"péiyǎng","meaning":"to cultivate/train","hsk":2,"category":"verbs","examples":["培养兴趣。- Cultivate interests."]}
+{"id":"h2_241","character":"训练","pinyin":"xùnliàn","meaning":"to train","hsk":2,"category":"verbs","examples":["训练身体。- Train the body."]}
+{"id":"h2_242","character":"翻译","pinyin":"fānyì","meaning":"to translate","hsk":2,"category":"verbs","examples":["翻译中文。- Translate Chinese."]}
+{"id":"h2_243","character":"复印","pinyin":"fùyìn","meaning":"to photocopy","hsk":2,"category":"verbs","examples":["复印文件。- Photocopy document."]}
+{"id":"h2_244","character":"打印","pinyin":"dǎyìn","meaning":"to print","hsk":2,"category":"verbs","examples":["打印文件。- Print document."]}
+{"id":"h2_245","character":"保存","pinyin":"bǎocún","meaning":"to save/preserve","hsk":2,"category":"verbs","examples":["保存文件。- Save the file."]}
+{"id":"h2_246","character":"删除","pinyin":"shānchú","meaning":"to delete","hsk":2,"category":"verbs","examples":["删除信息。- Delete the message."]}
+{"id":"h2_247","character":"下载","pinyin":"xiàzài","meaning":"to download","hsk":2,"category":"verbs","examples":["下载文件。- Download file."]}
+{"id":"h2_248","character":"上传","pinyin":"shàngchuán","meaning":"to upload","hsk":2,"category":"verbs","examples":["上传照片。- Upload photos."]}
+{"id":"h2_249","character":"搜索","pinyin":"sōusuǒ","meaning":"to search","hsk":2,"category":"verbs","examples":["搜索信息。- Search for info."]}
+{"id":"h2_250","character":"分享","pinyin":"fēnxiǎng","meaning":"to share","hsk":2,"category":"verbs","examples":["分享快乐。- Share happiness."]}
+{"id":"h2_251","character":"抱怨","pinyin":"bàoyuàn","meaning":"to complain","hsk":2,"category":"verbs","examples":["别抱怨了。- Stop complaining."]}
+{"id":"h2_252","character":"鼓掌","pinyin":"gǔzhǎng","meaning":"to applaud","hsk":2,"category":"verbs","examples":["大家鼓掌。- Everyone applauds."]}
+{"id":"h2_253","character":"挥手","pinyin":"huīshǒu","meaning":"to wave hand","hsk":2,"category":"verbs","examples":["挥手告别。- Wave goodbye."]}
+{"id":"h2_254","character":"弯腰","pinyin":"wānyāo","meaning":"to bend over","hsk":2,"category":"verbs","examples":["弯腰捡东西。- Bend over to pick up."]}
+{"id":"h2_255","character":"转身","pinyin":"zhuǎnshēn","meaning":"to turn around","hsk":2,"category":"verbs","examples":["转身离开。- Turn and leave."]}
+{"id":"h2_256","character":"躲","pinyin":"duǒ","meaning":"to hide","hsk":2,"category":"verbs","examples":["躲起来。- Hide."]}
+{"id":"h2_257","character":"藏","pinyin":"cáng","meaning":"to hide/conceal","hsk":2,"category":"verbs","examples":["把钱藏好。- Hide the money well."]}
+{"id":"h2_258","character":"剩","pinyin":"shèng","meaning":"to be left over","hsk":2,"category":"verbs","examples":["剩下两个。- Two left."]}
+{"id":"h2_259","character":"骗","pinyin":"piàn","meaning":"to deceive","hsk":2,"category":"verbs","examples":["不要骗人。- Don't deceive people."]}
+{"id":"h2_260","character":"发誓","pinyin":"fāshì","meaning":"to swear/vow","hsk":2,"category":"verbs","examples":["我发誓！- I swear!"]}
+{"id":"h2_261","character":"友谊","pinyin":"yǒuyì","meaning":"friendship","hsk":2,"category":"nouns","examples":["我们的友谊。- Our friendship."]}
+{"id":"h2_262","character":"爱情","pinyin":"àiqíng","meaning":"romantic love","hsk":2,"category":"nouns","examples":["爱情很美好。- Love is beautiful."]}
+{"id":"h2_263","character":"婚姻","pinyin":"hūnyīn","meaning":"marriage","hsk":2,"category":"nouns","examples":["婚姻需要经营。- Marriage needs work."]}
+{"id":"h2_264","character":"感情","pinyin":"gǎnqíng","meaning":"emotion/feeling","hsk":2,"category":"nouns","examples":["感情很深。- Deep feelings."]}
+{"id":"h2_265","character":"信任","pinyin":"xìnrèn","meaning":"trust","hsk":2,"category":"nouns","examples":["互相信任。- Mutual trust."]}
+{"id":"h2_266","character":"勇气","pinyin":"yǒngqì","meaning":"courage","hsk":2,"category":"nouns","examples":["给我勇气。- Give me courage."]}
+{"id":"h2_267","character":"信心","pinyin":"xìnxīn","meaning":"confidence","hsk":2,"category":"nouns","examples":["充满信心。- Full of confidence."]}
+{"id":"h2_268","character":"梦想","pinyin":"mèngxiǎng","meaning":"dream/aspiration","hsk":2,"category":"nouns","examples":["实现梦想。- Realize the dream."]}
+{"id":"h2_269","character":"理想","pinyin":"lǐxiǎng","meaning":"ideal/ambition","hsk":2,"category":"nouns","examples":["实现理想。- Fulfill the ideal."]}
+{"id":"h2_270","character":"目标","pinyin":"mùbiāo","meaning":"goal/target","hsk":2,"category":"nouns","examples":["达成目标。- Achieve the goal."]}
+{"id":"h2_271","character":"计划","pinyin":"jìhuà","meaning":"plan","hsk":2,"category":"nouns","examples":["制定计划。- Make a plan."]}
+{"id":"h2_272","character":"规则","pinyin":"guīzé","meaning":"rule/regulation","hsk":2,"category":"nouns","examples":["遵守规则。- Follow the rules."]}
+{"id":"h2_273","character":"法律","pinyin":"fǎlǜ","meaning":"law","hsk":2,"category":"nouns","examples":["遵守法律。- Obey the law."]}
+{"id":"h2_274","character":"权利","pinyin":"quánlì","meaning":"right (entitlement)","hsk":2,"category":"nouns","examples":["保护权利。- Protect rights."]}
+{"id":"h2_275","character":"责任","pinyin":"zérèn","meaning":"responsibility","hsk":2,"category":"nouns","examples":["承担责任。- Bear responsibility."]}
+{"id":"h2_276","character":"道德","pinyin":"dàodé","meaning":"morality/ethics","hsk":2,"category":"nouns","examples":["有道德。- Have morals."]}
+{"id":"h2_277","character":"品质","pinyin":"pǐnzhì","meaning":"quality/character","hsk":2,"category":"nouns","examples":["好品质。- Good character."]}
+{"id":"h2_278","character":"性格","pinyin":"xìnggé","meaning":"personality","hsk":2,"category":"nouns","examples":["性格很好。- Good personality."]}
+{"id":"h2_279","character":"态度","pinyin":"tàidu","meaning":"attitude","hsk":2,"category":"nouns","examples":["态度很重要。- Attitude is important."]}
+{"id":"h2_280","character":"秘密","pinyin":"mìmì","meaning":"secret","hsk":2,"category":"nouns","examples":["保守秘密。- Keep a secret."]}
+{"id":"h2_281","character":"幻想","pinyin":"huànxiǎng","meaning":"fantasy/illusion","hsk":2,"category":"nouns","examples":["不要幻想。- Don't fantasize."]}
+{"id":"h2_282","character":"现实","pinyin":"xiànshí","meaning":"reality","hsk":2,"category":"nouns","examples":["面对现实。- Face reality."]}
+{"id":"h2_283","character":"民主","pinyin":"mínzhǔ","meaning":"democracy","hsk":2,"category":"nouns","examples":["民主选举。- Democratic election."]}
+{"id":"h2_284","character":"和平","pinyin":"hépíng","meaning":"peace","hsk":2,"category":"nouns","examples":["世界和平。- World peace."]}
+{"id":"h2_285","character":"战争","pinyin":"zhànzhēng","meaning":"war","hsk":2,"category":"nouns","examples":["反对战争。- Oppose war."]}
+{"id":"h2_286","character":"矛盾","pinyin":"máodùn","meaning":"contradiction/conflict","hsk":2,"category":"nouns","examples":["解决矛盾。- Resolve conflict."]}
+{"id":"h2_287","character":"误会","pinyin":"wùhuì","meaning":"misunderstanding","hsk":2,"category":"nouns","examples":["这是一个误会。- It's a misunderstanding."]}
+{"id":"h2_288","character":"借口","pinyin":"jièkǒu","meaning":"excuse","hsk":2,"category":"nouns","examples":["找借口。- Make an excuse."]}
+{"id":"h2_289","character":"谎言","pinyin":"huǎngyán","meaning":"lie/falsehood","hsk":2,"category":"nouns","examples":["不要说谎言。- Don't tell lies."]}
+{"id":"h2_290","character":"事实","pinyin":"shìshí","meaning":"fact","hsk":2,"category":"nouns","examples":["这是事实。- This is a fact."]}
+{"id":"h2_291","character":"理论","pinyin":"lǐlùn","meaning":"theory","hsk":2,"category":"nouns","examples":["科学理论。- Scientific theory."]}
+{"id":"h2_292","character":"实践","pinyin":"shíjiàn","meaning":"practice/action","hsk":2,"category":"nouns","examples":["实践出真知。- Practice makes perfect."]}
+{"id":"h2_293","character":"传统","pinyin":"chuántǒng","meaning":"tradition","hsk":2,"category":"nouns","examples":["尊重传统。- Respect tradition."]}
+{"id":"h2_294","character":"风俗","pinyin":"fēngsú","meaning":"custom","hsk":2,"category":"nouns","examples":["地方风俗。- Local customs."]}
+{"id":"h2_295","character":"文明","pinyin":"wénmíng","meaning":"civilization","hsk":2,"category":"nouns","examples":["古代文明。- Ancient civilization."]}
+{"id":"h2_296","character":"未来","pinyin":"wèilái","meaning":"future","hsk":2,"category":"nouns","examples":["展望未来。- Look to the future."]}
+{"id":"h2_297","character":"背景","pinyin":"bèijǐng","meaning":"background","hsk":2,"category":"nouns","examples":["社会背景。- Social background."]}
+{"id":"h2_298","character":"结构","pinyin":"jiégòu","meaning":"structure","hsk":2,"category":"nouns","examples":["文章结构。- Essay structure."]}
+{"id":"h2_299","character":"功能","pinyin":"gōngnéng","meaning":"function","hsk":2,"category":"nouns","examples":["手机功能。- Phone functions."]}
+{"id":"h2_300","character":"价值","pinyin":"jiàzhí","meaning":"value/worth","hsk":2,"category":"nouns","examples":["很有价值。- Very valuable."]}
+{"id":"h2_301","character":"作用","pinyin":"zuòyòng","meaning":"function/effect","hsk":2,"category":"nouns","examples":["起作用。- Take effect."]}
+{"id":"h2_302","character":"效率","pinyin":"xiàolǜ","meaning":"efficiency","hsk":2,"category":"nouns","examples":["提高效率。- Improve efficiency."]}
+{"id":"h2_303","character":"利润","pinyin":"lìrùn","meaning":"profit","hsk":2,"category":"nouns","examples":["公司利润。- Company profit."]}
+{"id":"h2_304","character":"税收","pinyin":"shuìshōu","meaning":"tax revenue","hsk":2,"category":"nouns","examples":["交税。- Pay taxes."]}
+{"id":"h2_305","character":"收入","pinyin":"shōurù","meaning":"income","hsk":2,"category":"nouns","examples":["月收入。- Monthly income."]}
+{"id":"h2_306","character":"支出","pinyin":"zhīchū","meaning":"expenditure","hsk":2,"category":"nouns","examples":["家庭支出。- Family expenses."]}
+{"id":"h2_307","character":"财产","pinyin":"cáichǎn","meaning":"property/assets","hsk":2,"category":"nouns","examples":["保护财产。- Protect property."]}
+{"id":"h2_308","character":"财富","pinyin":"cáifù","meaning":"wealth","hsk":2,"category":"nouns","examples":["创造财富。- Create wealth."]}
+{"id":"h2_309","character":"勇敢","pinyin":"yǒnggǎn","meaning":"brave","hsk":2,"category":"adjectives","examples":["他真勇敢。- He is so brave."]}
+{"id":"h2_310","character":"善良","pinyin":"shànliáng","meaning":"kindhearted","hsk":2,"category":"adjectives","examples":["她很善良。- She is kind."]}
+{"id":"h2_311","character":"诚实","pinyin":"chéngshí","meaning":"honest","hsk":2,"category":"adjectives","examples":["诚实的人。- Honest person."]}
+{"id":"h2_312","character":"自私","pinyin":"zìsī","meaning":"selfish","hsk":2,"category":"adjectives","examples":["他很自私。- He is selfish."]}
+{"id":"h2_313","character":"大方","pinyin":"dàfang","meaning":"generous","hsk":2,"category":"adjectives","examples":["很大方。- Very generous."]}
+{"id":"h2_314","character":"小气","pinyin":"xiǎoqì","meaning":"stingy","hsk":2,"category":"adjectives","examples":["很小气。- Very stingy."]}
+{"id":"h2_315","character":"幽默","pinyin":"yōumò","meaning":"humorous","hsk":2,"category":"adjectives","examples":["他很幽默。- He is humorous."]}
+{"id":"h2_316","character":"温柔","pinyin":"wēnróu","meaning":"gentle/tender","hsk":2,"category":"adjectives","examples":["她很温柔。- She is gentle."]}
+{"id":"h2_317","character":"凶狠","pinyin":"xiōnghěn","meaning":"fierce/cruel","hsk":2,"category":"adjectives","examples":["老虎很凶狠。- Tigers are fierce."]}
+{"id":"h2_318","character":"成熟","pinyin":"chéngshú","meaning":"mature","hsk":2,"category":"adjectives","examples":["他很成熟。- He is mature."]}
+{"id":"h2_319","character":"幼稚","pinyin":"yòuzhì","meaning":"childish/naive","hsk":2,"category":"adjectives","examples":["很幼稚。- Very childish."]}
+{"id":"h2_320","character":"主动","pinyin":"zhǔdòng","meaning":"taking initiative","hsk":2,"category":"adjectives","examples":["主动联系。- Take initiative to contact."]}
+{"id":"h2_321","character":"被动","pinyin":"bèidòng","meaning":"passive","hsk":2,"category":"adjectives","examples":["被动等待。- Passively waiting."]}
+{"id":"h2_322","character":"乐观","pinyin":"lèguān","meaning":"optimistic","hsk":2,"category":"adjectives","examples":["乐观的态度。- Optimistic attitude."]}
+{"id":"h2_323","character":"悲观","pinyin":"bēiguān","meaning":"pessimistic","hsk":2,"category":"adjectives","examples":["不要悲观。- Don't be pessimistic."]}
+{"id":"h2_324","character":"粗糙","pinyin":"cūcāo","meaning":"rough/coarse","hsk":2,"category":"adjectives","examples":["表面粗糙。- Surface is rough."]}
+{"id":"h2_325","character":"光滑","pinyin":"guānghuá","meaning":"smooth","hsk":2,"category":"adjectives","examples":["皮肤光滑。- Skin is smooth."]}
+{"id":"h2_326","character":"模糊","pinyin":"móhu","meaning":"blurry/vague","hsk":2,"category":"adjectives","examples":["照片模糊了。- Photo is blurry."]}
+{"id":"h2_327","character":"清晰","pinyin":"qīngxī","meaning":"clear/distinct","hsk":2,"category":"adjectives","examples":["图像清晰。- Image is clear."]}
+{"id":"h2_328","character":"明显","pinyin":"míngxiǎn","meaning":"obvious","hsk":2,"category":"adjectives","examples":["很明显。- Very obvious."]}
+{"id":"h2_329","character":"暗中","pinyin":"ànzhōng","meaning":"in secret","hsk":2,"category":"adjectives","examples":["暗中观察。- Secretly observe."]}
+{"id":"h2_330","character":"自然","pinyin":"zìrán","meaning":"natural","hsk":2,"category":"adjectives","examples":["自然美。- Natural beauty."]}
+{"id":"h2_331","character":"人造","pinyin":"rénzào","meaning":"artificial","hsk":2,"category":"adjectives","examples":["人造卫星。- Artificial satellite."]}
+{"id":"h2_332","character":"抽象","pinyin":"chōuxiàng","meaning":"abstract","hsk":2,"category":"adjectives","examples":["抽象画。- Abstract painting."]}
+{"id":"h2_333","character":"具体","pinyin":"jùtǐ","meaning":"specific/concrete","hsk":2,"category":"adjectives","examples":["具体说明。- Specific explanation."]}
+{"id":"h2_334","character":"灵活","pinyin":"línghuó","meaning":"flexible","hsk":2,"category":"adjectives","examples":["头脑灵活。- Flexible mind."]}
+{"id":"h2_335","character":"呆板","pinyin":"dāibǎn","meaning":"stiff/inflexible","hsk":2,"category":"adjectives","examples":["表情呆板。- Stiff expression."]}
+{"id":"h2_336","character":"镇静","pinyin":"zhènjìng","meaning":"calm/composed","hsk":2,"category":"adjectives","examples":["保持镇静。- Stay calm."]}
+{"id":"h2_337","character":"慌乱","pinyin":"huāngluàn","meaning":"flustered","hsk":2,"category":"adjectives","examples":["不要慌乱。- Don't panic."]}
+{"id":"h2_338","character":"稍微","pinyin":"shāowēi","meaning":"slightly/a bit","hsk":2,"category":"adverbs","examples":["稍微等一下。- Wait a moment."]}
+{"id":"h2_339","character":"几乎","pinyin":"jīhū","meaning":"almost","hsk":2,"category":"adverbs","examples":["几乎忘了。- Almost forgot."]}
+{"id":"h2_340","character":"差点","pinyin":"chàdiǎn","meaning":"almost/nearly","hsk":2,"category":"adverbs","examples":["差点迟到。- Almost late."]}
+{"id":"h2_341","character":"简直","pinyin":"jiǎnzhí","meaning":"simply/absolutely","hsk":2,"category":"adverbs","examples":["简直太美了！- Absolutely beautiful!"]}
+{"id":"h2_342","character":"根本","pinyin":"gēnběn","meaning":"fundamentally/at all","hsk":2,"category":"adverbs","examples":["根本不知道。- Don't know at all."]}
+{"id":"h2_343","character":"完全","pinyin":"wánquán","meaning":"completely","hsk":2,"category":"adverbs","examples":["完全同意。- Completely agree."]}
+{"id":"h2_344","character":"绝对","pinyin":"juéduì","meaning":"absolutely","hsk":2,"category":"adverbs","examples":["绝对正确。- Absolutely correct."]}
+{"id":"h2_345","character":"互相","pinyin":"hùxiāng","meaning":"mutually/each other","hsk":2,"category":"adverbs","examples":["互相帮助。- Help each other."]}
+{"id":"h2_346","character":"亲自","pinyin":"qīnzì","meaning":"personally/oneself","hsk":2,"category":"adverbs","examples":["亲自去看看。- Go see in person."]}
+{"id":"h2_347","character":"单独","pinyin":"dāndú","meaning":"alone/individually","hsk":2,"category":"adverbs","examples":["单独谈谈。- Talk alone."]}
+{"id":"h2_348","character":"故意","pinyin":"gùyì","meaning":"deliberately","hsk":2,"category":"adverbs","examples":["故意不理我。- Deliberately ignored me."]}
+{"id":"h2_349","character":"偶尔","pinyin":"ǒuěr","meaning":"occasionally","hsk":2,"category":"adverbs","examples":["偶尔去一次。- Go occasionally."]}
+{"id":"h2_350","character":"逐渐","pinyin":"zhújiàn","meaning":"gradually","hsk":2,"category":"adverbs","examples":["逐渐变冷了。- Gradually getting colder."]}
+{"id":"h2_351","character":"渐渐","pinyin":"jiànjiàn","meaning":"gradually","hsk":2,"category":"adverbs","examples":["渐渐明白了。- Gradually understood."]}
+{"id":"h2_352","character":"到底","pinyin":"dàodǐ","meaning":"after all/in the end","hsk":2,"category":"adverbs","examples":["你到底想怎样？- What do you want?"]}
+{"id":"h2_353","character":"反正","pinyin":"fǎnzhèng","meaning":"anyway/anyhow","hsk":2,"category":"adverbs","examples":["反正我不去。- I'm not going anyway."]}
+{"id":"h2_354","character":"至少","pinyin":"zhìshǎo","meaning":"at least","hsk":2,"category":"adverbs","examples":["至少努力过。- At least I tried."]}
+{"id":"h2_355","character":"尤其","pinyin":"yóuqí","meaning":"especially","hsk":2,"category":"adverbs","examples":["尤其喜欢这个。- Especially like this."]}
+{"id":"h2_356","character":"似乎","pinyin":"sìhū","meaning":"seemingly","hsk":2,"category":"adverbs","examples":["似乎不太对。- Seems not quite right."]}
+{"id":"h2_357","character":"反而","pinyin":"fǎnér","meaning":"instead/on the contrary","hsk":2,"category":"adverbs","examples":["不但没成功，反而更糟了。- Instead of succeeding, it got worse."]}
+{"id":"h2_358","character":"偏偏","pinyin":"piānpiān","meaning":"contrary to expectations","hsk":2,"category":"adverbs","examples":["偏偏下雨了。- It just had to rain."]}
+{"id":"h2_359","character":"果然","pinyin":"guǒrán","meaning":"as expected","hsk":2,"category":"adverbs","examples":["你果然来了。- You came as expected."]}
+{"id":"h2_360","character":"竟然","pinyin":"jìngrán","meaning":"unexpectedly","hsk":2,"category":"adverbs","examples":["他竟然成功了！- He unexpectedly succeeded!"]}
+{"id":"h2_361","character":"因此","pinyin":"yīncǐ","meaning":"therefore","hsk":2,"category":"conjunctions","examples":["因此他走了。- Therefore he left."]}
+{"id":"h2_362","character":"然而","pinyin":"ránér","meaning":"however","hsk":2,"category":"conjunctions","examples":["然而我不相信。- However I don't believe."]}
+{"id":"h2_363","character":"否则","pinyin":"fǒuzé","meaning":"otherwise","hsk":2,"category":"conjunctions","examples":["快点，否则迟到了。- Hurry, otherwise late."]}
+{"id":"h2_364","character":"除非","pinyin":"chúfēi","meaning":"unless","hsk":2,"category":"conjunctions","examples":["除非下雨。- Unless it rains."]}
+{"id":"h2_365","character":"只要","pinyin":"zhǐyào","meaning":"as long as","hsk":2,"category":"conjunctions","examples":["只要努力就会成功。- As long as you try you'll succeed."]}
+{"id":"h2_366","character":"只有","pinyin":"zhǐyǒu","meaning":"only if","hsk":2,"category":"conjunctions","examples":["只有你才能帮我。- Only you can help me."]}
+{"id":"h2_367","character":"无论","pinyin":"wúlùn","meaning":"no matter/regardless","hsk":2,"category":"conjunctions","examples":["无论怎样我都支持你。- I support you no matter what."]}
+{"id":"h2_368","character":"既然","pinyin":"jìrán","meaning":"since (given that)","hsk":2,"category":"conjunctions","examples":["既然来了就坐下。- Since you're here, sit down."]}
+{"id":"h2_369","character":"尽管","pinyin":"jǐnguǎn","meaning":"although/despite","hsk":2,"category":"conjunctions","examples":["尽管很累他还在工作。- Although tired he keeps working."]}
+{"id":"h2_370","character":"即使","pinyin":"jíshǐ","meaning":"even if","hsk":2,"category":"conjunctions","examples":["即使下雨我也去。- I'll go even if it rains."]}
+{"id":"h2_371","character":"按照","pinyin":"ànzhào","meaning":"according to","hsk":2,"category":"prepositions","examples":["按照计划执行。- Execute according to plan."]}
+{"id":"h2_372","character":"根据","pinyin":"gēnjù","meaning":"based on/according to","hsk":2,"category":"prepositions","examples":["根据事实判断。- Judge based on facts."]}
+{"id":"h2_373","character":"关于","pinyin":"guānyú","meaning":"about/regarding","hsk":2,"category":"prepositions","examples":["关于这个问题。- About this issue."]}
+{"id":"h2_374","character":"对于","pinyin":"duìyú","meaning":"regarding/towards","hsk":2,"category":"prepositions","examples":["对于我来说。- For me."]}
+{"id":"h2_375","character":"至于","pinyin":"zhìyú","meaning":"as for","hsk":2,"category":"prepositions","examples":["至于你嘛...- As for you..."]}
+{"id":"h2_376","character":"除了","pinyin":"chúle","meaning":"except/besides","hsk":2,"category":"prepositions","examples":["除了我大家都去了。- Everyone went except me."]}
+{"id":"h2_377","character":"通过","pinyin":"tōngguò","meaning":"through/via","hsk":2,"category":"prepositions","examples":["通过考试。- Pass the exam."]}
+{"id":"h2_378","character":"沿着","pinyin":"yánzhe","meaning":"along","hsk":2,"category":"prepositions","examples":["沿着河边走。- Walk along the river."]}
+{"id":"h2_379","character":"朝","pinyin":"cháo","meaning":"towards/facing","hsk":2,"category":"prepositions","examples":["朝前走。- Go forward."]}
+{"id":"h2_380","character":"向","pinyin":"xiàng","meaning":"towards/to","hsk":2,"category":"prepositions","examples":["向他学习。- Learn from him."]}
+{"id":"h2_381","character":"替","pinyin":"tì","meaning":"for/on behalf of","hsk":2,"category":"prepositions","examples":["替我问好。- Say hello for me."]}
+{"id":"h2_382","character":"趁","pinyin":"chèn","meaning":"while/taking advantage of","hsk":2,"category":"prepositions","examples":["趁热吃。- Eat while hot."]}
+{"id":"h2_383","character":"凭","pinyin":"píng","meaning":"by/with/depending on","hsk":2,"category":"prepositions","examples":["凭本事。- By ability."]}
+{"id":"h2_384","character":"长江","pinyin":"Cháng Jiāng","meaning":"Yangtze River","hsk":2,"category":"places","examples":["长江很长。- Yangtze is long."]}
+{"id":"h2_385","character":"长城","pinyin":"Chángchéng","meaning":"Great Wall","hsk":2,"category":"places","examples":["去长城玩。- Visit the Great Wall."]}
+{"id":"h2_386","character":"故宫","pinyin":"Gùgōng","meaning":"Forbidden City","hsk":2,"category":"places","examples":["故宫在北京。- Forbidden City is in Beijing."]}
+{"id":"h2_387","character":"天安门","pinyin":"Tiānānmén","meaning":"Tiananmen","hsk":2,"category":"places","examples":["去天安门。- Go to Tiananmen."]}
+{"id":"h2_388","character":"上海","pinyin":"Shànghǎi","meaning":"Shanghai","hsk":2,"category":"places","examples":["上海很大。- Shanghai is big."]}
+{"id":"h2_389","character":"广州","pinyin":"Guǎngzhōu","meaning":"Guangzhou","hsk":2,"category":"places","examples":["广州很热。- Guangzhou is hot."]}
+{"id":"h2_390","character":"深圳","pinyin":"Shēnzhèn","meaning":"Shenzhen","hsk":2,"category":"places","examples":["深圳发展很快。- Shenzhen develops fast."]}
+{"id":"h2_391","character":"香港","pinyin":"Xiānggǎng","meaning":"Hong Kong","hsk":2,"category":"places","examples":["去香港购物。- Shop in Hong Kong."]}
+{"id":"h2_392","character":"台湾","pinyin":"Táiwān","meaning":"Taiwan","hsk":2,"category":"places","examples":["台湾很美。- Taiwan is beautiful."]}
+{"id":"h2_393","character":"日本","pinyin":"Rìběn","meaning":"Japan","hsk":2,"category":"places","examples":["去日本旅游。- Travel to Japan."]}
+{"id":"h2_394","character":"韩国","pinyin":"Hánguó","meaning":"South Korea","hsk":2,"category":"places","examples":["韩国泡菜。- Korean kimchi."]}
+{"id":"h2_395","character":"美国","pinyin":"Měiguó","meaning":"America/USA","hsk":2,"category":"places","examples":["美国很大。- America is big."]}
+{"id":"h2_396","character":"英国","pinyin":"Yīngguó","meaning":"England/UK","hsk":2,"category":"places","examples":["英国在哪儿？- Where is the UK?"]}
+{"id":"h2_397","character":"法国","pinyin":"Fǎguó","meaning":"France","hsk":2,"category":"places","examples":["法国巴黎。- Paris, France."]}
+{"id":"h2_398","character":"德国","pinyin":"Déguó","meaning":"Germany","hsk":2,"category":"places","examples":["德国汽车很好。- German cars are good."]}
+{"id":"h2_399","character":"印度","pinyin":"Yìndù","meaning":"India","hsk":2,"category":"places","examples":["印度人口很多。- India has a big population."]}
+{"id":"h2_400","character":"角落","pinyin":"jiǎoluò","meaning":"corner","hsk":2,"category":"places","examples":["在角落里。- In the corner."]}
+{"id":"h2_401","character":"周围","pinyin":"zhōuwéi","meaning":"surroundings","hsk":2,"category":"places","examples":["周围很安静。- The surroundings are quiet."]}
+{"id":"h2_402","character":"区域","pinyin":"qūyù","meaning":"area/region","hsk":2,"category":"places","examples":["这个区域。- This area."]}
+{"id":"h2_403","character":"地址","pinyin":"dìzhǐ","meaning":"address","hsk":2,"category":"places","examples":["请给我地址。- Please give me the address."]}
+{"id":"h2_404","character":"位置","pinyin":"wèizhì","meaning":"position/location","hsk":2,"category":"places","examples":["这个位置很好。- This location is good."]}
+{"id":"h2_405","character":"菜单","pinyin":"càidān","meaning":"menu","hsk":2,"category":"food","examples":["请看菜单。- Please see the menu."]}
+{"id":"h2_406","character":"点菜","pinyin":"diǎncài","meaning":"to order food","hsk":2,"category":"food","examples":["请点菜。- Please order."]}
+{"id":"h2_407","character":"买单","pinyin":"mǎidān","meaning":"to pay the bill","hsk":2,"category":"food","examples":["服务员，买单！- Waiter, check please!"]}
+{"id":"h2_408","character":"外卖","pinyin":"wàimài","meaning":"takeout/delivery","hsk":2,"category":"food","examples":["叫外卖。- Order takeout."]}
+{"id":"h2_409","character":"自助","pinyin":"zìzhù","meaning":"self-service/buffet","hsk":2,"category":"food","examples":["自助餐。- Buffet."]}
+{"id":"h2_410","character":"火锅","pinyin":"huǒguō","meaning":"hotpot","hsk":2,"category":"food","examples":["吃火锅。- Eat hotpot."]}
+{"id":"h2_411","character":"烧烤","pinyin":"shāokǎo","meaning":"barbecue","hsk":2,"category":"food","examples":["烤肉烧烤。- BBQ."]}
+{"id":"h2_412","character":"素菜","pinyin":"sùcài","meaning":"vegetarian dish","hsk":2,"category":"food","examples":["我吃素菜。- I eat vegetarian."]}
+{"id":"h2_413","character":"荤菜","pinyin":"hūncài","meaning":"meat dish","hsk":2,"category":"food","examples":["荤菜太多了。- Too many meat dishes."]}
+{"id":"h2_414","character":"海鲜","pinyin":"hǎixiān","meaning":"seafood","hsk":2,"category":"food","examples":["海鲜很新鲜。- Seafood is fresh."]}
+{"id":"h2_415","character":"点心","pinyin":"diǎnxin","meaning":"dim sum/snack","hsk":2,"category":"food","examples":["广东点心。- Cantonese dim sum."]}
+{"id":"h2_416","character":"早餐","pinyin":"zǎocān","meaning":"breakfast","hsk":2,"category":"food","examples":["吃早餐。- Eat breakfast."]}
+{"id":"h2_417","character":"午餐","pinyin":"wǔcān","meaning":"lunch","hsk":2,"category":"food","examples":["午餐吃什么？- What for lunch?"]}
+{"id":"h2_418","character":"晚餐","pinyin":"wǎncān","meaning":"dinner","hsk":2,"category":"food","examples":["晚餐准备好了。- Dinner is ready."]}
+{"id":"h2_419","character":"剩饭","pinyin":"shèngfàn","meaning":"leftovers","hsk":2,"category":"food","examples":["吃剩饭。- Eat leftovers."]}
+{"id":"h2_420","character":"打包","pinyin":"dǎbāo","meaning":"to pack/to-go","hsk":2,"category":"food","examples":["打包带走。- Pack to go."]}
+{"id":"h2_421","character":"口味","pinyin":"kǒuwèi","meaning":"taste/flavor preference","hsk":2,"category":"food","examples":["口味很重。- Strong flavor."]}
+{"id":"h2_422","character":"味道","pinyin":"wèidào","meaning":"taste/flavor","hsk":2,"category":"food","examples":["味道很好。- Tastes great."]}
+{"id":"h2_423","character":"油腻","pinyin":"yóunì","meaning":"greasy/oily","hsk":2,"category":"food","examples":["太油腻了。- Too greasy."]}
+{"id":"h2_424","character":"疾病","pinyin":"jíbìng","meaning":"disease/illness","hsk":2,"category":"health","examples":["预防疾病。- Prevent disease."]}
+{"id":"h2_425","character":"症状","pinyin":"zhèngzhuàng","meaning":"symptom","hsk":2,"category":"health","examples":["有什么症状？- What symptoms?"]}
+{"id":"h2_426","character":"诊所","pinyin":"zhěnsuǒ","meaning":"clinic","hsk":2,"category":"health","examples":["去诊所看病。- Go to clinic."]}
+{"id":"h2_427","character":"手术","pinyin":"shǒushù","meaning":"surgery","hsk":2,"category":"health","examples":["做手术。- Undergo surgery."]}
+{"id":"h2_428","character":"处方","pinyin":"chǔfāng","meaning":"prescription","hsk":2,"category":"health","examples":["医生开处方。- Doctor writes prescription."]}
+{"id":"h2_429","character":"急救","pinyin":"jíjiù","meaning":"first aid","hsk":2,"category":"health","examples":["叫急救。- Call emergency."]}
+{"id":"h2_430","character":"疫苗","pinyin":"yìmiáo","meaning":"vaccine","hsk":2,"category":"health","examples":["打疫苗。- Get vaccinated."]}
+{"id":"h2_431","character":"康复","pinyin":"kāngfù","meaning":"to recover","hsk":2,"category":"health","examples":["祝早日康复！- Get well soon!"]}
+{"id":"h2_432","character":"疲劳","pinyin":"píláo","meaning":"fatigue","hsk":2,"category":"health","examples":["感觉很疲劳。- Feel very tired."]}
+{"id":"h2_433","character":"失眠","pinyin":"shīmián","meaning":"insomnia","hsk":2,"category":"health","examples":["我失眠了。- I have insomnia."]}
+{"id":"h2_434","character":"按摩","pinyin":"ànmó","meaning":"massage","hsk":2,"category":"health","examples":["做按摩。- Get a massage."]}
+{"id":"h2_435","character":"体检","pinyin":"tǐjiǎn","meaning":"health checkup","hsk":2,"category":"health","examples":["每年体检。- Annual checkup."]}
+{"id":"h2_436","character":"血压","pinyin":"xuèyā","meaning":"blood pressure","hsk":2,"category":"health","examples":["量血压。- Measure blood pressure."]}
+{"id":"h2_437","character":"减肥","pinyin":"jiǎnféi","meaning":"to lose weight","hsk":2,"category":"health","examples":["减肥中。- Losing weight."]}
+{"id":"h2_438","character":"增肥","pinyin":"zēngféi","meaning":"to gain weight","hsk":2,"category":"health","examples":["想增肥。- Want to gain weight."]}
+{"id":"h2_439","character":"营养","pinyin":"yíngyǎng","meaning":"nutrition","hsk":2,"category":"health","examples":["营养丰富。- Nutritious."]}
+{"id":"h2_440","character":"健身","pinyin":"jiànshēn","meaning":"fitness/bodybuilding","hsk":2,"category":"health","examples":["去健身。- Go exercise."]}
+{"id":"h2_441","character":"瑜伽","pinyin":"yújiā","meaning":"yoga","hsk":2,"category":"health","examples":["练瑜伽。- Practice yoga."]}
+{"id":"h2_442","character":"太极","pinyin":"tàijí","meaning":"tai chi","hsk":2,"category":"health","examples":["打太极。- Do tai chi."]}
+{"id":"h2_443","character":"现金","pinyin":"xiànjīn","meaning":"cash","hsk":2,"category":"shopping","examples":["付现金。- Pay in cash."]}
+{"id":"h2_444","character":"刷卡","pinyin":"shuākǎ","meaning":"to swipe card","hsk":2,"category":"shopping","examples":["刷卡支付。- Pay by card."]}
+{"id":"h2_445","character":"打折","pinyin":"dǎzhé","meaning":"discount","hsk":2,"category":"shopping","examples":["打五折。- 50% off."]}
+{"id":"h2_446","character":"促销","pinyin":"cùxiāo","meaning":"promotion/sale","hsk":2,"category":"shopping","examples":["大促销！- Big sale!"]}
+{"id":"h2_447","character":"退货","pinyin":"tuìhuò","meaning":"to return goods","hsk":2,"category":"shopping","examples":["退货退款。- Return for refund."]}
+{"id":"h2_448","character":"保修","pinyin":"bǎoxiū","meaning":"warranty","hsk":2,"category":"shopping","examples":["一年保修。- One year warranty."]}
+{"id":"h2_449","character":"会员","pinyin":"huìyuán","meaning":"member","hsk":2,"category":"shopping","examples":["办会员卡。- Get a membership card."]}
+{"id":"h2_450","character":"积分","pinyin":"jīfēn","meaning":"points/credits","hsk":2,"category":"shopping","examples":["积分兑换。- Redeem points."]}
+{"id":"h2_451","character":"收费","pinyin":"shōufèi","meaning":"to charge fee","hsk":2,"category":"shopping","examples":["免费不收费。- Free, no charge."]}
+{"id":"h2_452","character":"发票","pinyin":"fāpiào","meaning":"receipt/invoice","hsk":2,"category":"shopping","examples":["请开发票。- Please issue invoice."]}
+{"id":"h2_453","character":"零钱","pinyin":"língqián","meaning":"change (small money)","hsk":2,"category":"shopping","examples":["找你零钱。- Here is your change."]}
+{"id":"h2_454","character":"取款","pinyin":"qǔkuǎn","meaning":"to withdraw money","hsk":2,"category":"shopping","examples":["去银行取款。- Withdraw at bank."]}
+{"id":"h2_455","character":"转账","pinyin":"zhuǎnzhàng","meaning":"to transfer money","hsk":2,"category":"shopping","examples":["网上转账。- Online transfer."]}
+{"id":"h2_456","character":"汇率","pinyin":"huìlǜ","meaning":"exchange rate","hsk":2,"category":"shopping","examples":["美元汇率。- Dollar exchange rate."]}
+{"id":"h2_457","character":"利息","pinyin":"lìxī","meaning":"interest (financial)","hsk":2,"category":"shopping","examples":["存款利息。- Savings interest."]}
+{"id":"h2_458","character":"存款","pinyin":"cúnkuǎn","meaning":"deposit/savings","hsk":2,"category":"shopping","examples":["银行存款。- Bank deposit."]}
+{"id":"h2_459","character":"贷款","pinyin":"dàikuǎn","meaning":"loan","hsk":2,"category":"shopping","examples":["申请贷款。- Apply for loan."]}
+{"id":"h2_460","character":"预算","pinyin":"yùsuàn","meaning":"budget","hsk":2,"category":"shopping","examples":["制定预算。- Set a budget."]}
+{"id":"h2_461","character":"余额","pinyin":"yúé","meaning":"balance/remaining","hsk":2,"category":"shopping","examples":["账户余额。- Account balance."]}
+{"id":"h2_462","character":"欠","pinyin":"qiàn","meaning":"to owe","hsk":2,"category":"shopping","examples":["欠你十块。- I owe you ten."]}
+{"id":"h2_463","character":"领导","pinyin":"lǐngdǎo","meaning":"leader/boss","hsk":2,"category":"business","examples":["向领导回报。- Report to the boss."]}
+{"id":"h2_464","character":"部门","pinyin":"bùmén","meaning":"department","hsk":2,"category":"business","examples":["哪个部门？- Which department?"]}
+{"id":"h2_465","character":"同事","pinyin":"tóngshì","meaning":"colleague","hsk":2,"category":"business","examples":["和同事合作。- Cooperate with colleagues."]}
+{"id":"h2_466","character":"客户","pinyin":"kèhù","meaning":"client/customer","hsk":2,"category":"business","examples":["服务客户。- Serve clients."]}
+{"id":"h2_467","character":"谈判","pinyin":"tánpàn","meaning":"negotiation","hsk":2,"category":"business","examples":["商务谈判。- Business negotiation."]}
+{"id":"h2_468","character":"合同","pinyin":"hétong","meaning":"contract","hsk":2,"category":"business","examples":["签合同。- Sign contract."]}
+{"id":"h2_469","character":"投资","pinyin":"tóuzī","meaning":"investment","hsk":2,"category":"business","examples":["投资项目。- Invest in project."]}
+{"id":"h2_470","character":"招聘","pinyin":"zhāopìn","meaning":"to recruit/hire","hsk":2,"category":"business","examples":["招聘员工。- Recruit employees."]}
+{"id":"h2_471","character":"辞职","pinyin":"cízhí","meaning":"to resign","hsk":2,"category":"business","examples":["我想辞职。- I want to resign."]}
+{"id":"h2_472","character":"失业","pinyin":"shīyè","meaning":"unemployment","hsk":2,"category":"business","examples":["他失业了。- He lost his job."]}
+{"id":"h2_473","character":"加班","pinyin":"jiābān","meaning":"overtime","hsk":2,"category":"business","examples":["今天加班。- Work overtime today."]}
+{"id":"h2_474","character":"升职","pinyin":"shēngzhí","meaning":"promotion","hsk":2,"category":"business","examples":["他升职了。- He got promoted."]}
+{"id":"h2_475","character":"创业","pinyin":"chuàngyè","meaning":"to start a business","hsk":2,"category":"business","examples":["自主创业。- Start own business."]}
+{"id":"h2_476","character":"行业","pinyin":"hángyè","meaning":"industry/trade","hsk":2,"category":"business","examples":["这个行业很好。- This industry is good."]}
+{"id":"h2_477","character":"工资","pinyin":"gōngzī","meaning":"salary","hsk":2,"category":"business","examples":["发工资了。- Got paid."]}
+{"id":"h2_478","character":"奖金","pinyin":"jiǎngjīn","meaning":"bonus","hsk":2,"category":"business","examples":["年终奖金。- Year-end bonus."]}
+{"id":"h2_479","character":"退休","pinyin":"tuìxiū","meaning":"retirement","hsk":2,"category":"business","examples":["退休生活。- Retirement life."]}
+{"id":"h2_480","character":"开会","pinyin":"kāihuì","meaning":"to hold a meeting","hsk":2,"category":"business","examples":["下午开会。- Meeting in the afternoon."]}
+{"id":"h2_481","character":"报告","pinyin":"bàogào","meaning":"report","hsk":2,"category":"business","examples":["写报告。- Write report."]}
+{"id":"h2_482","character":"任务","pinyin":"rènwu","meaning":"task/mission","hsk":2,"category":"business","examples":["完成任务。- Complete the task."]}
+{"id":"h2_483","character":"行李","pinyin":"xíngli","meaning":"luggage","hsk":2,"category":"travel","examples":["拿行李。- Get luggage."]}
+{"id":"h2_484","character":"护照","pinyin":"hùzhào","meaning":"passport","hsk":2,"category":"travel","examples":["带护照。- Bring passport."]}
+{"id":"h2_485","character":"签证","pinyin":"qiānzhèng","meaning":"visa","hsk":2,"category":"travel","examples":["办签证。- Apply for visa."]}
+{"id":"h2_486","character":"航班","pinyin":"hángbān","meaning":"flight","hsk":2,"category":"travel","examples":["航班延误了。- Flight is delayed."]}
+{"id":"h2_487","character":"登机","pinyin":"dēngjī","meaning":"to board a plane","hsk":2,"category":"travel","examples":["开始登机。- Now boarding."]}
+{"id":"h2_488","character":"转机","pinyin":"zhuǎnjī","meaning":"to transfer flights","hsk":2,"category":"travel","examples":["在北京转机。- Transfer in Beijing."]}
+{"id":"h2_489","character":"海关","pinyin":"hǎiguān","meaning":"customs","hsk":2,"category":"travel","examples":["过海关。- Go through customs."]}
+{"id":"h2_490","character":"免税","pinyin":"miǎnshuì","meaning":"duty-free","hsk":2,"category":"travel","examples":["免税店。- Duty-free shop."]}
+{"id":"h2_491","character":"酒店","pinyin":"jiǔdiàn","meaning":"hotel","hsk":2,"category":"travel","examples":["住酒店。- Stay at hotel."]}
+{"id":"h2_492","character":"预订","pinyin":"yùdìng","meaning":"to reserve/book","hsk":2,"category":"travel","examples":["预订酒店。- Book hotel."]}
+{"id":"h2_493","character":"入住","pinyin":"rùzhù","meaning":"to check in","hsk":2,"category":"travel","examples":["办理入住。- Check in."]}
+{"id":"h2_494","character":"退房","pinyin":"tuìfáng","meaning":"to check out","hsk":2,"category":"travel","examples":["退房时间。- Check-out time."]}
+{"id":"h2_495","character":"导游","pinyin":"dǎoyóu","meaning":"tour guide","hsk":2,"category":"travel","examples":["导游带我们。- The guide leads us."]}
+{"id":"h2_496","character":"景点","pinyin":"jǐngdiǎn","meaning":"tourist spot","hsk":2,"category":"travel","examples":["热门景点。- Popular spot."]}
+{"id":"h2_497","character":"纪念品","pinyin":"jìniànpǐn","meaning":"souvenir","hsk":2,"category":"travel","examples":["买纪念品。- Buy souvenirs."]}
+{"id":"h2_498","character":"摄影","pinyin":"shèyǐng","meaning":"photography","hsk":2,"category":"travel","examples":["爱好摄影。- Like photography."]}
+{"id":"h2_499","character":"自驾","pinyin":"zìjià","meaning":"self-driving","hsk":2,"category":"travel","examples":["自驾游。- Self-drive tour."]}
+{"id":"h2_500","character":"露营","pinyin":"lùyíng","meaning":"camping","hsk":2,"category":"travel","examples":["去露营。- Go camping."]}
+{"id":"h2_501","character":"登山","pinyin":"dēngshān","meaning":"mountain climbing","hsk":2,"category":"travel","examples":["登山很累。- Climbing is tiring."]}
+{"id":"h2_502","character":"海滩","pinyin":"hǎitān","meaning":"beach","hsk":2,"category":"travel","examples":["去海滩玩。- Go to the beach."]}
+{"id":"h2_503","character":"专业","pinyin":"zhuānyè","meaning":"major/specialty","hsk":2,"category":"education","examples":["我的专业是计算机。- My major is CS."]}
+{"id":"h2_504","character":"学历","pinyin":"xuélì","meaning":"academic degree","hsk":2,"category":"education","examples":["高学历。- High degree."]}
+{"id":"h2_505","character":"毕业","pinyin":"bìyè","meaning":"to graduate","hsk":2,"category":"education","examples":["大学毕业。- Graduate from college."]}
+{"id":"h2_506","character":"入学","pinyin":"rùxué","meaning":"to enroll","hsk":2,"category":"education","examples":["入学考试。- Entrance exam."]}
+{"id":"h2_507","character":"留学","pinyin":"liúxué","meaning":"to study abroad","hsk":2,"category":"education","examples":["出国留学。- Study abroad."]}
+{"id":"h2_508","character":"讲座","pinyin":"jiǎngzuò","meaning":"lecture","hsk":2,"category":"education","examples":["参加讲座。- Attend lecture."]}
+{"id":"h2_509","character":"论文","pinyin":"lùnwén","meaning":"thesis/paper","hsk":2,"category":"education","examples":["写论文。- Write thesis."]}
+{"id":"h2_510","character":"笔记","pinyin":"bǐjì","meaning":"notes","hsk":2,"category":"education","examples":["做笔记。- Take notes."]}
+{"id":"h2_511","character":"语法","pinyin":"yǔfǎ","meaning":"grammar","hsk":2,"category":"education","examples":["中文语法。- Chinese grammar."]}
+{"id":"h2_512","character":"词汇","pinyin":"cíhuì","meaning":"vocabulary","hsk":2,"category":"education","examples":["扩大词汇量。- Expand vocabulary."]}
+{"id":"h2_513","character":"读音","pinyin":"dúyīn","meaning":"pronunciation","hsk":2,"category":"education","examples":["标准读音。- Standard pronunciation."]}
+{"id":"h2_514","character":"汉字","pinyin":"hànzì","meaning":"Chinese characters","hsk":2,"category":"education","examples":["写汉字。- Write characters."]}
+{"id":"h2_515","character":"听力","pinyin":"tīnglì","meaning":"listening comprehension","hsk":2,"category":"education","examples":["练听力。- Practice listening."]}
+{"id":"h2_516","character":"口语","pinyin":"kǒuyǔ","meaning":"spoken language","hsk":2,"category":"education","examples":["练口语。- Practice speaking."]}
+{"id":"h2_517","character":"写作","pinyin":"xiězuò","meaning":"writing/composition","hsk":2,"category":"education","examples":["写作能力。- Writing ability."]}
+{"id":"h2_518","character":"学期","pinyin":"xuéqī","meaning":"semester","hsk":2,"category":"education","examples":["这个学期。- This semester."]}
+{"id":"h2_519","character":"寒假","pinyin":"hánjià","meaning":"winter break","hsk":2,"category":"education","examples":["放寒假。- Winter break."]}
+{"id":"h2_520","character":"暑假","pinyin":"shǔjià","meaning":"summer break","hsk":2,"category":"education","examples":["过暑假。- Summer break."]}
+{"id":"h2_521","character":"感动","pinyin":"gǎndòng","meaning":"to be moved/touched","hsk":2,"category":"emotions","examples":["很感动。- Very moved."]}
+{"id":"h2_522","character":"激动","pinyin":"jīdòng","meaning":"excited","hsk":2,"category":"emotions","examples":["太激动了！- So excited!"]}
+{"id":"h2_523","character":"惊讶","pinyin":"jīngyà","meaning":"surprised/amazed","hsk":2,"category":"emotions","examples":["很惊讶。- Very surprised."]}
+{"id":"h2_524","character":"愤怒","pinyin":"fènnù","meaning":"anger/furious","hsk":2,"category":"emotions","examples":["愤怒的群众。- Angry crowd."]}
+{"id":"h2_525","character":"恐惧","pinyin":"kǒngjù","meaning":"fear/dread","hsk":2,"category":"emotions","examples":["内心恐惧。- Inner fear."]}
+{"id":"h2_526","character":"孤独","pinyin":"gūdú","meaning":"lonely","hsk":2,"category":"emotions","examples":["很孤独。- Very lonely."]}
+{"id":"h2_527","character":"寂寞","pinyin":"jìmò","meaning":"lonely/desolate","hsk":2,"category":"emotions","examples":["感到寂寞。- Feel lonely."]}
+{"id":"h2_528","character":"思念","pinyin":"sīniàn","meaning":"to miss/yearn","hsk":2,"category":"emotions","examples":["思念家乡。- Miss hometown."]}
+{"id":"h2_529","character":"放松","pinyin":"fàngsōng","meaning":"to relax","hsk":2,"category":"emotions","examples":["放松一下。- Relax a bit."]}
+{"id":"h2_530","character":"愉快","pinyin":"yúkuài","meaning":"pleasant/cheerful","hsk":2,"category":"emotions","examples":["周末愉快！- Pleasant weekend!"]}
+{"id":"h2_531","character":"烦恼","pinyin":"fánnǎo","meaning":"worried/annoyed","hsk":2,"category":"emotions","examples":["别烦恼。- Don't be annoyed."]}
+{"id":"h2_532","character":"兴奋","pinyin":"xīngfèn","meaning":"excited/thrilled","hsk":2,"category":"emotions","examples":["非常兴奋！- Very excited!"]}
+{"id":"h2_533","character":"忧郁","pinyin":"yōuyù","meaning":"melancholy","hsk":2,"category":"emotions","examples":["心情忧郁。- Feeling blue."]}
+{"id":"h2_534","character":"平静","pinyin":"píngjìng","meaning":"calm/peaceful","hsk":2,"category":"emotions","examples":["很平静。- Very calm."]}
+{"id":"h2_535","character":"烦躁","pinyin":"fánzào","meaning":"irritable","hsk":2,"category":"emotions","examples":["天气热让人烦躁。- Hot weather is irritating."]}
+{"id":"h2_536","character":"遗憾","pinyin":"yíhàn","meaning":"regret/pity","hsk":2,"category":"emotions","examples":["真遗憾！- What a pity!"]}
+{"id":"h2_537","character":"期待","pinyin":"qīdài","meaning":"to look forward to","hsk":2,"category":"emotions","examples":["期待见面！- Look forward to meeting!"]}
+{"id":"h2_538","character":"污染","pinyin":"wūrǎn","meaning":"pollution","hsk":2,"category":"environment","examples":["空气污染。- Air pollution."]}
+{"id":"h2_539","character":"环保","pinyin":"huánbǎo","meaning":"environmental protection","hsk":2,"category":"environment","examples":["环保很重要。- Environmental protection is important."]}
+{"id":"h2_540","character":"垃圾","pinyin":"lājī","meaning":"garbage/trash","hsk":2,"category":"environment","examples":["倒垃圾。- Take out trash."]}
+{"id":"h2_541","character":"回收","pinyin":"huíshōu","meaning":"to recycle","hsk":2,"category":"environment","examples":["回收利用。- Recycle."]}
+{"id":"h2_542","character":"节能","pinyin":"jiénéng","meaning":"energy saving","hsk":2,"category":"environment","examples":["节能灯。- Energy-saving lamp."]}
+{"id":"h2_543","character":"气候","pinyin":"qìhòu","meaning":"climate","hsk":2,"category":"environment","examples":["气候变化。- Climate change."]}
+{"id":"h2_544","character":"暴雨","pinyin":"bàoyǔ","meaning":"rainstorm","hsk":2,"category":"environment","examples":["今天有暴雨。- Rainstorm today."]}
+{"id":"h2_545","character":"干旱","pinyin":"gānhàn","meaning":"drought","hsk":2,"category":"environment","examples":["干旱地区。- Drought area."]}
+{"id":"h2_546","character":"洪水","pinyin":"hóngshuǐ","meaning":"flood","hsk":2,"category":"environment","examples":["洪水来了。- Flood coming."]}
+{"id":"h2_547","character":"雾霾","pinyin":"wùmái","meaning":"smog/haze","hsk":2,"category":"environment","examples":["雾霾天气。- Smoggy weather."]}
+{"id":"h2_548","character":"春","pinyin":"chūn","meaning":"spring","hsk":2,"category":"weather","examples":["春暖花开。- Spring flowers bloom."]}
+{"id":"h2_549","character":"夏","pinyin":"xià","meaning":"summer","hsk":2,"category":"weather","examples":["夏日炎炎。- Hot summer days."]}
+{"id":"h2_550","character":"秋","pinyin":"qiū","meaning":"autumn","hsk":2,"category":"weather","examples":["秋高气爽。- Crisp autumn air."]}
+{"id":"h2_551","character":"冬","pinyin":"dōng","meaning":"winter","hsk":2,"category":"weather","examples":["冬雪飘飘。- Winter snow falls."]}
+{"id":"h2_552","character":"季","pinyin":"jì","meaning":"season","hsk":2,"category":"weather","examples":["四季。- Four seasons."]}
+{"id":"h2_553","character":"科技","pinyin":"kējì","meaning":"technology","hsk":2,"category":"technology","examples":["科技发展。- Tech development."]}
+{"id":"h2_554","character":"软件","pinyin":"ruǎnjiàn","meaning":"software","hsk":2,"category":"technology","examples":["安装软件。- Install software."]}
+{"id":"h2_555","character":"硬件","pinyin":"yìngjiàn","meaning":"hardware","hsk":2,"category":"technology","examples":["电脑硬件。- Computer hardware."]}
+{"id":"h2_556","character":"程序","pinyin":"chéngxù","meaning":"program","hsk":2,"category":"technology","examples":["编写程序。- Write programs."]}
+{"id":"h2_557","character":"系统","pinyin":"xìtǒng","meaning":"system","hsk":2,"category":"technology","examples":["操作系统。- Operating system."]}
+{"id":"h2_558","character":"数据","pinyin":"shùjù","meaning":"data","hsk":2,"category":"technology","examples":["数据分析。- Data analysis."]}
+{"id":"h2_559","character":"资料","pinyin":"zīliào","meaning":"materials/data","hsk":2,"category":"technology","examples":["下载资料。- Download materials."]}
+{"id":"h2_560","character":"账号","pinyin":"zhànghào","meaning":"account","hsk":2,"category":"technology","examples":["注册账号。- Register account."]}
+{"id":"h2_561","character":"登录","pinyin":"dēnglù","meaning":"to log in","hsk":2,"category":"technology","examples":["登录系统。- Log in."]}
+{"id":"h2_562","character":"注册","pinyin":"zhùcè","meaning":"to register","hsk":2,"category":"technology","examples":["注册新用户。- Register new user."]}
+{"id":"h2_563","character":"链接","pinyin":"liànjiē","meaning":"link/connection","hsk":2,"category":"technology","examples":["点击链接。- Click the link."]}
+{"id":"h2_564","character":"扫描","pinyin":"sǎomiáo","meaning":"to scan","hsk":2,"category":"technology","examples":["扫描二维码。- Scan QR code."]}
+{"id":"h2_565","character":"更新","pinyin":"gēngxīn","meaning":"to update","hsk":2,"category":"technology","examples":["更新版本。- Update version."]}
+{"id":"h2_566","character":"设置","pinyin":"shèzhì","meaning":"settings","hsk":2,"category":"technology","examples":["打开设置。- Open settings."]}
+{"id":"h2_567","character":"安装","pinyin":"ānzhuāng","meaning":"to install","hsk":2,"category":"technology","examples":["安装软件。- Install software."]}
+{"id":"h2_568","character":"卸载","pinyin":"xièzài","meaning":"to uninstall","hsk":2,"category":"technology","examples":["卸载程序。- Uninstall program."]}
+{"id":"h2_569","character":"病毒","pinyin":"bìngdú","meaning":"virus","hsk":2,"category":"technology","examples":["电脑病毒。- Computer virus."]}
+{"id":"h2_570","character":"黑客","pinyin":"hēikè","meaning":"hacker","hsk":2,"category":"technology","examples":["防止黑客。- Prevent hackers."]}
+{"id":"h2_571","character":"人工智能","pinyin":"réngōng zhìnéng","meaning":"AI","hsk":2,"category":"technology","examples":["人工智能技术。- AI technology."]}
+{"id":"h2_572","character":"芯片","pinyin":"xīnpiàn","meaning":"chip","hsk":2,"category":"technology","examples":["手机芯片。- Phone chip."]}
+{"id":"h2_573","character":"瞬间","pinyin":"shùnjiān","meaning":"in an instant","hsk":2,"category":"time","examples":["一瞬间。- In an instant."]}
+{"id":"h2_574","character":"期间","pinyin":"qījiān","meaning":"period/during","hsk":2,"category":"time","examples":["假期期间。- During vacation."]}
+{"id":"h2_575","character":"紧急","pinyin":"jǐnjí","meaning":"urgent/emergency","hsk":2,"category":"adjectives","examples":["紧急情况。- Urgent situation."]}
+{"id":"h2_576","character":"稳定","pinyin":"wěndìng","meaning":"stable","hsk":2,"category":"adjectives","examples":["工作稳定。- Job is stable."]}
+{"id":"h2_577","character":"繁荣","pinyin":"fánróng","meaning":"prosperous","hsk":2,"category":"adjectives","examples":["经济繁荣。- Economy is prosperous."]}
+{"id":"h2_578","character":"平等","pinyin":"píngděng","meaning":"equal/equality","hsk":2,"category":"nouns","examples":["人人平等。- Everyone is equal."]}
+{"id":"h2_579","character":"自由","pinyin":"zìyóu","meaning":"freedom","hsk":2,"category":"nouns","examples":["自由很重要。- Freedom is important."]}
+{"id":"h2_580","character":"秩序","pinyin":"zhìxù","meaning":"order","hsk":2,"category":"nouns","examples":["维持秩序。- Maintain order."]}
+{"id":"h2_581","character":"制度","pinyin":"zhìdù","meaning":"system/institution","hsk":2,"category":"nouns","examples":["社会制度。- Social system."]}
+{"id":"h2_582","character":"形象","pinyin":"xíngxiàng","meaning":"image/appearance","hsk":2,"category":"nouns","examples":["塑造形象。- Build image."]}
+{"id":"h2_583","character":"印象","pinyin":"yìnxiàng","meaning":"impression","hsk":2,"category":"nouns","examples":["第一印象。- First impression."]}
+{"id":"h2_584","character":"影响","pinyin":"yǐngxiǎng","meaning":"influence","hsk":2,"category":"nouns","examples":["很大的影响。- Big influence."]}
+{"id":"h2_585","character":"意义","pinyin":"yìyì","meaning":"meaning/significance","hsk":2,"category":"nouns","examples":["很有意义。- Very meaningful."]}
+{"id":"h2_586","character":"愿望","pinyin":"yuànwàng","meaning":"wish/desire","hsk":2,"category":"nouns","examples":["实现愿望。- Fulfill the wish."]}
+{"id":"h2_587","character":"祝福","pinyin":"zhùfú","meaning":"blessing","hsk":2,"category":"nouns","examples":["送祝福。- Send blessings."]}
+{"id":"h2_588","character":"运气","pinyin":"yùnqi","meaning":"luck/fortune","hsk":2,"category":"nouns","examples":["好运！- Good luck!"]}
+{"id":"h2_589","character":"命运","pinyin":"mìngyùn","meaning":"fate/destiny","hsk":2,"category":"nouns","examples":["掌握命运。- Master destiny."]}
+{"id":"h2_590","character":"奇迹","pinyin":"qíjī","meaning":"miracle","hsk":2,"category":"nouns","examples":["创造奇迹。- Create miracles."]}
+{"id":"h2_591","character":"谨慎","pinyin":"jǐnshèn","meaning":"cautious/prudent","hsk":2,"category":"adjectives","examples":["做事要谨慎。- Be cautious."]}
+{"id":"h2_592","character":"冒失","pinyin":"màoshi","meaning":"rash/impulsive","hsk":2,"category":"adjectives","examples":["不要冒失行事。- Don't act rashly."]}
+{"id":"h2_593","character":"浓厚","pinyin":"nónghòu","meaning":"dense/strong (interest)","hsk":2,"category":"adjectives","examples":["兴趣很浓厚。- Strong interest."]}
+{"id":"h2_594","character":"深奥","pinyin":"shēnào","meaning":"profound/abstruse","hsk":2,"category":"adjectives","examples":["这本书很深奥。- This book is profound."]}
+{"id":"h2_595","character":"妥","pinyin":"tuǒ","meaning":"proper/appropriate","hsk":2,"category":"adjectives","examples":["这样处理很妥。- This is properly handled."]}
+{"id":"h2_596","character":"卑鄙","pinyin":"bēibǐ","meaning":"despicable/base","hsk":2,"category":"adjectives","examples":["卑鄙的行为。- Despicable behavior."]}
+{"id":"h2_597","character":"含糊","pinyin":"hánhu","meaning":"vague/ambiguous","hsk":2,"category":"adjectives","examples":["回答很含糊。- The answer is vague."]}
+{"id":"h2_598","character":"宽广","pinyin":"kuānguǎng","meaning":"broad/wide","hsk":2,"category":"adjectives","examples":["胸怀宽广。- Broad-minded."]}
+{"id":"h2_599","character":"浓","pinyin":"nóng","meaning":"thick/concentrated","hsk":2,"category":"adjectives","examples":["浓茶。- Strong tea."]}
+{"id":"h2_600","character":"浓密","pinyin":"nóngmì","meaning":"dense/thick","hsk":2,"category":"adjectives","examples":["头发浓密。- Thick hair."]}
+{"id":"h2_601","character":"疲倦","pinyin":"píjuàn","meaning":"tired/fatigued","hsk":2,"category":"adjectives","examples":["感到很疲倦。- Feel very tired."]}
+{"id":"h2_602","character":"茂密","pinyin":"màomì","meaning":"dense/luxuriant","hsk":2,"category":"adjectives","examples":["茂密的森林。- Dense forest."]}
+{"id":"h2_603","character":"朦胧","pinyin":"ménglóng","meaning":"hazy/dim","hsk":2,"category":"adjectives","examples":["夜色朦胧。- Hazy night."]}
+{"id":"h2_604","character":"密集","pinyin":"mìjí","meaning":"dense/concentrated","hsk":2,"category":"adjectives","examples":["人口密集。- Densely populated."]}
+{"id":"h2_605","character":"细腻","pinyin":"xìnì","meaning":"fine/exquisite","hsk":2,"category":"adjectives","examples":["描写很细腻。- Delicate description."]}
+{"id":"h2_606","character":"萧条","pinyin":"xiāotiáo","meaning":"depressed/desolate","hsk":2,"category":"adjectives","examples":["经济萧条。- Economic depression."]}
+{"id":"h2_607","character":"邪恶","pinyin":"xiéè","meaning":"evil/wicked","hsk":2,"category":"adjectives","examples":["邪恶的力量。- Evil power."]}
+{"id":"h2_608","character":"凶","pinyin":"xiōng","meaning":"fierce/ferocious","hsk":2,"category":"adjectives","examples":["那只狗很凶。- That dog is fierce."]}
+{"id":"h2_609","character":"野蛮","pinyin":"yěmán","meaning":"savage/barbaric","hsk":2,"category":"adjectives","examples":["野蛮的行为。- Barbaric behavior."]}
+{"id":"h2_610","character":"阴险","pinyin":"yīnxiǎn","meaning":"sinister/treacherous","hsk":2,"category":"adjectives","examples":["阴险的计谋。- Sinister scheme."]}
+{"id":"h2_611","character":"滋润","pinyin":"zīrùn","meaning":"moist/nourishing","hsk":2,"category":"adjectives","examples":["皮肤滋润。- Moisturized skin."]}
+{"id":"h2_612","character":"悲剧","pinyin":"bēijù","meaning":"tragedy","hsk":2,"category":"nouns","examples":["这是一场悲剧。- This is a tragedy."]}
+{"id":"h2_613","character":"暴风雨","pinyin":"bàofēngyǔ","meaning":"rainstorm","hsk":2,"category":"nouns","examples":["暴风雨来了。- A rainstorm is coming."]}
+{"id":"h2_614","character":"波浪","pinyin":"bōlàng","meaning":"wave","hsk":2,"category":"nouns","examples":["海浪很大。- Big waves."]}
+{"id":"h2_615","character":"仓库","pinyin":"cāngkù","meaning":"warehouse","hsk":2,"category":"nouns","examples":["货物在仓库里。- Goods are in the warehouse."]}
+{"id":"h2_616","character":"产业","pinyin":"chǎnyè","meaning":"industry","hsk":2,"category":"nouns","examples":["新兴产业。- Emerging industry."]}
+{"id":"h2_617","character":"长途","pinyin":"chángtú","meaning":"long distance","hsk":2,"category":"nouns","examples":["长途旅行。- Long distance travel."]}
+{"id":"h2_618","character":"车间","pinyin":"chējiān","meaning":"workshop","hsk":2,"category":"nouns","examples":["工厂车间。- Factory workshop."]}
+{"id":"h2_619","character":"乘客","pinyin":"chéngkè","meaning":"passenger","hsk":2,"category":"nouns","examples":["车上的乘客。- Passengers on the bus."]}
+{"id":"h2_620","character":"翅膀","pinyin":"chìbǎng","meaning":"wing","hsk":2,"category":"nouns","examples":["鸟的翅膀。- Bird's wings."]}
+{"id":"h2_621","character":"抽屉","pinyin":"chōuti","meaning":"drawer","hsk":2,"category":"nouns","examples":["打开抽屉。- Open the drawer."]}
+{"id":"h2_622","character":"床","pinyin":"chuáng","meaning":"bed","hsk":2,"category":"nouns","examples":["躺在床上。- Lie on the bed."]}
+{"id":"h2_623","character":"村子","pinyin":"cūnzi","meaning":"village","hsk":2,"category":"nouns","examples":["小村子很安静。- The village is quiet."]}
+{"id":"h2_624","character":"大脑","pinyin":"dànǎo","meaning":"brain","hsk":2,"category":"nouns","examples":["大脑思考。- The brain thinks."]}
+{"id":"h2_625","character":"胆量","pinyin":"dǎnliàng","meaning":"courage/guts","hsk":2,"category":"nouns","examples":["有胆量的人。- A courageous person."]}
+{"id":"h2_626","character":"当事人","pinyin":"dāngshìrén","meaning":"person concerned","hsk":2,"category":"nouns","examples":["当事人应出庭。- The person should appear in court."]}
+{"id":"h2_627","character":"池塘","pinyin":"chítáng","meaning":"pond","hsk":2,"category":"nouns","examples":["池塘里有鱼。- There are fish in the pond."]}
+{"id":"h2_628","character":"队伍","pinyin":"duìwu","meaning":"team/ranks","hsk":2,"category":"nouns","examples":["排队。- Line up."]}
+{"id":"h2_629","character":"发射","pinyin":"fāshè","meaning":"to launch/fire","hsk":2,"category":"verbs","examples":["发射火箭。- Launch a rocket."]}
+{"id":"h2_630","character":"法庭","pinyin":"fǎtíng","meaning":"court (of law)","hsk":2,"category":"nouns","examples":["去法庭打官司。- Go to court."]}
+{"id":"h2_631","character":"房租","pinyin":"fángzū","meaning":"rent","hsk":2,"category":"nouns","examples":["交房租。- Pay rent."]}
+{"id":"h2_632","character":"废品","pinyin":"fèipǐn","meaning":"waste/scrap","hsk":2,"category":"nouns","examples":["回收废品。- Recycle scrap."]}
+{"id":"h2_633","character":"坟墓","pinyin":"fénmù","meaning":"tomb/grave","hsk":2,"category":"nouns","examples":["扫墓。- Sweep tombs."]}
+{"id":"h2_634","character":"粉笔","pinyin":"fěnbǐ","meaning":"chalk","hsk":2,"category":"nouns","examples":["用粉笔写字。- Write with chalk."]}
+{"id":"h2_635","character":"风格","pinyin":"fēnggé","meaning":"style","hsk":2,"category":"nouns","examples":["独特的风格。- Unique style."]}
+{"id":"h2_636","character":"俘虏","pinyin":"fúlǔ","meaning":"captive/prisoner","hsk":2,"category":"nouns","examples":["俘虏被释放了。- Captives were freed."]}
+{"id":"h2_637","character":"符号","pinyin":"fúhào","meaning":"symbol/sign","hsk":2,"category":"nouns","examples":["数学符号。- Mathematical symbols."]}
+{"id":"h2_638","character":"负担","pinyin":"fùdān","meaning":"burden","hsk":2,"category":"nouns","examples":["减轻负担。- Lighten the burden."]}
+{"id":"h2_639","character":"港口","pinyin":"gǎngkǒu","meaning":"port/harbor","hsk":2,"category":"nouns","examples":["船停在港口。- Ships dock at port."]}
+{"id":"h2_640","character":"高原","pinyin":"gāoyuán","meaning":"plateau/highland","hsk":2,"category":"nouns","examples":["青藏高原。- Qinghai-Tibet Plateau."]}
+{"id":"h2_641","character":"根源","pinyin":"gēnyuán","meaning":"root/origin","hsk":2,"category":"nouns","examples":["找到问题根源。- Find the root."]}
+{"id":"h2_642","character":"功劳","pinyin":"gōngláo","meaning":"contribution/merit","hsk":2,"category":"nouns","examples":["这是你的功劳。- This is your merit."]}
+{"id":"h2_643","character":"宫殿","pinyin":"gōngdiàn","meaning":"palace","hsk":2,"category":"nouns","examples":["故宫是古代宫殿。- Forbidden City is ancient palace."]}
+{"id":"h2_644","character":"故障","pinyin":"gùzhàng","meaning":"malfunction/fault","hsk":2,"category":"nouns","examples":["机器出故障了。- Machine malfunctioned."]}
+{"id":"h2_645","character":"棺材","pinyin":"guāncai","meaning":"coffin","hsk":2,"category":"nouns","examples":["抬棺材。- Carry coffin."]}
+{"id":"h2_646","character":"光芒","pinyin":"guāngmáng","meaning":"brilliant rays","hsk":2,"category":"nouns","examples":["太阳的光芒。- Sun's rays."]}
+{"id":"h2_647","character":"棍子","pinyin":"gùnzi","meaning":"stick/rod","hsk":2,"category":"nouns","examples":["拿根棍子。- Hold a stick."]}
+{"id":"h2_648","character":"轨道","pinyin":"guǐdào","meaning":"track/orbit","hsk":2,"category":"nouns","examples":["火车轨道。- Train tracks."]}
+{"id":"h2_649","character":"锅炉","pinyin":"guōlú","meaning":"boiler","hsk":2,"category":"nouns","examples":["烧锅炉。- Fire the boiler."]}
+{"id":"h2_650","character":"号码","pinyin":"hàomǎ","meaning":"number","hsk":2,"category":"nouns","examples":["电话号码。- Phone number."]}
+{"id":"h2_651","character":"胡同","pinyin":"hútòng","meaning":"alley/lane","hsk":2,"category":"nouns","examples":["北京的胡同。- Beijing hutongs."]}
+{"id":"h2_652","character":"灰尘","pinyin":"huīchén","meaning":"dust","hsk":2,"category":"nouns","examples":["桌子有灰尘。- Table has dust."]}
+{"id":"h2_653","character":"火箭","pinyin":"huǒjiàn","meaning":"rocket","hsk":2,"category":"nouns","examples":["发射火箭。- Launch rocket."]}
+{"id":"h2_654","character":"肌肉","pinyin":"jīròu","meaning":"muscle","hsk":2,"category":"nouns","examples":["锻炼肌肉。- Exercise muscles."]}
+{"id":"h2_655","character":"奖品","pinyin":"jiǎngpǐn","meaning":"prize","hsk":2,"category":"nouns","examples":["获得奖品。- Win a prize."]}
+{"id":"h2_656","character":"胶水","pinyin":"jiāoshuǐ","meaning":"glue","hsk":2,"category":"nouns","examples":["用胶水粘。- Glue it."]}
+{"id":"h2_657","character":"阶段","pinyin":"jiēduàn","meaning":"stage/phase","hsk":2,"category":"nouns","examples":["下一阶段。- Next phase."]}
+{"id":"h2_658","character":"进口","pinyin":"jìnkǒu","meaning":"import","hsk":2,"category":"nouns","examples":["进口商品。- Imported goods."]}
+{"id":"h2_659","character":"酒吧","pinyin":"jiǔbā","meaning":"bar/pub","hsk":2,"category":"nouns","examples":["去酒吧喝酒。- Go to a bar."]}
+{"id":"h2_660","character":"居民","pinyin":"jūmín","meaning":"resident","hsk":2,"category":"nouns","examples":["城市居民。- City residents."]}
+{"id":"h2_661","character":"剧本","pinyin":"jùběn","meaning":"script/play","hsk":2,"category":"nouns","examples":["写剧本。- Write a script."]}
+{"id":"h2_662","character":"军用","pinyin":"jūnyòng","meaning":"military use","hsk":2,"category":"nouns","examples":["军用品。- Military supplies."]}
+{"id":"h2_663","character":"开采","pinyin":"kāicǎi","meaning":"to mine/extract","hsk":2,"category":"verbs","examples":["开采石油。- Extract oil."]}
+{"id":"h2_664","character":"开支","pinyin":"kāizhī","meaning":"expenses","hsk":2,"category":"nouns","examples":["减少开支。- Reduce expenses."]}
+{"id":"h2_665","character":"抗议","pinyin":"kàngyì","meaning":"protest","hsk":2,"category":"nouns","examples":["游行抗议。- March in protest."]}
+{"id":"h2_666","character":"颗粒","pinyin":"kēlì","meaning":"grain/particle","hsk":2,"category":"nouns","examples":["颗粒状。- Granular form."]}
+{"id":"h2_667","character":"壳","pinyin":"ké","meaning":"shell/husk","hsk":2,"category":"nouns","examples":["鸡蛋壳。- Eggshell."]}
+{"id":"h2_668","character":"刻度","pinyin":"kèdù","meaning":"scale/graduation","hsk":2,"category":"nouns","examples":["刻度线。- Scale marks."]}
+{"id":"h2_669","character":"空白","pinyin":"kòngbái","meaning":"blank/void","hsk":2,"category":"nouns","examples":["留下一片空白。- Leave a blank."]}
+{"id":"h2_670","character":"矿山","pinyin":"kuàngshān","meaning":"mine","hsk":2,"category":"nouns","examples":["矿山开采。- Mine extraction."]}
+{"id":"h2_671","character":"蜡烛","pinyin":"làzhú","meaning":"candle","hsk":2,"category":"nouns","examples":["点燃蜡烛。- Light a candle."]}
+{"id":"h2_672","character":"栏","pinyin":"lán","meaning":"column/railing","hsk":2,"category":"nouns","examples":["跨栏。- Hurdles."]}
+{"id":"h2_673","character":"雷达","pinyin":"léidá","meaning":"radar","hsk":2,"category":"nouns","examples":["雷达探测。- Radar detection."]}
+{"id":"h2_674","character":"礼节","pinyin":"lǐjié","meaning":"etiquette","hsk":2,"category":"nouns","examples":["礼貌礼节。- Etiquette and manners."]}
+{"id":"h2_675","character":"零件","pinyin":"língjiàn","meaning":"part/component","hsk":2,"category":"nouns","examples":["汽车零件。- Car parts."]}
+{"id":"h2_676","character":"领土","pinyin":"lǐngtǔ","meaning":"territory","hsk":2,"category":"nouns","examples":["保卫领土。- Defend territory."]}
+{"id":"h2_677","character":"炉子","pinyin":"lúzi","meaning":"stove/furnace","hsk":2,"category":"nouns","examples":["煤气炉。- Gas stove."]}
+{"id":"h2_678","character":"麻袋","pinyin":"mádài","meaning":"sack/burlap bag","hsk":2,"category":"nouns","examples":["装麻袋。- Put in sack."]}
+{"id":"h2_679","character":"漫长","pinyin":"màncháng","meaning":"very long/endless","hsk":2,"category":"adjectives","examples":["漫长的旅程。- A long journey."]}
+{"id":"h2_680","character":"茅草","pinyin":"máocǎo","meaning":"thatch","hsk":2,"category":"nouns","examples":["茅草屋。- Thatched hut."]}
+{"id":"h2_681","character":"冒","pinyin":"mào","meaning":"to emit/risk","hsk":2,"category":"verbs","examples":["冒烟了。- Smoke is coming out."]}
+{"id":"h2_682","character":"霉","pinyin":"méi","meaning":"mold/mildew","hsk":2,"category":"nouns","examples":["面包发霉了。- Bread got moldy."]}
+{"id":"h2_683","character":"民航","pinyin":"mínháng","meaning":"civil aviation","hsk":2,"category":"nouns","examples":["坐民航飞机。- Take civil aviation."]}
+{"id":"h2_684","character":"蘑菇","pinyin":"mógu","meaning":"mushroom","hsk":2,"category":"nouns","examples":["采蘑菇。- Pick mushrooms."]}
+{"id":"h2_685","character":"墨水","pinyin":"mòshuǐ","meaning":"ink","hsk":2,"category":"nouns","examples":["钢笔墨水。- Pen ink."]}
+{"id":"h2_686","character":"南瓜","pinyin":"nánguā","meaning":"pumpkin","hsk":2,"category":"nouns","examples":["南瓜汤。- Pumpkin soup."]}
+{"id":"h2_687","character":"泥土","pinyin":"nítǔ","meaning":"soil/earth","hsk":2,"category":"nouns","examples":["肥沃的泥土。- Fertile soil."]}
+{"id":"h2_688","character":"盆地","pinyin":"péndì","meaning":"basin (geography)","hsk":2,"category":"nouns","examples":["四川盆地。- Sichuan Basin."]}
+{"id":"h2_689","character":"瓢","pinyin":"piáo","meaning":"ladle/gourd","hsk":2,"category":"nouns","examples":["水瓢。- Water ladle."]}
+{"id":"h2_690","character":"平原","pinyin":"píngyuán","meaning":"plain/flatland","hsk":2,"category":"nouns","examples":["华北平原。- North China Plain."]}
+{"id":"h2_691","character":"气味","pinyin":"qìwèi","meaning":"odor/smell","hsk":2,"category":"nouns","examples":["香味。- Fragrant smell."]}
+{"id":"h2_692","character":"器官","pinyin":"qìguān","meaning":"organ (body)","hsk":2,"category":"nouns","examples":["人体器官。- Human organs."]}
+{"id":"h2_693","character":"前景","pinyin":"qiánjǐng","meaning":"prospect/outlook","hsk":2,"category":"nouns","examples":["前景很好。- Good prospects."]}
+{"id":"h2_694","character":"墙壁","pinyin":"qiángbì","meaning":"wall","hsk":2,"category":"nouns","examples":["白墙壁。- White wall."]}
+{"id":"h2_695","character":"倾斜","pinyin":"qīngxié","meaning":"to tilt/slant","hsk":2,"category":"verbs","examples":["塔倾斜了。- The tower tilted."]}
+{"id":"h2_696","character":"丘陵","pinyin":"qiūlíng","meaning":"hills","hsk":2,"category":"nouns","examples":["丘陵地带。- Hilly area."]}
+{"id":"h2_697","character":"渠道","pinyin":"qúdào","meaning":"channel/canal","hsk":2,"category":"nouns","examples":["沟通渠道。- Communication channel."]}
+{"id":"h2_698","character":"圈子","pinyin":"quānzi","meaning":"circle/group","hsk":2,"category":"nouns","examples":["社交圈子。- Social circle."]}
+{"id":"h2_699","character":"燃料","pinyin":"ránliào","meaning":"fuel","hsk":2,"category":"nouns","examples":["加燃料。- Add fuel."]}
+{"id":"h2_700","character":"容器","pinyin":"róngqì","meaning":"container","hsk":2,"category":"nouns","examples":["玻璃容器。- Glass container."]}
+{"id":"h2_701","character":"乳","pinyin":"rǔ","meaning":"milk/breast","hsk":2,"category":"nouns","examples":["母乳。- Breast milk."]}
+{"id":"h2_702","character":"伞","pinyin":"sǎn","meaning":"umbrella","hsk":2,"category":"nouns","examples":["打伞。- Hold umbrella."]}
+{"id":"h2_703","character":"纱布","pinyin":"shābù","meaning":"gauze","hsk":2,"category":"nouns","examples":["医用纱布。- Medical gauze."]}
+{"id":"h2_704","character":"山谷","pinyin":"shāngǔ","meaning":"valley","hsk":2,"category":"nouns","examples":["山谷回声。- Valley echo."]}
+{"id":"h2_705","character":"珊瑚","pinyin":"shānhú","meaning":"coral","hsk":2,"category":"nouns","examples":["珊瑚礁。- Coral reef."]}
+{"id":"h2_706","character":"扇","pinyin":"shàn","meaning":"fan","hsk":2,"category":"nouns","examples":["电风扇。- Electric fan."]}
+{"id":"h2_707","character":"生存","pinyin":"shēngcún","meaning":"to survive","hsk":2,"category":"verbs","examples":["为了生存。- For survival."]}
+{"id":"h2_708","character":"牲畜","pinyin":"shēngchù","meaning":"livestock","hsk":2,"category":"nouns","examples":["养牲畜。- Raise livestock."]}
+{"id":"h2_709","character":"视野","pinyin":"shìyě","meaning":"field of vision","hsk":2,"category":"nouns","examples":["开阔视野。- Broaden horizons."]}
+{"id":"h2_710","character":"首都","pinyin":"shǒudū","meaning":"capital city","hsk":2,"category":"nouns","examples":["北京是首都。- Beijing is the capital."]}
+{"id":"h2_711","character":"书法","pinyin":"shūfǎ","meaning":"calligraphy","hsk":2,"category":"nouns","examples":["学习书法。- Learn calligraphy."]}
+{"id":"h2_712","character":"数目","pinyin":"shùmù","meaning":"number/amount","hsk":2,"category":"nouns","examples":["数目很大。- Large number."]}
+{"id":"h2_713","character":"刷子","pinyin":"shuāzi","meaning":"brush","hsk":2,"category":"nouns","examples":["用刷子刷。- Brush with a brush."]}
+{"id":"h2_714","character":"霜","pinyin":"shuāng","meaning":"frost","hsk":2,"category":"nouns","examples":["地上有霜。- Frost on the ground."]}
+{"id":"h2_715","character":"水库","pinyin":"shuǐkù","meaning":"reservoir","hsk":2,"category":"nouns","examples":["水库蓄水。- Reservoir stores water."]}
+{"id":"h2_716","character":"水龙头","pinyin":"shuǐlóngtóu","meaning":"faucet/tap","hsk":2,"category":"nouns","examples":["开水龙头。- Turn on the faucet."]}
+{"id":"h2_717","character":"饲料","pinyin":"sìliào","meaning":"feed/fodder","hsk":2,"category":"nouns","examples":["动物饲料。- Animal feed."]}
+{"id":"h2_718","character":"蒜","pinyin":"suàn","meaning":"garlic","hsk":2,"category":"nouns","examples":["蒜味。- Garlic flavor."]}
+{"id":"h2_719","character":"台阶","pinyin":"táijiē","meaning":"steps/stairs","hsk":2,"category":"nouns","examples":["上台阶。- Go up steps."]}
+{"id":"h2_720","character":"太空","pinyin":"tàikōng","meaning":"outer space","hsk":2,"category":"nouns","examples":["探索太空。- Explore space."]}
+{"id":"h2_721","character":"毯子","pinyin":"tǎnzi","meaning":"blanket","hsk":2,"category":"nouns","examples":["盖毯子。- Cover with blanket."]}
+{"id":"h2_722","character":"炭","pinyin":"tàn","meaning":"charcoal","hsk":2,"category":"nouns","examples":["烧炭。- Burn charcoal."]}
+{"id":"h2_723","character":"桃","pinyin":"táo","meaning":"peach","hsk":2,"category":"nouns","examples":["桃子。- Peaches."]}
+{"id":"h2_724","character":"蹄","pinyin":"tí","meaning":"hoof","hsk":2,"category":"nouns","examples":["马蹄。- Horse hoof."]}
+{"id":"h2_725","character":"体力","pinyin":"tǐlì","meaning":"physical strength","hsk":2,"category":"nouns","examples":["消耗体力。- Use physical strength."]}
+{"id":"h2_726","character":"天堂","pinyin":"tiāntáng","meaning":"paradise/heaven","hsk":2,"category":"nouns","examples":["人间天堂。- Paradise on earth."]}
+{"id":"h2_727","character":"铁丝","pinyin":"tiěsī","meaning":"iron wire","hsk":2,"category":"nouns","examples":["用铁丝捆。- Bind with wire."]}
+{"id":"h2_728","character":"亭子","pinyin":"tíngzi","meaning":"pavilion","hsk":2,"category":"nouns","examples":["花园亭子。- Garden pavilion."]}
+{"id":"h2_729","character":"艇","pinyin":"tǐng","meaning":"small boat","hsk":2,"category":"nouns","examples":["快艇。- Speed boat."]}
+{"id":"h2_730","character":"铜","pinyin":"tóng","meaning":"copper","hsk":2,"category":"nouns","examples":["铜器。- Copperware."]}
+{"id":"h2_731","character":"桶","pinyin":"tǒng","meaning":"bucket/barrel","hsk":2,"category":"nouns","examples":["水桶。- Water bucket."]}
+{"id":"h2_732","character":"头盔","pinyin":"tóukuī","meaning":"helmet","hsk":2,"category":"nouns","examples":["戴头盔。- Wear a helmet."]}
+{"id":"h2_733","character":"土壤","pinyin":"tǔrǎng","meaning":"soil","hsk":2,"category":"nouns","examples":["肥沃的土壤。- Fertile soil."]}
+{"id":"h2_734","character":"团长","pinyin":"tuánzhǎng","meaning":"regiment commander","hsk":2,"category":"nouns","examples":["团长下令。- The commander orders."]}
+{"id":"h2_735","character":"丸","pinyin":"wán","meaning":"pill/ball","hsk":2,"category":"nouns","examples":["药丸。- Medicine pill."]}
+{"id":"h2_736","character":"网","pinyin":"wǎng","meaning":"net/web","hsk":2,"category":"nouns","examples":["渔网。- Fishing net."]}
+{"id":"h2_737","character":"威力","pinyin":"wēilì","meaning":"power/might","hsk":2,"category":"nouns","examples":["巨大威力。- Great power."]}
+{"id":"h2_738","character":"微生物","pinyin":"wēishēngwù","meaning":"microorganism","hsk":2,"category":"nouns","examples":["研究微生物。- Study microorganisms."]}
+{"id":"h2_739","character":"围墙","pinyin":"wéiqiáng","meaning":"enclosure wall","hsk":2,"category":"nouns","examples":["学校围墙。- School wall."]}
+{"id":"h2_740","character":"卫星","pinyin":"wèixīng","meaning":"satellite","hsk":2,"category":"nouns","examples":["人造卫星。- Artificial satellite."]}
+{"id":"h2_741","character":"文件","pinyin":"wénjiàn","meaning":"document/file","hsk":2,"category":"nouns","examples":["重要文件。- Important document."]}
+{"id":"h2_742","character":"蚊子","pinyin":"wénzi","meaning":"mosquito","hsk":2,"category":"nouns","examples":["蚊子咬人。- Mosquitoes bite."]}
+{"id":"h2_743","character":"窝","pinyin":"wō","meaning":"nest/den","hsk":2,"category":"nouns","examples":["鸟窝。- Bird nest."]}
+{"id":"h2_744","character":"乌鸦","pinyin":"wūyā","meaning":"crow","hsk":2,"category":"nouns","examples":["黑乌鸦。- Black crow."]}
+{"id":"h2_745","character":"武器","pinyin":"wǔqì","meaning":"weapon","hsk":2,"category":"nouns","examples":["先进武器。- Advanced weapons."]}
+{"id":"h2_746","character":"舞台","pinyin":"wǔtái","meaning":"stage","hsk":2,"category":"nouns","examples":["在舞台上表演。- Perform on stage."]}
+{"id":"h2_747","character":"纤维","pinyin":"xiānwéi","meaning":"fiber","hsk":2,"category":"nouns","examples":["植物纤维。- Plant fiber."]}
+{"id":"h2_748","character":"县","pinyin":"xiàn","meaning":"county","hsk":2,"category":"nouns","examples":["县城。- County seat."]}
+{"id":"h2_749","character":"线索","pinyin":"xiànsuǒ","meaning":"clue/thread","hsk":2,"category":"nouns","examples":["找到线索。- Find a clue."]}
+{"id":"h2_750","character":"香肠","pinyin":"xiāngcháng","meaning":"sausage","hsk":2,"category":"nouns","examples":["吃香肠。- Eat sausage."]}
+{"id":"h2_751","character":"橡胶","pinyin":"xiàngjiāo","meaning":"rubber","hsk":2,"category":"nouns","examples":["橡胶轮胎。- Rubber tire."]}
+{"id":"h2_752","character":"小麦","pinyin":"xiǎomài","meaning":"wheat","hsk":2,"category":"nouns","examples":["种小麦。- Grow wheat."]}
+{"id":"h2_753","character":"协议","pinyin":"xiéyì","meaning":"agreement","hsk":2,"category":"nouns","examples":["签订协议。- Sign agreement."]}
+{"id":"h2_754","character":"心灵","pinyin":"xīnlíng","meaning":"soul/spirit","hsk":2,"category":"nouns","examples":["美丽的心灵。- Beautiful soul."]}
+{"id":"h2_755","character":"信念","pinyin":"xìnniàn","meaning":"faith/belief","hsk":2,"category":"nouns","examples":["坚定信念。- Firm belief."]}
+{"id":"h2_756","character":"行程","pinyin":"xíngchéng","meaning":"itinerary","hsk":2,"category":"nouns","examples":["行程安排。- Itinerary arrangement."]}
+{"id":"h2_757","character":"行驶","pinyin":"xíngshǐ","meaning":"to travel (vehicle)","hsk":2,"category":"verbs","examples":["火车在行驶。- The train is moving."]}
+{"id":"h2_758","character":"性能","pinyin":"xìngnéng","meaning":"performance/capability","hsk":2,"category":"nouns","examples":["高性能。- High performance."]}
+{"id":"h2_759","character":"胸部","pinyin":"xiōngbù","meaning":"chest","hsk":2,"category":"nouns","examples":["胸痛。- Chest pain."]}
+{"id":"h2_760","character":"熊","pinyin":"xióng","meaning":"bear","hsk":2,"category":"nouns","examples":["北极熊。- Polar bear."]}
+{"id":"h2_761","character":"修理","pinyin":"xiūlǐ","meaning":"to repair","hsk":2,"category":"verbs","examples":["修理汽车。- Repair the car."]}
+{"id":"h2_762","character":"序言","pinyin":"xùyán","meaning":"preface","hsk":2,"category":"nouns","examples":["书的序言。- Book preface."]}
+{"id":"h2_763","character":"悬崖","pinyin":"xuányá","meaning":"cliff","hsk":2,"category":"nouns","examples":["悬崖峭壁。- Steep cliff."]}
+{"id":"h2_764","character":"靴子","pinyin":"xuēzi","meaning":"boots","hsk":2,"category":"nouns","examples":["穿靴子。- Wear boots."]}
+{"id":"h2_765","character":"牙齿","pinyin":"yáchǐ","meaning":"tooth","hsk":2,"category":"nouns","examples":["保护牙齿。- Protect teeth."]}
+{"id":"h2_766","character":"烟草","pinyin":"yāncǎo","meaning":"tobacco","hsk":2,"category":"nouns","examples":["抽烟有害健康。- Smoking harms health."]}
+{"id":"h2_767","character":"岩石","pinyin":"yánshí","meaning":"rock","hsk":2,"category":"nouns","examples":["大块岩石。- Big rock."]}
+{"id":"h2_768","character":"演奏","pinyin":"yǎnzòu","meaning":"to perform (music)","hsk":2,"category":"verbs","examples":["演奏乐器。- Play an instrument."]}
+{"id":"h2_769","character":"氧气","pinyin":"yǎngqì","meaning":"oxygen","hsk":2,"category":"nouns","examples":["吸氧。- Breathe oxygen."]}
+{"id":"h2_770","character":"样品","pinyin":"yàngpǐn","meaning":"sample","hsk":2,"category":"nouns","examples":["看样品。- See the sample."]}
+{"id":"h2_771","character":"窑","pinyin":"yáo","meaning":"kiln","hsk":2,"category":"nouns","examples":["砖窑。- Brick kiln."]}
+{"id":"h2_772","character":"谣言","pinyin":"yáoyán","meaning":"rumor","hsk":2,"category":"nouns","examples":["散布谣言。- Spread rumors."]}
+{"id":"h2_773","character":"叶子","pinyin":"yèzi","meaning":"leaf","hsk":2,"category":"nouns","examples":["树叶黄了。- Leaves turned yellow."]}
+{"id":"h2_774","character":"移民","pinyin":"yímín","meaning":"immigrant","hsk":2,"category":"nouns","examples":["移民国外。- Immigrate abroad."]}
+{"id":"h2_775","character":"遗址","pinyin":"yízhǐ","meaning":"ruins/relics","hsk":2,"category":"nouns","examples":["考古遗址。- Archaeological site."]}
+{"id":"h2_776","character":"议会","pinyin":"yìhuì","meaning":"parliament","hsk":2,"category":"nouns","examples":["开议会。- Parliament session."]}
+{"id":"h2_777","character":"阴谋","pinyin":"yīnmóu","meaning":"conspiracy","hsk":2,"category":"nouns","examples":["政治阴谋。- Political conspiracy."]}
+{"id":"h2_778","character":"硬币","pinyin":"yìngbì","meaning":"coin","hsk":2,"category":"nouns","examples":["一枚硬币。- A coin."]}
+{"id":"h2_779","character":"用户","pinyin":"yònghù","meaning":"user","hsk":2,"category":"nouns","examples":["手机用户。- Phone user."]}
+{"id":"h2_780","character":"优惠","pinyin":"yōuhuì","meaning":"discount/favorable","hsk":2,"category":"nouns","examples":["优惠价格。- Discount price."]}
+{"id":"h2_781","character":"油漆","pinyin":"yóuqī","meaning":"paint","hsk":2,"category":"nouns","examples":["刷油漆。- Paint."]}
+{"id":"h2_782","character":"渔民","pinyin":"yúmín","meaning":"fisherman","hsk":2,"category":"nouns","examples":["渔民出海。- Fishermen go to sea."]}
+{"id":"h2_783","character":"宇宙","pinyin":"yǔzhòu","meaning":"universe/cosmos","hsk":2,"category":"nouns","examples":["宇宙很大。- The universe is vast."]}
+{"id":"h2_784","character":"玉","pinyin":"yù","meaning":"jade","hsk":2,"category":"nouns","examples":["玉镯。- Jade bracelet."]}
+{"id":"h2_785","character":"元素","pinyin":"yuánsù","meaning":"element","hsk":2,"category":"nouns","examples":["化学元素。- Chemical element."]}
+{"id":"h2_786","character":"园林","pinyin":"yuánlín","meaning":"garden/park","hsk":2,"category":"nouns","examples":["苏州园林。- Suzhou gardens."]}
+{"id":"h2_787","character":"原料","pinyin":"yuánliào","meaning":"raw material","hsk":2,"category":"nouns","examples":["进口原料。- Import raw materials."]}
+{"id":"h2_788","character":"猿","pinyin":"yuán","meaning":"ape","hsk":2,"category":"nouns","examples":["类人猿。- Anthropoid ape."]}
+{"id":"h2_789","character":"院子","pinyin":"yuànzi","meaning":"courtyard","hsk":2,"category":"nouns","examples":["在院子里玩。- Play in the courtyard."]}
+{"id":"h2_790","character":"灾","pinyin":"zāi","meaning":"disaster","hsk":2,"category":"nouns","examples":["天灾。- Natural disaster."]}
+{"id":"h2_791","character":"葬礼","pinyin":"zànglǐ","meaning":"funeral","hsk":2,"category":"nouns","examples":["参加葬礼。- Attend a funeral."]}
+{"id":"h2_792","character":"闸","pinyin":"zhá","meaning":"sluice/brake","hsk":2,"category":"nouns","examples":["水闸。- Water gate."]}
+{"id":"h2_793","character":"寨","pinyin":"zhài","meaning":"stockade/village","hsk":2,"category":"nouns","examples":["山寨。- Mountain village."]}
+{"id":"h2_794","character":"占领","pinyin":"zhànlǐng","meaning":"to occupy","hsk":2,"category":"verbs","examples":["占领阵地。- Occupy the position."]}
+{"id":"h2_795","character":"战术","pinyin":"zhànshù","meaning":"tactics","hsk":2,"category":"nouns","examples":["军事战术。- Military tactics."]}
+{"id":"h2_796","character":"账","pinyin":"zhàng","meaning":"account/bill","hsk":2,"category":"nouns","examples":["结账。- Settle the bill."]}
+{"id":"h2_797","character":"帐篷","pinyin":"zhàngpeng","meaning":"tent","hsk":2,"category":"nouns","examples":["搭帐篷。- Set up a tent."]}
+{"id":"h2_798","character":"哲学","pinyin":"zhéxué","meaning":"philosophy","hsk":2,"category":"nouns","examples":["中国哲学。- Chinese philosophy."]}
+{"id":"h2_799","character":"珍珠","pinyin":"zhēnzhū","meaning":"pearl","hsk":2,"category":"nouns","examples":["珍珠项链。- Pearl necklace."]}
+{"id":"h2_800","character":"阵","pinyin":"zhèn","meaning":"short period/gust","hsk":2,"category":"nouns","examples":["一阵风。- A gust of wind."]}
+{"id":"h2_801","character":"蒸气","pinyin":"zhēngqì","meaning":"vapor/steam","hsk":2,"category":"nouns","examples":["水蒸气。- Water vapor."]}
+{"id":"h2_802","character":"证件","pinyin":"zhèngjiàn","meaning":"identity document","hsk":2,"category":"nouns","examples":["出示证件。- Show ID."]}
+{"id":"h2_803","character":"政权","pinyin":"zhèngquán","meaning":"regime/power","hsk":2,"category":"nouns","examples":["政权交接。- Transfer of power."]}
+{"id":"h2_804","character":"蜘蛛","pinyin":"zhīzhū","meaning":"spider","hsk":2,"category":"nouns","examples":["蜘蛛网。- Spider web."]}
+{"id":"h2_805","character":"职务","pinyin":"zhíwù","meaning":"post/position","hsk":2,"category":"nouns","examples":["担任职务。- Hold a post."]}
+{"id":"h2_806","character":"殖民地","pinyin":"zhímíndì","meaning":"colony","hsk":2,"category":"nouns","examples":["殖民地历史。- Colonial history."]}
+{"id":"h2_807","character":"指南针","pinyin":"zhǐnánzhēn","meaning":"compass","hsk":2,"category":"nouns","examples":["用指南针。- Use a compass."]}
+{"id":"h2_808","character":"种子","pinyin":"zhǒngzi","meaning":"seed","hsk":2,"category":"nouns","examples":["种种子。- Plant seeds."]}
+{"id":"h2_809","character":"洲","pinyin":"zhōu","meaning":"continent","hsk":2,"category":"nouns","examples":["亚洲。- Asia."]}
+{"id":"h2_810","character":"竹子","pinyin":"zhúzi","meaning":"bamboo","hsk":2,"category":"nouns","examples":["竹林。- Bamboo forest."]}
+{"id":"h2_811","character":"主权","pinyin":"zhǔquán","meaning":"sovereignty","hsk":2,"category":"nouns","examples":["国家主权。- National sovereignty."]}
+{"id":"h2_812","character":"住宅","pinyin":"zhùzhái","meaning":"residence","hsk":2,"category":"nouns","examples":["住宅区。- Residential area."]}
+{"id":"h2_813","character":"柱子","pinyin":"zhùzi","meaning":"pillar/column","hsk":2,"category":"nouns","examples":["石柱子。- Stone pillar."]}
+{"id":"h2_814","character":"砖","pinyin":"zhuān","meaning":"brick","hsk":2,"category":"nouns","examples":["砌砖。- Lay bricks."]}
+{"id":"h2_815","character":"装置","pinyin":"zhuāngzhì","meaning":"device/installation","hsk":2,"category":"nouns","examples":["安全装置。- Safety device."]}
+{"id":"h2_816","character":"滋味","pinyin":"zīwèi","meaning":"taste/flavor","hsk":2,"category":"nouns","examples":["人生的滋味。- The taste of life."]}
+{"id":"h2_817","character":"字母","pinyin":"zìmǔ","meaning":"letter/alphabet","hsk":2,"category":"nouns","examples":["英文字母。- English letters."]}
+{"id":"h2_818","character":"宗教","pinyin":"zōngjiào","meaning":"religion","hsk":2,"category":"nouns","examples":["信仰宗教。- Believe in religion."]}
+{"id":"h2_819","character":"走廊","pinyin":"zǒuláng","meaning":"corridor","hsk":2,"category":"nouns","examples":["学校走廊。- School corridor."]}
+{"id":"h2_820","character":"祖先","pinyin":"zǔxiān","meaning":"ancestor","hsk":2,"category":"nouns","examples":["祭拜祖先。- Worship ancestors."]}
+{"id":"h2_821","character":"罪犯","pinyin":"zuìfàn","meaning":"criminal","hsk":2,"category":"nouns","examples":["罪犯被逮捕。- Criminal was arrested."]}
+{"id":"h2_822","character":"罪","pinyin":"zuì","meaning":"crime/sin","hsk":2,"category":"nouns","examples":["犯罪。- Commit a crime."]}
+{"id":"h2_823","character":"游泳","pinyin":"yóuyǒng","meaning":"to swim","hsk":2,"category":"verbs","examples":["请给我看游泳。 - Please show me 游泳."]}
+{"id":"h2_824","character":"跑步","pinyin":"pǎobù","meaning":"to jog/run","hsk":2,"category":"verbs","examples":["我需要买跑步。 - I need to buy 跑步."]}
+{"id":"h2_825","character":"唱歌","pinyin":"chànggē","meaning":"to sing","hsk":2,"category":"verbs","examples":["唱歌很重要。 - 唱歌 is very important."]}
+{"id":"h2_826","character":"跳舞","pinyin":"tiàowǔ","meaning":"to dance","hsk":2,"category":"verbs","examples":["他每天学习跳舞。 - He studies 跳舞 every day."]}
+{"id":"h2_827","character":"画画","pinyin":"huàhuà","meaning":"to draw/paint","hsk":2,"category":"verbs","examples":["我需要买画画。 - I need to buy 画画."]}
+{"id":"h2_828","character":"旅游","pinyin":"lǚyóu","meaning":"to travel","hsk":2,"category":"verbs","examples":["我需要买旅游。 - I need to buy 旅游."]}
+{"id":"h2_829","character":"生病","pinyin":"shēngbìng","meaning":"to get sick","hsk":2,"category":"verbs","examples":["生病很常见。 - 生病 is very common."]}
+{"id":"h2_830","character":"休息","pinyin":"xiūxi","meaning":"to rest","hsk":2,"category":"verbs","examples":["他每天学习休息。 - He studies 休息 every day."]}
+{"id":"h2_831","character":"运动","pinyin":"yùndòng","meaning":"to exercise/sports","hsk":2,"category":"verbs","examples":["你知道运动吗？ - Do you know 运动?"]}
+{"id":"h2_832","character":"打扫","pinyin":"dǎsǎo","meaning":"to clean","hsk":2,"category":"verbs","examples":["我喜欢打扫。 - I like 打扫."]}
+{"id":"h2_833","character":"睡觉","pinyin":"shuìjiào","meaning":"to sleep","hsk":2,"category":"verbs","examples":["这是睡觉。 - This is 睡觉."]}
+{"id":"h2_834","character":"难过","pinyin":"nánguò","meaning":"sad","hsk":2,"category":"adjectives","examples":["我需要买难过。 - I need to buy 难过."]}
+{"id":"h2_835","character":"忘记","pinyin":"wàngjì","meaning":"to forget","hsk":2,"category":"verbs","examples":["忘记很重要。 - 忘记 is very important."]}
+{"id":"h2_836","character":"记得","pinyin":"jìde","meaning":"to remember","hsk":2,"category":"verbs","examples":["他每天学习记得。 - He studies 记得 every day."]}
+{"id":"h2_837","character":"欢迎","pinyin":"huānyíng","meaning":"to welcome","hsk":2,"category":"verbs","examples":["欢迎很常见。 - 欢迎 is very common."]}
+{"id":"h2_838","character":"困难","pinyin":"kùnnán","meaning":"difficult","hsk":2,"category":"adjectives","examples":["这是困难。 - This is 困难."]}
+{"id":"h2_839","character":"奇怪","pinyin":"qíguài","meaning":"strange","hsk":2,"category":"adjectives","examples":["奇怪很重要。 - 奇怪 is very important."]}
+{"id":"h2_840","character":"突然","pinyin":"tūrán","meaning":"sudden/suddenly","hsk":2,"category":"adverbs","examples":["突然很常见。 - 突然 is very common."]}
+{"id":"h2_841","character":"经常","pinyin":"jīngcháng","meaning":"often","hsk":2,"category":"adverbs","examples":["经常很常见。 - 经常 is very common."]}
+{"id":"h2_842","character":"马上","pinyin":"mǎshàng","meaning":"immediately","hsk":2,"category":"adverbs","examples":["我们都喜欢马上。 - We all like 马上."]}
+{"id":"h2_843","character":"太","pinyin":"tài","meaning":"too/very","hsk":2,"category":"adverbs","examples":["太很重要。 - 太 is very important."]}
+{"id":"h2_844","character":"极","pinyin":"jí","meaning":"extremely","hsk":2,"category":"adverbs","examples":["我需要买极。 - I need to buy 极."]}
+{"id":"h2_845","character":"刚","pinyin":"gāng","meaning":"just now","hsk":2,"category":"adverbs","examples":["请给我看刚。 - Please show me 刚."]}
+{"id":"h2_846","character":"才","pinyin":"cái","meaning":"just/only then","hsk":2,"category":"adverbs","examples":["我喜欢才。 - I like 才."]}
+{"id":"h2_847","character":"都","pinyin":"dōu","meaning":"all/both","hsk":2,"category":"adverbs","examples":["你知道都吗？ - Do you know 都?"]}
+{"id":"h2_848","character":"只","pinyin":"zhǐ","meaning":"only","hsk":2,"category":"adverbs","examples":["我需要买只。 - I need to buy 只."]}
+{"id":"h2_849","character":"也","pinyin":"yě","meaning":"also","hsk":2,"category":"adverbs","examples":["也在中国很流行。 - 也 is very popular in China."]}
+{"id":"h2_850","character":"很","pinyin":"hěn","meaning":"very","hsk":2,"category":"adverbs","examples":["很很重要。 - 很 is very important."]}
+{"id":"h2_851","character":"快","pinyin":"kuài","meaning":"quickly","hsk":2,"category":"adverbs","examples":["我需要买快。 - I need to buy 快."]}
+{"id":"h2_852","character":"慢","pinyin":"màn","meaning":"slowly","hsk":2,"category":"adverbs","examples":["这是慢。 - This is 慢."]}
+{"id":"h2_853","character":"早","pinyin":"zǎo","meaning":"early","hsk":2,"category":"adverbs","examples":["我喜欢早。 - I like 早."]}
+{"id":"h2_854","character":"晚","pinyin":"wǎn","meaning":"late","hsk":2,"category":"adverbs","examples":["我们都喜欢晚。 - We all like 晚."]}
+{"id":"h2_855","character":"先","pinyin":"xiān","meaning":"first","hsk":2,"category":"adverbs","examples":["你知道先吗？ - Do you know 先?"]}
+{"id":"h2_856","character":"而且","pinyin":"érqiě","meaning":"and/moreover","hsk":2,"category":"conjunctions","examples":["而且很重要。 - 而且 is very important."]}
+{"id":"h2_857","character":"如果","pinyin":"rúguǒ","meaning":"if","hsk":2,"category":"conjunctions","examples":["你知道如果吗？ - Do you know 如果?"]}
+{"id":"h2_858","character":"虽然","pinyin":"suīrán","meaning":"although","hsk":2,"category":"conjunctions","examples":["我需要买虽然。 - I need to buy 虽然."]}
+{"id":"h2_859","character":"饭店","pinyin":"fàndiàn","meaning":"hotel/restaurant","hsk":2,"category":"nouns","examples":["请给我看饭店。 - Please show me 饭店."]}
+{"id":"h2_860","character":"手表","pinyin":"shǒubiǎo","meaning":"watch","hsk":2,"category":"nouns","examples":["我们都喜欢手表。 - We all like 手表."]}
+{"id":"h2_861","character":"眼镜","pinyin":"yǎnjìng","meaning":"glasses","hsk":2,"category":"nouns","examples":["眼镜很常见。 - 眼镜 is very common."]}
+{"id":"h2_862","character":"雨伞","pinyin":"yǔsǎn","meaning":"umbrella","hsk":2,"category":"nouns","examples":["你知道雨伞吗？ - Do you know 雨伞?"]}
+{"id":"h2_863","character":"礼物","pinyin":"lǐwù","meaning":"gift","hsk":2,"category":"nouns","examples":["他每天学习礼物。 - He studies 礼物 every day."]}
+{"id":"h2_864","character":"水果","pinyin":"shuǐguǒ","meaning":"fruit","hsk":2,"category":"nouns","examples":["他每天学习水果。 - He studies 水果 every day."]}
+{"id":"h2_865","character":"蔬菜","pinyin":"shūcài","meaning":"vegetables","hsk":2,"category":"nouns","examples":["蔬菜很常见。 - 蔬菜 is very common."]}
+{"id":"h2_866","character":"牛奶","pinyin":"niúnǎi","meaning":"milk","hsk":2,"category":"nouns","examples":["你知道牛奶吗？ - Do you know 牛奶?"]}
+{"id":"h2_867","character":"鸡蛋","pinyin":"jīdàn","meaning":"egg","hsk":2,"category":"nouns","examples":["这是鸡蛋。 - This is 鸡蛋."]}
+{"id":"h2_868","character":"面包","pinyin":"miànbāo","meaning":"bread","hsk":2,"category":"nouns","examples":["我们都喜欢面包。 - We all like 面包."]}
+{"id":"h2_869","character":"米饭","pinyin":"mǐfàn","meaning":"cooked rice","hsk":2,"category":"nouns","examples":["我需要买米饭。 - I need to buy 米饭."]}
+{"id":"h2_870","character":"面条","pinyin":"miàntiáo","meaning":"noodles","hsk":2,"category":"nouns","examples":["面条在中国很流行。 - 面条 is very popular in China."]}
+{"id":"h2_871","character":"饺子","pinyin":"jiǎozi","meaning":"dumplings","hsk":2,"category":"nouns","examples":["他每天学习饺子。 - He studies 饺子 every day."]}
+{"id":"h2_872","character":"苹果","pinyin":"píngguǒ","meaning":"apple","hsk":2,"category":"nouns","examples":["请给我看苹果。 - Please show me 苹果."]}
+{"id":"h2_873","character":"西瓜","pinyin":"xīguā","meaning":"watermelon","hsk":2,"category":"nouns","examples":["他每天学习西瓜。 - He studies 西瓜 every day."]}
+{"id":"h2_874","character":"衣服","pinyin":"yīfu","meaning":"clothes","hsk":2,"category":"nouns","examples":["请给我看衣服。 - Please show me 衣服."]}
+{"id":"h2_875","character":"鞋子","pinyin":"xiézi","meaning":"shoes","hsk":2,"category":"nouns","examples":["我们都喜欢鞋子。 - We all like 鞋子."]}
+{"id":"h2_876","character":"帽子","pinyin":"màozi","meaning":"hat","hsk":2,"category":"nouns","examples":["帽子很常见。 - 帽子 is very common."]}
+{"id":"h2_877","character":"灯","pinyin":"dēng","meaning":"light/lamp","hsk":2,"category":"nouns","examples":["这是灯。 - This is 灯."]}
+{"id":"h2_878","character":"胖","pinyin":"pàng","meaning":"fat","hsk":2,"category":"adjectives","examples":["胖很常见。 - 胖 is very common."]}
+{"id":"h2_879","character":"瘦","pinyin":"shòu","meaning":"thin","hsk":2,"category":"adjectives","examples":["他每天学习瘦。 - He studies 瘦 every day."]}
+{"id":"h2_880","character":"高","pinyin":"gāo","meaning":"tall/high","hsk":2,"category":"adjectives","examples":["高很常见。 - 高 is very common."]}
+{"id":"h2_881","character":"矮","pinyin":"ǎi","meaning":"short","hsk":2,"category":"adjectives","examples":["矮在中国很流行。 - 矮 is very popular in China."]}
+{"id":"h2_882","character":"长","pinyin":"cháng","meaning":"long","hsk":2,"category":"adjectives","examples":["我喜欢长。 - I like 长."]}
+{"id":"h2_883","character":"短","pinyin":"duǎn","meaning":"short","hsk":2,"category":"adjectives","examples":["短在中国很流行。 - 短 is very popular in China."]}
+{"id":"h2_884","character":"阿姨","pinyin":"āyí","meaning":"aunt","hsk":2,"category":"family","examples":["阿姨在中国很流行。 - 阿姨 is very popular in China."]}
+{"id":"h2_885","character":"爱好","pinyin":"àihào","meaning":"hobby","hsk":2,"category":"nouns","examples":["爱好很重要。 - 爱好 is very important."]}
+{"id":"h2_886","character":"按时","pinyin":"ànshí","meaning":"on time","hsk":2,"category":"adverbs","examples":["你知道按时吗？ - Do you know 按时?"]}
+{"id":"h2_887","character":"包括","pinyin":"bāokuò","meaning":"to include","hsk":2,"category":"verbs","examples":["包括很重要。 - 包括 is very important."]}
+{"id":"h2_888","character":"比赛","pinyin":"bǐsài","meaning":"competition","hsk":2,"category":"nouns","examples":["比赛很重要。 - 比赛 is very important."]}
+{"id":"h2_889","character":"必须","pinyin":"bìxū","meaning":"must","hsk":2,"category":"verbs","examples":["他每天学习必须。 - He studies 必须 every day."]}
+{"id":"h2_890","character":"变化","pinyin":"biànhuà","meaning":"change","hsk":2,"category":"nouns","examples":["变化很重要。 - 变化 is very important."]}
+{"id":"h2_891","character":"别人","pinyin":"biérén","meaning":"other people","hsk":2,"category":"nouns","examples":["别人很重要。 - 别人 is very important."]}
+{"id":"h2_892","character":"宾馆","pinyin":"bīnguǎn","meaning":"hotel","hsk":2,"category":"nouns","examples":["这是宾馆。 - This is 宾馆."]}
+{"id":"h2_893","character":"不同","pinyin":"bùtóng","meaning":"different","hsk":2,"category":"adjectives","examples":["不同很重要。 - 不同 is very important."]}
+{"id":"h2_894","character":"部分","pinyin":"bùfēn","meaning":"part","hsk":2,"category":"nouns","examples":["我需要买部分。 - I need to buy 部分."]}
+{"id":"h2_895","character":"产品","pinyin":"chǎnpǐn","meaning":"product","hsk":2,"category":"nouns","examples":["产品很常见。 - 产品 is very common."]}
+{"id":"h2_896","character":"长期","pinyin":"chángqī","meaning":"long-term","hsk":2,"category":"adjectives","examples":["这是长期。 - This is 长期."]}
+{"id":"h2_897","character":"彻底","pinyin":"chèdǐ","meaning":"thorough","hsk":2,"category":"adjectives","examples":["我需要买彻底。 - I need to buy 彻底."]}
+{"id":"h2_898","character":"沉默","pinyin":"chénmò","meaning":"silence","hsk":2,"category":"nouns","examples":["沉默在中国很流行。 - 沉默 is very popular in China."]}
+{"id":"h2_899","character":"程度","pinyin":"chéngdù","meaning":"degree","hsk":2,"category":"nouns","examples":["程度很重要。 - 程度 is very important."]}
+{"id":"h2_900","character":"充分","pinyin":"chōngfèn","meaning":"sufficient","hsk":2,"category":"adjectives","examples":["充分很重要。 - 充分 is very important."]}
+{"id":"h2_901","character":"出来","pinyin":"chūlái","meaning":"to come out","hsk":2,"category":"verbs","examples":["你知道出来吗？ - Do you know 出来?"]}
+{"id":"h2_902","character":"出去","pinyin":"chūqù","meaning":"to go out","hsk":2,"category":"verbs","examples":["他每天学习出去。 - He studies 出去 every day."]}
+{"id":"h2_903","character":"窗户","pinyin":"chuānghù","meaning":"window","hsk":2,"category":"nouns","examples":["你知道窗户吗？ - Do you know 窗户?"]}
+{"id":"h2_904","character":"错误","pinyin":"cuòwù","meaning":"mistake","hsk":2,"category":"nouns","examples":["错误很重要。 - 错误 is very important."]}
+{"id":"h2_905","character":"答应","pinyin":"dāyìng","meaning":"to promise","hsk":2,"category":"verbs","examples":["我需要买答应。 - I need to buy 答应."]}
+{"id":"h2_906","character":"打扮","pinyin":"dǎbàn","meaning":"to dress up","hsk":2,"category":"verbs","examples":["打扮很重要。 - 打扮 is very important."]}
+{"id":"h2_907","character":"打算","pinyin":"dǎsuàn","meaning":"to plan","hsk":2,"category":"verbs","examples":["你知道打算吗？ - Do you know 打算?"]}
+{"id":"h2_908","character":"打扰","pinyin":"dǎrǎo","meaning":"to disturb","hsk":2,"category":"verbs","examples":["你知道打扰吗？ - Do you know 打扰?"]}
+{"id":"h2_909","character":"大概","pinyin":"dàgài","meaning":"approximately","hsk":2,"category":"adverbs","examples":["你知道大概吗？ - Do you know 大概?"]}
+{"id":"h2_910","character":"当时","pinyin":"dāngshí","meaning":"at that time","hsk":2,"category":"nouns","examples":["请给我看当时。 - Please show me 当时."]}
+{"id":"h2_911","character":"到处","pinyin":"dàochù","meaning":"everywhere","hsk":2,"category":"adverbs","examples":["到处很常见。 - 到处 is very common."]}
+{"id":"h2_912","character":"道理","pinyin":"dàolǐ","meaning":"reason","hsk":2,"category":"nouns","examples":["道理很重要。 - 道理 is very important."]}
+{"id":"h2_913","character":"得到","pinyin":"dédào","meaning":"to get","hsk":2,"category":"verbs","examples":["请给我看得到。 - Please show me 得到."]}
+{"id":"h2_914","character":"等待","pinyin":"děngdài","meaning":"to wait","hsk":2,"category":"verbs","examples":["我需要买等待。 - I need to buy 等待."]}
+{"id":"h2_915","character":"地方","pinyin":"dìfāng","meaning":"place","hsk":2,"category":"nouns","examples":["我喜欢地方。 - I like 地方."]}
+{"id":"h2_916","character":"地震","pinyin":"dìzhèn","meaning":"earthquake","hsk":2,"category":"nouns","examples":["我需要买地震。 - I need to buy 地震."]}
+{"id":"h2_917","character":"动物","pinyin":"dòngwù","meaning":"animal","hsk":2,"category":"nouns","examples":["动物在中国很流行。 - 动物 is very popular in China."]}
+{"id":"h2_918","character":"发生","pinyin":"fāshēng","meaning":"to happen","hsk":2,"category":"verbs","examples":["我需要买发生。 - I need to buy 发生."]}
+{"id":"h2_919","character":"反复","pinyin":"fǎnfù","meaning":"repeatedly","hsk":2,"category":"adverbs","examples":["请给我看反复。 - Please show me 反复."]}
+{"id":"h2_920","character":"反应","pinyin":"fǎnyìng","meaning":"reaction","hsk":2,"category":"nouns","examples":["我们都喜欢反应。 - We all like 反应."]}
+{"id":"h2_921","character":"方法","pinyin":"fāngfǎ","meaning":"method","hsk":2,"category":"nouns","examples":["我们都喜欢方法。 - We all like 方法."]}
+{"id":"h2_922","character":"方面","pinyin":"fāngmiàn","meaning":"aspect","hsk":2,"category":"nouns","examples":["方面在中国很流行。 - 方面 is very popular in China."]}
+{"id":"h2_923","character":"方向","pinyin":"fāngxiàng","meaning":"direction","hsk":2,"category":"nouns","examples":["方向很重要。 - 方向 is very important."]}
+{"id":"h2_924","character":"访问","pinyin":"fǎngwèn","meaning":"to visit","hsk":2,"category":"verbs","examples":["你知道访问吗？ - Do you know 访问?"]}
+{"id":"h2_925","character":"放假","pinyin":"fàngjià","meaning":"to have holiday","hsk":2,"category":"verbs","examples":["我喜欢放假。 - I like 放假."]}
+{"id":"h2_926","character":"否定","pinyin":"fǒudìng","meaning":"to deny","hsk":2,"category":"verbs","examples":["你知道否定吗？ - Do you know 否定?"]}
+{"id":"h2_927","character":"符合","pinyin":"fúhé","meaning":"to conform","hsk":2,"category":"verbs","examples":["他每天学习符合。 - He studies 符合 every day."]}
+{"id":"h2_928","character":"附近","pinyin":"fùjìn","meaning":"nearby","hsk":2,"category":"adverbs","examples":["我喜欢附近。 - I like 附近."]}
+{"id":"h2_929","character":"复习","pinyin":"fùxí","meaning":"to review","hsk":2,"category":"verbs","examples":["请给我看复习。 - Please show me 复习."]}
+{"id":"h2_930","character":"改造","pinyin":"gǎizào","meaning":"to reform","hsk":2,"category":"verbs","examples":["我需要买改造。 - I need to buy 改造."]}
+{"id":"h2_931","character":"感觉","pinyin":"gǎnjué","meaning":"feeling","hsk":2,"category":"nouns","examples":["我喜欢感觉。 - I like 感觉."]}
+{"id":"h2_932","character":"刚刚","pinyin":"gānggāng","meaning":"just now","hsk":2,"category":"adverbs","examples":["他每天学习刚刚。 - He studies 刚刚 every day."]}
+{"id":"h2_933","character":"更加","pinyin":"gèngjiā","meaning":"even more","hsk":2,"category":"adverbs","examples":["更加很常见。 - 更加 is very common."]}
+{"id":"h2_934","character":"工业","pinyin":"gōngyè","meaning":"industry","hsk":2,"category":"nouns","examples":["工业很常见。 - 工业 is very common."]}
+{"id":"h2_935","character":"功夫","pinyin":"gōngfu","meaning":"kung fu","hsk":2,"category":"nouns","examples":["我喜欢功夫。 - I like 功夫."]}
+{"id":"h2_936","character":"公共","pinyin":"gōnggòng","meaning":"public","hsk":2,"category":"adjectives","examples":["你知道公共吗？ - Do you know 公共?"]}
+{"id":"h2_937","character":"公平","pinyin":"gōngpíng","meaning":"fair","hsk":2,"category":"adjectives","examples":["他每天学习公平。 - He studies 公平 every day."]}
+{"id":"h2_938","character":"共同","pinyin":"gòngtóng","meaning":"common","hsk":2,"category":"adjectives","examples":["我们都喜欢共同。 - We all like 共同."]}
+{"id":"h2_939","character":"贡献","pinyin":"gòngxiàn","meaning":"contribution","hsk":2,"category":"nouns","examples":["我喜欢贡献。 - I like 贡献."]}
+{"id":"h2_940","character":"沟通","pinyin":"gōutōng","meaning":"to communicate","hsk":2,"category":"verbs","examples":["沟通很常见。 - 沟通 is very common."]}
+{"id":"h2_941","character":"构成","pinyin":"gòuchéng","meaning":"to constitute","hsk":2,"category":"verbs","examples":["这是构成。 - This is 构成."]}
+{"id":"h2_942","character":"鼓励","pinyin":"gǔlì","meaning":"to encourage","hsk":2,"category":"verbs","examples":["请给我看鼓励。 - Please show me 鼓励."]}
+{"id":"h2_943","character":"光明","pinyin":"guāngmíng","meaning":"bright","hsk":2,"category":"adjectives","examples":["请给我看光明。 - Please show me 光明."]}
+{"id":"h2_944","character":"规定","pinyin":"guīdìng","meaning":"regulation","hsk":2,"category":"nouns","examples":["规定很重要。 - 规定 is very important."]}
+{"id":"h2_945","character":"后来","pinyin":"hòulái","meaning":"later","hsk":2,"category":"adverbs","examples":["后来很重要。 - 后来 is very important."]}
+{"id":"h2_946","character":"忽然","pinyin":"hūrán","meaning":"suddenly","hsk":2,"category":"adverbs","examples":["请给我看忽然。 - Please show me 忽然."]}
+{"id":"h2_947","character":"花园","pinyin":"huāyuán","meaning":"garden","hsk":2,"category":"nouns","examples":["花园很重要。 - 花园 is very important."]}
+{"id":"h2_948","character":"化学","pinyin":"huàxué","meaning":"chemistry","hsk":2,"category":"nouns","examples":["请给我看化学。 - Please show me 化学."]}
+{"id":"h2_949","character":"话题","pinyin":"huàtí","meaning":"topic","hsk":2,"category":"nouns","examples":["话题很重要。 - 话题 is very important."]}
+{"id":"h2_950","character":"回来","pinyin":"huílái","meaning":"to come back","hsk":2,"category":"verbs","examples":["请给我看回来。 - Please show me 回来."]}
+{"id":"h2_951","character":"回去","pinyin":"huíqù","meaning":"to go back","hsk":2,"category":"verbs","examples":["这是回去。 - This is 回去."]}
+{"id":"h2_952","character":"回忆","pinyin":"huíyì","meaning":"memory","hsk":2,"category":"nouns","examples":["回忆很常见。 - 回忆 is very common."]}
+{"id":"h2_953","character":"活动","pinyin":"huódòng","meaning":"activity","hsk":2,"category":"nouns","examples":["我喜欢活动。 - I like 活动."]}
+{"id":"h2_954","character":"活泼","pinyin":"huópō","meaning":"lively","hsk":2,"category":"adjectives","examples":["活泼很重要。 - 活泼 is very important."]}
+{"id":"h2_955","character":"或者","pinyin":"huòzhě","meaning":"or","hsk":2,"category":"conjunctions","examples":["这是或者。 - This is 或者."]}
+{"id":"h2_956","character":"基础","pinyin":"jīchǔ","meaning":"foundation","hsk":2,"category":"nouns","examples":["他每天学习基础。 - He studies 基础 every day."]}
+{"id":"h2_957","character":"机器","pinyin":"jīqì","meaning":"machine","hsk":2,"category":"nouns","examples":["我喜欢机器。 - I like 机器."]}
+{"id":"h2_958","character":"激烈","pinyin":"jīliè","meaning":"intense","hsk":2,"category":"adjectives","examples":["激烈在中国很流行。 - 激烈 is very popular in China."]}
+{"id":"h2_959","character":"积累","pinyin":"jīlěi","meaning":"to accumulate","hsk":2,"category":"verbs","examples":["我们都喜欢积累。 - We all like 积累."]}
+{"id":"h2_960","character":"家乡","pinyin":"jiāxiāng","meaning":"hometown","hsk":2,"category":"nouns","examples":["我喜欢家乡。 - I like 家乡."]}
+{"id":"h2_961","character":"坚持","pinyin":"jiānchí","meaning":"to persist","hsk":2,"category":"verbs","examples":["我需要买坚持。 - I need to buy 坚持."]}
+{"id":"h2_962","character":"检查","pinyin":"jiǎnchá","meaning":"to inspect","hsk":2,"category":"verbs","examples":["请给我看检查。 - Please show me 检查."]}
+{"id":"h2_963","character":"建设","pinyin":"jiànshè","meaning":"construction","hsk":2,"category":"nouns","examples":["这是建设。 - This is 建设."]}
+{"id":"h2_964","character":"建筑","pinyin":"jiànzhù","meaning":"building","hsk":2,"category":"nouns","examples":["建筑很重要。 - 建筑 is very important."]}
+{"id":"h2_965","character":"将来","pinyin":"jiānglái","meaning":"future","hsk":2,"category":"nouns","examples":["将来在中国很流行。 - 将来 is very popular in China."]}
+{"id":"h2_966","character":"讲话","pinyin":"jiǎnghuà","meaning":"to speak","hsk":2,"category":"verbs","examples":["讲话很常见。 - 讲话 is very common."]}
+{"id":"h2_967","character":"奖励","pinyin":"jiǎnglì","meaning":"reward","hsk":2,"category":"nouns","examples":["奖励在中国很流行。 - 奖励 is very popular in China."]}
+{"id":"h2_968","character":"降低","pinyin":"jiàngdī","meaning":"to reduce","hsk":2,"category":"verbs","examples":["这是降低。 - This is 降低."]}
+{"id":"h2_969","character":"交通","pinyin":"jiāotōng","meaning":"traffic","hsk":2,"category":"nouns","examples":["请给我看交通。 - Please show me 交通."]}
+{"id":"h2_970","character":"接受","pinyin":"jiēshòu","meaning":"to accept","hsk":2,"category":"verbs","examples":["接受很常见。 - 接受 is very common."]}
+{"id":"h2_971","character":"结合","pinyin":"jiéhé","meaning":"to combine","hsk":2,"category":"verbs","examples":["你知道结合吗？ - Do you know 结合?"]}
+{"id":"h2_972","character":"解决","pinyin":"jiějué","meaning":"to solve","hsk":2,"category":"verbs","examples":["我喜欢解决。 - I like 解决."]}
+{"id":"h2_973","character":"介绍","pinyin":"jièshào","meaning":"to introduce","hsk":2,"category":"verbs","examples":["介绍在中国很流行。 - 介绍 is very popular in China."]}
+{"id":"h2_974","character":"今后","pinyin":"jīnhòu","meaning":"from now on","hsk":2,"category":"adverbs","examples":["我喜欢今后。 - I like 今后."]}
+{"id":"h2_975","character":"进行","pinyin":"jìnxíng","meaning":"to proceed","hsk":2,"category":"verbs","examples":["请给我看进行。 - Please show me 进行."]}
+{"id":"h2_976","character":"禁止","pinyin":"jìnzhǐ","meaning":"to forbid","hsk":2,"category":"verbs","examples":["我需要买禁止。 - I need to buy 禁止."]}
+{"id":"h2_977","character":"经过","pinyin":"jīngguò","meaning":"to pass","hsk":2,"category":"verbs","examples":["你知道经过吗？ - Do you know 经过?"]}
+{"id":"h2_978","character":"警察","pinyin":"jǐngchá","meaning":"police","hsk":2,"category":"nouns","examples":["他每天学习警察。 - He studies 警察 every day."]}
+{"id":"h2_979","character":"究竟","pinyin":"jiūjìng","meaning":"actually","hsk":2,"category":"adverbs","examples":["究竟很常见。 - 究竟 is very common."]}
+{"id":"h2_980","character":"就是","pinyin":"jiùshì","meaning":"exactly","hsk":2,"category":"adverbs","examples":["我需要买就是。 - I need to buy 就是."]}
+{"id":"h2_981","character":"举行","pinyin":"jǔxíng","meaning":"to hold","hsk":2,"category":"verbs","examples":["你知道举行吗？ - Do you know 举行?"]}
+{"id":"h2_982","character":"巨大","pinyin":"jùdà","meaning":"huge","hsk":2,"category":"adjectives","examples":["他每天学习巨大。 - He studies 巨大 every day."]}
+{"id":"h2_983","character":"具有","pinyin":"jùyǒu","meaning":"to possess","hsk":2,"category":"verbs","examples":["他每天学习具有。 - He studies 具有 every day."]}
+{"id":"h2_984","character":"开放","pinyin":"kāifàng","meaning":"to open up","hsk":2,"category":"verbs","examples":["我需要买开放。 - I need to buy 开放."]}
+{"id":"h2_985","character":"看法","pinyin":"kànfǎ","meaning":"viewpoint","hsk":2,"category":"nouns","examples":["我需要买看法。 - I need to buy 看法."]}
+{"id":"h2_986","character":"可是","pinyin":"kěshì","meaning":"but","hsk":2,"category":"conjunctions","examples":["可是在中国很流行。 - 可是 is very popular in China."]}
+{"id":"h2_987","character":"肯定","pinyin":"kěndìng","meaning":"certainly","hsk":2,"category":"adverbs","examples":["这是肯定。 - This is 肯定."]}
+{"id":"h2_988","character":"扩大","pinyin":"kuòdà","meaning":"to expand","hsk":2,"category":"verbs","examples":["扩大在中国很流行。 - 扩大 is very popular in China."]}
+{"id":"h2_989","character":"来到","pinyin":"láidào","meaning":"to arrive","hsk":2,"category":"verbs","examples":["来到很重要。 - 来到 is very important."]}
+{"id":"h2_990","character":"浪费","pinyin":"làngfèi","meaning":"to waste","hsk":2,"category":"verbs","examples":["浪费很重要。 - 浪费 is very important."]}
+{"id":"h2_991","character":"理解","pinyin":"lǐjiě","meaning":"to understand","hsk":2,"category":"verbs","examples":["理解在中国很流行。 - 理解 is very popular in China."]}
+{"id":"h2_992","character":"厉害","pinyin":"lìhài","meaning":"terrific","hsk":2,"category":"adjectives","examples":["我喜欢厉害。 - I like 厉害."]}
+{"id":"h2_993","character":"利用","pinyin":"lìyòng","meaning":"to utilize","hsk":2,"category":"verbs","examples":["我需要买利用。 - I need to buy 利用."]}
+{"id":"h2_994","character":"例如","pinyin":"lìrú","meaning":"for example","hsk":2,"category":"adverbs","examples":["你知道例如吗？ - Do you know 例如?"]}
+{"id":"h2_995","character":"力量","pinyin":"lìliàng","meaning":"strength","hsk":2,"category":"nouns","examples":["力量在中国很流行。 - 力量 is very popular in China."]}
+{"id":"h2_996","character":"临时","pinyin":"línshí","meaning":"temporary","hsk":2,"category":"adjectives","examples":["请给我看临时。 - Please show me 临时."]}
+{"id":"h2_997","character":"另外","pinyin":"lìngwài","meaning":"in addition","hsk":2,"category":"adverbs","examples":["另外很重要。 - 另外 is very important."]}
+{"id":"h2_998","character":"流行","pinyin":"liúxíng","meaning":"popular","hsk":2,"category":"adjectives","examples":["我需要买流行。 - I need to buy 流行."]}
+{"id":"h2_999","character":"麻烦","pinyin":"máfan","meaning":"troublesome","hsk":2,"category":"adjectives","examples":["我喜欢麻烦。 - I like 麻烦."]}
+{"id":"h2_1000","character":"美好","pinyin":"měihǎo","meaning":"beautiful","hsk":2,"category":"adjectives","examples":["请给我看美好。 - Please show me 美好."]}

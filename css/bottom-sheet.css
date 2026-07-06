@@ -1,0 +1,192 @@
+/* ============================================
+   Chinese Master - Bottom Sheet
+   iOS-style sheet with swipe-dismiss + grabber
+   ============================================ */
+
+/* --- Sheet Root (portal) --- */
+#sheet-root {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    pointer-events: none;
+}
+
+#sheet-root[aria-hidden="false"] {
+    pointer-events: auto;
+}
+
+/* --- Backdrop --- */
+.sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+#sheet-root[aria-hidden="false"] .sheet-backdrop {
+    opacity: 1;
+}
+
+/* --- Sheet Panel --- */
+.sheet-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 70vh;
+    max-height: 70dvh;
+    background: var(--bg-card);
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.34s cubic-bezier(0.32, 0.72, 0, 1);
+    z-index: 1;
+    overflow-y: auto;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+}
+
+#sheet-root[aria-hidden="false"] .sheet-panel {
+    transform: translateY(0);
+}
+
+/* --- Grabber Handle --- */
+.sheet-grabber {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 8px;
+    cursor: grab;
+    flex-shrink: 0;
+}
+
+.sheet-grabber::after {
+    content: '';
+    width: 36px;
+    height: 5px;
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.sheet-grabber:hover::after,
+.sheet-grabber:active::after {
+    background: rgba(148, 163, 184, 0.5);
+}
+
+/* --- Sheet Header --- */
+.sheet-header {
+    padding: 0 20px 12px;
+    border-bottom: 1px solid var(--glass-border);
+    flex-shrink: 0;
+}
+
+.sheet-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.sheet-header p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 4px 0 0;
+}
+
+/* --- Sheet Body --- */
+.sheet-body {
+    padding: 12px 8px;
+    flex: 1;
+}
+
+/* --- Sheet Row (menu item) --- */
+.sheet-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.15s ease, transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: calc(100% - 16px);
+    font-family: var(--font-en);
+    text-align: left;
+}
+
+.sheet-row:active {
+    background: var(--bg-hover);
+    transform: scale(0.98);
+}
+
+.sheet-row:focus-visible {
+    outline: 2px solid #f1c40f;
+    outline-offset: -2px;
+}
+
+.sheet-row-icon {
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sheet-row-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+}
+
+.sheet-row-label {
+    flex: 1;
+}
+
+.sheet-row-arrow {
+    color: var(--text-muted);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* --- Sheet Danger row --- */
+.sheet-row.danger {
+    color: var(--color-danger);
+}
+
+/* --- Sheet divider --- */
+.sheet-divider {
+    height: 1px;
+    background: var(--glass-border);
+    margin: 6px 16px;
+}
+
+/* --- Sheet nested / sub-section label --- */
+.sheet-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    padding: 8px 20px 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sheet-panel {
+        transition: none;
+    }
+
+    .sheet-backdrop {
+        transition: none;
+    }
+}
