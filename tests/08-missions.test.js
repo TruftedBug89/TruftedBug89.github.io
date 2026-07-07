@@ -106,17 +106,23 @@ describe('08 — Missions System', () => {
 
   it('recordActivity increments matching mission progress', () => {
     const M = globalThis.Missions;
-    M._data.dailies = M._generateDailies();
+    M._data.dailies = [
+      {
+        id: 'd-test-' + M._today() + '-0',
+        templateId: 'listen-3',
+        type: 'listening',
+        description: 'Complete 3 listening exercises',
+        icon: '🎧',
+        target: 3,
+        progress: 0,
+        reward: 30,
+        claimed: false,
+        date: M._today()
+      }
+    ];
 
-    const initial = M._data.dailies.map(m => m.progress);
     M.recordActivity('listening', { score: 8, total: 10, isPerfect: false, xp: 10 });
-
-    const after = M._data.dailies.map(m => m.progress);
-    let anyChanged = false;
-    for (let i = 0; i < after.length; i++) {
-      if (after[i] !== initial[i]) anyChanged = true;
-    }
-    assert.ok(anyChanged, 'no mission was incremented');
+    assert.equal(M._data.dailies[0].progress, 1);
   });
 
   it('getDailies returns array', () => {

@@ -16,6 +16,7 @@ var DataLoader = (function () {
         hsk3: 'data/vocabulary-hsk3.jsonl',
         hsk4: 'data/vocabulary-hsk4.jsonl',
         hsk5: 'data/vocabulary-hsk5.jsonl',
+        hsk4_5: 'data/vocabulary-hsk4-5.jsonl',
         vocabulary: 'data/vocabulary-extended.jsonl'
     };
 
@@ -25,6 +26,7 @@ var DataLoader = (function () {
         hsk3: 'HSK3',
         hsk4: 'HSK4',
         hsk5: 'HSK5',
+        hsk4_5: 'HSK4_5',
         vocabulary: 'VocabularyData'
     };
 
