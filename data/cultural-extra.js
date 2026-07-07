@@ -1,1044 +1,268 @@
 // ============================================
-// CHINESE MASTER - Extra Cultural Notes
-// 100 additional cultural insights
-// Auto-merges into CulturalData
+// CHINESE MASTER - Cultural Notes Extra
+// 400 additional cultural notes auto-merged into CulturalData
 // ============================================
 
 (function() {
-  var items = [
+    var items = [
+        // ===== 1. Festivals (cex_001 - cex_040) =====
+        {id:'cex_001',title:'Spring Festival',titleMeaning:'春节',category:'Festivals',icon:'🧧',content:'Spring Festival is the most important Chinese holiday, beginning on the first day of the first lunar month. Families reunite for a feast, set off fireworks, and give red envelopes. Celebrations last 15 days until the Lantern Festival.',keyPhrases:[{cn:'春节',pinyin:'chūn jié',en:'Spring Festival'},{cn:'年夜饭',pinyin:'nián yè fàn',en:'New Year Eve dinner'},{cn:'红包',pinyin:'hóng bāo',en:'red envelope'},{cn:'拜年',pinyin:'bài nián',en:'New Year visit'},{cn:'烟花',pinyin:'yān huā',en:'fireworks'}],significance:'Represents family reunion, renewal, and the most important social bonding event of the year.'},
+        {id:'cex_002',title:'Mid-Autumn Festival',titleMeaning:'中秋节',category:'Festivals',icon:'🥮',content:'Mid-Autumn Festival falls on the 15th day of the 8th lunar month. Families gather to admire the full moon and eat mooncakes. The festival is tied to the legend of Chang\'e flying to the moon and reflects the Chinese value of family unity.',keyPhrases:[{cn:'中秋节',pinyin:'zhōng qiū jié',en:'Mid-Autumn Festival'},{cn:'月饼',pinyin:'yuè bǐng',en:'mooncake'},{cn:'赏月',pinyin:'shǎng yuè',en:'moon gazing'},{cn:'团圆',pinyin:'tuán yuán',en:'reunion'},{cn:'嫦娥',pinyin:'cháng é',en:'Chang\'e goddess'}],significance:'Symbolizes family reunion and gratitude for the harvest, second only to Spring Festival in importance.'},
+        {id:'cex_003',title:'Dragon Boat Festival',titleMeaning:'端午节',category:'Festivals',icon:'🐉',content:'Dragon Boat Festival occurs on the 5th day of the 5th lunar month. It commemorates the poet Qu Yuan who drowned himself in protest. People eat zongzi and hold dragon boat races.',keyPhrases:[{cn:'端午节',pinyin:'duān wǔ jié',en:'Dragon Boat Festival'},{cn:'粽子',pinyin:'zòng zi',en:'rice dumpling'},{cn:'龙舟',pinyin:'lóng zhōu',en:'dragon boat'},{cn:'屈原',pinyin:'qū yuán',en:'Qu Yuan poet'},{cn:'艾草',pinyin:'ài cǎo',en:'wormwood'}],significance:'Honors Qu Yuan and promotes patriotic spirit through boat racing.'},
+        {id:'cex_004',title:'Qingming Festival',titleMeaning:'清明节',category:'Festivals',icon:'🪦',content:'Qingming Festival on April 4-5 is a day for tomb sweeping and honoring ancestors. Families visit gravesites, clean tombs, make offerings of food and paper money. It is also a spring outing day when people fly kites and enjoy nature.',keyPhrases:[{cn:'清明节',pinyin:'qīng míng jié',en:'Qingming Festival'},{cn:'扫墓',pinyin:'sǎo mù',en:'tomb sweeping'},{cn:'祖先',pinyin:'zǔ xiān',en:'ancestors'},{cn:'踏青',pinyin:'tà qīng',en:'spring outing'},{cn:'纸钱',pinyin:'zhǐ qián',en:'spirit money'}],significance:'Reflects deep-rooted filial piety and ancestor worship central to Chinese culture.'},
+        {id:'cex_005',title:'Lantern Festival',titleMeaning:'元宵节',category:'Festivals',icon:'🏮',content:'Lantern Festival marks the end of Spring Festival on the 15th day of the lunar New Year. People light and admire lanterns, solve riddles written on them, and eat tangyuan. It originated from the Han Dynasty as a Buddhist observance.',keyPhrases:[{cn:'元宵节',pinyin:'yuán xiāo jié',en:'Lantern Festival'},{cn:'灯笼',pinyin:'dēng lóng',en:'lantern'},{cn:'元宵',pinyin:'yuán xiāo',en:'tangyuan'},{cn:'灯谜',pinyin:'dēng mí',en:'lantern riddle'},{cn:'赏灯',pinyin:'shǎng dēng',en:'light viewing'}],significance:'Brings New Year celebrations to a joyful close with light and community.'},
+        {id:'cex_006',title:'Double Seventh Festival',titleMeaning:'七夕节',category:'Festivals',icon:'💞',content:'Qixi Festival on the 7th day of the 7th lunar month is China\'s Valentine\'s Day. It celebrates the legend of the cowherd Niulang and weaver girl Zhinu who meet once a year across the Milky Way.',keyPhrases:[{cn:'七夕',pinyin:'qī xī',en:'Double Seventh'},{cn:'牛郎',pinyin:'niú láng',en:'cowherd'},{cn:'织女',pinyin:'zhī nǚ',en:'weaver girl'},{cn:'银河',pinyin:'yín hé',en:'Milky Way'},{cn:'鹊桥',pinyin:'què qiáo',en:'magpie bridge'}],significance:'A romantic festival embodying enduring love and Chinese cosmological views.'},
+        {id:'cex_007',title:'Double Ninth Festival',titleMeaning:'重阳节',category:'Festivals',icon:'🏔️',content:'Chongyang Festival on the 9th day of the 9th lunar month involves climbing mountains, admiring chrysanthemums, and drinking chrysanthemum wine. It is a day to honor the elderly.',keyPhrases:[{cn:'重阳节',pinyin:'chóng yáng jié',en:'Double Ninth'},{cn:'登高',pinyin:'dēng gāo',en:'mountain climbing'},{cn:'菊花',pinyin:'jú huā',en:'chrysanthemum'},{cn:'老人',pinyin:'lǎo rén',en:'elderly'},{cn:'敬老',pinyin:'jìng lǎo',en:'respect aged'}],significance:'Promotes respect for elders and appreciation of nature.'},
+        {id:'cex_008',title:'Winter Solstice Festival',titleMeaning:'冬至',category:'Festivals',icon:'🥟',content:'Dongzhi around December 21 is a time for families to gather and eat warming foods like tangyuan in the south or dumplings in the north. It marks the shortest day and longest night, after which yang energy begins to rise.',keyPhrases:[{cn:'冬至',pinyin:'dōng zhì',en:'Winter Solstice'},{cn:'汤圆',pinyin:'tāng yuán',en:'tangyuan'},{cn:'饺子',pinyin:'jiǎo zi',en:'dumplings'},{cn:'团圆',pinyin:'tuán yuán',en:'family reunion'},{cn:'阳气',pinyin:'yáng qì',en:'yang energy'}],significance:'Reflects Chinese cosmological balance and family warmth in winter.'},
+        {id:'cex_009',title:'Shangsi Festival',titleMeaning:'上巳节',category:'Festivals',icon:'🌸',content:'Shangsi Festival on the 3rd day of the 3rd lunar month was an ancient day for young people to meet and court by riverbanks. It also involved washing away bad luck.',keyPhrases:[{cn:'上巳节',pinyin:'shàng sì jié',en:'Shangsi Festival'},{cn:'踏青',pinyin:'tà qīng',en:'spring outing'},{cn:'河边',pinyin:'hé biān',en:'riverside'},{cn:'沐浴',pinyin:'mù yù',en:'ritual bathing'},{cn:'求爱',pinyin:'qiú ài',en:'courtship'}],significance:'Shows ancient Chinese attitudes toward romance and seasonal purification.'},
+        {id:'cex_010',title:'Laba Festival',titleMeaning:'腊八节',category:'Festivals',icon:'🥣',content:'Laba Festival on the 8th day of the 12th lunar month celebrates the Buddha\'s enlightenment. People eat laba congee made with grains, beans, dried fruits, and nuts. It marks the beginning of Spring Festival preparations.',keyPhrases:[{cn:'腊八节',pinyin:'là bā jié',en:'Laba Festival'},{cn:'腊八粥',pinyin:'là bā zhōu',en:'laba congee'},{cn:'佛陀',pinyin:'fó tuó',en:'Buddha'},{cn:'成道',pinyin:'chéng dào',en:'enlightenment'},{cn:'过年准备',pinyin:'guò nián zhǔn bèi',en:'New Year preparations'}],significance:'Combines Buddhist observance with winter nourishment and New Year countdown.'},
+        {id:'cex_011',title:'Ghost Festival',titleMeaning:'中元节',category:'Festivals',icon:'👻',content:'Zhongyuan Festival on the 15th day of the 7th lunar month is when spirits of the dead roam the living world. Families offer food, burn incense and paper money to appease ancestors and wandering ghosts.',keyPhrases:[{cn:'中元节',pinyin:'zhōng yuán jié',en:'Ghost Festival'},{cn:'鬼',pinyin:'guǐ',en:'ghost'},{cn:'烧纸',pinyin:'shāo zhǐ',en:'burn spirit money'},{cn:'祭祀',pinyin:'jì sì',en:'offer sacrifices'},{cn:'超度',pinyin:'chāo dù',en:'salvation ritual'}],significance:'Shows Chinese beliefs about the afterlife and respect for deceased ancestors.'},
+        {id:'cex_012',title:'National Day',titleMeaning:'国庆节',category:'Festivals',icon:'🇨🇳',content:'National Day on October 1 celebrates the founding of the People\'s Republic of China in 1949. Golden Week holiday features massive displays, fireworks, and flag-raising at Tiananmen.',keyPhrases:[{cn:'国庆节',pinyin:'guó qìng jié',en:'National Day'},{cn:'黄金周',pinyin:'huáng jīn zhōu',en:'Golden Week'},{cn:'天安门',pinyin:'tiān ān mén',en:'Tiananmen'},{cn:'阅兵',pinyin:'yuè bīng',en:'military parade'},{cn:'国旗',pinyin:'guó qí',en:'national flag'}],significance:'A patriotic celebration showcasing national pride and modern achievements.'},
+        {id:'cex_013',title:'Chinese New Year Eve',titleMeaning:'除夕',category:'Festivals',icon:'🎆',content:'Chuxi is the evening before Spring Festival when families hold the reunion dinner, the most important meal of the year. People stay up late watching the Spring Festival Gala and set off fireworks at midnight.',keyPhrases:[{cn:'除夕',pinyin:'chú xī',en:'New Year Eve'},{cn:'团圆饭',pinyin:'tuán yuán fàn',en:'reunion dinner'},{cn:'春晚',pinyin:'chūn wǎn',en:'Spring Festival Gala'},{cn:'守岁',pinyin:'shǒu suì',en:'stay up late'},{cn:'爆竹',pinyin:'bào zhú',en:'firecrackers'}],significance:'The peak moment of family bonding and transition from old to new year.'},
+        {id:'cex_014',title:'Little New Year',titleMeaning:'小年',category:'Festivals',icon:'🍬',content:'Xiaonian around January 23 is when the Kitchen God returns to heaven to report on the family. People clean homes thoroughly and offer sticky sweets so he speaks well of them. It kicks off Spring Festival preparations.',keyPhrases:[{cn:'小年',pinyin:'xiǎo nián',en:'Little New Year'},{cn:'灶神',pinyin:'zào shén',en:'Kitchen God'},{cn:'大扫除',pinyin:'dà sǎo chú',en:'spring cleaning'},{cn:'祭灶',pinyin:'jì zào',en:'Kitchen God offering'},{cn:'糖瓜',pinyin:'táng guā',en:'sticky melon candy'}],significance:'A blend of folk religion and domestic ritual marking New Year start.'},
+        {id:'cex_015',title:'Duanwu Customs',titleMeaning:'端午习俗',category:'Festivals',icon:'🎏',content:'Besides zongzi and dragon boats, Duanwu involves hanging mugwort and calamus on doors to repel evil spirits. Children wear fragrant sachets and adults drink realgar wine. These originated from ancient disease prevention.',keyPhrases:[{cn:'菖蒲',pinyin:'chāng pú',en:'calamus'},{cn:'香包',pinyin:'xiāng bāo',en:'fragrant sachet'},{cn:'雄黄酒',pinyin:'xióng huáng jiǔ',en:'realgar wine'},{cn:'驱邪',pinyin:'qū xié',en:'ward off evil'},{cn:'五毒',pinyin:'wǔ dú',en:'five poisonous creatures'}],significance:'Ancient health practices evolving into enduring festive traditions.'},
+        {id:'cex_016',title:'Mountain Climbing Festival',titleMeaning:'登高节',category:'Festivals',icon:'⛰️',content:'An alternative name for Double Ninth Festival emphasizes climbing hills to avoid misfortune. Ancient Chinese believed the 9th day of the 9th month had too much yang energy, so climbing high helped balance it.',keyPhrases:[{cn:'登高节',pinyin:'dēng gāo jié',en:'Mountain Climbing'},{cn:'避灾',pinyin:'bì zāi',en:'avoid disaster'},{cn:'茱萸',pinyin:'zhū yú',en:'cornus fruit'},{cn:'重阳糕',pinyin:'chóng yáng gāo',en:'Chongyang cake'},{cn:'放风筝',pinyin:'fàng fēng zhēng',en:'kite flying'}],significance:'Numerology and cosmology shaping seasonal outdoor activities.'},
+        {id:'cex_017',title:'Spring Festival Couplets',titleMeaning:'春联',category:'Festivals',icon:'🟥',content:'Hanging red couplets on doorways before Spring Festival dates to the Song Dynasty. Each pair of vertical scrolls has auspicious phrases, and a horizontal banner caps them. They express good wishes for the coming year.',keyPhrases:[{cn:'春联',pinyin:'chūn lián',en:'Spring couplets'},{cn:'横批',pinyin:'héng pī',en:'horizontal banner'},{cn:'上联',pinyin:'shàng lián',en:'first line'},{cn:'下联',pinyin:'xià lián',en:'second line'},{cn:'福字',pinyin:'fú zì',en:'fortune character'}],significance:'Combines calligraphy art with poetic New Year blessings.'},
+        {id:'cex_018',title:'God of Wealth Worship',titleMeaning:'迎财神',category:'Festivals',icon:'💰',content:'On the 5th day of the New Year, families welcome the God of Wealth by setting off firecrackers, opening business doors, and eating dumplings shaped like ancient money. This ensures prosperity for the business year.',keyPhrases:[{cn:'财神',pinyin:'cái shén',en:'God of Wealth'},{cn:'初五',pinyin:'chū wǔ',en:'fifth day'},{cn:'迎财神',pinyin:'yíng cái shén',en:'welcome Wealth God'},{cn:'开市',pinyin:'kāi shì',en:'reopen business'},{cn:'破五',pinyin:'pò wǔ',en:'break fifth restrictions'}],significance:'Reflects traditional business culture and the pursuit of prosperity.'},
+        {id:'cex_019',title:'Water Splashing Festival',titleMeaning:'泼水节',category:'Festivals',icon:'💦',content:'The Water Splashing Festival is celebrated by the Dai people of Yunnan during their New Year in April. People splash water on each other to wash away bad luck and pray for good harvests. Dragon boat races and peacock dances feature.',keyPhrases:[{cn:'泼水节',pinyin:'pō shuǐ jié',en:'Water Splashing'},{cn:'傣族',pinyin:'dǎi zú',en:'Dai ethnic group'},{cn:'吉祥',pinyin:'jí xiáng',en:'auspicious'},{cn:'孔雀舞',pinyin:'kǒng què wǔ',en:'peacock dance'},{cn:'泼水',pinyin:'pō shuǐ',en:'water splashing'}],significance:'Joyous ethnic minority New Year cleansing ritual.'},
+        {id:'cex_020',title:'Laba Garlic',titleMeaning:'腊八蒜',category:'Festivals',icon:'🧄',content:'In northern China, people pickle garlic in vinegar on Laba day. The garlic turns emerald green by Spring Festival when eaten with dumplings. This combines festive food preparation with traditional health beliefs.',keyPhrases:[{cn:'腊八蒜',pinyin:'là bā suàn',en:'Laba garlic'},{cn:'醋',pinyin:'cù',en:'vinegar'},{cn:'翡翠色',pinyin:'fěi cuì sè',en:'emerald green'},{cn:'饺子',pinyin:'jiǎo zi',en:'dumplings'},{cn:'腌制',pinyin:'yān zhì',en:'pickle'}],significance:'Unique northern festive food tradition with striking visual appeal.'},
+        {id:'cex_021',title:'Spring Festival Travel Rush',titleMeaning:'春运',category:'Festivals',icon:'🚄',content:'Chunyun is the world\'s largest annual human migration as hundreds of millions travel home for Spring Festival. Railways, planes, and buses operate at maximum capacity for 40 days.',keyPhrases:[{cn:'春运',pinyin:'chūn yùn',en:'Spring Festival travel rush'},{cn:'抢票',pinyin:'qiǎng piào',en:'snatch tickets'},{cn:'回家',pinyin:'huí jiā',en:'go home'},{cn:'火车站',pinyin:'huǒ chē zhàn',en:'train station'},{cn:'高峰期',pinyin:'gāo fēng qī',en:'peak period'}],significance:'Demonstrates the immense scale of modern China and the pull of family reunion.'},
+        {id:'cex_022',title:'Year Beast Legend',titleMeaning:'年兽传说',category:'Festivals',icon:'👹',content:'Legend says the beast Nian comes on New Year Eve. Villagers discovered Nian fears red color, fire, and loud noises. These became the basis for Spring Festival traditions of red decorations, firecrackers, and lanterns.',keyPhrases:[{cn:'年兽',pinyin:'nián shòu',en:'Nian beast'},{cn:'传说',pinyin:'chuán shuō',en:'legend'},{cn:'红色',pinyin:'hóng sè',en:'red'},{cn:'鞭炮',pinyin:'biān pào',en:'firecrackers'},{cn:'驱赶',pinyin:'qū gǎn',en:'drive away'}],significance:'Foundational myth explaining origins of Spring Festival customs.'},
+        {id:'cex_023',title:'Lucky Money History',titleMeaning:'压岁钱',category:'Festivals',icon:'🧧',content:'Yasuiqian or lucky money is given in red envelopes to children during Spring Festival. Originally coins strung with red thread warded off the beast Sui. Now crisp new bills in decorated red packets.',keyPhrases:[{cn:'压岁钱',pinyin:'yā suì qián',en:'lucky money'},{cn:'红包',pinyin:'hóng bāo',en:'red envelope'},{cn:'祟',pinyin:'suì',en:'evil spirit'},{cn:'压邪',pinyin:'yā xié',en:'suppress evil'},{cn:'吉利',pinyin:'jí lì',en:'good luck'}],significance:'Evolved from talismanic protection into the iconic New Year gesture.'},
+        {id:'cex_024',title:'Tangyuan Tradition',titleMeaning:'吃汤圆',category:'Festivals',icon:'⚪',content:'Tangyuan are sweet glutinous rice balls served during Lantern Festival and Winter Solstice. Round shape symbolizes family unity. Fillings include sesame, peanut, red bean, and creative modern flavors.',keyPhrases:[{cn:'汤圆',pinyin:'tāng yuán',en:'tangyuan'},{cn:'芝麻',pinyin:'zhī ma',en:'sesame'},{cn:'花生',pinyin:'huā shēng',en:'peanut'},{cn:'团圆',pinyin:'tuán yuán',en:'reunion'},{cn:'糯米',pinyin:'nuò mǐ',en:'glutinous rice'}],significance:'Sweet treat embodying the Chinese ideal of family harmony.'},
+        {id:'cex_025',title:'Qi Xi Traditions',titleMeaning:'七夕习俗',category:'Festivals',icon:'🪡',content:'On Qi Xi, young women offer fruit to Zhinu praying for sewing skill. They thread needles under moonlight, make embroidered gifts, and float needles on water to divine marriage prospects.',keyPhrases:[{cn:'乞巧',pinyin:'qǐ qiǎo',en:'beg for skill'},{cn:'穿针',pinyin:'chuān zhēn',en:'thread needle'},{cn:'许愿',pinyin:'xǔ yuàn',en:'make a wish'},{cn:'巧果',pinyin:'qiǎo guǒ',en:'skill fruits'},{cn:'刺绣',pinyin:'cì xiù',en:'embroidery'}],significance:'Preserves ancient women\'s craft traditions and romantic divination.'},
+        {id:'cex_026',title:'Qingming Food',titleMeaning:'清明食物',category:'Festivals',icon:'🥬',content:'Qingming traditions include eating qingtuan, green rice balls colored with mugwort juice and filled with sweet bean paste. Cold food is traditionally eaten since fire was forbidden on the day.',keyPhrases:[{cn:'青团',pinyin:'qīng tuán',en:'green rice ball'},{cn:'寒食',pinyin:'hán shí',en:'cold food'},{cn:'艾草',pinyin:'ài cǎo',en:'mugwort'},{cn:'豆沙',pinyin:'dòu shā',en:'bean paste'},{cn:'清明果',pinyin:'qīng míng guǒ',en:'Qingming fruit'}],significance:'Seasonal eating merged with memorial customs.'},
+        {id:'cex_027',title:'Dragon Head Raising Day',titleMeaning:'龙抬头',category:'Festivals',icon:'🐲',content:'Longtaitou on the 2nd day of the 2nd lunar month marks when the dragon raises its head bringing spring rains. People get haircuts for good luck and eat dragon-scale pancakes.',keyPhrases:[{cn:'龙抬头',pinyin:'lóng tái tóu',en:'Dragon Head Raising'},{cn:'理发',pinyin:'lǐ fà',en:'haircut'},{cn:'春耕',pinyin:'chūn gēng',en:'spring plowing'},{cn:'龙鳞饼',pinyin:'lóng lín bǐng',en:'dragon-scale pancake'},{cn:'雨水',pinyin:'yǔ shuǐ',en:'rainwater'}],significance:'Connects agriculture, astrology, and folk customs in spring celebration.'},
+        {id:'cex_028',title:'Temple Fairs',titleMeaning:'庙会',category:'Festivals',icon:'⛩️',content:'Temple fairs are held during Spring Festival and on gods\' birthdays. They feature folk performances like dragon dances, acrobatics, traditional snacks, and festive goods.',keyPhrases:[{cn:'庙会',pinyin:'miào huì',en:'temple fair'},{cn:'舞龙',pinyin:'wǔ lóng',en:'dragon dance'},{cn:'小吃',pinyin:'xiǎo chī',en:'snacks'},{cn:'杂技',pinyin:'zá jì',en:'acrobatics'},{cn:'香火',pinyin:'xiāng huǒ',en:'incense offering'}],significance:'Community celebration blending religious devotion with entertainment.'},
+        {id:'cex_029',title:'Torch Festival',titleMeaning:'火把节',category:'Festivals',icon:'🔥',content:'The Torch Festival is celebrated by Yi and other ethnic groups of southwestern China. People light giant torches, parade through fields, and hold wrestling and horse racing competitions.',keyPhrases:[{cn:'火把节',pinyin:'huǒ bǎ jié',en:'Torch Festival'},{cn:'彝族',pinyin:'yí zú',en:'Yi ethnic group'},{cn:'火把',pinyin:'huǒ bǎ',en:'torch'},{cn:'摔跤',pinyin:'shuāi jiāo',en:'wrestling'},{cn:'赛马',pinyin:'sài mǎ',en:'horse racing'}],significance:'Ethnic minority culture with deep agricultural ritual roots.'},
+        {id:'cex_030',title:'Nadam Fair',titleMeaning:'那达慕',category:'Festivals',icon:'🏇',content:'Nadam is a Mongolian traditional festival featuring three manly games: wrestling, horse racing, and archery. Held on grasslands in summer with singing, dancing, and Mongolian cuisine.',keyPhrases:[{cn:'那达慕',pinyin:'nà dá mù',en:'Nadam Fair'},{cn:'蒙古族',pinyin:'měng gǔ zú',en:'Mongolian ethnicity'},{cn:'摔跤',pinyin:'shuāi jiāo',en:'wrestling'},{cn:'赛马',pinyin:'sài mǎ',en:'horse racing'},{cn:'射箭',pinyin:'shè jiàn',en:'archery'}],significance:'Preserves Mongolian nomadic heritage and ethnic diversity.'},
+        {id:'cex_031',title:'Yulanpen Festival',titleMeaning:'盂兰盆节',category:'Festivals',icon:'🏮',content:'Yulanpen Festival combines Buddhist Ullambana with Chinese Ghost Festival. Monks chant sutras to release suffering souls. Families release water lanterns to guide lost spirits.',keyPhrases:[{cn:'盂兰盆',pinyin:'yú lán pén',en:'Ullambana'},{cn:'目连救母',pinyin:'mù lián jiù mǔ',en:'Mulian saves mother'},{cn:'放河灯',pinyin:'fàng hé dēng',en:'release river lanterns'},{cn:'念经',pinyin:'niàn jīng',en:'chant sutras'},{cn:'超度亡灵',pinyin:'chāo dù wáng líng',en:'save souls'}],significance:'Buddhist concepts merged with indigenous ancestor worship.'},
+        {id:'cex_032',title:'Mooncake Traditions',titleMeaning:'月饼文化',category:'Festivals',icon:'🥮',content:'Mooncakes are round pastries filled with lotus seed paste, red bean, or salted egg yolk. Modern varieties include ice cream and snow skin. Elaborate gift boxes are exchanged before the festival.',keyPhrases:[{cn:'月饼',pinyin:'yuè bǐng',en:'mooncake'},{cn:'莲蓉',pinyin:'lián róng',en:'lotus seed paste'},{cn:'蛋黄',pinyin:'dàn huáng',en:'egg yolk'},{cn:'冰皮',pinyin:'bīng pí',en:'snow skin'},{cn:'送礼',pinyin:'sòng lǐ',en:'gift giving'}],significance:'Iconic festive food doubling as a major social and business gift.'},
+        {id:'cex_033',title:'Eve Dinner Traditions',titleMeaning:'年夜饭习俗',category:'Festivals',icon:'🍲',content:'The New Year Eve dinner features lucky foods: fish for surplus, dumplings for wealth, spring rolls for gold bars, niangao for higher success. Dishes are chosen for symbolic meanings and homophones.',keyPhrases:[{cn:'鱼',pinyin:'yú',en:'fish-surplus'},{cn:'饺子',pinyin:'jiǎo zi',en:'dumplings'},{cn:'年糕',pinyin:'nián gāo',en:'New Year cake'},{cn:'春卷',pinyin:'chūn juǎn',en:'spring rolls'},{cn:'吉祥菜',pinyin:'jí xiáng cài',en:'lucky dishes'}],significance:'Culinary tradition where every dish carries layered symbolic meaning.'},
+        {id:'cex_034',title:'New Year Taboos',titleMeaning:'过年禁忌',category:'Festivals',icon:'🚫',content:'Spring Festival taboos: no sweeping or trash on New Year Day, no breaking dishes, no unlucky words, and no haircuts in the first month. These reflect deep-rooted superstitions.',keyPhrases:[{cn:'禁忌',pinyin:'jìn jì',en:'taboos'},{cn:'扫除',pinyin:'sǎo chú',en:'sweeping'},{cn:'说不吉利话',pinyin:'shuō bù jí lì huà',en:'say unlucky words'},{cn:'打碎',pinyin:'dǎ suì',en:'break dishes'},{cn:'正月理发',pinyin:'zhèng yuè lǐ fà',en:'first month haircut'}],significance:'Superstitious beliefs about luck during the New Year.'},
+        {id:'cex_035',title:'Spring Flower Festival',titleMeaning:'花朝节',category:'Festivals',icon:'🌺',content:'Huazhao Festival on the 15th day of the 2nd lunar month celebrates the birthday of all flowers. People visit gardens, hold flower fairs, and make flower cakes.',keyPhrases:[{cn:'花朝节',pinyin:'huā zhāo jié',en:'Flower Festival'},{cn:'赏花',pinyin:'shǎng huā',en:'flower viewing'},{cn:'花糕',pinyin:'huā gāo',en:'flower cake'},{cn:'百花生日',pinyin:'bǎi huā shēng rì',en:'birthday of flowers'},{cn:'踏青',pinyin:'tà qīng',en:'spring outing'}],significance:'Celebrates nature and spring beauty.'},
+        {id:'cex_036',title:'Dano Festival',titleMeaning:'端午祭',category:'Festivals',icon:'🎭',content:'Dano is celebrated by the ethnic Korean community in China on the 5th day of the 5th lunar month. Features swinging, wrestling, and mask dances with distinct Korean characteristics.',keyPhrases:[{cn:'端午祭',pinyin:'duān wǔ jì',en:'Dano Festival'},{cn:'朝鲜族',pinyin:'cháo xiǎn zú',en:'Korean ethnicity'},{cn:'荡秋千',pinyin:'dàng qiū qiān',en:'swing riding'},{cn:'摔跤',pinyin:'shuāi jiāo',en:'wrestling'},{cn:'假面舞',pinyin:'jiǎ miàn wǔ',en:'mask dance'}],significance:'Festival diversity among China\'s ethnic minorities.'},
+        {id:'cex_037',title:'Confucius Birthday',titleMeaning:'孔子诞辰',category:'Festivals',icon:'📚',content:'Confucius\'s birthday on September 28 is celebrated with ceremonies at Confucius temples featuring traditional music, dance, and sacrifices honoring the great philosopher.',keyPhrases:[{cn:'孔子诞辰',pinyin:'kǒng zǐ dàn chén',en:'Confucius birthday'},{cn:'祭孔',pinyin:'jì kǒng',en:'Confucius ceremony'},{cn:'六艺',pinyin:'liù yì',en:'six arts'},{cn:'释奠礼',pinyin:'shì diàn lǐ',en:'offering ceremony'},{cn:'孔庙',pinyin:'kǒng miào',en:'Confucius temple'}],significance:'Preserves Confucian ritual traditions.'},
+        {id:'cex_038',title:'Lantern Traditions',titleMeaning:'灯节文化',category:'Festivals',icon:'💡',content:'Lantern festivals vary by region: Pingxi sky lanterns in Taiwan, ice lanterns in Harbin, elaborate lantern fairs in Nanjing. Each showcases local artistry with illuminated celebration.',keyPhrases:[{cn:'天灯',pinyin:'tiān dēng',en:'sky lantern'},{cn:'冰灯',pinyin:'bīng dēng',en:'ice lantern'},{cn:'秦淮灯会',pinyin:'qín huái dēng huì',en:'Qinhuai Lantern Fair'},{cn:'彩灯',pinyin:'cǎi dēng',en:'colorful lantern'},{cn:'灯市',pinyin:'dēng shì',en:'lantern market'}],significance:'Regional diversity in lantern traditions.'},
+        {id:'cex_039',title:'Grain in Ear',titleMeaning:'芒种',category:'Festivals',icon:'🌾',content:'Mangzhong around June 5 is when grains ripen. Farmers hold harvest prayers. In southern China people make plum wine and welcome the rainy season. One of the 24 solar terms.',keyPhrases:[{cn:'芒种',pinyin:'máng zhǒng',en:'Grain in Ear'},{cn:'节气',pinyin:'jié qì',en:'solar term'},{cn:'梅雨',pinyin:'méi yǔ',en:'plum rain'},{cn:'煮梅',pinyin:'zhǔ méi',en:'cook plums'},{cn:'收割',pinyin:'shōu gē',en:'harvest'}],significance:'Agricultural solar terms integrated into festive culture.'},
+        {id:'cex_040',title:'Dongzhi Gathering',titleMeaning:'冬至团圆',category:'Festivals',icon:'🏠',content:'Many Chinese consider Dongzhi as important as Spring Festival. Southerners eat tangyuan at grand reunions, northerners eat dumplings. Winter Solstice is as big as the New Year.',keyPhrases:[{cn:'冬至大过年',pinyin:'dōng zhì dà guò nián',en:'Winter Solstice bigger than NY'},{cn:'团圆',pinyin:'tuán yuán',en:'reunion'},{cn:'进补',pinyin:'jìn bǔ',en:'winter nourishment'},{cn:'九层糕',pinyin:'jiǔ céng gāo',en:'nine-layer cake'},{cn:'暖身',pinyin:'nuǎn shēn',en:'warm body'}],significance:'Major family gathering occasion rivaling Spring Festival.'},
 
-    // ── Festivals (10) ──────────────────────────
+        // ===== 2. Customs (cex_041 - cex_080) =====
+        {id:'cex_041',title:'Red Envelope Etiquette',titleMeaning:'红包礼仪',category:'Customs',icon:'🧧',content:'Red envelopes contain money for weddings, New Year, and celebrations. Amounts should be even numbers but avoid 4. 8 is lucky. Never open in the giver\'s presence.',keyPhrases:[{cn:'红包',pinyin:'hóng bāo',en:'red envelope'},{cn:'吉利数字',pinyin:'jí lì shù zì',en:'lucky numbers'},{cn:'偶数',pinyin:'ǒu shù',en:'even number'},{cn:'忌讳四',pinyin:'jì huì sì',en:'avoid four'},{cn:'金额',pinyin:'jīn é',en:'amount'}],significance:'Social practice governed by numerical and behavioral etiquette.'},
+        {id:'cex_042',title:'Tea Ceremony',titleMeaning:'茶道',category:'Customs',icon:'🍵',content:'Chinese gongfu tea ceremony emphasizes respect, harmony, and tranquility. The host warms teaware, rinses leaves, and pours short infusions. Each step has meaning.',keyPhrases:[{cn:'功夫茶',pinyin:'gōng fū chá',en:'gongfu tea'},{cn:'品茶',pinyin:'pǐn chá',en:'tea tasting'},{cn:'洗茶',pinyin:'xǐ chá',en:'rinse tea'},{cn:'闻香',pinyin:'wén xiāng',en:'smell aroma'},{cn:'奉茶',pinyin:'fèng chá',en:'offer tea'}],significance:'Embodies Chinese philosophy of mindfulness and hospitality.'},
+        {id:'cex_043',title:'Feng Shui',titleMeaning:'风水',category:'Customs',icon:'🌀',content:'Feng shui arranges spaces to harmonize with natural energy flows. Considers compass directions, element balance, and furniture placement. Used in home and office design.',keyPhrases:[{cn:'风水',pinyin:'fēng shuǐ',en:'feng shui'},{cn:'气',pinyin:'qì',en:'energy flow'},{cn:'阴阳',pinyin:'yīn yáng',en:'yin yang'},{cn:'五行',pinyin:'wǔ xíng',en:'five elements'},{cn:'风水师',pinyin:'fēng shuǐ shī',en:'feng shui master'}],significance:'Ancient practice linking environment, energy, and well-being.'},
+        {id:'cex_044',title:'Chinese Zodiac',titleMeaning:'十二生肖',category:'Customs',icon:'🐭',content:'The Chinese zodiac cycles through 12 animals from Rat to Pig. Each year influences personality and fortune. Zodiac compatibility affects marriage and career decisions.',keyPhrases:[{cn:'生肖',pinyin:'shēng xiào',en:'zodiac'},{cn:'属相',pinyin:'shǔ xiàng',en:'birth sign'},{cn:'本命年',pinyin:'běn mìng nián',en:'zodiac year'},{cn:'相生相克',pinyin:'xiāng shēng xiāng kè',en:'compatibility'},{cn:'生肖运程',pinyin:'shēng xiào yùn chéng',en:'zodiac fortune'}],significance:'Belief system influencing major life decisions.'},
+        {id:'cex_045',title:'Wedding Customs',titleMeaning:'婚礼习俗',category:'Customs',icon:'💑',content:'Traditional weddings involve betrothal gifts, date selection, procession, bowing to heaven-earth-parents, vows, and banquet. Red dominates symbolizing joy and prosperity.',keyPhrases:[{cn:'婚礼',pinyin:'hūn lǐ',en:'wedding'},{cn:'彩礼',pinyin:'cǎi lǐ',en:'bride price'},{cn:'拜天地',pinyin:'bài tiān dì',en:'bow to heaven and earth'},{cn:'交杯酒',pinyin:'jiāo bēi jiǔ',en:'cross-cupped wine'},{cn:'喜糖',pinyin:'xǐ táng',en:'wedding candy'}],significance:'Ceremonial union reflecting family alliances.'},
+        {id:'cex_046',title:'Funeral Traditions',titleMeaning:'葬礼习俗',category:'Customs',icon:'🕯️',content:'Chinese funerals involve bathing the deceased, displaying in coffin, burning incense and paper money, and procession. White is mourning color. Ancestor tablets kept for veneration.',keyPhrases:[{cn:'葬礼',pinyin:'zàng lǐ',en:'funeral'},{cn:'白衣',pinyin:'bái yī',en:'white mourning'},{cn:'烧纸',pinyin:'shāo zhǐ',en:'burn spirit money'},{cn:'棺材',pinyin:'guān cái',en:'coffin'},{cn:'守灵',pinyin:'shǒu líng',en:'vigil'}],significance:'Demonstrates filial piety in death.'},
+        {id:'cex_047',title:'Gift Giving Rules',titleMeaning:'送礼习俗',category:'Customs',icon:'🎁',content:'Gift giving rules: avoid clocks and umbrellas symbolizing death and separation. Gifts given with both hands. Recipients refuse several times before accepting politely.',keyPhrases:[{cn:'送礼',pinyin:'sòng lǐ',en:'gift giving'},{cn:'双手',pinyin:'shuāng shǒu',en:'both hands'},{cn:'推辞',pinyin:'tuī cí',en:'polite refusal'},{cn:'忌讳',pinyin:'jì huì',en:'taboo'},{cn:'礼尚往来',pinyin:'lǐ shàng wǎng lái',en:'courtesy requires reciprocity'}],significance:'Protocol revealing values of face and respect.'},
+        {id:'cex_048',title:'Tea Offering Respect',titleMeaning:'敬茶',category:'Customs',icon:'☕',content:'Offering tea to elders and superiors shows respect. At weddings the couple kneels to serve tea to parents. In daily life serving tea first to seniors shows filial piety.',keyPhrases:[{cn:'敬茶',pinyin:'jìng chá',en:'offer tea'},{cn:'长辈',pinyin:'zhǎng bèi',en:'elders'},{cn:'改口茶',pinyin:'gǎi kǒu chá',en:'name-changing tea'},{cn:'礼貌',pinyin:'lǐ mào',en:'politeness'},{cn:'孝道',pinyin:'xiào dào',en:'filial piety'}],significance:'Daily act enforcing hierarchical relationships.'},
+        {id:'cex_049',title:'Chinese Knots',titleMeaning:'中国结',category:'Customs',icon:'🪢',content:'Chinese knots are decorative handwoven knots from Tang Dynasty. Each shape has symbolic meaning: panchang for prosperity, double coin for wealth. Hung during festivals.',keyPhrases:[{cn:'中国结',pinyin:'zhōng guó jié',en:'Chinese knot'},{cn:'盘长结',pinyin:'pán cháng jié',en:'panchang knot'},{cn:'双钱结',pinyin:'shuāng qián jié',en:'double coin knot'},{cn:'编织',pinyin:'biān zhī',en:'weave'},{cn:'吉祥',pinyin:'jí xiáng',en:'auspicious'}],significance:'Folk art expressing auspicious symbolism.'},
+        {id:'cex_050',title:'Incense Burning',titleMeaning:'烧香文化',category:'Customs',icon:'🪔',content:'Burning incense is a daily ritual at temples and home altars. Three sticks represent heaven, earth, humanity. Incense smoke carries prayers to the divine.',keyPhrases:[{cn:'烧香',pinyin:'shāo xiāng',en:'burn incense'},{cn:'三炷香',pinyin:'sān zhù xiāng',en:'three incense sticks'},{cn:'拜佛',pinyin:'bài fó',en:'worship Buddha'},{cn:'香炉',pinyin:'xiāng lú',en:'incense burner'},{cn:'许愿',pinyin:'xǔ yuàn',en:'make wish'}],significance:'Sensory-spiritual practice bridging folk religion and Buddhism.'},
+        {id:'cex_051',title:'Name Selection',titleMeaning:'取名习俗',category:'Customs',icon:'📛',content:'Chinese names carry profound meaning. Surname comes first inherited from ancestors. Given name chosen for auspicious meanings. Parents consult fortune tellers for element balance.',keyPhrases:[{cn:'姓名',pinyin:'xìng míng',en:'full name'},{cn:'姓氏',pinyin:'xìng shì',en:'surname'},{cn:'辈分',pinyin:'bèi fèn',en:'generation rank'},{cn:'取名',pinyin:'qǔ míng',en:'name selection'},{cn:'五行缺什么',pinyin:'wǔ xíng quē shén me',en:'missing element'}],significance:'Names carry family lineage and fortune.'},
+        {id:'cex_052',title:'Fortune Telling',titleMeaning:'算命',category:'Customs',icon:'🔮',content:'Chinese fortune telling uses I Ching, face reading, palmistry, and Bazi birth charts. People consult fortune tellers for marriage, business, and baby naming decisions.',keyPhrases:[{cn:'算命',pinyin:'suàn mìng',en:'fortune telling'},{cn:'八字',pinyin:'bā zì',en:'eight characters'},{cn:'面相',pinyin:'miàn xiàng',en:'face reading'},{cn:'手相',pinyin:'shǒu xiàng',en:'palm reading'},{cn:'周易',pinyin:'zhōu yì',en:'I Ching'}],significance:'Reflects worldview where fate can be read.'},
+        {id:'cex_053',title:'Lucky Numbers',titleMeaning:'吉利数字',category:'Customs',icon:'🔢',content:'8 is luckiest sounding like prosperity. 6 symbolizes smooth progress. 9 represents longevity. 4 is unlucky like death. Numbers with 8 command premium prices.',keyPhrases:[{cn:'数字八',pinyin:'shù zì bā',en:'number eight'},{cn:'发财',pinyin:'fā cái',en:'get rich'},{cn:'四不吉利',pinyin:'sì bù jí lì',en:'four unlucky'},{cn:'六六大顺',pinyin:'liù liù dà shùn',en:'six six smooth'},{cn:'九久',pinyin:'jiǔ jiǔ',en:'nine longevity'}],significance:'Numerology affects spending and address selection.'},
+        {id:'cex_054',title:'Ancestor Worship',titleMeaning:'祭祖',category:'Customs',icon:'🪦',content:'Ancestor worship involves home altars with tablets, offerings on death anniversaries, and grave visits during Qingming. It is the oldest continuous Chinese religious practice.',keyPhrases:[{cn:'祭祖',pinyin:'jì zǔ',en:'ancestor worship'},{cn:'牌位',pinyin:'pái wèi',en:'ancestor tablet'},{cn:'祠堂',pinyin:'cí táng',en:'ancestral hall'},{cn:'祭品',pinyin:'jì pǐn',en:'offerings'},{cn:'香火',pinyin:'xiāng huǒ',en:'incense continuity'}],significance:'Cornerstone of Chinese religious and ethical life.'},
+        {id:'cex_055',title:'Temple Blessings',titleMeaning:'祈福',category:'Customs',icon:'🙏',content:'Qi Fu or blessing rituals involve visiting temples to pray for health, wealth, and success. Worshippers light incense, donate, and receive blessed amulets.',keyPhrases:[{cn:'祈福',pinyin:'qí fú',en:'pray for blessings'},{cn:'烧高香',pinyin:'shāo gāo xiāng',en:'burn tall incense'},{cn:'许愿池',pinyin:'xǔ yuàn chí',en:'wishing pool'},{cn:'护身符',pinyin:'hù shēn fú',en:'protective amulet'},{cn:'功德箱',pinyin:'gōng dé xiāng',en:'donation box'}],significance:'Living tradition seeking spiritual support.'},
+        {id:'cex_056',title:'Chopstick Etiquette',titleMeaning:'筷子礼仪',category:'Customs',icon:'🥢',content:'Chopstick taboos: never stick upright in rice like funeral incense, don\'t point, don\'t cross, don\'t dig. Tap to level before picking. Represent harmony as a pair.',keyPhrases:[{cn:'筷子',pinyin:'kuài zi',en:'chopsticks'},{cn:'插在饭上',pinyin:'chā zài fàn shàng',en:'stick in rice'},{cn:'禁忌',pinyin:'jìn jì',en:'taboo'},{cn:'敲碗',pinyin:'qiāo wǎn',en:'tap bowl'},{cn:'合二为一',pinyin:'hé èr wéi yī',en:'two as one'}],significance:'Chopsticks loaded with cultural meaning.'},
+        {id:'cex_057',title:'Seating Order',titleMeaning:'座次安排',category:'Customs',icon:'💺',content:'Seating at banquets follows strict hierarchy. The seat facing the door farthest from it is the seat of honor for the eldest or most important guest. Host sits nearest the door.',keyPhrases:[{cn:'主位',pinyin:'zhǔ wèi',en:'seat of honor'},{cn:'上座',pinyin:'shàng zuò',en:'upper seat'},{cn:'对门',pinyin:'duì mén',en:'facing door'},{cn:'客人优先',pinyin:'kè rén yōu xiān',en:'guest priority'},{cn:'尊卑有序',pinyin:'zūn bēi yǒu xù',en:'order of rank'}],significance:'Seating enacts Confucian hierarchy.'},
+        {id:'cex_058',title:'Bowing Greetings',titleMeaning:'鞠躬与问候',category:'Customs',icon:'🙇',content:'Traditional greeting involves a slight bow or nod with hands clasped. Depth indicates respect. Modern handshakes are softer than Western. Addressing by title is essential.',keyPhrases:[{cn:'鞠躬',pinyin:'jū gōng',en:'bow'},{cn:'拱手',pinyin:'gǒng shǒu',en:'cupped hands'},{cn:'握手',pinyin:'wò shǒu',en:'handshake'},{cn:'问好',pinyin:'wèn hǎo',en:'greeting'},{cn:'称职称',pinyin:'chēng zhí chēng',en:'use title'}],significance:'Non-verbal greetings communicate respect.'},
+        {id:'cex_059',title:'Dragon Lion Dances',titleMeaning:'舞龙舞狮',category:'Customs',icon:'🦁',content:'Dragon and lion dances performed during New Year and grand openings. Dragon dance uses a long puppet carried by a team. Lion dance has two performers for good luck.',keyPhrases:[{cn:'舞龙',pinyin:'wǔ lóng',en:'dragon dance'},{cn:'舞狮',pinyin:'wǔ shī',en:'lion dance'},{cn:'采青',pinyin:'cǎi qīng',en:'pluck greens'},{cn:'锣鼓',pinyin:'luó gǔ',en:'gongs drums'},{cn:'鞭炮',pinyin:'biān pào',en:'firecrackers'}],significance:'Public performances combining martial arts and music.'},
+        {id:'cex_060',title:'Housewarming',titleMeaning:'乔迁习俗',category:'Customs',icon:'🏡',content:'Housewarming involves selecting an auspicious date, pasting red couplets, and hosting a banquet. Friends bring plants or kitchenware. Lighting a fire first day symbolizes prosperity.',keyPhrases:[{cn:'乔迁',pinyin:'qiáo qiān',en:'housewarming'},{cn:'暖房',pinyin:'nuǎn fáng',en:'warm house'},{cn:'择日',pinyin:'zé rì',en:'choose date'},{cn:'入宅',pinyin:'rù zhái',en:'enter home'},{cn:'搬家宴',pinyin:'bān jiā yàn',en:'moving banquet'}],significance:'Rituals ensure positive energy for new home.'},
+        {id:'cex_061',title:'Color Symbolism',titleMeaning:'颜色象征',category:'Customs',icon:'🎨',content:'Red symbolizes luck and joy. Yellow was imperial. White represents mourning. Green headwear suggests infidelity. Auspicious colors dominate festivals and celebrations.',keyPhrases:[{cn:'红色',pinyin:'hóng sè',en:'red'},{cn:'黄色',pinyin:'huáng sè',en:'yellow'},{cn:'白色',pinyin:'bái sè',en:'white'},{cn:'绿色帽子',pinyin:'lǜ sè mào zi',en:'green hat cuckold'},{cn:'紫色',pinyin:'zǐ sè',en:'purple nobility'}],significance:'Color meanings shape clothing and decoration.'},
+        {id:'cex_062',title:'Chinese Almanac',titleMeaning:'黄历',category:'Customs',icon:'📅',content:'The Huangli almanac selects auspicious dates for weddings, moving, and business openings. Indicates lucky and unlucky days based on celestial stems and earthly branches.',keyPhrases:[{cn:'黄历',pinyin:'huáng lì',en:'Chinese almanac'},{cn:'宜忌',pinyin:'yí jì',en:'suitable unsuitable'},{cn:'吉日',pinyin:'jí rì',en:'auspicious day'},{cn:'天干地支',pinyin:'tiān gān dì zhī',en:'heavenly stems earthly branches'},{cn:'择吉',pinyin:'zé jí',en:'choose auspicious day'}],significance:'Almanac guides daily decisions.'},
+        {id:'cex_063',title:'Maternity Customs',titleMeaning:'生育习俗',category:'Customs',icon:'👶',content:'Zuo yuezi is a 40-day confinement for new mothers with dietary restrictions. Baby\'s first month celebration features red eggs. Special foods like pig trotter soup aid recovery.',keyPhrases:[{cn:'坐月子',pinyin:'zuò yuè zi',en:'confinement'},{cn:'满月',pinyin:'mǎn yuè',en:'first month'},{cn:'红蛋',pinyin:'hóng dàn',en:'red eggs'},{cn:'猪脚姜',pinyin:'zhū jiǎo jiāng',en:'ginger pig trotters'},{cn:'催奶',pinyin:'cuī nǎi',en:'lactation boost'}],significance:'Postnatal care blending nutrition and celebration.'},
+        {id:'cex_064',title:'Birthday Traditions',titleMeaning:'生日习俗',category:'Customs',icon:'🎂',content:'Elders celebrate milestone ages 60, 70, 80 with grand banquets. Longevity noodles symbolize long life. Children receive red envelopes. Modern celebrations mix Western cake.',keyPhrases:[{cn:'生日',pinyin:'shēng rì',en:'birthday'},{cn:'长寿面',pinyin:'cháng shòu miàn',en:'longevity noodles'},{cn:'寿桃',pinyin:'shòu táo',en:'longevity peach bun'},{cn:'六十大寿',pinyin:'liù shí dà shòu',en:'60th birthday'},{cn:'蛋糕',pinyin:'dàn gāo',en:'cake'}],significance:'Customs emphasize respect for elders.'},
+        {id:'cex_065',title:'Jade Culture',titleMeaning:'玉文化',category:'Customs',icon:'🟢',content:'Jade prized in China for 7000 years, valued above gold. Symbolizes virtue, purity, immortality. Confucian saying: gentleman compares his virtue to jade.',keyPhrases:[{cn:'玉',pinyin:'yù',en:'jade'},{cn:'玉佩',pinyin:'yù pèi',en:'jade pendant'},{cn:'君子比德于玉',pinyin:'jūn zǐ bǐ dé yú yù',en:'gentleman compares virtue to jade'},{cn:'翡翠',pinyin:'fěi cuì',en:'jadeite'},{cn:'和田玉',pinyin:'hé tián yù',en:'Hetian jade'}],significance:'Embodies Chinese aesthetic ideals.'},
+        {id:'cex_066',title:'Tattoo Stigma',titleMeaning:'纹身忌讳',category:'Customs',icon:'💉',content:'Tattoos traditionally stigmatized associated with criminals. Confucian influence teaches body inherited from parents. Attitudes changing among younger urban generations.',keyPhrases:[{cn:'纹身',pinyin:'wén shēn',en:'tattoo'},{cn:'身体发肤',pinyin:'shēn tǐ fà fū',en:'body from parents'},{cn:'偏见',pinyin:'piān jiàn',en:'prejudice'},{cn:'黑社会',pinyin:'hēi shè huì',en:'triad'},{cn:'时尚',pinyin:'shí shàng',en:'fashion'}],significance:'Reveals Confucian body concepts.'},
+        {id:'cex_067',title:'Spitting Norms',titleMeaning:'吐痰习惯',category:'Customs',icon:'🤮',content:'Public spitting historically common but increasingly fined after SARS and COVID-19. Many cities impose fines. Habit originated from traditional beliefs about phlegm expulsion.',keyPhrases:[{cn:'吐痰',pinyin:'tǔ tán',en:'spit'},{cn:'罚款',pinyin:'fá kuǎn',en:'fine'},{cn:'公共卫生',pinyin:'gōng gòng wèi shēng',en:'public hygiene'},{cn:'文明',pinyin:'wén míng',en:'civilized'},{cn:'禁止',pinyin:'jìn zhǐ',en:'prohibited'}],significance:'Health awareness reshaping public behavior.'},
+        {id:'cex_068',title:'Shoes Off Indoors',titleMeaning:'脱鞋进屋',category:'Customs',icon:'👟',content:'Many Chinese homes require removing shoes at entrance. Slippers provided for guests. Keeps floors clean and shows respect. In the north heated brick beds called kang add importance.',keyPhrases:[{cn:'脱鞋',pinyin:'tuō xié',en:'remove shoes'},{cn:'拖鞋',pinyin:'tuō xié',en:'slippers'},{cn:'进门',pinyin:'jìn mén',en:'enter home'},{cn:'干净',pinyin:'gān jìng',en:'clean'},{cn:'礼数',pinyin:'lǐ shù',en:'etiquette'}],significance:'Reinforces boundary between public and private space.'},
+        {id:'cex_069',title:'Umbrella Taboo',titleMeaning:'送伞忌讳',category:'Customs',icon:'☂️',content:'Giving umbrella is taboo because san sounds like separation. Giving clock sounds like attending funeral. Homophone-based taboos are pervasive in Chinese culture.',keyPhrases:[{cn:'送伞',pinyin:'sòng sǎn',en:'give umbrella'},{cn:'送钟',pinyin:'sòng zhōng',en:'give clock'},{cn:'忌讳',pinyin:'jì huì',en:'taboo'},{cn:'谐音',pinyin:'xié yīn',en:'homophone'},{cn:'梨',pinyin:'lí',en:'pear separation'}],significance:'Homophones creating powerful taboos.'},
+        {id:'cex_070',title:'Kowtow Ritual',titleMeaning:'磕头',category:'Customs',icon:'🙇',content:'Kowtow involved kneeling and touching forehead to ground as highest respect. Performed before emperors, during weddings to parents, and at ancestor shrines.',keyPhrases:[{cn:'磕头',pinyin:'kē tóu',en:'kowtow'},{cn:'三跪九叩',pinyin:'sān guì jiǔ kòu',en:'three kneels nine prostrations'},{cn:'跪拜',pinyin:'guì bài',en:'kneel and bow'},{cn:'皇帝',pinyin:'huáng dì',en:'emperor'},{cn:'叩首',pinyin:'kòu shǒu',en:'head to ground'}],significance:'Ultimate gesture of submission.'},
+        {id:'cex_071',title:'Paper Offerings',titleMeaning:'烧纸钱',category:'Customs',icon:'💵',content:'Joss paper or ghost money burned at funerals and ghost festivals as offerings to deceased. Paper replicas include houses, cars, phones for the departed\'s comfort in the afterlife.',keyPhrases:[{cn:'纸钱',pinyin:'zhǐ qián',en:'spirit money'},{cn:'冥币',pinyin:'míng bì',en:'hell bank notes'},{cn:'扎纸',pinyin:'zhā zhǐ',en:'paper craft'},{cn:'焚烧',pinyin:'fén shāo',en:'burn offering'},{cn:'阴间',pinyin:'yīn jiān',en:'underworld'}],significance:'Beliefs about death and continuity.'},
+        {id:'cex_072',title:'Betrothal Gifts',titleMeaning:'彩礼',category:'Customs',icon:'💍',content:'Betrothal gifts or cali are money and goods from groom\'s to bride\'s family. Traditionally compensates for raising the daughter. Modern debates surround high amounts.',keyPhrases:[{cn:'彩礼',pinyin:'cǎi lǐ',en:'bride price'},{cn:'聘礼',pinyin:'pìn lǐ',en:'engagement gifts'},{cn:'嫁妆',pinyin:'jià zhuāng',en:'dowry'},{cn:'三金',pinyin:'sān jīn',en:'three gold pieces'},{cn:'礼金',pinyin:'lǐ jīn',en:'cash gift'}],significance:'Contentious but persistent marriage tradition.'},
+        {id:'cex_073',title:'Tea Picking',titleMeaning:'采茶习俗',category:'Customs',icon:'🌱',content:'Tea picking follows strict traditions: only young tender leaves picked by women using fingernails. Best tea picked before Qingming. Tea-picking songs sung in fields.',keyPhrases:[{cn:'采茶',pinyin:'cǎi chá',en:'tea picking'},{cn:'明前茶',pinyin:'míng qián chá',en:'pre-Qingming tea'},{cn:'一芽一叶',pinyin:'yī yá yī yè',en:'one bud one leaf'},{cn:'采茶歌',pinyin:'cǎi chá gē',en:'tea-picking song'},{cn:'嫩叶',pinyin:'nèn yè',en:'tender leaves'}],significance:'Combines agriculture with folk performance.'},
+        {id:'cex_074',title:'Surname Traditions',titleMeaning:'姓氏文化',category:'Customs',icon:'📜',content:'China has about 5000 surnames led by Wang, Li, Zhang. Surnames are patrilineal and appear first. Hundred Family Surnames from Song Dynasty lists 504 common ones.',keyPhrases:[{cn:'姓氏',pinyin:'xìng shì',en:'surname'},{cn:'百家姓',pinyin:'bǎi jiā xìng',en:'Hundred Surnames'},{cn:'王',pinyin:'wáng',en:'Wang'},{cn:'李',pinyin:'lǐ',en:'Li'},{cn:'张',pinyin:'zhāng',en:'Zhang'}],significance:'Surname lineage central to Chinese identity.'},
+        {id:'cex_075',title:'Paying the Bill',titleMeaning:'买单文化',category:'Customs',icon:'💳',content:'Splitting the bill is uncommon. Friends compete to pay the entire bill as a gesture of generosity. Fighting over the bill is a social ritual. Host pays for the group.',keyPhrases:[{cn:'买单',pinyin:'mǎi dān',en:'pay bill'},{cn:'请客',pinyin:'qǐng kè',en:'treat guests'},{cn:'抢着买单',pinyin:'qiǎng zhe mǎi dān',en:'fight to pay'},{cn:'AA制',pinyin:'AA zhì',en:'Dutch treat'},{cn:'面子',pinyin:'miàn zi',en:'face'}],significance:'Paying displays generosity and face.'},
+        {id:'cex_076',title:'Guo Da Li',titleMeaning:'过大礼',category:'Customs',icon:'🎊',content:'Guo Da Li is the formal betrothal ceremony. Groom presents gifts including wedding cakes, jewelry, red envelopes, and roast pig. Bride\'s family returns a portion reciprocally.',keyPhrases:[{cn:'过大礼',pinyin:'guò dà lǐ',en:'betrothal ceremony'},{cn:'聘书',pinyin:'pìn shū',en:'betrothal letter'},{cn:'烧猪',pinyin:'shāo zhū',en:'roast pig'},{cn:'龙凤饼',pinyin:'lóng fèng bǐng',en:'dragon phoenix cake'},{cn:'回礼',pinyin:'huí lǐ',en:'return gift'}],significance:'Formalizes family alliances through gift exchange.'},
+        {id:'cex_077',title:'Newborn Gifts',titleMeaning:'送诞生礼',category:'Customs',icon:'🎀',content:'Newborn gifts include gold lock-shaped pendants for protection, red eggs for new life, and tiger-head shoes to ward off evil spirits. Maternal grandmother gives baby clothes.',keyPhrases:[{cn:'长命锁',pinyin:'cháng mìng suǒ',en:'longevity lock'},{cn:'红蛋',pinyin:'hóng dàn',en:'red eggs'},{cn:'虎头鞋',pinyin:'hǔ tóu xié',en:'tiger-head shoes'},{cn:'满月礼',pinyin:'mǎn yuè lǐ',en:'first month gift'},{cn:'抓周',pinyin:'zhuā zhōu',en:'one-year grab ceremony'}],significance:'Blends protective symbolism with celebration.'},
+        {id:'cex_078',title:'Zhuazhou Ceremony',titleMeaning:'抓周',category:'Customs',icon:'🧸',content:'On a baby\'s first birthday, objects like books, coins, and toys are placed before them. The item grabbed supposedly predicts their future career and personality.',keyPhrases:[{cn:'抓周',pinyin:'zhuā zhōu',en:'first birthday prediction'},{cn:'周岁',pinyin:'zhōu suì',en:'first birthday'},{cn:'预测',pinyin:'yù cè',en:'prediction'},{cn:'文具',pinyin:'wén jù',en:'stationery'},{cn:'算盘',pinyin:'suàn pán',en:'abacus'}],significance:'Divination custom projecting family aspirations.'},
+        {id:'cex_079',title:'Prayer Beads',titleMeaning:'佛珠',category:'Customs',icon:'📿',content:'Buddhist prayer beads or nianzhu count mantras during meditation. Standard set has 108 beads for 108 worldly desires. Many Chinese carry wrist mala as spiritual accessories.',keyPhrases:[{cn:'佛珠',pinyin:'fó zhū',en:'prayer beads'},{cn:'一百零八',pinyin:'yī bǎi líng bā',en:'108'},{cn:'念珠',pinyin:'niàn zhū',en:'rosary'},{cn:'持咒',pinyin:'chí zhòu',en:'chant mantra'},{cn:'手串',pinyin:'shǒu chuàn',en:'wrist mala'}],significance:'Bridges religious practice and secular fashion.'},
+        {id:'cex_080',title:'Incense Clock',titleMeaning:'香钟',category:'Customs',icon:'⏳',content:'Incense clocks were used in ancient China for timekeeping. Graded incense sticks burned at predictable rates marking hours. Scents varied by season. Combined utility and ritual.',keyPhrases:[{cn:'香钟',pinyin:'xiāng zhōng',en:'incense clock'},{cn:'计时',pinyin:'jì shí',en:'timekeeping'},{cn:'刻香',pinyin:'kè xiāng',en:'graded incense'},{cn:'更香',pinyin:'gèng xiāng',en:'watch incense'},{cn:'香篆',pinyin:'xiāng zhuàn',en:'incense seal'}],significance:'Convergence of time measurement and ritual.'},
 
-    {
-      id: 'ce001',
-      title: '元宵节 (Lantern Festival)',
-      titleMeaning: 'Lantern Festival',
-      category: 'Festivals',
-      icon: '🏮',
-      content: '元宵节在农历正月十五，是春节的最后一天。人们会吃元宵（也叫汤圆），这是一种用糯米粉做成的甜食，里面有花生、芝麻等馅料。晚上还有赏花灯、猜灯谜的活动。花灯五颜六色，非常漂亮。',
-      keyPhrases: ['元宵', '汤圆', '花灯', '灯谜', '正月十五'],
-      significance: '元宵节标志着春节庆祝活动的结束。'
-    },
-    {
-      id: 'ce002',
-      title: '清明节 (Tomb Sweeping Day)',
-      titleMeaning: 'Tomb Sweeping Day',
-      category: 'Festivals',
-      icon: '🌿',
-      content: '清明节在每年4月4日或5日，是中国人扫墓祭祖的节日。人们会去祖先的墓地，清理杂草，献上鲜花和食物。清明节也是春天踏青的好时候，很多家庭会去郊外游玩。',
-      keyPhrases: ['扫墓', '祭祖', '踏青', '祖先'],
-      significance: '清明节表达了中国人对祖先的尊敬和怀念。'
-    },
-    {
-      id: 'ce003',
-      title: '重阳节 (Double Ninth Festival)',
-      titleMeaning: 'Double Ninth Festival',
-      category: 'Festivals',
-      icon: '🏔️',
-      content: '重阳节在农历九月初九，因为"九"在中国文化中是阳数，所以叫"重阳"。这一天人们会登高望远、赏菊花、喝菊花酒。现在重阳节也是中国的老人节，表达对老人的尊敬。',
-      keyPhrases: ['重阳', '登高', '菊花', '老人节', '敬老'],
-      significance: '重阳节体现了中国人尊敬老人的传统美德。'
-    },
-    {
-      id: 'ce004',
-      title: '七夕节 (Qixi Festival)',
-      titleMeaning: 'Qixi Festival / Chinese Valentine\'s Day',
-      category: 'Festivals',
-      icon: '💕',
-      content: '七夕节在农历七月初七。传说这一天牛郎和织女会在天上的鹊桥相会。这是一个浪漫的节日，被称为"中国的情人节"。年轻男女会在这一天约会、互送礼物。',
-      keyPhrases: ['七夕', '牛郎织女', '鹊桥', '情人节', '浪漫'],
-      significance: '七夕节是中国最具浪漫色彩的传统节日。'
-    },
-    {
-      id: 'ce005',
-      title: '腊八节 (Laba Festival)',
-      titleMeaning: 'Laba Festival',
-      category: 'Festivals',
-      icon: '🥣',
-      content: '腊八节在农历十二月初八。这一天人们会喝腊八粥，用大米、小米、红豆、花生、红枣等八种食材熬制。腊八节过后，春节就不远了。俗话说"过了腊八就是年"。',
-      keyPhrases: ['腊八粥', '腊八', '食材', '过年', '十二月初八'],
-      significance: '腊八节是春节前的重要节日，拉开了过年的序幕。'
-    },
-    {
-      id: 'ce006',
-      title: '除夕 (New Year\'s Eve)',
-      titleMeaning: 'New Year\'s Eve',
-      category: 'Festivals',
-      icon: '🎆',
-      content: '除夕是农历年的最后一天，也是春节最重要的部分。全家人会聚在一起吃年夜饭，这是中国人最重视的一顿饭。晚饭后人们会守岁，等待新年的到来。午夜十二点，鞭炮齐鸣。',
-      keyPhrases: ['除夕', '年夜饭', '守岁', '鞭炮', '团圆'],
-      significance: '除夕是中国人最重要的家庭团聚时刻。'
-    },
-    {
-      id: 'ce007',
-      title: '国庆节 (National Day)',
-      titleMeaning: 'National Day',
-      category: 'Festivals',
-      icon: '🇨🇳',
-      content: '国庆节在10月1日，是中华人民共和国成立的纪念日。北京天安门广场会举行升旗仪式和大阅兵。全国各地都会放假七天，这被称为"黄金周"，很多人选择出去旅游。',
-      keyPhrases: ['国庆节', '天安门', '阅兵', '黄金周', '升旗'],
-      significance: '国庆节是中国最重要的现代节日之一。'
-    },
-    {
-      id: 'ce008',
-      title: '冬至 (Winter Solstice)',
-      titleMeaning: 'Winter Solstice',
-      category: 'Festivals',
-      icon: '❄️',
-      content: '冬至是一年中白天最短、夜晚最长的一天。北方人习惯在这一天吃饺子，因为饺子像耳朵，据说吃了不会冻耳朵。南方人则吃汤圆，象征团圆。冬至也是中国古代重要的节气。',
-      keyPhrases: ['冬至', '饺子', '汤圆', '节气', '白天最短'],
-      significance: '冬至是中国古代"二十四节气"之一，有重要的文化意义。'
-    },
-    {
-      id: 'ce009',
-      title: '中秋节为什么要吃月饼？',
-      titleMeaning: 'Why eat mooncakes on Mid-Autumn Festival?',
-      category: 'Festivals',
-      icon: '🥮',
-      content: '中秋节吃月饼的传统已经有上千年的历史。月饼是圆形的，象征团圆和完整。古代人在中秋节用月饼祭拜月亮，后来演变成家人分享月饼的习俗。现在月饼有各种口味：莲蓉、豆沙、五仁等。',
-      keyPhrases: ['月饼', '团圆', '祭拜', '莲蓉', '五仁'],
-      significance: '月饼是中秋节最重要的文化符号之一。'
-    },
-    {
-      id: 'ce010',
-      title: '元宵节猜灯谜',
-      titleMeaning: 'Lantern riddles on Lantern Festival',
-      category: 'Festivals',
-      icon: '💡',
-      content: '猜灯谜是元宵节的传统活动。人们在灯笼上写上谜语，让别人猜。谜语通常是一句诗或者一句话，猜一个字、一个事物或者一个成语。猜对的人会有小礼物。这个活动既有趣又能锻炼智力。',
-      keyPhrases: ['灯谜', '谜语', '成语', '猜字', '灯笼'],
-      significance: '猜灯谜活动体现了中国人对文字游戏的热爱。'
-    },
+        // ===== 3. Food Culture (cex_081 - cex_120) =====
+        {id:'cex_081',title:'Sichuan Cuisine',titleMeaning:'川菜',category:'Food Culture',icon:'🌶️',content:'Sichuan cuisine known for bold flavors, especially numb-spicy Sichuan peppercorn and chili. Signature dishes: mapo tofu, kung pao chicken, hot pot. 24 distinct flavor profiles.',keyPhrases:[{cn:'川菜',pinyin:'chuān cài',en:'Sichuan cuisine'},{cn:'麻辣',pinyin:'má là',en:'numb spicy'},{cn:'花椒',pinyin:'huā jiāo',en:'Sichuan peppercorn'},{cn:'麻婆豆腐',pinyin:'má pó dòu fu',en:'mapo tofu'},{cn:'火锅',pinyin:'huǒ guō',en:'hot pot'}],significance:'Exemplifies Chinese culinary philosophy of flavor balance.'},
+        {id:'cex_082',title:'Cantonese Cuisine',titleMeaning:'粤菜',category:'Food Culture',icon:'🥟',content:'Cantonese cuisine emphasizes fresh ingredients and subtle flavors. Dim sum hallmark with har gow, siu mai, char siu bao. Steaming and stir-frying preserve natural tastes.',keyPhrases:[{cn:'粤菜',pinyin:'yuè cài',en:'Cantonese cuisine'},{cn:'点心',pinyin:'diǎn xīn',en:'dim sum'},{cn:'虾饺',pinyin:'xiā jiǎo',en:'har gow'},{cn:'烧卖',pinyin:'shāo mài',en:'siu mai'},{cn:'叉烧',pinyin:'chā shāo',en:'char siu'}],significance:'Set global standard for Chinese food.'},
+        {id:'cex_083',title:'Beijing Cuisine',titleMeaning:'北京菜',category:'Food Culture',icon:'🦆',content:'Beijing cuisine features imperial dishes from Ming and Qing. Peking duck most famous with crispy skin in pancakes. Zhajiangmian and hot pot are local favorites.',keyPhrases:[{cn:'北京烤鸭',pinyin:'běi jīng kǎo yā',en:'Peking duck'},{cn:'炸酱面',pinyin:'zhá jiàng miàn',en:'zhajiangmian'},{cn:'涮羊肉',pinyin:'shuàn yáng ròu',en:'Mongolian hot pot'},{cn:'宫廷菜',pinyin:'gōng tíng cài',en:'imperial cuisine'},{cn:'京酱肉丝',pinyin:'jīng jiàng ròu sī',en:'jingshredded pork'}],significance:'Preserves imperial culinary heritage.'},
+        {id:'cex_084',title:'Shanghai Cuisine',titleMeaning:'上海菜',category:'Food Culture',icon:'🦀',content:'Shanghai cuisine known for sweet and savory flavors with soy sauce and sugar. Signature dishes: xiaolongbao soup dumplings, braised pork belly, hairy crab.',keyPhrases:[{cn:'上海菜',pinyin:'shàng hǎi cài',en:'Shanghai cuisine'},{cn:'小笼包',pinyin:'xiǎo lóng bāo',en:'soup dumplings'},{cn:'红烧肉',pinyin:'hóng shāo ròu',en:'braised pork belly'},{cn:'大闸蟹',pinyin:'dà zhá xiè',en:'hairy crab'},{cn:'生煎包',pinyin:'shēng jiān bāo',en:'pan-fried buns'}],significance:'Reflects cosmopolitan history.'},
+        {id:'cex_085',title:'Dim Sum Culture',titleMeaning:'饮茶文化',category:'Food Culture',icon:'🫖',content:'Yum cha or drinking tea with dim sum is Cantonese dining tradition. Patrons choose small dishes from carts. Tea continuously refilled. Weekend yum cha is family ritual.',keyPhrases:[{cn:'饮茶',pinyin:'yǐn chá',en:'yum cha'},{cn:'一盅两件',pinyin:'yī zhōng liǎng jiàn',en:'one cup two pieces'},{cn:'推车',pinyin:'tuī chē',en:'dim sum cart'},{cn:'虾饺烧卖',pinyin:'xiā jiǎo shāo mài',en:'har gow siu mai'},{cn:'豉汁凤爪',pinyin:'chǐ zhī fèng zhǎo',en:'chicken feet'}],significance:'Social institution combining dining and family.'},
+        {id:'cex_086',title:'Dining Etiquette',titleMeaning:'餐桌礼仪',category:'Food Culture',icon:'🍽️',content:'Dining etiquette: serve elders first, don\'t start before host, turn fish whole at table, leave some food. Burping acceptable in some regions.',keyPhrases:[{cn:'长辈先动筷',pinyin:'zhǎng bèi xiān dòng kuài',en:'elders eat first'},{cn:'转盘',pinyin:'zhuàn pán',en:'lazy Susan'},{cn:'敬酒',pinyin:'jìng jiǔ',en:'toast'},{cn:'劝菜',pinyin:'quàn cài',en:'urge guests to eat'},{cn:'剩菜',pinyin:'shèng cài',en:'leftovers plenty'}],significance:'Encodes Confucian hierarchy in meals.'},
+        {id:'cex_087',title:'Baijiu Culture',titleMeaning:'白酒文化',category:'Food Culture',icon:'🥃',content:'Baijiu is national liquor at 40-60% alcohol. Made from sorghum, distilled and aged. Moutai and Wuliangye premium brands. Consumed neat in small glasses at banquets.',keyPhrases:[{cn:'白酒',pinyin:'bái jiǔ',en:'baijiu'},{cn:'茅台',pinyin:'máo tái',en:'Moutai'},{cn:'干杯',pinyin:'gān bēi',en:'bottoms up'},{cn:'五粮液',pinyin:'wǔ liáng yè',en:'Wuliangye'},{cn:'敬酒',pinyin:'jìng jiǔ',en:'toast'}],significance:'Woven into business and celebrations.'},
+        {id:'cex_088',title:'Chinese Tea Types',titleMeaning:'中国茶类',category:'Food Culture',icon:'🍃',content:'Six main tea types: green, black, oolong, white, yellow, dark including pu\'er. Famous: Longjing green, Tieguanyin oolong, Yunnan pu\'er aged tea.',keyPhrases:[{cn:'六大茶类',pinyin:'liù dà chá lèi',en:'six tea types'},{cn:'龙井',pinyin:'lóng jǐng',en:'Longjing'},{cn:'铁观音',pinyin:'tiě guān yīn',en:'Tieguanyin'},{cn:'普洱茶',pinyin:'pǔ ěr chá',en:'Pu\'er'},{cn:'发酵',pinyin:'fā jiào',en:'oxidation'}],significance:'Reflects sophisticated processing.'},
+        {id:'cex_089',title:'Chopstick History',titleMeaning:'筷子的历史',category:'Food Culture',icon:'🥢',content:'Chopsticks used over 3000 years since Shang Dynasty. Early bronze for cooking. Bamboo became common. Name changed from zhu to kuazi meaning quick child.',keyPhrases:[{cn:'筷子',pinyin:'kuài zi',en:'chopsticks'},{cn:'竹筷',pinyin:'zhú kuài',en:'bamboo chopsticks'},{cn:'象牙筷',pinyin:'xiàng yá kuài',en:'ivory chopsticks'},{cn:'箸',pinyin:'zhù',en:'ancient name'},{cn:'一次性筷子',pinyin:'yī cì xìng kuài zi',en:'disposable'}],significance:'3000-year-old invention central to food culture.'},
+        {id:'cex_090',title:'Hot Pot Culture',titleMeaning:'火锅文化',category:'Food Culture',icon:'🫕',content:'Hot pot involves simmering broth where diners cook raw ingredients. Regional varieties: Sichuan spicy, Beijing mutton, Cantonese seafood. Highly social meal lasting hours.',keyPhrases:[{cn:'火锅',pinyin:'huǒ guō',en:'hot pot'},{cn:'鸳鸯锅',pinyin:'yuān yāng guō',en:'dual broth pot'},{cn:'涮',pinyin:'shuàn',en:'swish-cook'},{cn:'蘸料',pinyin:'zhàn liào',en:'dipping sauce'},{cn:'毛肚',pinyin:'máo dǔ',en:'tripe'}],significance:'Embodies communal dining and diversity.'},
+        {id:'cex_091',title:'Street Food',titleMeaning:'街头小吃',category:'Food Culture',icon:'🍢',content:'Chinese street food: jianbing crepes, chuanr skewers, stinky tofu, baozi, roujiamo. Night markets like Wangfujing in Beijing offer endless variety.',keyPhrases:[{cn:'煎饼果子',pinyin:'jiān bǐng guǒ zi',en:'jianbing'},{cn:'羊肉串',pinyin:'yáng ròu chuàn',en:'lamb skewers'},{cn:'臭豆腐',pinyin:'chòu dòu fu',en:'stinky tofu'},{cn:'肉夹馍',pinyin:'ròu jiā mó',en:'Chinese hamburger'},{cn:'夜市',pinyin:'yè shì',en:'night market'}],significance:'Represents accessible culinary creativity.'},
+        {id:'cex_092',title:'Eight Cuisines',titleMeaning:'八大菜系',category:'Food Culture',icon:'📋',content:'Eight Great Cuisines: Lu, Chuan, Yue, Su, Min, Xiang, Hui, Zhe. Each has distinct flavor profiles and signature dishes.',keyPhrases:[{cn:'八大菜系',pinyin:'bā dà cài xì',en:'eight cuisines'},{cn:'鲁菜',pinyin:'lǔ cài',en:'Shandong'},{cn:'湘菜',pinyin:'xiāng cài',en:'Hunan'},{cn:'闽菜',pinyin:'mǐn cài',en:'Fujian'},{cn:'苏菜',pinyin:'sū cài',en:'Jiangsu'}],significance:'Organizes China\'s culinary diversity.'},
+        {id:'cex_093',title:'Noodle Culture',titleMeaning:'面条文化',category:'Food Culture',icon:'🍜',content:'Chinese noodles include Lanzhou pulled, Shanxi knife-cut, Sichuan dan dan, Cantonese wonton. Noodles symbolize longevity eaten on birthdays.',keyPhrases:[{cn:'拉面',pinyin:'lā miàn',en:'pulled noodles'},{cn:'刀削面',pinyin:'dāo xiāo miàn',en:'knife-cut noodles'},{cn:'担担面',pinyin:'dàn dàn miàn',en:'dan dan noodles'},{cn:'长寿面',pinyin:'cháng shòu miàn',en:'longevity noodles'},{cn:'阳春面',pinyin:'yáng chūn miàn',en:'plain noodles'}],significance:'Showcases regional craftsmanship.'},
+        {id:'cex_094',title:'Rice Culture',titleMeaning:'米饭文化',category:'Food Culture',icon:'🍚',content:'Rice is staple grain for most Chinese, especially southerners. Word for rice fan also means meal. Glutinous rice used in festivals. Congee is common breakfast.',keyPhrases:[{cn:'米饭',pinyin:'mǐ fàn',en:'rice'},{cn:'水稻',pinyin:'shuǐ dào',en:'paddy rice'},{cn:'粥',pinyin:'zhōu',en:'congee'},{cn:'糯米',pinyin:'nuò mǐ',en:'glutinous rice'},{cn:'炒饭',pinyin:'chǎo fàn',en:'fried rice'}],significance:'Foundation of Chinese food culture.'},
+        {id:'cex_095',title:'Soy Products',titleMeaning:'豆制品',category:'Food Culture',icon:'🫘',content:'Soybeans transformed into tofu, soy milk, tofu skin are protein staples. Tofu invented during Han Dynasty. Soy sauce and doubanjiang essential seasonings.',keyPhrases:[{cn:'豆腐',pinyin:'dòu fu',en:'tofu'},{cn:'豆浆',pinyin:'dòu jiāng',en:'soy milk'},{cn:'酱油',pinyin:'jiàng yóu',en:'soy sauce'},{cn:'豆瓣酱',pinyin:'dòu bàn jiàng',en:'bean paste'},{cn:'腐竹',pinyin:'fǔ zhú',en:'tofu skin'}],significance:'Ancient food processing innovation.'},
+        {id:'cex_096',title:'Fermentation',titleMeaning:'发酵食品',category:'Food Culture',icon:'🧫',content:'Fermentation central to cuisine: soy sauce, vinegar, rice wine, fermented tofu, pickled vegetables. Each region has distinct techniques.',keyPhrases:[{cn:'发酵',pinyin:'fā jiào',en:'fermentation'},{cn:'醋',pinyin:'cù',en:'vinegar'},{cn:'泡菜',pinyin:'pào cài',en:'pickled vegetables'},{cn:'米酒',pinyin:'mǐ jiǔ',en:'rice wine'},{cn:'腐乳',pinyin:'fǔ rǔ',en:'fermented tofu'}],significance:'Mastery of preservation and flavor.'},
+        {id:'cex_097',title:'Medicinal Food',titleMeaning:'药膳',category:'Food Culture',icon:'🍲',content:'Medicinal cuisine combines food with TCM ingredients: ginseng, goji berries, astragalus in soups for health benefits. Winter is for nourishing tonics.',keyPhrases:[{cn:'药膳',pinyin:'yào shàn',en:'medicinal cuisine'},{cn:'人参',pinyin:'rén shēn',en:'ginseng'},{cn:'枸杞',pinyin:'gǒu qǐ',en:'goji berries'},{cn:'当归',pinyin:'dāng guī',en:'angelica root'},{cn:'滋补',pinyin:'zī bǔ',en:'nourishing'}],significance:'Philosophy of food as medicine.'},
+        {id:'cex_098',title:'Buddhist Vegetarian',titleMeaning:'素菜',category:'Food Culture',icon:'🥬',content:'Buddhist vegetarian avoids all animal products including garlic and onion. Mock meats from gluten, tofu replicate meat. Originated in temple kitchens.',keyPhrases:[{cn:'素菜',pinyin:'sù cài',en:'vegetarian'},{cn:'仿荤',pinyin:'fǎng hūn',en:'mock meat'},{cn:'面筋',pinyin:'miàn jīn',en:'wheat gluten'},{cn:'豆腐干',pinyin:'dòu fu gān',en:'dried tofu'},{cn:'斋饭',pinyin:'zhāi fàn',en:'temple meal'}],significance:'Reflects Buddhist compassion.'},
+        {id:'cex_099',title:'Dumpling Culture',titleMeaning:'饺子文化',category:'Food Culture',icon:'🥟',content:'Jiaozi are crescent-shaped with meat and vegetable fillings. Eaten during New Year and Winter Solstice. Shape resembles ancient silver ingots symbolizing wealth.',keyPhrases:[{cn:'饺子',pinyin:'jiǎo zi',en:'dumplings'},{cn:'馅',pinyin:'xiàn',en:'filling'},{cn:'擀皮',pinyin:'gǎn pí',en:'roll wrappers'},{cn:'元宝',pinyin:'yuán bǎo',en:'gold ingot'},{cn:'蘸醋',pinyin:'zhàn cù',en:'dip in vinegar'}],significance:'Combines culinary art with family bonding.'},
+        {id:'cex_100',title:'Mooncake Varieties',titleMeaning:'月饼种类',category:'Food Culture',icon:'🥮',content:'Mooncake varieties: Cantonese thin crust, Suzhou flaky pastry, Beijing imperial, Yunnan ham. Modern: snow skin, ice cream, chocolate.',keyPhrases:[{cn:'广式月饼',pinyin:'guǎng shì yuè bǐng',en:'Cantonese mooncake'},{cn:'苏式月饼',pinyin:'sū shì yuè bǐng',en:'Suzhou mooncake'},{cn:'冰皮',pinyin:'bīng pí',en:'snow skin'},{cn:'五仁',pinyin:'wǔ rén',en:'five nut'},{cn:'莲蓉蛋黄',pinyin:'lián róng dàn huáng',en:'lotus egg yolk'}],significance:'Mirrors regional pastry traditions.'},
+        {id:'cex_101',title:'Congee Culture',titleMeaning:'粥文化',category:'Food Culture',icon:'🥣',content:'Congee or rice porridge is comfort food for breakfast or illness. Varieties: plain, century egg and pork, fish, sweet red bean. Toppings like pickles.',keyPhrases:[{cn:'粥',pinyin:'zhōu',en:'congee'},{cn:'皮蛋瘦肉粥',pinyin:'pí dàn shòu ròu zhōu',en:'century egg congee'},{cn:'白粥',pinyin:'bái zhōu',en:'plain congee'},{cn:'油条',pinyin:'yóu tiáo',en:'fried dough stick'},{cn:'配菜',pinyin:'pèi cài',en:'side dishes'}],significance:'Represents comfort and healing.'},
+        {id:'cex_102',title:'New Year Foods',titleMeaning:'过年食品',category:'Food Culture',icon:'🧨',content:'New Year foods chosen for auspicious homophones: fish for surplus, niangao for higher year, dumplings for wealth, tangerines for luck.',keyPhrases:[{cn:'鱼',pinyin:'yú',en:'fish surplus'},{cn:'年糕',pinyin:'nián gāo',en:'year cake'},{cn:'发糕',pinyin:'fà gāo',en:'prosperity cake'},{cn:'橘子',pinyin:'jú zi',en:'tangerine luck'},{cn:'全鸡',pinyin:'quán jī',en:'whole chicken unity'}],significance:'Eating as language of wishes.'},
+        {id:'cex_103',title:'Tea Brewing',titleMeaning:'泡茶方法',category:'Food Culture',icon:'🫖',content:'Tea brewing varies: green at 75-80C, oolong 90-95C, pu\'er near boiling. Gaiwan for appreciation. Gongfu uses high leaf-to-water ratio.',keyPhrases:[{cn:'盖碗',pinyin:'gài wǎn',en:'gaiwan'},{cn:'紫砂壶',pinyin:'zǐ shā hú',en:'Yixing teapot'},{cn:'水温',pinyin:'shuǐ wēn',en:'water temperature'},{cn:'功夫茶',pinyin:'gōng fū chá',en:'gongfu tea'},{cn:'洗茶',pinyin:'xǐ chá',en:'rinse tea'}],significance:'Precise ritual reflecting expertise.'},
+        {id:'cex_104',title:'Chinese Vinegar',titleMeaning:'中国醋',category:'Food Culture',icon:'🧴',content:'Vinegar varieties: Zhenjiang black, Shanxi aged, white rice. Used in cooking, dipping, traditional medicine. Believed to soften blood vessels.',keyPhrases:[{cn:'镇江醋',pinyin:'zhèn jiāng cù',en:'Zhenjiang vinegar'},{cn:'山西老陈醋',pinyin:'shān xī lǎo chén cù',en:'Shanxi aged vinegar'},{cn:'米醋',pinyin:'mǐ cù',en:'rice vinegar'},{cn:'醋疗',pinyin:'cù liáo',en:'vinegar therapy'},{cn:'蘸料',pinyin:'zhàn liào',en:'dipping sauce'}],significance:'Essential seasoning with health associations.'},
+        {id:'cex_105',title:'Chinese Pickles',titleMeaning:'酱菜',category:'Food Culture',icon:'🥒',content:'Pickles include Sichuan zhacai, Beijing pickled cabbage, Tianjin preserved. Vegetables fermented in soy brine or chili paste. Eaten as condiments.',keyPhrases:[{cn:'酱菜',pinyin:'jiàng cài',en:'pickled vegetables'},{cn:'榨菜',pinyin:'zhà cài',en:'Sichuan pickle'},{cn:'泡菜',pinyin:'pào cài',en:'kimchi style'},{cn:'北京酱菜',pinyin:'běi jīng jiàng cài',en:'Beijing pickles'},{cn:'腐乳',pinyin:'fǔ rǔ',en:'fermented tofu'}],significance:'Preserves seasonal vegetables.'},
+        {id:'cex_106',title:'Serving Order',titleMeaning:'上菜顺序',category:'Food Culture',icon:'🍲',content:'Banquet order: cold dishes first, hot dishes, main courses, soup, rice or noodles. Dessert and fruit conclude. Each signals meal progression.',keyPhrases:[{cn:'冷盘',pinyin:'lěng pán',en:'cold dishes'},{cn:'热菜',pinyin:'rè cài',en:'hot dishes'},{cn:'汤',pinyin:'tāng',en:'soup'},{cn:'主食',pinyin:'zhǔ shí',en:'staple food'},{cn:'水果',pinyin:'shuǐ guǒ',en:'fruit dessert'}],significance:'Creates structured dining experience.'},
+        {id:'cex_107',title:'Food Color',titleMeaning:'食品色彩',category:'Food Culture',icon:'🎯',content:'Chinese cooking values color harmony. Red dishes symbolize celebration, green contrast, golden fried foods wealth. Balanced plate has multiple colors.',keyPhrases:[{cn:'色香味',pinyin:'sè xiāng wèi',en:'color aroma taste'},{cn:'红烧',pinyin:'hóng shāo',en:'red braising'},{cn:'翠绿',pinyin:'cuì lǜ',en:'bright green'},{cn:'金黄',pinyin:'jīn huáng',en:'golden yellow'},{cn:'摆盘',pinyin:'bǎi pán',en:'plating'}],significance:'Visual presentation as important as flavor.'},
+        {id:'cex_108',title:'Hairy Crab',titleMeaning:'大闸蟹季',category:'Food Culture',icon:'🦀',content:'Hairy crabs from Yangcheng Lake seasonal September-December. Female roe prized, simply steamed with ginger-vinegar dip. The experience is slow and meditative.',keyPhrases:[{cn:'大闸蟹',pinyin:'dà zhá xiè',en:'hairy crab'},{cn:'阳澄湖',pinyin:'yáng chéng hú',en:'Yangcheng Lake'},{cn:'蟹黄',pinyin:'xiè huáng',en:'crab roe'},{cn:'蟹膏',pinyin:'xiè gāo',en:'crab cream'},{cn:'姜醋',pinyin:'jiāng cù',en:'ginger vinegar'}],significance:'Seasonal eating and simple luxury.'},
+        {id:'cex_109',title:'Chinese Desserts',titleMeaning:'中式甜点',category:'Food Culture',icon:'🍡',content:'Chinese desserts less sweet than Western. Traditional: tangyuan, red bean soup, mango sago, egg tarts, almond tofu. Often served between meals.',keyPhrases:[{cn:'红豆沙',pinyin:'hóng dòu shā',en:'red bean paste'},{cn:'芒果西米露',pinyin:'máng guǒ xī mǐ lù',en:'mango sago'},{cn:'蛋挞',pinyin:'dàn tǎ',en:'egg tart'},{cn:'杏仁豆腐',pinyin:'xìng rén dòu fu',en:'almond tofu'},{cn:'双皮奶',pinyin:'shuāng pí nǎi',en:'double skin milk'}],significance:'Emphasize subtle sweetness.'},
+        {id:'cex_110',title:'Chinese Wine',titleMeaning:'酒文化',category:'Food Culture',icon:'🍷',content:'Alcohol includes baijiu, huangjiu rice wine, beer, wine. Shaoxing wine used in cooking. Tsingtao beer most famous. Wine growing among urban middle class.',keyPhrases:[{cn:'黄酒',pinyin:'huáng jiǔ',en:'rice wine'},{cn:'绍兴酒',pinyin:'shào xīng jiǔ',en:'Shaoxing wine'},{cn:'青岛啤酒',pinyin:'qīng dǎo pí jiǔ',en:'Tsingtao beer'},{cn:'红酒',pinyin:'hóng jiǔ',en:'red wine'},{cn:'劝酒',pinyin:'quàn jiǔ',en:'urge drinking'}],significance:'Ranges from ancient to global trends.'},
+        {id:'cex_111',title:'Chinese Breakfast',titleMeaning:'中式早餐',category:'Food Culture',icon:'🌅',content:'Northern: jianbing, youtiao with soy milk, baozi. Southern: congee with sides, dim sum, rice noodles. Breakfast savory rather than sweet.',keyPhrases:[{cn:'豆浆油条',pinyin:'dòu jiāng yóu tiáo',en:'soy milk youtiao'},{cn:'包子',pinyin:'bāo zi',en:'steamed buns'},{cn:'米粉',pinyin:'mǐ fěn',en:'rice noodles'},{cn:'肠粉',pinyin:'cháng fěn',en:'rice rolls'},{cn:'豆腐脑',pinyin:'dòu fu nǎo',en:'tofu pudding'}],significance:'Regional diversity in morning routines.'},
+        {id:'cex_112',title:'Chinese Sauces',titleMeaning:'中式酱料',category:'Food Culture',icon:'🥫',content:'Essential sauces: soy, oyster, hoisin, chili, fermented bean paste. Each serves specific purpose from seasoning to glazing to heat.',keyPhrases:[{cn:'酱油',pinyin:'jiàng yóu',en:'soy sauce'},{cn:'蚝油',pinyin:'háo yóu',en:'oyster sauce'},{cn:'海鲜酱',pinyin:'hǎi xiān jiàng',en:'hoisin sauce'},{cn:'辣椒酱',pinyin:'là jiāo jiàng',en:'chili sauce'},{cn:'甜面酱',pinyin:'tián miàn jiàng',en:'sweet bean sauce'}],significance:'Foundation of all Chinese cooking.'},
+        {id:'cex_113',title:'Steaming',titleMeaning:'蒸菜',category:'Food Culture',icon:'♨️',content:'Steaming preserves nutrients and natural flavors. Bamboo steamers stack for multiple dishes. Steamed fish, pork ribs with black beans, custard buns.',keyPhrases:[{cn:'蒸',pinyin:'zhēng',en:'steam'},{cn:'竹笼',pinyin:'zhú lóng',en:'bamboo steamer'},{cn:'清蒸',pinyin:'qīng zhēng',en:'plain steamed'},{cn:'蒸鱼',pinyin:'zhēng yú',en:'steamed fish'},{cn:'蒸饺',pinyin:'zhēng jiǎo',en:'steamed dumplings'}],significance:'Exemplifies preference for natural flavor.'},
+        {id:'cex_114',title:'Stir-Fry',titleMeaning:'炒菜',category:'Food Culture',icon:'🥘',content:'Stir-fry uses high heat in wok with constant tossing. Wok concentrates heat. Most common Chinese home cooking method.',keyPhrases:[{cn:'炒',pinyin:'chǎo',en:'stir-fry'},{cn:'锅',pinyin:'wō',en:'wok'},{cn:'大火',pinyin:'dà huǒ',en:'high heat'},{cn:'锅气',pinyin:'guō qì',en:'wok hei'},{cn:'快速翻炒',pinyin:'kuài sù fān chǎo',en:'quick toss'}],significance:'Defining Chinese cooking technique.'},
+        {id:'cex_115',title:'Soup Culture',titleMeaning:'汤文化',category:'Food Culture',icon:'🥣',content:'Chinese soups from clear broths to slow-simmered tonic soups. Consumed throughout meal. Herbal chicken and old fire soup for medicinal benefits.',keyPhrases:[{cn:'老火汤',pinyin:'lǎo huǒ tāng',en:'long-boiled soup'},{cn:'炖汤',pinyin:'dùn tāng',en:'double-boiled'},{cn:'例汤',pinyin:'lì tāng',en:'daily soup'},{cn:'酸辣汤',pinyin:'suān là tāng',en:'hot and sour soup'},{cn:'紫菜蛋花汤',pinyin:'zǐ cài dàn huā tāng',en:'seaweed egg drop soup'}],significance:'Both comfort and therapeutic nourishment.'},
+        {id:'cex_116',title:'Noodle Diversity',titleMeaning:'面条文化',category:'Food Culture',icon:'🍝',content:'Noodle diversity: Lanzhou lamian pulled to 256 strands, Shanxi daoxiaomian, Sichuan dandanmian. Each region has noodle identity.',keyPhrases:[{cn:'兰州拉面',pinyin:'lán zhōu lā miàn',en:'Lanzhou pulled'},{cn:'山西刀削面',pinyin:'shān xī dāo xiāo miàn',en:'Shanxi knife-cut'},{cn:'河南烩面',pinyin:'hé nán huì miàn',en:'Henan braised'},{cn:'武汉热干面',pinyin:'wǔ hàn rè gān miàn',en:'Wuhan hot dry'},{cn:'四川担担面',pinyin:'sì chuān dàn dàn miàn',en:'Sichuan dan dan'}],significance:'Regional noodle identities.'},
+        {id:'cex_117',title:'Food Taboos',titleMeaning:'饮食禁忌',category:'Food Culture',icon:'🚫',content:'Taboos include avoiding dog meat in cities, pregnancy restrictions, Buddhist vegetarianism, halal for Chinese Muslims.',keyPhrases:[{cn:'禁忌',pinyin:'jìn jì',en:'taboo'},{cn:'孕妇忌口',pinyin:'yùn fù jì kǒu',en:'pregnancy restrictions'},{cn:'素食',pinyin:'sù shí',en:'vegetarian'},{cn:'清真',pinyin:'qīng zhēn',en:'halal'},{cn:'发物',pinyin:'fā wù',en:'trigger foods'}],significance:'Reveal cultural beliefs about health.'},
+        {id:'cex_118',title:'Tea Snacks',titleMeaning:'茶点',category:'Food Culture',icon:'🍪',content:'Tea snacks: northern dried fruits and nuts, Cantonese dim sum most elaborate, Jiangnan delicate pastries and candied fruits.',keyPhrases:[{cn:'茶点',pinyin:'chá diǎn',en:'tea snacks'},{cn:'干果',pinyin:'gān guǒ',en:'dried fruits'},{cn:'蜜饯',pinyin:'mì jiàn',en:'candied fruits'},{cn:'糕点',pinyin:'gāo diǎn',en:'pastries'},{cn:'瓜子',pinyin:'guā zǐ',en:'sunflower seeds'}],significance:'Elevates tea to complete sensory experience.'},
+        {id:'cex_119',title:'Imperial Feast',titleMeaning:'满汉全席',category:'Food Culture',icon:'👑',content:'Manchu Han Imperial Feast over 300 dishes over three days. Combines Manchu and Han Qing Dynasty cuisine. Rarely attempted today.',keyPhrases:[{cn:'满汉全席',pinyin:'mǎn hàn quán xí',en:'Manchu Han Feast'},{cn:'御膳',pinyin:'yù shàn',en:'imperial cuisine'},{cn:'宫廷菜',pinyin:'gōng tíng cài',en:'palace dishes'},{cn:'燕窝',pinyin:'yàn wō',en:'bird\'s nest'},{cn:'鱼翅',pinyin:'yú chì',en:'shark fin'}],significance:'Zenith of Chinese culinary opulence.'},
+        {id:'cex_120',title:'Wild Foraging',titleMeaning:'野菜文化',category:'Food Culture',icon:'🌿',content:'Spring foraging for wild vegetables: shepherd\'s purse, toon shoots, fiddlehead ferns. Prized in Jiangnan cuisine. Used in traditional medicine.',keyPhrases:[{cn:'野菜',pinyin:'yě cài',en:'wild vegetables'},{cn:'荠菜',pinyin:'jì cài',en:'shepherd\'s purse'},{cn:'香椿',pinyin:'xiāng chūn',en:'toon shoots'},{cn:'蕨菜',pinyin:'jué cài',en:'fiddlehead fern'},{cn:'马兰头',pinyin:'mǎ lán tóu',en:'Indian aster'}],significance:'Connects food to seasonal cycles.'},
 
-    // ── Food Culture (10) ───────────────────────
+        // ===== 4. Language (cex_121 - cex_160) =====
+        {id:'cex_121',title:'Chinese Radicals',titleMeaning:'部首',category:'Language',icon:'🆎',content:'Chinese radicals are building blocks indicating meaning. 214 Kangxi radicals include water, fire, heart, hand. Knowing radicals helps navigate dictionaries.',keyPhrases:[{cn:'部首',pinyin:'bù shǒu',en:'radicals'},{cn:'水字旁',pinyin:'shuǐ zì páng',en:'water radical'},{cn:'火字旁',pinyin:'huǒ zì páng',en:'fire radical'},{cn:'心字底',pinyin:'xīn zì dǐ',en:'heart radical'},{cn:'康熙字典',pinyin:'kāng xī zì diǎn',en:'Kangxi Dictionary'}],significance:'Key to understanding character structure.'},
+        {id:'cex_122',title:'Chinese Dialects',titleMeaning:'方言',category:'Language',icon:'🗣️',content:'China has 7-10 major dialect groups: Mandarin, Cantonese, Wu, Min, Hakka, Gan, Xiang. Cantonese preserves ancient Chinese sounds lost in Mandarin.',keyPhrases:[{cn:'方言',pinyin:'fāng yán',en:'dialect'},{cn:'普通话',pinyin:'pǔ tōng huà',en:'Mandarin'},{cn:'粤语',pinyin:'yuè yǔ',en:'Cantonese'},{cn:'闽南语',pinyin:'mǐn nán yǔ',en:'Hokkien'},{cn:'吴语',pinyin:'wú yǔ',en:'Wu/Shanghainese'}],significance:'Linguistic diversity with historical depth.'},
+        {id:'cex_123',title:'Loanwords',titleMeaning:'外来词',category:'Language',icon:'🌐',content:'Chinese absorbs loanwords: sofa shafa, chocolate qiaokeli, bus basi. English tech terms enter as initialisms: WiFi, PDF, AI.',keyPhrases:[{cn:'沙发',pinyin:'shā fā',en:'sofa'},{cn:'巧克力',pinyin:'qiǎo kè lì',en:'chocolate'},{cn:'巴士',pinyin:'bā shì',en:'bus'},{cn:'咖啡',pinyin:'kā fēi',en:'coffee'},{cn:'幽默',pinyin:'yōu mò',en:'humor'}],significance:'Reveal historical contact patterns.'},
+        {id:'cex_124',title:'Proverbs Chengyu',titleMeaning:'成语',category:'Language',icon:'📖',content:'Chengyu are four-character idioms from classical literature with historical stories. They compress deep wisdom into concise daily speech.',keyPhrases:[{cn:'成语',pinyin:'chéng yǔ',en:'idiom'},{cn:'半途而废',pinyin:'bàn tú ér fèi',en:'give up halfway'},{cn:'画蛇添足',pinyin:'huà shé tiān zú',en:'draw legs on snake'},{cn:'守株待兔',pinyin:'shǒu zhū dài tù',en:'guard stump wait rabbit'},{cn:'掩耳盗铃',pinyin:'yǎn ěr dào líng',en:'cover ears steal bell'}],significance:'Condense historical wisdom.'},
+        {id:'cex_125',title:'Puns Xieyin',titleMeaning:'谐音',category:'Language',icon:'🎭',content:'Homophonic puns pervasive: 8 sounds like prosperity, 4 like death. Bat drawings mean fortune since fu sounds like bat.',keyPhrases:[{cn:'谐音',pinyin:'xié yīn',en:'pun'},{cn:'福倒了',pinyin:'fú dào le',en:'fortune upside down'},{cn:'年年有余',pinyin:'nián nián yǒu yú',en:'yearly surplus'},{cn:'蝙蝠',pinyin:'biān fú',en:'bat fortune'},{cn:'吉庆',pinyin:'jí qìng',en:'auspicious'}],significance:'Bridge language and culture.'},
+        {id:'cex_126',title:'Simplified Traditional',titleMeaning:'简体繁体',category:'Language',icon:'📝',content:'Simplified Chinese introduced 1950s for literacy. Traditional remains in Taiwan, Hong Kong, Macau. Some characters changed dramatically.',keyPhrases:[{cn:'简体字',pinyin:'jiǎn tǐ zì',en:'simplified'},{cn:'繁体字',pinyin:'fán tǐ zì',en:'traditional'},{cn:'汉字简化',pinyin:'hàn zì jiǎn huà',en:'simplification'},{cn:'书写改革',pinyin:'shū xiě gǎi gé',en:'writing reform'},{cn:'识字率',pinyin:'shí zì lǜ',en:'literacy rate'}],significance:'Tensions between access and preservation.'},
+        {id:'cex_127',title:'Pinyin System',titleMeaning:'拼音',category:'Language',icon:'🔤',content:'Pinyin romanization for Mandarin adopted 1958. Uses Latin letters with tone marks. Created by Zhou Youguang. Essential for teaching and typing.',keyPhrases:[{cn:'拼音',pinyin:'pīn yīn',en:'pinyin'},{cn:'声母',pinyin:'shēng mǔ',en:'initials'},{cn:'韵母',pinyin:'yùn mǔ',en:'finals'},{cn:'声调',pinyin:'shēng diào',en:'tones'},{cn:'周有光',pinyin:'zhōu yǒu guāng',en:'father of pinyin'}],significance:'Made Chinese accessible globally.'},
+        {id:'cex_128',title:'Four Tones',titleMeaning:'四声',category:'Language',icon:'🎵',content:'Mandarin four tones: high level, rising, dipping, falling. Tones distinguish meaning. Ma can mean mother, hemp, horse, scold.',keyPhrases:[{cn:'第一声',pinyin:'dì yī shēng',en:'first tone'},{cn:'第二声',pinyin:'dì èr shēng',en:'second tone'},{cn:'第三声',pinyin:'dì sān shēng',en:'third tone'},{cn:'第四声',pinyin:'dì sì shēng',en:'fourth tone'},{cn:'变调',pinyin:'biàn diào',en:'tone sandhi'}],significance:'Tones essential to meaning.'},
+        {id:'cex_129',title:'Write Scripts',titleMeaning:'书体',category:'Language',icon:'🖌️',content:'Five major scripts: seal, clerical, regular, running, cursive. Each evolved historically for different purposes.',keyPhrases:[{cn:'篆书',pinyin:'zhuàn shū',en:'seal script'},{cn:'隶书',pinyin:'lì shū',en:'clerical script'},{cn:'楷书',pinyin:'kǎi shū',en:'regular script'},{cn:'行书',pinyin:'xíng shū',en:'running script'},{cn:'草书',pinyin:'cǎo shū',en:'cursive script'}],significance:'Aesthetic and practical development.'},
+        {id:'cex_130',title:'Measure Words',titleMeaning:'量词',category:'Language',icon:'📏',content:'Chinese uses measure words: zhang for flat, tiao for long, ba for handled, ben for books. Over 100 classifiers categorize nouns.',keyPhrases:[{cn:'量词',pinyin:'liàng cí',en:'measure word'},{cn:'一张纸',pinyin:'yī zhāng zhǐ',en:'one sheet'},{cn:'一条鱼',pinyin:'yī tiáo yú',en:'one fish'},{cn:'一把刀',pinyin:'yī bǎ dāo',en:'one knife'},{cn:'一个',pinyin:'yī gè',en:'general classifier'}],significance:'Categorize world by shape.'},
+        {id:'cex_131',title:'Vernacular Movement',titleMeaning:'白话文',category:'Language',icon:'📰',content:'Baihua movement early 20th century replaced classical with everyday written language. Led by Hu Shi and Lu Xun, made literature accessible.',keyPhrases:[{cn:'白话文',pinyin:'bái huà wén',en:'vernacular'},{cn:'文言文',pinyin:'wén yán wén',en:'classical'},{cn:'胡适',pinyin:'hú shì',en:'Hu Shi'},{cn:'鲁迅',pinyin:'lǔ xùn',en:'Lu Xun'},{cn:'五四运动',pinyin:'wǔ sì yùn dòng',en:'May Fourth Movement'}],significance:'Democratized literacy.'},
+        {id:'cex_132',title:'Character Origins',titleMeaning:'汉字起源',category:'Language',icon:'📜',content:'Characters originated from oracle bone script 1200 BCE. Pictographic symbols evolved through bronze to modern. Legend credits Cangjie with invention.',keyPhrases:[{cn:'甲骨文',pinyin:'jiǎ gǔ wén',en:'oracle bone'},{cn:'象形字',pinyin:'xiàng xíng zì',en:'pictograph'},{cn:'指事字',pinyin:'zhǐ shì zì',en:'ideograph'},{cn:'仓颉',pinyin:'cāng jié',en:'Cangjie'},{cn:'金文',pinyin:'jīn wén',en:'bronze script'}],significance:'Oldest continuous writing system.'},
+        {id:'cex_133',title:'Wordplay',titleMeaning:'文字游戏',category:'Language',icon:'🎪',content:'Wordplay: upside-down fu means fortune arrives, fish represents surplus. Couplet matching requires tonal parallelism.',keyPhrases:[{cn:'福倒了',pinyin:'fú dào le',en:'fortune upside down'},{cn:'对对子',pinyin:'duì duì zi',en:'couplet matching'},{cn:'回文',pinyin:'huí wén',en:'palindrome'},{cn:'脑筋急转弯',pinyin:'nǎo jīn jí zhuǎn wān',en:'brain teaser'},{cn:'歇后语',pinyin:'xiē hòu yǔ',en:'allegorical saying'}],significance:'Entertains with cultural wisdom.'},
+        {id:'cex_134',title:'Xiehouyu',titleMeaning:'歇后语',category:'Language',icon:'🧩',content:'Two-part allegorical sayings: first sets up scenario, second reveals punchline. Use puns and cultural references.',keyPhrases:[{cn:'歇后语',pinyin:'xiē hòu yǔ',en:'allegorical saying'},{cn:'哑巴吃黄连',pinyin:'yǎ ba chī huáng lián',en:'dumb eats bitter'},{cn:'外甥打灯笼',pinyin:'wài shēng dǎ dēng lóng',en:'nephew with lantern'},{cn:'谐音双关',pinyin:'xié yīn shuāng guān',en:'homophonic pun'},{cn:'俏皮话',pinyin:'qiào pí huà',en:'witty remark'}],significance:'Display Chinese verbal wit.'},
+        {id:'cex_135',title:'Regional Accents',titleMeaning:'口音',category:'Language',icon:'🎤',content:'Regional accents differ: northern retroflexes strongly, southern softens zh/ch/sh. Beijing adds erhua suffix.',keyPhrases:[{cn:'儿化音',pinyin:'ér huà yīn',en:'erhua'},{cn:'平翘舌',pinyin:'píng qiào shé',en:'flat retroflex'},{cn:'南方口音',pinyin:'nán fāng kǒu yīn',en:'southern accent'},{cn:'北方口音',pinyin:'běi fāng kǒu yīn',en:'northern accent'},{cn:'方言岛',pinyin:'fāng yán dǎo',en:'dialect island'}],significance:'Encode regional identity.'},
+        {id:'cex_136',title:'Surname Origin',titleMeaning:'姓氏源流',category:'Language',icon:'📇',content:'Surnames originated 5000 years ago from matrilineal clans. Xing clan, Shi family branch. Hundred Surnames poem lists 504.',keyPhrases:[{cn:'姓',pinyin:'xìng',en:'clan name'},{cn:'氏',pinyin:'shì',en:'family name'},{cn:'百家姓',pinyin:'bǎi jiā xìng',en:'Hundred Surnames'},{cn:'女字旁',pinyin:'nǚ zì páng',en:'female radical'},{cn:'始祖',pinyin:'shǐ zǔ',en:'founding ancestor'}],significance:'Ancient social structures.'},
+        {id:'cex_137',title:'Exclamations',titleMeaning:'叹词',category:'Language',icon:'😲',content:'Common: aiya surprise, aiyo pain, wa amazement, he reproach, ng agreement. Carry tone-dependent meanings.',keyPhrases:[{cn:'哎呀',pinyin:'āi yā',en:'aiya'},{cn:'哎哟',pinyin:'āi yō',en:'aiyo'},{cn:'哇',pinyin:'wā',en:'wa'},{cn:'嗯',pinyin:'ǹg',en:'ng'},{cn:'哦',pinyin:'ó',en:'oh'}],significance:'Add emotional color to speech.'},
+        {id:'cex_138',title:'Internet Language',titleMeaning:'网络语言',category:'Language',icon:'💬',content:'Internet slang: yyds amazing, juejuezi awesome, xswl laughing. Numbers: 520 I love you, 886 bye-bye.',keyPhrases:[{cn:'YYDS',pinyin:'yǒng yuǎn de shén',en:'eternal god'},{cn:'绝绝子',pinyin:'jué jué zi',en:'awesome'},{cn:'520',pinyin:'wǔ èr líng',en:'I love you'},{cn:'886',pinyin:'bā bā liù',en:'bye-bye'},{cn:'表情包',pinyin:'biǎo qíng bāo',en:'emoticon pack'}],significance:'Creativity in digital spaces.'},
+        {id:'cex_139',title:'Numerals',titleMeaning:'中文数字',category:'Language',icon:'🔢',content:'Two numeral sets: everyday and financial for banks. Numbers group by 4 zeros: 10,000 wan, 100 million yi.',keyPhrases:[{cn:'大写数字',pinyin:'dà xiě shù zì',en:'financial numerals'},{cn:'万',pinyin:'wàn',en:'ten thousand'},{cn:'亿',pinyin:'yì',en:'hundred million'},{cn:'数字手势',pinyin:'shù zì shǒu shì',en:'number gestures'},{cn:'零',pinyin:'líng',en:'zero'}],significance:'Reflect practical commerce needs.'},
+        {id:'cex_140',title:'Stroke Order',titleMeaning:'笔顺',category:'Language',icon:'✍️',content:'Stroke order: top before bottom, left before right, horizontal before vertical. Correct order produces balanced characters.',keyPhrases:[{cn:'笔顺',pinyin:'bǐ shùn',en:'stroke order'},{cn:'先横后竖',pinyin:'xiān héng hòu shù',en:'horizontal before vertical'},{cn:'先撇后捺',pinyin:'xiān piě hòu nà',en:'diagonal order'},{cn:'从上到下',pinyin:'cóng shàng dào xià',en:'top to bottom'},{cn:'从左到右',pinyin:'cóng zuǒ dào yòu',en:'left to right'}],significance:'Grammar of Chinese handwriting.'},
+        {id:'cex_141',title:'Courtesy Phrases',titleMeaning:'礼貌用语',category:'Language',icon:'🙏',content:'Courtesy: you are too polite, no no when praised, sorry to trouble, eat or not as greeting. Humility embedded.',keyPhrases:[{cn:'您客气了',pinyin:'nín kè qì le',en:'too polite'},{cn:'哪里哪里',pinyin:'nǎ lǐ nǎ lǐ',en:'no modesty'},{cn:'麻烦你了',pinyin:'má fán nǐ le',en:'sorry to trouble'},{cn:'吃了吗',pinyin:'chī le ma',en:'have you eaten'},{cn:'不敢当',pinyin:'bù gǎn dāng',en:'don\'t deserve'}],significance:'Reveal humility values.'},
+        {id:'cex_142',title:'Classical Chinese',titleMeaning:'古文',category:'Language',icon:'🏛️',content:'Classical Chinese was literary standard 2500 years. Extremely concise. Mastery required years. Government exams tested it.',keyPhrases:[{cn:'古文',pinyin:'gǔ wén',en:'classical prose'},{cn:'之乎者也',pinyin:'zhī hū zhě yě',en:'classical particles'},{cn:'四书五经',pinyin:'sì shū wǔ jīng',en:'Four Books Five Classics'},{cn:'科举',pinyin:'kē jǔ',en:'imperial exams'},{cn:'文言',pinyin:'wén yán',en:'literary language'}],significance:'Shaped East Asian intellectual life.'},
+        {id:'cex_143',title:'Slang',titleMeaning:'俚语',category:'Language',icon:'💅',content:'Slang: you guanxi connections, da ka big shot, liangku cool. Regional slang differs from standard Mandarin.',keyPhrases:[{cn:'有关系',pinyin:'yǒu guān xì',en:'has connections'},{cn:'大咖',pinyin:'dà kā',en:'big shot'},{cn:'酷',pinyin:'kù',en:'cool'},{cn:'牛逼',pinyin:'niú bī',en:'awesome'},{cn:'菜鸟',pinyin:'cài niǎo',en:'newbie'}],significance:'Documents social trends.'},
+        {id:'cex_144',title:'Onomatopoeia',titleMeaning:'象声词',category:'Language',icon:'🔊',content:'Onomatopoeia: dingdong bell, honglong thunder, huahua rain, wangwang dog, maomao cat. Reduplicated sounds vivid.',keyPhrases:[{cn:'叮当',pinyin:'dīng dāng',en:'ding dong'},{cn:'哗哗',pinyin:'huā huā',en:'rain sound'},{cn:'轰隆',pinyin:'hōng lōng',en:'thunder'},{cn:'汪汪',pinyin:'wāng wāng',en:'dog bark'},{cn:'喵喵',pinyin:'miāo miāo',en:'cat meow'}],significance:'Enriches language with sound.'},
+        {id:'cex_145',title:'Tattoo Characters',titleMeaning:'汉字纹身',category:'Language',icon:'💉',content:'Chinese character tattoos globally popular but often have mistakes. Common: love, strength, peace, dragon. Less common in China.',keyPhrases:[{cn:'汉字纹身',pinyin:'hàn zì wén shēn',en:'character tattoo'},{cn:'爱',pinyin:'ài',en:'love'},{cn:'龙',pinyin:'lóng',en:'dragon'},{cn:'书法',pinyin:'shū fǎ',en:'calligraphy'},{cn:'错误',pinyin:'cuò wù',en:'error'}],significance:'Cross-cultural fascination and risk.'},
+        {id:'cex_146',title:'Translation',titleMeaning:'翻译难点',category:'Language',icon:'🔄',content:'Translation challenges: tones, puns, idioms, classical poetry. Business needs cultural subtext beyond literal words.',keyPhrases:[{cn:'翻译',pinyin:'fān yì',en:'translation'},{cn:'意译',pinyin:'yì yì',en:'free translation'},{cn:'直译',pinyin:'zhí yì',en:'literal'},{cn:'不可译',pinyin:'bù kě yì',en:'untranslatable'},{cn:'文化对应',pinyin:'wén huà duì yìng',en:'cultural equivalence'}],significance:'Highlight language differences.'},
+        {id:'cex_147',title:'Foreigner Names',titleMeaning:'中文名字',category:'Language',icon:'🏷️',content:'Foreigners adopt Chinese names: surname-like character plus meaningful given name. Celebrities have standard phonetic translations.',keyPhrases:[{cn:'中文名',pinyin:'zhōng wén míng',en:'Chinese name'},{cn:'音译',pinyin:'yīn yì',en:'phonetic'},{cn:'姓氏',pinyin:'xìng shì',en:'surname'},{cn:'含义',pinyin:'hán yì',en:'meaning'},{cn:'起名',pinyin:'qǐ míng',en:'name giving'}],significance:'Cultural adaptation marker.'},
+        {id:'cex_148',title:'Letter Format',titleMeaning:'书信格式',category:'Language',icon:'✉️',content:'Traditional letter: salutation with respect, body, closing. Formal use honorifics. Modern emails less formal.',keyPhrases:[{cn:'此致敬礼',pinyin:'cǐ zhì jìng lǐ',en:'best regards'},{cn:'敬爱的',pinyin:'jìng ài de',en:'respected'},{cn:'问候',pinyin:'wèn hòu',en:'greetings'},{cn:'赐教',pinyin:'cì jiào',en:'your instruction'},{cn:'拜上',pinyin:'bài shàng',en:'respectfully'}],significance:'Reveal hierarchical relationships.'},
+        {id:'cex_149',title:'Business Chinese',titleMeaning:'商务汉语',category:'Language',icon:'💼',content:'Business Chinese uses formal register with honorifics. Meetings start with relationship talk. Guanxi terminology essential.',keyPhrases:[{cn:'商务汉语',pinyin:'shāng wù hàn yǔ',en:'business Chinese'},{cn:'贵公司',pinyin:'guì gōng sī',en:'your esteemed company'},{cn:'合作',pinyin:'hé zuò',en:'cooperation'},{cn:'合同',pinyin:'hé tong',en:'contract'},{cn:'关系',pinyin:'guān xì',en:'guanxi'}],significance:'Reflects business formality.'},
+        {id:'cex_150',title:'Tone Sandhi',titleMeaning:'变调',category:'Language',icon:'🎶',content:'Tone sandhi changes tones in context. Two third tones: first becomes rising. Yi and bu change before certain tones.',keyPhrases:[{cn:'变调',pinyin:'biàn diào',en:'tone change'},{cn:'三声变调',pinyin:'sān shēng biàn diào',en:'third tone change'},{cn:'一',pinyin:'yī',en:'one change'},{cn:'不',pinyin:'bù',en:'not change'},{cn:'轻声',pinyin:'qīng shēng',en:'neutral tone'}],significance:'Complex tonal rules.'},
+        {id:'cex_151',title:'Neologisms',titleMeaning:'网络新词',category:'Language',icon:'🆕',content:'New internet words: neijuan involution, tangping lie flat, nubility awesome. Reflect generational creativity.',keyPhrases:[{cn:'内卷',pinyin:'nèi juǎn',en:'involution'},{cn:'躺平',pinyin:'tǎng píng',en:'lie flat'},{cn:'牛逼',pinyin:'niú bī',en:'niubi awesome'},{cn:'亮亮',pinyin:'liàng liàng',en:'sparkling'},{cn:'摆烂',pinyin:'bǎi làn',en:'give up'}],significance:'Documents social trends.'},
+        {id:'cex_152',title:'Rhetoric',titleMeaning:'修辞',category:'Language',icon:'🎯',content:'Chinese rhetoric: parallelism in couplets, metaphor in poetry, hyperbole in compliments. Four-character phrases add rhythm.',keyPhrases:[{cn:'对仗',pinyin:'duì zhàng',en:'parallelism'},{cn:'比喻',pinyin:'bǐ yù',en:'metaphor'},{cn:'夸张',pinyin:'kuā zhāng',en:'hyperbole'},{cn:'排比',pinyin:'pái bǐ',en:'parallel structure'},{cn:'反问',pinyin:'fǎn wèn',en:'rhetorical question'}],significance:'Artistic language use.'},
+        {id:'cex_153',title:'Tone Marks',titleMeaning:'标调',category:'Language',icon:'🔠',content:'Tone marks: first macron, second acute, third caron, fourth grave. Placed on vowels following specific rules. Essential for learning.',keyPhrases:[{cn:'声调符号',pinyin:'shēng diào fú hào',en:'tone marks'},{cn:'一声',pinyin:'yī shēng',en:'first tone mark'},{cn:'二声',pinyin:'èr shēng',en:'second tone mark'},{cn:'三声',pinyin:'sān shēng',en:'third tone mark'},{cn:'四声',pinyin:'sì shēng',en:'fourth tone mark'}],significance:'Essential transcription for learning.'},
+        {id:'cex_154',title:'Polyphonic Characters',titleMeaning:'多音字',category:'Language',icon:'🔀',content:'Polyphonic characters: xing/hang, zhang/chang, le/yue. Meaning depends on context. Challenge learners.',keyPhrases:[{cn:'多音字',pinyin:'duō yīn zì',en:'polyphonic'},{cn:'行',pinyin:'xíng/háng',en:'go/line'},{cn:'长',pinyin:'zhǎng/cháng',en:'grow/long'},{cn:'乐',pinyin:'lè/yuè',en:'happy/music'},{cn:'重',pinyin:'zhòng/chóng',en:'heavy/repeat'}],significance:'Reflects character evolution.'},
+        {id:'cex_155',title:'Honorifics',titleMeaning:'敬语',category:'Language',icon:'🙇',content:'Honorifics: nin polite you, gui esteemed your, bi humble my. Used in formal correspondence and service.',keyPhrases:[{cn:'您',pinyin:'nín',en:'polite you'},{cn:'贵',pinyin:'guì',en:'esteemed'},{cn:'敝',pinyin:'bì',en:'humble'},{cn:'令',pinyin:'lìng',en:'your honorific'},{cn:'拜',pinyin:'bài',en:'respectfully'}],significance:'Hierarchical social reflection.'},
+        {id:'cex_156',title:'Pinyin Input',titleMeaning:'拼音输入',category:'Language',icon:'⌨️',content:'Pinyin input methods allow typing Chinese characters using Latin keyboard. Users type pinyin and select from homophone candidates. Predictive text and voice input are modern additions.',keyPhrases:[{cn:'输入法',pinyin:'shū rù fǎ',en:'input method'},{cn:'拼音打字',pinyin:'pīn yīn dǎ zì',en:'pinyin typing'},{cn:'联想输入',pinyin:'lián xiǎng shū rù',en:'predictive input'},{cn:'语音输入',pinyin:'yǔ yīn shū rù',en:'voice input'},{cn:'手写输入',pinyin:'shǒu xiě shū rù',en:'handwriting input'}],significance:'Essential technology for digital Chinese communication.'},
+        {id:'cex_157',title:'Regional Scripts',titleMeaning:'地方文字',category:'Language',icon:'📄',content:'Regional writing systems include Nushu women\'s script in Hunan, Tangut script, and various ethnic minority scripts. Some like Nushu were used exclusively by women.',keyPhrases:[{cn:'女书',pinyin:'nǚ shū',en:'women\'s script'},{cn:'西夏文',pinyin:'xī xià wén',en:'Tangut script'},{cn:'东巴文',pinyin:'dōng bā wén',en:'Dongba pictographs'},{cn:'水书',pinyin:'shuǐ shū',en:'Shui script'},{cn:'彝文',pinyin:'yí wén',en:'Yi script'}],significance:'Showcases China\'s linguistic diversity beyond Han Chinese.'},
+        {id:'cex_158',title:'Chinese Counting',titleMeaning:'中国计数',category:'Language',icon:'🧮',content:'Abacus or suanpan was the primary calculation tool for centuries. Chinese uses hand gestures for numbers 1-10 with one hand. Traditional counting rods predate the abacus.',keyPhrases:[{cn:'算盘',pinyin:'suàn pán',en:'abacus'},{cn:'计数',pinyin:'jì shù',en:'counting'},{cn:'手指数数',pinyin:'shǒu zhǐ shǔ shù',en:'finger counting'},{cn:'算筹',pinyin:'suàn chóu',en:'counting rods'},{cn:'珠算',pinyin:'zhū suàn',en:'abacus calculation'}],significance:'Traditional Chinese mathematics tools and systems.'},
+        {id:'cex_159',title:'Language Reform',titleMeaning:'文字改革',category:'Language',icon:'📝',content:'Chinese language reform in 20th century included simplification, promotion of Mandarin, and creation of pinyin. These reforms dramatically increased literacy rates from under 20% to over 97%.',keyPhrases:[{cn:'文字改革',pinyin:'wén zì gǎi gé',en:'script reform'},{cn:'推广普通话',pinyin:'tuī guǎng pǔ tōng huà',en:'promote Mandarin'},{cn:'扫盲',pinyin:'sǎo máng',en:'literacy campaign'},{cn:'简化字',pinyin:'jiǎn huà zì',en:'simplified characters'},{cn:'汉语拼音',pinyin:'hàn yǔ pīn yīn',en:'pinyin'}],significance:'Massive social engineering project achieving near-universal literacy.'},
+        {id:'cex_160',title:'Chinese Typography',titleMeaning:'汉字排版',category:'Language',icon:'🔣',content:'Chinese typography faces unique challenges due to thousands of characters. Vertical writing was traditional but horizontal is now standard. Font design requires at least 6763 characters for basic coverage.',keyPhrases:[{cn:'字体',pinyin:'zì tǐ',en:'font'},{cn:'宋体',pinyin:'sòng tǐ',en:'Song typeface'},{cn:'黑体',pinyin:'hēi tǐ',en:'Hei typeface'},{cn:'竖排',pinyin:'shù pái',en:'vertical writing'},{cn:'横排',pinyin:'héng pái',en:'horizontal writing'}],significance:'Technical and aesthetic considerations in Chinese text display.'},
 
-    {
-      id: 'ce011',
-      title: '饺子 (Dumplings)',
-      titleMeaning: 'Dumplings',
-      category: 'Food',
-      icon: '🥟',
-      content: '饺子是中国北方最受欢迎的食物，形似古代的金元宝，象征财富。饺子馅有很多种类：猪肉白菜、韭菜鸡蛋、牛肉胡萝卜等。过年时全家人一起包饺子是一种传统，有的人还会在饺子里放一枚硬币，谁吃到就代表好运。',
-      keyPhrases: ['饺子', '金元宝', '馅', '包饺子', '好运'],
-      significance: '饺子是中国人过年不可缺少的食物。'
-    },
-    {
-      id: 'ce012',
-      title: '火锅 (Hot Pot)',
-      titleMeaning: 'Hot Pot',
-      category: 'Food',
-      icon: '🍲',
-      content: '火锅是中国非常流行的聚餐方式。大家围坐在一锅滚烫的汤底周围，把自己喜欢的肉和菜放进去煮。火锅有麻辣的重庆火锅、清淡的涮羊肉、养生的菌汤火锅等。吃火锅最重要的是热闹和分享。',
-      keyPhrases: ['火锅', '汤底', '麻辣', '涮羊肉', '聚餐'],
-      significance: '火锅体现了中国人喜欢热闹和分享的饮食习惯。'
-    },
-    {
-      id: 'ce013',
-      title: '北京烤鸭 (Beijing Roast Duck)',
-      titleMeaning: 'Beijing Roast Duck',
-      category: 'Food',
-      icon: '🦆',
-      content: '北京烤鸭是中国最有名的菜肴之一，已有几百年历史。鸭子经过特殊处理后挂在炉子里烤制，皮脆肉嫩。吃的时候用薄饼卷着鸭肉、黄瓜条和甜面酱。很多外国游客来北京一定要尝一尝。',
-      keyPhrases: ['烤鸭', '北京', '皮脆肉嫩', '薄饼', '甜面酱'],
-      significance: '北京烤鸭是中国美食走向世界的代表之一。'
-    },
-    {
-      id: 'ce014',
-      title: '豆浆油条 (Soy Milk & Fried Dough)',
-      titleMeaning: 'Soy Milk & Fried Dough Sticks',
-      category: 'Food',
-      icon: '🥛',
-      content: '豆浆和油条是中国人最传统的早餐搭配。豆浆是用黄豆磨成的，营养丰富；油条是油炸的面食，外脆里软。把油条泡在热豆浆里吃，是很多人童年最美好的记忆。这种早餐便宜又好吃。',
-      keyPhrases: ['豆浆', '油条', '早餐', '黄豆', '传统'],
-      significance: '豆浆油条是中国人最熟悉的早餐组合。'
-    },
-    {
-      id: 'ce015',
-      title: '四大菜系 (Four Great Cuisines)',
-      titleMeaning: 'Four Great Cuisines',
-      category: 'Food',
-      icon: '🍜',
-      content: '中国传统上有四大菜系：川菜、鲁菜、粤菜、苏菜。川菜以麻辣闻名，代表菜有麻婆豆腐；鲁菜讲究咸鲜；粤菜注重原味，点心很有名；苏菜精致细腻，甜咸适中。后来发展成八大菜系。',
-      keyPhrases: ['川菜', '鲁菜', '粤菜', '苏菜', '麻婆豆腐'],
-      significance: '四大菜系代表了中国不同地区的饮食风格。'
-    },
-    {
-      id: 'ce016',
-      title: '面条的文化意义',
-      titleMeaning: 'Cultural meaning of noodles',
-      category: 'Food',
-      icon: '🍝',
-      content: '在中国文化中，面条代表"长寿"。过生日的时候，人们会吃一碗"长寿面"，面条越长越好，不能咬断。这表达了希望过生日的人健康长寿的美好祝愿。所以在中国，面条不只是食物，还有文化的含义。',
-      keyPhrases: ['长寿面', '面条', '生日', '健康长寿', '祝愿'],
-      significance: '面条在中国饮食文化中象征着长寿。'
-    },
-    {
-      id: 'ce017',
-      title: '米饭的地位',
-      titleMeaning: 'The status of rice',
-      category: 'Food',
-      icon: '🍚',
-      content: '米饭是中国人最重要的主食，尤其是南方人，几乎每顿饭都离不开米饭。中国人打招呼时常说"你吃饭了吗？"，这说明了米饭在日常生活中的重要性。中国还发明了各种用米做的食物，如米粉、米线、年糕。',
-      keyPhrases: ['米饭', '主食', '南方', '年糕', '米粉'],
-      significance: '米饭是中国饮食文化的核心。'
-    },
-    {
-      id: 'ce018',
-      title: '中国茶种类',
-      titleMeaning: 'Types of Chinese tea',
-      category: 'Food',
-      icon: '🍵',
-      content: '中国茶主要分为六大类：绿茶（如龙井）、红茶（如祁红）、乌龙茶（如铁观音）、白茶（如白毫银针）、黄茶和黑茶（如普洱茶）。每类茶的制作工艺和味道都不同。绿茶不发酵，味道清新；红茶全发酵，味道醇厚。',
-      keyPhrases: ['绿茶', '红茶', '乌龙茶', '龙井', '铁观音'],
-      significance: '中国是世界上茶种类最丰富的国家。'
-    },
-    {
-      id: 'ce019',
-      title: '三餐习惯 (Meal Habits)',
-      titleMeaning: 'Meal Habits',
-      category: 'Food',
-      icon: '🍽️',
-      content: '中国人很注重早餐，俗话说"早饭要吃好"。早餐通常有包子、豆浆、粥等。午餐是一天中最重要的一餐，一般有米饭、几个菜和一个汤。晚餐家人会聚在一起吃。很多人有午睡的习惯，吃完午饭休息一会儿再工作。',
-      keyPhrases: ['早餐', '午餐', '晚餐', '午睡', '习惯'],
-      significance: '中国饮食文化讲究一日三餐的合理安排。'
-    },
-    {
-      id: 'ce020',
-      title: '各种小吃的魅力',
-      titleMeaning: 'The charm of street snacks',
-      category: 'Food',
-      icon: '🍢',
-      content: '中国每个城市都有自己的特色小吃。比如天津的煎饼果子、西安的肉夹馍、上海的汤包、成都的串串香。夜市是品尝小吃最好的地方。中国人很爱逛夜市，一边走一边吃各种小吃，这叫"逛吃逛吃"。',
-      keyPhrases: ['小吃', '夜市', '煎饼果子', '肉夹馍', '汤包'],
-      significance: '小吃文化是中国城市生活的一大特色。'
-    },
+        // ===== 5. History (cex_161 - cex_200) =====
+        {id:'cex_161',title:'Confucius',titleMeaning:'孔子',category:'History',icon:'📚',content:'Confucius 551-479 BCE was a philosopher whose teachings on ethics, family loyalty, and social harmony shaped East Asian civilization. The Analects record his sayings. His philosophy became state orthodoxy for 2000 years.',keyPhrases:[{cn:'孔子',pinyin:'kǒng zǐ',en:'Confucius'},{cn:'论语',pinyin:'lún yǔ',en:'The Analects'},{cn:'仁义',pinyin:'rén yì',en:'benevolence righteousness'},{cn:'礼',pinyin:'lǐ',en:'ritual propriety'},{cn:'儒家',pinyin:'rú jiā',en:'Confucianism'}],significance:'Most influential philosopher in Chinese history shaping ethics and governance.'},
+        {id:'cex_162',title:'Laozi',titleMeaning:'老子',category:'History',icon:'☯️',content:'Laozi is the legendary founder of Daoism, author of the Dao De Jing around 6th century BCE. His philosophy emphasizes living in harmony with the Dao or the Way, simplicity, and non-action Wu Wei.',keyPhrases:[{cn:'老子',pinyin:'lǎo zǐ',en:'Laozi'},{cn:'道德经',pinyin:'dào dé jīng',en:'Dao De Jing'},{cn:'道',pinyin:'dào',en:'the Way'},{cn:'无为',pinyin:'wú wéi',en:'non-action'},{cn:'自然',pinyin:'zì rán',en:'naturalness'}],significance:'Foundational philosopher of Daoism influencing Chinese thought and spirituality.'},
+        {id:'cex_163',title:'Chinese Dynasties',titleMeaning:'中国朝代',category:'History',icon:'🏛️',content:'China\'s dynastic cycle spans 4000 years: Xia, Shang, Zhou, Qin, Han, Tang, Song, Yuan, Ming, Qing. Each contributed to cultural development. Dynasties rose and fell in a repeating pattern.',keyPhrases:[{cn:'朝代',pinyin:'cháo dài',en:'dynasty'},{cn:'秦朝',pinyin:'qín cháo',en:'Qin Dynasty'},{cn:'唐朝',pinyin:'táng cháo',en:'Tang Dynasty'},{cn:'明朝',pinyin:'míng cháo',en:'Ming Dynasty'},{cn:'清朝',pinyin:'qīng cháo',en:'Qing Dynasty'}],significance:'Dynastic cycle framework organizes Chinese historical narrative.'},
+        {id:'cex_164',title:'Silk Road',titleMeaning:'丝绸之路',category:'History',icon:'🐪',content:'The Silk Road was a network of trade routes connecting China to Central Asia, the Middle East, and Europe from 130 BCE. Silk, tea, spices, and ideas including Buddhism traveled these routes.',keyPhrases:[{cn:'丝绸之路',pinyin:'sī chóu zhī lù',en:'Silk Road'},{cn:'张骞',pinyin:'zhāng qiān',en:'Zhang Qian explorer'},{cn:'丝绸',pinyin:'sī chóu',en:'silk'},{cn:'西域',pinyin:'xī yù',en:'Western Regions'},{cn:'驿站',pinyin:'yì zhàn',en:'caravanserai'}],significance:'Facilitated cultural and economic exchange between East and West for centuries.'},
+        {id:'cex_165',title:'Great Wall',titleMeaning:'长城',category:'History',icon:'🧱',content:'The Great Wall stretches over 21000 km built from 7th century BCE to 17th century. Multiple dynasties built sections to protect against northern invasions. It is a UNESCO World Heritage site.',keyPhrases:[{cn:'长城',pinyin:'cháng chéng',en:'Great Wall'},{cn:'秦始皇',pinyin:'qín shǐ huáng',en:'Qin Shi Huang'},{cn:'烽火台',pinyin:'fēng huǒ tái',en:'beacon tower'},{cn:'万里长城',pinyin:'wàn lǐ cháng chéng',en:'Ten Thousand Li Wall'},{cn:'嘉峪关',pinyin:'jiā yù guān',en:'Jiayu Pass'}],significance:'Symbol of Chinese endurance and defensive engineering spanning millennia.'},
+        {id:'cex_166',title:'Terracotta Army',titleMeaning:'兵马俑',category:'History',icon:'🗿',content:'The Terracotta Army of 8000 life-sized clay soldiers was buried with Qin Shi Huang in 210 BCE. Discovered in 1974 near Xi\'an, each figure has unique facial features. It is a major archaeological wonder.',keyPhrases:[{cn:'兵马俑',pinyin:'bīng mǎ yǒng',en:'Terracotta Army'},{cn:'秦始皇',pinyin:'qín shǐ huáng',en:'Qin Shi Huang'},{cn:'西安',pinyin:'xī ān',en:'Xi\'an'},{cn:'陶俑',pinyin:'táo yǒng',en:'clay figures'},{cn:'考古发现',pinyin:'kǎo gǔ fā xiàn',en:'archaeological discovery'}],significance:'Largest ancient funerary complex demonstrating Qin imperial power.'},
+        {id:'cex_167',title:'Shang Dynasty',titleMeaning:'商朝',category:'History',icon:'🥁',content:'The Shang Dynasty 1600-1046 BCE was China\'s first historically confirmed dynasty. It developed bronze casting, a writing system on oracle bones, and a stratified society. Its capital was near Anyang.',keyPhrases:[{cn:'商朝',pinyin:'shāng cháo',en:'Shang Dynasty'},{cn:'甲骨文',pinyin:'jiǎ gǔ wén',en:'oracle bone script'},{cn:'青铜器',pinyin:'qīng tóng qì',en:'bronze vessels'},{cn:'安阳',pinyin:'ān yáng',en:'Anyang'},{cn:'殷墟',pinyin:'yīn xū',en:'Yin ruins'}],significance:'Earliest verified Chinese dynasty with written records and advanced metallurgy.'},
+        {id:'cex_168',title:'Zhou Dynasty',titleMeaning:'周朝',category:'History',icon:'⚔️',content:'The Zhou Dynasty 1046-256 BCE was the longest lasting, developing the Mandate of Heaven concept. It introduced feudalism and saw the flourishing of Confucianism, Daoism, and other philosophical schools.',keyPhrases:[{cn:'周朝',pinyin:'zhōu cháo',en:'Zhou Dynasty'},{cn:'天命',pinyin:'tiān mìng',en:'Mandate of Heaven'},{cn:'分封制',pinyin:'fēn fēng zhì',en:'feudal system'},{cn:'春秋战国',pinyin:'chūn qiū zhàn guó',en:'Spring and Autumn Warring States'},{cn:'诸子百家',pinyin:'zhū zǐ bǎi jiā',en:'Hundred Schools of Thought'}],significance:'Established foundational political concepts and philosophical traditions.'},
+        {id:'cex_169',title:'Qin Shi Huang',titleMeaning:'秦始皇',category:'History',icon:'👑',content:'Qin Shi Huang 259-210 BCE unified China in 221 BCE, standardized writing, currency, and measures, connected the Great Wall, and built a nationwide road network. He was buried with the Terracotta Army.',keyPhrases:[{cn:'秦始皇',pinyin:'qín shǐ huáng',en:'Qin Shi Huang'},{cn:'统一',pinyin:'tǒng yī',en:'unification'},{cn:'书同文',pinyin:'shū tóng wén',en:'unified writing'},{cn:'车同轨',pinyin:'chē tóng guǐ',en:'standardized tracks'},{cn:'焚书坑儒',pinyin:'fén shū kēng rú',en:'burn books bury scholars'}],significance:'First emperor who unified China and established imperial system.'},
+        {id:'cex_170',title:'Han Dynasty',titleMeaning:'汉朝',category:'History',icon:'🏮',content:'The Han Dynasty 206 BCE-220 CE was a golden age of culture, trade, and military expansion. It established the Silk Road, developed papermaking, and set the template for Chinese civilization. Han Chinese identity derives from this era.',keyPhrases:[{cn:'汉朝',pinyin:'hàn cháo',en:'Han Dynasty'},{cn:'汉武帝',pinyin:'hàn wǔ dì',en:'Emperor Wu'},{cn:'丝绸之路',pinyin:'sī chóu zhī lù',en:'Silk Road'},{cn:'造纸',pinyin:'zào zhǐ',en:'papermaking'},{cn:'汉族',pinyin:'hàn zú',en:'Han Chinese'}],significance:'Defined Chinese identity and set patterns for governance and culture.'},
+        {id:'cex_171',title:'Tang Dynasty',titleMeaning:'唐朝',category:'History',icon:'🌸',content:'The Tang Dynasty 618-907 CE was China\'s cosmopolitan golden age. Chang\'an was the world\'s largest city. Poetry flourished with Li Bai and Du Fu. Buddhism deeply influenced Chinese culture.',keyPhrases:[{cn:'唐朝',pinyin:'táng cháo',en:'Tang Dynasty'},{cn:'长安',pinyin:'cháng ān',en:'Chang\'an capital'},{cn:'李白',pinyin:'lǐ bái',en:'Li Bai poet'},{cn:'杜甫',pinyin:'dù fǔ',en:'Du Fu poet'},{cn:'唐三彩',pinyin:'táng sān cǎi',en:'Tang three-color pottery'}],significance:'Peak of Chinese civilization with unmatched cultural and artistic achievements.'},
+        {id:'cex_172',title:'Song Dynasty',titleMeaning:'宋朝',category:'History',icon:'🎨',content:'The Song Dynasty 960-1279 CE was an era of economic revolution, technological innovation, and cultural refinement. It saw gunpowder weaponry, movable type printing, landscape painting, and Neo-Confucianism.',keyPhrases:[{cn:'宋朝',pinyin:'sòng cháo',en:'Song Dynasty'},{cn:'活字印刷',pinyin:'huó zì yìn shuā',en:'movable type'},{cn:'火药',pinyin:'huǒ yào',en:'gunpowder'},{cn:'山水画',pinyin:'shān shuǐ huà',en:'landscape painting'},{cn:'程朱理学',pinyin:'chéng zhū lǐ xué',en:'Neo-Confucianism'}],significance:'Technological innovation and cultural refinement reached new heights.'},
+        {id:'cex_173',title:'Yuan Dynasty',titleMeaning:'元朝',category:'History',icon:'🐎',content:'The Yuan Dynasty 1271-1368 CE was established by Kublai Khan, grandson of Genghis. It unified China under Mongol rule, expanded the empire, and facilitated trade across Eurasia visited by Marco Polo.',keyPhrases:[{cn:'元朝',pinyin:'yuán cháo',en:'Yuan Dynasty'},{cn:'忽必烈',pinyin:'hū bì liè',en:'Kublai Khan'},{cn:'成吉思汗',pinyin:'chéng jí sī hán',en:'Genghis Khan'},{cn:'大都',pinyin:'dà dū',en:'Khanbaliq capital'},{cn:'马可波罗',pinyin:'mǎ kě bō luó',en:'Marco Polo'}],significance:'Mongol unification of China connecting it to the vast Eurasian empire.'},
+        {id:'cex_174',title:'Ming Dynasty',titleMeaning:'明朝',category:'History',icon:'🏯',content:'The Ming Dynasty 1368-1644 CE restored Han Chinese rule. It built the Forbidden City, sent Zheng He\'s treasure fleets across the Indian Ocean, produced blue-and-white porcelain, and constructed the Great Wall\'s most famous sections.',keyPhrases:[{cn:'明朝',pinyin:'míng cháo',en:'Ming Dynasty'},{cn:'紫禁城',pinyin:'zǐ jìn chéng',en:'Forbidden City'},{cn:'郑和',pinyin:'zhèng hé',en:'Zheng He admiral'},{cn:'青花瓷',pinyin:'qīng huā cí',en:'blue-and-white porcelain'},{cn:'长城',pinyin:'cháng chéng',en:'Great Wall'}],significance:'Last Han Chinese dynasty known for exploration, art, and monumental architecture.'},
+        {id:'cex_175',title:'Qing Dynasty',titleMeaning:'清朝',category:'History',icon:'👲',content:'The Qing Dynasty 1644-1912 CE was the last imperial dynasty, established by Manchus. It expanded China to its largest territorial extent, saw economic prosperity, but declined due to external pressure and internal rebellion.',keyPhrases:[{cn:'清朝',pinyin:'qīng cháo',en:'Qing Dynasty'},{cn:'康熙',pinyin:'kāng xī',en:'Kangxi Emperor'},{cn:'乾隆',pinyin:'qián lóng',en:'Qianlong Emperor'},{cn:'鸦片战争',pinyin:'yā piàn zhàn zhēng',en:'Opium Wars'},{cn:'辛亥革命',pinyin:'xīn hài gé mìng',en:'1911 Revolution'}],significance:'Last imperial dynasty whose decline led to China\'s modern transformation.'},
+        {id:'cex_176',title:'Opium Wars',titleMeaning:'鸦片战争',category:'History',icon:'⚓',content:'The Opium Wars 1839-1842, 1856-1860 were military conflicts with Britain over trade imbalances and opium trafficking. China\'s defeat led to unequal treaties, territorial concessions, and the beginning of its century of humiliation.',keyPhrases:[{cn:'鸦片战争',pinyin:'yā piàn zhàn zhēng',en:'Opium Wars'},{cn:'林则徐',pinyin:'lín zé xú',en:'Lin Zexu'},{cn:'南京条约',pinyin:'nán jīng tiáo yuē',en:'Treaty of Nanjing'},{cn:'香港',pinyin:'xiāng gǎng',en:'Hong Kong'},{cn:'不平等条约',pinyin:'bù píng děng tiáo yuē',en:'unequal treaty'}],significance:'Catalyst for China\'s decline and eventual modernization.'},
+        {id:'cex_177',title:'1911 Revolution',titleMeaning:'辛亥革命',category:'History',icon:'🗽',content:'The 1911 Revolution led by Sun Yat-sen overthrew the Qing Dynasty ending 2000 years of imperial rule. The Republic of China was established. It marked China\'s transition to modern nationhood.',keyPhrases:[{cn:'辛亥革命',pinyin:'xīn hài gé mìng',en:'1911 Revolution'},{cn:'孙中山',pinyin:'sūn zhōng shān',en:'Sun Yat-sen'},{cn:'中华民国',pinyin:'zhōng huá mín guó',en:'Republic of China'},{cn:'三民主义',pinyin:'sān mín zhǔ yì',en:'Three Principles'},{cn:'武昌起义',pinyin:'wǔ chāng qǐ yì',en:'Wuchang Uprising'}],significance:'Ended millennia of imperial rule and began modern Chinese republic.'},
+        {id:'cex_178',title:'May Fourth Movement',titleMeaning:'五四运动',category:'History',icon:'✊',content:'The May Fourth Movement in 1919 was a student-led protest against the Treaty of Versailles and traditional culture. It sparked the New Culture Movement, promoted vernacular Chinese, and laid foundations for the Communist Party.',keyPhrases:[{cn:'五四运动',pinyin:'wǔ sì yùn dòng',en:'May Fourth Movement'},{cn:'新文化运动',pinyin:'xīn wén huà yùn dòng',en:'New Culture Movement'},{cn:'民主科学',pinyin:'mín zhǔ kē xué',en:'democracy science'},{cn:'陈独秀',pinyin:'chén dú xiù',en:'Chen Duxiu'},{cn:'李大钊',pinyin:'lǐ dà zhāo',en:'Li Dazhao'}],significance:'Intellectual awakening that shaped modern Chinese political and cultural identity.'},
+        {id:'cex_179',title:'Long March',titleMeaning:'长征',category:'History',icon:'🚩',content:'The Long March 1934-1935 was the Communist Red Army\'s strategic retreat covering 12000 km under Mao Zedong. It avoided Nationalist forces and solidified Mao\'s leadership. Only 8000 of 86000 survived.',keyPhrases:[{cn:'长征',pinyin:'cháng zhēng',en:'Long March'},{cn:'毛泽东',pinyin:'máo zé dōng',en:'Mao Zedong'},{cn:'遵义会议',pinyin:'zūn yì huì yì',en:'Zunyi Conference'},{cn:'红军',pinyin:'hóng jūn',en:'Red Army'},{cn:'陕北',pinyin:'shǎn běi',en:'northern Shaanxi'}],significance:'Foundational myth of the Communist Party demonstrating sacrifice and determination.'},
+        {id:'cex_180',title:'Cultural Revolution',titleMeaning:'文化大革命',category:'History',icon:'🔴',content:'The Cultural Revolution 1966-1976 was Mao\'s campaign to purge capitalist elements and enforce communist orthodoxy. It caused widespread social chaos, destruction of cultural heritage, and millions of deaths.',keyPhrases:[{cn:'文化大革命',pinyin:'wén huà dà gé mìng',en:'Cultural Revolution'},{cn:'红卫兵',pinyin:'hóng wèi bīng',en:'Red Guards'},{cn:'大跃进',pinyin:'dà yuè jìn',en:'Great Leap Forward'},{cn:'四人帮',pinyin:'sì rén bāng',en:'Gang of Four'},{cn:'牛棚',pinyin:'niú péng',en:'cowshed reeducation'}],significance:'Traumatic period that profoundly affected Chinese society and cultural heritage.'},
+        {id:'cex_181',title:'Reform Opening',titleMeaning:'改革开放',category:'History',icon:'🚀',content:'Deng Xiaoping\'s Reform and Opening from 1978 transformed China from a planned economy to market-oriented system. It lifted hundreds of millions from poverty and established Special Economic Zones like Shenzhen.',keyPhrases:[{cn:'改革开放',pinyin:'gǎi gé kāi fàng',en:'Reform and Opening'},{cn:'邓小平',pinyin:'dèng xiǎo píng',en:'Deng Xiaoping'},{cn:'经济特区',pinyin:'jīng jì tè qū',en:'Special Economic Zone'},{cn:'深圳',pinyin:'shēn zhèn',en:'Shenzhen'},{cn:'市场经济',pinyin:'shì chǎng jīng jì',en:'market economy'}],significance:'Fundamental transformation that created modern China\'s economic miracle.'},
+        {id:'cex_182',title:'Sun Tzu',titleMeaning:'孙子',category:'History',icon:'⚔️',content:'Sun Tzu was a military strategist of the Spring and Autumn period, author of The Art of War. His principles on strategy, deception, and winning without fighting influence military and business thinking worldwide.',keyPhrases:[{cn:'孙子',pinyin:'sūn zǐ',en:'Sun Tzu'},{cn:'孙子兵法',pinyin:'sūn zǐ bīng fǎ',en:'The Art of War'},{cn:'不战而屈人之兵',pinyin:'bù zhàn ér qū rén zhī bīng',en:'win without fighting'},{cn:'知己知彼',pinyin:'zhī jǐ zhī bǐ',en:'know self know enemy'},{cn:'兵者诡道',pinyin:'bīng zhě guǐ dào',en:'war is deception'}],significance:'Most influential military treatise in history, applied beyond warfare.'},
+        {id:'cex_183',title:'Four Great Inventions',titleMeaning:'四大发明',category:'History',icon:'🧨',content:'China\'s Four Great Inventions are papermaking, printing, gunpowder, and the compass. These technologies fundamentally changed global civilization. Paper reached Europe via the Silk Road and gunpowder revolutionized warfare.',keyPhrases:[{cn:'四大发明',pinyin:'sì dà fā míng',en:'Four Great Inventions'},{cn:'造纸术',pinyin:'zào zhǐ shù',en:'papermaking'},{cn:'印刷术',pinyin:'yìn shuā shù',en:'printing'},{cn:'火药',pinyin:'huǒ yào',en:'gunpowder'},{cn:'指南针',pinyin:'zhǐ nán zhēn',en:'compass'}],significance:'Chinese innovations that transformed global technology and history.'},
+        {id:'cex_184',title:'Zheng He Voyages',titleMeaning:'郑和下西洋',category:'History',icon:'⛵',content:'Zheng He led seven massive treasure fleet expeditions across the Indian Ocean from 1405-1433 during the Ming Dynasty. His ships were the largest of their time, reaching Africa and the Middle East. The voyages showcased Chinese naval power.',keyPhrases:[{cn:'郑和',pinyin:'zhèng hé',en:'Zheng He'},{cn:'宝船',pinyin:'bǎo chuán',en:'treasure ship'},{cn:'西洋',pinyin:'xī yáng',en:'Western Oceans'},{cn:'航海',pinyin:'háng hǎi',en:'navigation'},{cn:'非洲',pinyin:'fēi zhōu',en:'Africa'}],significance:'Demonstrated Ming maritime power and diplomatic reach across the Indian Ocean.'},
+        {id:'cex_185',title:'Mencius',titleMeaning:'孟子',category:'History',icon:'📖',content:'Mencius 372-289 BCE was the most famous Confucian philosopher after Confucius himself. He argued that human nature is inherently good and that rulers must govern with benevolence. His teachings profoundly shaped later Confucianism.',keyPhrases:[{cn:'孟子',pinyin:'mèng zǐ',en:'Mencius'},{cn:'性善论',pinyin:'xìng shàn lùn',en:'innate goodness'},{cn:'仁政',pinyin:'rén zhèng',en:'benevolent government'},{cn:'民贵君轻',pinyin:'mín guì jūn qīng',en:'people before ruler'},{cn:'浩然之气',pinyin:'hào rán zhī qì',en:'noble spirit'}],significance:'Second greatest Confucian philosopher who developed the theory of innate human goodness.'},
+        {id:'cex_186',title:'Warring States Period',titleMeaning:'战国时代',category:'History',icon:'⚔️',content:'The Warring States Period 475-221 BCE saw seven major states competing for dominance. It was an era of military innovation, philosophical flourishing with the Hundred Schools of Thought, and eventual unification by Qin. Sun Tzu wrote during this time.',keyPhrases:[{cn:'战国',pinyin:'zhàn guó',en:'Warring States'},{cn:'七雄',pinyin:'qī xióng',en:'seven powers'},{cn:'百家争鸣',pinyin:'bǎi jiā zhēng míng',en:'Hundred Schools contend'},{cn:'合纵连横',pinyin:'hé zòng lián héng',en:'vertical horizontal alliances'},{cn:'商鞅变法',pinyin:'shāng yāng biàn fǎ',en:'Shang Yang reforms'}],significance:'Formative period of Chinese philosophy, strategy, and political consolidation.'},
+        {id:'cex_187',title:'Empress Wu Zetian',titleMeaning:'武则天',category:'History',icon:'👸',content:'Wu Zetian 624-705 CE was the only female emperor in Chinese history. She rose from concubine to empress consort and eventually seized power, founding her own Zhou Dynasty. Her reign was marked by expansion and meritocratic governance.',keyPhrases:[{cn:'武则天',pinyin:'wǔ zé tiān',en:'Wu Zetian'},{cn:'女皇',pinyin:'nǚ huáng',en:'female emperor'},{cn:'周朝',pinyin:'zhōu cháo',en:'her Zhou Dynasty'},{cn:'科举',pinyin:'kē jǔ',en:'imperial exams'},{cn:'女权',pinyin:'nǚ quán',en:'women power'}],significance:'Trailblazing female ruler who broke gender barriers in imperial China.'},
+        {id:'cex_188',title:'Boxer Rebellion',titleMeaning:'义和团运动',category:'History',icon:'🥊',content:'The Boxer Rebellion 1899-1901 was an anti-foreign, anti-colonial uprising by the Society of Righteous and Harmonious Fists. Eight foreign nations sent troops to suppress it. The rebellion deepened China\'s humiliations and accelerated reform.',keyPhrases:[{cn:'义和团',pinyin:'yì hé tuán',en:'Boxers'},{cn:'扶清灭洋',pinyin:'fú qīng miè yáng',en:'support Qing destroy foreign'},{cn:'八国联军',pinyin:'bā guó lián jūn',en:'Eight-Nation Alliance'},{cn:'辛丑条约',pinyin:'xīn chǒu tiáo yuē',en:'Boxer Protocol'},{cn:'赔款',pinyin:'péi kuǎn',en:'indemnity'}],significance:'Anti-colonial resistance that led to further foreign domination and hastened Qing collapse.'},
+        {id:'cex_189',title:'Treaty of Nanjing',titleMeaning:'南京条约',category:'History',icon:'📜',content:'The Treaty of Nanjing in 1842 ended the First Opium War. It ceded Hong Kong to Britain, opened five treaty ports, and demanded reparations. It was the first of many unequal treaties that undermined Chinese sovereignty.',keyPhrases:[{cn:'南京条约',pinyin:'nán jīng tiáo yuē',en:'Treaty of Nanjing'},{cn:'五口通商',pinyin:'wǔ kǒu tōng shāng',en:'five treaty ports'},{cn:'割让香港',pinyin:'gē ràng xiāng gǎng',en:'cede Hong Kong'},{cn:'赔款',pinyin:'péi kuǎn',en:'reparations'},{cn:'领事裁判权',pinyin:'lǐng shì cái pàn quán',en:'extraterritoriality'}],significance:'First unequal treaty marking the beginning of China\'s century of humiliation.'},
+        {id:'cex_190',title:'Yellow Emperor',titleMeaning:'黄帝',category:'History',icon:'👑',content:'The Yellow Emperor or Huangdi is a legendary sovereign credited with inventing Chinese civilization. He is said to have reigned from 2697-2597 BCE. All Chinese consider themselves descendants of Yandi and Huangdi, the Yan-Huang descendants.',keyPhrases:[{cn:'黄帝',pinyin:'huáng dì',en:'Yellow Emperor'},{cn:'炎黄子孙',pinyin:'yán huáng zǐ sūn',en:'descendants of Yan Huang'},{cn:'华夏',pinyin:'huá xià',en:'Huaxia civilization'},{cn:'传说',pinyin:'chuán shuō',en:'legend'},{cn:'文明始祖',pinyin:'wén míng shǐ zǔ',en:'civilization founder'}],significance:'Legendary progenitor of Chinese civilization and unifying symbol of Chinese identity.'},
+        {id:'cex_191',title:'Three Kingdoms',titleMeaning:'三国',category:'History',icon:'🗡️',content:'The Three Kingdoms period 220-280 CE was a turbulent era of civil war between Wei, Shu, and Wu. It is romanticized in the novel Romance of the Three Kingdoms. Stories of Liu Bei, Guan Yu, and Zhuge Liang are cultural touchstones.',keyPhrases:[{cn:'三国',pinyin:'sān guó',en:'Three Kingdoms'},{cn:'魏蜀吴',pinyin:'wèi shǔ wú',en:'Wei Shu Wu'},{cn:'诸葛亮',pinyin:'zhū gě liàng',en:'Zhuge Liang'},{cn:'关羽',pinyin:'guān yǔ',en:'Guan Yu'},{cn:'赤壁之战',pinyin:'chì bì zhī zhàn',en:'Battle of Red Cliffs'}],significance:'Era of legendary heroes whose stories permeate Chinese culture through novels and opera.'},
+        {id:'cex_192',title:'Ancient Bridges',titleMeaning:'古桥',category:'History',icon:'🌉',content:'Chinese ancient bridge engineering includes the Anji Bridge built 595-605 CE, the world\'s oldest open-spandrel stone segmental arch bridge. The Lugou Bridge with 485 stone lions and the廊桥 covered bridges show diverse traditions.',keyPhrases:[{cn:'赵州桥',pinyin:'zhào zhōu qiáo',en:'Anji Bridge'},{cn:'卢沟桥',pinyin:'lú gōu qiáo',en:'Lugou Bridge'},{cn:'石拱桥',pinyin:'shí gǒng qiáo',en:'stone arch bridge'},{cn:'桥墩',pinyin:'qiáo dūn',en:'bridge pier'},{cn:'廊桥',pinyin:'láng qiáo',en:'covered bridge'}],significance:'Ancient bridge engineering demonstrating Chinese technological sophistication.'},
+        {id:'cex_193',title:'Grand Canal',titleMeaning:'大运河',category:'History',icon:'🚢',content:'The Grand Canal is the world\'s longest canal at 1776 km connecting the Yellow River and Yangtze River. Built from the 5th century BCE onward, it was vital for grain transport and economic integration between north and south China.',keyPhrases:[{cn:'大运河',pinyin:'dà yùn hé',en:'Grand Canal'},{cn:'京杭大运河',pinyin:'jīng háng dà yùn hé',en:'Beijing-Hangzhou Canal'},{cn:'隋炀帝',pinyin:'suí yáng dì',en:'Emperor Yang of Sui'},{cn:'漕运',pinyin:'cáo yùn',en:'grain transport'},{cn:'贯通南北',pinyin:'guàn tōng nán běi',en:'north-south connection'}],significance:'Massive engineering achievement enabling economic and political unity across China.'},
+        {id:'cex_194',title:'Sea Ban Policy',titleMeaning:'海禁',category:'History',icon:'🚫',content:'The Ming and Qing dynasties periodically enforced maritime trade bans or haijin, restricting foreign commerce. This isolationist policy was meant to control trade and prevent piracy but ultimately left China vulnerable to Western naval powers.',keyPhrases:[{cn:'海禁',pinyin:'hǎi jìn',en:'maritime ban'},{cn:'闭关锁国',pinyin:'bì guān suǒ guó',en:'closed country'},{cn:'朝贡',pinyin:'cháo gòng',en:'tribute system'},{cn:'倭寇',pinyin:'wō kòu',en:'Japanese pirates'},{cn:'十三行',pinyin:'shí sān háng',en:'Thirteen Factories'}],significance:'Isolationist policies that shaped China\'s relationship with the outside world.'},
+        {id:'cex_195',title:'Mongol Conquest',titleMeaning:'蒙古征服',category:'History',icon:'🐴',content:'The Mongol conquests under Genghis Khan in the 13th century created the largest contiguous land empire in history. The Yuan Dynasty ruled China as part of this empire. The conquest facilitated cultural exchange but caused massive destruction.',keyPhrases:[{cn:'蒙古帝国',pinyin:'měng gǔ dì guó',en:'Mongol Empire'},{cn:'成吉思汗',pinyin:'chéng jí sī hán',en:'Genghis Khan'},{cn:'元朝',pinyin:'yuán cháo',en:'Yuan Dynasty'},{cn:'骑兵',pinyin:'qí bīng',en:'cavalry'},{cn:'欧亚大陆',pinyin:'ōu yà dà lù',en:'Eurasia'}],significance:'Largest land empire that connected East and West under Mongol rule.'},
+        {id:'cex_196',title:'Cixi',titleMeaning:'慈禧太后',category:'History',icon:'👑',content:'Empress Dowager Cixi 1835-1908 effectively ruled China for 47 years during the late Qing Dynasty. She was a conservative who resisted reform yet managed court politics skillfully. Her legacy remains controversial between reformist and traditionalist views.',keyPhrases:[{cn:'慈禧',pinyin:'cí xǐ',en:'Cixi'},{cn:'太后',pinyin:'tài hòu',en:'empress dowager'},{cn:'垂帘听政',pinyin:'chuí lián tīng zhèng',en:'rule behind screen'},{cn:'戊戌变法',pinyin:'wù xū biàn fǎ',en:'Hundred Days Reform'},{cn:'洋务运动',pinyin:'yáng wù yùn dòng',en:'Self-Strengthening Movement'}],significance:'Controversial ruler whose conservative policies are debated as contributing to China\'s decline.'},
+        {id:'cex_197',title:'Jesuit Missionaries',titleMeaning:'耶稣会传教士',category:'History',icon:'✝️',content:'Jesuit missionaries like Matteo Ricci in the 16th-17th centuries introduced Western science, mathematics, and astronomy to China. They also brought Chinese philosophy and history to Europe, sparking intellectual exchanges that influenced the Enlightenment.',keyPhrases:[{cn:'利玛窦',pinyin:'lì mǎ dòu',en:'Matteo Ricci'},{cn:'传教士',pinyin:'chuán jiào shì',en:'missionary'},{cn:'西学东渐',pinyin:'xī xué dōng jiàn',en:'Western learning eastward'},{cn:'天文历法',pinyin:'tiān wén lì fǎ',en:'astronomy calendar'},{cn:'四库全书',pinyin:'sì kù quán shū',en:'Complete Library of Four Treasuries'}],significance:'Early cultural and scientific exchange between China and Europe.'},
+        {id:'cex_198',title:'Imperial Examinations',titleMeaning:'科举制度',category:'History',icon:'📝',content:'The imperial examination system or keju selected government officials based on merit from 605-1905 CE. Candidates memorized Confucian classics and wrote essays. It created a meritocratic bureaucracy and social mobility unmatched elsewhere at the time.',keyPhrases:[{cn:'科举',pinyin:'kē jǔ',en:'imperial exams'},{cn:'状元',pinyin:'zhuàng yuan',en:'top scholar'},{cn:'进士',pinyin:'jìn shì',en:'presented scholar'},{cn:'八股文',pinyin:'bā gǔ wén',en:'eight-legged essay'},{cn:'范进中举',pinyin:'fàn jìn zhòng jǔ',en:'Fan Jin passes exam'}],significance:'Meritocratic system that selected China\'s officials for 1300 years.'},
+        {id:'cex_199',title:'An Lushan Rebellion',titleMeaning:'安史之乱',category:'History',icon:'🔥',content:'The An Lushan Rebellion 755-763 CE was a devastating civil war during the Tang Dynasty that killed millions and weakened the empire permanently. It marked the decline of the golden age of Tang and led to regional warlordism.',keyPhrases:[{cn:'安史之乱',pinyin:'ān shǐ zhī luàn',en:'An Lushan Rebellion'},{cn:'安禄山',pinyin:'ān lù shān',en:'An Lushan'},{cn:'唐玄宗',pinyin:'táng xuán zōng',en:'Emperor Xuanzong'},{cn:'杨贵妃',pinyin:'yáng guì fēi',en:'Yang Guifei'},{cn:'马嵬坡',pinyin:'mǎ wéi pō',en:'Mawei Slope'}],significance:'Catastrophic rebellion marking the turning point of Tang Dynasty fortunes.'},
+        {id:'cex_200',title:'Shanghai Concession',titleMeaning:'上海租界',category:'History',icon:'🏙️',content:'The Shanghai International Settlement was an extraterritorial area controlled by foreign powers from 1863-1943. It became a hub of commerce, culture, and revolutionary activity. The concessions exemplified unequal treaties but also brought modernization.',keyPhrases:[{cn:'租界',pinyin:'zū jiè',en:'concession'},{cn:'公共租界',pinyin:'gōng gòng zū jiè',en:'International Settlement'},{cn:'外滩',pinyin:'wài tān',en:'the Bund'},{cn:'领事馆',pinyin:'lǐng shì guǎn',en:'consulate'},{cn:'半殖民地',pinyin:'bàn zhí mín dì',en:'semi-colonial'}],significance:'Symbol of foreign domination that paradoxically became a center of Chinese modernization.'},
 
-    // ── Customs & Traditions (10) ──────────────
+        // ===== 6. Arts (cex_201 - cex_240) =====
+        {id:'cex_201',title:'Calligraphy Art',titleMeaning:'书法',category:'Arts',icon:'🖌️',content:'Chinese calligraphy is a visual art ranking alongside painting and poetry. Masters practice for decades to achieve expressive brushwork. Four treasures of the study: brush, ink, paper, inkstone.',keyPhrases:[{cn:'书法',pinyin:'shū fǎ',en:'calligraphy'},{cn:'文房四宝',pinyin:'wén fáng sì bǎo',en:'four treasures'},{cn:'毛笔',pinyin:'máo bǐ',en:'writing brush'},{cn:'墨',pinyin:'mò',en:'ink stick'},{cn:'宣纸',pinyin:'xuān zhǐ',en:'rice paper'}],significance:'Highest form of Chinese visual art combining writing and aesthetic expression.'},
+        {id:'cex_202',title:'Chinese Painting',titleMeaning:'国画',category:'Arts',icon:'🎨',content:'Chinese painting or guohua uses brush and ink on paper or silk. It emphasizes shanshui landscape, flowers and birds, and figure painting. The style values suggestion over realism leaving space for imagination.',keyPhrases:[{cn:'国画',pinyin:'guó huà',en:'Chinese painting'},{cn:'山水画',pinyin:'shān shuǐ huà',en:'landscape painting'},{cn:'水墨',pinyin:'shuǐ mò',en:'ink wash'},{cn:'留白',pinyin:'liú bái',en:'white space'},{cn:'工笔',pinyin:'gōng bǐ',en:'meticulous style'}],significance:'Expressive art form valuing suggestion and spiritual essence over realistic depiction.'},
+        {id:'cex_203',title:'Classical Poetry',titleMeaning:'古典诗词',category:'Arts',icon:'📝',content:'Chinese classical poetry peaked in Tang and Song dynasties. Strict tonal patterns and parallelism govern forms like lüshi and ci poetry. Major poets include Li Bai, Du Fu, Wang Wei, and Su Shi.',keyPhrases:[{cn:'唐诗',pinyin:'táng shī',en:'Tang poetry'},{cn:'宋词',pinyin:'sòng cí',en:'Song lyrics'},{cn:'李白',pinyin:'lǐ bái',en:'Li Bai'},{cn:'杜甫',pinyin:'dù fǔ',en:'Du Fu'},{cn:'押韵',pinyin:'yā yùn',en:'rhyme'}],significance:'Peak of Chinese literary art with strict formal beauty and emotional depth.'},
+        {id:'cex_204',title:'Chinese Opera',titleMeaning:'戏曲',category:'Arts',icon:'🎭',content:'Chinese opera combines music, singing, acting, martial arts, and acrobatics. Peking Opera is most famous with elaborate costumes and face painting. Major types: Kunqu, Yue opera, Sichuan opera with face-changing.',keyPhrases:[{cn:'京剧',pinyin:'jīng jù',en:'Peking Opera'},{cn:'脸谱',pinyin:'liǎn pǔ',en:'face painting'},{cn:'生旦净丑',pinyin:'shēng dàn jìng chǒu',en:'role types'},{cn:'唱念做打',pinyin:'chàng niàn zuò dǎ',en:'sing speak act fight'},{cn:'变脸',pinyin:'biàn liǎn',en:'face-changing'}],significance:'Comprehensive performance art fusing music, drama, and acrobatics.'},
+        {id:'cex_205',title:'Chinese Instruments',titleMeaning:'中国乐器',category:'Arts',icon:'🎵',content:'Traditional Chinese instruments include guzheng zither, erhu fiddle, pipa lute, dizi flute, and sheng mouth organ. They are classified by material: silk, bamboo, wood, stone, metal, clay, gourd, and skin.',keyPhrases:[{cn:'古筝',pinyin:'gǔ zhēng',en:'guzheng'},{cn:'二胡',pinyin:'èr hú',en:'erhu'},{cn:'琵琶',pinyin:'pí pa',en:'pipa'},{cn:'笛子',pinyin:'dí zi',en:'dizi flute'},{cn:'编钟',pinyin:'biān zhōng',en:'bronze bells'}],significance:'Diverse musical traditions using unique instruments classified by material.'},
+        {id:'cex_206',title:'Martial Arts',titleMeaning:'武术',category:'Arts',icon:'🥋',content:'Chinese martial arts or wushu encompasses hundreds of styles. Shaolin kung fu originated at the Shaolin Temple. Tai chi is a meditative form practiced for health. Styles imitate animals and natural movements.',keyPhrases:[{cn:'武术',pinyin:'wǔ shù',en:'martial arts'},{cn:'少林',pinyin:'shǎo lín',en:'Shaolin'},{cn:'太极拳',pinyin:'tài jí quán',en:'tai chi'},{cn:'功夫',pinyin:'gōng fū',en:'kung fu'},{cn:'气功',pinyin:'qì gōng',en:'qigong'}],significance:'Chinese martial arts combine self-defense, health cultivation, and philosophical practice.'},
+        {id:'cex_207',title:'Kunqu Opera',titleMeaning:'昆曲',category:'Arts',icon:'🎶',content:'Kunqu is one of China\'s oldest opera forms originating in the Ming Dynasty. Known for its gentle melodies, elegant movements, and poetic lyrics. It influenced all later Chinese opera forms including Peking Opera. UNESCO intangible heritage.',keyPhrases:[{cn:'昆曲',pinyin:'kūn qǔ',en:'Kunqu opera'},{cn:'水磨腔',pinyin:'shuǐ mó qiāng',en:'water mill tune'},{cn:'牡丹亭',pinyin:'mǔ dān tíng',en:'Peony Pavilion'},{cn:'折子戏',pinyin:'zhé zi xì',en:'highlight excerpts'},{cn:'非物质文化遗产',pinyin:'fēi wù zhì wén huà yí chǎn',en:'intangible heritage'}],significance:'Ancient opera form recognized as a masterpiece of oral and intangible heritage.'},
+        {id:'cex_208',title:'Landscape Painting',titleMeaning:'山水画',category:'Arts',icon:'⛰️',content:'Chinese landscape painting or shanshui water-mountain is the highest form of traditional painting. Artists paint from memory expressing the essence of nature rather than realistic depiction. Guo Xi and Fan Kuan were masters of this genre.',keyPhrases:[{cn:'山水',pinyin:'shān shuǐ',en:'landscape'},{cn:'郭熙',pinyin:'guō xī',en:'Guo Xi'},{cn:'范宽',pinyin:'fàn kuān',en:'Fan Kuan'},{cn:'清明上河图',pinyin:'qīng míng shàng hé tú',en:'Along River Qingming'},{cn:'皴法',pinyin:'cūn fǎ',en:'texture strokes'}],significance:'Highest form of Chinese painting expressing the harmony between humans and nature.'},
+        {id:'cex_209',title:'Porcelain Art',titleMeaning:'瓷器艺术',category:'Arts',icon:'🏺',content:'Chinese porcelain reached artistic peaks in the Song, Ming, and Qing dynasties. Famous types: celadon, blue-and-white, famille rose, and doucai. Jingdezhen in Jiangxi has been the porcelain capital for over 1000 years.',keyPhrases:[{cn:'瓷器',pinyin:'cí qì',en:'porcelain'},{cn:'青花瓷',pinyin:'qīng huā cí',en:'blue-and-white'},{cn:'景德镇',pinyin:'jǐng dé zhèn',en:'Jingdezhen'},{cn:'汝瓷',pinyin:'rǔ cí',en:'Ru ware'},{cn:'粉彩',pinyin:'fěn cǎi',en:'famille rose'}],significance:'Chinese porcelain revolutionized global ceramics and was a major export for centuries.'},
+        {id:'cex_210',title:'Jade Carving',titleMeaning:'玉雕',category:'Arts',icon:'🟢',content:'Chinese jade carving is a revered art form dating back 8000 years. Artisans carve intricate designs of dragons, animals, and auspicious symbols. The finest jade comes from Hetian in Xinjiang. Master carvers train for decades.',keyPhrases:[{cn:'玉雕',pinyin:'yù diāo',en:'jade carving'},{cn:'和田玉',pinyin:'hé tián yù',en:'Hetian jade'},{cn:'镂空',pinyin:'lòu kōng',en:'openwork'},{cn:'雕刻',pinyin:'diāo kè',en:'carving'},{cn:'玉玺',pinyin:'yù xǐ',en:'jade imperial seal'}],significance:'Ancient art form requiring exceptional skill to work the hardest natural material.'},
+        {id:'cex_211',title:'Shadow Puppetry',titleMeaning:'皮影戏',category:'Arts',icon:'🎭',content:'Chinese shadow puppetry uses flat articulated puppets made from leather behind a screen with light projection. Performers manipulate puppets on rods while singing and narrating stories from folklore and history. UNESCO intangible heritage.',keyPhrases:[{cn:'皮影戏',pinyin:'pí yǐng xì',en:'shadow play'},{cn:'驴皮',pinyin:'lǘ pí',en:'donkey leather'},{cn:'剪纸',pinyin:'jiǎn zhǐ',en:'paper cutting'},{cn:'灯影',pinyin:'dēng yǐng',en:'lantern shadows'},{cn:'幕后表演',pinyin:'mù hòu biǎo yǎn',en:'behind screen performance'}],significance:'Ancient storytelling art combining leather craft, performance, and folk narratives.'},
+        {id:'cex_212',title:'Paper Cutting',titleMeaning:'剪纸',category:'Arts',icon:'✂️',content:'Chinese paper cutting or jianzhi is a folk art using scissors or knives to create intricate designs from paper. Red paper cuts are pasted on windows during Spring Festival. Designs feature animals, characters, and auspicious symbols.',keyPhrases:[{cn:'剪纸',pinyin:'jiǎn zhǐ',en:'paper cutting'},{cn:'窗花',pinyin:'chuāng huā',en:'window flowers'},{cn:'刻纸',pinyin:'kè zhǐ',en:'knife cutting'},{cn:'团花',pinyin:'tuán huā',en:'round flower'},{cn:'喜字',pinyin:'xǐ zì',en:'double happiness'}],significance:'Accessible folk art transforming simple paper into exquisite decorative expressions.'},
+        {id:'cex_213',title:'Chinese Dance',titleMeaning:'中国舞蹈',category:'Arts',icon:'💃',content:'Chinese dance encompasses classical dance with flowing ribbons and sleeves, ethnic minority dances like the Dai peacock dance, and folk dances like yangge. Classical dance draws from opera movements and martial arts.',keyPhrases:[{cn:'古典舞',pinyin:'gǔ diǎn wǔ',en:'classical dance'},{cn:'秧歌',pinyin:'yāng gē',en:'yangge dance'},{cn:'水袖',pinyin:'shuǐ xiù',en:'water sleeves'},{cn:'敦煌舞',pinyin:'dūn huáng wǔ',en:'Dunhuang dance'},{cn:'孔雀舞',pinyin:'kǒng què wǔ',en:'peacock dance'}],significance:'Rich dance traditions ranging from refined classical to vibrant folk celebrations.'},
+        {id:'cex_214',title:'Chinese Garden Art',titleMeaning:'园林艺术',category:'Arts',icon:'🌳',content:'Chinese gardens are masterpieces of landscape design combining rocks, water, plants, and architecture. Suzhou gardens like the Humble Administrator\'s Garden exemplify the art. They create miniature idealized natural landscapes.',keyPhrases:[{cn:'园林',pinyin:'yuán lín',en:'garden'},{cn:'苏州园林',pinyin:'sū zhōu yuán lín',en:'Suzhou gardens'},{cn:'假山',pinyin:'jiǎ shān',en:'rockery'},{cn:'亭台楼阁',pinyin:'tíng tái lóu gé',en:'pavilions towers'},{cn:'借景',pinyin:'jiè jǐng',en:'borrowed scenery'}],significance:'Harmonious integration of architecture and nature creating contemplative spaces.'},
+        {id:'cex_215',title:'Chinese Architecture',titleMeaning:'中国建筑',category:'Arts',icon:'🏯',content:'Traditional Chinese architecture features wooden frames, dougong brackets, sweeping curved roofs, and symmetrical layouts. The Forbidden City in Beijing is the largest ancient palace complex. Feng shui principles guide orientation and design.',keyPhrases:[{cn:'斗拱',pinyin:'dǒu gǒng',en:'dougong brackets'},{cn:'飞檐',pinyin:'fēi yán',en:'flying eaves'},{cn:'四合院',pinyin:'sì hé yuàn',en:'courtyard house'},{cn:'故宫',pinyin:'gù gōng',en:'Forbidden City'},{cn:'木结构',pinyin:'mù jié gòu',en:'wood structure'}],significance:'Distinctive architectural tradition emphasizing symmetry, wood joinery, and curved roofs.'},
+        {id:'cex_216',title:'Li Bai Poet',titleMeaning:'李白',category:'Arts',icon:'🌙',content:'Li Bai 701-762 CE is China\'s most beloved poet, known as the Immortal Poet. His romantic, free-spirited verse about nature, wine, and friendship embodies the Tang Dynasty spirit. Over 1000 of his poems survive.',keyPhrases:[{cn:'李白',pinyin:'lǐ bái',en:'Li Bai'},{cn:'诗仙',pinyin:'shī xiān',en:'immortal poet'},{cn:'静夜思',pinyin:'jìng yè sī',en:'Quiet Night Thought'},{cn:'月下独酌',pinyin:'yuè xià dú zhuó',en:'Drinking Alone Moon'},{cn:'将进酒',pinyin:'qiāng jìn jiǔ',en:'Invitation to Wine'}],significance:'China\'s most famous poet whose work represents the romantic spirit of the Tang golden age.'},
+        {id:'cex_217',title:'Du Fu Poet',titleMeaning:'杜甫',category:'Arts',icon:'📜',content:'Du Fu 712-770 CE is known as the Sage Poet for his morally serious verse reflecting social suffering. His poems documented war, poverty, and injustice during the An Lushan Rebellion. He is paired with Li Bai as China\'s greatest poets.',keyPhrases:[{cn:'杜甫',pinyin:'dù fǔ',en:'Du Fu'},{cn:'诗圣',pinyin:'shī shèng',en:'sage poet'},{cn:'春望',pinyin:'chūn wàng',en:'Spring View'},{cn:'茅屋为秋风所破歌',pinyin:'máo wū wèi qiū fēng suǒ pò gē',en:'Song of My Cottage'},{cn:'三吏三别',pinyin:'sān lì sān bié',en:'Three Officials Three Partings'}],significance:'Poet-historian whose compassionate verse captured Tang Dynasty social realities.'},
+        {id:'cex_218',title:'Su Shi',titleMeaning:'苏轼',category:'Arts',icon:'🖋️',content:'Su Shi 1037-1101 CE also known as Su Dongpo was a Song Dynasty polymath. He excelled in poetry, prose, calligraphy, and painting. His optimistic personality and literary genius make him one of China\'s most admired historical figures.',keyPhrases:[{cn:'苏轼',pinyin:'sū shì',en:'Su Shi'},{cn:'东坡',pinyin:'dōng pō',en:'Dongpo'},{cn:'赤壁赋',pinyin:'chì bì fù',en:'Red Cliffs Ode'},{cn:'水调歌头',pinyin:'shuǐ diào gē tóu',en:'Prelude Water Melody'},{cn:'寒食帖',pinyin:'hán shí tiē',en:'Cold Food Calligraphy'}],significance:'Renaissance man of Song Dynasty representing ideal Chinese literati culture.'},
+        {id:'cex_219',title:'Yue Fei',titleMeaning:'岳飞',category:'Arts',icon:'⚔️',content:'Yue Fei 1103-1142 CE was a Song Dynasty military general known for his loyalty and patriotism. His story of fighting against the Jin Dynasty and being betrayed by corrupt officials is legendary. His poem River Red is famous.',keyPhrases:[{cn:'岳飞',pinyin:'yuè fēi',en:'Yue Fei'},{cn:'精忠报国',pinyin:'jīng zhōng bào guó',en:'loyalty country'},{cn:'满江红',pinyin:'mǎn jiāng hóng',en:'River Red poem'},{cn:'秦桧',pinyin:'qín huì',en:'Qin Hui traitor'},{cn:'岳母刺字',pinyin:'yuè mǔ cì zì',en:'mother tattooed loyalty'}],significance:'Icon of patriotism and loyalty in Chinese cultural memory.'},
+        {id:'cex_220',title:'Dream of Red Chamber',titleMeaning:'红楼梦',category:'Arts',icon:'📕',content:'Dream of the Red Chamber by Cao Xueqin is considered the greatest Chinese novel, written in the 18th century. It depicts the decline of aristocratic Jia family with rich psychological depth, poetry, and social commentary.',keyPhrases:[{cn:'红楼梦',pinyin:'hóng lóu mèng',en:'Dream of Red Chamber'},{cn:'曹雪芹',pinyin:'cáo xuě qín',en:'Cao Xueqin'},{cn:'贾宝玉',pinyin:'jiǎ bǎo yù',en:'Jia Baoyu'},{cn:'林黛玉',pinyin:'lín dài yù',en:'Lin Daiyu'},{cn:'大观园',pinyin:'dà guān yuán',en:'Grand View Garden'}],significance:'Masterpiece of Chinese literature renowned for psychological depth and social observation.'},
+        {id:'cex_221',title:'Water Margin',titleMeaning:'水浒传',category:'Arts',icon:'🗡️',content:'Water Margin is a 14th-century novel about 108 outlaws who gather at Mount Liang to fight corruption. Written by Shi Nai\'an, it combines adventure, brotherhood, and social criticism. It is one of the Four Great Classical Novels.',keyPhrases:[{cn:'水浒传',pinyin:'shuǐ hǔ zhuàn',en:'Water Margin'},{cn:'梁山好汉',pinyin:'liáng shān hǎo hàn',en:'Liangshan heroes'},{cn:'武松',pinyin:'wǔ sōng',en:'Wu Song'},{cn:'林冲',pinyin:'lín chōng',en:'Lin Chong'},{cn:'一百零八将',pinyin:'yī bǎi líng bā jiàng',en:'108 heroes'}],significance:'Classic novel celebrating brotherhood and rebellion against injustice.'},
+        {id:'cex_222',title:'Journey to the West',titleMeaning:'西游记',category:'Arts',icon:'🐵',content:'Journey to the West by Wu Cheng\'en tells the pilgrimage of the monk Xuanzang to India for Buddhist scriptures. The Monkey King Sun Wukong with his magical powers is the most beloved character. It is one of the Four Great Classical Novels.',keyPhrases:[{cn:'西游记',pinyin:'xī yóu jì',en:'Journey to the West'},{cn:'孙悟空',pinyin:'sūn wù kōng',en:'Monkey King'},{cn:'唐僧',pinyin:'táng sēng',en:'Tang Monk'},{cn:'猪八戒',pinyin:'zhū bā jiè',en:'Zhu Bajie'},{cn:'七十二变',pinyin:'qī shí èr biàn',en:'72 transformations'}],significance:'Beloved adventure story combining fantasy, Buddhism, and Chinese folklore.'},
+        {id:'cex_223',title:'Romance of Three Kingdoms',titleMeaning:'三国演义',category:'Arts',icon:'🔱',content:'Romance of the Three Kingdoms by Luo Guanzhong is a historical novel set in the turbulent Three Kingdoms period. It features military strategy, political intrigue, and iconic characters like Zhuge Liang. It is one of the Four Great Classical Novels.',keyPhrases:[{cn:'三国演义',pinyin:'sān guó yǎn yì',en:'Three Kingdoms Romance'},{cn:'诸葛亮',pinyin:'zhū gě liàng',en:'Zhuge Liang'},{cn:'曹操',pinyin:'cáo cāo',en:'Cao Cao'},{cn:'关羽',pinyin:'guān yǔ',en:'Guan Yu'},{cn:'空城计',pinyin:'kōng chéng jì',en:'empty city stratagem'}],significance:'Epic historical novel that shaped Chinese strategic thinking and popular culture.'},
+        {id:'cex_224',title:'Orchid Pavilion',titleMeaning:'兰亭序',category:'Arts',icon:'🖊️',content:'The Lanting Xu or Orchid Pavilion Preface by Wang Xizhi is the most famous piece of Chinese calligraphy, written in 353 CE. The original is lost but copies are treasured. It exemplifies the running script style.',keyPhrases:[{cn:'兰亭序',pinyin:'lán tíng xù',en:'Orchid Pavilion'},{cn:'王羲之',pinyin:'wáng xī zhī',en:'Wang Xizhi'},{cn:'行书',pinyin:'xíng shū',en:'running script'},{cn:'天下第一行书',pinyin:'tiān xià dì yī xíng shū',en:'best running script'},{cn:'永和九年',pinyin:'yǒng hé jiǔ nián',en:'ninth year Yonghe'}],significance:'The most revered calligraphy masterpiece in Chinese history.'},
+        {id:'cex_225',title:'Silk Embroidery',titleMeaning:'刺绣',category:'Arts',icon:'🧵',content:'Chinese embroidery or cixiu has four major schools: Su, Xiang, Yue, and Shu. Suzhou embroidery is the most famous with double-sided pieces. Techniques include silk thread as fine as a single strand of silk. Used for clothing and art.',keyPhrases:[{cn:'刺绣',pinyin:'cì xiù',en:'embroidery'},{cn:'苏绣',pinyin:'sū xiù',en:'Suzhou embroidery'},{cn:'湘绣',pinyin:'xiāng xiù',en:'Hunan embroidery'},{cn:'双面绣',pinyin:'shuāng miàn xiù',en:'double-sided'},{cn:'丝线',pinyin:'sī xiàn',en:'silk thread'}],significance:'Exquisite textile art requiring extraordinary skill and patience.'},
+        {id:'cex_226',title:'Lacquer Art',titleMeaning:'漆器',category:'Arts',icon:'🪣',content:'Chinese lacquerware uses sap from the lacquer tree applied in many layers to form a hard, decorative surface. Techniques include carved lacquer, inlaid mother-of-pearl, and gold painting. Lacquer has been used since the Neolithic period.',keyPhrases:[{cn:'漆器',pinyin:'qī qì',en:'lacquerware'},{cn:'雕漆',pinyin:'diāo qī',en:'carved lacquer'},{cn:'螺钿',pinyin:'luó diàn',en:'mother of pearl'},{cn:'大漆',pinyin:'dà qī',en:'raw lacquer'},{cn:'金漆',pinyin:'jīn qī',en:'gold lacquer'}],significance:'Ancient art form producing durable, beautiful objects through meticulous layering.'},
+        {id:'cex_227',title:'Chinese Music',titleMeaning:'中国音乐',category:'Arts',icon:'🎼',content:'Traditional Chinese music uses the pentatonic five-note scale based on the five elements. Music was believed to harmonize the universe and cultivate virtue. The guqin seven-string zither was favored by scholars for its subtlety.',keyPhrases:[{cn:'宫商角徵羽',pinyin:'gōng shāng jué zhǐ yǔ',en:'pentatonic scale'},{cn:'古琴',pinyin:'gǔ qín',en:'guqin'},{cn:'五音',pinyin:'wǔ yīn',en:'five notes'},{cn:'雅乐',pinyin:'yǎ yuè',en:'elegant music'},{cn:'知音',pinyin:'zhī yīn',en:'soulmate friend'}],significance:'Musical system based on cosmological principles emphasizing harmony and moral cultivation.'},
+        {id:'cex_228',title:'Beijing Opera',titleMeaning:'京剧',category:'Arts',icon:'🎭',content:'Peking Opera formed in the late 18th century by combining Anhui and Hubei opera styles. It features four role types: sheng male, dan female, jing painted face, chou clown. Performers train from childhood in singing, acting, and acrobatics.',keyPhrases:[{cn:'京剧',pinyin:'jīng jù',en:'Peking Opera'},{cn:'梅兰芳',pinyin:'méi lán fāng',en:'Mei Lanfang'},{cn:'西皮二黄',pinyin:'xī pí èr huáng',en:'main musical modes'},{cn:'髯口',pinyin:'rán kǒu',en:'beard'},{cn:'行头',pinyin:'xíng tou',en:'costumes'}],significance:'China\'s most famous opera form blending music, acrobatics, and elaborate costumes.'},
+        {id:'cex_229',title:'Song Dynasty Painting',titleMeaning:'宋画',category:'Arts',icon:'🎋',content:'Song Dynasty painting reached extraordinary heights of realism and expressiveness. Emperor Huizong himself was a painter. Masterpieces include Along the River During Qingming Festival by Zhang Zeduan, a panoramic scroll of daily life.',keyPhrases:[{cn:'宋画',pinyin:'sòng huà',en:'Song painting'},{cn:'清明上河图',pinyin:'qīng míng shàng hé tú',en:'Along River Qingming'},{cn:'张择端',pinyin:'zhāng zé duān',en:'Zhang Zeduan'},{cn:'徽宗',pinyin:'huī zōng',en:'Emperor Huizong'},{cn:'千里江山图',pinyin:'qiān lǐ jiāng shān tú',en:'Thousand Li Rivers'}],significance:'Peak of Chinese realistic landscape and genre painting.'},
+        {id:'cex_230',title:'Modern Chinese Literature',titleMeaning:'现代文学',category:'Arts',icon:'📚',content:'Modern Chinese literature began with the May Fourth Movement. Lu Xun is considered the father of modern Chinese literature with works like The True Story of Ah Q. Lao She, Ba Jin, and Mo Yan Nobel laureate are major figures.',keyPhrases:[{cn:'鲁迅',pinyin:'lǔ xùn',en:'Lu Xun'},{cn:'莫言',pinyin:'mò yán',en:'Mo Yan'},{cn:'呐喊',pinyin:'nà hǎn',en:'Call to Arms'},{cn:'骆驼祥子',pinyin:'luò tuo xiáng zi',en:'Rickshaw Boy'},{cn:'家',pinyin:'jiā',en:'The Family'}],significance:'Modern literature reflecting China\'s social transformation and global literary recognition.'},
+        {id:'cex_231',title:'Bamboo Painting',titleMeaning:'竹画',category:'Arts',icon:'🎍',content:'Bamboo painting is a specialized genre in Chinese art symbolizing resilience and integrity. The bamboo bends but does not break. Zheng Xie or Zheng Banqiao was famous for bamboo paintings. Each brushstroke captures bamboo\'s structural essence.',keyPhrases:[{cn:'竹画',pinyin:'zhú huà',en:'bamboo painting'},{cn:'郑板桥',pinyin:'zhèng bǎn qiáo',en:'Zheng Banqiao'},{cn:'四君子',pinyin:'sì jūn zǐ',en:'four gentlemen'},{cn:'墨竹',pinyin:'mò zhú',en:'ink bamboo'},{cn:'节',pinyin:'jié',en:'bamboo nodes'}],significance:'Genre of painting embodying Confucian moral virtues through natural subjects.'},
+        {id:'cex_232',title:'National Music Orchestra',titleMeaning:'民族乐团',category:'Arts',icon:'🎻',content:'Modern Chinese orchestras combine traditional instruments in Western orchestral format. The Central Chinese Orchestra in Beijing features erhu, pipa, guzheng, yangqin dulcimer, and suona. They perform both traditional and contemporary compositions.',keyPhrases:[{cn:'民乐',pinyin:'mín yuè',en:'folk music'},{cn:'中央民族乐团',pinyin:'zhōng yāng mín zú yuè tuán',en:'Central Chinese Orchestra'},{cn:'扬琴',pinyin:'yáng qín',en:'yangqin'},{cn:'唢呐',pinyin:'suǒ nà',en:'suona Trumpet'},{cn:'合奏',pinyin:'hé zòu',en:'ensemble'}],significance:'Modern orchestration of traditional instruments creating a uniquely Chinese classical music.'},
+        {id:'cex_233',title:'Scroll Mounting',titleMeaning:'装裱',category:'Arts',icon:'📜',content:'Chinese scroll mounting or zhuangbiao is the art of preparing paintings and calligraphy for display. Hanging scrolls for walls and handscrolls for table viewing. Mounting preserves the artwork and enhances presentation with silk borders.',keyPhrases:[{cn:'装裱',pinyin:'zhuāng biǎo',en:'scroll mounting'},{cn:'立轴',pinyin:'lì zhóu',en:'hanging scroll'},{cn:'手卷',pinyin:'shǒu juǎn',en:'handscroll'},{cn:'裱褙',pinyin:'biǎo bèi',en:'backing'},{cn:'绫子',pinyin:'líng zi',en:'silk mounting'}],significance:'Specialized craft essential for preserving and displaying Chinese visual arts.'},
+        {id:'cex_234',title:'Seal Carving',titleMeaning:'篆刻',category:'Arts',icon:'🔴',content:'Chinese seal carving or zhuanke is a miniature art combining calligraphy and carving. Seals carved from stone, jade, or wood stamp the artist\'s name in red ink on paintings. The art involves mastery of ancient seal script characters.',keyPhrases:[{cn:'篆刻',pinyin:'zhuàn kè',en:'seal carving'},{cn:'印章',pinyin:'yìn zhāng',en:'chop seal'},{cn:'寿山石',pinyin:'shòu shān shí',en:'Shoushan stone'},{cn:'朱文',pinyin:'zhū wén',en:'red characters'},{cn:'白文',pinyin:'bái wén',en:'white characters'}],significance:'Miniature art form essential to Chinese painting and calligraphy authentication.'},
+        {id:'cex_235',title:'Tea House Culture',titleMeaning:'茶馆文化',category:'Arts',icon:'🍵',content:'Traditional Chinese teahouses are social spaces for tea drinking, conversation, and entertainment. Sichuan teahouses feature storytelling performances. Teahouses served as community centers, dispute resolution venues, and informal gathering places.',keyPhrases:[{cn:'茶馆',pinyin:'chá guǎn',en:'teahouse'},{cn:'评书',pinyin:'píng shū',en:'storytelling'},{cn:'盖碗茶',pinyin:'gài wǎn chá',en:'gaiwan tea'},{cn:'龙门阵',pinyin:'lóng mén zhèn',en:'chatting'},{cn:'茶博士',pinyin:'chá bó shì',en:'tea master'}],significance:'Social institution where tea culture meets community life and folk performance.'},
+        {id:'cex_236',title:'Crosstalk Comedy',titleMeaning:'相声',category:'Arts',icon:'🎤',content:'Xiangsheng or crosstalk is a Chinese comedic performance tradition with two performers trading witty banter. It uses puns, stories, and social satire. Famous performers include Hou Baolin and Guo Degang. It originated from Beijing folk performances.',keyPhrases:[{cn:'相声',pinyin:'xiàng shēng',en:'crosstalk'},{cn:'逗哏捧哏',pinyin:'dòu gén pěng gén',en:'lead and support'},{cn:'侯宝林',pinyin:'hóu bǎo lín',en:'Hou Baolin'},{cn:'郭德纲',pinyin:'guō dé gāng',en:'Guo Degang'},{cn:'包袱',pinyin:'bāo fu',en:'comic punchline'}],significance:'Beloved comedic art form showcasing Chinese verbal wit and social commentary.'},
+        {id:'cex_237',title:'Peking Glass',titleMeaning:'北京料器',category:'Arts',icon:'🔮',content:'Peking glass or liuli is a Chinese glassware tradition producing miniature snuff bottles, figurines, and decorative objects. The technique involves layering different colored glass and carving through layers. Popular from the 18th-19th centuries.',keyPhrases:[{cn:'料器',pinyin:'liào qì',en:'Peking glass'},{cn:'鼻烟壶',pinyin:'bí yān hú',en:'snuff bottle'},{cn:'套料',pinyin:'tào liào',en:'overlay glass'},{cn:'内画',pinyin:'nèi huà',en:'inside painting'},{cn:'琉璃',pinyin:'liú lí',en:'colored glaze'}],significance:'Delicate glass art known for intricate inside-painted snuff bottles.'},
+        {id:'cex_238',title:'Tang Poetry Anthology',titleMeaning:'唐诗三百首',category:'Arts',icon:'📖',content:'Three Hundred Tang Poems is the most famous anthology of Chinese poetry, compiled in 1763 by Sun Zhu. It contains 311 poems by 77 poets, including Li Bai, Du Fu, and Wang Wei. Generations of Chinese have memorized these poems.',keyPhrases:[{cn:'唐诗三百首',pinyin:'táng shī sān bǎi shǒu',en:'300 Tang Poems'},{cn:'蘅塘退士',pinyin:'héng táng tuì shì',en:'Sun Zhu compiler'},{cn:'五言绝句',pinyin:'wǔ yán jué jù',en:'five-character quatrain'},{cn:'七言律诗',pinyin:'qī yán lǜ shī',en:'seven-character regulated'},{cn:'千古名句',pinyin:'qiān gǔ míng jù',en:'immortal lines'}],significance:'Essential anthology forming the basis of Chinese poetry education for centuries.'},
+        {id:'cex_239',title:'Folk Paper Art',titleMeaning:'民间纸艺',category:'Arts',icon:'📄',content:'Chinese folk paper art includes paper cutting, paper folding, paper-mache masks, and paper lanterns. The art is especially vibrant during festivals. Different regions have distinct styles: northern cuts are bold, southern ones are delicate.',keyPhrases:[{cn:'民间艺术',pinyin:'mín jiān yì shù',en:'folk art'},{cn:'剪纸',pinyin:'jiǎn zhǐ',en:'paper cutting'},{cn:'纸灯笼',pinyin:'zhǐ dēng lóng',en:'paper lantern'},{cn:'纸马',pinyin:'zhǐ mǎ',en:'paper horse offering'},{cn:'纸鸢',pinyin:'zhǐ yuān',en:'paper kite'}],significance:'Accessible folk art expressing regional aesthetics and festive spirit.'},
+        {id:'cex_240',title:'Grotto Art',titleMeaning:'石窟艺术',category:'Arts',icon:'🪨',content:'Chinese grotto art includes the Mogao Caves near Dunhuang with 500+ caves of Buddhist murals and sculptures spanning 1000 years. The Longmen Grottoes near Luoyang have 100,000 Buddhist statues. Yungang Grottoes feature massive carved Buddhas.',keyPhrases:[{cn:'莫高窟',pinyin:'mò gāo kū',en:'Mogao Caves'},{cn:'龙门石窟',pinyin:'lóng mén shí kū',en:'Longmen Grottoes'},{cn:'云冈石窟',pinyin:'yún gāng shí kū',en:'Yungang Grottoes'},{cn:'敦煌',pinyin:'dūn huáng',en:'Dunhuang'},{cn:'飞天',pinyin:'fēi tiān',en:'aerial celestial'}],significance:'World-class Buddhist art spanning centuries of Chinese religious and artistic expression.'}
+    ];
 
-    {
-      id: 'ce021',
-      title: '红色为什么是吉祥色？',
-      titleMeaning: 'Why is red auspicious?',
-      category: 'Traditions',
-      icon: '🔴',
-      content: '在中国文化中，红色代表好运、幸福和繁荣。传说有一个叫"年"的怪兽害怕红色，所以人们用红色来驱除它。春节时，人们贴红色的春联、穿红色的衣服、发红色的红包。结婚的时候，新娘也会穿红色的旗袍。',
-      keyPhrases: ['红色', '吉祥', '年兽', '春联', '好运'],
-      significance: '红色是中国文化中最重要的颜色，代表幸福。'
-    },
-    {
-      id: 'ce022',
-      title: '敬酒礼仪 (Toasting Etiquette)',
-      titleMeaning: 'Toasting Etiquette',
-      category: 'Traditions',
-      icon: '🥂',
-      content: '在中国饭桌上，敬酒是非常重要的礼仪。晚辈要给长辈敬酒，下属要给上司敬酒。敬酒时杯子要比对方的低，表示尊重。说"干杯"的时候，最好把杯子里的酒喝完，表示诚意和尊重。',
-      keyPhrases: ['敬酒', '干杯', '尊重', '礼仪', '长辈'],
-      significance: '敬酒是中国社交活动中的重要礼节。'
-    },
-    {
-      id: 'ce023',
-      title: '尊老爱幼 (Respecting Elders)',
-      titleMeaning: 'Respecting Elders and Caring for the Young',
-      category: 'Traditions',
-      icon: '👴',
-      content: '尊老爱幼是中国的传统美德。在公交车上，年轻人会给老人让座。家庭中，子女有责任照顾年老的父母。中国古代有"孝"的概念，孝顺父母是做人的基本要求。这种观念一直延续到今天。',
-      keyPhrases: ['尊老爱幼', '让座', '孝顺', '传统美德', '敬老'],
-      significance: '尊老爱幼体现了中国社会的核心价值观。'
-    },
-    {
-      id: 'ce024',
-      title: '送礼禁忌',
-      titleMeaning: 'Gift-giving taboos',
-      category: 'Traditions',
-      icon: '🎁',
-      content: '在中国送礼有很多讲究。不能送钟，因为"送钟"听起来像"送终"（参加葬礼）。不能送伞，因为"伞"听起来像"散"，意思是分开。不能送绿色的帽子，因为"绿帽子"有不好的意思。送水果要成双，不能送单数。',
-      keyPhrases: ['送礼', '送钟', '送伞', '绿帽子', '成双'],
-      significance: '送礼的禁忌反映了中国人对语言谐音的重视。'
-    },
-    {
-      id: 'ce025',
-      title: '婚礼习俗 (Wedding Customs)',
-      titleMeaning: 'Wedding Customs',
-      category: 'Traditions',
-      icon: '💒',
-      content: '中国传统婚礼有很多讲究。结婚前要选一个好日子，这叫做"看日子"。婚礼上新娘穿红色旗袍，新郎穿中式礼服。新娘进门要跨火盆，象征红红火火。婚礼上要有红双喜字。现在很多年轻人也选择穿白色婚纱。',
-      keyPhrases: ['婚礼', '看日子', '旗袍', '双喜', '跨火盆'],
-      significance: '婚礼习俗体现了中国人对美好婚姻的祝愿。'
-    },
-    {
-      id: 'ce026',
-      title: '做客的规矩',
-      titleMeaning: 'Rules for being a guest',
-      category: 'Traditions',
-      icon: '🏠',
-      content: '去别人家做客，中国人有一些规矩。进门要换拖鞋，不能直接穿鞋进去。一般要带一些小礼物，比如水果或酒。主人端茶时，客人要站起来双手接。吃饭时主人说"请慢用"，客人才能开始吃。走的时候要感谢主人的招待。',
-      keyPhrases: ['做客', '拖鞋', '礼物', '端茶', '感谢'],
-      significance: '做客的规矩反映了中国人对礼节的重视。'
-    },
-    {
-      id: 'ce027',
-      title: '压岁钱的由来',
-      titleMeaning: 'Origin of lucky money',
-      category: 'Traditions',
-      icon: '🧧',
-      content: '压岁钱是春节时长辈给孩子的红包。传说在古代，有一种叫"祟"的小妖怪会伤害小孩，但"祟"怕红色和铜钱。所以大人在除夕夜把铜钱包在红纸里放在孩子枕边。后来这个习俗就变成了给红包，表达对孩子平安长大的祝福。',
-      keyPhrases: ['压岁钱', '红包', '祟', '铜钱', '祝福'],
-      significance: '压岁钱是长辈对晚辈最真诚的祝福。'
-    },
-    {
-      id: 'ce028',
-      title: '请客文化',
-      titleMeaning: 'Treating culture',
-      category: 'Traditions',
-      icon: '🤝',
-      content: '中国人很喜欢请客，朋友聚会时常常会抢着付钱。如果你请别人吃饭，下一次对方可能会回请你，这是一种社交方式。在饭桌上，主人会不断地给客人夹菜，叫客人"多吃点"。这代表了主人的大方和热情好客。',
-      keyPhrases: ['请客', '付钱', '回请', '夹菜', '好客'],
-      significance: '请客文化体现了中国人的热情和社交智慧。'
-    },
-    {
-      id: 'ce029',
-      title: '磕头与鞠躬',
-      titleMeaning: 'Kowtow and bowing',
-      category: 'Traditions',
-      icon: '🙇',
-      content: '在中国古代，磕头是最隆重的一种礼节，给长辈或神明行礼。现在很少有人磕头了，但过春节时有些地方的长辈还给晚辈发红包时，晚辈会磕头。日常生活中，微微鞠躬或者点头来打招呼就可以了。',
-      keyPhrases: ['磕头', '鞠躬', '行礼', '礼节', '尊重'],
-      significance: '磕头和鞠躬是中国人表达尊敬的传统方式。'
-    },
-    {
-      id: 'ce030',
-      title: '本命年',
-      titleMeaning: 'Zodiac year of birth',
-      category: 'Traditions',
-      icon: '🔴',
-      content: '本命年就是属于你生肖的那一年。中国人认为本命年的运气不太好，可能会有一些困难。所以在本命年，人们会穿红色的内衣、系红色腰带，希望红色能带来好运、挡住不好的事情。这是很有趣的一种传统。',
-      keyPhrases: ['本命年', '生肖', '红色', '运气', '传统'],
-      significance: '本命年的习俗反映了中国人对生肖文化的信仰。'
-    },
-
-    // ── Daily Life (10) ─────────────────────────
-
-    {
-      id: 'ce031',
-      title: '地铁文化 (Subway Culture)',
-      titleMeaning: 'Subway Culture',
-      category: 'Daily Life',
-      icon: '🚇',
-      content: '中国大城市的地铁非常发达，北京、上海的地铁线网超过700公里。上下班高峰期地铁非常拥挤，人们形容为"挤成纸片人"。在地铁上，人们通常会玩手机、听音乐或者看电子书。地铁是了解城市生活最好的窗口。',
-      keyPhrases: ['地铁', '高峰期', '拥挤', '城市', '通勤'],
-      significance: '地铁是连接中国大城市生活的动脉。'
-    },
-    {
-      id: 'ce032',
-      title: '广场舞 (Square Dancing)',
-      titleMeaning: 'Square Dancing',
-      category: 'Daily Life',
-      icon: '💃',
-      content: '广场舞是中国中老年妇女最喜欢的健身活动。每天早晨和傍晚，在公园和广场上都能看到一群阿姨们在跳舞。她们随着音乐的节奏，做着整齐的动作。广场舞既锻炼身体又结交朋友，是中国城市一道特别的风景。',
-      keyPhrases: ['广场舞', '阿姨', '公园', '健身', '跳舞'],
-      significance: '广场舞是当代中国最具特色的市民文化之一。'
-    },
-    {
-      id: 'ce033',
-      title: '快递与外卖',
-      titleMeaning: 'Express delivery and food delivery',
-      category: 'Daily Life',
-      icon: '📦',
-      content: '中国的快递和外卖服务在全世界领先。网购的东西一两天就可以送到，外卖食品半小时左右就能到家门口。快递小哥和外卖骑手穿着各种颜色的制服，骑着电动车在城市里穿梭。这大大改变了中国人的生活方式。',
-      keyPhrases: ['快递', '外卖', '网购', '电动车', '方便'],
-      significance: '快递和外卖让中国人的生活变得极其便利。'
-    },
-    {
-      id: 'ce034',
-      title: '早起文化',
-      titleMeaning: 'Early-rising culture',
-      category: 'Daily Life',
-      icon: '🌅',
-      content: '中国人喜欢早起，认为"一日之计在于晨"。早晨你会看到很多人在公园里晨练：跑步的、打太极的、打羽毛球的。街上的早餐摊也很早就开门了。很多人习惯早睡早起，这个习惯被认为有益健康。',
-      keyPhrases: ['早起', '晨练', '健康', '公园', '习惯'],
-      significance: '早起是中国人的传统生活习惯。'
-    },
-    {
-      id: 'ce035',
-      title: '午休习惯',
-      titleMeaning: 'Nap habits',
-      category: 'Daily Life',
-      icon: '😴',
-      content: '午休在中国非常普遍。学校和很多公司都安排了午休时间。中国人认为短暂的午睡可以提高下午的工作效率。你可能看到有人在办公室里趴着睡觉，或者在车里小睡一会儿。这跟一些西方国家不太一样。',
-      keyPhrases: ['午休', '午睡', '效率', '休息', '习惯'],
-      significance: '午休文化是中国人保持精力的一种生活方式。'
-    },
-    {
-      id: 'ce036',
-      title: '排队文化的变化',
-      titleMeaning: 'Changes in queuing culture',
-      category: 'Daily Life',
-      icon: '👥',
-      content: '以前中国人不太习惯排队，但现在情况已经大大改善。在公交站、医院挂号、银行办事，大家都会排队等候。手机上取号排队也很普及，到了时间系统会提醒你。这说明社会文明程度在不断提高。',
-      keyPhrases: ['排队', '挂号', '取号', '文明', '社会'],
-      significance: '排队文化的变化反映了中国社会的文明进步。'
-    },
-    {
-      id: 'ce037',
-      title: '中国的小区生活',
-      titleMeaning: 'Life in Chinese residential compounds',
-      category: 'Daily Life',
-      icon: '🏘️',
-      content: '大多数中国城市居民住在"小区"里，就是有围墙的住宅区。小区有自己的大门、保安和绿化。小区里孩子们在游乐场玩，老人们在椅子上下棋聊天。小区像一个大家庭，邻居之间的互动比西方城市要多一些。',
-      keyPhrases: ['小区', '保安', '邻居', '绿化', '社区'],
-      significance: '小区是中国城市居民日常生活的基本单位。'
-    },
-    {
-      id: 'ce038',
-      title: '给孩子取名字',
-      titleMeaning: 'Choosing names for children',
-      category: 'Daily Life',
-      icon: '👶',
-      content: '中国人给孩子取名字非常慎重。名字一般由两个字或一个字组成，每个字都有好的意思。有些父母会请专门的人根据孩子的出生时间来选择名字。女孩的名字常用"美"、"花"、"静"等字；男孩的名字常用"强"、"伟"、"龙"等字。',
-      keyPhrases: ['取名', '名字', '含义', '出生', '传统文化'],
-      significance: '取名字反映了父母对孩子未来的美好期望。'
-    },
-    {
-      id: 'ce039',
-      title: '讨价还价',
-      titleMeaning: 'Bargaining',
-      category: 'Daily Life',
-      icon: '💬',
-      content: '在中国的传统市场和小商店里，讨价还价是一种很普遍的做法。买家会说"便宜点吧"，卖家可能会说"已经很便宜了"。有时候一番讨价之后，价格可能便宜不少。在大商场和超市里则通常是固定价格。',
-      keyPhrases: ['讨价还价', '便宜', '市场', '价格', '讲价'],
-      significance: '讨价还价是中国传统商业文化的一部分。'
-    },
-    {
-      id: 'ce040',
-      title: '公交让座',
-      titleMeaning: 'Giving up seats on the bus',
-      category: 'Daily Life',
-      icon: '🚌',
-      content: '在公交车上给老人、孕妇和抱小孩的乘客让座，是中国人普遍的礼貌。公交车上还有专门的爱心座位。如果你不给需要的人让座，周围的人可能会用眼神提醒你。让座时你可以说"您请坐"。',
-      keyPhrases: ['让座', '公交', '老人', '礼貌', '爱心'],
-      significance: '让座是中国社会公德的日常体现。'
-    },
-
-    // ── Arts (10) ───────────────────────────────
-
-    {
-      id: 'ce041',
-      title: '国画 (Chinese Painting)',
-      titleMeaning: 'Traditional Chinese Painting',
-      category: 'Art',
-      icon: '🖼️',
-      content: '中国国画有上千年的历史，用毛笔、墨和宣纸创作的。国画不追求完美的写实，而是讲究"意境"——通过画面表达情感和想法。常见的题材有山水、花鸟、人物等。一幅画上常常还题有诗句和印章。',
-      keyPhrases: ['国画', '毛笔', '宣纸', '意境', '山水'],
-      significance: '国画是中国视觉艺术的最高形式之一。'
-    },
-    {
-      id: 'ce042',
-      title: '京剧 (Peking Opera)',
-      titleMeaning: 'Peking Opera',
-      category: 'Art',
-      icon: '🎭',
-      content: '京剧是中国的国粹，有超过200年的历史。演员的脸上画着不同颜色的脸谱，红色代表忠诚，白色代表奸诈，黑色代表正直。京剧的表演结合了唱、念、做、打。虽然年轻人看得不多，但去北京旅游看京剧是一种特别体验。',
-      keyPhrases: ['京剧', '脸谱', '国粹', '唱念做打', '表演'],
-      significance: '京剧是中国传统表演艺术的代表。'
-    },
-    {
-      id: 'ce043',
-      title: '剪纸艺术 (Paper Cutting)',
-      titleMeaning: 'Paper Cutting Art',
-      category: 'Art',
-      icon: '✂️',
-      content: '剪纸是中国传统的民间艺术，用一把剪刀和一张红纸就可以创作。人们剪出各种图案：花鸟、生肖、双喜字等。过年时把剪纸贴在窗户上，叫做"窗花"。剪纸艺术已经被列入世界非物质文化遗产。',
-      keyPhrases: ['剪纸', '窗花', '红纸', '图案', '遗产'],
-      significance: '剪纸是中国最有代表性的民间艺术之一。'
-    },
-    {
-      id: 'ce044',
-      title: '太极拳 (Tai Chi)',
-      titleMeaning: 'Tai Chi',
-      category: 'Art',
-      icon: '☯️',
-      content: '太极拳是中国传统武术的一种，动作缓慢优美。太极强调"以柔克刚"，看起来柔软的动作蕴含着巨大的力量。每天早晨，公园里很多人在练太极。打太极不仅能锻炼身体，还能让人心情平静。太极拳已经被不断传播到世界各地。',
-      keyPhrases: ['太极拳', '以柔克刚', '动作', '平静', '健身'],
-      significance: '太极拳是中国传统文化与现代健康理念的结合。'
-    },
-    {
-      id: 'ce045',
-      title: '毛笔字的学习',
-      titleMeaning: 'Learning brush calligraphy',
-      category: 'Art',
-      icon: '🖊️',
-      content: '在中国，很多小学生要学习写毛笔字。学校有专门的书法课，孩子们先从笔画开始练：横、竖、撇、捺、点。练习需要用墨汁和字帖。家长认为练习书法能让孩子静下心来，培养耐心和专注力。这是一个很好的传统。',
-      keyPhrases: ['毛笔字', '笔画', '书法课', '墨汁', '字帖'],
-      significance: '学习毛笔字是传承中国文化的重要方式。'
-    },
-    {
-      id: 'ce046',
-      title: '中国园林艺术',
-      titleMeaning: 'Chinese garden art',
-      category: 'Art',
-      icon: '🏯',
-      content: '中国园林讲究"虽由人作，宛自天开"，意思是虽然是人工建造的，但看起来像自然的一样。苏州园林是最著名的代表。园林里有假山、水池、亭子和长廊。每个季节的景色都不同，体现了中国人与自然和谐共处的理念。',
-      keyPhrases: ['园林', '苏州', '假山', '水池', '自然'],
-      significance: '中国园林体现了"天人合一"的哲学思想。'
-    },
-    {
-      id: 'ce047',
-      title: '刺绣 (Embroidery)',
-      titleMeaning: 'Embroidery',
-      category: 'Art',
-      icon: '🧵',
-      content: '中国刺绣有四大名绣：苏绣、湘绣、粤绣、蜀绣。刺绣师可以在丝绸上用彩色的丝线绣出美丽的图案。手巧的刺绣师的作品像画一样逼真。中国刺绣不仅是衣服上的装饰，也是一种珍贵的艺术品。',
-      keyPhrases: ['刺绣', '苏绣', '丝绸', '手工', '图案'],
-      significance: '刺绣是中国传统手工艺的瑰宝。'
-    },
-    {
-      id: 'ce048',
-      title: '陶瓷文化 (Ceramics)',
-      titleMeaning: 'Ceramics Culture',
-      category: 'Art',
-      icon: '🏺',
-      content: '中国是陶瓷的故乡，景德镇被称为"瓷都"。中国瓷器以青花瓷最为有名，蓝色的花纹画在白色瓷器上，非常优雅。制作一件好瓷器需要经过很多工序：拉坯、上釉、烧制等。好的瓷器薄如纸，白如玉。',
-      keyPhrases: ['陶瓷', '青花瓷', '景德镇', '瓷器', '上釉'],
-      significance: '中国瓷器不仅美观，更承载了千年的文化历史。'
-    },
-    {
-      id: 'ce049',
-      title: '中国音乐',
-      titleMeaning: 'Chinese music',
-      category: 'Art',
-      icon: '🎵',
-      content: '中国传统乐器有古筝、二胡、琵琶、笛子等。这些乐器都有上千年的历史。古筝的声音听起来很优雅，二胡的声音有点像人唱歌。现在很多年轻人喜欢把传统乐器与现代歌曲结合，给传统的音乐带来新的生命。',
-      keyPhrases: ['古筝', '二胡', '琵琶', '笛子', '民乐'],
-      significance: '中国传统音乐是中华文化的优美表达。'
-    },
-    {
-      id: 'ce050',
-      title: '风筝 (Kites)',
-      titleMeaning: 'Kites',
-      category: 'Art',
-      icon: '🪁',
-      content: '风筝是中国发明的，有两千多年的历史。最早的木制风筝据说是哲学家墨子发明的。现在人们喜欢在春天放风筝，风筝的形状有很多：蝴蝶、老鹰、龙等。山东潍坊是中国的"风筝之都"，每年都举办国际风筝节。',
-      keyPhrases: ['风筝', '墨子', '春天', '潍坊', '龙形'],
-      significance: '风筝是中国传统民间工艺，也是老少皆宜的娱乐。'
-    },
-
-    // ── Geography & Landmarks (10) ──────────────
-
-    {
-      id: 'ce051',
-      title: '西湖 (West Lake)',
-      titleMeaning: 'West Lake',
-      category: 'Landmarks',
-      icon: '🌊',
-      content: '西湖位于杭州，是中国最有名的湖之一。西湖有十景，如"断桥残雪"、"雷峰夕照"。苏堤和白堤是两条穿过湖面的长路，很适合散步。春天的时候，苏堤上的桃花盛开，非常美丽。西湖被列入世界遗产名录。',
-      keyPhrases: ['西湖', '杭州', '十景', '苏堤', '世界遗产'],
-      significance: '西湖是中国山水美景的经典代表。'
-    },
-    {
-      id: 'ce052',
-      title: '黄山 (Yellow Mountain)',
-      titleMeaning: 'Yellow Mountain',
-      category: 'Landmarks',
-      icon: '⛰️',
-      content: '黄山在安徽省，以"四绝"闻名：奇松、怪石、云海、温泉。黄山的松树长在悬崖上，形状奇特。云海出现时，山峰像是在云上飘着，如同仙境。中国有句古话："五岳归来不看山，黄山归来不看岳"。',
-      keyPhrases: ['黄山', '奇松', '怪石', '云海', '仙境'],
-      significance: '黄山是中国最美的山之一，被称为"天下第一奇山"。'
-    },
-    {
-      id: 'ce053',
-      title: '九寨沟 (Jiuzhaigou)',
-      titleMeaning: 'Jiuzhaigou Valley',
-      category: 'Landmarks',
-      icon: '🏞️',
-      content: '九寨沟在四川省，以美丽的湖泊和瀑布闻名。湖水有各种颜色：蓝的、绿的、黄的，像宝石一样。秋天的九寨沟特别美，枫叶变红，和湖水的颜色形成对比。这里也是大熊猫的故乡。九寨沟是联合国世界自然遗产。',
-      keyPhrases: ['九寨沟', '湖泊', '瀑布', '秋天', '大熊猫'],
-      significance: '九寨沟是中国的自然奇观，如童话世界一般美丽。'
-    },
-    {
-      id: 'ce054',
-      title: '兵马俑 (Terracotta Warriors)',
-      titleMeaning: 'Terracotta Warriors',
-      category: 'Landmarks',
-      icon: '🗿',
-      content: '兵马俑在西安，是秦始皇陵的一部分。那里有成千上万的陶土士兵和马匹，每个士兵的脸都不一样。兵马俑是在1974年被农民发现的，现在是世界第八大奇迹之一。去兵马俑参观，你能感受到两千多年前秦朝的强大。',
-      keyPhrases: ['兵马俑', '秦始皇', '西安', '陶土', '奇迹'],
-      significance: '兵马俑展示了古代中国的伟大艺术和军事力量。'
-    },
-    {
-      id: 'ce055',
-      title: '桂林山水 (Guilin Scenery)',
-      titleMeaning: 'Guilin Scenery',
-      category: 'Landmarks',
-      icon: '🏞️',
-      content: '桂林在广西，以山水闻名。"桂林山水甲天下"意思是桂林的风景天下第一。漓江两岸有奇特的山峰，像一幅中国水墨画。坐着竹筏在漓江上漂流，是去桂林旅游必体验的项目。',
-      keyPhrases: ['桂林', '漓江', '甲天下', '竹筏', '山水'],
-      significance: '桂林山水代表了中国南方秀丽的自然风光。'
-    },
-    {
-      id: 'ce056',
-      title: '颐和园 (Summer Palace)',
-      titleMeaning: 'Summer Palace',
-      category: 'Landmarks',
-      icon: '🏛️',
-      content: '颐和园在北京，是中国最大的皇家园林。慈禧太后曾经在这里居住和办公。颐和园以昆明湖和万寿山为中心，景色优美。园内有一条非常长的长廊，上面画着上千幅彩色故事画。这里也是北京人周末喜欢去的地方。',
-      keyPhrases: ['颐和园', '慈禧', '昆明湖', '长廊', '皇家园林'],
-      significance: '颐和园是中国古代园林艺术的巅峰之作。'
-    },
-    {
-      id: 'ce057',
-      title: '天坛 (Temple of Heaven)',
-      titleMeaning: 'Temple of Heaven',
-      category: 'Landmarks',
-      icon: '🛕',
-      content: '天坛在北京，是明清两代皇帝祭天的地方。主要建筑是祈年殿，圆形的蓝色屋顶非常美丽。天坛的建筑没有用一颗钉子，全部是木结构拼接。皇帝每年在这里祈祷丰收和平安。现在天坛是北京市民晨练的好地方。',
-      keyPhrases: ['天坛', '祈年殿', '祭天', '皇帝', '木结构'],
-      significance: '天坛是中国古代天文信仰和建筑工艺的完美结合。'
-    },
-    {
-      id: 'ce058',
-      title: '苏州园林',
-      titleMeaning: 'Suzhou Classical Gardens',
-      category: 'Landmarks',
-      icon: '🌿',
-      content: '苏州被称为"人间天堂"，以园林闻名。拙政园和留园是最著名的两个。苏州园林的特点是"小中见大"，在很小的空间里设计出山水的意境。你走在园子里，一步一景，每换个角度看到的都不一样。',
-      keyPhrases: ['苏州', '拙政园', '留园', '人间天堂', '小中见大'],
-      significance: '苏州园林代表了中国古典园林的最高水平。'
-    },
-    {
-      id: 'ce059',
-      title: '布达拉宫 (Potala Palace)',
-      titleMeaning: 'Potala Palace',
-      category: 'Landmarks',
-      icon: '🏰',
-      content: '布达拉宫在西藏拉萨，建在一座山上，有十三层高，是世界上海拔最高的宫殿。它是以前达赖喇嘛居住的地方，也是藏传佛教的圣地。宫殿白色的墙壁和红色的顶楼在蓝天之下特别壮观。',
-      keyPhrases: ['布达拉宫', '西藏', '拉萨', '达赖喇嘛', '佛教'],
-      significance: '布达拉宫是藏族文化最宏伟的象征。'
-    },
-    {
-      id: 'ce060',
-      title: '敦煌莫高窟',
-      titleMeaning: 'Mogao Caves of Dunhuang',
-      category: 'Landmarks',
-      icon: '🕌',
-      content: '莫高窟在甘肃省，是丝绸之路上的一座文化宝库。那里有超过400个洞窟，洞窟里有精美的壁画和佛像。最老的洞窟有超过1600年的历史。壁画描绘了佛教故事、飞天和古人的日常生活。',
-      keyPhrases: ['莫高窟', '敦煌', '壁画', '佛教', '丝绸之路'],
-      significance: '莫高窟是世界最大的佛教艺术宝库之一。'
-    },
-
-    // ── Modern China (10) ───────────────────────
-
-    {
-      id: 'ce061',
-      title: '高铁 (High-Speed Rail)',
-      titleMeaning: 'High-Speed Rail',
-      category: 'Modern China',
-      icon: '🚄',
-      content: '中国拥有世界上最长的高铁网络，超过4万公里。高铁的速度一般在300公里每小时左右，从北京到上海只需要四个半小时。高铁车厢干净舒适，准时运行。高铁彻底改变了中国人的出行方式。',
-      keyPhrases: ['高铁', '高速', '网络', '北京上海', '出行'],
-      significance: '高铁是中国现代化的一张名片。'
-    },
-    {
-      id: 'ce062',
-      title: '手机支付 (Mobile Payment)',
-      titleMeaning: 'Mobile Payment',
-      category: 'Modern China',
-      icon: '📱',
-      content: '在中国，手机支付已经基本取代了现金。微信支付和支付宝是最常用的两种方式。不管是商场、路边摊还是菜市场，都可以扫码支付。很多人出门已经不带钱包，只带手机就可以了。连乞丐都有收款二维码。',
-      keyPhrases: ['手机支付', '微信', '支付宝', '扫码', '无现金'],
-      significance: '手机支付让中国率先进入了无现金社会。'
-    },
-    {
-      id: 'ce063',
-      title: '共享单车 (Shared Bikes)',
-      titleMeaning: 'Shared Bikes',
-      category: 'Modern China',
-      icon: '🚲',
-      content: '共享单车在中国城市非常普及。用手机扫一下二维码就可以骑车，骑完之后停在路边锁上就好。这解决了"最后一公里"的交通问题。最流行的品牌有美团单车、哈啰单车等。不同颜色的共享单车是城市的一道风景。',
-      keyPhrases: ['共享单车', '扫码', '二维码', '最后一公里', '骑行'],
-      significance: '共享单车是绿色出行在中国的创新实践。'
-    },
-    {
-      id: 'ce064',
-      title: '双十一 (Singles\' Day)',
-      titleMeaning: 'Singles\' Day (11.11)',
-      category: 'Modern China',
-      icon: '🛒',
-      content: '双十一是11月11日，原来是年轻人自嘲"光棍"的节日。现在变成了世界上最大的网购狂欢节。电商平台会推出大量折扣活动，很多人会提前把想买的东西放进购物车。2023年双十一的交易额仍然巨大，反映了中国强大的消费能力。',
-      keyPhrases: ['双十一', '网购', '折扣', '购物车', '消费'],
-      significance: '双十一已经发展成为全球最大的购物节。'
-    },
-    {
-      id: 'ce065',
-      title: '直播带货',
-      titleMeaning: 'Live-streaming shopping',
-      category: 'Modern China',
-      icon: '🎥',
-      content: '直播带货在中国非常火爆。主播们通过直播向观众推荐商品，观众可以即时提问和购买。著名主播李佳琦曾经在几分钟内卖出几万支口红。这种购物方式把娱乐和购物结合在一起，很受年轻人的喜爱。',
-      keyPhrases: ['直播带货', '主播', '李佳琦', '购物', '直播'],
-      significance: '直播带货是中国电商的最新发展趋势。'
-    },
-    {
-      id: 'ce066',
-      title: '短视频时代',
-      titleMeaning: 'Short-video era',
-      category: 'Modern China',
-      icon: '📹',
-      content: '短视频应用如抖音在国际上也很有名。人们用手机拍15秒到几分钟的视频分享自己的生活。抖音上有搞笑、美食、旅游、学习等各种内容。很多普通人也通过短视频变成了"网红"。这改变了人们获取信息和娱乐的方式。',
-      keyPhrases: ['短视频', '抖音', '网红', '分享', '娱乐'],
-      significance: '短视频正在重塑中国人的媒体消费习惯。'
-    },
-    {
-      id: 'ce067',
-      title: '中国制造 (Made in China)',
-      titleMeaning: 'Made in China',
-      category: 'Modern China',
-      icon: '🏭',
-      content: '中国被称为"世界工厂"，生产世界上很多产品。从玩具到手机，从衣服到汽车，"中国制造"遍布全球。近年来，中国正从"中国制造"向"中国创造"转变。华为、大疆、比亚迪等品牌在世界范围内都有影响力。',
-      keyPhrases: ['中国制造', '世界工厂', '华为', '创造', '品牌'],
-      significance: '"中国制造"正在转向"中国创造"。'
-    },
-    {
-      id: 'ce068',
-      title: '外卖骑手',
-      titleMeaning: 'Food delivery riders',
-      category: 'Modern China',
-      icon: '🛵',
-      content: '在城市的大街小巷，你总能看到穿着黄色或蓝色制服的外卖骑手。美团和饿了么是两大平台。无论刮风下雨，他们都在送餐的路上。外卖骑手的工作很辛苦，但为无数人提供了便利。点外卖已经成为中国年轻人的日常。',
-      keyPhrases: ['外卖骑手', '美团', '饿了么', '送餐', '制服'],
-      significance: '外卖骑手是支撑中国外卖经济的重要力量。'
-    },
-    {
-      id: 'ce069',
-      title: '电子竞技 (E-sports)',
-      titleMeaning: 'E-sports',
-      category: 'Modern China',
-      icon: '🎮',
-      content: '电子竞技在中国很受欢迎，尤其是年轻人。中国的电竞战队在国际比赛上经常拿冠军，比如《王者荣耀》的比赛。打电竞现在也是一种职业，好的选手收入很高。有些大学甚至开设了电竞专业。',
-      keyPhrases: ['电子竞技', '电竞', '王者荣耀', '比赛', '职业'],
-      significance: '电竞已成为中国体育和文化的一部分。'
-    },
-    {
-      id: 'ce070',
-      title: '新能源车',
-      titleMeaning: 'New energy vehicles',
-      category: 'Modern China',
-      icon: '🚗',
-      content: '中国现在是世界上最大的电动汽车市场。路上越来越多绿色车牌的汽车，那就是新能源车。比亚迪、蔚来、理想等是中国的电动车品牌。政府鼓励人们买电动车，绿色环保。充电桩也遍布城市的每个角落。',
-      keyPhrases: ['新能源车', '电动车', '比亚迪', '绿色', '充电桩'],
-      significance: '新能源车代表了中国绿色交通的未来。'
-    },
-
-    // ── Language & Stories (10) ─────────────────
-
-    {
-      id: 'ce071',
-      title: '成语：画蛇添足',
-      titleMeaning: 'Idiom: Drawing legs on a snake',
-      category: 'Language',
-      icon: '🐍',
-      content: '"画蛇添足"是一个成语，意思是做多余的事情，反而把事情弄坏了。故事是说几个人比赛画蛇，一个人画完后又给蛇加了脚，结果输掉了比赛。这个成语告诉人们：做事情要适可而止，不要多此一举。',
-      keyPhrases: ['画蛇添足', '成语', '多余', '适可而止', '故事'],
-      significance: '成语故事蕴含着中国人的智慧。'
-    },
-    {
-      id: 'ce072',
-      title: '成语：狐假虎威',
-      titleMeaning: 'Idiom: Fox borrows tiger\'s might',
-      category: 'Language',
-      icon: '🦊',
-      content: '"狐假虎威"讲的是狐狸借老虎的威风来吓唬其他动物。现代用来形容那些依靠有权势的人来欺负别人的人。这个成语提醒我们不要被假象迷惑，也警告那些"狐假虎威"的人最终会被发现。',
-      keyPhrases: ['狐假虎威', '成语', '威风', '依靠', '权势'],
-      significance: '成语用动物的故事来讽刺社会现象。'
-    },
-    {
-      id: 'ce073',
-      title: '成语：守株待兔',
-      titleMeaning: 'Idiom: Waiting for hares by a stump',
-      category: 'Language',
-      icon: '🐰',
-      content: '"守株待兔"讲的是一个农夫看见兔子撞死在树桩上，于是每天都等在树桩旁，希望再有兔子撞过来。结果田地荒废了。这个成语告诉人们不要光凭运气，应该努力工作，主动去追求。',
-      keyPhrases: ['守株待兔', '成语', '运气', '努力', '被动'],
-      significance: '成语用简单的故事传达深刻的生活道理。'
-    },
-    {
-      id: 'ce074',
-      title: '成语：拔苗助长',
-      titleMeaning: 'Idiom: Pulling seedlings to help them grow',
-      category: 'Language',
-      icon: '🌱',
-      content: '"拔苗助长"说的是一个农夫嫌禾苗长得太慢，就一棵一棵地往上拔。结果禾苗全死了。这个成语用来形容做事急于求成，违反自然规律，反而把事情弄坏。教育孩子也好，学习语言也好，都不能拔苗助长。',
-      keyPhrases: ['拔苗助长', '成语', '禾苗', '急于求成', '规律'],
-      significance: '拔苗助长的教训提醒人们要有耐心。'
-    },
-    {
-      id: 'ce075',
-      title: '成语：对牛弹琴',
-      titleMeaning: 'Idiom: Playing music to a cow',
-      category: 'Language',
-      icon: '🐄',
-      content: '"对牛弹琴"意思是对听不懂的人讲道理，白费力气。故事说古代音乐家给牛弹琴，牛根本没反应。这个成语用来形容跟不理解的人交流是浪费时间。也提醒讲话要看对象，不要对牛弹琴。',
-      keyPhrases: ['对牛弹琴', '成语', '交流', '白费力气', '对象'],
-      significance: '"对牛弹琴"提醒我们沟通要注意对象。'
-    },
-    {
-      id: 'ce076',
-      title: '数字文化：8和4',
-      titleMeaning: 'Number culture: 8 and 4',
-      category: 'Language',
-      icon: '🔢',
-      content: '在中国数字文化中，8是最吉利的数字，因为"八"听起来像"发"（发财、发达）。很多人会选带8的电话号码或车牌号。4是最不吉利的数字，因为"四"听起来像"死"。很多楼没有4层或14层。这反映了中国人对数字谐音的重视。',
-      keyPhrases: ['数字', '八', '四', '吉利', '谐音'],
-      significance: '数字的文化含义影响着中国人的日常生活。'
-    },
-    {
-      id: 'ce077',
-      title: '数字文化：6和9',
-      titleMeaning: 'Number culture: 6 and 9',
-      category: 'Language',
-      icon: '🔢',
-      content: '数字6代表"顺"，六六大顺，意思是事事顺利。网络用语"666"是夸奖的意思，说一个人或一件事很厉害。数字9代表"久"，象征长久和永恒。9也是最大的个位数，象征最高。结婚送999朵玫瑰，代表爱情长长久久。',
-      keyPhrases: ['六六大顺', '顺', '666', '长久', '永恒'],
-      significance: '数字6和9都是中国文化中受欢迎的数字。'
-    },
-    {
-      id: 'ce078',
-      title: '十二生肖故事',
-      titleMeaning: 'Legend of the Chinese Zodiac',
-      category: 'Language',
-      icon: '🐀',
-      content: '你知道吗？为什么老鼠在十二生肖排第一？传说玉皇大帝举办了一场比赛，谁先到谁排第一。老鼠和猫约好一起去，但老鼠没叫醒猫，自己跳上牛的背，快到终点时跳下来跑第一。所以猫和老鼠成了敌人。',
-      keyPhrases: ['十二生肖', '老鼠', '比赛', '猫', '玉皇大帝'],
-      significance: '十二生肖的传说生动有趣，代代相传。'
-    },
-    {
-      id: 'ce079',
-      title: '普通话与方言',
-      titleMeaning: 'Mandarin and dialects',
-      category: 'Language',
-      icon: '🗣️',
-      content: '普通话是中国的官方语言，以北京语音为标准音。但中国还有很多方言，如上海话、广东话（粤语）、四川话等，有些甚至互相听不懂。在学校里孩子们都说普通话，但回家可能讲方言。保护方言文化也是一件重要的事情。',
-      keyPhrases: ['普通话', '方言', '粤语', '上海话', '保护'],
-      significance: '普通话和方言共同构成了丰富的汉语世界。'
-    },
-    {
-      id: 'ce080',
-      title: '汉字的演变',
-      titleMeaning: 'Evolution of Chinese characters',
-      category: 'Language',
-      icon: '📜',
-      content: '汉字已经有三千多年的历史了。最早的汉字刻在龟甲和兽骨上，叫"甲骨文"。后来发展出金文、篆书、隶书、楷书。现在我们写的是简体字，但台湾和香港还在用繁体字。了解汉字的演变有助于学习汉字。',
-      keyPhrases: ['汉字', '甲骨文', '篆书', '简体字', '繁体字'],
-      significance: '汉字的演变反映了中国悠久的历史文化。'
-    },
-
-    // ── More Festivals & Customs (10) ───────────
-
-    {
-      id: 'ce081',
-      title: '年夜饭的意义',
-      titleMeaning: 'Meaning of New Year\'s Eve dinner',
-      category: 'Festivals',
-      icon: '🍽️',
-      content: '年夜饭是中国人一年中最重要的一顿饭。菜的数量一定要是双数，常常是8或10道菜。一定要有一条鱼，因为"鱼"和"余"同音，象征"年年有余"。还有鸡代表"吉祥"，年糕代表"年年高升"。每一道菜都有美好的含义。',
-      keyPhrases: ['年夜饭', '鱼', '年年有余', '年糕', '吉祥'],
-      significance: '年夜饭不只是一顿饭，更是对新一年的美好祝愿。'
-    },
-    {
-      id: 'ce082',
-      title: '贴春联的讲究',
-      titleMeaning: 'Rules for pasting couplets',
-      category: 'Festivals',
-      icon: '🟥',
-      content: '过年时家家户户都要贴春联。春联是红色的长条纸，上面写着美好的诗句。上联贴在右边，下联贴在左边。横批贴在门的上面。贴春联的时间很重要，通常在除夕上午。春联要贴到元宵节后或者直到自然掉落。',
-      keyPhrases: ['春联', '上联', '下联', '横批', '除夕'],
-      significance: '贴春联是春节最有仪式感的活动之一。'
-    },
-    {
-      id: 'ce083',
-      title: '放鞭炮的传统',
-      titleMeaning: 'Tradition of firecrackers',
-      category: 'Festivals',
-      icon: '🧨',
-      content: '放鞭炮是中国人过年的传统习俗。传说古代有一个叫"年"的怪兽，每年除夕出来吃人。后来人们发现"年"怕红色和巨大的响声，于是过年时就放鞭炮驱赶"年"兽。现在为了环保，很多城市限制放鞭炮了。',
-      keyPhrases: ['鞭炮', '年兽', '响声', '驱赶', '环保'],
-      significance: '放鞭炮的传说让春节更添传奇色彩。'
-    },
-    {
-      id: 'ce084',
-      title: '属相配对',
-      titleMeaning: 'Zodiac compatibility',
-      category: 'Traditions',
-      icon: '💑',
-      content: '在中国，有些人会在恋爱和结婚前看生肖是否相配。比如属虎和属蛇的人被认为不太合适，因为老虎和蛇天生不合。属马和属羊则是好搭配。当然现在年轻人大多不太在意这些了，但在农村地区仍有影响。',
-      keyPhrases: ['属相', '配对', '恋爱', '结婚', '合适'],
-      significance: '生肖配对反映了传统文化对婚恋的影响。'
-    },
-    {
-      id: 'ce085',
-      title: '生日吃什么',
-      titleMeaning: 'What to eat on birthdays',
-      category: 'Traditions',
-      icon: '🎂',
-      content: '中国人过生日除了蛋糕，还有传统的食物。一是长寿面，面条要很长，不能咬断，象征长寿。二是染红的鸡蛋，红色代表好运。有些地方的人们还会吃桃形的馒头（寿桃），桃在中国文化中象征长寿。',
-      keyPhrases: ['生日', '长寿面', '红鸡蛋', '寿桃', '长寿'],
-      significance: '生日的传统食物代表着对健康长寿的美好祝愿。'
-    },
-    {
-      id: 'ce086',
-      title: '龙舟赛',
-      titleMeaning: 'Dragon boat racing',
-      category: 'Festivals',
-      icon: '🚣',
-      content: '每年端午节，全国各地都会举行龙舟比赛。每艘船上坐着二十个左右的划手，一个鼓手在船头敲鼓指挥节奏。划手跟着鼓点一起用力划。岸上有很多观众大声加油，场面非常热闹。这项传统已经传播到世界很多国家。',
-      keyPhrases: ['龙舟', '划手', '鼓手', '比赛', '端午节'],
-      significance: '龙舟赛体现了中国人的团队精神和竞争意识。'
-    },
-    {
-      id: 'ce087',
-      title: '属相与性格',
-      titleMeaning: 'Zodiac and personality',
-      category: 'Traditions',
-      icon: '🐯',
-      content: '很多人相信生肖会影响一个人的性格。比如属龙的人自信、有领导力；属兔的人温和、善良；属猴的人聪明、灵活。虽然在现代社会，人们不太认真看待这些，但在聊天的时候，聊属相还是一个有趣的话题。你的属相是什么？',
-      keyPhrases: ['生肖', '性格', '属龙', '属兔', '有趣'],
-      significance: '生肖性格描述是一种轻松的社交话题。'
-    },
-    {
-      id: 'ce088',
-      title: '中元节 (Ghost Festival)',
-      titleMeaning: 'Ghost Festival',
-      category: 'Festivals',
-      icon: '👻',
-      content: '中元节在农历七月十五，是传统的"鬼节"。中国人相信这一天阴间的鬼魂会来到人间。人们会烧纸钱给去世的亲人使用。有些地方还会放河灯，为鬼魂照路。这个节日表现了中国人对逝去亲人的思念。',
-      keyPhrases: ['中元节', '鬼节', '纸钱', '河灯', '思念'],
-      significance: '中元节反映了中国人对亡灵的敬畏和怀念。'
-    },
-    {
-      id: 'ce089',
-      title: '寒食节',
-      titleMeaning: 'Cold Food Festival',
-      category: 'Festivals',
-      icon: '🍃',
-      content: '寒食节在清明节前一天，是为了纪念古代忠臣介子推。据说介子推宁愿被烧死也不出来做官。人们在这一天不吃热食，只吃冷的食物，以此来纪念他。现在寒食节和清明节的习俗已经融合在一起了。',
-      keyPhrases: ['寒食节', '介子推', '冷食', '纪念', '忠臣'],
-      significance: '寒食节体现了中国人对忠义精神的崇敬。'
-    },
-    {
-      id: 'ce090',
-      title: '祭拜祖先',
-      titleMeaning: 'Worshipping ancestors',
-      category: 'Traditions',
-      icon: '🙏',
-      content: '在很多中国家庭里，供奉祖先的牌位是一种传统。家里设有一个小供台或祖先堂，上面放着祖先的照片或牌位。重要的节日，人们会点上香，放上水果和食物作为祭品。这个习俗代表了中国人"不忘本"的家庭观念。',
-      keyPhrases: ['祭拜', '祖先', '牌位', '香', '不忘本'],
-      significance: '祭拜祖先是中国人饮水思源的文化体现。'
-    },
-
-    // ── More Culture & Social (10) ─────────────
-
-    {
-      id: 'ce091',
-      title: '关系 (Guanxi)',
-      titleMeaning: 'Guanxi (Personal Connections)',
-      category: 'Social',
-      icon: '🔗',
-      content: '在中国，"关系"是一个很重要的概念。关系指的是你认识的人和你与他们的联系。好的关系可能帮你在工作、学习、生活中获得便利。建立关系通常需要在日常交往中互相关心、互相帮助。',
-      keyPhrases: ['关系', '人脉', '联系', '互相帮助', '便利'],
-      significance: '"关系"是中国社会运作的核心机制之一。'
-    },
-    {
-      id: 'ce092',
-      title: '打招呼的方式',
-      titleMeaning: 'Ways of greeting',
-      category: 'Social',
-      icon: '👋',
-      content: '中国人打招呼的方式和西方不太一样。最常见的问候是"你吃了吗？"，不是真的要问你吃了没有，只是表达关心。朋友见面常说"你去哪儿？"。这些问题的目的不是打听隐私，而是一种友好的问候。',
-      keyPhrases: ['打招呼', '你吃了吗', '问候', '关心', '友好'],
-      significance: '理解中国人的问候方式有助于更好地社交。'
-    },
-    {
-      id: 'ce093',
-      title: '谦虚文化',
-      titleMeaning: 'Culture of humility',
-      category: 'Social',
-      icon: '🙂',
-      content: '在中国文化中，谦虚是一种美德。如果有人夸你，你应该说"哪里哪里"，表示自己还不够好。即使你很优秀，也不应该直接说自己多好。这跟一些西方文化中鼓励自我表现不太一样。谦虚让人显得有教养。',
-      keyPhrases: ['谦虚', '哪里哪里', '夸', '美德', '教养'],
-      significance: '谦虚是中国人社交中的重要准则。'
-    },
-    {
-      id: 'ce094',
-      title: '称呼的学问',
-      titleMeaning: 'The art of addressing people',
-      category: 'Social',
-      icon: '👤',
-      content: '中文里的称呼很复杂。对不认识的老人，可以叫"大爷"、"大妈"；对朋友的父母，叫"叔叔"、"阿姨"。在学校，叫"老师"；在单位，可以叫"师傅"。乱叫的话可能不太礼貌。不过对同龄人，叫"帅哥"或"美女"都比较安全。',
-      keyPhrases: ['称呼', '大爷', '叔叔', '老师', '礼貌'],
-      significance: '合适的称呼是中国人际交往的第一步。'
-    },
-    {
-      id: 'ce095',
-      title: '集体主义',
-      titleMeaning: 'Collectivism',
-      category: 'Social',
-      icon: '👨‍👩‍👧‍👦',
-      content: '中国社会强调集体主义，个人要服从集体利益。在家庭中要顾家，在公司里以团队为先。这也可以解释为什么中国人在疫情期间能够很好地配合隔离措施。在一些需要个人突出的时候，中国人可能显得比较保守。',
-      keyPhrases: ['集体主义', '个人', '团队', '家庭', '社会'],
-      significance: '集体主义是中国社会行为的一个重要特点。'
-    },
-    {
-      id: 'ce096',
-      title: '高考 (Gaokao)',
-      titleMeaning: 'College Entrance Exam',
-      category: 'Modern China',
-      icon: '📝',
-      content: '高考是中国最重要的考试，通常在6月7日和8日。它对学生的未来有非常大的影响。高考期间，很多人会为考生加油。考场周边会交通管制，建筑工地停工。家长在学校外焦急地等待。高考被认为是最公平的选拔方式。',
-      keyPhrases: ['高考', '考试', '大学', '家长', '公平'],
-      significance: '高考是中国人人生中最重要的转折点之一。'
-    },
-    {
-      id: 'ce097',
-      title: '独生子女政策的影响',
-      titleMeaning: 'Impact of the one-child policy',
-      category: 'Social',
-      icon: '👪',
-      content: '中国从1980年到2016年实行了独生子女政策。这造就了一代没有兄弟姐妹的年轻人。他们被称为"小皇帝"，因为是家里的唯一希望。现在政策已放宽，很多家庭可以生两个或三个孩子了。但这个政策对家庭结构产生了深远影响。',
-      keyPhrases: ['独生子女', '政策', '小皇帝', '家庭', '兄弟姐妹'],
-      significance: '独生子女政策深刻改变了中国社会的家庭结构。'
-    },
-    {
-      id: 'ce098',
-      title: '中国人的时间观',
-      titleMeaning: 'Chinese perception of time',
-      category: 'Social',
-      icon: '⏰',
-      content: '中国人对时间的态度比较灵活。朋友聚会晚到十几分钟是可以接受的，但在商务场合要准时。中国文化看重长期规划，"慢慢来"是一种生活智慧。俗话说"欲速则不达"，意思是太着急反而达不到目的。',
-      keyPhrases: ['时间观', '准时', '慢慢来', '长期', '规划'],
-      significance: '中国的时间观体现了"慢工出细活"的哲学。'
-    },
-    {
-      id: 'ce099',
-      title: '送礼不能送水果？',
-      titleMeaning: 'Can\'t give fruit as a gift?',
-      category: 'Social',
-      icon: '🍐',
-      content: '有些水果不能随便送。梨不能送，因为"梨"听起来像"离"，代表分离。情侣之间最好不要送梨。李子也不太好，因为"李"和"离"同音。橘子则是好礼物，代表吉祥。送礼前了解一下这些知识可以避免尴尬。',
-      keyPhrases: ['送礼', '梨', '分离', '橘子', '吉祥'],
-      significance: '水果送礼的讲究体现了中国人对语言的敏感。'
-    },
-    {
-      id: 'ce100',
-      title: '微笑文化',
-      titleMeaning: 'Smile culture',
-      category: 'Social',
-      icon: '😊',
-      content: '在中国，人们不一定像一些国家那样对陌生人微笑。这可能让外国游客觉得中国人不高冷。但这不是不友好好，而是文化差异。中国人一旦熟悉之后，非常热情。微笑更多是留给认识的人的。这跟西方"对每个人都微笑"的习惯有所不同。',
-      keyPhrases: ['微笑', '文化差异', '陌生人', '热情', '习惯'],
-      significance: '了解微笑文化的差异有助于跨文化交流。'
+    if (typeof CulturalData !== 'undefined' && CulturalData.notes) {
+        items.forEach(function(it) {
+            if (!CulturalData.notes.find(function(x) { return x.id === it.id; })) {
+                CulturalData.notes.push(it);
+            }
+        });
     }
-  ];
-
-  if (typeof CulturalData !== 'undefined' && CulturalData.notes) {
-    CulturalData.notes = CulturalData.notes.concat(items);
-  }
 })();

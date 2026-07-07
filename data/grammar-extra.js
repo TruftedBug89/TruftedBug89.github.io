@@ -1,1339 +1,9466 @@
-﻿// ============================================
-// CHINESE MASTER - Grammar Extra Lessons
-// 50 additional lessons auto-merged into GrammarData
+// ============================================
+// CHINESE MASTER - Extra Grammar Lessons (150)
+// Auto-merges into GrammarData
 // ============================================
 
 (function() {
     var items = [
-        // ge001: Result complement — wán (finish doing)
-        {
-            "id": "ge001",
-            "title": "V + 完 (wán) - Finish doing",
-            "titleMeaning": "Result complement: completion",
-            "level": "HSK 3",
-            "category": "ResultComplements",
-            "commonMistake": "完 goes after the verb to show completion. Not before. '我完吃饭' is wrong — use '我吃完饭'.",
-            "pattern": "Subject + Verb + 完 + Object + 了",
-            "explanation": "'完'用在动词后面做结果补语，表示动作完成。相当于英语的'finish doing something'。",
-            "examples": [
-                { "chinese": "我吃完饭了。", "pinyin": "wǒ chī wán fàn le.", "meaning": "I finished eating." },
-                { "chinese": "他看完那本书了。", "pinyin": "tā kàn wán nà běn shū le.", "meaning": "He finished reading that book." },
-                { "chinese": "你做完作业了吗？", "pinyin": "nǐ zuò wán zuòyè le ma?", "meaning": "Have you finished your homework?" }
-            ],
-            "practice": [
-                { "question": "我吃___饭了。", "answer": "完", "options": ["完","好","到","了"] },
-                { "question": "他看___那本书了。", "answer": "完", "options": ["完","好","到","见"] },
-                { "question": "你做___作业了吗？", "answer": "完", "options": ["完","好","到","过"] },
-                { "question": "我还没写___信呢。", "answer": "完", "options": ["完","好","到","见"] },
-                { "question": "他终于说___了。", "answer": "完", "options": ["完","好","到","过"] },
-                { "question": "等我看___这本书就还给你。", "answer": "完", "options": ["完","好","到","见"] },
-                { "question": "水喝___了吗？", "answer": "完", "options": ["完","好","到","了"] },
-                { "question": "他用了三天才画___这幅画。", "answer": "完", "options": ["完","好","到","过"] }
-            ]
+    {
+        "id": "gx_001",
+        "title": "把 (bǎ) - Disposal Construction",
+        "titleMeaning": "把字句 - Disposal structure",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + Complement",
+        "explanation": "The 把 construction rearranges SVO to SOV to emphasize handling of a definite object. The verb must have a complement.",
+        "commonMistake": {
+            "sentence": "我把书看。",
+            "correction": "我把书看完了。",
+            "explanation": "把 always needs a complement after the verb."
         },
-        // ge002: Result complement — dào (reach/succeed)
-        {
-            "id": "ge002",
-            "title": "V + 到 (dào) - Reach/Succeed",
-            "titleMeaning": "Result complement: reaching result",
-            "level": "HSK 4",
-            "category": "ResultComplements",
-            "commonMistake": "到 after verb means succeeding in reaching a result. '我买到票了' = I succeeded in buying tickets. Differs from simple '买了' (just bought).",
-            "pattern": "Subject + Verb + 到 + Object + 了",
-            "explanation": "'到'用在动词后面做结果补语，表示动作达到了目的或结果。如'买到'表示成功买到了东西。",
-            "examples": [
-                { "chinese": "我买到票了。", "pinyin": "wǒ mǎi dào piào le.", "meaning": "I succeeded in buying a ticket." },
-                { "chinese": "他找到工作了。", "pinyin": "tā zhǎo dào gōngzuò le.", "meaning": "He found a job." },
-                { "chinese": "你听到声音了吗？", "pinyin": "nǐ tīng dào shēngyīn le ma?", "meaning": "Did you hear the sound?" }
-            ],
-            "practice": [
-                { "question": "我买___票了。", "answer": "到", "options": ["到","完","好","见"] },
-                { "question": "他找___工作了。", "answer": "到", "options": ["到","完","好","过"] },
-                { "question": "你听___声音了吗？", "answer": "到", "options": ["到","完","好","见"] },
-                { "question": "我没看___他在哪儿。", "answer": "到", "options": ["到","完","好","过"] },
-                { "question": "他终于想___一个好办法。", "answer": "到", "options": ["到","完","好","见"] },
-                { "question": "我还没收___他的回信。", "answer": "到", "options": ["到","完","好","过"] },
-                { "question": "你见___王老师了吗？", "answer": "到", "options": ["到","完","好","了"] },
-                { "question": "他感觉___了很大的压力。", "answer": "到", "options": ["到","完","好","见"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把作业写完了。",
+                "pinyin": "wǒ bǎ zuòyè xiě wán le.",
+                "en": "I finished my homework."
+            },
+            {
+                "cn": "他把门打开了。",
+                "pinyin": "tā bǎ mén dǎ kāi le.",
+                "en": "He opened the door."
+            },
+            {
+                "cn": "请把杯子放在桌子上。",
+                "pinyin": "qǐng bǎ bēizi fàng zài zhuōzi shàng.",
+                "en": "Please put the cup on the table."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___作业写完了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请___门关上。",
+                "options": [
+                    "把",
+                    "被",
+                    "叫",
+                    "让"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___手机丢了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_002",
+        "title": "把 + 结果补语",
+        "titleMeaning": "把 with result complements",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + Result Complement",
+        "explanation": "Use 把 when the result complement affects a definite object. Common complements: 完, 到, 好, 干净.",
+        "commonMistake": {
+            "sentence": "他把作业做。",
+            "correction": "他把作业做好了。",
+            "explanation": "把 requires a complement after the verb."
         },
-        // ge003: Result complement — jiàn/dǒng (perceive/understand)
-        {
-            "id": "ge003",
-            "title": "V + 见/懂 (jiàn/dǒng) - Perceive/Understand",
-            "titleMeaning": "Result complement: perception",
-            "level": "HSK 3",
-            "category": "ResultComplements",
-            "commonMistake": "见 is for sensory verbs (看/听). 懂 is for understanding. '我看见了' = I saw; '我听懂了' = I understood. Do not mix them.",
-            "pattern": "Subject + Verb + 见/懂 + Object + 了",
-            "explanation": "'见'用在感官动词后面表示感知到；'懂'用在理解类动词后面表示明白了。",
-            "examples": [
-                { "chinese": "我看见一只猫。", "pinyin": "wǒ kàn jiàn yī zhī māo.", "meaning": "I saw a cat." },
-                { "chinese": "我听懂了老师的话。", "pinyin": "wǒ tīng dǒng le lǎoshī de huà.", "meaning": "I understood what the teacher said." },
-                { "chinese": "他听见有人敲门。", "pinyin": "tā tīng jiàn yǒu rén qiāo mén.", "meaning": "He heard someone knocking." }
-            ],
-            "practice": [
-                { "question": "我看___一只猫。", "answer": "见", "options": ["见","懂","完","到"] },
-                { "question": "我听___了老师的话。", "answer": "懂", "options": ["懂","见","完","到"] },
-                { "question": "他听___有人敲门。", "answer": "见", "options": ["见","懂","完","到"] },
-                { "question": "我没看___你的手机。", "answer": "见", "options": ["见","懂","完","好"] },
-                { "question": "这本书你看___了吗？", "answer": "懂", "options": ["懂","见","完","到"] },
-                { "question": "他说得太快，我没听___。", "answer": "懂", "options": ["懂","见","完","到"] },
-                { "question": "你听___外面有声音吗？", "answer": "见", "options": ["见","懂","完","到"] },
-                { "question": "这个问题你弄___了吗？", "answer": "懂", "options": ["懂","见","完","好"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把饭吃完了。",
+                "pinyin": "wǒ bǎ fàn chī wán le.",
+                "en": "I finished the rice."
+            },
+            {
+                "cn": "她把房间打扫干净了。",
+                "pinyin": "tā bǎ fángjiān dǎsǎo gānjìng le.",
+                "en": "She cleaned the room."
+            },
+            {
+                "cn": "他把车停好了。",
+                "pinyin": "tā bǎ chē tíng hǎo le.",
+                "en": "He parked the car."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "妈妈___菜做好了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___这本书看完了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___窗户关上了吗？",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_003",
+        "title": "把 + 方向补语",
+        "titleMeaning": "把 with direction complements",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + Direction Complement",
+        "explanation": "Direction complements (起来, 出来, 回来) after 把 indicate movement or change of state of the object.",
+        "commonMistake": {
+            "sentence": "他拿出来书。",
+            "correction": "他把书拿出来。",
+            "explanation": "With definite objects, use 把 before the verb."
         },
-        // ge004: Result complement — hǎo (complete properly)
-        {
-            "id": "ge004",
-            "title": "V + 好 (hǎo) - Complete properly",
-            "titleMeaning": "Result complement: done well/ready",
-            "level": "HSK 3",
-            "category": "ResultComplements",
-            "commonMistake": "好 after verb means done AND satisfactory. '做好了' = finished AND ready. '做完了' just means finished. 好 implies the result is good.",
-            "pattern": "Subject + Verb + 好 + Object + 了",
-            "explanation": "'好'用在动词后面做结果补语，表示动作完成并且结果令人满意或准备好了。",
-            "examples": [
-                { "chinese": "饭做好了。", "pinyin": "fàn zuò hǎo le.", "meaning": "The meal is ready." },
-                { "chinese": "你准备好了吗？", "pinyin": "nǐ zhǔnbèi hǎo le ma?", "meaning": "Are you ready?" },
-                { "chinese": "我们安排好明天的活动了。", "pinyin": "wǒmen ānpái hǎo míngtiān de huódòng le.", "meaning": "We have arranged tomorrow's activities." }
-            ],
-            "practice": [
-                { "question": "饭做___了。", "answer": "好", "options": ["好","完","到","见"] },
-                { "question": "你准备___了吗？", "answer": "好", "options": ["好","完","到","过"] },
-                { "question": "我们安排___明天的活动了。", "answer": "好", "options": ["好","完","到","见"] },
-                { "question": "行李都收拾___了吗？", "answer": "好", "options": ["好","完","到","过"] },
-                { "question": "请你把门关___。", "answer": "好", "options": ["好","完","到","见"] },
-                { "question": "还没学___呢，不能考试。", "answer": "好", "options": ["好","完","到","过"] },
-                { "question": "你跟他谈___了吗？", "answer": "好", "options": ["好","完","到","见"] },
-                { "question": "我们还没商量___呢。", "answer": "好", "options": ["好","完","到","过"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把钱拿出来了。",
+                "pinyin": "wǒ bǎ qián ná chūlái le.",
+                "en": "I took the money out."
+            },
+            {
+                "cn": "他把照片挂上去了。",
+                "pinyin": "tā bǎ zhàopiàn guà shàngqù le.",
+                "en": "He hung the photo up."
+            },
+            {
+                "cn": "请把椅子搬进来。",
+                "pinyin": "qǐng bǎ yǐzi bān jìnlái.",
+                "en": "Please bring the chair in."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "请___书拿出来。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___衣服收进来了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___垃圾扔出去了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_004",
+        "title": "把 + 给",
+        "titleMeaning": "把 construction with 给",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + 给 + Recipient",
+        "explanation": "Use 把 for the transferred object and put the recipient after the verb.",
+        "commonMistake": {
+            "sentence": "我给他一本书。",
+            "correction": "我把一本书给他了。",
+            "explanation": "把 emphasizes the object as disposed."
         },
-        // ge005: Result complement — cuò (wrongly)
-        {
-            "id": "ge005",
-            "title": "V + 错 (cuò) - Wrongly",
-            "titleMeaning": "Result complement: mistaken action",
-            "level": "HSK 3",
-            "category": "ResultComplements",
-            "commonMistake": "错 means the action produced a wrong result. '写错' = write incorrectly (factual error). Not for subjective judgments like '不好'.",
-            "pattern": "Subject + Verb + 错 + Object + 了",
-            "explanation": "'错'用在动词后面做结果补语，表示动作的结果是错误的。如'写错'表示写了错误的字。",
-            "examples": [
-                { "chinese": "我写错了一个字。", "pinyin": "wǒ xiě cuò le yī gè zì.", "meaning": "I wrote a character wrong." },
-                { "chinese": "你走错路了。", "pinyin": "nǐ zǒu cuò lù le.", "meaning": "You took the wrong road." },
-                { "chinese": "他记错时间了。", "pinyin": "tā jì cuò shíjiān le.", "meaning": "He remembered the time wrong." }
-            ],
-            "practice": [
-                { "question": "我写___了一个字。", "answer": "错", "options": ["错","完","好","到"] },
-                { "question": "你走___路了。", "answer": "错", "options": ["错","完","好","过"] },
-                { "question": "他记___时间了。", "answer": "错", "options": ["错","完","好","到"] },
-                { "question": "对不起，我认___人了。", "answer": "错", "options": ["错","完","好","过"] },
-                { "question": "你听___了，不是这个意思。", "answer": "错", "options": ["错","完","好","到"] },
-                { "question": "他算___了这道题。", "answer": "错", "options": ["错","完","好","过"] },
-                { "question": "别叫___我的名字。", "answer": "错", "options": ["错","完","好","到"] },
-                { "question": "你坐___车了，应该坐3路。", "answer": "错", "options": ["错","完","好","过"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把钱给他了。",
+                "pinyin": "wǒ bǎ qián gěi tā le.",
+                "en": "I gave the money to him."
+            },
+            {
+                "cn": "请把信交给老师。",
+                "pinyin": "qǐng bǎ xìn jiāo gěi lǎoshī.",
+                "en": "Please hand the letter to the teacher."
+            },
+            {
+                "cn": "她把礼物送给我了。",
+                "pinyin": "tā bǎ lǐwù sòng gěi wǒ le.",
+                "en": "She gave the gift to me."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___这本书借给他了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请___文件发给经理。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___钥匙还给我了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_005",
+        "title": "把 + 在/到",
+        "titleMeaning": "把 with location",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + 在/到 + Location",
+        "explanation": "Use 把 when moving or placing an object at a location. The preposition follows the verb.",
+        "commonMistake": {
+            "sentence": "他放书在桌子上。",
+            "correction": "他把书放在桌子上。",
+            "explanation": "With 在/到, use 把 to move the object before the verb."
         },
-        // ge006: Simple direction complement — lái/qù
-        {
-            "id": "ge006",
-            "title": "V + 来/去 (lái/qù) - Direction complement",
-            "titleMeaning": "Simple direction toward/away",
-            "level": "HSK 3",
-            "category": "DirectionComplements",
-            "commonMistake": "来 = toward speaker. 去 = away from speaker. '上来' = come up (toward me); '上去' = go up (away from me).",
-            "pattern": "Verb + 来/去",
-            "explanation": "简单趋向补语。'来'表示动作向着说话人方向；'去'表示背离说话人方向。",
-            "examples": [
-                { "chinese": "他进教室来了。", "pinyin": "tā jìn jiàoshì lái le.", "meaning": "He came into the classroom." },
-                { "chinese": "他出教室去了。", "pinyin": "tā chū jiàoshì qù le.", "meaning": "He went out of the classroom." },
-                { "chinese": "快过来！", "pinyin": "kuài guòlái!", "meaning": "Come over here quickly!" }
-            ],
-            "practice": [
-                { "question": "他进___了。", "answer": "来", "options": ["来","去","上","下"] },
-                { "question": "他出___了。", "answer": "去", "options": ["去","来","上","下"] },
-                { "question": "快过___！", "answer": "来", "options": ["来","去","上","下"] },
-                { "question": "妈妈回___了。", "answer": "来", "options": ["来","去","上","下"] },
-                { "question": "他从楼上跑下___了。", "answer": "来", "options": ["来","去","上","下"] },
-                { "question": "他已经上___了，不等我们了。", "answer": "去", "options": ["去","来","上","下"] },
-                { "question": "小鸟飞走了，不飞回___了。", "answer": "来", "options": ["来","去","上","下"] },
-                { "question": "你能把书拿过___吗？", "answer": "来", "options": ["来","去","上","下"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把手机放在包里了。",
+                "pinyin": "wǒ bǎ shǒujī fàng zài bāo lǐ le.",
+                "en": "I put my phone in the bag."
+            },
+            {
+                "cn": "他把车开到了学校。",
+                "pinyin": "tā bǎ chē kāi dào le xuéxiào.",
+                "en": "He drove the car to school."
+            },
+            {
+                "cn": "请把行李搬到房间里。",
+                "pinyin": "qǐng bǎ xínglǐ bān dào fángjiān lǐ.",
+                "en": "Please move luggage into the room."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___书放在书包里。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___衣服挂在衣柜里。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我们___桌子搬到客厅里。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_006",
+        "title": "把 + 成",
+        "titleMeaning": "把 with 成 - transforming",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + 成 + Result",
+        "explanation": "The complement 成 indicates transformation or change of the object.",
+        "commonMistake": {
+            "sentence": "他翻译中文成英文。",
+            "correction": "他把中文翻译成英文。",
+            "explanation": "Use 把 with 成 to show transformation."
         },
-        // ge007: Compound direction complement — qǐlái
-        {
-            "id": "ge007",
-            "title": "V + 起来 (qǐlái) - Start/Upward",
-            "titleMeaning": "Compound direction: rising/starting",
-            "level": "HSK 4",
-            "category": "DirectionComplements",
-            "commonMistake": "起来 has 3 uses: (1) upward '站起来', (2) beginning '笑起来', (3) collecting '收起来'. Context determines meaning.",
-            "pattern": "Verb + 起来",
-            "explanation": "'起来'做复合趋向补语：(1)向上移动，(2)开始并持续，(3)集中到一起。",
-            "examples": [
-                { "chinese": "他站起来了。", "pinyin": "tā zhàn qǐlái le.", "meaning": "He stood up." },
-                { "chinese": "大家都笑起来了。", "pinyin": "dàjiā dōu xiào qǐlái le.", "meaning": "Everyone started laughing." },
-                { "chinese": "把书收起来吧。", "pinyin": "bǎ shū shōu qǐlái ba.", "meaning": "Put the books away." }
-            ],
-            "practice": [
-                { "question": "他站___了。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "大家都笑___了。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "把书收___吧。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "天已经开始热___了。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "他想___一个好主意。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "这个菜看___很好吃。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "太阳升___了。", "answer": "起来", "options": ["起来","下来","出来","过来"] },
-                { "question": "他一听就高兴___。", "answer": "起来", "options": ["起来","下来","出来","过来"] }
-            ]
+        "examples": [
+            {
+                "cn": "请把中文翻译成英文。",
+                "pinyin": "qǐng bǎ zhōngwén fānyì chéng yīngwén.",
+                "en": "Please translate Chinese to English."
+            },
+            {
+                "cn": "她把房间改成了书房。",
+                "pinyin": "tā bǎ fángjiān gǎi chéng le shūfáng.",
+                "en": "She turned the room into a study."
+            },
+            {
+                "cn": "我把人民币换成了美元。",
+                "pinyin": "wǒ bǎ rénmínbì huàn chéng le měiyuán.",
+                "en": "I exchanged RMB for USD."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "请把这段文字___英文。",
+                "options": [
+                    "翻译成",
+                    "翻译为",
+                    "翻译到",
+                    "翻译在"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___客厅改成游戏室。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我想把美元___人民币。",
+                "options": [
+                    "换成",
+                    "成换",
+                    "换了",
+                    "换到"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_007",
+        "title": "把 + 作/为",
+        "titleMeaning": "把 with 作/为 - regarding as",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + 作/为 + Identity",
+        "explanation": "This pattern expresses \"regard/treat as\". Common verbs: 看, 当, 称, 选.",
+        "commonMistake": {
+            "sentence": "我看他朋友。",
+            "correction": "我把他看作朋友。",
+            "explanation": "Use 把 for \"regard as\"."
         },
-        // ge008: Compound direction complement — chūlái
-        {
-            "id": "ge008",
-            "title": "V + 出来 (chūlái) - Outward/Emerge",
-            "titleMeaning": "Compound direction: emerging",
-            "level": "HSK 4",
-            "category": "DirectionComplements",
-            "commonMistake": "出来 means: (1) outward movement, (2) recognition '认出来', (3) creating something new '想出来'. Do not use 出去 for inward-bringing.",
-            "pattern": "Verb + 出来",
-            "explanation": "'出来'做复合趋向补语：(1)从里到外，(2)辨认出来，(3)产生出来。",
-            "examples": [
-                { "chinese": "他从房间里走出来了。", "pinyin": "tā cóng fángjiān lǐ zǒu chūlái le.", "meaning": "He walked out of the room." },
-                { "chinese": "我认出他来了。", "pinyin": "wǒ rèn chū tā lái le.", "meaning": "I recognized him." },
-                { "chinese": "他想出来一个好办法。", "pinyin": "tā xiǎng chūlái yī gè hǎo bànfǎ.", "meaning": "He came up with a good solution." }
-            ],
-            "practice": [
-                { "question": "他从房间里走___了。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "我认___他了。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "他想___一个好办法。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "你看___这是谁写的字了吗？", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "小狗从笼子里跑___了。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "他写___的答案不对。", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "你听___这是哪首歌了吗？", "answer": "出来", "options": ["出来","起来","下来","过来"] },
-                { "question": "这个秘密终于说___了。", "answer": "出来", "options": ["出来","起来","下来","过来"] }
-            ]
+        "examples": [
+            {
+                "cn": "我把他看作最好的朋友。",
+                "pinyin": "wǒ bǎ tā kàn zuò zuì hǎo de péngyou.",
+                "en": "I regard him as my best friend."
+            },
+            {
+                "cn": "大家都把他当老师。",
+                "pinyin": "dàjiā dōu bǎ tā dāng lǎoshī.",
+                "en": "Everyone treats him as a teacher."
+            },
+            {
+                "cn": "我们把这座城市称为花城。",
+                "pinyin": "wǒmen bǎ zhè zuò chéngshì chēng wéi huā chéng.",
+                "en": "We call this city the City of Flowers."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我把她___亲妹妹。",
+                "options": [
+                    "当作",
+                    "当做",
+                    "成为",
+                    "作为"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "大家都___他选为班长。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我们___这座城市称为故乡。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_008",
+        "title": "把 + 得",
+        "titleMeaning": "把 with 得 complement",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "S + 把 + O + V + 得 + Description",
+        "explanation": "Combine 把 with a 得 complement to describe the effect of the action.",
+        "commonMistake": {
+            "sentence": "他把我气。",
+            "correction": "他把我气得说不出话。",
+            "explanation": "Add a descriptive phrase after 得."
         },
-        // ge009: Compound direction complement — xiàlái/xiàqù
-        {
-            "id": "ge009",
-            "title": "V + 下来/下去 (xiàlái/xiàqù) - Downward",
-            "titleMeaning": "Compound direction: downward/continuation",
-            "level": "HSK 4",
-            "category": "DirectionComplements",
-            "commonMistake": "下来 = downward toward speaker OR continue to a stop. 下去 = downward away OR continue without stopping. '学下来' = learned and completed; '学下去' = continue learning.",
-            "pattern": "Verb + 下来/下去",
-            "explanation": "'下来'朝向说话人，表示持续到现在或停下来；'下去'背离说话人，表示继续到将来。",
-            "examples": [
-                { "chinese": "他从楼上走下来了。", "pinyin": "tā cóng lóu shàng zǒu xiàlái le.", "meaning": "He came downstairs." },
-                { "chinese": "我要坚持下去。", "pinyin": "wǒ yào jiānchí xiàqù.", "meaning": "I will keep persevering." },
-                { "chinese": "请把这些话记下来。", "pinyin": "qǐng bǎ zhèxiē huà jì xiàlái.", "meaning": "Please write these words down." }
-            ],
-            "practice": [
-                { "question": "他从楼上走___了。", "answer": "下来", "options": ["下来","下去","起来","出来"] },
-                { "question": "我要坚持___。", "answer": "下去", "options": ["下去","下来","起来","出来"] },
-                { "question": "请把这些话记___。", "answer": "下来", "options": ["下来","下去","起来","出来"] },
-                { "question": "雨慢慢地停___了。", "answer": "下来", "options": ["下来","下去","起来","出来"] },
-                { "question": "再这样___，你会失败的。", "answer": "下去", "options": ["下去","下来","起来","出来"] },
-                { "question": "他已经安顿___了。", "answer": "下来", "options": ["下来","下去","起来","出来"] },
-                { "question": "这个故事流传___了。", "answer": "下来", "options": ["下来","下去","起来","出来"] },
-                { "question": "帮我把箱子搬___。", "answer": "下来", "options": ["下来","下去","起来","出来"] }
-            ]
+        "examples": [
+            {
+                "cn": "他把我气得说不出话来。",
+                "pinyin": "tā bǎ wǒ qì de shuō bù chū huà lái.",
+                "en": "He made me so angry I could not speak."
+            },
+            {
+                "cn": "她把房间布置得很漂亮。",
+                "pinyin": "tā bǎ fángjiān bùzhì de hěn piàoliang.",
+                "en": "She decorated the room beautifully."
+            },
+            {
+                "cn": "他把故事讲得很有趣。",
+                "pinyin": "tā bǎ gùshì jiǎng de hěn yǒuqù.",
+                "en": "He told the story interestingly."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "她___我感动得哭了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "老师把课文解释___很清楚。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他把房间收拾___整整齐齐。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_009",
+        "title": "把 - Negative & Modal",
+        "titleMeaning": "Negation and modals with 把",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "S + Modal/Neg + 把 + O + V + Complement",
+        "explanation": "Negation and modals must come BEFORE 把, not before the verb.",
+        "commonMistake": {
+            "sentence": "我把没作业做完。",
+            "correction": "我没把作业做完。",
+            "explanation": "Negation goes before 把."
         },
-        // ge010: Compound direction complement — guòlái/guòqù
-        {
-            "id": "ge010",
-            "title": "V + 过来/过去 (guòlái/guòqù) - Cross over",
-            "titleMeaning": "Compound direction: crossing/returning",
-            "level": "HSK 4",
-            "category": "DirectionComplements",
-            "commonMistake": "过来 = come over (toward speaker) / return to normal '醒过来'. 过去 = go over (away) / lose consciousness '昏过去'.",
-            "pattern": "Verb + 过来/过去",
-            "explanation": "'过来'表示向着说话人移动，也比喻恢复正常状态；'过去'表示背离说话人，也比喻失去正常状态。",
-            "examples": [
-                { "chinese": "他从那边走过来了。", "pinyin": "tā cóng nà biān zǒu guòlái le.", "meaning": "He walked over from that side." },
-                { "chinese": "病人终于醒过来了。", "pinyin": "bìngrén zhōngyú xǐng guòlái le.", "meaning": "The patient finally woke up." },
-                { "chinese": "他晕过去了。", "pinyin": "tā yūn guòqù le.", "meaning": "He fainted." }
-            ],
-            "practice": [
-                { "question": "他从那边走___了。", "answer": "过来", "options": ["过来","过去","下来","出来"] },
-                { "question": "病人终于醒___了。", "answer": "过来", "options": ["过来","过去","下来","出来"] },
-                { "question": "他晕___了。", "answer": "过去", "options": ["过去","过来","下来","出来"] },
-                { "question": "你终于明白___了。", "answer": "过来", "options": ["过来","过去","下来","出来"] },
-                { "question": "他累得睡___了。", "answer": "过去", "options": ["过去","过来","下来","出来"] },
-                { "question": "我转过身子，面朝大家。转___。", "answer": "过来", "options": ["过来","过去","下来","出来"] },
-                { "question": "这个弯道很难拐___。", "answer": "过来", "options": ["过来","过去","下来","出来"] },
-                { "question": "他看___的时候我已经走了。", "answer": "过去", "options": ["过去","过来","下来","出来"] }
-            ]
-        }
-    ];
-    if (typeof GrammarData !== "undefined" && GrammarData.lessons) {
-        GrammarData.lessons = GrammarData.lessons.concat(items);
+        "examples": [
+            {
+                "cn": "我没把这件事告诉他。",
+                "pinyin": "wǒ méi bǎ zhè jiàn shì gàosu tā.",
+                "en": "I did not tell him."
+            },
+            {
+                "cn": "你能把窗户打开吗？",
+                "pinyin": "nǐ néng bǎ chuānghu dǎ kāi ma?",
+                "en": "Can you open the window?"
+            },
+            {
+                "cn": "她不想把秘密说出来。",
+                "pinyin": "tā bù xiǎng bǎ mìmì shuō chūlái.",
+                "en": "She does not want to reveal the secret."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___把这本书看完。",
+                "options": [
+                    "没",
+                    "把",
+                    "被",
+                    "让"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___把门关上吗？",
+                "options": [
+                    "能",
+                    "把",
+                    "被",
+                    "让"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___把真相说出来。",
+                "options": [
+                    "不敢",
+                    "不把",
+                    "没把",
+                    "不能"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_010",
+        "title": "把 vs 被 Contrast",
+        "titleMeaning": "把 vs 被 comparison",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "把=active disposal, 被=passive voice",
+        "explanation": "把 = subject acts on object. 被 = subject receives action. Both need complements.",
+        "commonMistake": {
+            "sentence": "他把老师批评了。",
+            "correction": "他被老师批评了。",
+            "explanation": "If subject receives action, use 被."
+        },
+        "examples": [
+            {
+                "cn": "他把杯子打碎了。",
+                "pinyin": "tā bǎ bēizi dǎ suì le.",
+                "en": "He broke the cup."
+            },
+            {
+                "cn": "杯子被他打碎了。",
+                "pinyin": "bēizi bèi tā dǎ suì le.",
+                "en": "The cup was broken by him."
+            },
+            {
+                "cn": "我把信寄出去了。",
+                "pinyin": "wǒ bǎ xìn jì chūqù le.",
+                "en": "I mailed the letter."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "猫___鱼吃了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "我___作业交给老师了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他的手机___偷了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 1
+            }
+        ]
+    },
+    {
+        "id": "gx_011",
+        "title": "被 (bèi) - Passive Voice",
+        "titleMeaning": "被字句 - Passive",
+        "level": 2,
+        "category": "Passive",
+        "pattern": "S + 被 + Agent + V + Complement",
+        "explanation": "被 marks passive voice. Subject receives action. Verb needs complement.",
+        "commonMistake": {
+            "sentence": "他被打。",
+            "correction": "他被打了。",
+            "explanation": "被 needs 了 or complement."
+        },
+        "examples": [
+            {
+                "cn": "他被老师批评了。",
+                "pinyin": "tā bèi lǎoshī pīpíng le.",
+                "en": "He was criticized."
+            },
+            {
+                "cn": "我的钱包被小偷偷了。",
+                "pinyin": "wǒ de qiánbāo bèi xiǎotōu tōu le.",
+                "en": "My wallet was stolen."
+            },
+            {
+                "cn": "她被公司开除了。",
+                "pinyin": "tā bèi gōngsī kāichú le.",
+                "en": "She was fired."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___狗咬了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我的手机___弟弟摔坏了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "小偷___警察抓住了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_012",
+        "title": "被 without Agent",
+        "titleMeaning": "被 without doer",
+        "level": 2,
+        "category": "Passive",
+        "pattern": "S + 被 + V + Complement",
+        "explanation": "When agent is unknown, 被 directly precedes the verb.",
+        "commonMistake": {
+            "sentence": "他被老师打。",
+            "correction": "他被打了一顿。",
+            "explanation": "Omit agent when unimportant."
+        },
+        "examples": [
+            {
+                "cn": "他的车被偷了。",
+                "pinyin": "tā de chē bèi tōu le.",
+                "en": "His car was stolen."
+            },
+            {
+                "cn": "窗户被打破了。",
+                "pinyin": "chuānghu bèi dǎ pò le.",
+                "en": "The window was broken."
+            },
+            {
+                "cn": "她被选为班长。",
+                "pinyin": "tā bèi xuǎn wèi bānzhǎng.",
+                "en": "She was elected monitor."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我的手机___偷了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "教室___打扫干净了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___选为代表。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_013",
+        "title": "叫/让 - Informal Passive",
+        "titleMeaning": "叫/让 passive",
+        "level": 2,
+        "category": "Passive",
+        "pattern": "S + 叫/让 + Agent + V + Complement",
+        "explanation": "叫/让 replace 被 in spoken Chinese but MUST have an agent.",
+        "commonMistake": {
+            "sentence": "他叫打了。",
+            "correction": "他叫狗打了。",
+            "explanation": "叫/让 need an agent."
+        },
+        "examples": [
+            {
+                "cn": "他叫狗咬了。",
+                "pinyin": "tā jiào gǒu yǎo le.",
+                "en": "He was bitten by a dog."
+            },
+            {
+                "cn": "我的书让他借走了。",
+                "pinyin": "wǒ de shū ràng tā jiè zǒu le.",
+                "en": "My book was borrowed."
+            },
+            {
+                "cn": "蛋糕叫弟弟吃完了。",
+                "pinyin": "dàngāo jiào dìdi chī wán le.",
+                "en": "The cake was finished."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我的笔___妹妹弄丢了。",
+                "options": [
+                    "让",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___老师叫走了。",
+                "options": [
+                    "让",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我的手___门夹了一下。",
+                "options": [
+                    "叫",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_014",
+        "title": "被 + 给",
+        "titleMeaning": "被 + 给 colloquial",
+        "level": 2,
+        "category": "Passive",
+        "pattern": "S + 被 + Agent + 给 + V + Complement",
+        "explanation": "Adding 给 after agent in 被 sentence is optional and colloquial.",
+        "commonMistake": {
+            "sentence": "他被人打。",
+            "correction": "他被人给打了。",
+            "explanation": "给 adds spoken flavor."
+        },
+        "examples": [
+            {
+                "cn": "他被我给骂了一顿。",
+                "pinyin": "tā bèi wǒ gěi mà le yí dùn.",
+                "en": "He got scolded."
+            },
+            {
+                "cn": "电脑被他给摔坏了。",
+                "pinyin": "diànnǎo bèi tā gěi shuāi huài le.",
+                "en": "Computer was broken."
+            },
+            {
+                "cn": "秘密让人给发现了。",
+                "pinyin": "mìmì ràng rén gěi fāxiàn le.",
+                "en": "Secret was discovered."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "蛋糕被我___吃完了。",
+                "options": [
+                    "给",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "窗户叫风___吹开了。",
+                "options": [
+                    "给",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "包让人___拿走了。",
+                "options": [
+                    "给",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_015",
+        "title": "被 + Result Complements",
+        "titleMeaning": "被动+结果补语",
+        "level": 3,
+        "category": "Passive",
+        "pattern": "S + 被 + Agent + V + Result Complement",
+        "explanation": "Result complements (完, 破, 碎, 开) indicate outcome.",
+        "commonMistake": {
+            "sentence": "我的杯子被他打。",
+            "correction": "我的杯子被他打碎了。",
+            "explanation": "Add a result complement."
+        },
+        "examples": [
+            {
+                "cn": "窗户被风吹开了。",
+                "pinyin": "chuānghu bèi fēng chuī kāi le.",
+                "en": "Window was blown open."
+            },
+            {
+                "cn": "书被孩子撕破了。",
+                "pinyin": "shū bèi háizi sī pò le.",
+                "en": "Book was torn."
+            },
+            {
+                "cn": "饭都被吃完了。",
+                "pinyin": "fàn dōu bèi chī wán le.",
+                "en": "Food was eaten."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "树被风___了。",
+                "options": [
+                    "吹倒",
+                    "吹",
+                    "倒下",
+                    "倒"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "衣服被雨___了。",
+                "options": [
+                    "淋湿",
+                    "淋",
+                    "湿",
+                    "下雨"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "手机被孩子___了。",
+                "options": [
+                    "摔坏",
+                    "摔",
+                    "坏",
+                    "打破"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_016",
+        "title": "被 + Direction Complements",
+        "titleMeaning": "被动+方向补语",
+        "level": 3,
+        "category": "Passive",
+        "pattern": "S + 被 + Agent + V + Direction Complement",
+        "explanation": "Direction complements describe movement from agent action.",
+        "commonMistake": {
+            "sentence": "他被赶出去。",
+            "correction": "他被赶出去了。",
+            "explanation": "了 is needed."
+        },
+        "examples": [
+            {
+                "cn": "他被老板叫回去了。",
+                "pinyin": "tā bèi lǎobǎn jiào huíqù le.",
+                "en": "He was called back."
+            },
+            {
+                "cn": "垃圾被扔出去了。",
+                "pinyin": "lājī bèi rēng chūqù le.",
+                "en": "Trash was thrown out."
+            },
+            {
+                "cn": "小鸟被放走了。",
+                "pinyin": "xiǎo niǎo bèi fàng zǒu le.",
+                "en": "Bird was set free."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他被经理___回去了。",
+                "options": [
+                    "叫",
+                    "把",
+                    "让",
+                    "被"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "钱被___拿走了。",
+                "options": [
+                    "人",
+                    "把",
+                    "从",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "垃圾被___出去了。",
+                "options": [
+                    "扔",
+                    "拿",
+                    "放",
+                    "带"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_017",
+        "title": "被 + Emotional Verbs",
+        "titleMeaning": "被动+情绪动词",
+        "level": 3,
+        "category": "Passive",
+        "pattern": "S + 被 + Agent + Emotion V + 得 + Description",
+        "explanation": "Emotion verbs (感动, 吓) in 被 need 得 complements.",
+        "commonMistake": {
+            "sentence": "他被感动。",
+            "correction": "他被感动得哭了。",
+            "explanation": "Emotion verbs need 得."
+        },
+        "examples": [
+            {
+                "cn": "她被感动得哭了。",
+                "pinyin": "tā bèi gǎndòng de kū le.",
+                "en": "She was moved to tears."
+            },
+            {
+                "cn": "他被吓得说不出话。",
+                "pinyin": "tā bèi xià de shuō bù chū huà.",
+                "en": "He was scared speechless."
+            },
+            {
+                "cn": "我被他的故事吸引住了。",
+                "pinyin": "wǒ bèi tā de gùshì xīyǐn zhù le.",
+                "en": "I was captivated."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "她___感动得哭了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "孩子___吓得躲起来了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "大家___他的勇敢打动了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_018",
+        "title": "被 - Negation",
+        "titleMeaning": "否定被动句",
+        "level": 3,
+        "category": "Passive",
+        "pattern": "S + Neg + 被 + Agent + V + Complement",
+        "explanation": "Negation before 被. Use 没 for past, 不 for general.",
+        "commonMistake": {
+            "sentence": "他被没批评。",
+            "correction": "他没被批评。",
+            "explanation": "Negation before 被."
+        },
+        "examples": [
+            {
+                "cn": "我没被他骗了。",
+                "pinyin": "wǒ méi bèi tā piàn le.",
+                "en": "I was not fooled."
+            },
+            {
+                "cn": "她不想被人看不起。",
+                "pinyin": "tā bù xiǎng bèi rén kàn bù qǐ.",
+                "en": "She does not want to be looked down on."
+            },
+            {
+                "cn": "这个秘密没被发现。",
+                "pinyin": "zhège mìmì méi bèi fāxiàn.",
+                "en": "Secret not discovered."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___被老师批评。",
+                "options": [
+                    "没",
+                    "不",
+                    "把",
+                    "让"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___想被人笑话。",
+                "options": [
+                    "不",
+                    "没",
+                    "把",
+                    "让"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___被选上。",
+                "options": [
+                    "没",
+                    "不",
+                    "把",
+                    "让"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_019",
+        "title": "被 vs 把 Summary",
+        "titleMeaning": "被把总结",
+        "level": 3,
+        "category": "Passive",
+        "pattern": "把=active, 被=passive",
+        "explanation": "把 = S acts on O. 被 = S receives action. Both need complements. Negation before.",
+        "commonMistake": {
+            "sentence": "我把老师批评了。",
+            "correction": "我被老师批评了。",
+            "explanation": "When someone acts on you, use 被."
+        },
+        "examples": [
+            {
+                "cn": "我把蛋糕吃了。",
+                "pinyin": "wǒ bǎ dàngāo chī le.",
+                "en": "I ate the cake."
+            },
+            {
+                "cn": "蛋糕被吃了。",
+                "pinyin": "dàngāo bèi chī le.",
+                "en": "Cake was eaten."
+            },
+            {
+                "cn": "我把信寄了。",
+                "pinyin": "wǒ bǎ xìn jì le.",
+                "en": "I mailed the letter."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___作业写完了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "钱包___偷了。",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___我打了。",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_020",
+        "title": "比 (bǐ) - Basic Comparison",
+        "titleMeaning": "比 - Basic comparison",
+        "level": 1,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + Adjective",
+        "explanation": "A 比 B + adj = A is more adj than B. No extra degree word needed.",
+        "commonMistake": {
+            "sentence": "他比我更很高。",
+            "correction": "他比我高。",
+            "explanation": "No 很 after 比."
+        },
+        "examples": [
+            {
+                "cn": "他比我高。",
+                "pinyin": "tā bǐ wǒ gāo.",
+                "en": "He is taller."
+            },
+            {
+                "cn": "今天比昨天热。",
+                "pinyin": "jīntiān bǐ zuótiān rè.",
+                "en": "Today is hotter."
+            },
+            {
+                "cn": "这个比那个贵。",
+                "pinyin": "zhège bǐ nàge guì.",
+                "en": "This is more expensive."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___我大两岁。",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天___昨天冷。",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这本___那本有意思。",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_021",
+        "title": "比 + Specific Difference",
+        "titleMeaning": "比+具体差异",
+        "level": 1,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + Adj + Amount",
+        "explanation": "Add a specific measure to quantify the difference.",
+        "commonMistake": {
+            "sentence": "他比我高很。",
+            "correction": "他比我高三公分。",
+            "explanation": "Use specific measures."
+        },
+        "examples": [
+            {
+                "cn": "他比我大三岁。",
+                "pinyin": "tā bǐ wǒ dà sān suì.",
+                "en": "Three years older."
+            },
+            {
+                "cn": "今天比昨天高五度。",
+                "pinyin": "jīntiān bǐ zuótiān gāo wǔ dù.",
+                "en": "Five degrees hotter."
+            },
+            {
+                "cn": "这个比那个贵十块。",
+                "pinyin": "zhège bǐ nàge guì shí kuài.",
+                "en": "Ten yuan more."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他比我高五___。",
+                "options": [
+                    "公分",
+                    "个",
+                    "块",
+                    "条"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "姐姐比我大两___。",
+                "options": [
+                    "岁",
+                    "年",
+                    "月",
+                    "天"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这本比那本贵十___。",
+                "options": [
+                    "块",
+                    "个",
+                    "条",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_022",
+        "title": "没有 - Not as...as",
+        "titleMeaning": "没有 - Less than",
+        "level": 1,
+        "category": "Comparisons",
+        "pattern": "A + 没有 + B + Adjective",
+        "explanation": "A 没有 B + adj = A is not as adj as B.",
+        "commonMistake": {
+            "sentence": "他比我不好。",
+            "correction": "他没有我好。",
+            "explanation": "Use 没有 for negative comparisons."
+        },
+        "examples": [
+            {
+                "cn": "我没有他高。",
+                "pinyin": "wǒ méiyǒu tā gāo.",
+                "en": "Not as tall."
+            },
+            {
+                "cn": "今天没有昨天热。",
+                "pinyin": "jīntiān méiyǒu zuótiān rè.",
+                "en": "Not as hot."
+            },
+            {
+                "cn": "这个没有那个贵。",
+                "pinyin": "zhège méiyǒu nàge guì.",
+                "en": "Not as expensive."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___他那么高。",
+                "options": [
+                    "没有",
+                    "不比",
+                    "比",
+                    "有"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天___昨天暖和。",
+                "options": [
+                    "没有",
+                    "不比",
+                    "比",
+                    "有"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个___那个好看。",
+                "options": [
+                    "没有",
+                    "不比",
+                    "比",
+                    "有"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_023",
+        "title": "跟...一样 - Equal",
+        "titleMeaning": "跟...一样 equality",
+        "level": 1,
+        "category": "Comparisons",
+        "pattern": "A + 跟 + B + 一样 + Adjective",
+        "explanation": "跟...一样 expresses equality. Adjective optional.",
+        "commonMistake": {
+            "sentence": "他跟我一样高。",
+            "correction": "他跟我一样高。",
+            "explanation": "Correct! 跟 can be 和/与."
+        },
+        "examples": [
+            {
+                "cn": "他跟我一样高。",
+                "pinyin": "tā gēn wǒ yíyàng gāo.",
+                "en": "Same height."
+            },
+            {
+                "cn": "你的手机跟我的一样。",
+                "pinyin": "nǐ de shǒujī gēn wǒ de yíyàng.",
+                "en": "Same as mine."
+            },
+            {
+                "cn": "这个跟那个一样贵。",
+                "pinyin": "zhège gēn nàge yíyàng guì.",
+                "en": "As expensive."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___你一样大。",
+                "options": [
+                    "跟",
+                    "比",
+                    "对",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她的裙子___我的一样。",
+                "options": [
+                    "和",
+                    "比",
+                    "对",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个___那个一样重。",
+                "options": [
+                    "跟",
+                    "比",
+                    "对",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_024",
+        "title": "比 + 更/还",
+        "titleMeaning": "比 - even more",
+        "level": 2,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + 更/还 + Adj",
+        "explanation": "更/还 add \"even more\". 还 is more colloquial.",
+        "commonMistake": {
+            "sentence": "他比我更很高。",
+            "correction": "他比我更高。",
+            "explanation": "No 很 with 更."
+        },
+        "examples": [
+            {
+                "cn": "他比我更高。",
+                "pinyin": "tā bǐ wǒ gèng gāo.",
+                "en": "Even taller."
+            },
+            {
+                "cn": "今天比昨天还热。",
+                "pinyin": "jīntiān bǐ zuótiān hái rè.",
+                "en": "Even hotter."
+            },
+            {
+                "cn": "这个比那个更漂亮。",
+                "pinyin": "zhège bǐ nàge gèng piàoliang.",
+                "en": "Even prettier."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___高。",
+                "options": [
+                    "比我更",
+                    "更比我",
+                    "比我更很",
+                    "很比我"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天比昨天___冷。",
+                "options": [
+                    "还",
+                    "很",
+                    "太",
+                    "真"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个比那个___好吃。",
+                "options": [
+                    "更",
+                    "很",
+                    "太",
+                    "真"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_025",
+        "title": "比 - Verb Comparison",
+        "titleMeaning": "比+动词比较",
+        "level": 2,
+        "category": "Comparisons",
+        "pattern": "A + V + 得 + 比 + B + Complement",
+        "explanation": "Compare actions: A+V+得+比+B+complement.",
+        "commonMistake": {
+            "sentence": "他比我跑得快。",
+            "correction": "他跑得比我快。",
+            "explanation": "Both structures work."
+        },
+        "examples": [
+            {
+                "cn": "他跑得比我快。",
+                "pinyin": "tā pǎo de bǐ wǒ kuài.",
+                "en": "He runs faster."
+            },
+            {
+                "cn": "她唱歌比我唱得好。",
+                "pinyin": "tā chànggē bǐ wǒ chàng de hǎo.",
+                "en": "She sings better."
+            },
+            {
+                "cn": "你吃饭比我吃得慢。",
+                "pinyin": "nǐ chīfàn bǐ wǒ chī de màn.",
+                "en": "You eat slower."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他写___比我写得好。",
+                "options": [
+                    "字",
+                    "文",
+                    "书",
+                    "信"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她跑得___我快。",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我说中文___他说得好。",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_026",
+        "title": "比 + 多/少 + Verb",
+        "titleMeaning": "比+多少+动词",
+        "level": 2,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + 多/少 + V + O",
+        "explanation": "多/少 before verb indicates doing more/less.",
+        "commonMistake": {
+            "sentence": "他比我吃得多。",
+            "correction": "他比我多吃一碗饭。",
+            "explanation": "多/少 before verb."
+        },
+        "examples": [
+            {
+                "cn": "他比我多吃了一碗饭。",
+                "pinyin": "tā bǐ wǒ duō chī le yì wǎn fàn.",
+                "en": "He ate one more bowl."
+            },
+            {
+                "cn": "我比她少花了十块。",
+                "pinyin": "wǒ bǐ tā shǎo huā le shí kuài.",
+                "en": "I spent ten less."
+            },
+            {
+                "cn": "她比我多等了十分钟。",
+                "pinyin": "tā bǐ wǒ duō děng le shí fēnzhōng.",
+                "en": "She waited ten more minutes."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他比我___喝了一杯酒。",
+                "options": [
+                    "多",
+                    "少",
+                    "更",
+                    "还"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天比昨天___睡了一小时。",
+                "options": [
+                    "多",
+                    "少",
+                    "更",
+                    "还"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我比她___花了一百块。",
+                "options": [
+                    "少",
+                    "多",
+                    "更",
+                    "还"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_027",
+        "title": "比 + 得多/多了",
+        "titleMeaning": "比+得多 - much more",
+        "level": 2,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + Adj + 得多/多了",
+        "explanation": "Add 得多/多了 to emphasize a large difference.",
+        "commonMistake": {
+            "sentence": "他比我很高。",
+            "correction": "他比我高得多。",
+            "explanation": "Use 得多 not 很."
+        },
+        "examples": [
+            {
+                "cn": "他比我高得多。",
+                "pinyin": "tā bǐ wǒ gāo de duō.",
+                "en": "Much taller."
+            },
+            {
+                "cn": "今天比昨天冷多了。",
+                "pinyin": "jīntiān bǐ zuótiān lěng duō le.",
+                "en": "Much colder."
+            },
+            {
+                "cn": "这个比那个好看多了。",
+                "pinyin": "zhège bǐ nàge hǎokàn duō le.",
+                "en": "Much prettier."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他比我高___。",
+                "options": [
+                    "得多",
+                    "很多",
+                    "得多很",
+                    "多"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这件比那件漂亮___。",
+                "options": [
+                    "多了",
+                    "很多",
+                    "多",
+                    "很大"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她跳舞比我跳得好___。",
+                "options": [
+                    "得多",
+                    "很多",
+                    "多",
+                    "很大"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_028",
+        "title": "比 - Questions",
+        "titleMeaning": "比 - 问句",
+        "level": 1,
+        "category": "Comparisons",
+        "pattern": "A + 比 + B + Adj + 吗/多少",
+        "explanation": "Questions: 吗. Alternative: A+比+B+Adj+不+Adj. Quantity: 多少.",
+        "commonMistake": {
+            "sentence": "他比你高吗？",
+            "correction": "他比你高吗？",
+            "explanation": "This is correct."
+        },
+        "examples": [
+            {
+                "cn": "他比你高吗？",
+                "pinyin": "tā bǐ nǐ gāo ma?",
+                "en": "Is he taller?"
+            },
+            {
+                "cn": "今天比昨天热不热？",
+                "pinyin": "jīntiān bǐ zuótiān rè bú rè?",
+                "en": "Is today hotter?"
+            },
+            {
+                "cn": "这个比那个贵多少？",
+                "pinyin": "zhège bǐ nàge guì duōshao?",
+                "en": "How much more?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他比你大___？",
+                "options": [
+                    "吗",
+                    "什么",
+                    "谁",
+                    "哪"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天比昨天冷___冷？",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "很"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个比那个贵___？",
+                "options": [
+                    "多少",
+                    "什么",
+                    "怎么",
+                    "什么"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_029",
+        "title": "不如 (bùrú)",
+        "titleMeaning": "不如 - not as good as",
+        "level": 2,
+        "category": "Comparisons",
+        "pattern": "A + 不如 + B + Adjective",
+        "explanation": "不如 = A is not as good as B. Stronger than 没有.",
+        "commonMistake": {
+            "sentence": "我不如他很高。",
+            "correction": "我不如他高。",
+            "explanation": "No degree word after 不如."
+        },
+        "examples": [
+            {
+                "cn": "我不如他努力。",
+                "pinyin": "wǒ bùrú tā nǔlì.",
+                "en": "Not as hardworking."
+            },
+            {
+                "cn": "这家店不如那家好。",
+                "pinyin": "zhè jiā diàn bùrú nà jiā hǎo.",
+                "en": "Not as good as that store."
+            },
+            {
+                "cn": "坐地铁不如打车快。",
+                "pinyin": "zuò dìtiě bùrú dǎchē kuài.",
+                "en": "Subway not as fast."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___你这么聪明。",
+                "options": [
+                    "不如",
+                    "不比",
+                    "不比有",
+                    "不如比"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他的汉语___你。",
+                "options": [
+                    "不如",
+                    "不比",
+                    "不如有",
+                    "不比没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "走路___骑车方便。",
+                "options": [
+                    "不如",
+                    "不比",
+                    "不如没",
+                    "不是"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_030",
+        "title": "得 (de) - Degree Complement",
+        "titleMeaning": "得 complement - degree",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "Verb + 得 + Adjective/Phrase",
+        "explanation": "得 connects a verb to a complement describing degree or manner.",
+        "commonMistake": {
+            "sentence": "他跑得快。",
+            "correction": "他跑得很快。",
+            "explanation": "Add modifier before bare adj."
+        },
+        "examples": [
+            {
+                "cn": "他跑得很快。",
+                "pinyin": "tā pǎo de hěn kuài.",
+                "en": "He runs fast."
+            },
+            {
+                "cn": "她说得很好。",
+                "pinyin": "tā shuō de hěn hǎo.",
+                "en": "She speaks well."
+            },
+            {
+                "cn": "学生们学得很认真。",
+                "pinyin": "xuésheng men xué de hěn rènzhēn.",
+                "en": "They study diligently."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "她唱___很好听。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他写___很漂亮。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "大家玩___很开心。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_031",
+        "title": "得 + Phrase",
+        "titleMeaning": "得 with phrase complement",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "Subject + Verb + 得 + Descriptive Phrase",
+        "explanation": "Full phrases after 得 describe the degree of the action.",
+        "commonMistake": {
+            "sentence": "他气说得不出来话。",
+            "correction": "他气得说不出话来。",
+            "explanation": "Correct phrase after 得."
+        },
+        "examples": [
+            {
+                "cn": "他气得说不出话来。",
+                "pinyin": "tā qì de shuō bù chū huà lái.",
+                "en": "So angry he could not speak."
+            },
+            {
+                "cn": "他忙得连饭都忘了吃。",
+                "pinyin": "tā máng de lián fàn dōu wàng le chī.",
+                "en": "So busy he forgot to eat."
+            },
+            {
+                "cn": "她高兴得跳了起来。",
+                "pinyin": "tā gāoxìng de tiào le qǐlái.",
+                "en": "So happy she jumped."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他急___直转圈。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我累___不想动。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她开心___笑了。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_032",
+        "title": "得 with Single Adjective",
+        "titleMeaning": "得+单个形容词",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "Verb + 得 + 很 + Adjective",
+        "explanation": "A single bare adjective after 得 sounds incomplete. Add 很.",
+        "commonMistake": {
+            "sentence": "他说得快。",
+            "correction": "他说得很快。",
+            "explanation": "Add 很 before the adjective."
+        },
+        "examples": [
+            {
+                "cn": "他来得很快。",
+                "pinyin": "tā lái de hěn kuài.",
+                "en": "He came quickly."
+            },
+            {
+                "cn": "她长得非常漂亮。",
+                "pinyin": "tā zhǎng de fēicháng piàoliang.",
+                "en": "She is very pretty."
+            },
+            {
+                "cn": "饭吃得很饱。",
+                "pinyin": "fàn chī de hěn bǎo.",
+                "en": "Ate until full."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他走___很慢。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她说___很清楚。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "大家听___很认真。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_033",
+        "title": "得 - Extreme Complements",
+        "titleMeaning": "得+极端程度",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "Verb/Adj + 得 + 不得了/要死/不行",
+        "explanation": "Use extreme expressions after 得 for high degree.",
+        "commonMistake": {
+            "sentence": "他高兴得要死了。",
+            "correction": "他高兴得不得了。",
+            "explanation": "不得了 is more common."
+        },
+        "examples": [
+            {
+                "cn": "他高兴得不得了。",
+                "pinyin": "tā gāoxìng de bùdéliǎo.",
+                "en": "Extremely happy."
+            },
+            {
+                "cn": "今天热得要死。",
+                "pinyin": "jīntiān rè de yào sǐ.",
+                "en": "Unbearably hot."
+            },
+            {
+                "cn": "我累得不行。",
+                "pinyin": "wǒ lèi de bùxíng.",
+                "en": "Extremely tired."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他忙得___。",
+                "options": [
+                    "不得了",
+                    "得要死",
+                    "不行",
+                    "要命"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "今天冷得___。",
+                "options": [
+                    "要死",
+                    "不得了",
+                    "不行",
+                    "非常"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我饿得___了。",
+                "options": [
+                    "不行",
+                    "不得了",
+                    "要命",
+                    "非常"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_034",
+        "title": "得 in Questions",
+        "titleMeaning": "得 - 问句",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "Verb + 得 + Adj + 吗/不/怎么样",
+        "explanation": "Ask about degree with 吗, V+得+A+不+A, or 怎么样.",
+        "commonMistake": {
+            "sentence": "他说很好？",
+            "correction": "他说得好不好？",
+            "explanation": "V+得+A+不+A for degree."
+        },
+        "examples": [
+            {
+                "cn": "他说得好不好？",
+                "pinyin": "tā shuō de hǎo bù hǎo?",
+                "en": "Does he speak well?"
+            },
+            {
+                "cn": "你住得习惯吗？",
+                "pinyin": "nǐ zhù de xíguàn ma?",
+                "en": "Used to living here?"
+            },
+            {
+                "cn": "他写得怎么样？",
+                "pinyin": "tā xiě de zěnme yàng?",
+                "en": "How is his writing?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他唱得好___好？",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "很"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你吃___习惯吗？",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他画得___样？",
+                "options": [
+                    "怎么",
+                    "什么",
+                    "哪",
+                    "谁"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_035",
+        "title": "得 with Adjectives",
+        "titleMeaning": "形容词+得",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "Adjective + 得 + Complement Phrase",
+        "explanation": "Adjectives (not just verbs) take 得 for degree/result.",
+        "commonMistake": {
+            "sentence": "他很生气打人。",
+            "correction": "他气得打人。",
+            "explanation": "Use 得 after the adjective."
+        },
+        "examples": [
+            {
+                "cn": "他累得走不动了。",
+                "pinyin": "tā lèi de zǒu bù dòng le.",
+                "en": "So tired he cannot walk."
+            },
+            {
+                "cn": "孩子困得睡着了。",
+                "pinyin": "háizi kùn de shuì zháo le.",
+                "en": "So sleepy he fell asleep."
+            },
+            {
+                "cn": "她激动得哭了。",
+                "pinyin": "tā jīdòng de kū le.",
+                "en": "So excited she cried."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他饿___没力气了。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她冷___发抖。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我忙___没时间吃饭。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_036",
+        "title": "得 - Negation",
+        "titleMeaning": "得 complement negation",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "Subject + Verb + 得 + 不 + Adjective",
+        "explanation": "Negate a 得 complement with 不 before the adjective.",
+        "commonMistake": {
+            "sentence": "他不跑得很快。",
+            "correction": "他跑得不快。",
+            "explanation": "Negation after 得."
+        },
+        "examples": [
+            {
+                "cn": "他跑得不快。",
+                "pinyin": "tā pǎo de bú kuài.",
+                "en": "He does not run fast."
+            },
+            {
+                "cn": "她说得不对。",
+                "pinyin": "tā shuō de bú duì.",
+                "en": "She did not say correctly."
+            },
+            {
+                "cn": "他写得不好。",
+                "pinyin": "tā xiě de bù hǎo.",
+                "en": "He does not write well."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他唱得___好。",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "很"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她做___不对。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我说___不清楚。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_037",
+        "title": "得/地/的 Distinction",
+        "titleMeaning": "得/地/的辨析",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "得=complement, 地=adverb, 的=adj/possessive",
+        "explanation": "得: after verbs. 地: after adverbs before verbs. 的: before nouns.",
+        "commonMistake": {
+            "sentence": "他认真的学习。",
+            "correction": "他认真地学习。",
+            "explanation": "Use 地 for adverbs before verbs."
+        },
+        "examples": [
+            {
+                "cn": "他跑得很快。",
+                "pinyin": "tā pǎo de hěn kuài.",
+                "en": "He runs fast."
+            },
+            {
+                "cn": "她认真地学习。",
+                "pinyin": "tā rènzhēn de xuéxí.",
+                "en": "She studies seriously."
+            },
+            {
+                "cn": "这是一本很好的书。",
+                "pinyin": "zhè shì yì běn hěn hǎo de shū.",
+                "en": "A very good book."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他高兴___笑了。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她轻轻___走过来。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这是我___书。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_038",
+        "title": "得 + 像...一样",
+        "titleMeaning": "得+像...一样比较",
+        "level": 3,
+        "category": "Complements",
+        "pattern": "Verb + 得 + 像 + N + 一样 + Adj",
+        "explanation": "Combine 得 with 像...一样 for vivid comparisons.",
+        "commonMistake": {
+            "sentence": "他跑像风一样快。",
+            "correction": "他跑得像风一样快。",
+            "explanation": "Need 得 between verb and 像."
+        },
+        "examples": [
+            {
+                "cn": "他跑得像风一样快。",
+                "pinyin": "tā pǎo de xiàng fēng yíyàng kuài.",
+                "en": "Fast as wind."
+            },
+            {
+                "cn": "她笑得像花一样美。",
+                "pinyin": "tā xiào de xiàng huā yíyàng měi.",
+                "en": "Beautiful as a flower."
+            },
+            {
+                "cn": "他吃得像猪一样多。",
+                "pinyin": "tā chī de xiàng zhū yíyàng duō.",
+                "en": "Eats like a pig."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他跑___像飞一样快。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她睡___像婴儿一样香。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他吃___像马一样多。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_039",
+        "title": "VO + 得 Complement",
+        "titleMeaning": "动宾+得补语",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "Verb + Object + Verb + 得 + Complement",
+        "explanation": "When verb takes an object, repeat the verb before 得.",
+        "commonMistake": {
+            "sentence": "他看书得很快。",
+            "correction": "他看书看得很快。",
+            "explanation": "Repeat verb after object."
+        },
+        "examples": [
+            {
+                "cn": "他看书看得很快。",
+                "pinyin": "tā kàn shū kàn de hěn kuài.",
+                "en": "Reads fast."
+            },
+            {
+                "cn": "她唱歌唱得很好听。",
+                "pinyin": "tā chàng gē chàng de hěn hǎotīng.",
+                "en": "Sings beautifully."
+            },
+            {
+                "cn": "我写汉字写得很慢。",
+                "pinyin": "wǒ xiě hànzì xiě de hěn màn.",
+                "en": "Writes characters slowly."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他吃饭吃___很快。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我中文说得___好。",
+                "options": [
+                    "很",
+                    "得",
+                    "的",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她跳舞跳___很美。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_040",
+        "title": "了 - Completed Action",
+        "titleMeaning": "了 - Action completion",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "Subject + Verb + 了 + Object",
+        "explanation": "了 after verb indicates action completion. Emphasizes completion.",
+        "commonMistake": {
+            "sentence": "我昨天去图书馆。",
+            "correction": "我昨天去了图书馆。",
+            "explanation": "Add 了 after verb for completed action."
+        },
+        "examples": [
+            {
+                "cn": "我吃了早饭。",
+                "pinyin": "wǒ chī le zǎofàn.",
+                "en": "I ate breakfast."
+            },
+            {
+                "cn": "他买了一本书。",
+                "pinyin": "tā mǎi le yì běn shū.",
+                "en": "He bought a book."
+            },
+            {
+                "cn": "我们看了电影。",
+                "pinyin": "wǒmen kàn le diànyǐng.",
+                "en": "We watched a movie."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___早饭。",
+                "options": [
+                    "吃了",
+                    "吃着",
+                    "吃过",
+                    "吃呢"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___一本书。",
+                "options": [
+                    "买了",
+                    "买着",
+                    "买过",
+                    "买呢"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我们___电影。",
+                "options": [
+                    "看了",
+                    "看着",
+                    "看过",
+                    "看呢"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_041",
+        "title": "了 - Change of State",
+        "titleMeaning": "了 - New situation",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "Subject + Predicate + 了",
+        "explanation": "Sentence-final 了 = change of state or new situation. \"now\"/\"already\".",
+        "commonMistake": {
+            "sentence": "我饿了。",
+            "correction": "我饿了。",
+            "explanation": "Correct! New state."
+        },
+        "examples": [
+            {
+                "cn": "我饿了。",
+                "pinyin": "wǒ è le.",
+                "en": "I am hungry now."
+            },
+            {
+                "cn": "他有钱了。",
+                "pinyin": "tā yǒu qián le.",
+                "en": "He has money now."
+            },
+            {
+                "cn": "天气冷了。",
+                "pinyin": "tiānqì lěng le.",
+                "en": "Weather got cold."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我二十岁___。",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "现在他不抽烟___。",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "春天___花开了。",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_042",
+        "title": "了 - Double 了",
+        "titleMeaning": "V+了+O+了",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "S + V + 了 + O + 了",
+        "explanation": "First 了=completion, second=current relevance. Strong emphasis.",
+        "commonMistake": {
+            "sentence": "我吃饭了。",
+            "correction": "我吃了饭了。",
+            "explanation": "V+了+O+了 for both."
+        },
+        "examples": [
+            {
+                "cn": "我吃了饭了。",
+                "pinyin": "wǒ chī le fàn le.",
+                "en": "I have eaten."
+            },
+            {
+                "cn": "他去了上海了。",
+                "pinyin": "tā qù le shànghǎi le.",
+                "en": "He has gone to Shanghai."
+            },
+            {
+                "cn": "他们买了房子了。",
+                "pinyin": "tāmen mǎi le fángzi le.",
+                "en": "They have bought a house."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我吃___饭___。",
+                "options": [
+                    "了/了",
+                    "了/过",
+                    "过/了",
+                    "的/了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他买___车___。",
+                "options": [
+                    "了/了",
+                    "了/过",
+                    "过/了",
+                    "的/了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她找___工作___。",
+                "options": [
+                    "了/了",
+                    "了/过",
+                    "过/了",
+                    "的/了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_043",
+        "title": "了 - Negation 没",
+        "titleMeaning": "否定完成",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "Subject + 没 + Verb + Object",
+        "explanation": "Use 没 (not 不) to negate completed actions. Remove 了 after verb.",
+        "commonMistake": {
+            "sentence": "我不吃了早饭。",
+            "correction": "我没吃早饭。",
+            "explanation": "Use 没, remove 了."
+        },
+        "examples": [
+            {
+                "cn": "我没吃早饭。",
+                "pinyin": "wǒ méi chī zǎofàn.",
+                "en": "I did not eat breakfast."
+            },
+            {
+                "cn": "他没买那本书。",
+                "pinyin": "tā méi mǎi nà běn shū.",
+                "en": "He did not buy that book."
+            },
+            {
+                "cn": "我们昨天没看电影。",
+                "pinyin": "wǒmen zuótiān méi kàn diànyǐng.",
+                "en": "We did not watch a movie."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___吃早饭。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___买那本书。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "昨天我___去学校。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_044",
+        "title": "了 - Sequential Actions",
+        "titleMeaning": "了 - 顺序动作",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V1+了+O1, V2+了+O2",
+        "explanation": "了 marks each completed action in sequence.",
+        "commonMistake": {
+            "sentence": "我吃饭去学校。",
+            "correction": "我吃了饭去了学校。",
+            "explanation": "Add 了 after each verb."
+        },
+        "examples": [
+            {
+                "cn": "我吃了饭就去学校。",
+                "pinyin": "wǒ chī le fàn jiù qù xuéxiào.",
+                "en": "I ate and went to school."
+            },
+            {
+                "cn": "他买了东西就回家了。",
+                "pinyin": "tā mǎi le dōngxi jiù huí jiā le.",
+                "en": "He bought things and went home."
+            },
+            {
+                "cn": "她看了信就哭了。",
+                "pinyin": "tā kàn le xìn jiù kū le.",
+                "en": "She read the letter and cried."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我吃了饭___去上班。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___了信就哭了。",
+                "options": [
+                    "看",
+                    "看了",
+                    "看着",
+                    "看过"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "她买了衣服___回家了。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_045",
+        "title": "了 vs 过",
+        "titleMeaning": "了 vs 过",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "了=completion, 过=experience",
+        "explanation": "了 = specific completed action. 过 = having experienced at some point.",
+        "commonMistake": {
+            "sentence": "我去过中国了。",
+            "correction": "我去过中国。",
+            "explanation": "了 not needed with 过 normally."
+        },
+        "examples": [
+            {
+                "cn": "我吃了北京烤鸭。",
+                "pinyin": "wǒ chī le běijīng kǎoyā.",
+                "en": "I ate Peking duck (specific)."
+            },
+            {
+                "cn": "我吃过北京烤鸭。",
+                "pinyin": "wǒ chī guo běijīng kǎoyā.",
+                "en": "I have eaten Peking duck."
+            },
+            {
+                "cn": "我去年去了中国。",
+                "pinyin": "wǒ qùnián qù le zhōngguó.",
+                "en": "I went to China last year."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我吃___北京烤鸭很好吃。",
+                "options": [
+                    "了",
+                    "过",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你去___长城吗？",
+                "options": [
+                    "过",
+                    "了",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我昨天看___那部电影。",
+                "options": [
+                    "了",
+                    "过",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_046",
+        "title": "了 - No Habitual",
+        "titleMeaning": "了不用于习惯",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "Habitual: no 了",
+        "explanation": "了 is not used for habitual/recurring actions.",
+        "commonMistake": {
+            "sentence": "我每天吃了早饭。",
+            "correction": "我每天吃早饭。",
+            "explanation": "Habitual actions do not use 了."
+        },
+        "examples": [
+            {
+                "cn": "我每天吃早饭。",
+                "pinyin": "wǒ měitiān chī zǎofàn.",
+                "en": "I eat breakfast daily."
+            },
+            {
+                "cn": "他常常去图书馆。",
+                "pinyin": "tā chángcháng qù túshūguǎn.",
+                "en": "He often goes to library."
+            },
+            {
+                "cn": "我们周末打篮球。",
+                "pinyin": "wǒmen zhōumò dǎ lánqiú.",
+                "en": "We play basketball on weekends."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我每天早上___咖啡。",
+                "options": [
+                    "喝",
+                    "喝了",
+                    "喝着",
+                    "喝过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他每天都___跑步。",
+                "options": [
+                    "去",
+                    "去了",
+                    "去过",
+                    "去着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我们周末___电影。",
+                "options": [
+                    "看",
+                    "看了",
+                    "看过",
+                    "看着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_047",
+        "title": "了 - No Stative Verbs",
+        "titleMeaning": "了不用于状态动词",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "Stative verbs: no V+了",
+        "explanation": "Stative verbs (是, 在, 有, 喜欢) do not take 了 after them.",
+        "commonMistake": {
+            "sentence": "我是了学生。",
+            "correction": "我是学生。",
+            "explanation": "是 is stative."
+        },
+        "examples": [
+            {
+                "cn": "我是学生。",
+                "pinyin": "wǒ shì xuéshēng.",
+                "en": "I am a student."
+            },
+            {
+                "cn": "他有很多书。",
+                "pinyin": "tā yǒu hěn duō shū.",
+                "en": "He has many books."
+            },
+            {
+                "cn": "我喜欢音乐。",
+                "pinyin": "wǒ xǐhuān yīnyuè.",
+                "en": "I like music."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___学生。",
+                "options": [
+                    "是",
+                    "是了",
+                    "是过",
+                    "是着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他现在___很多钱。",
+                "options": [
+                    "有",
+                    "有了",
+                    "有过",
+                    "有着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___喜欢看书。",
+                "options": [
+                    "很",
+                    "很了",
+                    "很过",
+                    "很着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_048",
+        "title": "了 in Imperatives",
+        "titleMeaning": "了 - 祈使句",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "别+V+了 / V+了",
+        "explanation": "别...了=stop doing. V+了=start doing (吃饭了=time to eat).",
+        "commonMistake": {
+            "sentence": "别说话！",
+            "correction": "别说话了！",
+            "explanation": "Add 了 to mean stop."
+        },
+        "examples": [
+            {
+                "cn": "别说话了！",
+                "pinyin": "bié shuōhuà le!",
+                "en": "Stop talking!"
+            },
+            {
+                "cn": "快走了！",
+                "pinyin": "kuài zǒu le!",
+                "en": "Let us go!"
+            },
+            {
+                "cn": "吃饭了！",
+                "pinyin": "chīfàn le!",
+                "en": "Time to eat!"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "别哭___。",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "快走___！",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "上课___快进去！",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_049",
+        "title": "了 - Summary",
+        "titleMeaning": "了总结",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V+了=completion; end 了=change; double 了=both",
+        "explanation": "Three uses. Not with statives or habituals.",
+        "commonMistake": {
+            "sentence": "我昨天是了在家。",
+            "correction": "我昨天在家。",
+            "explanation": "是 is stative."
+        },
+        "examples": [
+            {
+                "cn": "我吃了药了。",
+                "pinyin": "wǒ chī le yào le.",
+                "en": "I have taken medicine."
+            },
+            {
+                "cn": "他去了美国了。",
+                "pinyin": "tā qù le měiguó le.",
+                "en": "He has gone to the US."
+            },
+            {
+                "cn": "我会说中文了。",
+                "pinyin": "wǒ huì shuō zhōngwén le.",
+                "en": "I can speak Chinese now."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我吃___药___。",
+                "options": [
+                    "了/了",
+                    "了/的",
+                    "过/了",
+                    "的/了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她学会开车___。",
+                "options": [
+                    "了",
+                    "的",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他每天___咖啡。",
+                "options": [
+                    "喝",
+                    "喝了",
+                    "喝着",
+                    "喝过"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_050",
+        "title": "过 (guo) - Experience",
+        "titleMeaning": "过 - Experiential aspect",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "S + V + 过 + O",
+        "explanation": "过 indicates having experienced something at some point. Focus on experience, not time.",
+        "commonMistake": {
+            "sentence": "我吃饭过北京烤鸭。",
+            "correction": "我吃过北京烤鸭。",
+            "explanation": "过 goes after verb, not object."
+        },
+        "examples": [
+            {
+                "cn": "我吃过北京烤鸭。",
+                "pinyin": "wǒ chī guo běijīng kǎoyā.",
+                "en": "I have eaten Peking duck."
+            },
+            {
+                "cn": "他去过中国。",
+                "pinyin": "tā qù guo zhōngguó.",
+                "en": "He has been to China."
+            },
+            {
+                "cn": "你看过这部电影吗？",
+                "pinyin": "nǐ kàn guo zhè bù diànyǐng ma?",
+                "en": "Have you seen this movie?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你吃___北京烤鸭吗？",
+                "options": [
+                    "过",
+                    "了",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他去___长城没有？",
+                "options": [
+                    "过",
+                    "了",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我没看___那本书。",
+                "options": [
+                    "过",
+                    "了",
+                    "着",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_051",
+        "title": "过 - Negation 没",
+        "titleMeaning": "过 - 否定",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "S + 没(有) + V + 过 + O",
+        "explanation": "Use 没(有) to negate experience. 过 stays after the verb.",
+        "commonMistake": {
+            "sentence": "我不去过中国。",
+            "correction": "我没去过中国。",
+            "explanation": "Use 没, not 不."
+        },
+        "examples": [
+            {
+                "cn": "我没去过中国。",
+                "pinyin": "wǒ méi qù guo zhōngguó.",
+                "en": "I have not been to China."
+            },
+            {
+                "cn": "他没吃过这种水果。",
+                "pinyin": "tā méi chī guo zhè zhǒng shuǐguǒ.",
+                "en": "He has not eaten this fruit."
+            },
+            {
+                "cn": "我没看过英文版。",
+                "pinyin": "wǒ méi kàn guo yīngwén bǎn.",
+                "en": "I have not seen the English version."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我没___过韩国。",
+                "options": [
+                    "去",
+                    "没",
+                    "有",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___吃过日本菜。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___过这本书吗？",
+                "options": [
+                    "看过",
+                    "看",
+                    "看了",
+                    "看着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_052",
+        "title": "过 - Questions",
+        "titleMeaning": "过 - 问句",
+        "level": 1,
+        "category": "Aspect",
+        "pattern": "V + 过 + O + 吗/没有",
+        "explanation": "Questions: 吗 (yes/no), V+过+O+没有. NOT V+不+V pattern.",
+        "commonMistake": {
+            "sentence": "你去不去过中国？",
+            "correction": "你去过中国没有？",
+            "explanation": "Use 没有 at end, not V+不+V."
+        },
+        "examples": [
+            {
+                "cn": "你去过中国吗？",
+                "pinyin": "nǐ qù guo zhōngguó ma?",
+                "en": "Have you been to China?"
+            },
+            {
+                "cn": "你吃过蛇肉没有？",
+                "pinyin": "nǐ chī guo shé ròu méiyǒu?",
+                "en": "Ever eaten snake?"
+            },
+            {
+                "cn": "他来过这儿吗？",
+                "pinyin": "tā lái guo zhèr ma?",
+                "en": "Has he been here?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你去过中国___？",
+                "options": [
+                    "吗",
+                    "什么",
+                    "谁",
+                    "哪"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你吃过这个___有？",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___过上海吗？",
+                "options": [
+                    "去",
+                    "来了",
+                    "去过",
+                    "去了"
+                ],
+                "correct": 2
+            }
+        ]
+    },
+    {
+        "id": "gx_053",
+        "title": "过 with 以前/从来",
+        "titleMeaning": "过+以前/从来",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "以前/从来 + S + V + 过 + O",
+        "explanation": "以前 pairs with 过. 从来 used in negative: 从来没+V+过 = never.",
+        "commonMistake": {
+            "sentence": "从来我去过中国。",
+            "correction": "我从来没去过中国。",
+            "explanation": "从来 with negation."
+        },
+        "examples": [
+            {
+                "cn": "我以前学过法语。",
+                "pinyin": "wǒ yǐqián xué guo fǎyǔ.",
+                "en": "I studied French before."
+            },
+            {
+                "cn": "我从来没去过日本。",
+                "pinyin": "wǒ cónglái méi qù guo rìběn.",
+                "en": "I have never been to Japan."
+            },
+            {
+                "cn": "她从来没吃过肉。",
+                "pinyin": "tā cónglái méi chī guo ròu.",
+                "en": "She has never eaten meat."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___学过英语。",
+                "options": [
+                    "以前",
+                    "从来",
+                    "以后",
+                    "已经"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他从来没___过飞机。",
+                "options": [
+                    "坐",
+                    "坐了",
+                    "坐着",
+                    "坐过"
+                ],
+                "correct": 3
+            },
+            {
+                "question": "我从来___吃过这种菜。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_054",
+        "title": "过 - Repeated Experiences",
+        "titleMeaning": "过 - 多次经历",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V + 过 + Number + Measure + O",
+        "explanation": "Specify how many times with number + measure word (次/遍).",
+        "commonMistake": {
+            "sentence": "我去过两次中国。",
+            "correction": "我去过两次中国。",
+            "explanation": "Correct! 次 between 过 and O."
+        },
+        "examples": [
+            {
+                "cn": "我去过两次中国。",
+                "pinyin": "wǒ qù guo liǎng cì zhōngguó.",
+                "en": "Been to China twice."
+            },
+            {
+                "cn": "这部电影我看过三遍。",
+                "pinyin": "zhè bù diànyǐng wǒ kàn guo sān biàn.",
+                "en": "Seen this movie three times."
+            },
+            {
+                "cn": "她吃过一次蛇肉。",
+                "pinyin": "tā chī guo yí cì shé ròu.",
+                "en": "Eaten snake once."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我去过两___中国。",
+                "options": [
+                    "次",
+                    "遍",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这本书我看过三___。",
+                "options": [
+                    "遍",
+                    "次",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他吃过一___蛇肉。",
+                "options": [
+                    "次",
+                    "遍",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_055",
+        "title": "过 vs 了 Contrast",
+        "titleMeaning": "过 vs 了对比",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "过=experience, 了=completion",
+        "explanation": "了 = specific time. 过 = general experience. Time specified → use 了.",
+        "commonMistake": {
+            "sentence": "我去年去过中国。",
+            "correction": "我去年去了中国。",
+            "explanation": "With specific time, use 了."
+        },
+        "examples": [
+            {
+                "cn": "我去了三次厕所。",
+                "pinyin": "wǒ qù le sān cì cèsuǒ.",
+                "en": "Went three times (that day)."
+            },
+            {
+                "cn": "我去过三次中国。",
+                "pinyin": "wǒ qù guo sān cì zhōngguó.",
+                "en": "Been to China three times (life)."
+            },
+            {
+                "cn": "他昨天吃了药。",
+                "pinyin": "tā zuótiān chī le yào.",
+                "en": "He took medicine yesterday."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我昨天___中国。",
+                "options": [
+                    "去了",
+                    "去过",
+                    "去着",
+                    "去的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___长城没有？",
+                "options": [
+                    "去过",
+                    "去了",
+                    "去着",
+                    "去的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我去年___日本。",
+                "options": [
+                    "去了",
+                    "去过",
+                    "去着",
+                    "去的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_056",
+        "title": "过 with 从来/一直",
+        "titleMeaning": "过+从来/一直",
+        "level": 3,
+        "category": "Aspect",
+        "pattern": "从来没+V+过 / 一直+V+着",
+        "explanation": "从来没 = never. 一直 = always (uses 着 not 过).",
+        "commonMistake": {
+            "sentence": "我一直没去过北京。",
+            "correction": "我从没去过北京。",
+            "explanation": "从来没 for \"never in life\"."
+        },
+        "examples": [
+            {
+                "cn": "我从来没去过北京。",
+                "pinyin": "wǒ cónglái méi qù guo běijīng.",
+                "en": "Never been to Beijing."
+            },
+            {
+                "cn": "我一直住在这里。",
+                "pinyin": "wǒ yìzhí zhù zài zhèlǐ.",
+                "en": "Always lived here."
+            },
+            {
+                "cn": "她从没吃过肉。",
+                "pinyin": "tā cóng méi chī guo ròu.",
+                "en": "Never eaten meat."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我从来___去过国外。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他一直___着那件衣服。",
+                "options": [
+                    "穿",
+                    "穿了",
+                    "穿着",
+                    "穿过"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "她从来___吃过日本菜。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_057",
+        "title": "过 with 再/又",
+        "titleMeaning": "过+再/又",
+        "level": 3,
+        "category": "Aspect",
+        "pattern": "又+V+过 (past again), 再+V+过 (future again)",
+        "explanation": "又过 = have done again. 再过 = will do again.",
+        "commonMistake": {
+            "sentence": "我再去过中国。",
+            "correction": "我又去过中国。",
+            "explanation": "又 for past, 再 for future."
+        },
+        "examples": [
+            {
+                "cn": "我又去过那个地方。",
+                "pinyin": "wǒ yòu qù guo nàge dìfang.",
+                "en": "I have been there again."
+            },
+            {
+                "cn": "我想再去一次。",
+                "pinyin": "wǒ xiǎng zài qù yí cì.",
+                "en": "I want to go again."
+            },
+            {
+                "cn": "他再没来过。",
+                "pinyin": "tā zài méi lái guo.",
+                "en": "He never came again."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___来过一次。",
+                "options": [
+                    "又",
+                    "再",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我想___去吃一次。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___没回来过。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_058",
+        "title": "过 - Summary",
+        "titleMeaning": "过总结",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V+过=experience; 没+V+过=no exp; V+过+Num+次=n times",
+        "explanation": "过 = experience. Negate with 没. Specify frequency. Not with specific past time.",
+        "commonMistake": {
+            "sentence": "我昨天吃过火锅。",
+            "correction": "我昨天吃了火锅。",
+            "explanation": "With specific time, use 了."
+        },
+        "examples": [
+            {
+                "cn": "你坐过飞机吗？",
+                "pinyin": "nǐ zuò guo fēijī ma?",
+                "en": "Ridden a plane?"
+            },
+            {
+                "cn": "我没骑过马。",
+                "pinyin": "wǒ méi qí guo mǎ.",
+                "en": "Never ridden a horse."
+            },
+            {
+                "cn": "他来过这里三次。",
+                "pinyin": "tā lái guo zhèlǐ sān cì.",
+                "en": "Been here three times."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你___过飞机吗？",
+                "options": [
+                    "坐",
+                    "坐了",
+                    "坐着",
+                    "坐过"
+                ],
+                "correct": 3
+            },
+            {
+                "question": "我___吃过日本菜。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他去过中国三___。",
+                "options": [
+                    "次",
+                    "遍",
+                    "个",
+                    "条"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_059",
+        "title": "着 (zhe) - Continuous",
+        "titleMeaning": "着 - 持续态",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "S + V + 着 + O",
+        "explanation": "着 indicates a continuous state or ongoing action. Focuses on state/manner.",
+        "commonMistake": {
+            "sentence": "他看书着。",
+            "correction": "他看着书。",
+            "explanation": "着 follows verb immediately."
+        },
+        "examples": [
+            {
+                "cn": "他开着门。",
+                "pinyin": "tā kāi zhe mén.",
+                "en": "He has the door open."
+            },
+            {
+                "cn": "她穿着红衣服。",
+                "pinyin": "tā chuān zhe hóng yīfu.",
+                "en": "She is wearing red."
+            },
+            {
+                "cn": "我站着等你。",
+                "pinyin": "wǒ zhàn zhe děng nǐ.",
+                "en": "I am standing waiting."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___着门。",
+                "options": [
+                    "开",
+                    "开开",
+                    "打开",
+                    "开了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___着红裙子。",
+                "options": [
+                    "穿",
+                    "穿了",
+                    "穿着",
+                    "穿过"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "我坐___等你。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_060",
+        "title": "着 - Accompanying Action",
+        "titleMeaning": "着 - 伴随动作",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V1+着+O1+V2+O2",
+        "explanation": "First verb with 着 describes the manner of the main action.",
+        "commonMistake": {
+            "sentence": "他听音乐着跑步。",
+            "correction": "他听着音乐跑步。",
+            "explanation": "Put 着 after first verb."
+        },
+        "examples": [
+            {
+                "cn": "他听着音乐跑步。",
+                "pinyin": "tā tīng zhe yīnyuè pǎobù.",
+                "en": "He runs listening to music."
+            },
+            {
+                "cn": "她笑着跟我说话。",
+                "pinyin": "tā xiào zhe gēn wǒ shuōhuà.",
+                "en": "She spoke smiling."
+            },
+            {
+                "cn": "孩子们唱着歌去上学。",
+                "pinyin": "háizi men chàng zhe gē qù shàngxué.",
+                "en": "They go to school singing."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___着歌洗澡。",
+                "options": [
+                    "唱",
+                    "唱了",
+                    "唱着",
+                    "唱歌"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "她笑___跟我打招呼。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我站___等公交车。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_061",
+        "title": "着 with 在",
+        "titleMeaning": "在+V+着 - 进行中",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "S + 在 + V + 着 + O + 呢",
+        "explanation": "Combine 在 (progressive) and 着 (continuous) for emphasis.",
+        "commonMistake": {
+            "sentence": "我在看书着。",
+            "correction": "我在看着书呢。",
+            "explanation": "在+V+着+O+呢 for progressive."
+        },
+        "examples": [
+            {
+                "cn": "我在看着书呢。",
+                "pinyin": "wǒ zài kàn zhe shū ne.",
+                "en": "I am reading."
+            },
+            {
+                "cn": "他在睡着觉呢。",
+                "pinyin": "tā zài shuì zhe jiào ne.",
+                "en": "He is sleeping."
+            },
+            {
+                "cn": "妈妈在做着饭呢。",
+                "pinyin": "māma zài zuò zhe fàn ne.",
+                "en": "Mom is cooking."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我在___着书呢。",
+                "options": [
+                    "看",
+                    "看了",
+                    "看着",
+                    "看书"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他在睡___觉呢。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "妈妈在做___饭呢。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_062",
+        "title": "着 - State Verbs",
+        "titleMeaning": "状态动词+着",
+        "level": 3,
+        "category": "Aspect",
+        "pattern": "S + State V + 着 + 在/在+Location",
+        "explanation": "State verbs (坐, 站, 躺, 挂) take 着 for position description.",
+        "commonMistake": {
+            "sentence": "他躺床。",
+            "correction": "他躺在床上。",
+            "explanation": "Add 着 after verb for position."
+        },
+        "examples": [
+            {
+                "cn": "他躺在床上。",
+                "pinyin": "tā tǎng zài chuáng shàng.",
+                "en": "He is lying on the bed."
+            },
+            {
+                "cn": "墙上挂着一幅画。",
+                "pinyin": "qiáng shàng guà zhe yì fú huà.",
+                "en": "A painting hangs on the wall."
+            },
+            {
+                "cn": "桌子上放着一杯水。",
+                "pinyin": "zhuōzi shàng fàng zhe yì bēi shuǐ.",
+                "en": "A glass of water on the table."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___在床上。",
+                "options": [
+                    "躺着",
+                    "躺",
+                    "躺了",
+                    "躺过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "墙上挂___一幅画。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "门口站___一个人。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_063",
+        "title": "着 - Imperative",
+        "titleMeaning": "着 - 祈使句",
+        "level": 3,
+        "category": "Aspect",
+        "pattern": "V+着! / V+着+别+V",
+        "explanation": "着 in commands means keep/maintain a state.",
+        "commonMistake": {
+            "sentence": "坐！",
+            "correction": "坐着！",
+            "explanation": "坐着 = stay seated."
+        },
+        "examples": [
+            {
+                "cn": "拿着！",
+                "pinyin": "ná zhe!",
+                "en": "Hold this!"
+            },
+            {
+                "cn": "坐着别动。",
+                "pinyin": "zuò zhe bié dòng.",
+                "en": "Sit still."
+            },
+            {
+                "cn": "记着我的话。",
+                "pinyin": "jì zhe wǒ de huà.",
+                "en": "Remember my words."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "别站___快坐下。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "躺___别动！",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___着我的话！",
+                "options": [
+                    "记",
+                    "记住",
+                    "记得",
+                    "记了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_064",
+        "title": "着 vs 了",
+        "titleMeaning": "着 vs 了",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "着=state, 了=change",
+        "explanation": "着 = ongoing state (门开着 = door is open). 了 = completed change (门开了 = door opened).",
+        "commonMistake": {
+            "sentence": "门开了请进 (but it is already open).",
+            "correction": "门开着请进。",
+            "explanation": "Use 着 for current state."
+        },
+        "examples": [
+            {
+                "cn": "门开着。",
+                "pinyin": "mén kāi zhe.",
+                "en": "The door is open (state)."
+            },
+            {
+                "cn": "门开了。",
+                "pinyin": "mén kāi le.",
+                "en": "The door opened (action)."
+            },
+            {
+                "cn": "灯亮着。",
+                "pinyin": "dēng liàng zhe.",
+                "en": "The light is on (state)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "灯___着。",
+                "options": [
+                    "亮",
+                    "亮了",
+                    "亮着",
+                    "亮过"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "他___了。",
+                "options": [
+                    "来",
+                    "来了",
+                    "来着",
+                    "来过了"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "窗户开___。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_065",
+        "title": "着 - Negation",
+        "titleMeaning": "着 - 否定",
+        "level": 3,
+        "category": "Aspect",
+        "pattern": "S + 没(有) + V + 着 + O",
+        "explanation": "Use 没 to negate a state. 着 stays.",
+        "commonMistake": {
+            "sentence": "门不开着。",
+            "correction": "门没开着。",
+            "explanation": "Use 没 not 不 to negate state."
+        },
+        "examples": [
+            {
+                "cn": "门没开着。",
+                "pinyin": "mén méi kāi zhe.",
+                "en": "The door is not open."
+            },
+            {
+                "cn": "他没穿着外套。",
+                "pinyin": "tā méi chuān zhe wàitào.",
+                "en": "He is not wearing a coat."
+            },
+            {
+                "cn": "灯没亮着。",
+                "pinyin": "dēng méi liàng zhe.",
+                "en": "The light is not on."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "门___开着。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___穿着鞋。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "灯___亮着。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_066",
+        "title": "着 - Summary",
+        "titleMeaning": "着总结",
+        "level": 2,
+        "category": "Aspect",
+        "pattern": "V+着=state; 在+V+着=progressive; V1着+V2=accompanying",
+        "explanation": "着: continuous state, accompanying action, with 在, position description.",
+        "commonMistake": {
+            "sentence": "他在洗澡着。",
+            "correction": "他在洗着澡呢。",
+            "explanation": "VO verb: 洗着澡."
+        },
+        "examples": [
+            {
+                "cn": "他在睡着觉。",
+                "pinyin": "tā zài shuì zhe jiào.",
+                "en": "He is sleeping."
+            },
+            {
+                "cn": "我记着你说的话。",
+                "pinyin": "wǒ jì zhe nǐ shuō de huà.",
+                "en": "I remember your words."
+            },
+            {
+                "cn": "手里拿着一本书。",
+                "pinyin": "shǒu lǐ ná zhe yì běn shū.",
+                "en": "Holding a book."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___着觉。",
+                "options": [
+                    "睡",
+                    "睡了",
+                    "睡着",
+                    "睡觉"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "手里___着一杯茶。",
+                "options": [
+                    "拿",
+                    "拿了",
+                    "拿着",
+                    "拿过"
+                ],
+                "correct": 2
+            },
+            {
+                "question": "墙上挂___一幅画。",
+                "options": [
+                    "着",
+                    "了",
+                    "过",
+                    "的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_067",
+        "title": "的 (de) - Possessive",
+        "titleMeaning": "的 - 所属",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Noun/Pronoun + 的 + Noun",
+        "explanation": "的 marks possession between owner and object.",
+        "commonMistake": {
+            "sentence": "我书。",
+            "correction": "我的书。",
+            "explanation": "Add 的 between owner and object."
+        },
+        "examples": [
+            {
+                "cn": "这是我的书。",
+                "pinyin": "zhè shì wǒ de shū.",
+                "en": "This is my book."
+            },
+            {
+                "cn": "那是他的车。",
+                "pinyin": "nà shì tā de chē.",
+                "en": "That is his car."
+            },
+            {
+                "cn": "这是老师的办公室。",
+                "pinyin": "zhè shì lǎoshī de bàngōngshì.",
+                "en": "This is the teacher office."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "这___我的书。",
+                "options": [
+                    "是",
+                    "的",
+                    "是",
+                    "的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "那是他___车。",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这是老师___办公室。",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_068",
+        "title": "的 - Adjective Modifier",
+        "titleMeaning": "的 - 形容词+名词",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Adjective + 的 + Noun",
+        "explanation": "的 connects multi-syllable adjectives to nouns.",
+        "commonMistake": {
+            "sentence": "一个漂亮女孩。",
+            "correction": "一个漂亮的女孩。",
+            "explanation": "Multi-syllable adj needs 的."
+        },
+        "examples": [
+            {
+                "cn": "一个漂亮的女孩。",
+                "pinyin": "yí gè piàoliang de nǚhái.",
+                "en": "A beautiful girl."
+            },
+            {
+                "cn": "一本有趣的书。",
+                "pinyin": "yì běn yǒuqù de shū.",
+                "en": "An interesting book."
+            },
+            {
+                "cn": "一个很大的房子。",
+                "pinyin": "yí gè hěn dà de fángzi.",
+                "en": "A very big house."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一件漂亮___衣服。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "一个有趣___故事。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "一本很好___书。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_069",
+        "title": "的 - Relative Clauses",
+        "titleMeaning": "的 - 关系从句",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "Clause + 的 + Noun",
+        "explanation": "的 attaches a full clause to a noun — like a relative clause.",
+        "commonMistake": {
+            "sentence": "我昨天买的书。",
+            "correction": "这是我昨天买的书。",
+            "explanation": "Modifier clause + 的 + noun."
+        },
+        "examples": [
+            {
+                "cn": "这是我昨天买的书。",
+                "pinyin": "zhè shì wǒ zuótiān mǎi de shū.",
+                "en": "This is the book I bought yesterday."
+            },
+            {
+                "cn": "坐在那边的老师是我朋友。",
+                "pinyin": "zuò zài nàbiān de lǎoshī shì wǒ péngyou.",
+                "en": "The teacher sitting there is my friend."
+            },
+            {
+                "cn": "你认识的那个人走了。",
+                "pinyin": "nǐ rènshi de nàgè rén zǒu le.",
+                "en": "The person you know left."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "这是我去___地方。",
+                "options": [
+                    "的",
+                    "过",
+                    "了",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他买___那本书很贵。",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你认识___那个人是谁？",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_070",
+        "title": "的 - Omission (的 Phrase)",
+        "titleMeaning": "的 - 省略名词",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "Possessor + 的 (noun omitted)",
+        "explanation": "When noun is clear, drop it after 的. 我的=mine, 你的=yours.",
+        "commonMistake": {
+            "sentence": "这是我的书。你的书在哪儿？",
+            "correction": "这是我的。你的在哪儿？",
+            "explanation": "Drop noun when context is clear."
+        },
+        "examples": [
+            {
+                "cn": "这是我的，那是他的。",
+                "pinyin": "zhè shì wǒ de, nà shì tā de.",
+                "en": "This is mine, that is his."
+            },
+            {
+                "cn": "你的比我的大。",
+                "pinyin": "nǐ de bǐ wǒ de dà.",
+                "en": "Yours is bigger than mine."
+            },
+            {
+                "cn": "那个红的我不喜欢。",
+                "pinyin": "nàge hóng de wǒ bù xǐhuān.",
+                "en": "I don not like that red one."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "这支笔是我的，那支是___。",
+                "options": [
+                    "你的",
+                    "你",
+                    "你的笔",
+                    "你笔"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___比我的便宜。",
+                "options": [
+                    "你的",
+                    "你",
+                    "你书",
+                    "你笔"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我要那个大___。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_071",
+        "title": "的 - Short Adjectives (No 的)",
+        "titleMeaning": "的 - 单音节形容词",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Monosyllabic Adj + Noun (no 的)",
+        "explanation": "Single-syllable adjectives directly modify nouns without 的.",
+        "commonMistake": {
+            "sentence": "大的人。",
+            "correction": "大人。",
+            "explanation": "No 的 needed for monosyllabic adj."
+        },
+        "examples": [
+            {
+                "cn": "他是好人。",
+                "pinyin": "tā shì hǎo rén.",
+                "en": "He is a good person."
+            },
+            {
+                "cn": "我有一只小狗。",
+                "pinyin": "wǒ yǒu yì zhī xiǎo gǒu.",
+                "en": "I have a small dog."
+            },
+            {
+                "cn": "那是一个大苹果。",
+                "pinyin": "nà shì yí gè dà píngguǒ.",
+                "en": "That is a big apple."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他是好___。",
+                "options": [
+                    "人",
+                    "的人",
+                    "的人",
+                    "人"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我有一只小___。",
+                "options": [
+                    "狗",
+                    "的狗",
+                    "的狗",
+                    "狗"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "那是一个大___。",
+                "options": [
+                    "苹果",
+                    "的苹果",
+                    "的苹果",
+                    "苹果"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_072",
+        "title": "地 (de) - Adverbial Marker",
+        "titleMeaning": "地 - 状语标记",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Adjective/Adverb + 地 + Verb",
+        "explanation": "地 turns adjectives into adverbs modifying verbs. Like \"-ly\".",
+        "commonMistake": {
+            "sentence": "他认真学习。",
+            "correction": "他认真地学习。",
+            "explanation": "Use 地 for adverbs before verbs."
+        },
+        "examples": [
+            {
+                "cn": "他认真地学习。",
+                "pinyin": "tā rènzhēn de xuéxí.",
+                "en": "He studies seriously."
+            },
+            {
+                "cn": "她高兴地笑了。",
+                "pinyin": "tā gāoxìng de xiào le.",
+                "en": "She laughed happily."
+            },
+            {
+                "cn": "请安静地坐下。",
+                "pinyin": "qǐng ānjìng de zuò xià.",
+                "en": "Please sit down quietly."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他认真___学习。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她高兴___笑了。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请安静___坐下。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_073",
+        "title": "地 - Common Adverbs",
+        "titleMeaning": "地 - 常见副词",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "Reduplicated/Bisyllabic Adj + 地 + V",
+        "explanation": "慢慢+地, 好好+地, 仔细+地 common adverb forms.",
+        "commonMistake": {
+            "sentence": "他说地慢慢。",
+            "correction": "他慢慢地说。",
+            "explanation": "地 after adverb, before verb."
+        },
+        "examples": [
+            {
+                "cn": "他慢慢地说。",
+                "pinyin": "tā mànmàn de shuō.",
+                "en": "He spoke slowly."
+            },
+            {
+                "cn": "请你好好地学。",
+                "pinyin": "qǐng nǐ hǎohāo de xué.",
+                "en": "Please study well."
+            },
+            {
+                "cn": "她仔细地检查了。",
+                "pinyin": "tā zǐxì de jiǎnchá le.",
+                "en": "She checked carefully."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他慢慢___走过来。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请好好___休息。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她仔细___看了一遍。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_074",
+        "title": "地 + 像...一样",
+        "titleMeaning": "地+像...一样",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "像+N+一样+地+V",
+        "explanation": "像...一样 comparison used adverbially with 地.",
+        "commonMistake": {
+            "sentence": "他像风跑。",
+            "correction": "他像风一样地跑。",
+            "explanation": "Add 一样+地 between comparison and verb."
+        },
+        "examples": [
+            {
+                "cn": "他像风一样地跑。",
+                "pinyin": "tā xiàng fēng yíyàng de pǎo.",
+                "en": "He runs like the wind."
+            },
+            {
+                "cn": "她像燕子一样地飞。",
+                "pinyin": "tā xiàng yànzi yíyàng de fēi.",
+                "en": "She flew like a swallow."
+            },
+            {
+                "cn": "孩子像大人一样地说话。",
+                "pinyin": "háizi xiàng dàrén yíyàng de shuōhuà.",
+                "en": "Child talks like adult."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他像风一样___跑。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她像妈妈一样___照顾我。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "孩子像大人一样___说话。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_075",
+        "title": "地 vs 的",
+        "titleMeaning": "地 vs 的",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "地+V (adverb), 的+N (adj/poss)",
+        "explanation": "地 modifies verbs. 的 modifies nouns.",
+        "commonMistake": {
+            "sentence": "他认真_学习。",
+            "correction": "他认真地学习。",
+            "explanation": "Before verbs use 地."
+        },
+        "examples": [
+            {
+                "cn": "他认真地学习。",
+                "pinyin": "tā rènzhēn de xuéxí.",
+                "en": "He studies seriously (地+V)."
+            },
+            {
+                "cn": "他是认真的学生。",
+                "pinyin": "tā shì rènzhēn de xuéshēng.",
+                "en": "He is a serious student (的+N)."
+            },
+            {
+                "cn": "她高兴地笑了。",
+                "pinyin": "tā gāoxìng de xiào le.",
+                "en": "She laughed happily (地+V)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他认真___学习。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他是认真___学生。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她高兴___笑了。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_076",
+        "title": "得 (de) - Complement Review",
+        "titleMeaning": "得 - 补语复习",
+        "level": 1,
+        "category": "Complements",
+        "pattern": "V + 得 + Complement",
+        "explanation": "得 connects verb to degree/result complement.",
+        "commonMistake": {
+            "sentence": "他跑很快。",
+            "correction": "他跑得很快。",
+            "explanation": "Add 得 between V and complement."
+        },
+        "examples": [
+            {
+                "cn": "他跑得很快。",
+                "pinyin": "tā pǎo de hěn kuài.",
+                "en": "He runs fast."
+            },
+            {
+                "cn": "她说得很好。",
+                "pinyin": "tā shuō de hěn hǎo.",
+                "en": "She speaks well."
+            },
+            {
+                "cn": "你写得真漂亮。",
+                "pinyin": "nǐ xiě de zhēn piàoliang.",
+                "en": "You write beautifully."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他跑___很快。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她说___很好。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你写___真漂亮。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_077",
+        "title": "的/地/得 - Complete Guide",
+        "titleMeaning": "的/地/得 - 完整指南",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "的→noun, 地→verb, 得→complement",
+        "explanation": "的=noun modifier. 地=adverb marker. 得=verb complement.",
+        "commonMistake": {
+            "sentence": "他高兴的笑了。",
+            "correction": "他高兴地笑了。",
+            "explanation": "Before verb (笑了), use 地."
+        },
+        "examples": [
+            {
+                "cn": "这是一本很有趣的书。",
+                "pinyin": "zhè shì yì běn hěn yǒuqù de shū.",
+                "en": "Interesting book (的+N)."
+            },
+            {
+                "cn": "他高兴地笑了。",
+                "pinyin": "tā gāoxìng de xiào le.",
+                "en": "He laughed happily (地+V)."
+            },
+            {
+                "cn": "他高兴得跳了起来。",
+                "pinyin": "tā gāoxìng de tiào le qǐlái.",
+                "en": "So happy he jumped (得+comp)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "这是一本有趣___书。",
+                "options": [
+                    "的",
+                    "地",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她高兴___笑了。",
+                "options": [
+                    "地",
+                    "的",
+                    "得",
+                    "了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他高兴___跳了起来。",
+                "options": [
+                    "得",
+                    "的",
+                    "地",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_078",
+        "title": "如果 (rúguǒ) - If",
+        "titleMeaning": "如果 - 假如",
+        "level": 2,
+        "category": "Connectives",
+        "pattern": "如果 + Cond + 就 + Result",
+        "explanation": "如果 = if. 就 marks result clause. 要是 = colloquial alternative.",
+        "commonMistake": {
+            "sentence": "如果明天下雨我不去。",
+            "correction": "如果明天下雨我就不去。",
+            "explanation": "Add 就 before result."
+        },
+        "examples": [
+            {
+                "cn": "如果明天下雨我就不去。",
+                "pinyin": "rúguǒ míngtiān xià yǔ wǒ jiù bú qù.",
+                "en": "If it rains I will not go."
+            },
+            {
+                "cn": "如果你有时间就来玩吧。",
+                "pinyin": "rúguǒ nǐ yǒu shíjiān jiù lái wán ba.",
+                "en": "If you have time come play."
+            },
+            {
+                "cn": "如果我是你我会接受。",
+                "pinyin": "rúguǒ wǒ shì nǐ wǒ huì jiēshòu.",
+                "en": "If I were you I would accept."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___明天下雨我就不去。",
+                "options": [
+                    "如果",
+                    "虽然",
+                    "因为",
+                    "不但"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "如果有时间___来玩吧。",
+                "options": [
+                    "就",
+                    "才",
+                    "也",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___我是你我会去。",
+                "options": [
+                    "如果",
+                    "虽然",
+                    "因为",
+                    "除了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_079",
+        "title": "虽然 (suīrán) - Although",
+        "titleMeaning": "虽然 - 尽管",
+        "level": 2,
+        "category": "Connectives",
+        "pattern": "虽然 + Fact + 但是/可是 + Opposite",
+        "explanation": "虽然 = although. Needs contrastive conjunction in second clause.",
+        "commonMistake": {
+            "sentence": "虽然他很努力他没成功。",
+            "correction": "虽然他很努力但是没成功。",
+            "explanation": "Need 但是/可是 in second clause."
+        },
+        "examples": [
+            {
+                "cn": "虽然他很努力但是没成功。",
+                "pinyin": "suīrán tā hěn nǔlì dànshì méi chénggōng.",
+                "en": "Although he worked hard he did not succeed."
+            },
+            {
+                "cn": "虽然下雨了可是我们还是去了。",
+                "pinyin": "suīrán xià yǔ le kěshì wǒmen háishì qù le.",
+                "en": "Although it rained we still went."
+            },
+            {
+                "cn": "虽然贵但是质量很好。",
+                "pinyin": "suīrán guì dànshì zhìliàng hěn hǎo.",
+                "en": "Although expensive quality is good."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___他很努力但是没成功。",
+                "options": [
+                    "虽然",
+                    "如果",
+                    "因为",
+                    "不但"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "虽然下雨___我们还是去了。",
+                "options": [
+                    "但是",
+                    "而且",
+                    "所以",
+                    "因为"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "虽然贵___质量很好。",
+                "options": [
+                    "但是",
+                    "而且",
+                    "所以",
+                    "如果"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_080",
+        "title": "不但 (búdàn) - Not Only",
+        "titleMeaning": "不但 - 不仅",
+        "level": 2,
+        "category": "Connectives",
+        "pattern": "不但 + Clause1 + 而且/还 + Clause2",
+        "explanation": "不但...而且 = not only ... but also.",
+        "commonMistake": {
+            "sentence": "他不但学习好他体育好。",
+            "correction": "他不但学习好而且体育也好。",
+            "explanation": "Use 而且 or 还 in second clause."
+        },
+        "examples": [
+            {
+                "cn": "他不但学习好而且体育也好。",
+                "pinyin": "tā búdàn xuéxí hǎo érqiě tǐyù yě hǎo.",
+                "en": "Not only good at studies but also sports."
+            },
+            {
+                "cn": "这个菜不但好吃还便宜。",
+                "pinyin": "zhège cài búdàn hǎochī hái piányi.",
+                "en": "Not only delicious but also cheap."
+            },
+            {
+                "cn": "她不但会唱歌还会跳舞。",
+                "pinyin": "tā búdàn huì chànggē hái huì tiàowǔ.",
+                "en": "Not only sing but also dance."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___学习好而且体育也好。",
+                "options": [
+                    "不但",
+                    "虽然",
+                    "因为",
+                    "如果"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个菜不但好吃___便宜。",
+                "options": [
+                    "还",
+                    "但是",
+                    "所以",
+                    "因为"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她不但会唱歌___会跳舞。",
+                "options": [
+                    "还",
+                    "但是",
+                    "所以",
+                    "虽然"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_081",
+        "title": "不但不/没...反而",
+        "titleMeaning": "不但不...反而",
+        "level": 3,
+        "category": "Connectives",
+        "pattern": "不但+不/没+V+反而+Opposite",
+        "explanation": "Not only not X but on the contrary Y. 反而 = on the contrary.",
+        "commonMistake": {
+            "sentence": "他不但不帮忙他捣乱。",
+            "correction": "他不但不帮忙反而捣乱。",
+            "explanation": "Use 反而 not second 不."
+        },
+        "examples": [
+            {
+                "cn": "他不但不帮忙反而捣乱。",
+                "pinyin": "tā búdàn bù bāngmáng fǎnér dǎoluàn.",
+                "en": "Not only did not help but made trouble."
+            },
+            {
+                "cn": "她不但没生气反而笑了。",
+                "pinyin": "tā búdàn méi shēngqì fǎnér xiào le.",
+                "en": "Not only not angry but laughed."
+            },
+            {
+                "cn": "他不但不认错反而怪别人。",
+                "pinyin": "tā búdàn bú rèn cuò fǎnér guài biérén.",
+                "en": "Not only not admit fault but blamed others."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他不但不帮忙___捣乱。",
+                "options": [
+                    "反而",
+                    "而且",
+                    "所以",
+                    "因为"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她不但没生气___笑了。",
+                "options": [
+                    "反而",
+                    "而且",
+                    "所以",
+                    "因为"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他不但不认错___怪别人。",
+                "options": [
+                    "反而",
+                    "而且",
+                    "所以",
+                    "因为"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_082",
+        "title": "因为 (yīnwèi) - Because",
+        "titleMeaning": "因为 - 原因",
+        "level": 1,
+        "category": "Connectives",
+        "pattern": "因为 + Reason + 所以 + Result",
+        "explanation": "因为 introduces reason. 所以 introduces result. Both can be used alone.",
+        "commonMistake": {
+            "sentence": "因为今天下雨我不去。",
+            "correction": "因为今天下雨所以我不去。",
+            "explanation": "Add 所以 before result."
+        },
+        "examples": [
+            {
+                "cn": "因为今天下雨所以我不去了。",
+                "pinyin": "yīnwèi jīntiān xià yǔ suǒyǐ wǒ bú qù le.",
+                "en": "Because it is raining I am not going."
+            },
+            {
+                "cn": "他因为生病了所以没来上课。",
+                "pinyin": "tā yīnwèi shēngbìng le suǒyǐ méi lái shàngkè.",
+                "en": "Because sick he did not come to class."
+            },
+            {
+                "cn": "因为太贵所以我没买。",
+                "pinyin": "yīnwèi tài guì suǒyǐ wǒ méi mǎi.",
+                "en": "Because too expensive I did not buy."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___今天下雨所以我不去。",
+                "options": [
+                    "因为",
+                    "虽然",
+                    "如果",
+                    "不但"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他因为生病___没来。",
+                "options": [
+                    "所以",
+                    "但是",
+                    "而且",
+                    "还是"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___太贵所以没买。",
+                "options": [
+                    "因为",
+                    "虽然",
+                    "如果",
+                    "不但"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_083",
+        "title": "所以 (suǒyǐ) - Therefore",
+        "titleMeaning": "所以 - 结果",
+        "level": 1,
+        "category": "Connectives",
+        "pattern": "Reason + 所以 + Result",
+        "explanation": "所以 = so/therefore. Can be used alone when reason is obvious.",
+        "commonMistake": {
+            "sentence": "我生病了没来上课。",
+            "correction": "我生病了所以没来上课。",
+            "explanation": "Add 所以 for clarity."
+        },
+        "examples": [
+            {
+                "cn": "我生病了所以没来上课。",
+                "pinyin": "wǒ shēngbìng le suǒyǐ méi lái shàngkè.",
+                "en": "I was sick so I did not come."
+            },
+            {
+                "cn": "他很好所以大家都喜欢他。",
+                "pinyin": "tā hěn hǎo suǒyǐ dàjiā dōu xǐhuān tā.",
+                "en": "He is nice so everyone likes him."
+            },
+            {
+                "cn": "雨太大了所以比赛取消了。",
+                "pinyin": "yǔ tài dà le suǒyǐ bǐsài qǔxiāo le.",
+                "en": "Rain too heavy so game canceled."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我生病了___没来。",
+                "options": [
+                    "所以",
+                    "但是",
+                    "而且",
+                    "如果"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他很好___大家都喜欢他。",
+                "options": [
+                    "所以",
+                    "虽然",
+                    "因为",
+                    "不但"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "雨太大了___比赛取消了。",
+                "options": [
+                    "所以",
+                    "但是",
+                    "而且",
+                    "如果"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_084",
+        "title": "因为...所以 Position",
+        "titleMeaning": "因为/所以语序",
+        "level": 1,
+        "category": "Connectives",
+        "pattern": "因为+Reason+所以+Result / Reason+所以+Result",
+        "explanation": "因为 can be first (因为...所以) or omitted. Reason usually comes first in Chinese.",
+        "commonMistake": {
+            "sentence": "所以我不去因为下雨。",
+            "correction": "因为下雨所以我不去。",
+            "explanation": "Reason/cause first in Chinese."
+        },
+        "examples": [
+            {
+                "cn": "因为下雨所以我不去了。",
+                "pinyin": "yīnwèi xià yǔ suǒyǐ wǒ bú qù le.",
+                "en": "Because raining I am not going."
+            },
+            {
+                "cn": "我不去因为下雨了。",
+                "pinyin": "wǒ bú qù yīnwèi xià yǔ le.",
+                "en": "I am not going because it rained."
+            },
+            {
+                "cn": "因为没时间所以没去。",
+                "pinyin": "yīnwèi méi shíjiān suǒyǐ méi qù.",
+                "en": "Because no time I did not go."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___下雨所以我不去。",
+                "options": [
+                    "因为",
+                    "虽然",
+                    "如果",
+                    "不但"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我不去___下雨了。",
+                "options": [
+                    "因为",
+                    "所以",
+                    "可是",
+                    "但是"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___没时间所以没去。",
+                "options": [
+                    "因为",
+                    "虽然",
+                    "如果",
+                    "不但"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_085",
+        "title": "从/在/跟/给 Overview",
+        "titleMeaning": "从在跟给概览",
+        "level": 1,
+        "category": "Particles",
+        "pattern": "从=from, 在=at, 跟=with, 给=for/to",
+        "explanation": "Four essential prepositions: 从(from), 在(at/in), 跟(with), 给(for/to).",
+        "commonMistake": {
+            "sentence": "我他从家来。",
+            "correction": "我从家来。",
+            "explanation": "Preposition before location."
+        },
+        "examples": [
+            {
+                "cn": "我从家来学校。",
+                "pinyin": "wǒ cóng jiā lái xuéxiào.",
+                "en": "I come from home to school."
+            },
+            {
+                "cn": "我在图书馆看书。",
+                "pinyin": "wǒ zài túshūguǎn kàn shū.",
+                "en": "I read at the library."
+            },
+            {
+                "cn": "我跟他一起去。",
+                "pinyin": "wǒ gēn tā yìqǐ qù.",
+                "en": "I go with him."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___家来学校。",
+                "options": [
+                    "从",
+                    "在",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___图书馆看书。",
+                "options": [
+                    "在",
+                    "从",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___他一起去。",
+                "options": [
+                    "跟",
+                    "从",
+                    "在",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_086",
+        "title": "从 (cóng) - From",
+        "titleMeaning": "从 - 起点",
+        "level": 1,
+        "category": "Particles",
+        "pattern": "从 + Start Point + V",
+        "explanation": "从 marks the starting point of an action. Can be location, time, or position.",
+        "commonMistake": {
+            "sentence": "我从来学校。",
+            "correction": "我从学校来。",
+            "explanation": "从 goes before the starting point."
+        },
+        "examples": [
+            {
+                "cn": "我从北京来。",
+                "pinyin": "wǒ cóng běijīng lái.",
+                "en": "I came from Beijing."
+            },
+            {
+                "cn": "从今天开始我要减肥。",
+                "pinyin": "cóng jīntiān kāishǐ wǒ yào jiǎnféi.",
+                "en": "Starting today I will lose weight."
+            },
+            {
+                "cn": "从这里往前走。",
+                "pinyin": "cóng zhèlǐ wǎng qián zǒu.",
+                "en": "Go forward from here."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___北京来。",
+                "options": [
+                    "从",
+                    "在",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___今天开始学习。",
+                "options": [
+                    "从",
+                    "在",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___这里往前走。",
+                "options": [
+                    "从",
+                    "在",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_087",
+        "title": "在 (zài) - At/In",
+        "titleMeaning": "在 - 位置",
+        "level": 1,
+        "category": "Particles",
+        "pattern": "在 + Location + V or V + 在 + Location",
+        "explanation": "在 can be before or after the verb. Before = where action happens. After = where action results.",
+        "commonMistake": {
+            "sentence": "我在学习图书馆。",
+            "correction": "我在图书馆学习。",
+            "explanation": "在+location before verb."
+        },
+        "examples": [
+            {
+                "cn": "我在学校学习。",
+                "pinyin": "wǒ zài xuéxiào xuéxí.",
+                "en": "I study at school."
+            },
+            {
+                "cn": "他住在北京。",
+                "pinyin": "tā zhù zài běijīng.",
+                "en": "He lives in Beijing."
+            },
+            {
+                "cn": "书在桌子上。",
+                "pinyin": "shū zài zhuōzi shàng.",
+                "en": "The book is on the table."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___学校学习。",
+                "options": [
+                    "在",
+                    "从",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他住___北京。",
+                "options": [
+                    "在",
+                    "从",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "书___桌子上。",
+                "options": [
+                    "在",
+                    "从",
+                    "跟",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_088",
+        "title": "跟 (gēn) - With",
+        "titleMeaning": "跟 - 伴随",
+        "level": 1,
+        "category": "Particles",
+        "pattern": "跟 + Person + V",
+        "explanation": "跟 = with (accompanying person). Also used for comparisons (跟...一样).",
+        "commonMistake": {
+            "sentence": "我一想去。",
+            "correction": "我跟你一起去。",
+            "explanation": "跟 indicates accompaniment."
+        },
+        "examples": [
+            {
+                "cn": "我跟你一起去。",
+                "pinyin": "wǒ gēn nǐ yìqǐ qù.",
+                "en": "I will go with you."
+            },
+            {
+                "cn": "她跟朋友吃饭。",
+                "pinyin": "tā gēn péngyou chīfàn.",
+                "en": "She eats with friends."
+            },
+            {
+                "cn": "跟我来。",
+                "pinyin": "gēn wǒ lái.",
+                "en": "Come with me."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___你一起去。",
+                "options": [
+                    "跟",
+                    "从",
+                    "在",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___朋友吃饭。",
+                "options": [
+                    "跟",
+                    "从",
+                    "在",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___我来。",
+                "options": [
+                    "跟",
+                    "从",
+                    "在",
+                    "给"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_089",
+        "title": "给 (gěi) - For/To",
+        "titleMeaning": "给 - 给予",
+        "level": 1,
+        "category": "Particles",
+        "pattern": "给 + Recipient + V / V + 给 + Recipient",
+        "explanation": "给 = for/to. Marks recipient. Can be before or after verb.",
+        "commonMistake": {
+            "sentence": "我打电话你。",
+            "correction": "我给你打电话。",
+            "explanation": "给 before the person you call."
+        },
+        "examples": [
+            {
+                "cn": "我给你打电话。",
+                "pinyin": "wǒ gěi nǐ dǎ diànhuà.",
+                "en": "I will call you."
+            },
+            {
+                "cn": "他给我买了一本书。",
+                "pinyin": "tā gěi wǒ mǎi le yì běn shū.",
+                "en": "He bought a book for me."
+            },
+            {
+                "cn": "请把信交给我。",
+                "pinyin": "qǐng bǎ xìn jiāo gěi wǒ.",
+                "en": "Please hand the letter to me."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___你打电话。",
+                "options": [
+                    "给",
+                    "从",
+                    "在",
+                    "跟"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___我买了一本书。",
+                "options": [
+                    "给",
+                    "从",
+                    "在",
+                    "跟"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请把信交___我。",
+                "options": [
+                    "给",
+                    "从",
+                    "在",
+                    "跟"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_090",
+        "title": "是…的 - Emphasis",
+        "titleMeaning": "是...的 - 强调细节",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "S + 是 + Time/Place/Manner + V + 的",
+        "explanation": "是...的 emphasizes time, place, or manner of a past action. 是 is optional.",
+        "commonMistake": {
+            "sentence": "我昨天来。",
+            "correction": "我是昨天来的。",
+            "explanation": "Use 是...的 to emphasize details."
+        },
+        "examples": [
+            {
+                "cn": "我是昨天来的。",
+                "pinyin": "wǒ shì zuótiān lái de.",
+                "en": "I came YESTERDAY (not other day)."
+            },
+            {
+                "cn": "他是在北京工作的。",
+                "pinyin": "tā shì zài běijīng gōngzuò de.",
+                "en": "He works IN BEIJING (not elsewhere)."
+            },
+            {
+                "cn": "她是坐飞机去的。",
+                "pinyin": "tā shì zuò fēijī qù de.",
+                "en": "She went BY PLANE (not other way)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___昨天来___。",
+                "options": [
+                    "是/的",
+                    "在/的",
+                    "从/的",
+                    "到/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___在北京工作___。",
+                "options": [
+                    "是/的",
+                    "在/的",
+                    "给/的",
+                    "从/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___坐飞机去___。",
+                "options": [
+                    "是/的",
+                    "用/的",
+                    "从/的",
+                    "给/的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_091",
+        "title": "是…的 with 在/从/用",
+        "titleMeaning": "是...的+在/从/用",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "是 + Preposition + Place/Manner + V + 的",
+        "explanation": "是...的 works with prepositions to emphasize location or means.",
+        "commonMistake": {
+            "sentence": "他是坐车来。",
+            "correction": "他是坐车来的。",
+            "explanation": "的 at end is required."
+        },
+        "examples": [
+            {
+                "cn": "他是在上海出生的。",
+                "pinyin": "tā shì zài shànghǎi chūshēng de.",
+                "en": "He was born IN SHANGHAI."
+            },
+            {
+                "cn": "我是从美国来的。",
+                "pinyin": "wǒ shì cóng měiguó lái de.",
+                "en": "I came FROM AMERICA."
+            },
+            {
+                "cn": "她是用筷子吃饭的。",
+                "pinyin": "tā shì yòng kuàizi chīfàn de.",
+                "en": "She eats WITH CHOPSTICKS."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___在上海出生___。",
+                "options": [
+                    "是/的",
+                    "在/的",
+                    "从/的",
+                    "用/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___从美国来___。",
+                "options": [
+                    "是/的",
+                    "从/的",
+                    "在/的",
+                    "用/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___用筷子吃饭___。",
+                "options": [
+                    "是/的",
+                    "用/的",
+                    "从/的",
+                    "在/的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_092",
+        "title": "是…的 - Negation",
+        "titleMeaning": "是...的 - 否定",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "不是 + Emphasis + V + 的",
+        "explanation": "Negate the emphasized element with 不 before 是.",
+        "commonMistake": {
+            "sentence": "我不是昨天来。",
+            "correction": "我不是昨天来的。",
+            "explanation": "的 still required in negation."
+        },
+        "examples": [
+            {
+                "cn": "我不是昨天来的。",
+                "pinyin": "wǒ bú shì zuótiān lái de.",
+                "en": "I did not come YESTERDAY."
+            },
+            {
+                "cn": "他不是坐车去的。",
+                "pinyin": "tā bú shì zuò chē qù de.",
+                "en": "He did not go BY CAR."
+            },
+            {
+                "cn": "我不是在上海学的。",
+                "pinyin": "wǒ bú shì zài shànghǎi xué de.",
+                "en": "I did not learn IN SHANGHAI."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___昨天来___。",
+                "options": [
+                    "不是/的",
+                    "是/的",
+                    "不/的",
+                    "没/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___坐车去___。",
+                "options": [
+                    "不是/的",
+                    "是/的",
+                    "不/的",
+                    "没/的"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___在上海学___。",
+                "options": [
+                    "不是/的",
+                    "是/的",
+                    "不/的",
+                    "没/的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_093",
+        "title": "是…的 - Questions",
+        "titleMeaning": "是...的 - 问句",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "是 + Emphasis + V + 的 + 吗/不",
+        "explanation": "Yes/no questions use 吗. Alternative: 是不是 + emphasis + V + 的.",
+        "commonMistake": {
+            "sentence": "你是昨天来？",
+            "correction": "你是昨天来的吗？",
+            "explanation": "Add 吗 at end for question."
+        },
+        "examples": [
+            {
+                "cn": "你是昨天来的吗？",
+                "pinyin": "nǐ shì zuótiān lái de ma?",
+                "en": "Did you come YESTERDAY?"
+            },
+            {
+                "cn": "他是不是在北京工作的？",
+                "pinyin": "tā shì bú shì zài běijīng gōngzuò de?",
+                "en": "Does he work IN BEIJING?"
+            },
+            {
+                "cn": "她是怎么去的？",
+                "pinyin": "tā shì zěnme qù de?",
+                "en": "How did she go?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你是昨天来___吗？",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___是在北京工作的？",
+                "options": [
+                    "是不是",
+                    "是",
+                    "不是",
+                    "是没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她是怎么___的？",
+                "options": [
+                    "去",
+                    "去了",
+                    "去过",
+                    "去的"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_094",
+        "title": "是…的 - Review",
+        "titleMeaning": "是...的总结",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "是...的 for past emphasis on details",
+        "explanation": "是...的 emphasizes time, place, manner. Used only for past events. 的 is mandatory.",
+        "commonMistake": {
+            "sentence": "我昨天来的。",
+            "correction": "我是昨天来的。",
+            "explanation": "是 can be omitted but 的 cannot."
+        },
+        "examples": [
+            {
+                "cn": "他是在哪儿学的？",
+                "pinyin": "tā shì zài nǎr xué de?",
+                "en": "Where did he learn?"
+            },
+            {
+                "cn": "我是坐地铁来的。",
+                "pinyin": "wǒ shì zuò dìtiě lái de.",
+                "en": "I came BY SUBWAY."
+            },
+            {
+                "cn": "他们是什么时候到的？",
+                "pinyin": "tāmen shì shénme shíhou dào de?",
+                "en": "When did they arrive?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你是在哪儿学___？",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___坐地铁来的。",
+                "options": [
+                    "是",
+                    "的",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他们是什么时候到___？",
+                "options": [
+                    "的",
+                    "了",
+                    "过",
+                    "着"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_095",
+        "title": "越…越 (yuè...yuè) - The more...the more",
+        "titleMeaning": "越...越 - 越来越",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "越 + V/Adj + 越 + V/Adj",
+        "explanation": "越...越 means \"the more X, the more Y\". Can also be 越来越 = more and more.",
+        "commonMistake": {
+            "sentence": "他越高越快跑。",
+            "correction": "他越跑越快。",
+            "explanation": "越 before each element: 越+V+越+Adj."
+        },
+        "examples": [
+            {
+                "cn": "雨越下越大。",
+                "pinyin": "yǔ yuè xià yuè dà.",
+                "en": "The rain is getting heavier."
+            },
+            {
+                "cn": "他越跑越快。",
+                "pinyin": "tā yuè pǎo yuè kuài.",
+                "en": "He runs faster and faster."
+            },
+            {
+                "cn": "中文越来越难。",
+                "pinyin": "zhōngwén yuè lái yuè nán.",
+                "en": "Chinese is getting harder."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "雨越下越___。",
+                "options": [
+                    "大",
+                    "快",
+                    "多",
+                    "高"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___跑越快。",
+                "options": [
+                    "越",
+                    "就",
+                    "一",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "中文___来越难。",
+                "options": [
+                    "越",
+                    "就",
+                    "一",
+                    "再"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_096",
+        "title": "越来越 + Adj",
+        "titleMeaning": "越来越+形容词",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "越来越 + Adjective",
+        "explanation": "越来越 = more and more. Indicates a gradual increase over time.",
+        "commonMistake": {
+            "sentence": "天气很热越来越。",
+            "correction": "天气越来越热。",
+            "explanation": "越来越 goes before the adjective."
+        },
+        "examples": [
+            {
+                "cn": "天气越来越热。",
+                "pinyin": "tiānqì yuè lái yuè rè.",
+                "en": "The weather is getting hotter."
+            },
+            {
+                "cn": "他的中文越来越好。",
+                "pinyin": "tā de zhōngwén yuè lái yuè hǎo.",
+                "en": "His Chinese is getting better."
+            },
+            {
+                "cn": "人越来越多。",
+                "pinyin": "rén yuè lái yuè duō.",
+                "en": "There are more and more people."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "天气___越热。",
+                "options": [
+                    "越来越",
+                    "越来",
+                    "越来越来",
+                    "越来越"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他的中文___越好。",
+                "options": [
+                    "越来越",
+                    "越来",
+                    "越来越来",
+                    "越来越"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "人___越多。",
+                "options": [
+                    "越来越",
+                    "越来",
+                    "越来越来",
+                    "越来越"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_097",
+        "title": "越 + V + 越 + V",
+        "titleMeaning": "越+V+越+V",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "越+V1+越+V2",
+        "explanation": "越+V1+越+V2 = the more you do V1, the more V2 happens. Same subject or different.",
+        "commonMistake": {
+            "sentence": "他气越来。",
+            "correction": "他越想越生气。",
+            "explanation": "越+V1+越+V2 pattern."
+        },
+        "examples": [
+            {
+                "cn": "他越想越生气。",
+                "pinyin": "tā yuè xiǎng yuè shēngqì.",
+                "en": "The more he thought the angrier he got."
+            },
+            {
+                "cn": "我越看越喜欢。",
+                "pinyin": "wǒ yuè kàn yuè xǐhuān.",
+                "en": "The more I look the more I like it."
+            },
+            {
+                "cn": "越解释越不清楚。",
+                "pinyin": "yuè jiěshì yuè bù qīngchu.",
+                "en": "The more you explain the less clear it is."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___想越生气。",
+                "options": [
+                    "越",
+                    "就",
+                    "一",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我越看___喜欢。",
+                "options": [
+                    "越",
+                    "就",
+                    "一",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___解释越不清楚。",
+                "options": [
+                    "越",
+                    "就",
+                    "一",
+                    "再"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_098",
+        "title": "一…就 (yī...jiù) - As soon as",
+        "titleMeaning": "一...就 - 立刻",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "一 + V1 + 就 + V2",
+        "explanation": "一...就 = as soon as/once. V1 happens then immediately V2.",
+        "commonMistake": {
+            "sentence": "我一到家吃饭。",
+            "correction": "我一到家就吃饭。",
+            "explanation": "就 before the second verb."
+        },
+        "examples": [
+            {
+                "cn": "我一到家就吃饭。",
+                "pinyin": "wǒ yí dào jiā jiù chīfàn.",
+                "en": "As soon as I get home I eat."
+            },
+            {
+                "cn": "他一有钱就花光。",
+                "pinyin": "tā yī yǒu qián jiù huā guāng.",
+                "en": "As soon as he has money he spends it."
+            },
+            {
+                "cn": "我一吃药就好了。",
+                "pinyin": "wǒ yī chī yào jiù hǎo le.",
+                "en": "As soon as I took medicine I got better."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___到教室就上课。",
+                "options": [
+                    "一",
+                    "就",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他一有钱___花光。",
+                "options": [
+                    "就",
+                    "一",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___吃就饱了。",
+                "options": [
+                    "一",
+                    "就",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_099",
+        "title": "一…就 - Habitual",
+        "titleMeaning": "一...就 - 习惯",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "一+V1+就+V2 (habitual)",
+        "explanation": "一...就 can describe habits: \"whenever/every time\".",
+        "commonMistake": {
+            "sentence": "他一喝酒醉。",
+            "correction": "他一喝酒就醉。",
+            "explanation": "就 needed before second clause."
+        },
+        "examples": [
+            {
+                "cn": "他一喝酒就醉。",
+                "pinyin": "tā yī hē jiǔ jiù zuì.",
+                "en": "He gets drunk whenever he drinks."
+            },
+            {
+                "cn": "她一紧张就说不出话。",
+                "pinyin": "tā yī jǐnzhāng jiù shuō bù chū huà.",
+                "en": "She cant speak whenever nervous."
+            },
+            {
+                "cn": "我一看书就困。",
+                "pinyin": "wǒ yī kàn shū jiù kùn.",
+                "en": "I get sleepy whenever I read."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他一喝酒___醉。",
+                "options": [
+                    "就",
+                    "一",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她一紧张___说不出话。",
+                "options": [
+                    "就",
+                    "一",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___看书就困。",
+                "options": [
+                    "一",
+                    "就",
+                    "越",
+                    "再"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_100",
+        "title": "除了...以外 (chúle...yǐwài) - Except/Besides",
+        "titleMeaning": "除了...以外",
+        "level": 2,
+        "category": "Connectives",
+        "pattern": "除了 + N + (以外) + 还/都/也",
+        "explanation": "除了 = except/besides. 还/也 = besides/in addition. 都 = except.",
+        "commonMistake": {
+            "sentence": "除了我喜欢画画。",
+            "correction": "除了画画，我还喜欢唱歌。",
+            "explanation": "Use 还/也/都 in main clause."
+        },
+        "examples": [
+            {
+                "cn": "除了画画，我还喜欢唱歌。",
+                "pinyin": "chúle huà huà wǒ hái xǐhuān chànggē.",
+                "en": "Besides painting I also like singing."
+            },
+            {
+                "cn": "除了他以外，我们都去了。",
+                "pinyin": "chúle tā yǐwài wǒmen dōu qù le.",
+                "en": "Except for him we all went."
+            },
+            {
+                "cn": "除了中文，他也会英文。",
+                "pinyin": "chúle zhōngwén tā yě huì yīngwén.",
+                "en": "Besides Chinese he also knows English."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "除了画画我___喜欢唱歌。",
+                "options": [
+                    "还",
+                    "都",
+                    "就",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "除了他我们都___了。",
+                "options": [
+                    "去",
+                    "去了",
+                    "去过",
+                    "去"
+                ],
+                "correct": 1
+            },
+            {
+                "question": "除了中文他___会英文。",
+                "options": [
+                    "也",
+                    "都",
+                    "还",
+                    "就"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_101",
+        "title": "除了 - Negative",
+        "titleMeaning": "除了...以外否定",
+        "level": 3,
+        "category": "Connectives",
+        "pattern": "除了 + N + 以外 + 没有/不",
+        "explanation": "除了...以外+没有/不 = \"except nothing/nobody\". Emphasizes exclusivity.",
+        "commonMistake": {
+            "sentence": "除了他没人去。",
+            "correction": "除了他以外没人去。",
+            "explanation": "以外 makes it clearer."
+        },
+        "examples": [
+            {
+                "cn": "除了他以外没人知道。",
+                "pinyin": "chúle tā yǐwài méi rén zhīdào.",
+                "en": "No one knows except him."
+            },
+            {
+                "cn": "除了周末我都不在家。",
+                "pinyin": "chúle zhōumò wǒ dōu bú zàijiā.",
+                "en": "I am not home except weekends."
+            },
+            {
+                "cn": "除了这个以外我没有别的。",
+                "pinyin": "chúle zhège yǐwài wǒ méiyǒu bié de.",
+                "en": "I have nothing else except this."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "除了他___没人知道。",
+                "options": [
+                    "以外",
+                    "以在外面",
+                    "以外",
+                    "之外"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "除了周末我___不在家。",
+                "options": [
+                    "都",
+                    "也",
+                    "还",
+                    "就"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "除了这个以外我没___别的。",
+                "options": [
+                    "有",
+                    "有",
+                    "有了",
+                    "有"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_102",
+        "title": "连…都 (lián...dōu) - Even",
+        "titleMeaning": "连...都 - 甚至",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "连 + N/Phrase + 都/也 + V",
+        "explanation": "连...都 = \"even\". Emphasizes the extreme case. 都 and 也 are interchangeable.",
+        "commonMistake": {
+            "sentence": "连我认识他。",
+            "correction": "连我都不认识他。",
+            "explanation": "连 focuses the topic, 都/也 before verb."
+        },
+        "examples": [
+            {
+                "cn": "连他都不知道答案。",
+                "pinyin": "lián tā dōu bù zhīdào dáàn.",
+                "en": "Even he does not know the answer."
+            },
+            {
+                "cn": "我连一口水都没喝。",
+                "pinyin": "wǒ lián yī kǒu shuǐ dōu méi hē.",
+                "en": "I have not even drunk a sip of water."
+            },
+            {
+                "cn": "连小孩子也会用手机。",
+                "pinyin": "lián xiǎo háizi yě huì yòng shǒujī.",
+                "en": "Even children can use phones."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___他都不知道。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___一口水都没喝。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___小孩子也会用手机。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_103",
+        "title": "连…都 - Emphasis One",
+        "titleMeaning": "连...都 - 强调",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "连 + Numeral + Measure + N + 都 + V",
+        "explanation": "连 can emphasize even the minimum quantity. Verb often negated.",
+        "commonMistake": {
+            "sentence": "他一个人认识。",
+            "correction": "他连一个人都不认识。",
+            "explanation": "连+一+MW emphasizes the minimum."
+        },
+        "examples": [
+            {
+                "cn": "他连一个人都不认识。",
+                "pinyin": "tā lián yí gè rén dōu bú rènshi.",
+                "en": "He does not even know ONE person."
+            },
+            {
+                "cn": "我连一分钟都没休息。",
+                "pinyin": "wǒ lián yī fēnzhōng dōu méi xiūxi.",
+                "en": "I did not rest even ONE minute."
+            },
+            {
+                "cn": "她连一句话也不说。",
+                "pinyin": "tā lián yī jù huà yě bù shuō.",
+                "en": "She does not say even ONE word."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___一个人都不认识。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___一分钟都没休息。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___一句话也不说。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_104",
+        "title": "连…都 - Positive",
+        "titleMeaning": "连...都 - 肯定",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "连 + N + 都 + V (positive)",
+        "explanation": "连...都 also works with positive statements for emphasis.",
+        "commonMistake": {
+            "sentence": "连老师表扬他。",
+            "correction": "连老师都表扬他。",
+            "explanation": "都 after the emphasized topic."
+        },
+        "examples": [
+            {
+                "cn": "连老师都表扬他。",
+                "pinyin": "lián lǎoshī dōu biǎoyáng tā.",
+                "en": "Even the teacher praised him."
+            },
+            {
+                "cn": "连妈妈都笑了。",
+                "pinyin": "lián māma dōu xiào le.",
+                "en": "Even mom laughed."
+            },
+            {
+                "cn": "连外国人也知道这个故事。",
+                "pinyin": "lián wàiguó rén yě zhīdào zhège gùshì.",
+                "en": "Even foreigners know this story."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___老师都表扬他。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___妈妈都笑了。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "___外国人也知道这个故事。",
+                "options": [
+                    "连",
+                    "把",
+                    "被",
+                    "从"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_105",
+        "title": "就 (jiù) - Early/Soon",
+        "titleMeaning": "就 - 早/快",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "Time + 就 + V + 了",
+        "explanation": "就 before verb indicates the action happened earlier than expected or sooner than usual. Often with 了 at end.",
+        "commonMistake": {
+            "sentence": "我六点起床了。",
+            "correction": "我六点就起床了。",
+            "explanation": "就 emphasizes earliness."
+        },
+        "examples": [
+            {
+                "cn": "我六点就起床了。",
+                "pinyin": "wǒ liù diǎn jiù qǐchuáng le.",
+                "en": "I got up at 6 (as early as 6)."
+            },
+            {
+                "cn": "他三十岁就当教授了。",
+                "pinyin": "tā sānshí suì jiù dāng jiàoshòu le.",
+                "en": "He became professor at 30 (quite early)."
+            },
+            {
+                "cn": "他昨天就来了。",
+                "pinyin": "tā zuótiān jiù lái le.",
+                "en": "He came yesterday (earlier than expected)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我吃了饭___去学校。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他每天六点___起床。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他三十岁___当爸爸了。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_106",
+        "title": "就 - Then/Just",
+        "titleMeaning": "就 - 就/便",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "Cond/Time + 就 + Result",
+        "explanation": "就 = then/just. Connects condition-result, or time-event. Neutral transition.",
+        "commonMistake": {
+            "sentence": "如果下雨我不去。",
+            "correction": "如果下雨我就不去。",
+            "explanation": "就 in the result clause."
+        },
+        "examples": [
+            {
+                "cn": "如果下雨我就不去。",
+                "pinyin": "rúguǒ xià yǔ wǒ jiù bú qù.",
+                "en": "If it rains then I will not go."
+            },
+            {
+                "cn": "吃了药就好了。",
+                "pinyin": "chī le yào jiù hǎo le.",
+                "en": "After taking medicine then got better."
+            },
+            {
+                "cn": "马上就来。",
+                "pinyin": "mǎshàng jiù lái.",
+                "en": "Will come right away."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "如果下雨我___不去。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "吃了药___好了。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "马上___来。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_107",
+        "title": "才 (cái) - Late/Only Then",
+        "titleMeaning": "才 - 晚/刚",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "Time + 才 + V / Cond + 才 + Result",
+        "explanation": "才 = indicates lateness or a precondition being necessary. Opposite of 就 in timing.",
+        "commonMistake": {
+            "sentence": "他六点起床了。",
+            "correction": "他十点才起床。",
+            "explanation": "才 emphasizes lateness."
+        },
+        "examples": [
+            {
+                "cn": "他十点才起床。",
+                "pinyin": "tā shí diǎn cái qǐchuáng.",
+                "en": "He did not get up until 10 (quite late)."
+            },
+            {
+                "cn": "我学了三年才会开车。",
+                "pinyin": "wǒ xué le sān nián cái huì kāichē.",
+                "en": "I studied three years before I could drive."
+            },
+            {
+                "cn": "他昨天才收到信。",
+                "pinyin": "tā zuótiān cái shōu dào xìn.",
+                "en": "He did not receive the letter until yesterday."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___六点就起床了。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他十点___起床（很晚）。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我学了三年___会开车。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_108",
+        "title": "才 - Only If",
+        "titleMeaning": "才 - 只有...才",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "只有/必须 + Cond + 才 + Result",
+        "explanation": "才 = \"only if\". Indicates the condition is strictly necessary for the result.",
+        "commonMistake": {
+            "sentence": "努力了会成功。",
+            "correction": "只有努力了才会成功。",
+            "explanation": "只有...才 = only if."
+        },
+        "examples": [
+            {
+                "cn": "只有努力了才会成功。",
+                "pinyin": "zhǐyǒu nǔlì le cái huì chénggōng.",
+                "en": "Only if you work hard will you succeed."
+            },
+            {
+                "cn": "必须到十八岁才能喝酒。",
+                "pinyin": "bìxū dào shíbā suì cái néng hē jiǔ.",
+                "en": "Must be 18 before can drink."
+            },
+            {
+                "cn": "学了才会知道。",
+                "pinyin": "xué le cái huì zhīdào.",
+                "en": "Only after learning will you know."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "___努力了___会成功。",
+                "options": [
+                    "只有/才",
+                    "只有/就",
+                    "必须/就",
+                    "非得/才"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "必须到十八岁___能喝酒。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "学了___会知道。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_109",
+        "title": "就 vs 才 Timing",
+        "titleMeaning": "就 vs 才时间",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "就=early, 才=late",
+        "explanation": "就 = earlier than expected. 才 = later than expected. Same sentence structure, opposite meaning.",
+        "commonMistake": {
+            "sentence": "他九点起床。",
+            "correction": "他七点就起床了/他十点才起床。",
+            "explanation": "就=early, 才=late."
+        },
+        "examples": [
+            {
+                "cn": "他七点就起床了。",
+                "pinyin": "tā qī diǎn jiù qǐchuáng le.",
+                "en": "He got up at 7 (early)."
+            },
+            {
+                "cn": "他十点才起床。",
+                "pinyin": "tā shí diǎn cái qǐchuáng.",
+                "en": "He got up at 10 (late)."
+            },
+            {
+                "cn": "我昨天就到了。",
+                "pinyin": "wǒ zuótiān jiù dào le.",
+                "en": "I arrived yesterday (early)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他七点___起床了（早）。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他十点___起床（晚）。",
+                "options": [
+                    "才",
+                    "就",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我昨天___到了（比预期早）。",
+                "options": [
+                    "就",
+                    "才",
+                    "再",
+                    "又"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_110",
+        "title": "又 (yòu) - Again (Past)",
+        "titleMeaning": "又 - 又（过去）",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "又 + V + 了 = again (past)",
+        "explanation": "又 = again (already happened). Used for past repetition.",
+        "commonMistake": {
+            "sentence": "他再来了一次。",
+            "correction": "他又来了一次。",
+            "explanation": "又 for past repetition."
+        },
+        "examples": [
+            {
+                "cn": "他又来了一次。",
+                "pinyin": "tā yòu lái le yí cì.",
+                "en": "He came again."
+            },
+            {
+                "cn": "昨天我又迟到了。",
+                "pinyin": "zuótiān wǒ yòu chídào le.",
+                "en": "I was late again yesterday."
+            },
+            {
+                "cn": "她又哭了。",
+                "pinyin": "tā yòu kū le.",
+                "en": "She cried again."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___来了一次（已经发生）。",
+                "options": [
+                    "又",
+                    "再",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "昨天我___迟到了。",
+                "options": [
+                    "又",
+                    "再",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___哭了。",
+                "options": [
+                    "又",
+                    "再",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_111",
+        "title": "再 (zài) - Again (Future)",
+        "titleMeaning": "再 - 再（将来）",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "再 + V = again (future)",
+        "explanation": "再 = again (not yet happened). Used for future actions.",
+        "commonMistake": {
+            "sentence": "我又来了一次（还没去）。",
+            "correction": "我再来一次。",
+            "explanation": "再 for future repetition."
+        },
+        "examples": [
+            {
+                "cn": "我明天再来。",
+                "pinyin": "wǒ míngtiān zài lái.",
+                "en": "I will come again tomorrow."
+            },
+            {
+                "cn": "请再说一遍。",
+                "pinyin": "qǐng zài shuō yí biàn.",
+                "en": "Please say it again."
+            },
+            {
+                "cn": "以后别再迟到了。",
+                "pinyin": "yǐhòu bié zài chídào le.",
+                "en": "Do not be late again in the future."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我明天___来（还没来）。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请___说一遍。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "以后别___迟到了。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_112",
+        "title": "又 vs 再 Contrast",
+        "titleMeaning": "又 vs 再对比",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "又=past again, 再=future again",
+        "explanation": "又 = already happened again. 再 = will happen again. Other meanings: 又=and, 再=then.",
+        "commonMistake": {
+            "sentence": "他明天又来。",
+            "correction": "他明天再来。",
+            "explanation": "Future action uses 再."
+        },
+        "examples": [
+            {
+                "cn": "他又迟到了（已经发生）。",
+                "pinyin": "tā yòu chídào le.",
+                "en": "He was late again (past)."
+            },
+            {
+                "cn": "明天别再迟到。",
+                "pinyin": "míngtiān bié zài chídào.",
+                "en": "Do not be late again tomorrow."
+            },
+            {
+                "cn": "又高又漂亮。",
+                "pinyin": "yòu gāo yòu piàoliang.",
+                "en": "Both tall and pretty."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他昨天___迟到了。",
+                "options": [
+                    "又",
+                    "再",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "明天___来。",
+                "options": [
+                    "再",
+                    "又",
+                    "还",
+                    "也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___高___帅。",
+                "options": [
+                    "又/又",
+                    "再/再",
+                    "还/还",
+                    "也/也"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_113",
+        "title": "又 - Also/And",
+        "titleMeaning": "又 - 又...又",
+        "level": 2,
+        "category": "Particles",
+        "pattern": "又 + Adj1 + 又 + Adj2",
+        "explanation": "又...又 = both...and. Used with adjectives to describe two qualities.",
+        "commonMistake": {
+            "sentence": "这个菜好吃便宜。",
+            "correction": "这个菜又好吃又便宜。",
+            "explanation": "又+Adj+又+Adj = both X and Y."
+        },
+        "examples": [
+            {
+                "cn": "这个菜又好吃又便宜。",
+                "pinyin": "zhège cài yòu hǎochī yòu piányi.",
+                "en": "This dish is both delicious and cheap."
+            },
+            {
+                "cn": "她又聪明又漂亮。",
+                "pinyin": "tā yòu cōngming yòu piàoliang.",
+                "en": "She is both smart and pretty."
+            },
+            {
+                "cn": "他又想买又不想买。",
+                "pinyin": "tā yòu xiǎng mǎi yòu bù xiǎng mǎi.",
+                "en": "He both wants and does not want to buy."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "这个菜___好吃___便宜。",
+                "options": [
+                    "又/又",
+                    "再/再",
+                    "还/还",
+                    "也/也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___聪明___漂亮。",
+                "options": [
+                    "又/又",
+                    "再/再",
+                    "还/还",
+                    "也/也"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___想去___不想去。",
+                "options": [
+                    "又/又",
+                    "再/再",
+                    "还/还",
+                    "也/也"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_114",
+        "title": "会 (huì) - Know How/Can",
+        "titleMeaning": "会 - 会",
+        "level": 1,
+        "category": "Modals",
+        "pattern": "会 + V = know how to / likely",
+        "explanation": "会 = (1) know how to (skill), (2) likely to happen (future).",
+        "commonMistake": {
+            "sentence": "我能说中文。（表示技能）",
+            "correction": "我会说中文。",
+            "explanation": "会 for learned skills."
+        },
+        "examples": [
+            {
+                "cn": "我会说中文。",
+                "pinyin": "wǒ huì shuō zhōngwén.",
+                "en": "I can speak Chinese (learned skill)."
+            },
+            {
+                "cn": "他会游泳。",
+                "pinyin": "tā huì yóuyǒng.",
+                "en": "He can swim."
+            },
+            {
+                "cn": "明天会下雨。",
+                "pinyin": "míngtiān huì xià yǔ.",
+                "en": "It will rain tomorrow."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___说中文。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___游泳。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "明天___下雨。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_115",
+        "title": "会 - Likelihood",
+        "titleMeaning": "会 - 可能性",
+        "level": 1,
+        "category": "Modals",
+        "pattern": "会 + V (future/probability)",
+        "explanation": "会 also expresses likelihood or future possibility. 不会 = will not.",
+        "commonMistake": {
+            "sentence": "明天不会下雨。",
+            "correction": "míngtiān bú huì xià yǔ.",
+            "explanation": "It will not rain tomorrow."
+        },
+        "examples": [
+            {
+                "cn": "明天会下雨吗？",
+                "pinyin": "míngtiān huì xià yǔ ma?",
+                "en": "Will it rain tomorrow?"
+            },
+            {
+                "cn": "他不会来了。",
+                "pinyin": "tā bú huì lái le.",
+                "en": "He will probably not come."
+            },
+            {
+                "cn": "她会同意的。",
+                "pinyin": "tā huì tóngyì de.",
+                "en": "She will likely agree."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "明天___下雨吗？",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他不___来了。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "她___同意的。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_116",
+        "title": "能 (néng) - Can/Be Able To",
+        "titleMeaning": "能 - 能够",
+        "level": 1,
+        "category": "Modals",
+        "pattern": "能 + V = can/be able to (ability/condition)",
+        "explanation": "能 = ability (physical/mental), permission, or possibility given conditions.",
+        "commonMistake": {
+            "sentence": "我今天能去。",
+            "correction": "wǒ jīntiān néng qù.",
+            "explanation": "I can go today (able/permitted)."
+        },
+        "examples": [
+            {
+                "cn": "我能吃辣。",
+                "pinyin": "wǒ néng chī là.",
+                "en": "I can eat spicy food (tolerate)."
+            },
+            {
+                "cn": "他十分钟能跑两公里。",
+                "pinyin": "tā shí fēnzhōng néng pǎo liǎng gōnglǐ.",
+                "en": "He can run 2km in 10 min."
+            },
+            {
+                "cn": "这里能抽烟吗？",
+                "pinyin": "zhèlǐ néng chōu yān ma?",
+                "en": "Can I smoke here? (permission)"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___吃辣。",
+                "options": [
+                    "能",
+                    "会",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他十分钟___跑两公里。",
+                "options": [
+                    "能",
+                    "会",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这里___抽烟吗？",
+                "options": [
+                    "能",
+                    "会",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_117",
+        "title": "可以 (kěyǐ) - May/Can",
+        "titleMeaning": "可以 - 可以",
+        "level": 1,
+        "category": "Modals",
+        "pattern": "可以 + V = may/can (permission/possibility)",
+        "explanation": "可以 = permission (\"may\"), possibility, or \"not bad\" (adjective).",
+        "commonMistake": {
+            "sentence": "我可以进来吗？",
+            "correction": "wǒ kěyǐ jìnlái ma?",
+            "explanation": "May I come in?"
+        },
+        "examples": [
+            {
+                "cn": "我可以进来吗？",
+                "pinyin": "wǒ kěyǐ jìnlái ma?",
+                "en": "May I come in?"
+            },
+            {
+                "cn": "你可以在网上买。",
+                "pinyin": "nǐ kěyǐ zài wǎng shàng mǎi.",
+                "en": "You can buy it online."
+            },
+            {
+                "cn": "他的中文还可以。",
+                "pinyin": "tā de zhōngwén hái kěyǐ.",
+                "en": "His Chinese is okay/not bad."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___进来吗？",
+                "options": [
+                    "可以",
+                    "能",
+                    "会",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___在网上买。",
+                "options": [
+                    "可以",
+                    "能",
+                    "会",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他的中文还___。",
+                "options": [
+                    "可以",
+                    "能",
+                    "会",
+                    "应该"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_118",
+        "title": "应该 (yīnggāi) - Should",
+        "titleMeaning": "应该 - 应该",
+        "level": 1,
+        "category": "Modals",
+        "pattern": "应该 + V = should/ought to",
+        "explanation": "应该 = moral obligation, expectation, or logical deduction.",
+        "commonMistake": {
+            "sentence": "你应该早来。",
+            "correction": "你应该早点来。",
+            "explanation": "应该 + suggestion: add 点 after adj."
+        },
+        "examples": [
+            {
+                "cn": "你应该早点来。",
+                "pinyin": "nǐ yīnggāi zǎo diǎn lái.",
+                "en": "You should come earlier."
+            },
+            {
+                "cn": "他应该已经到家了。",
+                "pinyin": "tā yīnggāi yǐjīng dào jiā le.",
+                "en": "He should be home by now (deduction)."
+            },
+            {
+                "cn": "学生应该好好学习。",
+                "pinyin": "xuésheng yīnggāi hǎohāo xuéxí.",
+                "en": "Students should study hard."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你___早点来。",
+                "options": [
+                    "应该",
+                    "能",
+                    "可以",
+                    "会"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___已经到家了。",
+                "options": [
+                    "应该",
+                    "能",
+                    "可以",
+                    "会"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "学生___好好学习。",
+                "options": [
+                    "应该",
+                    "能",
+                    "可以",
+                    "会"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_119",
+        "title": "会 vs 能 vs 可以",
+        "titleMeaning": "会/能/可以对比",
+        "level": 2,
+        "category": "Modals",
+        "pattern": "会=skill/future, 能=ability/condition, 可以=permission",
+        "explanation": "会 = learned skill. 能 = physical ability or condition. 可以 = permission.",
+        "commonMistake": {
+            "sentence": "我能游泳。（表示技能）",
+            "correction": "我会游泳。",
+            "explanation": "Use 会 for learned skills."
+        },
+        "examples": [
+            {
+                "cn": "我会游泳（有技能）。",
+                "pinyin": "wǒ huì yóuyǒng.",
+                "en": "I can swim (know how)."
+            },
+            {
+                "cn": "我能游泳（身体条件允许）。",
+                "pinyin": "wǒ néng yóuyǒng.",
+                "en": "I can swim (am able to)."
+            },
+            {
+                "cn": "我可以游泳（被允许）。",
+                "pinyin": "wǒ kěyǐ yóuyǒng.",
+                "en": "I can swim (am permitted)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___说中文（技能）。",
+                "options": [
+                    "会",
+                    "能",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___吃辣（受得了）。",
+                "options": [
+                    "能",
+                    "会",
+                    "可以",
+                    "应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___进来吗？（征求允许）",
+                "options": [
+                    "可以",
+                    "会",
+                    "能",
+                    "应该"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_120",
+        "title": "完 (wán) - Finish/Action Completion",
+        "titleMeaning": "完 - 完",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 完 = finish doing",
+        "explanation": "完 as a result complement means the action is completed/finished.",
+        "commonMistake": {
+            "sentence": "我写作业了。",
+            "correction": "我写完作业了。",
+            "explanation": "Add 完 after verb to emphasize finishing."
+        },
+        "examples": [
+            {
+                "cn": "我写完作业了。",
+                "pinyin": "wǒ xiě wán zuòyè le.",
+                "en": "I finished writing my homework."
+            },
+            {
+                "cn": "饭吃完了。",
+                "pinyin": "fàn chī wán le.",
+                "en": "The food is finished."
+            },
+            {
+                "cn": "我看完了这本书。",
+                "pinyin": "wǒ kàn wán le zhè běn shū.",
+                "en": "I finished reading this book."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我写___作业了。",
+                "options": [
+                    "完",
+                    "到",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "饭吃___了。",
+                "options": [
+                    "完",
+                    "到",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我看___了这本书。",
+                "options": [
+                    "完",
+                    "到",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_121",
+        "title": "到 (dào) - Reach/Succeed",
+        "titleMeaning": "到 - 到",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 到 = succeed in doing",
+        "explanation": "到 as a result complement means the action successfully reached its goal.",
+        "commonMistake": {
+            "sentence": "我买那本书了。",
+            "correction": "我买到那本书了。",
+            "explanation": "到 emphasizes successful attainment."
+        },
+        "examples": [
+            {
+                "cn": "我买到那本书了。",
+                "pinyin": "wǒ mǎi dào nà běn shū le.",
+                "en": "I succeeded in buying that book."
+            },
+            {
+                "cn": "你收到了吗？",
+                "pinyin": "nǐ shōu dào le ma?",
+                "en": "Did you receive it?"
+            },
+            {
+                "cn": "我找不到钥匙了。",
+                "pinyin": "wǒ zhǎo bú dào yàoshi le.",
+                "en": "I cannot find my keys."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我买___那本书了。",
+                "options": [
+                    "到",
+                    "完",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你收___了吗？",
+                "options": [
+                    "到",
+                    "完",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我找不___钥匙了。",
+                "options": [
+                    "到",
+                    "完",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_122",
+        "title": "见 (jiàn) - Perception",
+        "titleMeaning": "见 - 见",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 见 = perceive (see/hear)",
+        "explanation": "见 as result complement: 看见=see, 听见=hear, 遇见=meet. Perception verbs.",
+        "commonMistake": {
+            "sentence": "我看你了。",
+            "correction": "我看见你了。",
+            "explanation": "见 adds the meaning of successfully perceiving."
+        },
+        "examples": [
+            {
+                "cn": "我看见你了。",
+                "pinyin": "wǒ kàn jiàn nǐ le.",
+                "en": "I saw you."
+            },
+            {
+                "cn": "你听见了吗？",
+                "pinyin": "nǐ tīng jiàn le ma?",
+                "en": "Did you hear it?"
+            },
+            {
+                "cn": "我在街上遇见他了。",
+                "pinyin": "wǒ zài jiē shàng yù jiàn tā le.",
+                "en": "I met him on the street."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我看___你了。",
+                "options": [
+                    "见",
+                    "到",
+                    "完",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你听___了吗？",
+                "options": [
+                    "见",
+                    "到",
+                    "完",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我在街上遇___他了。",
+                "options": [
+                    "见",
+                    "到",
+                    "完",
+                    "懂"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_123",
+        "title": "懂 (dǒng) - Understanding",
+        "titleMeaning": "懂 - 懂",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 懂 = understand/comprehend",
+        "explanation": "懂 as a result complement: 听懂=understand (listening), 看懂=understand (reading).",
+        "commonMistake": {
+            "sentence": "我听你的意思了。",
+            "correction": "我听懂你的意思了。",
+            "explanation": "懂 = comprehend successfully."
+        },
+        "examples": [
+            {
+                "cn": "我听懂了你的意思。",
+                "pinyin": "wǒ tīng dǒng le nǐ de yìsi.",
+                "en": "I understood your meaning."
+            },
+            {
+                "cn": "我看不懂这篇文章。",
+                "pinyin": "wǒ kàn bù dǒng zhè piān wénzhāng.",
+                "en": "I cannot understand this article."
+            },
+            {
+                "cn": "你听懂了吗？",
+                "pinyin": "nǐ tīng dǒng le ma?",
+                "en": "Did you understand?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___懂你的意思了。",
+                "options": [
+                    "听",
+                    "看",
+                    "想",
+                    "说"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我看不___这篇文章。",
+                "options": [
+                    "懂",
+                    "到",
+                    "见",
+                    "完"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你听懂___？",
+                "options": [
+                    "了吗",
+                    "吗了",
+                    "了",
+                    "吗"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_124",
+        "title": "到/完 Contrast",
+        "titleMeaning": "到 vs 完",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "到=attain goal, 完=finish action",
+        "explanation": "到 = achieving the goal/reaching target. 完 = finishing the action/consuming.",
+        "commonMistake": {
+            "sentence": "我吃到了。（吃了？）",
+            "correction": "我吃到了。（终于吃到了）/我吃完了。（吃光了）",
+            "explanation": "到=attainment, 完=completion."
+        },
+        "examples": [
+            {
+                "cn": "我买到票了。",
+                "pinyin": "wǒ mǎi dào piào le.",
+                "en": "I got the tickets (found/bought)."
+            },
+            {
+                "cn": "我买完票了。",
+                "pinyin": "wǒ mǎi wán piào le.",
+                "en": "I finished buying tickets."
+            },
+            {
+                "cn": "我找到他了。",
+                "pinyin": "wǒ zhǎo dào tā le.",
+                "en": "I found him."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我买___票了（买到了）。",
+                "options": [
+                    "到",
+                    "完",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我吃___了（吃光了）。",
+                "options": [
+                    "完",
+                    "到",
+                    "见",
+                    "懂"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我看___他了（看到了）。",
+                "options": [
+                    "见",
+                    "到",
+                    "完",
+                    "懂"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_125",
+        "title": "Result Comp - Negation",
+        "titleMeaning": "结果补语否定",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 不 + Complement",
+        "explanation": "Negate result complements with 不 (potential complement form). 没+V+Complement=did not.",
+        "commonMistake": {
+            "sentence": "我没看见他。",
+            "correction": "wǒ méi kàn jiàn tā.",
+            "explanation": "I did not see him."
+        },
+        "examples": [
+            {
+                "cn": "我没看见他。",
+                "pinyin": "wǒ méi kàn jiàn tā.",
+                "en": "I did not see him."
+            },
+            {
+                "cn": "我吃不完这么多。",
+                "pinyin": "wǒ chī bù wán zhème duō.",
+                "en": "I cannot finish so much."
+            },
+            {
+                "cn": "我听不懂中文。",
+                "pinyin": "wǒ tīng bù dǒng zhōngwén.",
+                "en": "I cannot understand Chinese."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我___看见他。",
+                "options": [
+                    "没",
+                    "不",
+                    "别",
+                    "没"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我吃___完这么多。",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "不"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我听___懂中文。",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "不"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_126",
+        "title": "来 (lái) - Toward Speaker",
+        "titleMeaning": "来 - 来",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 来 = come / toward speaker",
+        "explanation": "来 as direction complement = action towards the speaker. 进来=come in, 上来=come up.",
+        "commonMistake": {
+            "sentence": "请进来。",
+            "correction": "qǐng jìnlái.",
+            "explanation": "Please come in."
+        },
+        "examples": [
+            {
+                "cn": "请进来。",
+                "pinyin": "qǐng jìn lái.",
+                "en": "Please come in."
+            },
+            {
+                "cn": "他上来了。",
+                "pinyin": "tā shàng lái le.",
+                "en": "He came up (toward me)."
+            },
+            {
+                "cn": "快回来！",
+                "pinyin": "kuài huí lái!",
+                "en": "Come back quickly!"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "请进___。",
+                "options": [
+                    "来",
+                    "去",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他上___了（朝我）。",
+                "options": [
+                    "来",
+                    "去",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "快回___！",
+                "options": [
+                    "来",
+                    "去",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_127",
+        "title": "去 (qù) - Away from Speaker",
+        "titleMeaning": "去 - 去",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 去 = go / away from speaker",
+        "explanation": "去 as direction complement = action away from speaker. 进去=go in, 上去=go up.",
+        "commonMistake": {
+            "sentence": "请进去。",
+            "correction": "qǐng jìnqù.",
+            "explanation": "Please go in."
+        },
+        "examples": [
+            {
+                "cn": "请进去。",
+                "pinyin": "qǐng jìn qù.",
+                "en": "Please go in."
+            },
+            {
+                "cn": "他上去了。",
+                "pinyin": "tā shàng qù le.",
+                "en": "He went up (away)."
+            },
+            {
+                "cn": "我把它拿回去了。",
+                "pinyin": "wǒ bǎ tā ná huí qù le.",
+                "en": "I took it back (away)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "请进___。",
+                "options": [
+                    "去",
+                    "来",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他上___了（离开我）。",
+                "options": [
+                    "去",
+                    "来",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我把它拿回___了。",
+                "options": [
+                    "去",
+                    "来",
+                    "上",
+                    "下"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_128",
+        "title": "上 (shàng) - Up/Onward",
+        "titleMeaning": "上 - 上",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 上 = up/onward/start",
+        "explanation": "上 = upward (走上去), starting (用上), or fastening (穿上).",
+        "commonMistake": {
+            "sentence": "他走来了。",
+            "correction": "他走上来了。",
+            "explanation": "上 adds upward direction."
+        },
+        "examples": [
+            {
+                "cn": "他走上来了。",
+                "pinyin": "tā zǒu shàng lái le.",
+                "en": "He walked up (toward me)."
+            },
+            {
+                "cn": "请穿上外套。",
+                "pinyin": "qǐng chuān shàng wàitào.",
+                "en": "Please put on your coat."
+            },
+            {
+                "cn": "关上窗户。",
+                "pinyin": "guān shàng chuānghu.",
+                "en": "Close the window."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他走___来了。",
+                "options": [
+                    "上",
+                    "下",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请穿___外套。",
+                "options": [
+                    "上",
+                    "下",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "关___窗户。",
+                "options": [
+                    "上",
+                    "下",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_129",
+        "title": "下 (xià) - Down/Off",
+        "titleMeaning": "下 - 下",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 下 = down/off/stop",
+        "explanation": "下 = downward (坐下来), detaching (脱下来), or stopping (停下来).",
+        "commonMistake": {
+            "sentence": "他走了。",
+            "correction": "他走下来了。",
+            "explanation": "下 adds downward direction."
+        },
+        "examples": [
+            {
+                "cn": "他走下来了。",
+                "pinyin": "tā zǒu xià lái le.",
+                "en": "He walked down (toward me)."
+            },
+            {
+                "cn": "请坐下来。",
+                "pinyin": "qǐng zuò xià lái.",
+                "en": "Please sit down."
+            },
+            {
+                "cn": "把衣服脱下来。",
+                "pinyin": "bǎ yīfu tuō xià lái.",
+                "en": "Take off the clothes."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他走___来了。",
+                "options": [
+                    "下",
+                    "上",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请坐___。",
+                "options": [
+                    "下",
+                    "上",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "把衣服脱___。",
+                "options": [
+                    "下",
+                    "上",
+                    "来",
+                    "去"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_130",
+        "title": "得/不 - Potential Complement",
+        "titleMeaning": "得/不 - 可能补语",
+        "level": 2,
+        "category": "Complements",
+        "pattern": "V + 得 + C = can; V + 不 + C = cannot",
+        "explanation": "Insert 得 or 不 between verb and result/direction complement to express possibility.",
+        "commonMistake": {
+            "sentence": "我看完这本书。",
+            "correction": "我看得完这本书（能看完）。",
+            "explanation": "V+得+C = can, V+不+C = cannot."
+        },
+        "examples": [
+            {
+                "cn": "我看得完这本书。",
+                "pinyin": "wǒ kàn de wán zhè běn shū.",
+                "en": "I can finish reading this book."
+            },
+            {
+                "cn": "我吃不完这么多。",
+                "pinyin": "wǒ chī bù wán zhème duō.",
+                "en": "I cannot finish so much."
+            },
+            {
+                "cn": "他听不见你的声音。",
+                "pinyin": "tā tīng bú jiàn nǐ de shēngyīn.",
+                "en": "He cannot hear your voice."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我看___完这本书。",
+                "options": [
+                    "得",
+                    "不",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我吃___完这么多。",
+                "options": [
+                    "不",
+                    "得",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他听___见你的声音。",
+                "options": [
+                    "不",
+                    "得",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_131",
+        "title": "不了 (bù liǎo) - Cannot",
+        "titleMeaning": "不了 - 不了",
+        "level": 3,
+        "category": "Complements",
+        "pattern": "V + 不了 = cannot (due to circumstances)",
+        "explanation": "不了 = cannot due to external circumstances. 得了 = can (circumstances permit).",
+        "commonMistake": {
+            "sentence": "我去不了了。",
+            "correction": "wǒ qù bù liǎo le.",
+            "explanation": "I cannot go (circumstances prevent)."
+        },
+        "examples": [
+            {
+                "cn": "我去不了了。",
+                "pinyin": "wǒ qù bù liǎo le.",
+                "en": "I cannot go (circumstances)."
+            },
+            {
+                "cn": "这个手机买不了了。",
+                "pinyin": "zhège shǒujī mǎi bù liǎo le.",
+                "en": "Cannot buy this phone anymore."
+            },
+            {
+                "cn": "你跑得了和尚跑不了庙。",
+                "pinyin": "nǐ pǎo de liǎo héshang pǎo bù liǎo miào.",
+                "en": "You can run but cannot hide."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我去___了。",
+                "options": [
+                    "不了",
+                    "得了",
+                    "不得",
+                    "不了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个手机买___了。",
+                "options": [
+                    "不了",
+                    "得了",
+                    "不得",
+                    "不了"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他做___了（能做到）。",
+                "options": [
+                    "得了",
+                    "不了",
+                    "不得",
+                    "不了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_132",
+        "title": "得/不 vs 会/能",
+        "titleMeaning": "得/不与会/能",
+        "level": 3,
+        "category": "Complements",
+        "pattern": "V+得/不+C = specific; 会/能 = general",
+        "explanation": "得/不 complements = specific action; 会/能 = general ability.",
+        "commonMistake": {
+            "sentence": "我不会打开。",
+            "correction": "我打不开。",
+            "explanation": "Specific: V+不+C."
+        },
+        "examples": [
+            {
+                "cn": "我打不开这个瓶子。",
+                "pinyin": "wǒ dǎ bù kāi zhège píngzi.",
+                "en": "I cannot open this bottle (specific)."
+            },
+            {
+                "cn": "我不会说日语。",
+                "pinyin": "wǒ bù huì shuō rìyǔ.",
+                "en": "I cannot speak Japanese (general)."
+            },
+            {
+                "cn": "他听得懂广东话。",
+                "pinyin": "tā tīng de dǒng guǎngdōnghuà.",
+                "en": "He can understand Cantonese."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我打___开这个瓶子。",
+                "options": [
+                    "不",
+                    "得",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___说日语（没学过）。",
+                "options": [
+                    "不会",
+                    "不能",
+                    "不可以",
+                    "不应该"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他听___懂广东话。",
+                "options": [
+                    "得",
+                    "不",
+                    "了",
+                    "过"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_133",
+        "title": "吗 (ma) - Yes/No Questions",
+        "titleMeaning": "吗 - 是吗？",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Statement + 吗",
+        "explanation": "Adding 吗 to a statement turns it into a yes/no question. Simplest question form.",
+        "commonMistake": {
+            "sentence": "你去？",
+            "correction": "你去吗？",
+            "explanation": "Add 吗 at end of statement."
+        },
+        "examples": [
+            {
+                "cn": "你去吗？",
+                "pinyin": "nǐ qù ma?",
+                "en": "Are you going?"
+            },
+            {
+                "cn": "他好吗？",
+                "pinyin": "tā hǎo ma?",
+                "en": "Is he well?"
+            },
+            {
+                "cn": "这是书吗？",
+                "pinyin": "zhè shì shū ma?",
+                "en": "Is this a book?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你去___？",
+                "options": [
+                    "吗",
+                    "呢",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他好___？",
+                "options": [
+                    "吗",
+                    "呢",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这是书___？",
+                "options": [
+                    "吗",
+                    "呢",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_134",
+        "title": "呢 (ne) - Where/And...?",
+        "titleMeaning": "呢 - 你呢？",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "NP + 呢 / 你 + V + 呢",
+        "explanation": "呢 = \"what about\" or continuing question. Also used for \"where\" in context.",
+        "commonMistake": {
+            "sentence": "我很好你？",
+            "correction": "我很好，你呢？",
+            "explanation": "呢 means \"what about you?\""
+        },
+        "examples": [
+            {
+                "cn": "我很好，你呢？",
+                "pinyin": "wǒ hěn hǎo, nǐ ne?",
+                "en": "I am fine, and you?"
+            },
+            {
+                "cn": "你的书呢？",
+                "pinyin": "nǐ de shū ne?",
+                "en": "Where is your book?"
+            },
+            {
+                "cn": "他是老师，她呢？",
+                "pinyin": "tā shì lǎoshī, tā ne?",
+                "en": "He is a teacher, what about her?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我很好你___？",
+                "options": [
+                    "呢",
+                    "吗",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你的书___？",
+                "options": [
+                    "呢",
+                    "吗",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他是老师她___？",
+                "options": [
+                    "呢",
+                    "吗",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_135",
+        "title": "吧 (ba) - Tag/Suggestion",
+        "titleMeaning": "吧 - 是吧？",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Statement + 吧",
+        "explanation": "吧 = tag question (seeking confirmation) or soft suggestion/command.",
+        "commonMistake": {
+            "sentence": "你是学生吗？",
+            "correction": "你是学生吧？（我猜）",
+            "explanation": "吧 seeks confirmation when you are fairly sure."
+        },
+        "examples": [
+            {
+                "cn": "你是学生吧？",
+                "pinyin": "nǐ shì xuésheng ba?",
+                "en": "You are a student, right?"
+            },
+            {
+                "cn": "走吧。",
+                "pinyin": "zǒu ba.",
+                "en": "Let us go."
+            },
+            {
+                "cn": "他应该知道吧？",
+                "pinyin": "tā yīnggāi zhīdào ba?",
+                "en": "He should know, right?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你是学生___？",
+                "options": [
+                    "吧",
+                    "吗",
+                    "呢",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "走___。",
+                "options": [
+                    "吧",
+                    "吗",
+                    "呢",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他应该知道___？",
+                "options": [
+                    "吧",
+                    "吗",
+                    "呢",
+                    "啊"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_136",
+        "title": "A-not-A Questions",
+        "titleMeaning": "正反疑问句",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "V + 不/没 + V",
+        "explanation": "A-not-A questions: repeat the verb with 不 (present/future) or 没 (past) in between.",
+        "commonMistake": {
+            "sentence": "你去上海吗？",
+            "correction": "你去不去上海？",
+            "explanation": "V+不+V = A-not-A question."
+        },
+        "examples": [
+            {
+                "cn": "你去不去上海？",
+                "pinyin": "nǐ qù bú qù shànghǎi?",
+                "en": "Are you going to Shanghai or not?"
+            },
+            {
+                "cn": "他是不是老师？",
+                "pinyin": "tā shì bú shì lǎoshī?",
+                "en": "Is he a teacher or not?"
+            },
+            {
+                "cn": "你有没有钱？",
+                "pinyin": "nǐ yǒu méiyǒu qián?",
+                "en": "Do you have money?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你去___去上海？",
+                "options": [
+                    "不",
+                    "没",
+                    "别",
+                    "很"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___是老师？",
+                "options": [
+                    "是不是",
+                    "是是不",
+                    "是不是",
+                    "是不是"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你有___有钱？",
+                "options": [
+                    "没有",
+                    "不有",
+                    "没不",
+                    "有不"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_137",
+        "title": "谁/什么/哪儿 - Wh- Questions",
+        "titleMeaning": "谁/什么/哪儿",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "谁(who)/什么(what)/哪儿(where) + V",
+        "explanation": "Wh- question words stay in the position of the answer. No subject-verb inversion.",
+        "commonMistake": {
+            "sentence": "他是谁？",
+            "correction": "tā shì shéi?",
+            "explanation": "Who is he?"
+        },
+        "examples": [
+            {
+                "cn": "他是谁？",
+                "pinyin": "tā shì shéi?",
+                "en": "Who is he?"
+            },
+            {
+                "cn": "你吃什么？",
+                "pinyin": "nǐ chī shénme?",
+                "en": "What are you eating?"
+            },
+            {
+                "cn": "你去哪儿？",
+                "pinyin": "nǐ qù nǎr?",
+                "en": "Where are you going?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他是___？",
+                "options": [
+                    "谁",
+                    "什么",
+                    "哪儿",
+                    "怎么"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你吃___？",
+                "options": [
+                    "什么",
+                    "谁",
+                    "哪儿",
+                    "怎么"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你去___？",
+                "options": [
+                    "哪儿",
+                    "谁",
+                    "什么",
+                    "怎么"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_138",
+        "title": "怎么/怎么样 - How",
+        "titleMeaning": "怎么/怎么样",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "怎么=how/why, 怎么样=how about",
+        "explanation": "怎么 = how (manner) or why (surprising). 怎么样 = how about/what is X like.",
+        "commonMistake": {
+            "sentence": "你去学校？",
+            "correction": "你怎么去学校？",
+            "explanation": "怎么 asks about method."
+        },
+        "examples": [
+            {
+                "cn": "你怎么去学校？",
+                "pinyin": "nǐ zěnme qù xuéxiào?",
+                "en": "How do you go to school?"
+            },
+            {
+                "cn": "你为什么不去？",
+                "pinyin": "nǐ wèishénme bú qù?",
+                "en": "Why are you not going?"
+            },
+            {
+                "cn": "这个怎么样？",
+                "pinyin": "zhège zěnme yàng?",
+                "en": "How about this one?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你___去学校？",
+                "options": [
+                    "怎么",
+                    "什么",
+                    "谁",
+                    "哪儿"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你___不去？",
+                "options": [
+                    "为什么",
+                    "怎么",
+                    "什么",
+                    "谁"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个___样？",
+                "options": [
+                    "怎么",
+                    "什么",
+                    "谁",
+                    "哪儿"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_139",
+        "title": "多 + Adj - Degree Questions",
+        "titleMeaning": "多+形容词",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "多 + Adjective",
+        "explanation": "多 + adj = \"how [adj]?\" Asks about degree. Common: 多大/多高/多少钱.",
+        "commonMistake": {
+            "sentence": "你多大？",
+            "correction": "nǐ duō dà?",
+            "explanation": "How old are you?"
+        },
+        "examples": [
+            {
+                "cn": "你多大？",
+                "pinyin": "nǐ duō dà?",
+                "en": "How old are you?"
+            },
+            {
+                "cn": "他多高？",
+                "pinyin": "tā duō gāo?",
+                "en": "How tall is he?"
+            },
+            {
+                "cn": "这个多少钱？",
+                "pinyin": "zhège duōshao qián?",
+                "en": "How much is this?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你多___？",
+                "options": [
+                    "大",
+                    "高",
+                    "快",
+                    "重"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他多___？",
+                "options": [
+                    "高",
+                    "大",
+                    "快",
+                    "重"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这个多少___？",
+                "options": [
+                    "钱",
+                    "大",
+                    "高",
+                    "快"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_140",
+        "title": "选择疑问句 - Alternative Qs",
+        "titleMeaning": "选择题问句",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "A + 还是 + B",
+        "explanation": "还是 = \"or\" in questions. Offers a choice between alternatives.",
+        "commonMistake": {
+            "sentence": "你去不去？",
+            "correction": "你去还是不去？",
+            "explanation": "还是 = A or B (in questions)"
+        },
+        "examples": [
+            {
+                "cn": "你去还是不去？",
+                "pinyin": "nǐ qù háishì bú qù?",
+                "en": "Are you going or not?"
+            },
+            {
+                "cn": "你喝茶还是咖啡？",
+                "pinyin": "nǐ hē chá háishì kāfēi?",
+                "en": "Do you drink tea or coffee?"
+            },
+            {
+                "cn": "这是你的还是他的？",
+                "pinyin": "zhè shì nǐ de háishì tā de?",
+                "en": "Is this yours or his?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你去___不去？",
+                "options": [
+                    "还是",
+                    "或者",
+                    "和",
+                    "跟"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你喝茶___咖啡？",
+                "options": [
+                    "还是",
+                    "或者",
+                    "和",
+                    "跟"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这是你的___他的？",
+                "options": [
+                    "还是",
+                    "或者",
+                    "和",
+                    "跟"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_141",
+        "title": "个 (gè) - General Measure",
+        "titleMeaning": "个 - 通用量词",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 个 + N",
+        "explanation": "个 is the most common measure word. Used for people, general objects, abstract things.",
+        "commonMistake": {
+            "sentence": "一个人",
+            "correction": "yí gè rén",
+            "explanation": "one person"
+        },
+        "examples": [
+            {
+                "cn": "一个人",
+                "pinyin": "yí gè rén",
+                "en": "one person"
+            },
+            {
+                "cn": "三个苹果",
+                "pinyin": "sān gè píngguǒ",
+                "en": "three apples"
+            },
+            {
+                "cn": "两个问题",
+                "pinyin": "liǎng gè wèntí",
+                "en": "two questions"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___人。",
+                "options": [
+                    "个",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___苹果。",
+                "options": [
+                    "个",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "两___问题。",
+                "options": [
+                    "个",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_142",
+        "title": "条 (tiáo) - Long/Thin Things",
+        "titleMeaning": "条 - 长形",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 条 + N (长形物)",
+        "explanation": "条 for long thin things: fish, road, river, pants, towel, etc.",
+        "commonMistake": {
+            "sentence": "一条鱼",
+            "correction": "yì tiáo yú",
+            "explanation": "one fish"
+        },
+        "examples": [
+            {
+                "cn": "一条鱼",
+                "pinyin": "yì tiáo yú",
+                "en": "one fish"
+            },
+            {
+                "cn": "两条路",
+                "pinyin": "liǎng tiáo lù",
+                "en": "two roads"
+            },
+            {
+                "cn": "三条裙子",
+                "pinyin": "sān tiáo qúnzi",
+                "en": "three skirts"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___鱼。",
+                "options": [
+                    "条",
+                    "个",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "两___路。",
+                "options": [
+                    "条",
+                    "个",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___裙子。",
+                "options": [
+                    "条",
+                    "个",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_143",
+        "title": "只 (zhī) - Animals/One of Pair",
+        "titleMeaning": "只 - 动物",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 只 + Animal / One of Pair",
+        "explanation": "只 for animals, birds, insects, and one of a pair (只鞋=one shoe).",
+        "commonMistake": {
+            "sentence": "一只猫",
+            "correction": "yì zhī māo",
+            "explanation": "one cat"
+        },
+        "examples": [
+            {
+                "cn": "一只猫",
+                "pinyin": "yì zhī māo",
+                "en": "one cat"
+            },
+            {
+                "cn": "两只鸟",
+                "pinyin": "liǎng zhī niǎo",
+                "en": "two birds"
+            },
+            {
+                "cn": "三只鞋子",
+                "pinyin": "sān zhī xiézi",
+                "en": "three shoes"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___猫。",
+                "options": [
+                    "只",
+                    "条",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "两___鸟。",
+                "options": [
+                    "只",
+                    "条",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___鞋子。",
+                "options": [
+                    "只",
+                    "条",
+                    "个",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_144",
+        "title": "张 (zhāng) - Flat Things",
+        "titleMeaning": "张 - 平面",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 张 + N (平面物)",
+        "explanation": "张 for flat surfaces: paper, ticket, table, photo, bed, etc.",
+        "commonMistake": {
+            "sentence": "一张纸",
+            "correction": "yì zhāng zhǐ",
+            "explanation": "one piece of paper"
+        },
+        "examples": [
+            {
+                "cn": "一张纸",
+                "pinyin": "yì zhāng zhǐ",
+                "en": "one piece of paper"
+            },
+            {
+                "cn": "两张桌子",
+                "pinyin": "liǎng zhāng zhuōzi",
+                "en": "two tables"
+            },
+            {
+                "cn": "三张票",
+                "pinyin": "sān zhāng piào",
+                "en": "three tickets"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___纸。",
+                "options": [
+                    "张",
+                    "条",
+                    "只",
+                    "个"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "两___桌子。",
+                "options": [
+                    "张",
+                    "条",
+                    "只",
+                    "个"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___票。",
+                "options": [
+                    "张",
+                    "条",
+                    "只",
+                    "个"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_145",
+        "title": "本 (běn) - Bound Things",
+        "titleMeaning": "本 - 书本",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 本 + N (书/本子)",
+        "explanation": "本 for bound objects: books, magazines, dictionaries, notebooks.",
+        "commonMistake": {
+            "sentence": "一本书",
+            "correction": "yì běn shū",
+            "explanation": "one book"
+        },
+        "examples": [
+            {
+                "cn": "一本书",
+                "pinyin": "yì běn shū",
+                "en": "one book"
+            },
+            {
+                "cn": "两本杂志",
+                "pinyin": "liǎng běn zázhì",
+                "en": "two magazines"
+            },
+            {
+                "cn": "三本词典",
+                "pinyin": "sān běn cídiǎn",
+                "en": "three dictionaries"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___书。",
+                "options": [
+                    "本",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "两___杂志。",
+                "options": [
+                    "本",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___词典。",
+                "options": [
+                    "本",
+                    "条",
+                    "只",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_146",
+        "title": "杯/碗/瓶 - Container MW",
+        "titleMeaning": "杯/碗/瓶",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + ContainerMW + N",
+        "explanation": "Container measure words: 杯(cup), 碗(bowl), 瓶(bottle), 盘(plate).",
+        "commonMistake": {
+            "sentence": "一杯水",
+            "correction": "yì bēi shuǐ",
+            "explanation": "one glass of water"
+        },
+        "examples": [
+            {
+                "cn": "一杯水",
+                "pinyin": "yì bēi shuǐ",
+                "en": "one glass of water"
+            },
+            {
+                "cn": "一碗饭",
+                "pinyin": "yì wǎn fàn",
+                "en": "one bowl of rice"
+            },
+            {
+                "cn": "一瓶酒",
+                "pinyin": "yì píng jiǔ",
+                "en": "one bottle of alcohol"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___水。",
+                "options": [
+                    "杯",
+                    "个",
+                    "条",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "一___饭。",
+                "options": [
+                    "碗",
+                    "杯",
+                    "瓶",
+                    "盘"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "一___酒。",
+                "options": [
+                    "瓶",
+                    "杯",
+                    "碗",
+                    "盘"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_147",
+        "title": "位 (wèi) - Polite Person",
+        "titleMeaning": "位 - 位",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 位 + Person (polite)",
+        "explanation": "位 = polite measure word for people. Use for guests, experts, professionals.",
+        "commonMistake": {
+            "sentence": "一位老师",
+            "correction": "yí wèi lǎoshī",
+            "explanation": "a (respected) teacher"
+        },
+        "examples": [
+            {
+                "cn": "一位老师",
+                "pinyin": "yí wèi lǎoshī",
+                "en": "a teacher"
+            },
+            {
+                "cn": "三位客人",
+                "pinyin": "sān wèi kèrén",
+                "en": "three guests"
+            },
+            {
+                "cn": "这位是我的朋友。",
+                "pinyin": "zhè wèi shì wǒ de péngyou.",
+                "en": "This is my friend."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "一___老师。",
+                "options": [
+                    "位",
+                    "个",
+                    "条",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "三___客人。",
+                "options": [
+                    "位",
+                    "个",
+                    "条",
+                    "张"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "这___是我的朋友。",
+                "options": [
+                    "位",
+                    "个",
+                    "条",
+                    "张"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_148",
+        "title": "次 (cì) - Occasion/Frequency",
+        "titleMeaning": "次 - 次",
+        "level": 1,
+        "category": "Structure",
+        "pattern": "Num + 次 + Action",
+        "explanation": "次 = time/occasion. Used with actions (去一次, 吃一次). 遍 = from start to finish.",
+        "commonMistake": {
+            "sentence": "我去过一次。",
+            "correction": "wǒ qù guo yí cì.",
+            "explanation": "I have been once."
+        },
+        "examples": [
+            {
+                "cn": "我去过一次。",
+                "pinyin": "wǒ qù guo yí cì.",
+                "en": "I have been once."
+            },
+            {
+                "cn": "请再说一遍。",
+                "pinyin": "qǐng zài shuō yí biàn.",
+                "en": "Please say it again (from start)."
+            },
+            {
+                "cn": "他来过两次。",
+                "pinyin": "tā lái guo liǎng cì.",
+                "en": "He has come twice."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "我去过一___。",
+                "options": [
+                    "次",
+                    "遍",
+                    "个",
+                    "条"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "请再说一___。",
+                "options": [
+                    "遍",
+                    "次",
+                    "个",
+                    "条"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他来___两次。",
+                "options": [
+                    "过",
+                    "了",
+                    "过",
+                    "了"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_149",
+        "title": "Question Particles Summary",
+        "titleMeaning": "疑问语气词总结",
+        "level": 2,
+        "category": "Structure",
+        "pattern": "吗=yes/no, 呢=continuing, 吧=suggestion/tag",
+        "explanation": "吗 (yes/no), 呢 (what about), 吧 (tag/suggestion), 啊 (exclamation/softening). Each has distinct usage.",
+        "commonMistake": {
+            "sentence": "你是学生吗？",
+            "correction": "你是学生吧？（我猜）/ 你是学生吗？（我不知道）",
+            "explanation": "吧 seeks confirmation; 吗 is neutral."
+        },
+        "examples": [
+            {
+                "cn": "你是学生吗？",
+                "pinyin": "nǐ shì xuésheng ma?",
+                "en": "Are you a student? (neutral)"
+            },
+            {
+                "cn": "你是学生吧？",
+                "pinyin": "nǐ shì xuésheng ba?",
+                "en": "You are a student, right?"
+            },
+            {
+                "cn": "我是学生，你呢？",
+                "pinyin": "wǒ shì xuésheng, nǐ ne?",
+                "en": "I am a student, and you?"
+            }
+        ],
+        "exercises": [
+            {
+                "question": "你是学生___？（我不知道）",
+                "options": [
+                    "吗",
+                    "呢",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "你是学生___？（我猜）",
+                "options": [
+                    "吧",
+                    "吗",
+                    "呢",
+                    "啊"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我是学生你___？",
+                "options": [
+                    "呢",
+                    "吗",
+                    "吧",
+                    "啊"
+                ],
+                "correct": 0
+            }
+        ]
+    },
+    {
+        "id": "gx_150",
+        "title": "Grammar Overview - Key Patterns",
+        "titleMeaning": "语法概要",
+        "level": 3,
+        "category": "Structure",
+        "pattern": "把/被/比/得/了/过/着/是...的/连/越/就/才",
+        "explanation": "Key grammar patterns: 把(disposal), 被(passive), 比(comparison), 得(complement), 了(completion), 过(experience), 着(continuous), 是...的(emphasis), 连(even), 越(growing), 就(early/result), 才(late/only if).",
+        "commonMistake": {
+            "sentence": "他把我打。（乱用把）",
+            "correction": "他把我打了。/ 他打我了。",
+            "explanation": "把 needs complement, not for all actions."
+        },
+        "examples": [
+            {
+                "cn": "我把作业写完了。",
+                "pinyin": "wǒ bǎ zuòyè xiě wán le.",
+                "en": "I finished my homework (把)."
+            },
+            {
+                "cn": "他被老师批评了。",
+                "pinyin": "tā bèi lǎoshī pīpíng le.",
+                "en": "He was criticized (被)."
+            },
+            {
+                "cn": "他比我高。",
+                "pinyin": "tā bǐ wǒ gāo.",
+                "en": "He is taller (比)."
+            }
+        ],
+        "exercises": [
+            {
+                "question": "他___我打了。（被动）",
+                "options": [
+                    "被",
+                    "把",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "我___作业写完了。（处置）",
+                "options": [
+                    "把",
+                    "被",
+                    "让",
+                    "给"
+                ],
+                "correct": 0
+            },
+            {
+                "question": "他___我高。（比较）",
+                "options": [
+                    "比",
+                    "跟",
+                    "和",
+                    "对"
+                ],
+                "correct": 0
+            }
+        ]
     }
-})();
-
-(function() {
-    var items = [
-        // ge011: Compound direction pairs — huílái/huíqù, jìnlái/jìnqù
-        {
-            "id": "ge011",
-            "title": "V + 回来/回去/进来/进去 - Combined direction",
-            "titleMeaning": "Common direction compound pairs",
-            "level": "HSK 3",
-            "category": "DirectionComplements",
-            "commonMistake": "回来/回去 and 进来/进去 all follow: 来 = toward speaker, 去 = away. First verb tells the type of motion (回=return, 进=enter).",
-            "pattern": "Verb + 来/去 (toward/away from speaker)",
-            "explanation": "复合趋向补语的原则：第一个动词表方向，第二个来/去表相对说话人的方向。来=朝向，去=背离。",
-            "examples": [
-                { "chinese": "他跑回来了。", "pinyin": "tā pǎo huílái le.", "meaning": "He ran back (toward speaker)." },
-                { "chinese": "我明天就回去。", "pinyin": "wǒ míngtiān jiù huíqù.", "meaning": "I'll go back tomorrow (away from speaker)." },
-                { "chinese": "请进来坐。", "pinyin": "qǐng jìnlái zuò.", "meaning": "Come in and sit down." }
-            ],
-            "practice": [
-                { "question": "他跑___了。", "answer": "回来", "options": ["回来","回去","进来","进去"] },
-                { "question": "我明天就___。", "answer": "回去", "options": ["回去","回来","进来","进去"] },
-                { "question": "请___坐。", "answer": "进来", "options": ["进来","进去","回来","回去"] },
-                { "question": "你能把书带___吗？", "answer": "回来", "options": ["回来","回去","进来","进去"] },
-                { "question": "别___，里面太脏了。", "answer": "进去", "options": ["进去","进来","回去","回来"] },
-                { "question": "妈妈叫你___吃晚饭。", "answer": "回来", "options": ["回来","回去","进来","过去"] },
-                { "question": "你快把东西送___吧。", "answer": "回去", "options": ["回去","回来","进来","出去"] },
-                { "question": "我刚___，又要出___了。", "answer": "进来...出去", "options": ["进来...出去","进去...出来","回来...回去","过来...过去"] }
-            ]
-        },
-        // ge012: Potential complement — V+得/不+result
-        {
-            "id": "ge012",
-            "title": "V + 得/不 + Result - Potential complement",
-            "titleMeaning": "Can/cannot achieve the result",
-            "level": "HSK 4",
-            "category": "PotentialComplements",
-            "commonMistake": "V+得+result = can achieve. V+不+result = cannot achieve. Differs from 能 — potential complement emphasizes whether result is achievable, not general ability.",
-            "pattern": "Verb + 得/不 + Result Complement",
-            "explanation": "可能补语表示动作是否能达到某种结果。'V+得+补语'表示能做到，'V+不+补语'表示不能做到。",
-            "examples": [
-                { "chinese": "我看得懂中文。", "pinyin": "wǒ kàn de dǒng zhōngwén.", "meaning": "I can read Chinese (and understand)." },
-                { "chinese": "我听不懂你的话。", "pinyin": "wǒ tīng bù dǒng nǐ de huà.", "meaning": "I cannot understand what you say." },
-                { "chinese": "这个房间住得下十个人。", "pinyin": "zhège fángjiān zhù de xià shí gè rén.", "meaning": "This room can accommodate ten people." }
-            ],
-            "practice": [
-                { "question": "我看___懂中文。", "answer": "得", "options": ["得","不","了","着"] },
-                { "question": "我听___懂你的话。", "answer": "不", "options": ["不","得","了","着"] },
-                { "question": "这个房间住___下十个人。", "answer": "得", "options": ["得","不","了","着"] },
-                { "question": "太远了，我看___清楚。", "answer": "不", "options": ["不","得","了","着"] },
-                { "question": "你记得___他的名字吗？", "answer": "得", "options": ["得","不","了","着"] },
-                { "question": "门锁着，我进___去。", "answer": "不", "options": ["不","得","了","着"] },
-                { "question": "这么重的东西你拿___动吗？", "answer": "得", "options": ["得","不","了","着"] },
-                { "question": "他跑___很快，我追___上。", "answer": "得...不", "options": ["得...不","不...得","了...不","不...了"] }
-            ]
-        },
-        // ge013: Potential complement — deliǎo/bùliǎo
-        {
-            "id": "ge013",
-            "title": "V + 得了/不了 (deliǎo/bùliǎo) - Can/Cannot",
-            "titleMeaning": "Potential complement: able to or not",
-            "level": "HSK 4",
-            "category": "PotentialComplements",
-            "commonMistake": "得了 = can (circumstances allow). 不了 = cannot (impossible/too much). '去得了' = can go; '去不了' = cannot go. '吃不了' = cannot eat (too much).",
-            "pattern": "Verb + 得了/不了",
-            "explanation": "'得了'表示条件允许做成某事；'不了'表示条件不允许或做不完、做不动。",
-            "examples": [
-                { "chinese": "明天我去得了。", "pinyin": "míngtiān wǒ qù deliǎo.", "meaning": "I can go tomorrow (circumstances allow)." },
-                { "chinese": "我吃不了这么多。", "pinyin": "wǒ chī bùliǎo zhème duō.", "meaning": "I can't eat this much." },
-                { "chinese": "我一个人做不了这个工作。", "pinyin": "wǒ yī gè rén zuò bùliǎo zhège gōngzuò.", "meaning": "I can't do this job alone." }
-            ],
-            "practice": [
-                { "question": "明天我去___。", "answer": "得了", "options": ["得了","不了","过了","完了"] },
-                { "question": "我吃___这么多。", "answer": "不了", "options": ["不了","得了","过了","完了"] },
-                { "question": "我一个人做___这个工作。", "answer": "不了", "options": ["不了","得了","过了","完了"] },
-                { "question": "这么大的雨，我们走___。", "answer": "不了", "options": ["不了","得了","过了","完了"] },
-                { "question": "你放心，我忘___你的。", "answer": "不了", "options": ["不了","得了","过了","完了"] },
-                { "question": "这点小事，他办___。", "answer": "得了", "options": ["得了","不了","过了","完了"] },
-                { "question": "我的腿疼得受___。", "answer": "不了", "options": ["不了","得了","过了","完了"] },
-                { "question": "你一个人拿___这么多东西吗？", "answer": "得了", "options": ["得了","不了","过了","完了"] }
-            ]
-        },
-        // ge014: Duration complement
-        {
-            "id": "ge014",
-            "title": "V + Duration - Time-measure complement",
-            "titleMeaning": "Duration of action",
-            "level": "HSK 3",
-            "category": "TimeMeasure",
-            "commonMistake": "Duration goes AFTER the verb. '我学了三年中文' = I studied Chinese for 3 years. '我三年学了中文' is wrong. If object is a pronoun, duration goes after it.",
-            "pattern": "Verb + 了 + Duration + (的) + Object",
-            "explanation": "时量补语用在动词后面，表示动作持续的时间。如'学了三年'表示学了三年。",
-            "examples": [
-                { "chinese": "我学了三年中文。", "pinyin": "wǒ xué le sān nián zhōngwén.", "meaning": "I studied Chinese for three years." },
-                { "chinese": "我们等了一小时。", "pinyin": "wǒmen děng le yī xiǎoshí.", "meaning": "We waited for an hour." },
-                { "chinese": "他睡了八个小时。", "pinyin": "tā shuì le bā gè xiǎoshí.", "meaning": "He slept for eight hours." }
-            ],
-            "practice": [
-                { "question": "我学___三年中文。", "answer": "了", "options": ["了","过","着","的"] },
-                { "question": "我们等___一小时。", "answer": "了", "options": ["了","过","着","的"] },
-                { "question": "他睡___八个小时。", "answer": "了", "options": ["了","过","着","的"] },
-                { "question": "我每天学习两___小时。", "answer": "个", "options": ["个","了","年","天"] },
-                { "question": "你看了多长___电视？", "answer": "时间", "options": ["时间","时候","小时","点钟"] },
-                { "question": "他在中国住___五年。", "answer": "了", "options": ["了","过","着","的"] },
-                { "question": "我每天运动一___小时。", "answer": "个", "options": ["个","了","年","天"] },
-                { "question": "他已经跑___半个小时了。", "answer": "了", "options": ["了","过","着","的"] }
-            ]
-        },
-        // ge015: Frequency measure words — cì/biàn/tàng
-        {
-            "id": "ge015",
-            "title": "次/遍/趟 (cì/biàn/tàng) - Frequency words",
-            "titleMeaning": "Action measure words",
-            "level": "HSK 3",
-            "category": "TimeMeasure",
-            "commonMistake": "次 = general frequency. 遍 = complete process start to finish. 趟 = a trip. '看三次' = watched 3 times; '看三遍' = watched through 3 times; '去三趟' = went 3 trips.",
-            "pattern": "Verb + Number + 次/遍/趟",
-            "explanation": "'次'用于动作的一般次数；'遍'强调从头到尾完整一遍；'趟'用于来回走动或专门去一次。",
-            "examples": [
-                { "chinese": "我去过三次中国。", "pinyin": "wǒ qù guò sān cì zhōngguó.", "meaning": "I have been to China three times." },
-                { "chinese": "请再读一遍。", "pinyin": "qǐng zài dú yī biàn.", "meaning": "Please read it once more (start to finish)." },
-                { "chinese": "我去了一趟超市。", "pinyin": "wǒ qù le yī tàng chāoshì.", "meaning": "I made a trip to the supermarket." }
-            ],
-            "practice": [
-                { "question": "我去过三___中国。", "answer": "次", "options": ["次","遍","趟","回"] },
-                { "question": "请再读一___。", "answer": "遍", "options": ["遍","次","趟","回"] },
-                { "question": "我去了一___超市。", "answer": "趟", "options": ["趟","次","遍","回"] },
-                { "question": "这部动画片我看了好多___。", "answer": "遍", "options": ["遍","次","趟","回"] },
-                { "question": "我跟他见过一___。", "answer": "次", "options": ["次","遍","趟","回"] },
-                { "question": "你帮我去一___邮局吧。", "answer": "趟", "options": ["趟","次","遍","回"] },
-                { "question": "他一___考过了驾照。", "answer": "次", "options": ["次","遍","趟","回"] },
-                { "question": "这个故事我听了三___。", "answer": "遍", "options": ["遍","次","趟","回"] }
-            ]
-        },
-        // ge016: 一下 — brief action
-        {
-            "id": "ge016",
-            "title": "V + 一下 (yīxià) - Brief action",
-            "titleMeaning": "Do something briefly/politely",
-            "level": "HSK 2",
-            "category": "TimeMeasure",
-            "commonMistake": "一下 softens commands and means briefly. '等一下' = wait a moment (polite); bare '等!' = wait! (rude). Also literally short duration.",
-            "pattern": "Verb + 一下",
-            "explanation": "'一下'用在动词后，表示时间短暂，也使语气缓和礼貌。",
-            "examples": [
-                { "chinese": "请等一下。", "pinyin": "qǐng děng yīxià.", "meaning": "Please wait a moment." },
-                { "chinese": "让我看一下。", "pinyin": "ràng wǒ kàn yīxià.", "meaning": "Let me take a look." },
-                { "chinese": "你们休息一下吧。", "pinyin": "nǐmen xiūxi yīxià ba.", "meaning": "Take a short rest, you guys." }
-            ],
-            "practice": [
-                { "question": "请等___。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "让我看___。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "你们休息___吧。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "我想跟你商量___。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "请介绍___你自己。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "让他安静___吧。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "老师，我能问___吗？", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] },
-                { "question": "你们先聊___，我马上回来。", "answer": "一下", "options": ["一下","一会儿","一次","一遍"] }
-            ]
-        },
-        // ge017: 就 — early/soon emphasis
-        {
-            "id": "ge017",
-            "title": "就 (jiù) - Early/Soon emphasis",
-            "titleMeaning": "Emphasizing earliness or immediacy",
-            "level": "HSK 3",
-            "category": "Adverbs",
-            "commonMistake": "就 before verb means action happened earlier/sooner/faster than expected. '他六点就来了' = He came as early as 6. Contrast: 才 = late/only then.",
-            "pattern": "Subject + Time + 就 + Verb + 了",
-            "explanation": "'就'表示动作发生得早、快或容易。和'才'相反，强调早、快、顺利。",
-            "examples": [
-                { "chinese": "他六点就来了。", "pinyin": "tā liù diǎn jiù lái le.", "meaning": "He came as early as six o'clock." },
-                { "chinese": "我十分钟就到了。", "pinyin": "wǒ shí fēnzhōng jiù dào le.", "meaning": "I arrived in just ten minutes." },
-                { "chinese": "他很快就把作业做完了。", "pinyin": "tā hěn kuài jiù bǎ zuòyè zuò wán le.", "meaning": "He finished homework very quickly." }
-            ],
-            "practice": [
-                { "question": "他六点___来了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "我十分钟___到了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "他很快___把作业做完了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "我小时候___喜欢画画。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "老师一解释我___明白了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "她十八岁___大学毕业了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "我们走几步路___到了。", "answer": "就", "options": ["就","才","也","还"] },
-                { "question": "他___干了一会儿___累了。", "answer": "就...就", "options": ["就...就","才...才","也...也","还...还"] }
-            ]
-        },
-        // ge018: 才 — late/only then
-        {
-            "id": "ge018",
-            "title": "才 (cái) - Late/Only then",
-            "titleMeaning": "Emphasizing lateness or smallness",
-            "level": "HSK 3",
-            "category": "Adverbs",
-            "commonMistake": "才 = late/only then OR only (small amount). '他十点才来' = He didn't come until 10. '才十块钱' = only 10 yuan. Contrast with 就.",
-            "pattern": "Subject + Time + 才 + Verb / 才 + Number",
-            "explanation": "'才'表示动作发生得晚、慢或不容易；也表示数量少。和'就'相反。",
-            "examples": [
-                { "chinese": "他十点才来。", "pinyin": "tā shí diǎn cái lái.", "meaning": "He didn't come until ten o'clock." },
-                { "chinese": "我花了三年才学完这本书。", "pinyin": "wǒ huā le sān nián cái xué wán zhè běn shū.", "meaning": "It took me three years to finish studying this book." },
-                { "chinese": "这件衣服才五十块。", "pinyin": "zhè jiàn yīfu cái wǔshí kuài.", "meaning": "This piece of clothing is only fifty yuan." }
-            ],
-            "practice": [
-                { "question": "他十点___来。", "answer": "才", "options": ["才","就","也","还"] },
-                { "question": "我花了三年___学完这本书。", "answer": "才", "options": ["才","就","也","还"] },
-                { "question": "这件衣服___五十块。", "answer": "才", "options": ["才","就","也","还"] },
-                { "question": "你怎么现在___来？", "answer": "才", "options": ["才","就","也","还"] },
-                { "question": "我等了半天他___出现。", "answer": "才", "options": ["才","就","也","还"] },
-                { "question": "他___学了一个月___会说中文了。", "answer": "才...就", "options": ["才...就","就...才","也...也","还...还"] },
-                { "question": "这孩子___三岁，___会背诗了。", "answer": "才...就", "options": ["才...就","就...才","还...就","也...也"] },
-                { "question": "他做了好几遍___做对。", "answer": "才", "options": ["才","就","也","还"] }
-            ]
-        },
-        // ge019: 跟...一样 — as...as
-        {
-            "id": "ge019",
-            "title": "跟...一样 (gēn...yīyàng) - As...as",
-            "titleMeaning": "Equality comparison",
-            "level": "HSK 3",
-            "category": "Comparisons",
-            "commonMistake": "跟...一样 = as...as. Negative: 跟...不一样. '跟他一样高' = as tall as him. '跟他不一样高' = not same height. Not used with 很.",
-            "pattern": "A + 跟 + B + 一样 + Adjective",
-            "explanation": "'跟...一样'用于比较两个事物相同。否定形式是'跟...不一样'。",
-            "examples": [
-                { "chinese": "我跟他一样高。", "pinyin": "wǒ gēn tā yīyàng gāo.", "meaning": "I am as tall as him." },
-                { "chinese": "这件衣服跟那件一样贵。", "pinyin": "zhè jiàn yīfu gēn nà jiàn yīyàng guì.", "meaning": "This clothing costs as much as that one." },
-                { "chinese": "我的想法跟你不一样。", "pinyin": "wǒ de xiǎngfǎ gēn nǐ bù yīyàng.", "meaning": "My idea is different from yours." }
-            ],
-            "practice": [
-                { "question": "我___他___高。", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "这件衣服___那件___贵。", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "我的想法___你___。", "answer": "跟...不一样", "options": ["跟...不一样","跟...一样","比...不","没有...更"] },
-                { "question": "中文的语法___日语___吗？", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "他___他爸爸___聪明。", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "这个颜色___那个___深。", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "她的脾气___我___，都很急。", "answer": "跟...一样", "options": ["跟...一样","比...更","没有...这么","像...那样"] },
-                { "question": "北方菜___南方菜___。", "answer": "跟...不一样", "options": ["跟...不一样","跟...一样","没有...更","比...更"] }
-            ]
-        },
-        // ge020: 越来越 — more and more
-        {
-            "id": "ge020",
-            "title": "越来越 (yuèláiyuè) - More and more",
-            "titleMeaning": "Progressive change over time",
-            "level": "HSK 4",
-            "category": "Comparisons",
-            "commonMistake": "越来越 describes gradual change. No comparison object needed. '越来越冷' = getting colder. Differs from 越...越 which needs two parts.",
-            "pattern": "越来越 + Adjective/Verb",
-            "explanation": "'越来越'表示程度随着时间逐渐变化，不需要比较对象。与越...越不同。",
-            "examples": [
-                { "chinese": "天气越来越冷了。", "pinyin": "tiānqì yuèláiyuè lěng le.", "meaning": "The weather is getting colder." },
-                { "chinese": "他的中文越来越好了。", "pinyin": "tā de zhōngwén yuèláiyuè hǎo le.", "meaning": "His Chinese is getting better." },
-                { "chinese": "越来越多的人学中文。", "pinyin": "yuèláiyuè duō de rén xué zhōngwén.", "meaning": "More and more people learn Chinese." }
-            ],
-            "practice": [
-                { "question": "天气___冷___。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "他的中文___好___。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "___多的人学中文。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "这个城市___漂亮___。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "生活___方便___。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "他___喜欢___中国文化。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "工作___忙___。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] },
-                { "question": "手机___便宜___了。", "answer": "越来越", "options": ["越来越","越...越","又...又","既...又"] }
-            ]
-        }
-    ];
-    if (typeof GrammarData !== "undefined" && GrammarData.lessons) {
-        GrammarData.lessons = GrammarData.lessons.concat(items);
-    }
-})();
-
-
-(function() {
-    var items = [
-        // ge021: 一点儿 vs 有点儿
-        {
-            "id": "ge021",
-            "title": "一点儿 vs 有点儿 (yīdiǎnr vs yǒudiǎnr)",
-            "titleMeaning": "A little vs somewhat",
-            "level": "HSK 3",
-            "category": "Degree",
-            "commonMistake": "一点儿 goes AFTER adjectives (Adj + 一点儿 = a bit more). 有点儿 goes BEFORE (有点儿 + Adj = a bit too). '快一点儿' = faster; '有点儿快' = a bit too fast.",
-            "pattern": "Adj + 一点儿 / 有点儿 + Adj",
-            "explanation": "'一点儿'用在形容词后表示程度稍微增加；'有点儿'用在形容词前表示稍微有些（常带不满意语气）。位置不同，意思不同。",
-            "examples": [
-                { "chinese": "请说慢一点儿。", "pinyin": "qǐng shuō màn yīdiǎnr.", "meaning": "Please speak a bit slower." },
-                { "chinese": "今天有点儿冷。", "pinyin": "jīntiān yǒudiǎnr lěng.", "meaning": "Today is a bit cold." },
-                { "chinese": "这件衣服贵了点儿。", "pinyin": "zhè jiàn yīfu guì le diǎnr.", "meaning": "This clothing is a bit too expensive." }
-            ],
-            "practice": [
-                { "question": "请说慢___。", "answer": "一点儿", "options": ["一点儿","有点儿","一些","很多"] },
-                { "question": "今天___冷。", "answer": "有点儿", "options": ["有点儿","一点儿","一些","很多"] },
-                { "question": "这件衣服贵了___。", "answer": "点儿", "options": ["点儿","有点儿","一些","很多"] },
-                { "question": "我___不舒服。", "answer": "有点儿", "options": ["有点儿","一点儿","一些","很多"] },
-                { "question": "能不能便宜___？", "answer": "一点儿", "options": ["一点儿","有点儿","一些","很多"] },
-                { "question": "他___不太高兴。", "answer": "有点儿", "options": ["有点儿","一点儿","一些","很多"] },
-                { "question": "请你大声___。", "answer": "一点儿", "options": ["一点儿","有点儿","一些","很多"] },
-                { "question": "这个房间___小。", "answer": "有点儿", "options": ["有点儿","一点儿","一些","很多"] }
-            ]
-        },
-        // ge022: 对...来说
-        {
-            "id": "ge022",
-            "title": "对...来说 (duì...láishuō) - For (someone)",
-            "titleMeaning": "From someone's perspective",
-            "level": "HSK 4",
-            "category": "Prepositions",
-            "commonMistake": "对...来说 means 'for (someone)' / 'from (someone's) perspective'. Not same as 给 (to give). '对我来说' = for me / to me (in my opinion).",
-            "pattern": "对 + Person + 来说 + Statement",
-            "explanation": "'对...来说'引出某人的观点，表示从某人的角度看。相当于英语的'for someone'。",
-            "examples": [
-                { "chinese": "对我来说，中文很难。", "pinyin": "duì wǒ láishuō, zhōngwén hěn nán.", "meaning": "For me, Chinese is very difficult." },
-                { "chinese": "对孩子来说，玩很重要。", "pinyin": "duì háizi láishuō, wán hěn zhòngyào.", "meaning": "For children, playing is very important." },
-                { "chinese": "对很多人来说，健康最重要。", "pinyin": "duì hěn duō rén láishuō, jiànkāng zuì zhòngyào.", "meaning": "For many people, health is most important." }
-            ],
-            "practice": [
-                { "question": "___我___，中文很难。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___孩子___，玩很重要。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___很多人___，健康最重要。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___学生___，努力学习是最重要的。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___老人___，冬天比较难过。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___外国人___，筷子不太好用。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___上班族___，周末很珍贵。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] },
-                { "question": "___我___，这个问题不难。", "answer": "对...来说", "options": ["对...来说","在...看来","从...来看","给...来看"] }
-            ]
-        },
-        // ge023: 从...到...
-        {
-            "id": "ge023",
-            "title": "从...到... (cóng...dào...) - From...to...",
-            "titleMeaning": "Range: time, place, quantity",
-            "level": "HSK 2",
-            "category": "Prepositions",
-            "commonMistake": "从...到... expresses range: time (从早上到晚上), place (从北京到上海), quantity (从一到十). Not for giving direction commands.",
-            "pattern": "从 + Point A + 到 + Point B",
-            "explanation": "'从...到...'表示范围，可以用于时间、地点、数量。表示从一点到另一点。",
-            "examples": [
-                { "chinese": "从北京到上海不远。", "pinyin": "cóng běijīng dào shànghǎi bù yuǎn.", "meaning": "It's not far from Beijing to Shanghai." },
-                { "chinese": "他从早上到晚上都在学习。", "pinyin": "tā cóng zǎoshang dào wǎnshang dōu zài xuéxí.", "meaning": "He studies from morning to night." },
-                { "chinese": "从一到十，请数一数。", "pinyin": "cóng yī dào shí, qǐng shǔ yī shǔ.", "meaning": "From one to ten, please count." }
-            ],
-            "practice": [
-                { "question": "___北京___上海不远。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "他___早上___晚上都在学习。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "___一___十，请数一数。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "___学校___家要走多久？", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "___明天___后天我都不在家。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "___小学___大学，她都在北京。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "___头___尾我都没听懂。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] },
-                { "question": "这件衣服___上___下都是白色。", "answer": "从...到", "options": ["从...到","在...到","由...到","自...到"] }
-            ]
-        },
-        // ge024: 离...
-        {
-            "id": "ge024",
-            "title": "离... (lí...) - Distance from",
-            "titleMeaning": "Distance from a point",
-            "level": "HSK 3",
-            "category": "Prepositions",
-            "commonMistake": "离 = static distance. '学校离我家很近' = school is close to my home. 从 = origin of movement. Do not confuse: '从我家到学校' = from home to school.",
-            "pattern": "A + 离 + B + 近/远",
-            "explanation": "'离'表示空间或时间上的距离。常用'离...近'(close)和'离...远'(far)。强调静态距离，与'从'不同。",
-            "examples": [
-                { "chinese": "学校离我家很近。", "pinyin": "xuéxiào lí wǒ jiā hěn jìn.", "meaning": "The school is very close to my home." },
-                { "chinese": "超市离这里不远。", "pinyin": "chāoshì lí zhèlǐ bù yuǎn.", "meaning": "The supermarket is not far from here." },
-                { "chinese": "离春节还有一个月。", "pinyin": "lí chūnjié háiyǒu yī gè yuè.", "meaning": "It's still one month until Spring Festival." }
-            ],
-            "practice": [
-                { "question": "学校___我家很___。", "answer": "离...近", "options": ["离...近","从...近","在...近","到...近"] },
-                { "question": "超市___这里不___。", "answer": "离...远", "options": ["离...远","从...远","在...远","到...远"] },
-                { "question": "___春节___一个月。", "answer": "离...还有", "options": ["离...还有","从...还有","在...还有","到...还有"] },
-                { "question": "地铁站___这儿___吗？", "answer": "离...远", "options": ["离...远","从...远","在...远","到...远"] },
-                { "question": "饭店___公司不___，走过去就行。", "answer": "离...远", "options": ["离...远","从...远","在...远","到...远"] },
-                { "question": "北京___上海很远。", "answer": "离", "options": ["离","从","在","往"] },
-                { "question": "___考试___三天了。", "answer": "离...还有", "options": ["离...还有","从...还有","在...还有","到...还有"] },
-                { "question": "你家___公园___吗？", "answer": "离...近", "options": ["离...近","从...近","在...近","到...近"] }
-            ]
-        },
-        // ge025: ...的时候
-        {
-            "id": "ge025",
-            "title": "...的时候 (...de shíhou) - When/While",
-            "titleMeaning": "Time clause marker",
-            "level": "HSK 3",
-            "category": "TimePhrases",
-            "commonMistake": "的时候 = when/while. Goes AFTER the action description. '吃饭的时候' = when eating. Word order differs from English 'when I eat'.",
-            "pattern": "Action/Time + 的时候 + Statement",
-            "explanation": "'的时候'表示某个时间点或时间段。用于动词或时间词后。相当于英语的'when'或'while'。",
-            "examples": [
-                { "chinese": "我吃饭的时候喜欢看新闻。", "pinyin": "wǒ chīfàn de shíhou xǐhuān kàn xīnwén.", "meaning": "When I eat, I like to watch news." },
-                { "chinese": "小时候，我们经常去公园。", "pinyin": "xiǎo shíhou, wǒmen jīngcháng qù gōngyuán.", "meaning": "When we were little, we often went to the park." },
-                { "chinese": "下雨的时候，路上很堵。", "pinyin": "xiàyǔ de shíhou, lùshang hěn dǔ.", "meaning": "When it rains, the roads are congested." }
-            ],
-            "practice": [
-                { "question": "我吃饭___喜欢看新闻。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "小___，我们经常去公园。", "answer": "时候", "options": ["时候","时间","以前","之后"] },
-                { "question": "下雨___，路上很堵。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "他开车___不听电话。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "我无聊___就听音乐。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "你年轻___最喜欢做什么？", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "上课___请把手机关掉。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] },
-                { "question": "高兴___时间过得特别快。", "answer": "的时候", "options": ["的时候","以前","以后","以来"] }
-            ]
-        },
-        // ge026: 一边...一边
-        {
-            "id": "ge026",
-            "title": "一边...一边 (yībiān...yībiān) - While doing",
-            "titleMeaning": "Simultaneous actions",
-            "level": "HSK 3",
-            "category": "Connectors",
-            "commonMistake": "一边...一边 = two simultaneous actions by same subject. '一边吃饭一边看电视' = eating while watching TV. Both must be controllable by same person.",
-            "pattern": "Subject + 一边 + Verb1 + 一边 + Verb2",
-            "explanation": "'一边...一边'表示两个动作同时进行。相当于英语的'while doing...doing...'。",
-            "examples": [
-                { "chinese": "他一边吃饭一边看电视。", "pinyin": "tā yībiān chīfàn yībiān kàn diànshì.", "meaning": "He eats while watching TV." },
-                { "chinese": "我一边走路一边听音乐。", "pinyin": "wǒ yībiān zǒulù yībiān tīng yīnyuè.", "meaning": "I listen to music while walking." },
-                { "chinese": "她一边唱歌一边跳舞。", "pinyin": "tā yībiān chànggē yībiān tiàowǔ.", "meaning": "She sings while dancing." }
-            ],
-            "practice": [
-                { "question": "他___吃饭___看电视。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "我___走路___听音乐。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "她___唱歌___跳舞。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "不要___看书___吃东西。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "我们___喝茶___聊天吧。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "他___跑步___听英语。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "爷爷___晒太阳___看报纸。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] },
-                { "question": "她___哭___说发生的事情。", "answer": "一边...一边", "options": ["一边...一边","一...就","又...又","既...又"] }
-            ]
-        },
-        // ge027: 是...还是 — or in questions
-        {
-            "id": "ge027",
-            "title": "是...还是 (shì...háishì) - Or (in questions)",
-            "titleMeaning": "Alternative questions",
-            "level": "HSK 2",
-            "category": "Questions",
-            "commonMistake": "还是 = or in QUESTIONS ONLY. 或者 = or in statements. '你是中国人还是日本人？' (question); '我想去中国或者日本' (statement).",
-            "pattern": "Subject + 是 + A + 还是 + B？",
-            "explanation": "'还是'用于疑问句中的选择。陈述句中用'或者'。",
-            "examples": [
-                { "chinese": "你是中国人还是日本人？", "pinyin": "nǐ shì zhōngguó rén háishì rìběn rén?", "meaning": "Are you Chinese or Japanese?" },
-                { "chinese": "你想喝茶还是喝咖啡？", "pinyin": "nǐ xiǎng hē chá háishì hē kāfēi?", "meaning": "Do you want tea or coffee?" },
-                { "chinese": "这个字读'hǎo'还是'hào'？", "pinyin": "zhège zì dú 'hǎo' háishì 'hào'?", "meaning": "Is this character read 'hǎo' or 'hào'?" }
-            ],
-            "practice": [
-                { "question": "你___中国人___日本人？", "answer": "是...还是", "options": ["是...还是","是...或者","不是...就是","又...又"] },
-                { "question": "你想喝茶___喝咖啡？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "这个字读'hǎo'___'hào'？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "你去___不去？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "这道题对___错？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "我们坐飞机去___坐火车去？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "你觉得红色好看___蓝色好看？", "answer": "还是", "options": ["还是","或者","和","或"] },
-                { "question": "你___老师___学生？", "answer": "是...还是", "options": ["是...还是","是...或者","不是...就是","可能...可能"] }
-            ]
-        },
-        // ge028: 或者 — or in statements
-        {
-            "id": "ge028",
-            "title": "或者 (huòzhě) - Or (in statements)",
-            "titleMeaning": "Or in declarative sentences",
-            "level": "HSK 3",
-            "category": "Questions",
-            "commonMistake": "或者 = or in statements. 还是 = or in questions. '明天或者后天' (statement). '你明天去还是后天去？' (question). Never mix.",
-            "pattern": "Option A + 或者 + Option B",
-            "explanation": "'或者'用于陈述句中的选择。与'还是'区别：'或者'陈述句，'还是'疑问句。",
-            "examples": [
-                { "chinese": "明天或者后天我都可以。", "pinyin": "míngtiān huòzhě hòutiān wǒ dōu kěyǐ.", "meaning": "Tomorrow or the day after is fine." },
-                { "chinese": "你可以坐地铁或者坐公交。", "pinyin": "nǐ kěyǐ zuò dìtiě huòzhě zuò gōngjiāo.", "meaning": "You can take the subway or the bus." },
-                { "chinese": "我想去中国或者日本旅行。", "pinyin": "wǒ xiǎng qù zhōngguó huòzhě rìběn lǚxíng.", "meaning": "I want to travel to China or Japan." }
-            ],
-            "practice": [
-                { "question": "明天___后天我都可以。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "你可以坐地铁___坐公交。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "我想去中国___日本旅行。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "我们吃饭___看电影都行。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "打车___骑车都可以到那儿。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "周末我喜欢看书___听音乐。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "你可以用手机___电脑查一下。", "answer": "或者", "options": ["或者","还是","和","或"] },
-                { "question": "你___他，必须有一个人来。", "answer": "或者", "options": ["或者","还是","和","或"] }
-            ]
-        },
-        // ge029: 以前/以后
-        {
-            "id": "ge029",
-            "title": "以前/以后 (yǐqián/yǐhòu) - Before/After",
-            "titleMeaning": "Time: before and after",
-            "level": "HSK 3",
-            "category": "TimePhrases",
-            "commonMistake": "以前 = before. 以后 = after. Placed at END of time clause: '吃饭以前' = before eating; '吃饭以后' = after eating. Differs from English word order.",
-            "pattern": "Action/Time + 以前/以后 + Statement",
-            "explanation": "'以前'表在某个时间之前，'以后'表在某个时间之后。用于动词后表先后关系。",
-            "examples": [
-                { "chinese": "吃饭以前要洗手。", "pinyin": "chīfàn yǐqián yào xǐshǒu.", "meaning": "Wash your hands before eating." },
-                { "chinese": "吃完饭以后，我们去散步了。", "pinyin": "chī wán fàn yǐhòu, wǒmen qù sànbù le.", "meaning": "After eating, we went for a walk." },
-                { "chinese": "睡觉以前不要喝咖啡。", "pinyin": "shuìjiào yǐqián bù yào hē kāfēi.", "meaning": "Don't drink coffee before sleeping." }
-            ],
-            "practice": [
-                { "question": "吃饭___要洗手。", "answer": "以前", "options": ["以前","以后","以来","时候"] },
-                { "question": "吃完饭___，我们去散步了。", "answer": "以后", "options": ["以后","以前","以来","时候"] },
-                { "question": "睡觉___不要喝咖啡。", "answer": "以前", "options": ["以前","以后","以来","时候"] },
-                { "question": "三年___我再来中国。", "answer": "以后", "options": ["以后","以前","以来","时候"] },
-                { "question": "出门___别忘了带钥匙。", "answer": "以前", "options": ["以前","以后","以来","时候"] },
-                { "question": "毕业___我想去旅行。", "answer": "以后", "options": ["以后","以前","以来","时候"] },
-                { "question": "上课___请预习课文。", "answer": "以前", "options": ["以前","以后","以来","时候"] },
-                { "question": "他上大学___变得更努力了。", "answer": "以后", "options": ["以后","以前","以来","时候"] }
-            ]
-        },
-        // ge030: 向/往/朝
-        {
-            "id": "ge030",
-            "title": "向/往/朝 (xiàng/wǎng/cháo) - Directional prepositions",
-            "titleMeaning": "Towards/In the direction of",
-            "level": "HSK 4",
-            "category": "Prepositions",
-            "commonMistake": "往 = most common for movement direction. 向 = more formal, also abstract. 朝 = facing direction. '往前走' (go forward); '向我学习' (learn from me); '朝南' (faces south).",
-            "pattern": "向/往/朝 + Direction/Location + Verb",
-            "explanation": "'往'最常用，多用于口语；'向'较正式，也可用于抽象方向；'朝'通常用于面对的方向。",
-            "examples": [
-                { "chinese": "往前走一百米就到了。", "pinyin": "wǎng qián zǒu yībǎi mǐ jiù dào le.", "meaning": "Go forward 100 meters and you'll arrive." },
-                { "chinese": "他向我笑了笑。", "pinyin": "tā xiàng wǒ xiào le xiào.", "meaning": "He smiled at me." },
-                { "chinese": "房间朝南。", "pinyin": "fángjiān cháo nán.", "meaning": "The room faces south." }
-            ],
-            "practice": [
-                { "question": "___前走一百米就到了。", "answer": "往", "options": ["往","向","朝","对"] },
-                { "question": "他___我笑了笑。", "answer": "向", "options": ["向","往","朝","对"] },
-                { "question": "房间___南。", "answer": "朝", "options": ["朝","向","往","对"] },
-                { "question": "请___左拐。", "answer": "往", "options": ["往","向","朝","对"] },
-                { "question": "我们要___好学生___。", "answer": "向...学习", "options": ["向...学习","往...学习","朝...学习","对...学习"] },
-                { "question": "飞机___东飞去。", "answer": "往", "options": ["往","向","朝","对"] },
-                { "question": "窗户___着大街。", "answer": "朝", "options": ["朝","向","往","对"] },
-                { "question": "他___我借了一本书。", "answer": "向", "options": ["向","往","朝","对"] }
-            ]
-        },
-        // ge031: 为了
-        {
-            "id": "ge031",
-            "title": "为了 (wèile) - In order to",
-            "titleMeaning": "Purpose marker",
-            "level": "HSK 4",
-            "category": "Purpose",
-            "commonMistake": "为了 = purpose (in order to). 因为 = cause/reason. '为了学好中文，我每天练习' = In order to learn Chinese... '因为喜欢中文，所以我学它' = Because I like Chinese...",
-            "pattern": "为了 + Goal + Statement",
-            "explanation": "'为了'引出目的，相当于'为了...而...'。与'因为'区别：'为了'表目的，'因为'表原因。",
-            "examples": [
-                { "chinese": "为了学好中文，我每天练习。", "pinyin": "wèile xué hǎo zhōngwén, wǒ měitiān liànxí.", "meaning": "In order to learn Chinese well, I practice daily." },
-                { "chinese": "为了健康，他每天跑步。", "pinyin": "wèile jiànkāng, tā měitiān pǎobù.", "meaning": "For health, he runs every day." },
-                { "chinese": "我们为了什么而活？", "pinyin": "wǒmen wèile shénme ér huó?", "meaning": "What do we live for?" }
-            ],
-            "practice": [
-                { "question": "___学好中文，我每天练习。", "answer": "为了", "options": ["为了","因为","由于","如果"] },
-                { "question": "___健康，他每天跑步。", "answer": "为了", "options": ["为了","因为","由于","如果"] },
-                { "question": "我们___什么___活？", "answer": "为了...而", "options": ["为了...而","因为...而","由于...而","如果...就"] },
-                { "question": "___省钱，他都自己做午饭。", "answer": "为了", "options": ["为了","因为","由于","如果"] },
-                { "question": "___家人，他放弃了工作机会。", "answer": "为了", "options": ["为了","因为","由于","如果"] },
-                { "question": "___考好成绩，你必须多复习。", "answer": "为了", "options": ["为了","因为","由于","如果"] },
-                { "question": "他___理想___奋斗。", "answer": "为了...而", "options": ["为了...而","因为...而","由于...而","如果...就"] },
-                { "question": "别___一点小事生气。", "answer": "为了", "options": ["为了","因为","由于","如果"] }
-            ]
-        },
-        // ge032: 关于
-        {
-            "id": "ge032",
-            "title": "关于 (guānyú) - About/Regarding",
-            "titleMeaning": "Concerning a topic",
-            "level": "HSK 4",
-            "category": "Prepositions",
-            "commonMistake": "关于 = about/regarding a topic. Usually at beginning. '关于这个问题' = regarding this issue. 对于 is similar but for more specific attitude toward something.",
-            "pattern": "关于 + Topic + Statement",
-            "explanation": "'关于'引出话题或范围，表示'关于某方面的事'。通常放在句首。",
-            "examples": [
-                { "chinese": "关于这个问题，我还没想好。", "pinyin": "guānyú zhège wèntí, wǒ hái méi xiǎng hǎo.", "meaning": "About this issue, I haven't decided yet." },
-                { "chinese": "关于中国文化，我知道得不多。", "pinyin": "guānyú zhōngguó wénhuà, wǒ zhīdào de bù duō.", "meaning": "Regarding Chinese culture, I don't know much." },
-                { "chinese": "这是一本关于历史的书。", "pinyin": "zhè shì yī běn guānyú lìshǐ de shū.", "meaning": "This is a book about history." }
-            ],
-            "practice": [
-                { "question": "___这个问题，我还没想好。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "___中国文化，我知道得不多。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "这是一本___历史的书。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "他问了几个___工资的问题。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "___明天的会议，你有什么意见？", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "老师讲了很多___环保的知识。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "这个故事是___友谊的。", "answer": "关于", "options": ["关于","对于","至于","由于"] },
-                { "question": "___怎么学外语，我有一些经验。", "answer": "关于", "options": ["关于","对于","至于","由于"] }
-            ]
-        },
-        // ge033: 按照
-        {
-            "id": "ge033",
-            "title": "按照 (ànzhào) - According to",
-            "titleMeaning": "Following / according to",
-            "level": "HSK 4",
-            "category": "Prepositions",
-            "commonMistake": "按照 = according to / following a standard or rule. '按照老师说的做' = do as the teacher said. Implies you're following some instruction or standard.",
-            "pattern": "按照 + Standard/Instruction + Verb",
-            "explanation": "'按照'表示遵循某种标准、规定或指示来做。相当于英语的'according to'。",
-            "examples": [
-                { "chinese": "请按照说明书操作。", "pinyin": "qǐng ànzhào shuōmíngshū cāozuò.", "meaning": "Please follow the instructions." },
-                { "chinese": "按照中国的习惯，过年要回家。", "pinyin": "ànzhào zhōngguó de xíguàn, guònián yào huíjiā.", "meaning": "According to Chinese customs, go home for New Year." },
-                { "chinese": "我们按照计划完成了工作。", "pinyin": "wǒmen ànzhào jìhuà wánchéng le gōngzuò.", "meaning": "We completed work according to the plan." }
-            ],
-            "practice": [
-                { "question": "请___说明书操作。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "___中国的习惯，过年要回家。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "我们___计划完成了工作。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "___你说的，我帮你查了一下。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "大家___座位坐好。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "___规定，这里不能停车。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "你___老师说的去做就行了。", "answer": "按照", "options": ["按照","关于","对于","除了"] },
-                { "question": "___地图上的路线走，不会走错。", "answer": "按照", "options": ["按照","关于","对于","除了"] }
-            ]
-        },
-        // ge034: Verb reduplication
-        {
-            "id": "ge034",
-            "title": "Verb Reduplication (AA / A一A)",
-            "titleMeaning": "Tentative/delimited action",
-            "level": "HSK 3",
-            "category": "Reduplication",
-            "commonMistake": "Verb reduplication (看看/看一看) softens tone = 'do a bit' or 'try'. Makes commands casual. Not used with 了/过/着. '你看看这本书' = take a look (casual).",
-            "pattern": "Verb + Verb (看看) / Verb + 一 + Verb (看一看)",
-            "explanation": "动词重叠表示时间短暂、尝试、轻松。单音节AA式，双音节ABAB式。缓和语气。",
-            "examples": [
-                { "chinese": "你看看这本书怎么样。", "pinyin": "nǐ kànkan zhè běn shū zěnmeyàng.", "meaning": "Take a look at this book and see." },
-                { "chinese": "我想出去走走。", "pinyin": "wǒ xiǎng chūqù zǒuzou.", "meaning": "I want to go out for a walk." },
-                { "chinese": "让我想一想。", "pinyin": "ràng wǒ xiǎng yī xiǎng.", "meaning": "Let me think about it." }
-            ],
-            "practice": [
-                { "question": "你___这本书怎么样。", "answer": "看看", "options": ["看看","看了","看过","看着"] },
-                { "question": "我想出去___。", "answer": "走走", "options": ["走走","走了","走过","走着"] },
-                { "question": "让我___一___。", "answer": "想...想", "options": ["想...想","想...了","想...过","想...着"] },
-                { "question": "你___，那是什么？", "answer": "看看", "options": ["看看","看了","看过","看着"] },
-                { "question": "周末我喜欢在家___书。", "answer": "看看", "options": ["看看","看了","看过","看着"] },
-                { "question": "让我___这张照片。", "answer": "看看", "options": ["看看","看了","看过","看着"] },
-                { "question": "有空我们___。", "answer": "聊聊", "options": ["聊聊","聊了","聊过","聊着"] },
-                { "question": "你___这道题怎么做？", "answer": "想想", "options": ["想想","想了","想过","想着"] }
-            ]
-        },
-        // ge035: Adjective reduplication
-        {
-            "id": "ge035",
-            "title": "Adjective Reduplication (AABB)",
-            "titleMeaning": "Intensified/vivid description",
-            "level": "HSK 4",
-            "category": "Reduplication",
-            "commonMistake": "Adjective AABB makes description vivid. After reduplication, NO 很/非常. '干干净净' = spotlessly clean. '很干干净净' is wrong.",
-            "pattern": "Adjective (AABB): 高兴 -> 高高兴兴",
-            "explanation": "双音节形容词重叠(AABB式)加强描写，使语言更生动。重叠后不能加'很''非常'等副词。",
-            "examples": [
-                { "chinese": "一家人高高兴兴的。", "pinyin": "yī jiā rén gāogāoxìngxìng de.", "meaning": "The whole family is very happy." },
-                { "chinese": "把房间收拾得干干净净。", "pinyin": "bǎ fángjiān shōushi de gāngānjìngjìng.", "meaning": "Tidy up the room spotlessly clean." },
-                { "chinese": "他清清楚楚地说了三遍。", "pinyin": "tā qīngqīngchǔchǔ de shuō le sān biàn.", "meaning": "He said it clearly three times." }
-            ],
-            "practice": [
-                { "question": "一家人___的。", "answer": "高高兴兴", "options": ["高高兴兴","很很高兴","特别高兴","非常高兴"] },
-                { "question": "把房间收拾得___。", "answer": "干干净净", "options": ["干干净净","非常干净","很很干净","特别干净"] },
-                { "question": "他___地说了三遍。", "answer": "清清楚楚", "options": ["清清楚楚","很清楚","非常清楚","特别清楚"] },
-                { "question": "大家___地走出教室。", "answer": "安安静静", "options": ["安安静静","很安静","非常安静","特别安静"] },
-                { "question": "日子过得___的。", "answer": "平平安安", "options": ["平平安安","很平安","非常平安","特别平安"] },
-                { "question": "她把每件事都安排得___。", "answer": "妥妥当当", "options": ["妥妥当当","很妥当","非常妥当","特别妥当"] },
-                { "question": "我___地记得那一天。", "answer": "清清楚楚", "options": ["清清楚楚","很清楚","非常清楚","特别清楚"] },
-                { "question": "他___地坐在那里不发一言。", "answer": "安安静静", "options": ["安安静静","很安静","非常安静","特别安静"] }
-            ]
-        }
-    ];
-    if (typeof GrammarData !== "undefined" && GrammarData.lessons) {
-        GrammarData.lessons = GrammarData.lessons.concat(items);
-    }
-})();
-
-
-
-(function() {
-    var items = [
-        // ge036: 不 vs 没
-        {
-            "id": "ge036",
-            "title": "不 vs 没 (bù vs méi) - Negation",
-            "titleMeaning": "General vs completed negation",
-            "level": "HSK 2",
-            "category": "Negation",
-            "commonMistake": "不 negates: present/future, adjectives, habitual states. 没 negates: past/completed actions, 有. '我不去' = I won't go (future); '我没去' = I didn't go (past).",
-            "pattern": "不 + Verb/Adj (non-past) / 没 + Verb (past) / 没有 + Noun",
-            "explanation": "'不'否定现在/将来、意愿、形容词；'没'否定过去/完成。两者有明显的时态区别。",
-            "examples": [
-                { "chinese": "我今天不去上课。", "pinyin": "wǒ jīntiān bù qù shàngkè.", "meaning": "I won't go to class today." },
-                { "chinese": "我昨天没去上课。", "pinyin": "wǒ zuótiān méi qù shàngkè.", "meaning": "I didn't go to class yesterday." },
-                { "chinese": "我不喜欢吃辣。", "pinyin": "wǒ bù xǐhuān chī là.", "meaning": "I don't like eating spicy food." }
-            ],
-            "practice": [
-                { "question": "我今天___去上课。", "answer": "不", "options": ["不","没","没有","别"] },
-                { "question": "我昨天___去上课。", "answer": "没", "options": ["没","不","没有","别"] },
-                { "question": "我___喜欢吃辣。", "answer": "不", "options": ["不","没","没有","别"] },
-                { "question": "他还___回来呢。", "answer": "没", "options": ["没","不","没有","别"] },
-                { "question": "这个苹果___甜。", "answer": "不", "options": ["不","没","没有","别"] },
-                { "question": "我___看过这本小说。", "answer": "没", "options": ["没","不","没有","别"] },
-                { "question": "他___是老师，他是学生。", "answer": "不", "options": ["不","没","没有","别"] },
-                { "question": "你___吃饭了？", "answer": "没", "options": ["没","不","没有","别"] }
-            ]
-        },
-        // ge037: Question words overview
-        {
-            "id": "ge037",
-            "title": "Question Words (谁, 什么, 哪, 怎么, 为什么)",
-            "titleMeaning": "Overview of question words",
-            "level": "HSK 2",
-            "category": "Questions",
-            "commonMistake": "Chinese question words stay IN PLACE, not moved to front like English. '你是谁？' = You are who? Word order: Subject-Verb-QuestionWord. Do not front the question word.",
-            "pattern": "Subject + Verb + QuestionWord + (Object)？",
-            "explanation": "汉语问句语序和陈述句一样，不改变语序。疑问词直接放在要问的位置上。",
-            "examples": [
-                { "chinese": "他是谁？", "pinyin": "tā shì shéi?", "meaning": "Who is he?" },
-                { "chinese": "你在吃什么？", "pinyin": "nǐ zài chī shénme?", "meaning": "What are you eating?" },
-                { "chinese": "怎么去地铁站？", "pinyin": "zěnme qù dìtiě zhàn?", "meaning": "How do I get to the subway station?" }
-            ],
-            "practice": [
-                { "question": "他是___？", "answer": "谁", "options": ["谁","什么","哪","怎么"] },
-                { "question": "你在吃___？", "answer": "什么", "options": ["什么","谁","哪","怎么"] },
-                { "question": "___去地铁站？", "answer": "怎么", "options": ["怎么","什么","谁","哪"] },
-                { "question": "你家在___？", "answer": "哪儿", "options": ["哪儿","什么","谁","怎么"] },
-                { "question": "___是这个问题的答案？", "answer": "什么", "options": ["什么","谁","哪","怎么"] },
-                { "question": "___个是你的杯子？", "answer": "哪", "options": ["哪","什么","谁","怎么"] },
-                { "question": "你___不来上课？", "answer": "为什么", "options": ["为什么","什么","怎么","哪"] },
-                { "question": "这个字___读？", "answer": "怎么", "options": ["怎么","什么","谁","哪"] }
-            ]
-        },
-        // ge038: 还是...吧
-        {
-            "id": "ge038",
-            "title": "还是...吧 (háishì...ba) - Had better",
-            "titleMeaning": "Making a suggestion",
-            "level": "HSK 4",
-            "category": "Modality",
-            "commonMistake": "还是...吧 = 'had better' / 'it's better to'. After consideration. '还是你去吧' = It's better if you go. Different from 还是 as 'or' in questions.",
-            "pattern": "还是 + Verb + 吧",
-            "explanation": "'还是...吧'表示经过比较后的建议，相当于'had better'。带有'经过考虑后觉得这样比较好'的语气。",
-            "examples": [
-                { "chinese": "天黑了，还是回家吧。", "pinyin": "tiān hēi le, háishì huíjiā ba.", "meaning": "It's dark, we'd better go home." },
-                { "chinese": "太贵了，还是不买了吧。", "pinyin": "tài guì le, háishì bù mǎi le ba.", "meaning": "Too expensive, better not buy it." },
-                { "chinese": "你还是先问一下老师吧。", "pinyin": "nǐ háishì xiān wèn yīxià lǎoshī ba.", "meaning": "You'd better ask the teacher first." }
-            ],
-            "practice": [
-                { "question": "天黑了，___回家___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "太贵了，___不买___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "你___先问一下老师___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "雨这么大，___明天再去___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "这么晚了，___别出去了___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "你这样直接说不太好，___委婉一点___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "今天晚上___吃饺子___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] },
-                { "question": "我一个人拿不动，___让他帮___。", "answer": "还是...吧", "options": ["还是...吧","就要...了","快要...了","可能...了"] }
-            ]
-        },
-        // ge039: 不用
-        {
-            "id": "ge039",
-            "title": "不用 (bùyòng) - Don't need to",
-            "titleMeaning": "No necessity",
-            "level": "HSK 3",
-            "category": "Negation",
-            "commonMistake": "不用 = don't need to / no need. Softer than 不要 (don't). '不用谢' = you're welcome (no need to thank). Standard response to 谢谢.",
-            "pattern": "Subject + 不用 + Verb + Object",
-            "explanation": "'不用'表示不需要、不必。比'不要'更委婉。常用'不用谢'回答感谢。",
-            "examples": [
-                { "chinese": "不用谢。", "pinyin": "bùyòng xiè.", "meaning": "You're welcome (no need to thank)." },
-                { "chinese": "你不用着急，还有时间。", "pinyin": "nǐ bùyòng zháojí, háiyǒu shíjiān.", "meaning": "You don't need to worry, there's still time." },
-                { "chinese": "我们不用带伞，今天不会下雨。", "pinyin": "wǒmen bùyòng dài sǎn, jīntiān bù huì xiàyǔ.", "meaning": "We don't need umbrellas, it won't rain." }
-            ],
-            "practice": [
-                { "question": "___谢。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "你___着急，还有时间。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "我们___带伞，今天不会下雨。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "我___帮忙，自己能做。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "___担心，一切都很好。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "你___上班吗？今天星期六。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "已经付过钱了，___再给。", "answer": "不用", "options": ["不用","不要","不能","不许"] },
-                { "question": "离得不远，___打车。", "answer": "不用", "options": ["不用","不要","不能","不许"] }
-            ]
-        },
-        // ge040: 刚 vs 刚才
-        {
-            "id": "ge040",
-            "title": "刚 vs 刚才 (gāng vs gāngcái) - Just now",
-            "titleMeaning": "Immediate past",
-            "level": "HSK 3",
-            "category": "Modality",
-            "commonMistake": "刚 is adverb (before verb): '我刚来' = I just arrived. 刚才 is time noun (can go before subject): '刚才我来了' = Just now I came. 刚 = subjective recency; 刚才 = objective time point.",
-            "pattern": "刚 + Verb / 刚才 + Statement",
-            "explanation": "'刚'是副词，只能用在动词前；'刚才'是时间名词，可放句首。'刚'有主观的'感觉不久'。",
-            "examples": [
-                { "chinese": "我刚吃完饭。", "pinyin": "wǒ gāng chī wán fàn.", "meaning": "I just finished eating." },
-                { "chinese": "刚才你去哪儿了？", "pinyin": "gāngcái nǐ qù nǎr le?", "meaning": "Where did you go just now?" },
-                { "chinese": "他刚从中国回来。", "pinyin": "tā gāng cóng zhōngguó huílái.", "meaning": "He just came back from China." }
-            ],
-            "practice": [
-                { "question": "我___吃完饭。", "answer": "刚", "options": ["刚","刚才","刚才才","刚刚才"] },
-                { "question": "___你去哪儿了？", "answer": "刚才", "options": ["刚才","刚","刚刚","才"] },
-                { "question": "他___从中国回来。", "answer": "刚", "options": ["刚","刚才","刚才才","才刚"] },
-                { "question": "我___要给你打电话，你就来了。", "answer": "刚", "options": ["刚","刚才","刚才才","才刚"] },
-                { "question": "___有人来找你。", "answer": "刚才", "options": ["刚才","刚","刚刚","才"] },
-                { "question": "他___走，你就到了。", "answer": "刚", "options": ["刚","刚才","刚才才","才刚"] },
-                { "question": "___那个电话是谁打来的？", "answer": "刚才", "options": ["刚才","刚","刚刚","才"] },
-                { "question": "___开始学中文会不会太晚？", "answer": "刚", "options": ["刚","刚才","刚才才","才刚"] }
-            ]
-        },
-        // ge041: 无论/不管...都
-        {
-            "id": "ge041",
-            "title": "无论/不管...都 (wúlùn/bùguǎn...dōu) - No matter",
-            "titleMeaning": "Regardless of conditions",
-            "level": "HSK 4",
-            "category": "Connectors",
-            "commonMistake": "无论...都 = no matter...always. 都 in result clause is MANDATORY. '无论多忙，他都会帮我' = No matter how busy, he always helps. 不管 is more colloquial.",
-            "pattern": "无论/不管 + Condition + 都 + Result",
-            "explanation": "'无论...都'表示在任何条件下结果都不变。'不管'更口语化。后面必须用'都'呼应。",
-            "examples": [
-                { "chinese": "无论多忙，他都会帮我。", "pinyin": "wúlùn duō máng, tā dōu huì bāng wǒ.", "meaning": "No matter how busy, he always helps me." },
-                { "chinese": "不管下不下雨，比赛都照常进行。", "pinyin": "bùguǎn xià bù xià yǔ, bǐsài dōu zhàocháng jìnxíng.", "meaning": "Rain or not, the competition proceeds as usual." },
-                { "chinese": "无论你去哪里，我都支持你。", "pinyin": "wúlùn nǐ qù nǎlǐ, wǒ dōu zhīchí nǐ.", "meaning": "Wherever you go, I will support you." }
-            ],
-            "practice": [
-                { "question": "___多忙，他___会帮我。", "answer": "无论...都", "options": ["无论...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___下不下雨，比赛___照常进行。", "answer": "不管...都", "options": ["不管...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___你去哪里，我___支持你。", "answer": "无论...都", "options": ["无论...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___我怎么解释，他___不相信。", "answer": "无论...都", "options": ["无论...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___刮风还是下雨，他___坚持锻炼。", "answer": "不管...都", "options": ["不管...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___结果怎么样，我___尽力了。", "answer": "无论...都", "options": ["无论...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "这个东西___怎么修___修不好。", "answer": "无论...都", "options": ["无论...都","虽然...但是","因为...所以","如果...就"] },
-                { "question": "___什么困难，他___能克服。", "answer": "不管...都", "options": ["不管...都","虽然...但是","因为...所以","如果...就"] }
-            ]
-        },
-        // ge042: 差不多
-        {
-            "id": "ge042",
-            "title": "差不多 (chàbuduō) - Almost/About",
-            "titleMeaning": "Approximately / almost same",
-            "level": "HSK 4",
-            "category": "Adverbs",
-            "commonMistake": "差不多 = (1) almost '差不多到了', (2) about '差不多五十人', (3) similar '差不多大'. 3 distinct uses from one word. Context determines.",
-            "pattern": "差不多 + Number / 差不多 + Verb / A 跟 B 差不多",
-            "explanation": "'差不多'三个用法：(1)接近某数量，(2)快要做完或到达，(3)大致相同。",
-            "examples": [
-                { "chinese": "差不多有五十个人。", "pinyin": "chàbuduō yǒu wǔshí gè rén.", "meaning": "There are about fifty people." },
-                { "chinese": "我差不多做完了。", "pinyin": "wǒ chàbuduō zuò wán le.", "meaning": "I'm almost finished." },
-                { "chinese": "他们两个差不多高。", "pinyin": "tāmen liǎng gè chàbuduō gāo.", "meaning": "The two of them are about the same height." }
-            ],
-            "practice": [
-                { "question": "___有五十个人。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "我___做完了。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "他们两个___高。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "这两件衣服大小___。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "时间___了，我们走吧。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "他___每天都会去跑步。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "北京和上海___远。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] },
-                { "question": "这顿饭___花了三百块。", "answer": "差不多", "options": ["差不多","差一点","大部分","很不多"] }
-            ]
-        },
-        // ge043: 差点儿
-        {
-            "id": "ge043",
-            "title": "差点儿 (chàdiǎnr) - Almost (happened)",
-            "titleMeaning": "Narrowly / nearly happened",
-            "level": "HSK 4",
-            "category": "Adverbs",
-            "commonMistake": "差点儿 for bad things: almost did (but didn't). For good things: 差点儿没 = almost didn't (but did). '差点儿摔倒' = almost fell (didn't). '差点儿没赶上' = almost missed (caught it).",
-            "pattern": "差点儿 + Verb (undesirable) / 差点儿 + 没 + Verb (desirable, happened)",
-            "explanation": "'差点儿'表示几乎发生但实际没有。坏事：差点儿摔倒(没摔)。好事：差点儿没赶上(赶上了)。",
-            "examples": [
-                { "chinese": "我差点儿迟到了。", "pinyin": "wǒ chàdiǎnr chídào le.", "meaning": "I was almost late (but wasn't)." },
-                { "chinese": "差点儿摔倒。", "pinyin": "chàdiǎnr shuāidǎo.", "meaning": "Almost fell down (but didn't)." },
-                { "chinese": "差点儿没赶上火车。", "pinyin": "chàdiǎnr méi gǎnshàng huǒchē.", "meaning": "Almost missed the train (but caught it)." }
-            ],
-            "practice": [
-                { "question": "我___迟到了。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "___摔倒。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "___没赶上火车。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "他___哭出来。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "我___忘了今天是她的生日。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "___就要成功了，怎么就放弃了呢？", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "路太滑，他___没跌倒。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] },
-                { "question": "这个好消息___没被你猜到。", "answer": "差点儿", "options": ["差点儿","差不多","可能","好像"] }
-            ]
-        },
-        // ge044: 通过
-        {
-            "id": "ge044",
-            "title": "通过 (tōngguò) - Through/By means of",
-            "titleMeaning": "Method or medium",
-            "level": "HSK 4",
-            "category": "Prepositions",
-            "commonMistake": "通过 = (verb) pass through/pass exam; (preposition) through/by means of. '通过努力' = through hard work. '通过考试' = pass exam. Use differs from 经过 (go through physically).",
-            "pattern": "通过 + Method + Result",
-            "explanation": "'通过'既做动词(考试通过)，也做介词(借助方式达到目的)。相当于英语的'through'或'by means of'。",
-            "examples": [
-                { "chinese": "我通过了考试。", "pinyin": "wǒ tōngguò le kǎoshì.", "meaning": "I passed the exam." },
-                { "chinese": "通过努力，他获得了成功。", "pinyin": "tōngguò nǔlì, tā huòdé le chénggōng.", "meaning": "Through hard work, he achieved success." },
-                { "chinese": "通过朋友介绍，他找到了工作。", "pinyin": "tōngguò péngyou jièshào, tā zhǎo dào le gōngzuò.", "meaning": "Through a friend's intro, he found a job." }
-            ],
-            "practice": [
-                { "question": "我___了考试。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "___努力，他获得了成功。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "___朋友介绍，他找到了工作。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "___学习，你可以改变命运。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "我们___了那个隧道。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "___这件事，我学到了很多。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "他___写信表达了自己的想法。", "answer": "通过", "options": ["通过","经过","由于","为了"] },
-                { "question": "这个提议___了大家的同意。", "answer": "通过", "options": ["通过","经过","由于","为了"] }
-            ]
-        },
-        // ge045: 不仅...还
-        {
-            "id": "ge045",
-            "title": "不仅...还 (bùjǐn...hái) - Not only...but also",
-            "titleMeaning": "Progressive addition",
-            "level": "HSK 4",
-            "category": "Adverbs",
-            "commonMistake": "不仅...还 = not only...but also. More formal than 不但...而且. 还 emphasizes addition. '不仅会说英语，还会说法语' = not only English but also French.",
-            "pattern": "不仅 + A, 还 + B",
-            "explanation": "'不仅...还'表递进关系，比'不但...而且'更正式。'还'强调在已有基础上加上新内容。",
-            "examples": [
-                { "chinese": "他不仅会说英语，还会说法语。", "pinyin": "tā bùjǐn huì shuō yīngyǔ, hái huì shuō fǎyǔ.", "meaning": "He not only speaks English but also French." },
-                { "chinese": "她不仅漂亮，还很善良。", "pinyin": "tā bùjǐn piàoliang, hái hěn shànliáng.", "meaning": "She is not only beautiful but also very kind." },
-                { "chinese": "这不仅是他个人的事，还关系到大家。", "pinyin": "zhè bùjǐn shì tā gèrén de shì, hái guānxì dào dàjiā.", "meaning": "This concerns not only him but everyone." }
-            ],
-            "practice": [
-                { "question": "他___会说英语，___会说法语。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "她___漂亮，___很善良。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "这___是他个人的事，___关系到大家。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "这本书___内容好，___价格便宜。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "他___是老师，___是我们的朋友。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "学中文___要会听说，___要会读写。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "这道菜___好看，___好吃。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] },
-                { "question": "这___浪费钱，___浪费时间。", "answer": "不仅...还", "options": ["不仅...还","虽然...但是","因为...所以","如果...就"] }
-            ]
-        },
-        // ge046: 再 vs 又
-        {
-            "id": "ge046",
-            "title": "再 vs 又 (zài vs yòu) - Again",
-            "titleMeaning": "Future vs past repetition",
-            "level": "HSK 3",
-            "category": "Adverbs",
-            "commonMistake": "再 = again (future, not yet): '再来一次' = do it again (next time). 又 = again (past, already): '又来一次' = did it again. Critical distinction.",
-            "pattern": "再 + Verb (future) / 又 + Verb (past)",
-            "explanation": "'再'表示重复，用于将来的动作；'又'也表示重复，但用于已发生的动作。",
-            "examples": [
-                { "chinese": "再唱一首歌吧！", "pinyin": "zài chàng yī shǒu gē ba!", "meaning": "Sing another song! (future)" },
-                { "chinese": "他又迟到了。", "pinyin": "tā yòu chídào le.", "meaning": "He was late again. (past)" },
-                { "chinese": "我再也不相信他了。", "pinyin": "wǒ zài yě bù xiāngxìn tā le.", "meaning": "I won't believe him anymore." }
-            ],
-            "practice": [
-                { "question": "___唱一首歌吧！", "answer": "再", "options": ["再","又","也","还"] },
-                { "question": "他___迟到了。", "answer": "又", "options": ["又","再","也","还"] },
-                { "question": "我___也不相信他了。", "answer": "再", "options": ["再","又","也","还"] },
-                { "question": "我___说了一遍，他还是没听懂。", "answer": "又", "options": ["又","再","也","还"] },
-                { "question": "请___等一下，他马上就来。", "answer": "再", "options": ["再","又","也","还"] },
-                { "question": "去年他来了，今年___来了。", "answer": "又", "options": ["又","再","也","还"] },
-                { "question": "这个问题___考虑一下。", "answer": "再", "options": ["再","又","也","还"] },
-                { "question": "你怎么___把钥匙弄丢了？", "answer": "又", "options": ["又","再","也","还"] }
-            ]
-        },
-        // ge047: 半...半...
-        {
-            "id": "ge047",
-            "title": "半...半... (bàn...bàn...) - Half...half...",
-            "titleMeaning": "Mixed state / ambiguous",
-            "level": "HSK 4",
-            "category": "Adverbs",
-            "commonMistake": "半...半... describes mixed state. Both halves must be single syllables and opposite/complementary. '半信半疑' = half believing, half doubting.",
-            "pattern": "半 + SingleChar + 半 + SingleChar",
-            "explanation": "'半...半...'表示两种情况同时存在、互相掺杂。常用于描述不太明确的状态。",
-            "examples": [
-                { "chinese": "我对他的话半信半疑。", "pinyin": "wǒ duì tā de huà bàn xìn bàn yí.", "meaning": "I half believe and half doubt his words." },
-                { "chinese": "他半开玩笑半认真地说。", "pinyin": "tā bàn kāiwánxiào bàn rènzhēn de shuō.", "meaning": "He said it half jokingly, half seriously." },
-                { "chinese": "门半开半关着。", "pinyin": "mén bàn kāi bàn guān zhe.", "meaning": "The door is half open and half closed." }
-            ],
-            "practice": [
-                { "question": "我对他的话___信___疑。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "他___开玩笑___认真地说。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "门___开___关着。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "他___推___就，最后还是答应了。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "老人___醉___醒地讲着故事。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "他___睡___醒的样子，还没完全醒。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "在这个问题上我___懂___不懂。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] },
-                { "question": "他___闭___张的眼睛看起来很滑稽。", "answer": "半...半", "options": ["半...半","又...又","一...一","不...不"] }
-            ]
-        },
-        // ge048: 从不/从来没
-        {
-            "id": "ge048",
-            "title": "从不/从来没 (cóngbù/cónglái méi) - Never",
-            "titleMeaning": "Never (emphasis)",
-            "level": "HSK 3",
-            "category": "Negation",
-            "commonMistake": "从不 = never (habitual). 从来没 = have never (experience to date, uses 过). '从不迟到' = never late (habit); '从来没迟到过' = have never been late (so far).",
-            "pattern": "Subject + 从不 + Verb / Subject + 从来没 + Verb + 过",
-            "explanation": "'从不'强调一贯的习惯；'从来没'强调到说话时为止没有过某个经历，常与'过'一起用。",
-            "examples": [
-                { "chinese": "他从不迟到。", "pinyin": "tā cóngbù chídào.", "meaning": "He is never late (habitual)." },
-                { "chinese": "我从来没去过日本。", "pinyin": "wǒ cónglái méi qù guò rìběn.", "meaning": "I have never been to Japan." },
-                { "chinese": "她从不放弃。", "pinyin": "tā cóngbù fàngqì.", "meaning": "She never gives up." }
-            ],
-            "practice": [
-                { "question": "他___迟到。", "answer": "从不", "options": ["从不","从来没","不是","没从"] },
-                { "question": "我___去过日本。", "answer": "从来没", "options": ["从来没","从不","不是","没从"] },
-                { "question": "她___放弃。", "answer": "从不", "options": ["从不","从来没","不是","没从"] },
-                { "question": "我___见过这么大的雪。", "answer": "从来没", "options": ["从来没","从不","不是","没从"] },
-                { "question": "他___说谎，大家都相信他。", "answer": "从不", "options": ["从不","从来没","不是","没从"] },
-                { "question": "这个味道我___闻过。", "answer": "从来没", "options": ["从来没","从不","不是","没从"] },
-                { "question": "一个好学生___应该抄作业。", "answer": "从不", "options": ["从不","从来没","不是","没从"] },
-                { "question": "爸爸___抽过烟。", "answer": "从来没", "options": ["从来没","从不","不是","没从"] }
-            ]
-        },
-        // ge049: 或者...或者
-        {
-            "id": "ge049",
-            "title": "或者...或者 (huòzhě...huòzhě) - Either...or",
-            "titleMeaning": "Presenting alternatives",
-            "level": "HSK 4",
-            "category": "Adverbs",
-            "commonMistake": "或者...或者 = either...or in statements. Both options valid. '或者你去，或者他去' = Either you go or he goes. For questions, use 还是.",
-            "pattern": "或者 + Option A + 或者 + Option B + Statement",
-            "explanation": "'或者...或者'表示两者选一，给出两个选择。用于陈述句。疑问句用'还是'。",
-            "examples": [
-                { "chinese": "或者你去，或者他去，都行。", "pinyin": "huòzhě nǐ qù, huòzhě tā qù, dōu xíng.", "meaning": "Either you go or he goes, either is fine." },
-                { "chinese": "周末或者看电影或者去公园。", "pinyin": "zhōumò huòzhě kàn diànyǐng huòzhě qù gōngyuán.", "meaning": "On the weekend either watch a movie or go to the park." },
-                { "chinese": "或者坐公交，或者打车，都很方便。", "pinyin": "huòzhě zuò gōngjiāo, huòzhě dǎchē, dōu hěn fāngbiàn.", "meaning": "Either bus or taxi, both convenient." }
-            ],
-            "practice": [
-                { "question": "___你去，___他去，都行。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "周末___看电影___去公园。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "___坐公交，___打车，都很方便。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "___写信___发邮件，都可以联系我。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "我们___爬山___游泳，看天气决定。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "___今天___明天，反正不着急。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "你___自己来___派人来都行。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] },
-                { "question": "___去图书馆___去咖啡馆，找个安静的地方。", "answer": "或者...或者", "options": ["或者...或者","还是...还是","不是...就是","要么...要么"] }
-            ]
-        },
-        // ge050: 得 (děi) — must
-        {
-            "id": "ge050",
-            "title": "得 (děi) - Must/Have to",
-            "titleMeaning": "Obligation / necessity",
-            "level": "HSK 3",
-            "category": "Modality",
-            "commonMistake": "得 (děi) = must/have to (colloquial). NOT same as 得 (de) complement marker. '我得走了' = I have to go. Stronger than 应该 (should), similar to 必须 (must).",
-            "pattern": "Subject + 得 + Verb + Object",
-            "explanation": "'得(děi)'表示必须、不得不做某事。口语常用。注意读音：děi，不同于补语标记'得(de)'。",
-            "examples": [
-                { "chinese": "我得走了，要迟到了。", "pinyin": "wǒ děi zǒu le, yào chídào le.", "meaning": "I have to go, I'll be late." },
-                { "chinese": "你得多喝水，对身体好。", "pinyin": "nǐ děi duō hē shuǐ, duì shēntǐ hǎo.", "meaning": "You must drink more water, good for health." },
-                { "chinese": "明天得早起，不能睡懒觉。", "pinyin": "míngtiān děi zǎo qǐ, bù néng shuì lǎnjiào.", "meaning": "Must get up early tomorrow, can't sleep in." }
-            ],
-            "practice": [
-                { "question": "我___走了，要迟到了。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "你___多喝水，对身体好。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "明天___早起，不能睡懒觉。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "我___把作业做完才能出去玩。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "这件事你___好好想一想。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "想学好中文___天天练习。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "天这么冷，___多穿点衣服。", "answer": "得", "options": ["得","的","地","了"] },
-                { "question": "去医院看病___排队挂号。", "answer": "得", "options": ["得","的","地","了"] }
-            ]
-        }
-    ];
-    if (typeof GrammarData !== "undefined" && GrammarData.lessons) {
-        GrammarData.lessons = GrammarData.lessons.concat(items);
+];
+    if (typeof GrammarData !== 'undefined' && GrammarData.lessons) {
+        items.forEach(function(it) {
+            if (!GrammarData.lessons.find(function(x) { return x.id === it.id; })) {
+                GrammarData.lessons.push(it);
+            }
+        });
     }
 })();

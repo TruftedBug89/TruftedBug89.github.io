@@ -258,6 +258,11 @@ const App = {
             Dashboard.update();
         }
 
+        // Launch adaptive placement test
+        if (module === 'placement' && typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
+            PlacementTest.showIntro();
+        }
+
         // Trigger module enter again after lazy content populated (only for different module)
         if (!isSameModule && typeof InkAnimations !== 'undefined' && InkAnimations.moduleEnter) {
             var modEl = document.getElementById('module-' + module);
@@ -353,6 +358,9 @@ const App = {
                 if (typeof GrammarModule !== 'undefined' && GrammarModule.continueNextIncomplete) {
                     GrammarModule.continueNextIncomplete();
                 }
+                break;
+            case 'placement-test':
+                this.navigateTo('placement');
                 break;
         }
     },
@@ -502,7 +510,8 @@ const App = {
                 '4': 'vocabulary',
                 '5': 'grammar',
                 '6': 'speaking',
-                '7': 'achievements'
+                '7': 'achievements',
+                '8': 'placement'
             };
             
             if (shortcuts[e.key]) {
@@ -751,7 +760,8 @@ const App = {
             { id: 'vocabulary',   label: 'Vocab',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' },
             { id: 'grammar',      label: 'Grammar', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
             { id: 'speaking',     label: 'Speak',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' },
-            { id: 'achievements', label: 'Goals',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>' }
+            { id: 'achievements', label: 'Goals',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>' },
+            { id: 'placement',   label: 'Test',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>' }
         ];
 
         var html = '';
