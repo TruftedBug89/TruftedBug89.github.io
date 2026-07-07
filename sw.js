@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chinese-master-v1';
+const CACHE_NAME = 'chinese-master-v2';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -111,8 +111,8 @@ self.addEventListener('fetch', function(event) {
   }
 
   event.respondWith(
-    caches.match(event.request).then(function(cached) {
-      return cached || fetch(event.request);
+    fetch(event.request).catch(function() {
+      return caches.match(event.request);
     })
   );
 });

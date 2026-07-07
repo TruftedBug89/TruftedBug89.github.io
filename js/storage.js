@@ -83,7 +83,7 @@ const StorageManager = {
             this.setUserData(this._freshDefault());
         }
         this.pruneDailyStats();
-        this.updateStreak();
+        if (this.getUserData()) { this.updateStreak(); }
     },
 
     // Build a fresh default user-data object (joinDate must be set per-creation)
@@ -160,6 +160,7 @@ const StorageManager = {
     // Get user level info
     getLevelInfo() {
         const data = this.getUserData();
+        if (!data) return { level: 1, currentXp: 0, nextLevelXp: 100, progress: 0 };
         const levelThresholds = this.LEVEL_THRESHOLDS;
 
         const currentLevel = data.level;
@@ -179,6 +180,7 @@ const StorageManager = {
     // Add XP
     addXP(amount) {
         const data = this.getUserData();
+        if (!data) return 1;
         data.xp += amount;
         data.totalXp += amount;
 
@@ -212,6 +214,7 @@ const StorageManager = {
     // Update streak
     updateStreak() {
         const data = this.getUserData();
+        if (!data) return;
         const today = Utils.date.today();
 
         if (!data.lastActiveDate) {
@@ -241,6 +244,7 @@ const StorageManager = {
     // Get daily stats
     getDailyStats(date = null) {
         const data = this.getUserData();
+        if (!data) return { listening: 0, reading: 0, vocabulary: 0, xp: 0, timeSpent: 0 };
         const targetDate = date || Utils.date.today();
 
         if (!data.dailyStats[targetDate]) {
@@ -404,12 +408,21 @@ const StorageManager = {
     // Get recent activities
     getRecentActivities(count = 10) {
         const data = this.getUserData();
+        if (!data) return [];
         return data.activityLog.slice(0, count);
     },
 
     // Get statistics
     getStatistics() {
         const data = this.getUserData();
+        if (!data) return {
+            totalWords: 0, masteredWords: 0, reviewingWords: 0,
+            listeningCompleted: 0, readingCompleted: 0, grammarCompleted: 0, speakingCompleted: 0,
+            perfectScores: 0, totalXp: 0, level: 1, streak: 0, longestStreak: 0,
+            dailyGoalsMet: 0, comboMax: 0,
+            today: { listening: 0, reading: 0, vocabulary: 0, xp: 0, timeSpent: 0 },
+            weekly: { xp: 0, listening: 0, reading: 0, vocabulary: 0 }
+        };
         const today = Utils.date.today();
         const dailyStats = this.getDailyStats();
 

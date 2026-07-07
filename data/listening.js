@@ -930,16 +930,6 @@ const ListeningData = {
             category: 'Time'
         },
         {
-            id: 'l133',
-            type: 'dictation',
-            difficulty: 'medium',
-            chinese: '我每天早上七点起床',
-            pinyin: 'wǒ měitiān zǎoshang qī diǎn qǐchuáng',
-            meaning: 'I get up at 7am every day',
-            hint: 'Daily routine',
-            category: 'Time'
-        },
-        {
             id: 'l134',
             type: 'dictation',
             difficulty: 'medium',
@@ -1841,7 +1831,7 @@ const ListeningData = {
             difficulty: 'hard',
             chinese: '中国的春节是最重要的节日。人们会回家和家人一起过年。除夕晚上大家一起吃年夜饭，看春节联欢晚会。孩子们会收到红包。',
             pinyin: 'zhōngguó de chūnjié shì zuì zhòngyào de jiérì. rénmen huì huíjiā hé jiārén yīqǐ guò nián. chúxī wǎnshang dàjiā yīqǐ chī niányèfàn, kàn chūnjié liánhuān wǎnhuì. háizimen huì shōu dào hóngbāo.',
-            meaning: 'China\'s Spring Festival is the most important holiday. People go home to celebrate with family. On New Year\'s Eve, everyone eats年夜饭 and watches the Spring Festival Gala. Children receive red envelopes.',
+            meaning: 'China\'s Spring Festival is the most important holiday. People go home to celebrate with family. On New Year\'s Eve, everyone eats New Year\'s Eve dinner and watches the Spring Festival Gala. Children receive red envelopes.',
             questions: [
                 {
                     question: '中国最重要的节日是什么？',
@@ -2044,52 +2034,52 @@ const ListeningData = {
         {
             id: 'l071',
             type: 'minimal-pairs',
-            difficulty: 'medium',
+            difficulty: 'easy',
             pairs: [
-                { word1: '他', pinyin1: 'tā', meaning1: 'he', tone1: 1 },
-                { word2: '她', pinyin2: 'tā', meaning2: 'she', tone2: 1 }
+                { word1: '八', pinyin1: 'bā', meaning1: 'eight', tone1: 1 },
+                { word2: '爸', pinyin2: 'bà', meaning2: 'dad', tone2: 4 }
             ],
-            category: 'Same sound, different meaning'
+            category: 'Tone 1 vs 4'
         },
         {
             id: 'l072',
             type: 'minimal-pairs',
-            difficulty: 'medium',
+            difficulty: 'easy',
             pairs: [
-                { word1: '的', pinyin1: 'de', meaning1: 'possessive', tone1: 0 },
-                { word2: '地', pinyin2: 'de', meaning2: 'adverb marker', tone2: 0 }
+                { word1: '汤', pinyin1: 'tāng', meaning1: 'soup', tone1: 1 },
+                { word2: '糖', pinyin2: 'táng', meaning2: 'sugar', tone2: 2 }
             ],
-            category: 'Same sound, different usage'
+            category: 'Tone 1 vs 2'
         },
         {
             id: 'l073',
             type: 'minimal-pairs',
-            difficulty: 'hard',
+            difficulty: 'medium',
             pairs: [
-                { word1: '是', pinyin1: 'shì', meaning1: 'to be', tone1: 4 },
-                { word2: '事', pinyin2: 'shì', meaning2: 'matter', tone2: 4 }
+                { word1: '买', pinyin1: 'mǎi', meaning1: 'to buy', tone1: 3 },
+                { word2: '卖', pinyin2: 'mài', meaning2: 'to sell', tone2: 4 }
             ],
-            category: 'Same sound, different meaning'
+            category: 'Tone 3 vs 4'
         },
         {
             id: 'l074',
             type: 'minimal-pairs',
-            difficulty: 'hard',
+            difficulty: 'medium',
             pairs: [
-                { word1: '在', pinyin1: 'zài', meaning1: 'at/in', tone1: 4 },
-                { word2: '再', pinyin2: 'zài', meaning2: 'again', tone2: 4 }
+                { word1: '眼', pinyin1: 'yǎn', meaning1: 'eye', tone1: 3 },
+                { word2: '盐', pinyin2: 'yán', meaning2: 'salt', tone2: 2 }
             ],
-            category: 'Same sound, different meaning'
+            category: 'Tone 3 vs 2'
         },
         {
             id: 'l075',
             type: 'minimal-pairs',
-            difficulty: 'hard',
+            difficulty: 'medium',
             pairs: [
-                { word1: '做', pinyin1: 'zuò', meaning1: 'to do', tone1: 4 },
-                { word2: '作', pinyin2: 'zuò', meaning2: 'to make', tone2: 4 }
+                { word1: '问', pinyin1: 'wèn', meaning1: 'to ask', tone1: 4 },
+                { word2: '温', pinyin2: 'wēn', meaning2: 'warm', tone2: 1 }
             ],
-            category: 'Same sound, different usage'
+            category: 'Tone 4 vs 1'
         }
     ],
 
@@ -2124,8 +2114,8 @@ const ListeningData = {
                 },
                 {
                     speaker: 'B',
-                    chinese: '谢谢。我要一个宫保鸡丁。',
-                    pinyin: 'xièxiè. wǒ yào yīgè gōngbǎo jīdīng.',
+                    chinese: '谢谢。我要一份宫保鸡丁。',
+                    pinyin: 'xièxiè. wǒ yào yī fèn gōngbǎo jīdīng.',
                     meaning: 'Thanks. I want Kung Pao chicken.'
                 },
                 {

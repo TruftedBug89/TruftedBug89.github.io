@@ -16,71 +16,78 @@ const App = {
         var footerYear = document.getElementById('footer-year');
         if (footerYear) footerYear.textContent = new Date().getFullYear();
 
-        // Initialize error logger and analytics (consent-gated)
-        if (typeof ErrorLogger !== 'undefined' && typeof ErrorLogger.install === 'function') {
-            ErrorLogger.install();
-        }
-        if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
-            AnalyticsEngine.init();
-        }
-        if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
-            OfflineBanner.init();
-        }
-
-        // Initialize storage (which in turn initializes SessionManager)
-        // ponytail: guard against localStorage failure so buttons still work
-        try { StorageManager.init(); } catch (e) { console.warn('Storage init failed:', e); }
-
-        // Initialize audio
-        AudioManager.init();
-
-        // SM-2, PinyinToggle, DailyStreak, TonePractice, AdvancedLearning, LevelTracker, VocabularyLearner
-        if (typeof SM2 !== 'undefined') { /* SM-2 is stateless */ }
-        if (typeof PinyinToggle !== 'undefined') PinyinToggle.init();
-        if (typeof DailyStreak !== 'undefined') DailyStreak.init();
-        if (typeof TonePractice !== 'undefined') { /* loaded */ }
-        if (typeof AdvancedLearning !== 'undefined') AdvancedLearning.init();
-        if (typeof LevelTracker !== 'undefined') LevelTracker.init();
-        if (typeof VocabularyLearner !== 'undefined') VocabularyLearner.init();
-        if (typeof WordOfTheDay !== 'undefined') WordOfTheDay.init();
-        if (typeof CharacterTooltip !== 'undefined') CharacterTooltip.init();
-        if (typeof Missions !== 'undefined') Missions.init();
-        if (typeof RecurringRewards !== 'undefined') {
-            RecurringRewards.init();
-            var loginResult = RecurringRewards.checkLogin();
-            if (loginResult) {
-                setTimeout(function() {
-                    RecurringRewards.showLoginRewardPopup(loginResult);
-                }, 2000);
+        try {
+            // Initialize error logger and analytics (consent-gated)
+            if (typeof ErrorLogger !== 'undefined' && typeof ErrorLogger.install === 'function') {
+                ErrorLogger.install();
             }
+            if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
+                AnalyticsEngine.init();
+            }
+            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
+                OfflineBanner.init();
+            }
+
+            // Initialize storage (which in turn initializes SessionManager)
+            // ponytail: guard against localStorage failure so buttons still work
+            try { StorageManager.init(); } catch (e) { console.warn('Storage init failed:', e); }
+
+            // Initialize audio
+            AudioManager.init();
+
+            // SM-2, PinyinToggle, DailyStreak, TonePractice, AdvancedLearning, LevelTracker, VocabularyLearner
+            if (typeof SM2 !== 'undefined') { /* SM-2 is stateless */ }
+            if (typeof PinyinToggle !== 'undefined') PinyinToggle.init();
+            if (typeof DailyStreak !== 'undefined') DailyStreak.init();
+            if (typeof TonePractice !== 'undefined') { /* loaded */ }
+            if (typeof AdvancedLearning !== 'undefined') AdvancedLearning.init();
+            if (typeof LevelTracker !== 'undefined') LevelTracker.init();
+            if (typeof VocabularyLearner !== 'undefined') VocabularyLearner.init();
+            if (typeof WordOfTheDay !== 'undefined') WordOfTheDay.init();
+            if (typeof CharacterTooltip !== 'undefined') CharacterTooltip.init();
+            if (typeof Missions !== 'undefined') Missions.init();
+            if (typeof RecurringRewards !== 'undefined') {
+                RecurringRewards.init();
+                var loginResult = RecurringRewards.checkLogin();
+                if (loginResult) {
+                    setTimeout(function() {
+                        RecurringRewards.showLoginRewardPopup(loginResult);
+                    }, 2000);
+                }
+            }
+
+            // Background-load JSONL vocabulary (overwrites legacy globals when ready)
+            if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
+                DataLoader.populateGlobals();
+            }
+
+            if (this.DEBUG) this.logDataStats();
+
+            // Global error capture (production-grade)
+            this._installGlobalErrorHandlers();
+
+            // Populate desktop nav before binding listeners
+            this.populateDesktopNav();
+
+            // Set up event listeners
+            this.setupEventListeners();
+
+            // Init mobile shell (≤844px) — noop on desktop
+            if (typeof MobileShell !== 'undefined' && typeof MobileShell.init === 'function') {
+                MobileShell.init();
+            }
+
+            // Load user preferences
+            this.loadPreferences();
+
+            window.dispatchEvent(new CustomEvent('app-ready'));
+            this.isInitialized = true;
+            if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
+        } catch (e) {
+            console.error('App.init() failed:', e);
+        } finally {
+            this.hideLoadingScreen();
         }
-
-        // Background-load JSONL vocabulary (overwrites legacy globals when ready)
-        if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
-            DataLoader.populateGlobals();
-        }
-
-        if (this.DEBUG) this.logDataStats();
-
-        // Global error capture (production-grade)
-        this._installGlobalErrorHandlers();
-
-        // Set up event listeners
-        this.setupEventListeners();
-
-        // Init mobile shell (≤844px) — noop on desktop
-        if (typeof MobileShell !== 'undefined' && typeof MobileShell.init === 'function') {
-            MobileShell.init();
-        }
-
-        // Load user preferences
-        this.loadPreferences();
-
-        // Hide loading screen as soon as init is done (no artificial delay)
-        window.dispatchEvent(new CustomEvent('app-ready'));
-        this.hideLoadingScreen();
-        this.isInitialized = true;
-        if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
 
         // Fail-safe: if GSAP/InkAnimations never loaded, reveal hidden content
         setTimeout(() => {
@@ -218,6 +225,7 @@ const App = {
             });
             if (targetModule) {
                 targetModule.classList.add('active');
+                targetModule.removeAttribute('hidden');
             }
 
             if (typeof InkAnimations !== 'undefined' && InkAnimations.pageTransition && oldModuleEl) {
@@ -410,6 +418,7 @@ const App = {
             if (mainNav && window.innerWidth > 844) {
                 mainNav.classList.add('fade-in');
             }
+            this.navigateTo('dashboard');
             Dashboard.init();
         };
         
@@ -728,6 +737,33 @@ const App = {
     // Get current module
     getCurrentModule() {
         return this.currentModule;
+    },
+
+    // Populate #main-nav with links matching mobile tabbar structure
+    populateDesktopNav() {
+        var nav = document.getElementById('main-nav');
+        if (!nav) return;
+
+        var items = [
+            { id: 'dashboard',   label: 'Home',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>' },
+            { id: 'listening',   label: 'Listen',  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M9 17a5 5 0 005-5V5a5 5 0 00-5-5"/><path d="M14 17a8 8 0 008-8V5"/></svg>' },
+            { id: 'reading',      label: 'Read',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' },
+            { id: 'vocabulary',   label: 'Vocab',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' },
+            { id: 'grammar',      label: 'Grammar', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
+            { id: 'speaking',     label: 'Speak',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' },
+            { id: 'achievements', label: 'Goals',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>' }
+        ];
+
+        var html = '';
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            var activeClass = it.id === 'dashboard' ? ' active' : '';
+            html += '<a href="#" class="nav-link' + activeClass + '" data-module="' + it.id + '" aria-current="' + (it.id === 'dashboard' ? 'page' : 'false') + '">';
+            html += '<span class="nav-icon">' + it.icon + '</span>';
+            html += '<span class="nav-label">' + it.label + '</span>';
+            html += '</a>';
+        }
+        nav.innerHTML = html;
     }
 };
 

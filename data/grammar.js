@@ -764,7 +764,7 @@ const GrammarData = {
             examples: [
                 {
                     chinese: '我一到家就给你打电话。',
-                    pinyin: 'wǒ yī dào jiù jiù gěi nǐ dǎ diànhuà.',
+                    pinyin: 'wǒ yī dào jiā jiù gěi nǐ dǎ diànhuà.',
                     meaning: 'I\'ll call you as soon as I get home.'
                 },
                 {
@@ -812,7 +812,7 @@ const GrammarData = {
                 { question: '___洗手，___吃饭。', answer: '先...再', options: ['先...再', '一...就', '不但...而且', '如果...就'] },
                 { question: '我想___考虑一下，___做决定。', answer: '先...再', options: ['先...再', '一...就', '不但...而且', '虽然...但是'] },
                 { question: '___学拼音，___学汉字。', answer: '先...再', options: ['先...再', '一...就', '不但...而且', '如果...就'] },
-                { question: '他___看了看时间，___离开了。', answer: '先...再', options: ['先...再', '一...就', '不但...而且', '虽然...但是'] },
+                { question: '他___看了看时间，___离开了。', answer: '先...又', options: ['先...又', '先...才', '再...就', '就...才'] },
                 { question: '我们___买票，___进去。', answer: '先...再', options: ['先...再', '一...就', '不但...而且', '如果...就'] }
             ]
         },
@@ -915,43 +915,6 @@ const GrammarData = {
                 { question: '___学习中文___，他___学日语。', answer: '除了...以外...还', options: ['除了...以外...还', '不但...而且...', '虽然...但是...', '因为...所以...'] },
                 { question: '___他___，没人知道这件事。', answer: '除了...以外...都', options: ['除了...以外...都', '不但...而且...', '虽然...但是...', '连...也都'] },
                 { question: '___喝茶___，我也喜欢喝咖啡。', answer: '除了...以外...还', options: ['除了...以外...还', '不但...而且...', '虽然...但是...', '因为...所以...'] }
-            ]
-        },
-        {
-            id: 'g027',
-            title: '被 (bèi) - Passive voice',
-            titleMeaning: 'Passive marker',
-            level: 'HSK 4',
-            category: 'BaBei',
-            commonMistake: '被 is often used for unpleasant events. For neutral passive, consider using the topic-comment structure instead. \'饭做好了\' is more natural than \'饭被做好了\'.',
-            pattern: 'Receiver + 被 + Doer + Verb + Complement',
-            explanation: '"被"表示被动，动作的承受者在前，动作的发出者在后。用于描述不好的或出乎意料的情况。',
-            examples: [
-                {
-                    chinese: '我的手机被偷了。',
-                    pinyin: 'wǒ de shǒujī bèi tōu le.',
-                    meaning: 'My phone was stolen.'
-                },
-                {
-                    chinese: '他被老师批评了。',
-                    pinyin: 'tā bèi lǎoshī pīpíng le.',
-                    meaning: 'He was criticized by the teacher.'
-                },
-                {
-                    chinese: '窗户被风吹开了。',
-                    pinyin: 'chuānghu bèi fēng chuī kāi le.',
-                    meaning: 'The window was blown open by the wind.'
-                }
-            ],
-            practice: [
-                { question: '我的书___他拿走__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '我的手机___偷__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '他___老师批评__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '窗户___风吹开__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '自行车___人骑走__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '那个小偷___警察抓到__。', answer: '被...了', options: ['被...了', '把...了', '给...了', '让...了'] },
-                { question: '蛋糕___妹妹吃完__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] },
-                { question: '这个好消息___大家知道__。', answer: '被...了', options: ['被...了', '把...了', '让...了', '给...了'] }
             ]
         },
         {

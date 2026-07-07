@@ -40,7 +40,7 @@ const ReadingData = {
                 { character: '学', meaning: 'study' },
                 { character: '生', meaning: 'life/birth' },
                 { character: '先', meaning: 'first' },
-                { character: '生', meaning: 'student' },
+                { character: '子', meaning: 'child' },
                 { character: '老', meaning: 'old' },
                 { character: '师', meaning: 'teacher' }
             ]
@@ -67,7 +67,7 @@ const ReadingData = {
                 { character: '济', meaning: 'help' },
                 { character: '环', meaning: 'ring' },
                 { character: '境', meaning: 'border' },
-                { character: '历', meaning: 'history' },
+                { character: '历', meaning: 'to experience' },
                 { character: '史', meaning: 'history' }
             ]
         },
@@ -856,9 +856,9 @@ const ReadingData = {
             type: 'sentence-complete',
             difficulty: 'medium',
             sentence: '他是___人？',
-            options: ['哪', '那', '这', '什'],
+            options: ['哪里', '哪', '什么', '怎么'],
             correct: 0,
-            meaning: 'Where is he from? (What person?)'
+            meaning: 'Where is he from?'
         },
     {
         id: 'r096',
@@ -1231,7 +1231,7 @@ const ReadingData = {
             title: '我的一天',
             titleMeaning: 'My Day',
             passage: '我每天早上七点起床。先刷牙洗脸，然后吃早饭。八点坐地铁去上班。公司离我家很远，需要一个小时。中午在公司吃午饭。下午五点下班，回家做晚饭。晚上看看电视或者看书，十一点睡觉。',
-            pinyin: 'wǒ měitiān zǎoshang qī diǎn qǐchuáng. xiān shuáyá xǐliǎn, ránhòu chī zǎofàn. bā diǎn zuò dìtiě qù shàngbān. gōngsī lí wǒ jiā hěn yuǎn, xūyào yīgè xiǎoshí. zhōngwǔ zài gōngsī chī wǔfàn. xiàwǔ wǔ diǎn xiàbān, huíjiā zuò wǎnfàn. wǎnshang kàn kàn diànshì huòzhě kànshū, shíyī diǎn shuìjiào.',
+            pinyin: 'wǒ měitiān zǎoshang qī diǎn qǐchuáng. xiān shuāyá xǐliǎn, ránhòu chī zǎofàn. bā diǎn zuò dìtiě qù shàngbān. gōngsī lí wǒ jiā hěn yuǎn, xūyào yīgè xiǎoshí. zhōngwǔ zài gōngsī chī wǔfàn. xiàwǔ wǔ diǎn xiàbān, huíjiā zuò wǎnfàn. wǎnshang kàn kàn diànshì huòzhě kànshū, shíyī diǎn shuìjiào.',
             questions: [
                 {
                     question: '他几点起床？',
@@ -1564,7 +1564,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r106',
+            id: 'r136',
             type: 'speed-reading',
             difficulty: 'medium',
             title: 'Shopping',
@@ -1576,7 +1576,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r107',
+            id: 'r137',
             type: 'speed-reading',
             difficulty: 'medium',
             title: 'Weather Report',
@@ -1588,7 +1588,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r108',
+            id: 'r138',
             type: 'speed-reading',
             difficulty: 'medium',
             title: 'Dining Out',
@@ -1600,7 +1600,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r109',
+            id: 'r139',
             type: 'speed-reading',
             difficulty: 'hard',
             title: 'Travel Plan',
@@ -1613,7 +1613,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r110',
+            id: 'r140',
             type: 'speed-reading',
             difficulty: 'hard',
             title: 'Job Interview',
@@ -1626,7 +1626,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r111',
+            id: 'r141',
             type: 'speed-reading',
             difficulty: 'medium',
             title: 'Library Rules',
@@ -1638,7 +1638,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r112',
+            id: 'r142',
             type: 'speed-reading',
             difficulty: 'easy',
             title: 'Daily Routine',
@@ -1650,7 +1650,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r113',
+            id: 'r143',
             type: 'speed-reading',
             difficulty: 'hard',
             title: 'Technology Talk',
@@ -1662,7 +1662,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r114',
+            id: 'r144',
             type: 'speed-reading',
             difficulty: 'medium',
             title: 'Market Shopping',
@@ -1674,7 +1674,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r115',
+            id: 'r145',
             type: 'speed-reading',
             difficulty: 'easy',
             title: 'Birthday Party',
@@ -1770,7 +1770,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r116',
+            id: 'r146',
             type: 'radical-learn',
             difficulty: 'medium',
             radical: '讠',
@@ -1786,7 +1786,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r117',
+            id: 'r147',
             type: 'radical-learn',
             difficulty: 'medium',
             radical: '扌',
@@ -1802,7 +1802,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r118',
+            id: 'r148',
             type: 'radical-learn',
             difficulty: 'medium',
             radical: '火',
@@ -1818,7 +1818,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r119',
+            id: 'r149',
             type: 'radical-learn',
             difficulty: 'medium',
             radical: '饣',
@@ -1834,7 +1834,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r120',
+            id: 'r150',
             type: 'radical-learn',
             difficulty: 'hard',
             radical: '心',
@@ -1850,7 +1850,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r121',
+            id: 'r151',
             type: 'radical-learn',
             difficulty: 'hard',
             radical: '辶',
@@ -1866,7 +1866,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r122',
+            id: 'r152',
             type: 'radical-learn',
             difficulty: 'medium',
             radical: '目',
@@ -1882,7 +1882,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r123',
+            id: 'r153',
             type: 'radical-learn',
             difficulty: 'hard',
             radical: '钅',
@@ -1898,7 +1898,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r124',
+            id: 'r154',
             type: 'radical-learn',
             difficulty: 'easy',
             radical: '日',
@@ -1914,7 +1914,7 @@ const ReadingData = {
             ]
         },
         {
-            id: 'r125',
+            id: 'r155',
             type: 'radical-learn',
             difficulty: 'easy',
             radical: '月',
@@ -1989,7 +1989,7 @@ const ReadingData = {
             explanation: '从"很努力"和"成功了"可以推断，经过努力后达到了目标，所以"终于"的意思是"finally"。'
         },
         {
-            id: 'r126',
+            id: 'r156',
             type: 'context-clues',
             difficulty: 'hard',
             sentence: '她每天坚持跑步，身体越来越好了。',
@@ -2000,7 +2000,7 @@ const ReadingData = {
             explanation: '从"每天"和"越来越好了"可以推断，是持续不断的行为，所以"坚持"的意思是"to persist"。'
         },
         {
-            id: 'r127',
+            id: 'r157',
             type: 'context-clues',
             difficulty: 'hard',
             sentence: '这个问题比较复杂，我们需要仔细考虑。',
@@ -2011,7 +2011,7 @@ const ReadingData = {
             explanation: '从需要"仔细考虑"可以推断这个问题不简单，所以"复杂"的意思是"complicated"。'
         },
         {
-            id: 'r128',
+            id: 'r158',
             type: 'context-clues',
             difficulty: 'hard',
             sentence: '外面的风很大，你出门记得戴上帽子。',
@@ -2022,7 +2022,7 @@ const ReadingData = {
             explanation: '从"很大"和"戴上帽子"可以推断是天气现象，所以"风"的意思是"wind"。'
         },
         {
-            id: 'r129',
+            id: 'r159',
             type: 'context-clues',
             difficulty: 'medium',
             sentence: '我最近太忙了，连吃饭的时间都没有。',
@@ -2033,7 +2033,7 @@ const ReadingData = {
             explanation: '"连...都"表示强调，说明情况超出预期，所以"连"在这里是"even"的意思。'
         },
         {
-            id: 'r130',
+            id: 'r160',
             type: 'context-clues',
             difficulty: 'medium',
             sentence: '虽然外面下雨，但是他还是去跑步了。',
@@ -2044,7 +2044,7 @@ const ReadingData = {
             explanation: '"虽然...但是"表示转折关系，所以"虽然"的意思是"although"。'
         },
         {
-            id: 'r131',
+            id: 'r161',
             type: 'context-clues',
             difficulty: 'medium',
             sentence: '不管多困难，我们都要继续前进。',
@@ -2055,7 +2055,7 @@ const ReadingData = {
             explanation: '从"不管多困难"和"都要继续"可以推断是往前的意思，所以"前进"是"move forward"。'
         },
         {
-            id: 'r132',
+            id: 'r162',
             type: 'context-clues',
             difficulty: 'easy',
             sentence: '我非常喜欢这个礼物，谢谢你！',
@@ -2066,7 +2066,7 @@ const ReadingData = {
             explanation: '从"非常喜欢"和"谢谢你"可以推断是别人送的东西，所以"礼物"的意思是"gift"。'
         },
         {
-            id: 'r133',
+            id: 'r163',
             type: 'context-clues',
             difficulty: 'medium',
             sentence: '老师让我们互相帮助，一起解决问题。',
@@ -2077,7 +2077,7 @@ const ReadingData = {
             explanation: '从"一起"和"帮助"可以推断是双向的行为，所以"互相"的意思是"each other"。'
         },
         {
-            id: 'r134',
+            id: 'r164',
             type: 'context-clues',
             difficulty: 'hard',
             sentence: '这次考试他准备得很充分，所以成绩很好。',
@@ -2088,7 +2088,7 @@ const ReadingData = {
             explanation: '从"准备"和"成绩很好"可以推断准备做得足够好，所以"充分"的意思是"thoroughly"。'
         },
         {
-            id: 'r135',
+            id: 'r165',
             type: 'context-clues',
             difficulty: 'easy',
             sentence: '这件衣服的质量非常好，穿了一年还没坏。',

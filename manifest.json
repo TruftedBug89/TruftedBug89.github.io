@@ -10,5 +10,12 @@
   "theme_color": "#0a0a0f",
   "categories": ["education", "productivity"],
   "lang": "en",
-  "icons": []
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
