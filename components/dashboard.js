@@ -5,6 +5,7 @@
 const Dashboard = {
     // Initialize dashboard
     init() {
+        this._goalRingAnimated = false;
         this._setGreeting();
         this.update();
         this._checkBackupReminder();
@@ -40,6 +41,19 @@ const Dashboard = {
 
     // Update dashboard data
     update() {
+        // Guard against rapid re-entry (e.g. from navigateTo + init)
+        if (this._updating) return;
+        this._updating = true;
+
+        // Cancel any pending rAF from previous _renderSkillsOverview
+        if (this._skillsRafId) { cancelAnimationFrame(this._skillsRafId); this._skillsRafId = null; }
+
+        // Clear any pending counter-bounce timeouts
+        if (this._counterBounceTimers) {
+            this._counterBounceTimers.forEach(function(id) { clearTimeout(id); });
+            this._counterBounceTimers = [];
+        }
+
         const stats = StorageManager.getStatistics();
         const levelInfo = StorageManager.getLevelInfo();
         const dailyGoal = ProgressTracker.getDailyGoalProgress();
@@ -86,6 +100,8 @@ const Dashboard = {
                 InkAnimations.entranceStagger(weeklySection, { y: 16, duration: 0.4, stagger: 0.1, delay: 0.3 });
             }
         }
+
+        this._updating = false;
     },
 
     // Update statistics cards
@@ -138,7 +154,9 @@ const Dashboard = {
                         var el = element;
                         var delay = (1.0 + idx * 0.15) * 1000;
                         (function(e) {
-                            setTimeout(function() { InkAnimations.counterBounce(e); }, delay);
+                            var tid = setTimeout(function() { InkAnimations.counterBounce(e); }, delay);
+                            if (!self._counterBounceTimers) self._counterBounceTimers = [];
+                            self._counterBounceTimers.push(tid);
                         })(el);
                     }
                 }
@@ -390,7 +408,9 @@ const Dashboard = {
         // Animate category fills from 0 → target on next frame
         var fills = content.querySelectorAll('.category-fill');
         if (fills.length && typeof requestAnimationFrame !== 'undefined') {
-            requestAnimationFrame(function() {
+            var self = this;
+            this._skillsRafId = requestAnimationFrame(function() {
+                self._skillsRafId = null;
                 fills.forEach(function(f) {
                     var t = f.getAttribute('data-target') || '0';
                     f.style.width = t + '%';

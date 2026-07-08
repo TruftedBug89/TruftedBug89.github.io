@@ -11,6 +11,13 @@ var InkAnimations = (function() {
     var ScrollTrigger = window.ScrollTrigger;
     var isTouch = false;
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var _toastObserver = null;
+    var _modalObserver = null;
+    var _storedDelayedCalls = [];
+    var _trackedTweens = [];
+    var _trackedScrollTriggers = [];
+
+    function _trackTween(t) { if (t) { _trackedTweens.push(t); } return t; }
 
     function init() {
         if (!gsap || !ScrollTrigger) {
@@ -117,8 +124,12 @@ var InkAnimations = (function() {
                 var splitFn = window.InkAnimations.textSplitReveal;
                 if (splitFn) tl.add(function() { splitFn(h1); }, '-=0.1');
             }
+            // Kill any pending refresh delayed call from a previous transition
+            if (window.InkAnimations._pageTransitionDelayedCall) {
+                window.InkAnimations._pageTransitionDelayedCall.kill();
+            }
             /* Refresh scroll triggers after transition */
-            gsap.delayedCall(0.6, function() { ScrollTrigger.refresh(); });
+            window.InkAnimations._pageTransitionDelayedCall = gsap.delayedCall(0.6, function() { ScrollTrigger.refresh(); });
         };
     }
 
@@ -156,6 +167,7 @@ var InkAnimations = (function() {
             if (!loader) { if (callback) callback(); return; }
             // Fill-bar width is owned by load-progress.js (app-ready → 100%). Don't tween it here.
             if (gsap && !prefersReducedMotion) {
+                gsap.killTweensOf(loader);
                 gsap.to(loader, { opacity: 0, duration: 0.55, ease: 'power3.inOut', delay: 0.15, onComplete: function() {
                     loader.classList.add('fade-out');
                     initNavEntrance();
@@ -170,9 +182,11 @@ var InkAnimations = (function() {
 
     /* === NAV-LINK STAGGER ENTRANCE (after loader) === */
     function initNavEntrance() {
-        if (!gsap) return;
+        if (!gsap || prefersReducedMotion) return;
         var links = document.querySelectorAll('.main-nav:not(.hidden) .nav-link, .main-nav:not(.hidden) .nav-section-label');
         if (!links.length) return;
+        // Kill existing tweens on nav elements before re-animating
+        gsap.killTweensOf(links);
         gsap.fromTo(links, { opacity: 0, x: -20 }, {
             opacity: 1, x: 0,
             duration: 0.4, stagger: 0.04, ease: 'power2.out'
@@ -194,7 +208,7 @@ var InkAnimations = (function() {
         /* Toast entrance */
         var tc = document.getElementById('toast-container');
         if (tc) {
-            new MutationObserver(function(ms) {
+            _toastObserver = new MutationObserver(function(ms) {
                 ms.forEach(function(m) {
                     m.addedNodes.forEach(function(n) {
                         if (n.classList && n.classList.contains('toast')) {
@@ -202,19 +216,21 @@ var InkAnimations = (function() {
                         }
                     });
                 });
-            }).observe(tc, { childList: true });
+            });
+            _toastObserver.observe(tc, { childList: true });
         }
         /* Modal entrance */
         var modal = document.getElementById('modal');
         if (modal) {
-            new MutationObserver(function(ms) {
+            _modalObserver = new MutationObserver(function(ms) {
                 ms.forEach(function(m) {
                     if (!modal.classList.contains('hidden')) {
                         var content = modal.querySelector('.modal-content');
                         if (content) { gsap.fromTo(content, { scale: 0.9, y: 30, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: 0.45, ease: 'back.out(1.5)' }); }
                     }
                 });
-            }).observe(modal, { attributes: true, attributeFilter: ['class'] });
+            });
+            _modalObserver.observe(modal, { attributes: true, attributeFilter: ['class'] });
         }
     }
 
@@ -832,7 +848,7 @@ var InkAnimations = (function() {
     /* === ENHANCED LEVEL UP (more particles, subtle glow) === */
     window.InkAnimations.showLevelUp = function(level, title, xp) {
         if (!gsap || prefersReducedMotion) {
-            Utils.showToast('Level Up! ' + (title || '') + ' (L' + level + ')', 'success');
+            try { Utils.showToast('Level Up! ' + (typeof title === 'string' ? title : '') + ' (L' + level + ')', 'success'); } catch(_) {}
             return;
         }
         var overlay = document.createElement('div');
@@ -841,7 +857,7 @@ var InkAnimations = (function() {
             '<div class="levelup-card" style="position:relative;text-align:center;z-index:1;">' +
                 '<div class="levelup-badge" style="display:inline-flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c9a65b,#f1c40f);box-shadow:0 0 80px rgba(241,196,15,0.7);font-size:48px;font-weight:900;color:#0a0a0a;">' + level + '</div>' +
                 '<h2 style="color:#f1c40f;font-size:32px;margin:16px 0 8px;font-weight:800;">LEVEL UP!</h2>' +
-                '<p style="color:#e6ddd2;font-size:18px;margin:0 0 8px;">' + Utils.escapeHtml(title || '') + '</p>' +
+                '<p style="color:#e6ddd2;font-size:18px;margin:0 0 8px;">' + (typeof Utils !== 'undefined' && Utils.escapeHtml ? Utils.escapeHtml(title || '') : (title || '')) + '</p>' +
                 '<p style="color:#c9a65b;font-size:14px;">⭐ +' + (xp || 0) + ' XP total</p>' +
             '</div>';
         document.body.appendChild(overlay);
@@ -876,7 +892,7 @@ var InkAnimations = (function() {
                 onComplete: function() { gp.remove(); }
             });
         }
-        Utils.playSound('levelup');
+        try { Utils.playSound('levelup'); } catch(_) {}
     };
 
     /* === ENHANCED ACHIEVEMENT UNLOCK (shimmer overlay) === */
@@ -964,16 +980,34 @@ var InkAnimations = (function() {
     };
     window.InkAnimations.moduleExit = function(el, done) {
         if (!gsap || !el) { if (done) done(); return; }
+        if (el._moduleExiting) { if (done) done(); return; }
+        el._moduleExiting = true;
+
+        // Kill ScrollTriggers whose trigger is inside the module OR is body (global)
         var st = ScrollTrigger.getAll();
         if (st && st.length) {
             st.forEach(function(t) {
-                try { if (t.trigger && el.contains(t.trigger)) t.kill(); } catch(_) {}
+                try {
+                    var trigger = t.trigger;
+                    if (!trigger) return;
+                    // String triggers like 'body' — treat as global, keep alive
+                    if (typeof trigger === 'string') return;
+                    if (el.contains(trigger) || el === trigger) t.kill();
+                } catch(_) {}
             });
         }
-        // Kill tweens on the module element itself only (wildcard '*' was expensive
-        // and could kill tweens on shared appended nodes like toasts/particles).
-        gsap.killTweensOf(el);
+
+        // Kill tweens on the container AND all its descendants
+        try {
+            gsap.killTweensOf(el);
+            var kids = el.querySelectorAll('*');
+            for (var i = 0; i < kids.length; i++) {
+                gsap.killTweensOf(kids[i]);
+            }
+        } catch(_) {}
+
         gsap.to(el, { opacity: 0, duration: 0.2, ease: 'power2.in', onComplete: function() {
+            el._moduleExiting = false;
             if (done) done();
         }});
     };

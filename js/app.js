@@ -28,6 +28,9 @@ const App = {
                 OfflineBanner.init();
             }
 
+            // Modal chrome close handlers — attach once, not per-open
+            this._setupModalChrome();
+
             // Initialize storage (which in turn initializes SessionManager)
             // ponytail: guard against localStorage failure so buttons still work
             try { StorageManager.init(); } catch (e) { console.warn('Storage init failed:', e); }
@@ -205,12 +208,7 @@ const App = {
         var oldModuleEl = document.querySelector('.module.active');
         var isSameModule = !!(oldModuleEl && targetModule && oldModuleEl === targetModule);
 
-        // Clean up exiting module (kill ScrollTriggers, tweens)
-        if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleExit && oldModuleEl) {
-            InkAnimations.moduleExit(oldModuleEl);
-        }
-
-        // Update nav-link active states
+        // Update nav-link active states (before DOM mutations, so active state matches target)
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
             if (link.dataset.module === module) {
@@ -220,6 +218,11 @@ const App = {
 
         // Only toggle .active if switching modules (avoids animation replay on back-button)
         if (!isSameModule) {
+            // Clean up exiting module BEFORE activating new one
+            if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleExit && oldModuleEl) {
+                InkAnimations.moduleExit(oldModuleEl);
+            }
+
             document.querySelectorAll('.module').forEach(m => {
                 m.classList.remove('active');
             });
@@ -239,7 +242,7 @@ const App = {
 
         // Reset any sub-containers that might be stuck in an exercise view
         this.resetModuleSubviews(module);
-        
+
         this.currentModule = module;
 
         // Sync mobile tab bar active state
@@ -264,14 +267,20 @@ const App = {
         }
 
         // Trigger module enter again after lazy content populated (only for different module)
+        // Use setTimeout to let DOM settle after populateModule before re-entering
         if (!isSameModule && typeof InkAnimations !== 'undefined' && InkAnimations.moduleEnter) {
             var modEl = document.getElementById('module-' + module);
-            if (modEl) InkAnimations.moduleEnter(modEl, module);
+            if (modEl) {
+                InkAnimations.moduleEnter(modEl, module);
+            }
         }
 
-        // Trigger scroll-reveal on new module's gsap-reveal elements
+        // Trigger scroll-reveal on new module's gsap-reveal elements (debounced)
         if (typeof ScrollTrigger !== 'undefined') {
-            ScrollTrigger.refresh();
+            if (this._scrollRefreshTimer) clearTimeout(this._scrollRefreshTimer);
+            this._scrollRefreshTimer = setTimeout(function() {
+                ScrollTrigger.refresh();
+            }, 100);
         }
     },
 
@@ -380,22 +389,24 @@ const App = {
     showModuleMenu(module) {
         switch(module) {
             case 'listening':
-                ListeningModule.showMenu();
+                if (typeof ListeningModule !== 'undefined' && ListeningModule.showMenu) ListeningModule.showMenu();
                 break;
             case 'reading':
-                ReadingModule.showMenu();
+                if (typeof ReadingModule !== 'undefined' && ReadingModule.showMenu) ReadingModule.showMenu();
                 break;
             case 'vocabulary':
-                VocabularyLearner.showLevelSelector();
+                if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) VocabularyLearner.showLevelSelector();
                 break;
             case 'grammar':
-                GrammarModule.showMenu();
+                if (typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) GrammarModule.showMenu();
                 break;
             case 'speaking':
-                SpeakingModule.showMenu();
+                if (typeof SpeakingModule !== 'undefined' && SpeakingModule.showMenu) SpeakingModule.showMenu();
                 break;
         }
-    },// Load user preferences
+    },
+
+    // Load user preferences
     loadPreferences() {
         const userData = StorageManager.getUserData();
 
@@ -427,7 +438,12 @@ const App = {
                 mainNav.classList.add('fade-in');
             }
             this.navigateTo('dashboard');
-            Dashboard.init();
+            // navigateTo already calls Dashboard.update(), but init() also
+            // sets greeting text + backup reminder — guard to avoid double update
+            if (!Dashboard._initialized) {
+                Dashboard.init();
+                Dashboard._initialized = true;
+            }
         };
         
         if (loadingScreen) {
@@ -673,11 +689,7 @@ const App = {
             });
         }
 
-        // Standard close handlers + Escape key
-        const closeBtn = modal.querySelector('.modal-close');
-        const overlay = modal.querySelector('.modal-overlay');
-        if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-        if (overlay) overlay.addEventListener('click', () => modal.classList.add('hidden'));
+        // Standard close handlers are attached once in _setupModalChrome
         this._trapModalFocus(modal);
     },
 
@@ -691,12 +703,6 @@ const App = {
 
         modalBody.innerHTML = content;
         modal.classList.remove('hidden');
-
-        // Close modal handlers
-        const closeBtn = modal.querySelector('.modal-close');
-        const overlay = modal.querySelector('.modal-overlay');
-        if (closeBtn) closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-        if (overlay) overlay.addEventListener('click', () => modal.classList.add('hidden'));
 
         this._trapModalFocus(modal);
     },
@@ -741,6 +747,17 @@ const App = {
     closeModal() {
         const modal = document.getElementById('modal');
         if (modal) modal.classList.add('hidden');
+    },
+
+    // Attach modal close handlers once (avoid listener leak on .modal-close / .modal-overlay)
+    _setupModalChrome() {
+        var modal = document.getElementById('modal');
+        if (!modal || this._modalChromeReady) return;
+        this._modalChromeReady = true;
+        var closeBtn = modal.querySelector('.modal-close');
+        var overlay = modal.querySelector('.modal-overlay');
+        if (closeBtn) closeBtn.addEventListener('click', function() { modal.classList.add('hidden'); });
+        if (overlay) overlay.addEventListener('click', function() { modal.classList.add('hidden'); });
     },
 
     // Get current module

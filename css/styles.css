@@ -255,12 +255,7 @@ body {
     margin-left: 0;
 }
 
-/* Modules */
-.module {
-    display: none;
-    animation: fadeIn var(--transition-normal);
-}
-
+/* .module already declared above — only .active variant here */
 .module.active {
     display: block;
 }
@@ -1082,7 +1077,7 @@ body {
 .toast {
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-md);
-    animation: slideIn var(--transition-normal);
+    /* Entrance animation handled by GSAP (InkAnimations.initMicroInteractions) */
     display: flex;
     align-items: center;
     gap: var(--spacing-md);

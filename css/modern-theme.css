@@ -88,15 +88,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 .skip-to-content:focus { top: var(--spacing-md); }
 
-/* Hardware acceleration */
-.module.active,
-.stats-card, .action-card, .exercise-type-card,
-.main-nav, .modal-content,
-.ambient-orb, .ink-particle {
+/* Hardware acceleration — only on currently-animating / tilted elements */
+.tilt-active,
+.ambient-orb,
+.ink-particle {
     will-change: transform, opacity;
 }
-.module { content-visibility: auto; }
-.module.active { content-visibility: visible; }
+/* content-visibility is defined in responsive.css with contain-intrinsic-size */
 
 /* === OCEAN WASH TEXTURE OVERLAY === */
 .ink-texture {
@@ -394,6 +392,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     cursor: default;
     position: relative;
     overflow: hidden;
+    contain: layout style;
 }
 .stats-card::before {
     content: '';
@@ -414,7 +413,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .stats-value {
     font-size: 32px; font-weight: 700;
     margin-bottom: var(--spacing-xs);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Transition set in animations.css */
 }
 .stats-card:hover .stats-value { transform: scale(1.08); }
 .stats-label { font-size: 13px; color: var(--text-secondary); }
@@ -431,9 +430,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     border: 1px solid rgba(148, 163, 184, 0.06);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
+    /* Transitions set in animations.css (loads after) */
 }
 .card-lift:hover {
     transform: translateY(-3px);
