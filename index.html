@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, speaking practice, and spaced-repetition flashcards. Everything runs locally — no account needed.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.">
     <meta name="theme-color" content="#0a0a0f">
     <meta name="color-scheme" content="dark">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Chinese Master">
+    <meta name="apple-mobile-web-app-title" content="ZHI Studio">
     <link rel="canonical" href="https://truftedbug89.github.io/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="manifest" href="manifest.json">
-    <title>Chinese Master</title>
+    <title>ZHI Studio · Learn Chinese</title>
 
-    <meta property="og:title" content="Chinese Master">
-    <meta property="og:description" content="Free Chinese learning tool — HSK 1-5, listening, reading, grammar, SRS flashcards. No account needed.">
+    <meta property="og:title" content="ZHI Studio · Learn Chinese">
+    <meta property="og:description" content="A fluid Chinese learning studio for HSK vocabulary, listening, reading, grammar, and speaking.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://truftedbug89.github.io/">
     <meta name="twitter:card" content="summary">
@@ -24,60 +24,18 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebApplication",
-                "@id": "https://truftedbug89.github.io/#app",
-                "name": "中文大师 — Chinese Master",
-                "description": "Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, speaking, and spaced-repetition flashcards. Works offline.",
-                "applicationCategory": "EducationalApplication",
-                "operatingSystem": "Any",
-                "browserRequirements": "Requires JavaScript",
-                "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-                "author": { "@type": "Organization", "name": "中文大师" },
-                "featureList": [
-                    "HSK 1-5 vocabulary with 5000+ words",
-                    "Listening comprehension exercises",
-                    "Reading practice with passages",
-                    "Grammar lessons and patterns",
-                    "Speaking and pronunciation drills",
-                    "Spaced repetition (SM-2 algorithm)",
-                    "Adaptive placement test",
-                    "Progress tracking with XP and streaks",
-                    "Offline-first PWA installation",
-                    "Multi-profile support"
-                ],
-                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "ratingCount": "1", "bestRating": "5", "worstRating": "1" }
-            },
-            {
-                "@type": "FAQPage",
-                "@id": "https://truftedbug89.github.io/#faq",
-                "mainEntity": [
-                    { "@type": "Question", "name": "Is Chinese Master free to use?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Chinese Master is completely free and open source. No accounts, no servers, no tracking unless you opt in." } },
-                    { "@type": "Question", "name": "Does Chinese Master work offline?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, it is a Progressive Web App (PWA). After your first visit, it caches all resources and works fully offline. You can install it on your device from your browser." } },
-                    { "@type": "Question", "name": "What HSK levels does Chinese Master cover?", "acceptedAnswer": { "@type": "Answer", "text": "Chinese Master covers HSK 1 through HSK 5, with over 5000 vocabulary words, listening exercises, reading passages, grammar lessons, and speaking practice." } },
-                    { "@type": "Question", "name": "Does Chinese Master track my progress?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all progress is stored locally on your device using browser storage. It includes XP, levels, daily streaks, achievements, and a spaced-repetition review system. You can export and import your progress as a JSON backup." } },
-                    { "@type": "Question", "name": "Can I use Chinese Master on my phone?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Chinese Master is fully responsive and optimized for mobile. Install it as a PWA from your browser (Chrome, Edge, Safari) for a native app-like experience." } },
-                    { "@type": "Question", "name": "How does the placement test work?", "acceptedAnswer": { "@type": "Answer", "text": "The placement test uses an adaptive algorithm that starts at HSK 2 and adjusts difficulty based on your answers. In about 20 questions across 5 minutes, it estimates your HSK level and recommends study materials." } }
-                ]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": "https://truftedbug89.github.io/#breadcrumb",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://truftedbug89.github.io/" },
-                    { "@type": "ListItem", "position": 2, "name": "Dashboard", "item": "https://truftedbug89.github.io/#dashboard" },
-                    { "@type": "ListItem", "position": 3, "name": "Placement Test", "item": "https://truftedbug89.github.io/#placement" },
-                    { "@type": "ListItem", "position": 4, "name": "Vocabulary", "item": "https://truftedbug89.github.io/#vocabulary" }
-                ]
-            }
-        ]
+        "@type": "WebApplication",
+        "name": "ZHI Studio",
+        "description": "A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/modern-theme.css">
@@ -96,56 +54,35 @@
     <link rel="stylesheet" href="css/pinyin-toggle.css">
     <link rel="stylesheet" href="css/placement-test.css">
     <link rel="stylesheet" href="css/loading.css">
-
-    <style>
-        #loading-screen {
-            position: fixed; inset: 0; z-index: 99999;
-            background: #0f172a;
-            display: flex; align-items: center; justify-content: center;
-            flex-direction: column; gap: 24px;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
-        #loading-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-        .loading-logo {
-            font-family: 'Noto Sans SC', sans-serif;
-            font-size: 56px; font-weight: 700;
-            background: linear-gradient(135deg, #e85555, #d94444);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .loading-subtitle {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px; color: #64748b;
-            letter-spacing: 0.05em;
-        }
-        .loading-bar-track {
-            width: 200px; height: 3px; background: #334155;
-            border-radius: 9999px; overflow: hidden;
-        }
-        .loading-bar-fill {
-            width: 0%; height: 100%;
-            background: linear-gradient(90deg, #e85555, #a78bfa);
-            border-radius: 9999px;
-            transition: width 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="css/future-ui.css">
 </head>
 <body class="theme-dark">
-    <div class="ambient-bg" aria-hidden="true">
-        <div class="ambient-orb"></div>
-        <div class="ambient-orb"></div>
-        <div class="ambient-orb"></div>
+    <a class="skip-to-content" href="#main-content">Skip to learning studio</a>
+
+    <div class="future-scene" aria-hidden="true">
+        <div class="future-grid"></div>
+        <div class="future-orb future-orb--red"></div>
+        <div class="future-orb future-orb--jade"></div>
+        <div class="future-orb future-orb--violet"></div>
+        <div class="future-sigil future-sigil--one">学</div>
+        <div class="future-sigil future-sigil--two">知</div>
     </div>
 
     <div id="loading-screen" class="loading-screen" aria-hidden="true">
-        <div class="loading-logo"><span class="chinese-char">中</span><span class="chinese-char">文</span><span class="chinese-char">大</span><span class="chinese-char">师</span></div>
-        <div class="loading-subtitle">Chinese Master</div>
-        <div class="loading-bar-track">
+        <div class="loader-seal">
+            <span>知</span>
+            <i></i>
+        </div>
+        <div class="loading-logo" aria-label="Zhi Studio">
+            <span class="chinese-char">中</span><span class="chinese-char">文</span><span class="chinese-char">大</span><span class="chinese-char">师</span>
+        </div>
+        <p class="loading-subtitle">Initializing your language studio</p>
+        <div class="loading-bar-track" aria-hidden="true">
             <div class="loading-bar-fill" id="ink-loading-fill"></div>
         </div>
     </div>
 
-    <div class="scroll-progress">
+    <div class="scroll-progress" aria-hidden="true">
         <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
     </div>
 
@@ -153,34 +90,305 @@
         <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
 
         <main id="main-content" class="main-content">
-            <div id="module-dashboard" class="module active" role="tabpanel"></div>
-            <div id="module-listening" class="module" role="tabpanel" hidden></div>
-            <div id="module-reading" class="module" role="tabpanel" hidden></div>
-            <div id="module-grammar" class="module" role="tabpanel" hidden></div>
-            <div id="module-speaking" class="module" role="tabpanel" hidden></div>
-            <div id="module-vocabulary" class="module" role="tabpanel" hidden></div>
-            <div id="module-achievements" class="module" role="tabpanel" hidden></div>
-            <div id="module-placement" class="module" role="tabpanel" hidden><div id="placement-content"></div></div>
+            <section id="module-dashboard" class="module active" role="tabpanel" aria-label="Command center">
+                <div class="dashboard-hero neo-hero">
+                    <div class="neo-hero__copy">
+                        <div class="eyebrow"><span class="eyebrow__pulse"></span>YOUR LANGUAGE OS · ONLINE</div>
+                        <div class="greeting-row">
+                            <h1 class="greeting" id="greeting">你好 · Welcome back</h1>
+                            <span class="greeting-emoji" aria-hidden="true">✦</span>
+                        </div>
+                        <p class="greeting-subtitle" id="hero-subtitle">A little momentum becomes fluency. Let’s make today count.</p>
+                        <div class="neo-hero__actions">
+                            <button class="btn btn-primary neo-launch" type="button" data-quick-start="vocab-review">
+                                <span>Start focus session</span><b>→</b>
+                            </button>
+                            <button class="neo-ghost-button" type="button" data-quick-start="placement-test">Calibrate level <span>↗</span></button>
+                        </div>
+                    </div>
+
+                    <div class="neo-radar" aria-label="Learning signal">
+                        <div class="neo-radar__rings"></div>
+                        <div class="neo-radar__sweep"></div>
+                        <div class="neo-radar__core"><span lang="zh">学</span><small>LEARN</small></div>
+                        <span class="neo-radar__dot neo-radar__dot--one"></span>
+                        <span class="neo-radar__dot neo-radar__dot--two"></span>
+                        <span class="neo-radar__dot neo-radar__dot--three"></span>
+                        <div class="neo-radar__label">FLUENCY<br>VECTOR</div>
+                    </div>
+
+                    <div class="hero-metrics">
+                        <div class="hero-metric">
+                            <span class="hero-metric-icon">🔥</span>
+                            <strong class="hero-metric-value" id="hero-streak-count">0</strong>
+                            <span class="hero-metric-label">day streak</span>
+                        </div>
+                        <div class="hero-metric">
+                            <span class="hero-metric-icon">✦</span>
+                            <strong class="hero-metric-value" id="hero-xp-today">0</strong>
+                            <span class="hero-metric-label">XP today</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-level-bar">
+                        <div class="hero-level-info">
+                            <span class="hero-level-badge">LV <b id="hero-level-num">1</b></span>
+                            <span class="hero-level-title" id="hero-level-title">Novice Explorer</span>
+                            <span class="hero-xp-text" id="hero-xp-text">0 / 100 XP</span>
+                        </div>
+                        <div class="hero-level-track"><div class="hero-level-fill" id="hero-xp-progress"></div></div>
+                    </div>
+                </div>
+
+                <section class="dashboard-grid neo-stats" aria-label="Learning totals">
+                    <article class="stats-card">
+                        <span class="stats-card__node">01</span>
+                        <div class="stats-icon">字</div>
+                        <strong class="stats-value" id="total-words">0</strong>
+                        <span class="stats-label">characters learned</span>
+                        <span class="stats-trend neutral" id="trend-words">—</span>
+                    </article>
+                    <article class="stats-card">
+                        <span class="stats-card__node">02</span>
+                        <div class="stats-icon">听</div>
+                        <strong class="stats-value" id="listening-completed">0</strong>
+                        <span class="stats-label">listening drills</span>
+                        <span class="stats-trend neutral" id="trend-listening">—</span>
+                    </article>
+                    <article class="stats-card">
+                        <span class="stats-card__node">03</span>
+                        <div class="stats-icon">读</div>
+                        <strong class="stats-value" id="reading-completed">0</strong>
+                        <span class="stats-label">reading missions</span>
+                        <span class="stats-trend neutral" id="trend-reading">—</span>
+                    </article>
+                    <article class="stats-card stats-card--xp">
+                        <span class="stats-card__node">04</span>
+                        <div class="stats-icon">能</div>
+                        <strong class="stats-value" id="total-xp">0</strong>
+                        <span class="stats-label">total experience</span>
+                        <span class="stats-trend neutral" id="trend-xp">—</span>
+                    </article>
+                </section>
+
+                <section class="neo-section neo-launchpad">
+                    <div class="dashboard-section-header">
+                        <div>
+                            <span class="section-kicker">SELECT A PATH</span>
+                            <h2>Today’s launchpad</h2>
+                        </div>
+                        <span class="section-index">01 / 05</span>
+                    </div>
+                    <div class="action-cards">
+                        <button type="button" class="action-card action-card--listening" data-action="listening-challenge">
+                            <span class="action-card__number">01</span><span class="action-icon">耳</span>
+                            <span><strong>Listen</strong><small>Decode real sounds</small></span><b>→</b>
+                        </button>
+                        <button type="button" class="action-card action-card--vocab" data-action="vocab-review">
+                            <span class="action-card__number">02</span><span class="action-icon">字</span>
+                            <span><strong>Recall</strong><small>Train your memory</small></span><b>→</b>
+                        </button>
+                        <button type="button" class="action-card action-card--reading" data-action="reading-quiz">
+                            <span class="action-card__number">03</span><span class="action-icon">文</span>
+                            <span><strong>Read</strong><small>Meet Chinese in context</small></span><b>→</b>
+                        </button>
+                        <button type="button" class="action-card action-card--grammar" data-action="grammar-practice">
+                            <span class="action-card__number">04</span><span class="action-icon">构</span>
+                            <span><strong>Build</strong><small>Make patterns instinctive</small></span><b>→</b>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="neo-dashboard-columns">
+                    <section class="neo-panel neo-panel--goal">
+                        <div class="dashboard-section-header">
+                            <div><span class="section-kicker">DAILY SIGNAL</span><h2>Keep the signal alive</h2></div>
+                            <span class="live-tag">LIVE</span>
+                        </div>
+                        <div class="daily-goal-section">
+                            <div class="goal-ring">
+                                <svg viewBox="0 0 100 100" aria-label="Daily goal progress">
+                                    <defs><linearGradient id="goal-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fa3d3d"/><stop offset="100%" stop-color="#f5bf57"/></linearGradient></defs>
+                                    <circle class="goal-bg" cx="50" cy="50" r="40"></circle>
+                                    <circle class="goal-fill" id="goal-fill" cx="50" cy="50" r="40"></circle>
+                                </svg>
+                                <div class="goal-text"><strong id="goal-percent">0</strong><span>%</span><small>complete</small></div>
+                            </div>
+                            <div class="goal-items">
+                                <div class="goal-item"><span class="goal-icon">听</span><span>Listening</span><b id="goal-listening">0</b></div>
+                                <div class="goal-item"><span class="goal-icon">读</span><span>Reading</span><b id="goal-reading">0</b></div>
+                                <div class="goal-item"><span class="goal-icon">字</span><span>Vocabulary</span><b id="goal-vocab">0</b></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="neo-panel neo-panel--review smart-review-section">
+                        <div class="dashboard-section-header">
+                            <div><span class="section-kicker">MEMORY ENGINE</span><h2>Smart review</h2></div>
+                            <span class="section-index">SRS</span>
+                        </div>
+                        <p class="panel-copy">Your spaced repetition queue is ready when you are.</p>
+                        <div id="review-stats" class="review-stats-grid"></div>
+                        <div class="panel-actions">
+                            <button type="button" class="btn btn-primary" id="start-smart-review">Launch review <span>→</span></button>
+                            <button type="button" class="btn btn-secondary" id="view-mistakes">Inspect weak spots</button>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="neo-dashboard-columns neo-dashboard-columns--wide">
+                    <section class="neo-panel skills-overview">
+                        <div class="dashboard-section-header">
+                            <div><span class="section-kicker">NEURAL MAP</span><h2>Your learning signal</h2></div>
+                            <span class="section-index">02 / 05</span>
+                        </div>
+                        <div id="skills-content" class="skills-content"></div>
+                    </section>
+
+                    <section class="neo-panel weekly-chart-section">
+                        <div class="dashboard-section-header">
+                            <div><span class="section-kicker">SEVEN DAY ARC</span><h2>Weekly momentum</h2></div>
+                            <span class="section-index">XP</span>
+                        </div>
+                        <div class="weekly-chart-wrap">
+                            <div id="weekly-chart" class="weekly-chart"></div>
+                            <div id="weekly-summary" class="weekly-summary"></div>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="neo-section neo-operations">
+                    <div class="dashboard-section-header">
+                        <div><span class="section-kicker">MISSION CONTROL</span><h2>Stay in the flow</h2></div>
+                        <span class="section-index">03 / 05</span>
+                    </div>
+                    <div class="neo-operations__grid">
+                        <div id="missions-widget" class="operations-card"></div>
+                        <div id="daily-challenge-widget" class="operations-card"></div>
+                        <div id="streak-freeze-widget" class="operations-card"></div>
+                    </div>
+                </section>
+
+                <div class="neo-dashboard-columns neo-dashboard-columns--wide">
+                    <section class="neo-panel recent-activity">
+                        <div class="dashboard-section-header">
+                            <div><span class="section-kicker">FLIGHT LOG</span><h2>Recent activity</h2></div>
+                            <span class="section-index">NOW</span>
+                        </div>
+                        <div id="activity-list" class="activity-list"></div>
+                    </section>
+                    <div class="neo-side-stack">
+                        <section id="word-of-the-day" class="neo-panel word-of-the-day"></section>
+                        <section id="proverb-section" class="neo-panel proverb-section"></section>
+                    </div>
+                </div>
+            </section>
+
+            <section id="module-listening" class="module" role="tabpanel" aria-label="Listening practice" hidden>
+                <div id="listening-menu">
+                    <header class="module-header neo-module-header"><span class="section-kicker">01 · AUDIO LAB</span><h1>Train your ear<span>听</span></h1><p class="module-subtitle">Build a feel for natural Chinese, one signal at a time.</p></header>
+                    <div class="exercise-type-grid">
+                        <button class="exercise-type-card" data-type="dictation" type="button"><span>听写</span><strong>Dictation</strong><small>Turn sound into characters</small></button>
+                        <button class="exercise-type-card" data-type="comprehension" type="button"><span>理解</span><strong>Comprehension</strong><small>Catch the meaning</small></button>
+                        <button class="exercise-type-card" data-type="minimal-pairs" type="button"><span>声调</span><strong>Minimal pairs</strong><small>Hear the tonal difference</small></button>
+                        <button class="exercise-type-card" data-type="dialogue" type="button"><span>对话</span><strong>Dialogue lab</strong><small>Follow a real exchange</small></button>
+                        <button class="exercise-type-card" data-type="speed-listening" type="button"><span>速度</span><strong>Speed run</strong><small>Understand at pace</small></button>
+                        <button class="exercise-type-card" data-type="shadowing" type="button"><span>跟读</span><strong>Shadowing</strong><small>Listen, mimic, embody</small></button>
+                    </div>
+                </div>
+                <div id="listening-exercise" class="exercise-shell hidden">
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu">← Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening Exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
+                    <div class="exercise-progress"><span><b id="listening-current">1</b> / <b id="listening-total">10</b></span><div class="progress-dots"></div></div>
+                    <div id="listening-content"></div>
+                </div>
+            </section>
+
+            <section id="module-reading" class="module" role="tabpanel" aria-label="Reading practice" hidden>
+                <div id="reading-menu">
+                    <header class="module-header neo-module-header"><span class="section-kicker">02 · TEXT LAB</span><h1>Read the signal<span>读</span></h1><p class="module-subtitle">Go from characters to ideas with guided, high-context practice.</p></header>
+                    <div class="exercise-type-grid">
+                        <button class="exercise-type-card" data-type="character-match" type="button"><span>字形</span><strong>Character match</strong><small>Match form and meaning</small></button>
+                        <button class="exercise-type-card" data-type="sentence-complete" type="button"><span>句子</span><strong>Finish a sentence</strong><small>Read through context</small></button>
+                        <button class="exercise-type-card" data-type="passage-reading" type="button"><span>篇章</span><strong>Passage reading</strong><small>Build comprehension</small></button>
+                        <button class="exercise-type-card" data-type="speed-reading" type="button"><span>流速</span><strong>Speed reading</strong><small>Comprehend with pace</small></button>
+                        <button class="exercise-type-card" data-type="radical-learn" type="button"><span>部首</span><strong>Radical lab</strong><small>See how characters work</small></button>
+                        <button class="exercise-type-card" data-type="context-clues" type="button"><span>语境</span><strong>Context clues</strong><small>Infer unfamiliar words</small></button>
+                        <button class="exercise-type-card" data-type="cultural-notes" type="button"><span>文化</span><strong>Culture notes</strong><small>Language beyond the page</small></button>
+                        <button class="exercise-type-card" data-type="hsk-reading" type="button"><span>HSK</span><strong>HSK reading</strong><small>Choose your level</small></button>
+                    </div>
+                </div>
+                <div id="reading-exercise" class="exercise-shell hidden">
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu">← Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading Exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
+                    <div class="exercise-progress"><span><b id="reading-current">1</b> / <b id="reading-total">10</b></span><div class="progress-dots"></div></div>
+                    <div id="reading-content"></div>
+                </div>
+            </section>
+
+            <section id="module-grammar" class="module" role="tabpanel" aria-label="Grammar practice" hidden>
+                <div id="grammar-menu">
+                    <header class="module-header neo-module-header"><span class="section-kicker">03 · PATTERN LAB</span><h1>Build the structure<span>构</span></h1><p class="module-subtitle">Turn grammar patterns into reflex, not rules to memorize.</p></header>
+                    <div id="grammar-progress" class="grammar-progress"></div>
+                    <div class="grammar-controls">
+                        <input id="grammar-search" type="search" placeholder="Search a grammar pattern" aria-label="Search grammar patterns">
+                        <div id="grammar-chips" class="grammar-chips"></div>
+                        <div id="grammar-toggle-bar" class="grammar-toggle-bar"></div>
+                    </div>
+                    <div id="grammar-lessons-list" class="grammar-lessons-list"></div>
+                    <p id="grammar-no-results" class="hidden">No grammar patterns match that search yet.</p>
+                </div>
+                <div id="grammar-lesson" class="hidden"></div>
+                <div id="grammar-practice" class="hidden">
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu">← Pattern lab</button><div><span class="section-kicker">PRACTICE MODE</span><h2>Grammar drill</h2></div></div>
+                    <div class="exercise-progress"><span><b id="grammar-current">1</b> / <b id="grammar-total">1</b></span></div>
+                    <div id="grammar-practice-content"></div>
+                </div>
+            </section>
+
+            <section id="module-speaking" class="module" role="tabpanel" aria-label="Speaking practice" hidden>
+                <div id="speaking-menu">
+                    <header class="module-header neo-module-header"><span class="section-kicker">04 · VOICE LAB</span><h1>Make it yours<span>说</span></h1><p class="module-subtitle">Practice the rhythm, tone, and confidence of real speech.</p></header>
+                    <div class="exercise-type-grid">
+                        <button class="exercise-type-card" data-type="pronunciation" type="button"><span>发音</span><strong>Pronunciation</strong><small>Shape a clean sound</small></button>
+                        <button class="exercise-type-card" data-type="tone-practice" type="button"><span>声调</span><strong>Tone practice</strong><small>Train pitch and intent</small></button>
+                        <button class="exercise-type-card" data-type="shadowing-practice" type="button"><span>跟读</span><strong>Shadowing</strong><small>Echo natural speech</small></button>
+                        <button class="exercise-type-card" data-type="sentence-reading" type="button"><span>朗读</span><strong>Sentence flow</strong><small>Read with rhythm</small></button>
+                        <button class="exercise-type-card" data-type="dialogue-practice" type="button"><span>对话</span><strong>Dialogue practice</strong><small>Speak in a situation</small></button>
+                    </div>
+                </div>
+                <div id="speaking-exercise" class="exercise-shell hidden">
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu">← Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking Exercise</h2></div></div>
+                    <div id="speaking-content"></div>
+                </div>
+            </section>
+
+            <section id="module-vocabulary" class="module" role="tabpanel" aria-label="Vocabulary practice" hidden>
+                <header class="module-header neo-module-header"><span class="section-kicker">05 · MEMORY DECK</span><h1>Store the language<span>字</span></h1><p class="module-subtitle">A spaced repetition deck designed for durable recall.</p></header>
+                <div id="vocabulary-learner"></div>
+            </section>
+
+            <section id="module-achievements" class="module" role="tabpanel" aria-label="Achievements" hidden>
+                <header class="module-header neo-module-header"><span class="section-kicker">PROGRESS ARCHIVE</span><h1>Proof of progress<span>成</span></h1><p class="module-subtitle">Every focused session leaves a mark.</p></header>
+                <div id="achievements-grid" class="achievements-grid"></div>
+            </section>
+
+            <section id="module-placement" class="module" role="tabpanel" aria-label="Placement test" hidden>
+                <div id="placement-content"></div>
+            </section>
         </main>
     </div>
 
-    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" id="modal-body"></div>
-    </div>
-
-    <div id="toast-container" class="toast-container" aria-live="polite"></div>
-
     <footer class="app-footer">
         <div class="footer-content">
-            <p class="footer-text">&copy; <span id="footer-year">2026</span> Chinese Master</p>
+            <div><span class="footer-mark" lang="zh">知</span><span class="footer-text">ZHI STUDIO · <span id="footer-year">2026</span></span></div>
             <nav class="footer-links" aria-label="Legal">
-                <a href="legal/privacy.html">Privacy</a>
-                <a href="legal/terms.html">Terms</a>
-                <a href="legal/cookies.html">Cookies</a>
+                <a href="legal/privacy.html">Privacy</a><a href="legal/terms.html">Terms</a><a href="legal/cookies.html">Cookies</a>
             </nav>
         </div>
     </footer>
+
+    <div id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></div>
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-overlay"></div><div class="modal-content" id="modal-body"></div></div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
     <script src="vendor/gsap.min.js"></script>
     <script src="vendor/ScrollTrigger.min.js"></script>
@@ -191,7 +399,6 @@
     <script src="js/session.js"></script>
     <script src="js/error-logger.js"></script>
     <script src="js/analytics-engine.js"></script>
-
     <script src="js/audio.js"></script>
     <script src="js/sm2.js"></script>
     <script src="js/data-loader.js"></script>
@@ -222,7 +429,6 @@
     <script src="data/real-world-phrases.js"></script>
 
     <script src="js/animations.js"></script>
-
     <script src="components/bottom-sheet.js"></script>
     <script src="components/character-tooltip.js"></script>
     <script src="components/word-of-the-day.js"></script>
@@ -240,21 +446,15 @@
     <script src="components/achievements.js"></script>
     <script src="components/analytics.js"></script>
     <script src="components/admin-panel.js"></script>
-
     <script src="data/placement-bank.js"></script>
     <script src="js/lazy-loader.js"></script>
     <script src="components/placement-test.js"></script>
-
+    <script src="js/future-ui.js"></script>
     <script src="js/app.js"></script>
     <script src="js/register-sw.js"></script>
 
     <noscript>
-        <div style="position:fixed;inset:0;background:#0f172a;display:flex;align-items:center;justify-content:center;z-index:999999;">
-            <div style="text-align:center;color:#f8fafc;font-family:Inter,sans-serif;">
-                <h1 style="font-size:24px;margin-bottom:12px;">Chinese Master</h1>
-                <p style="color:#94a3b8;font-size:14px;">JavaScript is required to run this application.</p>
-            </div>
-        </div>
+        <div class="noscript-notice"><strong>ZHI Studio needs JavaScript to run the learning engine.</strong><span>Please enable JavaScript and refresh.</span></div>
     </noscript>
 </body>
 </html>

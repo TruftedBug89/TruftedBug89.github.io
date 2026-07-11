@@ -64,8 +64,8 @@ var MobileShell = (function () {
         var brand = document.createElement('div');
         brand.className = 'topbar-brand';
         brand.setAttribute('aria-hidden', 'true');
-        brand.innerHTML = '<span class="topbar-brand-icon">\u4e2d</span>' +
-            '<span class="topbar-brand-text">Chinese Master</span>';
+        brand.innerHTML = '<span class="topbar-brand-icon">\u77e5</span>' +
+            '<span class="topbar-brand-text">ZHI STUDIO</span>';
 
         var chips = document.createElement('div');
         chips.className = 'topbar-chips';

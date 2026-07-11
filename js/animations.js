@@ -84,7 +84,7 @@ var InkAnimations = (function() {
             return;
         }
         gsap.registerPlugin(ScrollTrigger);
-        isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        isTouch = window.matchMedia ? window.matchMedia('(pointer: coarse)').matches : ('ontouchstart' in window || navigator.maxTouchPoints > 0);
         _detectLowEnd();
         prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (prefersReducedMotion) {

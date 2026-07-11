@@ -1,7 +1,7 @@
 {
-  "name": "中文大师 — Chinese Master",
-  "short_name": "Chinese Master",
-  "description": "Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, and spaced-repetition flashcards.",
+  "name": "ZHI Studio — Learn Chinese",
+  "short_name": "ZHI Studio",
+  "description": "A fluid, offline-first studio for Chinese vocabulary, listening, reading, grammar, speaking, and spaced-repetition practice.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

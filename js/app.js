@@ -1012,15 +1012,32 @@ const App = {
             { id: 'placement',   label: 'Test',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>' }
         ];
 
-        var html = '';
+        var html =
+            '<div class="nav-brand">' +
+                '<span class="nav-brand__seal" lang="zh">知</span>' +
+                '<span class="nav-brand__copy"><strong>ZHI STUDIO</strong><span>LANGUAGE SYSTEM</span></span>' +
+            '</div>' +
+            '<div class="nav-divider"></div>' +
+            '<div class="nav-cluster-label">LEARNING MODES</div>' +
+            '<div class="nav-links">';
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
             var activeClass = it.id === 'dashboard' ? ' active' : '';
             html += '<a href="#" class="nav-link' + activeClass + '" data-module="' + it.id + '" aria-current="' + (it.id === 'dashboard' ? 'page' : 'false') + '">';
             html += '<span class="nav-icon">' + it.icon + '</span>';
             html += '<span class="nav-label">' + it.label + '</span>';
+            html += '<span class="nav-key">' + String(i + 1) + '</span>';
             html += '</a>';
         }
+        html += '</div>';
+        html +=
+            '<div class="nav-footer">' +
+                '<button type="button" class="nav-user" id="profile-btn" aria-label="Open learner profile">' +
+                    '<span class="nav-avatar" id="profile-name">L</span>' +
+                    '<span><strong id="profile-name-text">Learner</strong><small>Local profile</small></span>' +
+                '</button>' +
+                '<div class="nav-status"><span>PROGRESS SAVED</span><b>LOCAL</b></div>' +
+            '</div>';
         nav.innerHTML = html;
     }
 };

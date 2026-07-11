@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chinese-master-v3';
+const CACHE_NAME = 'chinese-master-v6';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -25,10 +25,12 @@ const PRECACHE_URLS = [
   '/css/pinyin-toggle.css',
   '/css/placement-test.css',
   '/css/loading.css',
+  '/css/future-ui.css',
   '/js/utils.js',
   '/js/storage.js',
   '/js/session.js',
   '/js/error-logger.js',
+  '/js/future-ui.js',
   '/js/analytics-engine.js',
   '/js/app.js',
   '/js/audio.js',
