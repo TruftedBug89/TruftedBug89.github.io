@@ -210,6 +210,21 @@ const VocabularyLearner = {
                 InkAnimations.attentionPulse(card);
             }
         });
+
+        // Dynamic lazy loading of selected HSK level
+        if (typeof DataLoader !== 'undefined' && typeof DataLoader.loadLevel === 'function') {
+            DataLoader.loadLevel('hsk' + level).then(() => {
+                const card = document.querySelector(`.level-card[data-level="${level}"]`);
+                if (card) {
+                    const countEl = card.querySelector('.level-count');
+                    if (countEl && typeof this.getWordCount === 'function') {
+                        countEl.textContent = this.getWordCount(level) + ' words';
+                    }
+                }
+            }).catch(function(e) {
+                console.warn('Failed to load level on-demand:', e);
+            });
+        }
     },
     
     // Get words for current level (DataLoader JSONL preferred, legacy globals fallback)

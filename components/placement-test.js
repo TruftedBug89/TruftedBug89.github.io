@@ -525,6 +525,13 @@ const PlacementTest = {
         if (!data) return;
         data.placementResult = result;
         StorageManager.setUserData(data);
+
+        // Load placement-calibrated level on-demand
+        if (typeof DataLoader !== 'undefined' && typeof DataLoader.loadLevel === 'function') {
+            DataLoader.loadLevel('hsk' + result.level).catch(function(e) {
+                console.warn('Failed to load placement-calibrated level on-demand:', e);
+            });
+        }
     }
 };
 

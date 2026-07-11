@@ -724,6 +724,10 @@ const ProgressTracker = {
 
     // Track exercise completion
     trackExercise(module, exerciseId, score, total) {
+        const _tx = (typeof StorageManager !== 'undefined' && StorageManager.beginTransaction);
+        if (_tx) StorageManager.beginTransaction();
+        let result;
+        try {
         const percentage = Utils.percentage(score, total);
         const isPerfect = percentage === 100;
 
@@ -791,7 +795,11 @@ const ProgressTracker = {
         
         this.checkAchievements();
         
-        return { xp, percentage, isPerfect };
+        result = { xp, percentage, isPerfect };
+        } finally {
+            if (_tx) StorageManager.commitTransaction();
+        }
+        return result;
     },
 
     // Track vocabulary learning

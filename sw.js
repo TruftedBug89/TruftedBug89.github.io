@@ -97,6 +97,7 @@ self.addEventListener('fetch', function(event) {
 
   if (event.request.method !== 'GET') return;
 
+  // Intercept data requests (e.g. vocabulary-hsk*.jsonl) and dynamically/lazily cache them upon fetch
   if (url.pathname.indexOf('/data/') !== -1) {
     event.respondWith(
       caches.match(event.request).then(function(cached) {

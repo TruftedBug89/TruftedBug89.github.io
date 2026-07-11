@@ -433,59 +433,32 @@ var AnalyticsEngine = {
 
     _recordDeviceInfo: function () {
         var s = this._readSessions();
-        if (s.device && s.device.screenWidth && this.deviceLogged) return;
+        if (s.device && this.deviceLogged) return;
         this.deviceLogged = true;
 
-        var ua = navigator.userAgent || '';
-        var browserInfo = this._parseBrowser(ua);
-        var osInfo = this._parseOS(ua);
         var conn = (navigator.connection || navigator.mozConnection || navigator.webkitConnection || null);
 
         s.device = {
-            screenWidth: window.screen.width,
-            screenHeight: window.screen.height,
             pixelRatio: window.devicePixelRatio || 1,
             colorDepth: window.screen.colorDepth || 24,
             viewportWidth: window.innerWidth,
             viewportHeight: window.innerHeight,
-            browser: browserInfo.name,
-            browserVersion: browserInfo.version,
-            os: osInfo.name,
-            osVersion: osInfo.version,
             language: (navigator.language || 'unknown').slice(0, 10),
             timezone: Intl.DateTimeFormat ? Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown' : 'unknown',
             touchSupport: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0),
             maxTouchPoints: navigator.maxTouchPoints || 0,
-            connectionType: conn ? (conn.effectiveType || 'unknown') : 'unknown',
-            userAgent: ua.slice(0, 300)
+            connectionType: conn ? (conn.effectiveType || 'unknown') : 'unknown'
         };
         this._writeSessions(s);
     },
 
+    // Minimized browser/OS parsers (F2 privacy requirement)
     _parseBrowser: function (ua) {
-        var name = 'Other';
-        var version = 'unknown';
-        if (/edg\/([\d.]+)/i.test(ua)) { name = 'Edge'; version = RegExp.$1; }
-        else if (/opr\/([\d.]+)/i.test(ua) || /opera\/([\d.]+)/i.test(ua)) { name = 'Opera'; version = RegExp.$1; }
-        else if (/chrome\/([\d.]+)/i.test(ua) && !/edg/i.test(ua)) { name = 'Chrome'; version = RegExp.$1; }
-        else if (/firefox\/([\d.]+)/i.test(ua)) { name = 'Firefox'; version = RegExp.$1; }
-        else if (/version\/([\d.]+).*safari/i.test(ua) && !/chrome/i.test(ua)) { name = 'Safari'; version = RegExp.$1; }
-        else if (/safari\/([\d.]+)/i.test(ua) && !/chrome/i.test(ua)) { name = 'Safari'; version = RegExp.$1; }
-        return { name: name, version: version };
+        return { name: undefined, version: undefined };
     },
 
     _parseOS: function (ua) {
-        var name = 'Other';
-        var version = 'unknown';
-        if (/windows nt ([\d.]+)/i.test(ua)) { name = 'Windows'; version = RegExp.$1; }
-        else if (/mac os x ([\d_]+)/i.test(ua)) { name = 'macOS'; version = RegExp.$1.replace(/_/g, '.'); }
-        else if (/linux/i.test(ua) && !/android/i.test(ua)) { name = 'Linux'; version = 'unknown'; }
-        else if (/android ([\d.]+)/i.test(ua)) { name = 'Android'; version = RegExp.$1; }
-        else if (/iphone os ([\d_]+)|ios ([\d.]+)/i.test(ua)) {
-            name = 'iOS';
-            version = (RegExp.$1 || RegExp.$2).replace(/_/g, '.');
-        } else if (/ipad.*os ([\d_]+)/i.test(ua)) { name = 'iPadOS'; version = RegExp.$1.replace(/_/g, '.'); }
-        return { name: name, version: version };
+        return { name: undefined, version: undefined };
     },
 
     _bindVisibilityFlush: function () {

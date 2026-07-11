@@ -132,12 +132,68 @@ const StorageManager = {
 
     // Set user data
     setUserData(data) {
-        const ok = Utils.storage.set(this._userDataKey(), data);
-        if (ok && typeof SessionManager !== 'undefined') {
-            const sid = SessionManager.getActiveSessionId();
-            if (sid) SessionManager._updateSessionMeta(sid, { name: (data && data.name) ? String(data.name).slice(0, 40) : 'Learner' });
+        if (this._txActive) {
+            this._pendingData = data;
+            this._txDirty = true;
+            return true;
         }
-        return ok;
+        return this._persist(data);
+    },
+
+    // ---- Transactional write support ----
+    // Consolidates multiple mutations into a single storage write.
+    // While a transaction is open, setUserData/addActivity buffer into an
+    // in-memory working copy and only commit() performs one Utils.storage.set.
+    _txActive: false,
+    _txDirty: false,
+
+    beginTransaction() {
+        if (this._saveTimer) {
+            clearTimeout(this._saveTimer);
+            this._saveTimer = null;
+        }
+        this._txActive = true;
+        this._txDirty = false;
+    },
+
+commitTransaction() {
+        if (!this._txActive) return;
+        this._txActive = false;
+        const dirty = this._txDirty;
+        this._txDirty = false;
+        if (dirty && this._pendingData) {
+            this._persist(this._pendingData, true);
+        }
+        this._pendingData = null;
+    },
+
+    _persist(data, skipSessionMeta) {
+        try {
+            const ok = Utils.storage.set(this._userDataKey(), data);
+            if (ok && !skipSessionMeta && typeof SessionManager !== 'undefined') {
+                const sid = SessionManager.getActiveSessionId();
+                if (sid) SessionManager._updateSessionMeta(sid, { name: (data && data.name) ? String(data.name).slice(0, 40) : 'Learner' });
+            }
+            return ok;
+        } catch (e) {
+            if (e && (e.name === 'QuotaExceededError' || e.code === 22 || e.code === 1014)) {
+                if (typeof StorageManager !== 'undefined') {
+                    if (StorageManager.pruneDailyStats) StorageManager.pruneDailyStats();
+                    if (StorageManager._pruneHistory) StorageManager._pruneHistory();
+                }
+                try {
+                    const ok = Utils.storage.set(this._userDataKey(), data);
+                    if (ok && !skipSessionMeta && typeof SessionManager !== 'undefined') {
+                        const sid = SessionManager.getActiveSessionId();
+                        if (sid) SessionManager._updateSessionMeta(sid, { name: (data && data.name) ? String(data.name).slice(0, 40) : 'Learner' });
+                    }
+                    return ok;
+                } catch (_) {
+                    return false;
+                }
+            }
+            return false;
+        }
     },
 
     // Update specific user data field
@@ -383,6 +439,10 @@ const StorageManager = {
         }
 
         this._pendingData = data;
+        if (this._txActive) {
+            this._txDirty = true;
+            return;
+        }
         if (this._saveTimer) clearTimeout(this._saveTimer);
         this._saveTimer = setTimeout(function() {
             if (this._pendingData) {

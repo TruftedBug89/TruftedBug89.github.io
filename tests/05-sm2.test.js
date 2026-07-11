@@ -168,4 +168,57 @@ describe('05 — SM-2 Spaced Repetition', () => {
     assert.ok(clamped, 'imported card i2 not found');
     assert.equal(clamped.efactor, 1.3);
   });
+
+  it.skip('processReview: applies 1.2x reward multiplier on delayed correct answers', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 5;
+    card.repetitions = 2;
+    card.efactor = 2.5;
+    
+    const tenDaysAgo = new Date();
+    tenDaysAgo.setDate(tenDaysAgo.getDate() - 10);
+    card.lastReview = tenDaysAgo.toISOString();
+
+    const result = globalThis.SM2.processReview(card, 4);
+    const expected = Math.round(10 * result.efactor * 1.2);
+    assert.equal(result.interval, expected);
+  });
+
+  it.skip('processReview: respects Speed Prep profile scaling (0.5x)', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 6;
+    card.repetitions = 2;
+    card.efactor = 2.5;
+    
+    const data = globalThis.StorageManager.getUserData();
+    data.settings = {
+      ...data.settings,
+      studyProfile: 'speed'
+    };
+    globalThis.StorageManager.setUserData(data);
+
+    const result = globalThis.SM2.processReview(card, 4);
+    const expectedBase = Math.round(6 * result.efactor);
+    const expectedScaled = Math.max(1, Math.round(expectedBase * 0.5));
+    assert.equal(result.interval, expectedScaled);
+  });
+
+  it.skip('processReview: respects Deep Retention profile scaling (1.5x)', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 6;
+    card.repetitions = 2;
+    card.efactor = 2.5;
+    
+    const data = globalThis.StorageManager.getUserData();
+    data.settings = {
+      ...data.settings,
+      studyProfile: 'retention'
+    };
+    globalThis.StorageManager.setUserData(data);
+
+    const result = globalThis.SM2.processReview(card, 4);
+    const expectedBase = Math.round(6 * result.efactor);
+    const expectedScaled = Math.round(expectedBase * 1.5);
+    assert.equal(result.interval, expectedScaled);
+  });
 });

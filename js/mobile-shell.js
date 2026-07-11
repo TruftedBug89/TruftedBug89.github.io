@@ -175,18 +175,6 @@ var MobileShell = (function () {
             }
         });
 
-        if (window.location.hash === '#admin') {
-            var avatar = document.getElementById('topbar-avatar');
-            if (avatar) {
-                avatar.style.cursor = 'default';
-                avatar.addEventListener('dblclick', function () {
-                    if (typeof AdminPanel !== 'undefined') {
-                        AdminPanel.open();
-                    }
-                });
-            }
-        }
-
         setTimeout(updateTopbar, 800);
     }
 

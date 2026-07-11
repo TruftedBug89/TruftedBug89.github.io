@@ -126,6 +126,14 @@ const LevelTracker = {
             Utils.playSound('levelup');
             Utils.showConfetti();
         }
+
+        // Load newly unlocked HSK level on-demand
+        if (typeof DataLoader !== 'undefined' && typeof DataLoader.loadLevel === 'function') {
+            var hskLvl = Math.min(5, Math.max(1, newLevel));
+            DataLoader.loadLevel('hsk' + hskLvl).catch(function(e) {
+                console.warn('Failed to load newly unlocked HSK level on-demand:', e);
+            });
+        }
     },
 
     // ============================================

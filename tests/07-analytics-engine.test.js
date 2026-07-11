@@ -149,16 +149,21 @@ describe('07 — Analytics Engine', () => {
     assert.equal(AE.getStats(), null);
   });
 
-  it('_parseBrowser identifies Chrome', () => {
+  it('_recordDeviceInfo: session device info is cleaned and does not contain userAgent, screen, OS, or browser details', () => {
     const AE = globalThis.AnalyticsEngine;
-    const b = AE._parseBrowser('Mozilla/5.0 Chrome/120.0.0.0');
-    assert.equal(b.name, 'Chrome');
-  });
-
-  it('_parseOS identifies Windows', () => {
-    const AE = globalThis.AnalyticsEngine;
-    const o = AE._parseOS('Windows NT 10.0');
-    assert.equal(o.name, 'Windows');
+    localStorage.setItem('cm_analytics_consent', 'true');
+    AE.consent = true;
+    AE.sessionId = 'test_clean_sid';
+    AE.deviceLogged = false;
+    AE._recordDeviceInfo();
+    const sessions = AE._readSessions();
+    assert.ok(sessions.device);
+    assert.equal(sessions.device.userAgent, undefined);
+    assert.equal(sessions.device.browser, undefined);
+    assert.equal(sessions.device.os, undefined);
+    assert.equal(sessions.device.screenWidth, undefined);
+    assert.equal(sessions.device.screenHeight, undefined);
+    localStorage.removeItem('cm_analytics_consent');
   });
 
   it('_key returns correct localStorage key format', () => {

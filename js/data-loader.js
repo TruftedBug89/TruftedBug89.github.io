@@ -99,7 +99,22 @@ var DataLoader = (function () {
     function loadLevel(level) {
         var path = registry[level];
         if (!path) return Promise.reject(new Error('Unknown level: ' + level));
-        return loadJSONL(path);
+        return Promise.resolve(loadJSONL(path)).then(function (data) {
+            var globalName = globalMap[level];
+            if (globalName) {
+                window[globalName] = data;
+            }
+            return data;
+        }).catch(function (err) {
+            var legacy = getLegacyGlobal(level);
+            if (legacy) {
+                var globalName = globalMap[level];
+                if (globalName) window[globalName] = legacy;
+                if (path) cache[path] = legacy;
+                return legacy;
+            }
+            throw err;
+        });
     }
 
     function getLegacyGlobal(level) {
@@ -117,6 +132,9 @@ var DataLoader = (function () {
 
     function getWords(level) {
         var path = registry[level];
+        if (path && !cache[path] && !pending[path]) {
+            loadLevel(level).catch(function () {});
+        }
         if (!path) {
             var legacy = getLegacyGlobal(level);
             return legacy ? legacy.words : [];
@@ -128,6 +146,9 @@ var DataLoader = (function () {
 
     function getWordCount(level) {
         var path = registry[level];
+        if (path && !cache[path] && !pending[path]) {
+            loadLevel(level).catch(function () {});
+        }
         if (!path) {
             var legacy = getLegacyGlobal(level);
             return legacy ? legacy.count : 0;
@@ -138,16 +159,44 @@ var DataLoader = (function () {
     }
 
     function populateGlobals() {
-        var keys = Object.keys(registry);
-        var promises = keys.map(function (key) {
-            return loadLevel(key).then(function (data) {
-                var globalName = globalMap[key];
-                if (globalName) {
-                    window[globalName] = data;
+        var activeLvl = 1;
+        try {
+            if (typeof StorageManager !== 'undefined') {
+                var userData = StorageManager.getUserData();
+                if (userData) {
+                    if (userData.placementResult && userData.placementResult.level) {
+                        activeLvl = parseInt(userData.placementResult.level);
+                    } else if (typeof LevelTracker !== 'undefined' && LevelTracker.userData && LevelTracker.userData.level) {
+                        activeLvl = parseInt(LevelTracker.userData.level);
+                    } else if (userData.level) {
+                        if (userData.level <= 5) activeLvl = 1;
+                        else if (userData.level <= 10) activeLvl = 2;
+                        else if (userData.level <= 15) activeLvl = 3;
+                        else if (userData.level <= 20) activeLvl = 4;
+                        else activeLvl = 5;
+                    }
                 }
-                return data;
-            }).catch(function () {
-                // Fetch failed (e.g. file:// protocol) — fall back to legacy <script> globals
+            }
+        } catch (e) {
+            console.warn('DataLoader: failed to determine active level', e);
+        }
+
+        var activeKey = 'hsk' + activeLvl;
+        var keysToLoad = [activeKey];
+
+        if (activeLvl === 4 || activeLvl === 5) {
+            keysToLoad.push('hsk4_5');
+        }
+
+        keysToLoad.push('vocabulary');
+
+        var promises = keysToLoad.map(function (key) {
+            return loadLevel(key).catch(function () { return null; });
+        });
+
+        var allKeys = Object.keys(registry);
+        allKeys.forEach(function (key) {
+            if (keysToLoad.indexOf(key) === -1) {
                 var legacy = getLegacyGlobal(key);
                 if (legacy) {
                     var globalName = globalMap[key];
@@ -155,12 +204,12 @@ var DataLoader = (function () {
                     var p = registry[key];
                     if (p) cache[p] = legacy;
                 }
-                return null;
-            });
+            }
         });
+
         readyPromise = Promise.allSettled(promises).then(function () {
             if (typeof App !== 'undefined' && App.DEBUG) {
-                console.log('DataLoader: globals populated');
+                console.log('DataLoader: active globals populated for level ' + activeLvl);
             }
         });
         return readyPromise;
