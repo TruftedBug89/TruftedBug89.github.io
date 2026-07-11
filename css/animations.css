@@ -171,13 +171,25 @@
     transform: translateY(-4px);
     box-shadow: 0 0 30px rgba(255, 107, 107, 0.1), 0 12px 30px rgba(0, 0, 0, 0.3);
 }
-/* GSAP tilt owns transform for these cards — drop transform from the transition to avoid lag */
+/* GSAP tilt + module/panel activation owns transform — drop transform from transition to avoid lag */
 .tilt-active.card-lift,
-.tilt-active.card-glow {
+.tilt-active.card-glow,
+.module.active .card-lift,
+.module.active .card-glow,
+.panel.active .card-lift,
+.panel.active .card-glow,
+.hero .card-lift,
+.hero .card-glow {
     transition: box-shadow 0.35s ease, border-color 0.35s ease;
 }
 .tilt-active.card-lift:hover,
-.tilt-active.card-glow:hover {
+.tilt-active.card-glow:hover,
+.module.active .card-lift:hover,
+.module.active .card-glow:hover,
+.panel.active .card-lift:hover,
+.panel.active .card-glow:hover,
+.hero .card-lift:hover,
+.hero .card-glow:hover {
     transform: none;
 }
 
@@ -333,6 +345,10 @@
 .icon-spin:hover {
     transform: rotate(180deg);
 }
+.module.active .icon-spin,
+.panel.active .icon-spin {
+    transition: none;
+}
 
 /* === BUTTON PRESS (GSAP-driven; class is a hook, no CSS transform transition) === */
 .btn-press { /* marker class — GSAP owns press scale feedback */ }
@@ -355,6 +371,10 @@
 }
 .stats-card:hover .stats-value {
     transform: scale(1.1);
+}
+.module.active .stats-value,
+.panel.active .stats-value {
+    transition: none;
 }
 
 
@@ -422,6 +442,41 @@
 }
 .gsap-reveal-fade {
     opacity: 0;
+}
+
+/* === ACTIVE MODULE / PANEL — kill CSS entrance animations so GSAP owns the element === */
+.module.active .gsap-reveal,
+.module.active .gsap-reveal-left,
+.module.active .gsap-reveal-right,
+.module.active .gsap-reveal-scale,
+.module.active .gsap-reveal-fade,
+.module.active .stagger-children > *,
+.module.active .ink-stagger > *,
+.panel.active .gsap-reveal,
+.panel.active .gsap-reveal-left,
+.panel.active .gsap-reveal-right,
+.panel.active .gsap-reveal-scale,
+.panel.active .gsap-reveal-fade,
+.panel.active .stagger-children > *,
+.panel.active .ink-stagger > * {
+    animation: none !important;
+}
+
+/* === NO-GSAP / FALLBACK VISIBILITY === */
+/* revealAllWithoutGSAP() adds .gsap-reveal-visible — ensure it actually shows content */
+.gsap-reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+}
+/* If GSAP loaded but ScrollTrigger missing on a shown module, force reveals visible as baseline */
+.module.active .gsap-reveal:not(.gsap-reveal-visible),
+.module.active .gsap-reveal-left:not(.gsap-reveal-visible),
+.module.active .gsap-reveal-right:not(.gsap-reveal-visible),
+.module.active .gsap-reveal-scale:not(.gsap-reveal-visible),
+.module.active .gsap-reveal-fade:not(.gsap-reveal-visible) {
+    /* GSAP fromTo will override opacity to 0 then animate to 1; this baseline prevents stuck-invisible if GSAP never runs */
+    opacity: 1;
 }
 
 /* === ACCESSIBLE REDUCED MOTION === */

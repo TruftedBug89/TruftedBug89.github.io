@@ -73,6 +73,11 @@ var DataLoader = (function () {
         if (cache[path]) return cache[path];
         if (pending[path]) return pending[path];
 
+        // file:// blocks fetch() with CORS — reject early so callers fall back to legacy globals
+        if (typeof location !== 'undefined' && location.protocol === 'file:') {
+            return Promise.reject(new Error('fetch unavailable on file:// protocol: ' + path));
+        }
+
         pending[path] = fetch(path).then(function (resp) {
             if (!resp.ok) throw new Error('HTTP ' + resp.status + ' for ' + path);
             return resp.text();
@@ -100,6 +105,12 @@ var DataLoader = (function () {
     function getLegacyGlobal(level) {
         var name = globalMap[level];
         if (!name) return null;
+        // Top-level `const`/`let` in classic scripts live in the global lexical
+        // environment, not on `window`. Indirect eval reads that scope.
+        try {
+            var v = (0, eval)(name);
+            if (typeof v !== 'undefined' && v !== null) return v;
+        } catch (e) { /* not declared — ignore */ }
         if (typeof window[name] !== 'undefined') return window[name];
         return null;
     }
@@ -136,6 +147,14 @@ var DataLoader = (function () {
                 }
                 return data;
             }).catch(function () {
+                // Fetch failed (e.g. file:// protocol) — fall back to legacy <script> globals
+                var legacy = getLegacyGlobal(key);
+                if (legacy) {
+                    var globalName = globalMap[key];
+                    if (globalName) window[globalName] = legacy;
+                    var p = registry[key];
+                    if (p) cache[p] = legacy;
+                }
                 return null;
             });
         });

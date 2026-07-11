@@ -45,63 +45,66 @@ const Dashboard = {
         if (this._updating) return;
         this._updating = true;
 
-        // Cancel any pending rAF from previous _renderSkillsOverview
-        if (this._skillsRafId) { cancelAnimationFrame(this._skillsRafId); this._skillsRafId = null; }
+        try {
+            // Cancel any pending rAF from previous _renderSkillsOverview
+            if (this._skillsRafId) { cancelAnimationFrame(this._skillsRafId); this._skillsRafId = null; }
 
-        // Clear any pending counter-bounce timeouts
-        if (this._counterBounceTimers) {
-            this._counterBounceTimers.forEach(function(id) { clearTimeout(id); });
-            this._counterBounceTimers = [];
+            // Clear any pending counter-bounce timeouts
+            if (this._counterBounceTimers) {
+                this._counterBounceTimers.forEach(function(id) { clearTimeout(id); });
+                this._counterBounceTimers = [];
+            }
+
+            var stats, levelInfo, dailyGoal, weeklyStats, recentActivities;
+            try { stats = StorageManager.getStatistics(); } catch(e) { stats = { today: {}, streak: 0, totalWords: 0, listeningCompleted: 0, readingCompleted: 0, totalXp: 0 }; }
+            try { levelInfo = StorageManager.getLevelInfo(); } catch(e) { levelInfo = { level: 1, currentXp: 0, nextLevelXp: 100, progress: 0 }; }
+            try { dailyGoal = ProgressTracker.getDailyGoalProgress(); } catch(e) { dailyGoal = { overall: 0, listening: { current: 0 }, reading: { current: 0 }, vocabulary: { current: 0 } }; }
+            try { weeklyStats = ProgressTracker.getWeeklyStats(); } catch(e) { weeklyStats = []; }
+            try { recentActivities = StorageManager.getRecentActivities(5); } catch(e) { recentActivities = []; }
+
+            this._renderHero(stats, levelInfo);
+            this.updateStats(stats);
+            this.updateLevelInfo(levelInfo);
+            this.updateDailyGoal(dailyGoal);
+            this._renderWeeklyChart(weeklyStats);
+            this.updateRecentActivities(recentActivities);
+            this.updateStreak(stats.streak);
+            this._renderSkillsOverview();
+            this.updateReviewStats();
+            this.setupSmartReview();
+            this._renderProverb();
+            this._renderMissionsWidget();
+            this._renderDailyChallenge();
+            this._renderStreakFreezes();
+
+            // Update action card progress badges
+            this._updateActionCardBadges();
+
+            if (typeof InkAnimations !== 'undefined') {
+                var dashboardModule = document.getElementById('module-dashboard');
+                if (dashboardModule && InkAnimations.moduleHeroReveal) {
+                    InkAnimations.moduleHeroReveal(dashboardModule);
+                }
+                var statsGrid = document.querySelector('.dashboard-grid');
+                if (statsGrid && InkAnimations.entranceStagger) {
+                    InkAnimations.entranceStagger(statsGrid, { y: 24, duration: 0.5, stagger: 0.08, delay: 0.2 });
+                }
+                var skillsSection = document.querySelector('.skills-overview');
+                if (skillsSection && InkAnimations.slideInPanel) {
+                    InkAnimations.slideInPanel(skillsSection, 'right');
+                }
+                var smartReviewSection = document.querySelector('.smart-review-section');
+                if (smartReviewSection && InkAnimations.slideInPanel) {
+                    InkAnimations.slideInPanel(smartReviewSection, 'down');
+                }
+                var weeklySection = document.querySelector('.weekly-chart-section');
+                if (weeklySection && InkAnimations.entranceStagger) {
+                    InkAnimations.entranceStagger(weeklySection, { y: 16, duration: 0.4, stagger: 0.1, delay: 0.3 });
+                }
+            }
+        } finally {
+            this._updating = false;
         }
-
-        const stats = StorageManager.getStatistics();
-        const levelInfo = StorageManager.getLevelInfo();
-        const dailyGoal = ProgressTracker.getDailyGoalProgress();
-        const weeklyStats = ProgressTracker.getWeeklyStats();
-        const recentActivities = StorageManager.getRecentActivities(5);
-
-        this._renderHero(stats, levelInfo);
-        this.updateStats(stats);
-        this.updateLevelInfo(levelInfo);
-        this.updateDailyGoal(dailyGoal);
-        this._renderWeeklyChart(weeklyStats);
-        this.updateRecentActivities(recentActivities);
-        this.updateStreak(stats.streak);
-        this._renderSkillsOverview();
-        this.updateReviewStats();
-        this.setupSmartReview();
-        this._renderProverb();
-        this._renderMissionsWidget();
-        this._renderDailyChallenge();
-        this._renderStreakFreezes();
-
-        // Update action card progress badges
-        this._updateActionCardBadges();
-
-        if (typeof InkAnimations !== 'undefined') {
-            var dashboardModule = document.getElementById('module-dashboard');
-            if (dashboardModule && InkAnimations.moduleHeroReveal) {
-                InkAnimations.moduleHeroReveal(dashboardModule);
-            }
-            var statsGrid = document.querySelector('.dashboard-grid');
-            if (statsGrid && InkAnimations.entranceStagger) {
-                InkAnimations.entranceStagger(statsGrid, { y: 24, duration: 0.5, stagger: 0.08, delay: 0.2 });
-            }
-            var skillsSection = document.querySelector('.skills-overview');
-            if (skillsSection && InkAnimations.slideInPanel) {
-                InkAnimations.slideInPanel(skillsSection, 'right');
-            }
-            var smartReviewSection = document.querySelector('.smart-review-section');
-            if (smartReviewSection && InkAnimations.slideInPanel) {
-                InkAnimations.slideInPanel(smartReviewSection, 'down');
-            }
-            var weeklySection = document.querySelector('.weekly-chart-section');
-            if (weeklySection && InkAnimations.entranceStagger) {
-                InkAnimations.entranceStagger(weeklySection, { y: 16, duration: 0.4, stagger: 0.1, delay: 0.3 });
-            }
-        }
-
-        this._updating = false;
     },
 
     // Update statistics cards
@@ -353,8 +356,9 @@ const Dashboard = {
             content.innerHTML = '<p class="skills-empty">Skills data loading...</p>';
             return;
         }
-        const categoryPerf = LevelTracker.getCategoryPerformance();
-        const allStats = LevelTracker.getAllStats();
+        var categoryPerf, allStats;
+        try { categoryPerf = LevelTracker.getCategoryPerformance(); } catch(e) { categoryPerf = {}; }
+        try { allStats = LevelTracker.getAllStats(); } catch(e) { allStats = {}; }
 
         var entries = Object.entries(categoryPerf).slice(0, 5);
         if (entries.length === 0) {
@@ -512,6 +516,7 @@ const Dashboard = {
                     '</div>'
                 );
                 var modal = document.getElementById('modal');
+                if (!modal) return;
                 var modalStartBtn = modal.querySelector('[data-cm-action="start-review"]');
                 var cancelBtn = modal.querySelector('[data-cm-action="cancel-review"]');
                 if (modalStartBtn) modalStartBtn.addEventListener('click', function() { App.closeModal(); App.navigateTo('vocabulary'); });
@@ -542,16 +547,18 @@ const Dashboard = {
                         </div>
                     </div>
                 `);
-                const modal = document.getElementById('modal');
-                const closeBtn = modal.querySelector('[data-cm-action="close-mistakes"]');
-                if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
+                var modal = document.getElementById('modal');
+                if (!modal) return;
+                var closeBtn = modal.querySelector('[data-cm-action="close-mistakes"]');
+                if (closeBtn) closeBtn.addEventListener('click', function() { App.closeModal(); });
             });
         }
     },
 
     // Render hero banner
     _renderHero(stats, levelInfo) {
-        var userData = StorageManager.getUserData();
+        var userData;
+        try { userData = StorageManager.getUserData(); } catch(e) { userData = {}; }
         var heroSubtitle = document.getElementById('hero-subtitle');
         var streakCount = document.getElementById('hero-streak-count');
         var xpToday = document.getElementById('hero-xp-today');
@@ -789,7 +796,8 @@ const Dashboard = {
 
     _updateActionCardBadges() {
         if (typeof StorageManager === 'undefined') return;
-        var userData = StorageManager.getUserData();
+        var userData;
+        try { userData = StorageManager.getUserData(); } catch(e) { userData = {}; }
         var progress = userData && userData.progress ? userData.progress : {};
         var mappings = {
             'listening-challenge': 'listening',

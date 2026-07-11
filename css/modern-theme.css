@@ -337,8 +337,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 
 /* === MODULE VISIBILITY === */
-.module { display: none; }
-.module.active { display: block; }
+.module { display: none !important; visibility: hidden; }
+.module.active { display: block !important; visibility: visible; }
 
 /* === DASHBOARD HERO === */
 .dashboard-hero { margin-bottom: var(--spacing-2xl); text-align: center; }
@@ -404,7 +404,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     transition: opacity 0.3s ease;
 }
 .stats-card:hover::before { opacity: 1; }
-.stats-card:hover {
+.stats-card:hover:not(.tilt-active) {
     transform: translateY(-4px);
     border-color: rgba(148, 163, 184, 0.14);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
@@ -432,7 +432,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     padding: var(--spacing-lg);
     /* Transitions set in animations.css (loads after) */
 }
-.card-lift:hover {
+.card-lift:hover:not(.tilt-active) {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     border-color: rgba(148, 163, 184, 0.12);
@@ -513,7 +513,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.action-card:hover {
+.action-card:hover:not(.tilt-active) {
     transform: translateY(-3px);
     border-color: rgba(255, 107, 107, 0.25);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
@@ -940,7 +940,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     position: relative;
     overflow: hidden;
 }
-.exercise-type-card:hover, .vocab-mode-card:hover, .game-card:hover {
+.exercise-type-card:hover:not(.tilt-active), .vocab-mode-card:hover:not(.tilt-active), .game-card:hover:not(.tilt-active) {
     transform: translateY(-4px);
     border-color: rgba(255, 107, 107, 0.2);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
@@ -1086,7 +1086,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     transform-style: preserve-3d;
     position: relative;
 }
-.flashcard:hover {
+.flashcard:hover:not(.tilt-active) {
     transform: translateY(-4px);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
 }
@@ -1123,7 +1123,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     text-align: center;
     font-size: 14px;
 }
-.matching-card:hover {
+.matching-card:hover:not(.tilt-active) {
     border-color: rgba(255, 107, 107, 0.25);
     transform: translateY(-2px);
 }
@@ -1239,7 +1239,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     margin-bottom: var(--spacing-sm);
     transition: all 0.3s ease;
 }
-.grammar-lesson-item:hover {
+.grammar-lesson-item:hover:not(.tilt-active) {
     border-color: rgba(255, 107, 107, 0.2);
     transform: translateX(6px);
 }
@@ -1281,7 +1281,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     text-align: center;
     transition: all 0.3s ease;
 }
-.achievement-card:hover {
+.achievement-card:hover:not(.tilt-active) {
     border-color: rgba(196, 179, 138, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);

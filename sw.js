@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chinese-master-v2';
+const CACHE_NAME = 'chinese-master-v3';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -23,6 +23,8 @@ const PRECACHE_URLS = [
   '/css/mobile-tabbar.css',
   '/css/offline-banner.css',
   '/css/pinyin-toggle.css',
+  '/css/placement-test.css',
+  '/css/loading.css',
   '/js/utils.js',
   '/js/storage.js',
   '/js/session.js',
@@ -46,6 +48,7 @@ const PRECACHE_URLS = [
   '/js/register-sw.js',
   '/vendor/gsap.min.js',
   '/vendor/ScrollTrigger.min.js',
+  '/vendor/lenis.min.js',
   '/legal/cookies.html',
   '/legal/privacy.html',
   '/legal/terms.html',

@@ -1,0 +1,40 @@
+/* ============================================================
+   Loading Screen — consolidated fixes
+   JS paths:
+     - GSAP: tweens opacity→0, then adds .fade-out
+     - No-GSAP: adds .fade-out directly
+     - Fallback: .fade-out + style.display='none' (belt-and-suspenders)
+   ============================================================ */
+
+/* --- Base: ensure full cover, high z-index --- */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+}
+
+/* --- Fade-out class: used by all JS paths ---
+   opacity: 0          → visual hidden, transitioned
+   visibility: hidden  → removes from accessibility tree
+   pointer-events: none → no interaction blocking after hidden
+   transition on .fade-out itself so pure-CSS fallback animates too */
+#loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* --- Pause infinite child animations when faded out ---
+   Prevents CPU burn from .chinese-char loadCharFloat infinite loop.
+   Also covers .spinner if used inside loader in future. */
+#loading-screen.fade-out .chinese-char,
+#loading-screen.fade-out .loading-logo .chinese-char,
+#loading-screen.fade-out .spinner {
+    animation-play-state: paused;
+}
+
+/* --- Spinner: explicit running state so JS can toggle via animation-play-state --- */
+.spinner {
+    animation-play-state: running;
+}

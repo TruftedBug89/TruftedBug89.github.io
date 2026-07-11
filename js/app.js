@@ -7,48 +7,85 @@ const App = {
     currentModule: 'dashboard',
     isInitialized: false,
     DEBUG: false, // set true to surface diagnostic logs in console
+    _navInProgress: false,
+    _navQueue: [],
 
     // Initialize the app
     init() {
         if (this.DEBUG) console.log('Initializing Chinese Master App...');
+        var _initStart = Date.now();
 
         // Set dynamic footer year
         var footerYear = document.getElementById('footer-year');
         if (footerYear) footerYear.textContent = new Date().getFullYear();
 
+        // Each init step wrapped in its own try/catch — one failure doesn't block later steps
+
         try {
-            // Initialize error logger and analytics (consent-gated)
             if (typeof ErrorLogger !== 'undefined' && typeof ErrorLogger.install === 'function') {
                 ErrorLogger.install();
             }
+        } catch (e) { console.warn('ErrorLogger init failed:', e); }
+
+        try {
             if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
                 AnalyticsEngine.init();
             }
+        } catch (e) { console.warn('AnalyticsEngine init failed:', e); }
+
+        try {
             if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
                 OfflineBanner.init();
             }
+        } catch (e) { console.warn('OfflineBanner init failed:', e); }
 
-            // Modal chrome close handlers — attach once, not per-open
-            this._setupModalChrome();
+        // Modal chrome close handlers — attach once, not per-open
+        try { this._setupModalChrome(); } catch (e) { console.warn('_setupModalChrome failed:', e); }
 
-            // Initialize storage (which in turn initializes SessionManager)
-            // ponytail: guard against localStorage failure so buttons still work
-            try { StorageManager.init(); } catch (e) { console.warn('Storage init failed:', e); }
+        // Initialize storage (which in turn initializes SessionManager)
+        // ponytail: guard against localStorage failure so buttons still work
+        try { StorageManager.init(); } catch (e) { console.warn('Storage init failed:', e); }
 
-            // Initialize audio
-            AudioManager.init();
+        // Initialize audio (non-critical — failure must not cascade)
+        try { AudioManager.init(); } catch (e) { console.warn('Audio init failed:', e); }
 
-            // SM-2, PinyinToggle, DailyStreak, TonePractice, AdvancedLearning, LevelTracker, VocabularyLearner
-            if (typeof SM2 !== 'undefined') { /* SM-2 is stateless */ }
+        // SM-2, PinyinToggle, DailyStreak, TonePractice, AdvancedLearning, LevelTracker, VocabularyLearner
+        if (typeof SM2 !== 'undefined') { /* SM-2 is stateless */ }
+        if (typeof TonePractice !== 'undefined') { /* loaded */ }
+
+        try {
             if (typeof PinyinToggle !== 'undefined') PinyinToggle.init();
+        } catch (e) { console.warn('PinyinToggle init failed:', e); }
+
+        try {
             if (typeof DailyStreak !== 'undefined') DailyStreak.init();
-            if (typeof TonePractice !== 'undefined') { /* loaded */ }
+        } catch (e) { console.warn('DailyStreak init failed:', e); }
+
+        try {
             if (typeof AdvancedLearning !== 'undefined') AdvancedLearning.init();
+        } catch (e) { console.warn('AdvancedLearning init failed:', e); }
+
+        try {
             if (typeof LevelTracker !== 'undefined') LevelTracker.init();
+        } catch (e) { console.warn('LevelTracker init failed:', e); }
+
+        try {
             if (typeof VocabularyLearner !== 'undefined') VocabularyLearner.init();
+        } catch (e) { console.warn('VocabularyLearner init failed:', e); }
+
+        try {
             if (typeof WordOfTheDay !== 'undefined') WordOfTheDay.init();
+        } catch (e) { console.warn('WordOfTheDay init failed:', e); }
+
+        try {
             if (typeof CharacterTooltip !== 'undefined') CharacterTooltip.init();
+        } catch (e) { console.warn('CharacterTooltip init failed:', e); }
+
+        try {
             if (typeof Missions !== 'undefined') Missions.init();
+        } catch (e) { console.warn('Missions init failed:', e); }
+
+        try {
             if (typeof RecurringRewards !== 'undefined') {
                 RecurringRewards.init();
                 var loginResult = RecurringRewards.checkLogin();
@@ -58,51 +95,79 @@ const App = {
                     }, 2000);
                 }
             }
+        } catch (e) { console.warn('RecurringRewards init failed:', e); }
 
-            // Background-load JSONL vocabulary (overwrites legacy globals when ready)
+        // Background-load JSONL vocabulary (overwrites legacy globals when ready)
+        try {
             if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
                 DataLoader.populateGlobals();
             }
+        } catch (e) { console.warn('DataLoader init failed:', e); }
 
-            if (this.DEBUG) this.logDataStats();
+        try { if (this.DEBUG) this.logDataStats(); } catch (e) { console.warn('logDataStats failed:', e); }
 
-            // Global error capture (production-grade)
-            this._installGlobalErrorHandlers();
+        // Global error capture (production-grade)
+        try { this._installGlobalErrorHandlers(); } catch (e) { console.warn('_installGlobalErrorHandlers failed:', e); }
 
-            // Populate desktop nav before binding listeners
-            this.populateDesktopNav();
+        // Populate desktop nav before binding listeners
+        try { this.populateDesktopNav(); } catch (e) { console.warn('populateDesktopNav failed:', e); }
 
-            // Set up event listeners
-            this.setupEventListeners();
+        // Set up event listeners
+        try { this.setupEventListeners(); } catch (e) { console.warn('setupEventListeners failed:', e); }
 
-            // Init mobile shell (≤844px) — noop on desktop
+        // Init mobile shell (≤844px) — noop on desktop
+        try {
             if (typeof MobileShell !== 'undefined' && typeof MobileShell.init === 'function') {
                 MobileShell.init();
             }
+        } catch (e) { console.warn('MobileShell init failed:', e); }
 
-            // Load user preferences
-            this.loadPreferences();
+        // Load user preferences
+        try { this.loadPreferences(); } catch (e) { console.warn('loadPreferences failed:', e); }
 
+        try {
             window.dispatchEvent(new CustomEvent('app-ready'));
-            this.isInitialized = true;
-            if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
-        } catch (e) {
-            console.error('App.init() failed:', e);
-        } finally {
-            this.hideLoadingScreen();
-        }
+        } catch (e) { console.warn('app-ready event failed:', e); }
 
-        // Fail-safe: if GSAP/InkAnimations never loaded, reveal hidden content
-        setTimeout(() => {
-            if (typeof InkAnimations === 'undefined' || !window.gsap) {
-                document.querySelectorAll(
-                    '.gsap-reveal, .gsap-reveal-left, .gsap-reveal-right, .gsap-reveal-scale, .gsap-reveal-fade'
-                ).forEach(el => el.classList.add('gsap-reveal-visible'));
-                document.querySelectorAll('.stagger-children > *, .ink-stagger > *').forEach(el => {
-                    el.style.opacity = '1'; el.style.transform = 'none'; el.style.filter = 'none';
-                });
+        this.isInitialized = true;
+        if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
+
+        // Always hide loading screen
+        this.hideLoadingScreen();
+
+        // Hard deadline: loading screen MUST be gone within 3s from init start
+        var self = this;
+        var _initRemaining = Math.max(0, 3000 - (Date.now() - _initStart));
+        this._initDeadlineTimer = setTimeout(function() {
+            var ls = document.getElementById('loading-screen');
+            if (ls && ls.style.display !== 'none') {
+                ls.classList.add('fade-out');
+                ls.style.display = 'none';
             }
-        }, 2000);
+            // Force-reveal GSAP elements if animations never ran
+            var revealEls = document.querySelectorAll('.gsap-reveal, .gsap-reveal-left, .gsap-reveal-right, .gsap-reveal-scale, .gsap-reveal-fade');
+            for (var ri = 0; ri < revealEls.length; ri++) {
+                revealEls[ri].classList.add('gsap-reveal-visible');
+            }
+            var staggerEls = document.querySelectorAll('.stagger-children > *, .ink-stagger > *');
+            for (var si = 0; si < staggerEls.length; si++) {
+                staggerEls[si].style.opacity = '1';
+                staggerEls[si].style.transform = 'none';
+                staggerEls[si].style.filter = 'none';
+            }
+            // Force onHidden if never called
+            if (typeof Dashboard !== 'undefined' && !Dashboard._initialized) {
+                try { Dashboard.init(); Dashboard._initialized = true; } catch (e) {}
+            }
+            var mn = document.getElementById('main-nav');
+            if (mn && window.innerWidth > 844) { mn.classList.remove('hidden'); mn.classList.add('fade-in'); }
+            if (self.currentModule !== 'dashboard') {
+                try { self.navigateTo('dashboard'); } catch (e) {}
+            }
+        }, _initRemaining);
+
+        // Fail-safe: force-initialize any modules that haven't started yet
+        this._startFailSafe();
     },
 
     // Surface uncaught errors to the user instead of failing silently
@@ -204,83 +269,145 @@ const App = {
 
     // Navigate to a module
     navigateTo(module) {
-        var targetModule = document.getElementById('module-' + module);
-        var oldModuleEl = document.querySelector('.module.active');
-        var isSameModule = !!(oldModuleEl && targetModule && oldModuleEl === targetModule);
-
-        // Update nav-link active states (before DOM mutations, so active state matches target)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            if (link.dataset.module === module) {
-                link.classList.add('active');
-            }
-        });
-
-        // Only toggle .active if switching modules (avoids animation replay on back-button)
-        if (!isSameModule) {
-            // Clean up exiting module BEFORE activating new one
-            if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleExit && oldModuleEl) {
-                InkAnimations.moduleExit(oldModuleEl);
-            }
-
-            document.querySelectorAll('.module').forEach(m => {
-                m.classList.remove('active');
-            });
-            if (targetModule) {
-                targetModule.classList.add('active');
-                targetModule.removeAttribute('hidden');
-            }
-
-            if (typeof InkAnimations !== 'undefined' && InkAnimations.pageTransition && oldModuleEl) {
-                InkAnimations.pageTransition(oldModuleEl, targetModule);
-            }
-
-            if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleEnter && targetModule) {
-                InkAnimations.moduleEnter(targetModule, module);
-            }
+        // --- NAVIGATION GUARD: queue if already in progress ---
+        if (this._navInProgress) {
+            // Replace pending queued nav with latest request (only one queued)
+            this._navQueue[0] = module;
+            return;
         }
+        this._navInProgress = true;
 
-        // Reset any sub-containers that might be stuck in an exercise view
-        this.resetModuleSubviews(module);
+        try {
+            var targetModule = document.getElementById('module-' + module);
 
-        this.currentModule = module;
-
-        // Sync mobile tab bar active state
-        if (typeof MobileTabBar !== 'undefined' && typeof MobileTabBar.setActive === 'function') {
-            MobileTabBar.setActive(module);
-        }
-
-        // Close mobile nav on navigation
-        this.closeMobileNav();
-
-        // Auto-populate module content on first navigation
-        this.populateModule(module);
-
-        // Update dashboard if needed
-        if (module === 'dashboard') {
-            Dashboard.update();
-        }
-
-        // Launch adaptive placement test
-        if (module === 'placement' && typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
-            PlacementTest.showIntro();
-        }
-
-        // Trigger module enter again after lazy content populated (only for different module)
-        // Use setTimeout to let DOM settle after populateModule before re-entering
-        if (!isSameModule && typeof InkAnimations !== 'undefined' && InkAnimations.moduleEnter) {
-            var modEl = document.getElementById('module-' + module);
-            if (modEl) {
-                InkAnimations.moduleEnter(modEl, module);
+            // Abort gracefully if target module element doesn't exist
+            if (!targetModule) {
+                console.warn('navigateTo: module "' + module + '" not found in DOM');
+                this._navInProgress = false;
+                return;
             }
-        }
 
-        // Trigger scroll-reveal on new module's gsap-reveal elements (debounced)
-        if (typeof ScrollTrigger !== 'undefined') {
-            if (this._scrollRefreshTimer) clearTimeout(this._scrollRefreshTimer);
-            this._scrollRefreshTimer = setTimeout(function() {
-                ScrollTrigger.refresh();
-            }, 100);
+            var oldModuleEl = document.querySelector('.module.active');
+            var isSameModule = !!(oldModuleEl && targetModule && oldModuleEl === targetModule);
+
+            // Update nav-link active states (before DOM mutations, so active state matches target)
+            var navLinks = document.querySelectorAll('.nav-link');
+            if (navLinks && navLinks.length) {
+                navLinks.forEach(function(link) {
+                    if (link.classList) link.classList.remove('active');
+                    if (link.dataset && link.dataset.module === module && link.classList) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Only toggle .active if switching modules (avoids animation replay on back-button)
+            if (!isSameModule) {
+                // Clean up exiting module BEFORE activating new one
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleExit && oldModuleEl) {
+                    InkAnimations.moduleExit(oldModuleEl);
+                }
+
+                var allModules = document.querySelectorAll('.module');
+                if (allModules && allModules.length) {
+                    allModules.forEach(function(m) {
+                        if (m.classList) m.classList.remove('active');
+                    });
+                }
+                if (targetModule && targetModule.classList) {
+                    targetModule.classList.add('active');
+                    targetModule.removeAttribute('hidden');
+                }
+
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.pageTransition && oldModuleEl) {
+                    InkAnimations.pageTransition(oldModuleEl, targetModule);
+                }
+                // moduleEnter is deferred until after populateModule so it fires once on populated DOM
+            }
+
+            // --- FORCE-HIDE LOADING SCREEN after module switch ---
+            var loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                if (loadingScreen.style) loadingScreen.style.display = 'none';
+                if (loadingScreen.classList) loadingScreen.classList.add('fade-out');
+                // Also clear any pending hideLoader fallback timer stored on the App
+                if (this._hideLoaderTimer) {
+                    clearTimeout(this._hideLoaderTimer);
+                    this._hideLoaderTimer = null;
+                }
+            }
+
+            // Reset any sub-containers that might be stuck in an exercise view
+            this.resetModuleSubviews(module);
+
+            this.currentModule = module;
+
+            // Sync mobile tab bar active state
+            if (typeof MobileTabBar !== 'undefined' && typeof MobileTabBar.setActive === 'function') {
+                MobileTabBar.setActive(module);
+            }
+
+            // Close mobile nav on navigation
+            if (typeof this.closeMobileNav === 'function') this.closeMobileNav();
+
+            // Auto-populate module content on first navigation
+            this.populateModule(module);
+
+            // Update dashboard if needed
+            if (module === 'dashboard' && typeof Dashboard !== 'undefined' && Dashboard.update) {
+                Dashboard.update();
+            }
+
+            // Launch adaptive placement test
+            if (module === 'placement' && typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
+                PlacementTest.showIntro();
+            }
+
+            // Trigger module enter after lazy content populated (only for different module)
+            // Use setTimeout to let DOM settle after populateModule before re-entering
+            if (!isSameModule) {
+                var modEl = document.getElementById('module-' + module);
+                if (modEl && modEl.classList) {
+                    if (typeof InkAnimations !== 'undefined' && InkAnimations.moduleEnter) {
+                        InkAnimations.moduleEnter(modEl, module);
+                    }
+                    // Bind scroll-reveals + re-bind tilt/magnetic on freshly-populated DOM (single entrance)
+                    if (typeof InkAnimations !== 'undefined' && InkAnimations.revealModule) {
+                        InkAnimations.revealModule(modEl);
+                    }
+                    if (typeof InkAnimations !== 'undefined' && InkAnimations.refreshInteractions) {
+                        InkAnimations.refreshInteractions(modEl);
+                    }
+                }
+                // Reset scroll to top of new module (Lenis-aware) so user starts fresh
+                if (typeof InkAnimations !== 'undefined' && InkAnimations.scrollTo) {
+                    InkAnimations.scrollTo(0, { immediate: true });
+                } else {
+                    window.scrollTo(0, 0);
+                }
+            }
+
+            // Trigger scroll-reveal on new module's gsap-reveal elements (debounced)
+            if (typeof ScrollTrigger !== 'undefined') {
+                if (this._scrollRefreshTimer) clearTimeout(this._scrollRefreshTimer);
+                this._scrollRefreshTimer = setTimeout(function() {
+                    ScrollTrigger.refresh();
+                }, 100);
+            }
+        } catch (e) {
+            console.error('navigateTo: transition failed for module "' + module + '"', e);
+        } finally {
+            this._navInProgress = false;
+
+            // --- PROCESS QUEUED NAVIGATION ---
+            if (this._navQueue.length > 0) {
+                var nextModule = this._navQueue.shift();
+                // Use setTimeout to prevent stack overflow from recursive calls
+                var self = this;
+                setTimeout(function() {
+                    self.navigateTo(nextModule);
+                }, 0);
+            }
         }
     },
 
@@ -440,25 +567,129 @@ const App = {
             this.navigateTo('dashboard');
             // navigateTo already calls Dashboard.update(), but init() also
             // sets greeting text + backup reminder — guard to avoid double update
-            if (!Dashboard._initialized) {
+            if (typeof Dashboard !== 'undefined' && !Dashboard._initialized) {
                 Dashboard.init();
                 Dashboard._initialized = true;
             }
         };
         
         if (loadingScreen) {
+            var hiddenFired = false;
+            var safeOnHidden = function() {
+                if (hiddenFired) return;
+                hiddenFired = true;
+                onHidden();
+            };
+            // Belt-and-suspenders: if hideLoader tween never completes, force after 2.5s
             if (typeof InkAnimations !== 'undefined' && InkAnimations.hideLoader) {
-                InkAnimations.hideLoader(onHidden);
+                this._hideLoaderTimer = setTimeout(function() {
+                    loadingScreen.classList.add('fade-out');
+                    loadingScreen.style.display = 'none';
+                    safeOnHidden();
+                }, 2500);
+                InkAnimations.hideLoader(function() {
+                    clearTimeout(this._hideLoaderTimer);
+                    this._hideLoaderTimer = null;
+                    safeOnHidden();
+                }.bind(this));
             } else {
                 loadingScreen.classList.add('fade-out');
-                setTimeout(() => {
+                setTimeout(function() {
                     loadingScreen.style.display = 'none';
-                    onHidden();
+                    safeOnHidden();
                 }, 500);
             }
         } else {
             onHidden();
         }
+    },
+
+    // Fail-safe: force-initialize any modules that haven't started yet.
+    // Runs 2.5s after init() called, catches modules skipped by earlier failures.
+    _startFailSafe() {
+        var self = this;
+        setTimeout(function() {
+            // Force-reveal GSAP elements if GSAP/InkAnimations never loaded
+            if (typeof InkAnimations === 'undefined' || !window.gsap) {
+                var revealEls = document.querySelectorAll('.gsap-reveal, .gsap-reveal-left, .gsap-reveal-right, .gsap-reveal-scale, .gsap-reveal-fade');
+                for (var ri = 0; ri < revealEls.length; ri++) {
+                    revealEls[ri].classList.add('gsap-reveal-visible');
+                }
+                var staggerEls = document.querySelectorAll('.stagger-children > *, .ink-stagger > *');
+                for (var si = 0; si < staggerEls.length; si++) {
+                    staggerEls[si].style.opacity = '1';
+                    staggerEls[si].style.transform = 'none';
+                    staggerEls[si].style.filter = 'none';
+                }
+            }
+
+            // Force-init feature modules that may have been skipped
+            if (typeof Dashboard !== 'undefined' && !Dashboard._initialized) {
+                try { Dashboard.init(); Dashboard._initialized = true; } catch (e) { console.warn('Fail-safe Dashboard:', e); }
+            }
+            if (typeof PinyinToggle !== 'undefined') {
+                try { PinyinToggle.init(); } catch (e) {}
+            }
+            if (typeof DailyStreak !== 'undefined') {
+                try { DailyStreak.init(); } catch (e) {}
+            }
+            if (typeof AdvancedLearning !== 'undefined') {
+                try { AdvancedLearning.init(); } catch (e) {}
+            }
+            if (typeof LevelTracker !== 'undefined') {
+                try { LevelTracker.init(); } catch (e) {}
+            }
+            if (typeof VocabularyLearner !== 'undefined') {
+                try { VocabularyLearner.init(); } catch (e) {}
+            }
+            if (typeof WordOfTheDay !== 'undefined') {
+                try { WordOfTheDay.init(); } catch (e) {}
+            }
+            if (typeof CharacterTooltip !== 'undefined') {
+                try { CharacterTooltip.init(); } catch (e) {}
+            }
+            if (typeof Missions !== 'undefined') {
+                try { Missions.init(); } catch (e) {}
+            }
+            if (typeof RecurringRewards !== 'undefined') {
+                try { RecurringRewards.init(); } catch (e) {}
+            }
+            if (typeof MobileShell !== 'undefined' && typeof MobileShell.init === 'function') {
+                try { MobileShell.init(); } catch (e) {}
+            }
+            if (typeof StorageManager !== 'undefined' && typeof StorageManager.init === 'function') {
+                try { StorageManager.init(); } catch (e) {}
+            }
+            if (typeof AudioManager !== 'undefined' && typeof AudioManager.init === 'function') {
+                try { AudioManager.init(); } catch (e) {}
+            }
+            if (typeof ErrorLogger !== 'undefined' && typeof ErrorLogger.install === 'function') {
+                try { ErrorLogger.install(); } catch (e) {}
+            }
+            if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
+                try { AnalyticsEngine.init(); } catch (e) {}
+            }
+            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
+                try { OfflineBanner.init(); } catch (e) {}
+            }
+            if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
+                try { DataLoader.populateGlobals(); } catch (e) {}
+            }
+
+            // Re-run structural init if missed (these are idempotent)
+            try { self.populateDesktopNav(); } catch (e) {}
+            try { self.setupEventListeners(); } catch (e) {}
+            try { self.loadPreferences(); } catch (e) {}
+            try { self._setupModalChrome(); } catch (e) {}
+            try { self._installGlobalErrorHandlers(); } catch (e) {}
+
+            // Ensure we navigate to dashboard and show main nav
+            var mn = document.getElementById('main-nav');
+            if (mn && window.innerWidth > 844) { mn.classList.remove('hidden'); mn.classList.add('fade-in'); }
+            if (self.currentModule !== 'dashboard') {
+                try { self.navigateTo('dashboard'); } catch (e) {}
+            }
+        }, 2500);
     },
 
     // Mobile nav (legacy hamburger — disabled when tab bar active ≤844px)
@@ -646,7 +877,7 @@ const App = {
         var ringEl = modalBody.querySelector('.completion-ring');
         if (ringEl && typeof InkAnimations !== 'undefined' && InkAnimations.animateCompletionRing) {
             InkAnimations.animateCompletionRing(ringEl, pctNum, scoreColor);
-        } else {
+        } else if (ringEl) {
             ringEl.style.background = 'conic-gradient(' + scoreColor + ' ' + (pctNum * 3.6) + 'deg, rgba(255,255,255,0.08) ' + (pctNum * 3.6) + 'deg)';
             var pctDisplay = ringEl.querySelector('.completion-pct');
             if (pctDisplay) pctDisplay.textContent = pctNum + '%';

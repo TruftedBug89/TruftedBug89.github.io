@@ -218,7 +218,6 @@ select:focus,
     -webkit-backdrop-filter: blur(8px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: background 0.2s, transform 0.2s;
-    will-change: transform;
 }
 
 .mobile-nav-toggle:hover {
@@ -308,33 +307,7 @@ select:focus,
    PERFORMANCE OPTIMIZATIONS
    ============================================= */
 
-/* Inactive modules: skip rendering until visible */
-.module {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 800px;
-}
-
-.module.active {
-    content-visibility: visible;
-}
-
-/* Below-fold sections: defer rendering */
-.recent-activity,
-#module-achievements .achievements-grid,
-.analytics-dashboard,
-#analytics-content {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 400px;
-}
-
-/* Sliding elements: hint the browser to composite on GPU */
-.main-nav {
-    will-change: transform;
-}
-
-.mobile-nav-overlay {
-    will-change: opacity;
-}
+/* Performance: active module renders visible; inactive hidden via display:none (modern-theme.css) */
 
 /* Use transform for animations (not top/left) */
 @keyframes slideInToast {
@@ -564,7 +537,6 @@ select:focus,
         box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
         transition: transform 0.3s ease;
         z-index: 160;
-        will-change: transform;
         padding-bottom: env(safe-area-inset-bottom, 0px);
     }
 
@@ -631,7 +603,6 @@ select:focus,
 
     .action-card:active {
         transform: scale(0.96);
-        transition: transform 0.1s ease;
     }
 
     .action-card h3 {
@@ -658,7 +629,6 @@ select:focus,
 
     .exercise-type-card:active {
         transform: scale(0.97);
-        transition: transform 0.1s ease;
     }
 
     .exercise-type-card .type-icon {
@@ -672,7 +642,6 @@ select:focus,
 
     .stats-card:active {
         transform: scale(0.96);
-        transition: transform 0.1s ease;
     }
 
     .stats-icon {
@@ -834,7 +803,6 @@ select:focus,
 
     .level-card:active {
         transform: scale(0.95);
-        transition: transform 0.1s ease;
     }
 
     .level-number {
@@ -1053,7 +1021,6 @@ select:focus,
 
     .word-card:active {
         transform: scale(0.95);
-        transition: transform 0.1s ease;
     }
 
     /* Ensure nav links have generous tap targets */
@@ -1246,12 +1213,4 @@ select:focus,
     .nav-link { min-height: 40px; padding: 10px 16px; font-size: 0.85rem; }
     .site-footer { display: none; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-/* Container queries — progressive enhancement */
-.action-card,
-.stats-card,
-.word-card,
-.exercise-type-card {
-    container-type: inline-size;
 }

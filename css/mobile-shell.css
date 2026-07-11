@@ -387,7 +387,6 @@
 
     .exercise-type-card:active {
         transform: scale(0.96) !important;
-        transition: transform 0.1s ease !important;
     }
 
     /* === Flashcard: larger on mobile === */
@@ -512,7 +511,6 @@
     /* === Word cards: better touch === */
     .word-card:active {
         transform: scale(0.95) !important;
-        transition: transform 0.1s ease !important;
     }
 
     /* === Profile button in nav (hidden since nav is hidden) === */

@@ -11,8 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Chinese Master">
     <link rel="canonical" href="https://truftedbug89.github.io/">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
     <title>Chinese Master</title>
 
     <meta property="og:title" content="Chinese Master">
@@ -95,6 +95,7 @@
     <link rel="stylesheet" href="css/offline-banner.css">
     <link rel="stylesheet" href="css/pinyin-toggle.css">
     <link rel="stylesheet" href="css/placement-test.css">
+    <link rel="stylesheet" href="css/loading.css">
 
     <style>
         #loading-screen {
@@ -130,6 +131,12 @@
     </style>
 </head>
 <body class="theme-dark">
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-orb"></div>
+        <div class="ambient-orb"></div>
+        <div class="ambient-orb"></div>
+    </div>
+
     <div id="loading-screen" class="loading-screen" aria-hidden="true">
         <div class="loading-logo"><span class="chinese-char">中</span><span class="chinese-char">文</span><span class="chinese-char">大</span><span class="chinese-char">师</span></div>
         <div class="loading-subtitle">Chinese Master</div>
@@ -142,18 +149,20 @@
         <div class="scroll-progress-fill" id="scroll-progress-fill"></div>
     </div>
 
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
+    <div id="app">
+        <nav id="main-nav" class="main-nav" aria-label="Main navigation"></nav>
 
-    <main id="main-content">
-        <div id="module-dashboard" class="module active" role="tabpanel"></div>
-        <div id="module-listening" class="module" role="tabpanel" hidden></div>
-        <div id="module-reading" class="module" role="tabpanel" hidden></div>
-        <div id="module-grammar" class="module" role="tabpanel" hidden></div>
-        <div id="module-speaking" class="module" role="tabpanel" hidden></div>
-        <div id="module-vocabulary" class="module" role="tabpanel" hidden></div>
-        <div id="module-achievements" class="module" role="tabpanel" hidden></div>
-        <div id="module-placement" class="module" role="tabpanel" hidden><div id="placement-content"></div></div>
-    </main>
+        <main id="main-content" class="main-content">
+            <div id="module-dashboard" class="module active" role="tabpanel"></div>
+            <div id="module-listening" class="module" role="tabpanel" hidden></div>
+            <div id="module-reading" class="module" role="tabpanel" hidden></div>
+            <div id="module-grammar" class="module" role="tabpanel" hidden></div>
+            <div id="module-speaking" class="module" role="tabpanel" hidden></div>
+            <div id="module-vocabulary" class="module" role="tabpanel" hidden></div>
+            <div id="module-achievements" class="module" role="tabpanel" hidden></div>
+            <div id="module-placement" class="module" role="tabpanel" hidden><div id="placement-content"></div></div>
+        </main>
+    </div>
 
     <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-overlay"></div>
@@ -175,6 +184,7 @@
 
     <script src="vendor/gsap.min.js"></script>
     <script src="vendor/ScrollTrigger.min.js"></script>
+    <script src="vendor/lenis.min.js"></script>
 
     <script src="js/utils.js"></script>
     <script src="js/storage.js"></script>
