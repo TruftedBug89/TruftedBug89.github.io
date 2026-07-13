@@ -9,6 +9,7 @@ var DataLoader = (function () {
     var cache = {};
     var pending = {};
     var readyPromise = null;
+    var api = null;
 
     var registry = {
         hsk1: 'data/vocabulary-hsk1.jsonl',
@@ -133,7 +134,7 @@ var DataLoader = (function () {
     function getWords(level) {
         var path = registry[level];
         if (path && !cache[path] && !pending[path]) {
-            loadLevel(level).catch(function () {});
+            (api ? api.loadLevel(level) : loadLevel(level)).catch(function () {});
         }
         if (!path) {
             var legacy = getLegacyGlobal(level);
@@ -147,7 +148,7 @@ var DataLoader = (function () {
     function getWordCount(level) {
         var path = registry[level];
         if (path && !cache[path] && !pending[path]) {
-            loadLevel(level).catch(function () {});
+            (api ? api.loadLevel(level) : loadLevel(level)).catch(function () {});
         }
         if (!path) {
             var legacy = getLegacyGlobal(level);
@@ -191,7 +192,7 @@ var DataLoader = (function () {
         keysToLoad.push('vocabulary');
 
         var promises = keysToLoad.map(function (key) {
-            return loadLevel(key).catch(function () { return null; });
+            return (api ? api.loadLevel(key) : loadLevel(key)).catch(function () { return null; });
         });
 
         var allKeys = Object.keys(registry);
@@ -220,10 +221,10 @@ var DataLoader = (function () {
     }
 
     function preloadLevel(level) {
-        return loadLevel(level).catch(function () { return null; });
+        return (api ? api.loadLevel(level) : loadLevel(level)).catch(function () { return null; });
     }
 
-    return {
+    api = {
         registry: registry,
         loadLevel: loadLevel,
         loadJSONL: loadJSONL,
@@ -235,5 +236,6 @@ var DataLoader = (function () {
         buildVocabObj: buildVocabObj,
         parseJSONL: parseJSONL
     };
+    return api;
 
 })();

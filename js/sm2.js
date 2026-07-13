@@ -71,6 +71,26 @@ const SM2 = {
             }
         }
 
+        // Reward successful overdue reviews by scheduling from the time actually
+        // elapsed, rather than the stale scheduled interval.
+        if (quality >= 3 && repetitions >= 2 && card.lastReview) {
+            const lastReview = new Date(card.lastReview);
+            const elapsedDays = Math.floor((Date.now() - lastReview.getTime()) / (1000 * 60 * 60 * 24));
+            if (!Number.isNaN(lastReview.getTime()) && elapsedDays > interval) {
+                newInterval = Math.round(elapsedDays * newEfactor * 1.2);
+            }
+        }
+
+        // Study profiles tune future workload without changing review quality.
+        let profile = 'standard';
+        try {
+            const userData = typeof StorageManager !== 'undefined' && StorageManager.getUserData
+                ? StorageManager.getUserData() : null;
+            profile = userData && userData.settings && userData.settings.studyProfile || profile;
+        } catch (e) { /* Storage is optional for standalone SM-2 use. */ }
+        const profileMultiplier = profile === 'speed' ? 0.5 : profile === 'retention' ? 1.5 : 1;
+        newInterval = Math.max(1, Math.round(newInterval * profileMultiplier));
+
         // Calculate next review date
         const nextReview = new Date();
         nextReview.setDate(nextReview.getDate() + newInterval);

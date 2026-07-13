@@ -165,7 +165,7 @@ var AnalyticsEngine = {
 
         this._bufferEvent(eventType, Object.assign({
             module: mod,
-            type: eType,
+            exerciseType: eType,
             score: s,
             total: t,
             accuracy: acc

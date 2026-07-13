@@ -288,7 +288,13 @@ const Utils = {
             }
         }
 
-        setTimeout(() => container.remove(), 4500);
+        setTimeout(() => {
+            if (typeof container.remove === 'function') {
+                container.remove();
+            } else if (container.parentNode) {
+                container.parentNode.removeChild(container);
+            }
+        }, 4500);
     },
 
     // Play sound effect (Web Audio — rich musical tones)
