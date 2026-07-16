@@ -649,6 +649,7 @@ body {
     perspective: 1000px;
     cursor: pointer;
     margin-bottom: var(--spacing-xl);
+    position: relative;
 }
 
 .flashcard-front,

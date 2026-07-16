@@ -34,8 +34,8 @@ const DailyStreak = {
 
         var self = this;
         setTimeout(function () {
-            if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.shouldPromptOnStartup && DeepSeekTutor.shouldPromptOnStartup()) {
-                DeepSeekTutor.promptConfigIfNeeded();
+            if (typeof AITutor !== 'undefined' && AITutor.shouldPromptOnStartup && AITutor.shouldPromptOnStartup()) {
+                AITutor.promptConfigIfNeeded();
             }
         }, 2800);
     },

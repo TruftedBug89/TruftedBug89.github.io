@@ -126,10 +126,11 @@ const TonePractice = {
         if (!container) return;
 
         const quiz = this.generateQuiz(10);
+        var self = this;
         
         container.innerHTML = `
             <div class="tone-practice">
-                <h2>🎯 Tone Practice</h2>
+                <h2>\uD83C\uDFAF Tone Practice</h2>
                 <p>Listen and identify the tone</p>
                 
                 <div class="tone-quiz">
@@ -138,8 +139,8 @@ const TonePractice = {
                             <div class="tone-character">${q.question}</div>
                             <div class="tone-pinyin">${q.pinyin}</div>
                             <div class="tone-options">
-                                ${this.tones.slice(0, 4).map(t => `
-                                    <button class="tone-btn" data-tone="${t.number}" style="background: ${t.color}">
+                                ${self.tones.slice(0, 4).map(t => `
+                                    <button class="tone-btn" data-tone="${t.number}" data-correct="${q.correctTone}" style="background: ${t.color}">
                                         ${t.number}
                                     </button>
                                 `).join('')}
@@ -150,6 +151,20 @@ const TonePractice = {
                 </div>
             </div>
         `;
+
+        container.querySelectorAll('.tone-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var selected = parseInt(this.getAttribute('data-tone'));
+                var correct = parseInt(this.getAttribute('data-correct'));
+                var feedback = this.closest('.tone-question').querySelector('.tone-feedback');
+                var isCorrect = selected === correct;
+                feedback.textContent = isCorrect ? '\u2705 Correct!' : '\u274C Wrong — tone ' + correct;
+                feedback.className = 'tone-feedback ' + (isCorrect ? 'correct' : 'incorrect');
+                feedback.style.display = 'block';
+                var siblings = this.parentElement.querySelectorAll('.tone-btn');
+                siblings.forEach(function(s) { s.disabled = true; });
+            });
+        });
     }
 };
 

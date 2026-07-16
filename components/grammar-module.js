@@ -587,14 +587,20 @@ const GrammarModule = {
         if (speakBtn) {
             speakBtn.addEventListener('click', function () {
                 speakBtn.disabled = true;
-                if (lesson.examples && lesson.examples.length) {
+                if (lesson.examples && lesson.examples.length && typeof AudioManager !== 'undefined' && typeof AudioManager.speak === 'function') {
                     (function playExamples(idx) {
                         if (idx >= lesson.examples.length) { speakBtn.disabled = false; return; }
-                        AudioManager.speak(lesson.examples[idx].chinese).then(function () {
-                            return AudioManager.delay(600);
-                        }).then(function () {
-                            playExamples(idx + 1);
-                        });
+                        var result = AudioManager.speak(lesson.examples[idx].chinese);
+                        var delay = function() { return new Promise(function(r) { setTimeout(r, 600); }); };
+                        if (result && typeof result.then === 'function') {
+                            result.then(function () {
+                                return delay();
+                            }).then(function () {
+                                playExamples(idx + 1);
+                            });
+                        } else {
+                            delay().then(function() { playExamples(idx + 1); });
+                        }
                     })(0);
                 } else {
                     speakBtn.disabled = false;
@@ -929,9 +935,9 @@ const GrammarModule = {
             if (self.practiceIndex > 0) { self.practiceIndex--; self.showCurrentPractice(); }
         });
         document.getElementById('ask-ai-grammar-btn').addEventListener('click', function () {
-            if (typeof DeepSeekTutor !== 'undefined') {
-                DeepSeekTutor.forceNext();
-                DeepSeekTutor.explain(self._buildAIContext());
+            if (typeof AITutor !== 'undefined') {
+                AITutor.forceNext();
+                AITutor.explain(self._buildAIContext());
             }
         });
     },
@@ -951,8 +957,8 @@ const GrammarModule = {
     },
 
     _triggerAI() {
-        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
-            DeepSeekTutor.explain(this._buildAIContext());
+        if (typeof AITutor !== 'undefined' && AITutor.isConfigured()) {
+            AITutor.explain(this._buildAIContext());
         }
     },
 

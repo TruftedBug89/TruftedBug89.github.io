@@ -8,8 +8,8 @@ const OfflineBanner = {
 
     init() {
         this._online = navigator.onLine;
-        window.addEventListener('online', () => this._showReconnected());
-        window.addEventListener('offline', () => this._showOffline());
+        window.addEventListener('online', () => { this._online = true; this._showReconnected(); });
+        window.addEventListener('offline', () => { this._online = false; this._showOffline(); });
     },
 
     _showOffline() {

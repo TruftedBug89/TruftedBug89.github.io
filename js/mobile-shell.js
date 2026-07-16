@@ -106,8 +106,8 @@ var MobileShell = (function () {
             if (sid && typeof StorageManager !== 'undefined') {
                 var progress = StorageManager.getUserData();
                 if (progress) {
-                    streakCount = typeof DailyStreak !== 'undefined' ?
-                        DailyStreak.getStreakCount(progress) :
+                    streakCount = (typeof DailyStreak !== 'undefined' && typeof DailyStreak.getCurrentStreak === 'function') ?
+                        DailyStreak.getCurrentStreak() :
                         (progress.streak || 0);
                     level = progress.level || 1;
                     if (progress.name) {

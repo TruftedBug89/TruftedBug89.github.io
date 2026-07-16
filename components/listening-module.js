@@ -1038,9 +1038,9 @@ const ListeningModule = {
         });
 
         document.getElementById('ask-ai-listening-btn').addEventListener('click', function () {
-            if (typeof DeepSeekTutor !== 'undefined') {
-                DeepSeekTutor.forceNext();
-                DeepSeekTutor.explain(self._buildAIContext());
+            if (typeof AITutor !== 'undefined') {
+                AITutor.forceNext();
+                AITutor.explain(self._buildAIContext());
             }
         });
     },
@@ -1061,8 +1061,8 @@ const ListeningModule = {
     },
 
     _triggerAI() {
-        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
-            DeepSeekTutor.explain(this._buildAIContext());
+        if (typeof AITutor !== 'undefined' && AITutor.isConfigured()) {
+            AITutor.explain(this._buildAIContext());
         }
     },
 

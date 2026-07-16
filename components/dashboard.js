@@ -156,10 +156,11 @@ const Dashboard = {
                     if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
                         var el = element;
                         var delay = (1.0 + idx * 0.15) * 1000;
+                        var that = this;
                         (function(e) {
                             var tid = setTimeout(function() { InkAnimations.counterBounce(e); }, delay);
-                            if (!self._counterBounceTimers) self._counterBounceTimers = [];
-                            self._counterBounceTimers.push(tid);
+                            if (!that._counterBounceTimers) that._counterBounceTimers = [];
+                            that._counterBounceTimers.push(tid);
                         })(el);
                     }
                 }

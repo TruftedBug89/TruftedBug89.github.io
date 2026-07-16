@@ -915,10 +915,11 @@ const ReadingModule = {
                 if (typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger && questions) {
                     InkAnimations.entranceStagger(questions);
                 }
-                Utils.showToast('⏰ Time\'s up! Answer the questions.', 'info');
+                Utils.showToast('\u23F0 Time\'s up! Answer the questions.', 'info');
             }
         }, 1000);
 
+        if (this._speedInterval) clearInterval(this._speedInterval);
         this._speedInterval = interval;
     },
 
@@ -1532,9 +1533,9 @@ const ReadingModule = {
         var checkBtn = document.getElementById('check-reading-btn');
         if (checkBtn) checkBtn.addEventListener('click', function () { self.showNextButton(); });
         document.getElementById('ask-ai-reading-btn').addEventListener('click', function () {
-            if (typeof DeepSeekTutor !== 'undefined') {
-                DeepSeekTutor.forceNext();
-                DeepSeekTutor.explain(self._buildAIContext());
+            if (typeof AITutor !== 'undefined') {
+                AITutor.forceNext();
+                AITutor.explain(self._buildAIContext());
             }
         });
     },
@@ -1554,8 +1555,8 @@ const ReadingModule = {
     },
 
     _triggerAI() {
-        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
-            DeepSeekTutor.explain(this._buildAIContext());
+        if (typeof AITutor !== 'undefined' && AITutor.isConfigured()) {
+            AITutor.explain(this._buildAIContext());
         }
     },
 

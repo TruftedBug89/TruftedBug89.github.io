@@ -182,12 +182,12 @@ const VocabularyLearner = {
         var deckName = 'hsk' + level;
         var cards;
         try {
-            cards = SM2.loadCards(deckName);
+            cards = (typeof SM2 !== 'undefined') ? SM2.loadCards(deckName) : [];
         } catch (e) {
             cards = [];
         }
         if (!cards || cards.length === 0) return '<p>No cards studied yet for this level.</p>';
-        var stats = SM2.getDeckStats(deckName);
+        var stats = (typeof SM2 !== 'undefined') ? SM2.getDeckStats(deckName) : { total: 0, new: 0, learning: 0, mastered: 0, dueToday: 0, retentionRate: 0 };
         return '<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:0.9em;">' +
             '<span class="stat-chip" style="padding:4px 10px;background:var(--bg-card);border-radius:6px;">Total: <strong>' + stats.total + '</strong></span>' +
             '<span class="stat-chip" style="padding:4px 10px;background:var(--bg-card);border-radius:6px;color:var(--color-info);">New: <strong>' + stats.new + '</strong></span>' +
@@ -264,14 +264,14 @@ const VocabularyLearner = {
         const deckName = this.isEasyMode ? 'hsk1-easy' : ('hsk' + level);
         this.sessionDeckName = deckName;
         this.sessionLevel = level;
-        let cards = SM2.loadCards(deckName);
+        let cards = (typeof SM2 !== 'undefined') ? SM2.loadCards(deckName) : [];
 
         if (cards.length === 0) {
-            cards = words.map(word => SM2.createCard(
+            cards = words.map(word => (typeof SM2 !== 'undefined') ? SM2.createCard(
                 word.id,
                 { character: word.character, pinyin: word.pinyin },
                 { meaning: word.meaning, examples: word.examples || [] }
-            ));
+            ) : { id: word.id, front: { character: word.character, pinyin: word.pinyin }, back: { meaning: word.meaning, examples: word.examples || [] } });
             SM2.saveCards(deckName, cards);
         }
 

@@ -78,7 +78,11 @@ var BottomSheet = (function () {
         var first = focusable[0];
         var last = focusable[focusable.length - 1];
 
-        panel.addEventListener('keydown', function handler(e) {
+        if (panel._focusHandler) {
+            panel.removeEventListener('keydown', panel._focusHandler);
+        }
+
+        panel._focusHandler = function(e) {
             if (e.key !== 'Tab') return;
             if (e.shiftKey && document.activeElement === first) {
                 e.preventDefault();
@@ -87,7 +91,8 @@ var BottomSheet = (function () {
                 e.preventDefault();
                 first.focus();
             }
-        }, { once: false });
+        };
+        panel.addEventListener('keydown', panel._focusHandler);
     }
 
     function close() {
@@ -97,6 +102,11 @@ var BottomSheet = (function () {
         panel.style.transform = 'translateY(100%)';
         backdrop.style.opacity = '0';
         document.body.style.overflow = '';
+
+        if (panel._focusHandler) {
+            panel.removeEventListener('keydown', panel._focusHandler);
+            panel._focusHandler = null;
+        }
 
         if (previousFocus) {
             try { previousFocus.focus(); } catch (ignore) {}

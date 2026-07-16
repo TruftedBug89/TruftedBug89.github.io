@@ -190,7 +190,7 @@ button { -webkit-tap-highlight-color: transparent; }
 .neo-radar__dot--one { top:28%; left:25%; }.neo-radar__dot--two { top:54%; right:19%; background:var(--zhi-red); box-shadow:0 0 12px 2px var(--zhi-red); }.neo-radar__dot--three { bottom:20%; left:42%; background:var(--zhi-gold); box-shadow:0 0 12px 2px var(--zhi-gold); }
 .neo-radar__label { position:absolute; right:-13px; top:36px; color:var(--zhi-muted); font:500 8px/1.5 var(--zhi-mono); text-align:right; letter-spacing:.1em; }
 
-.neo-stats { gap:12px; margin-bottom:28px; }
+.neo-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px; }
 .stats-card { min-height: 144px; padding:20px; text-align:left; border:1px solid var(--zhi-line); border-radius:15px; background:linear-gradient(140deg,rgba(19,25,46,.8),rgba(12,16,30,.68)); box-shadow:none; position:relative; overflow:hidden; }
 .stats-card:nth-of-type(1) { --card-accent: var(--zhi-red); }
 .stats-card:nth-of-type(2) { --card-accent: var(--zhi-jade); }
@@ -262,8 +262,8 @@ button { -webkit-tap-highlight-color: transparent; }
 .mission-progress-fill,.challenge-progress-fill { background:linear-gradient(90deg,var(--zhi-red),var(--zhi-gold)); border-radius: 4px; box-shadow: 0 0 8px rgba(245, 191, 87, 0.5); }
 .mission-progress-text,.mission-xp,.challenge-progress-text { color:var(--zhi-faint); font:500 9px var(--zhi-mono); }.challenge-header { gap:7px; }.challenge-title { color:var(--zhi-ink); font-size:13px; }.challenge-desc { margin:9px 0; color:var(--zhi-muted); font-size:10px; }.challenge-module { color:var(--zhi-jade); font:500 9px var(--zhi-mono); }.streak-freeze-counter { display:flex; flex-direction:column; align-items:center; justify-content:center; }.freeze-icon { font-size:24px; }.freeze-count { margin-top:4px; color:var(--zhi-ink); font:700 22px var(--zhi-mono); }.freeze-label { color:var(--zhi-muted); font-size:9px; }
 
-.activity-list { background:transparent; }.activity-item { padding:12px 0; border-bottom:1px solid rgba(255,255,255,.07); }.activity-icon { font-size:17px; }.activity-text { color:var(--zhi-muted); font-size:11px; }.activity-time { color:var(--zhi-faint); font-size:9px; }.activity-xp { color:var(--zhi-jade); font:500 10px var(--zhi-mono); }.activity-empty { padding:20px 0; color:var(--zhi-muted); font-size:12px; }
-.neo-side-stack { display:grid; gap:24px; }.word-of-the-day { min-height:178px; }.wotd-card { padding:0; background:transparent; border:0; box-shadow:none; }.wotd-badge { color:var(--zhi-jade); background:transparent; font:500 9px var(--zhi-mono); letter-spacing:.08em; text-transform:uppercase; }.wotd-character { color:var(--zhi-ink); font-size:43px; line-height:1.1; }.wotd-pinyin { color:var(--zhi-gold); font:500 12px var(--zhi-mono); }.wotd-meaning { color:var(--zhi-muted); font-size:12px; }
+.activity-list { background:transparent; padding:4px 0; }.activity-item { padding:12px 0; border-bottom:1px solid rgba(255,255,255,.07); }.activity-icon { font-size:17px; }.activity-text { color:var(--zhi-muted); font-size:11px; }.activity-time { color:var(--zhi-faint); font-size:9px; }.activity-xp { color:var(--zhi-jade); font:500 10px var(--zhi-mono); }.activity-empty { padding:20px 0; color:var(--zhi-muted); font-size:12px; }
+.neo-side-stack { display:grid; gap:24px; margin-bottom:24px; }.word-of-the-day { min-height:178px; }.wotd-card { padding:0; background:transparent; border:0; box-shadow:none; }.wotd-badge { color:var(--zhi-jade); background:transparent; font:500 9px var(--zhi-mono); letter-spacing:.08em; text-transform:uppercase; }.wotd-character { color:var(--zhi-ink); font-size:43px; line-height:1.1; }.wotd-pinyin { color:var(--zhi-gold); font:500 12px var(--zhi-mono); }.wotd-meaning { color:var(--zhi-muted); font-size:12px; }
 .wotd-example {
     padding: 12px;
     background: rgba(255, 255, 255, 0.02);

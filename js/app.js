@@ -74,8 +74,8 @@ const App = {
         } catch (e) { console.warn('VocabularyLearner init failed:', e); }
 
         try {
-            if (typeof DeepSeekTutor !== 'undefined') DeepSeekTutor.init();
-        } catch (e) { console.warn('DeepSeekTutor init failed:', e); }
+            if (typeof AITutor !== 'undefined') AITutor.init();
+        } catch (e) { console.warn('AITutor init failed:', e); }
 
         try {
             if (typeof WordOfTheDay !== 'undefined') WordOfTheDay.init();
@@ -679,8 +679,8 @@ const App = {
             if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
                 try { DataLoader.populateGlobals(); } catch (e) {}
             }
-            if (typeof DeepSeekTutor !== 'undefined' && typeof DeepSeekTutor.init === 'function') {
-                try { DeepSeekTutor.init(); } catch (e) {}
+            if (typeof AITutor !== 'undefined' && typeof AITutor.init === 'function') {
+                try { AITutor.init(); } catch (e) {}
             }
 
             // Re-run structural init if missed (these are idempotent)
@@ -952,21 +952,25 @@ const App = {
         modal.setAttribute('aria-modal', 'true');
         if (!modal.getAttribute('aria-label')) modal.setAttribute('aria-label', 'Dialog');
 
-        const onKey = (e) => {
+        if (this._modalKeyHandler) {
+            document.removeEventListener('keydown', this._modalKeyHandler);
+        }
+
+        var self = this;
+        this._modalKeyHandler = function(e) {
             if (e.key === 'Escape') {
-                modal.classList.add('hidden');
-                document.removeEventListener('keydown', onKey);
+                self.closeModal();
                 return;
             }
             if (e.key !== 'Tab') return;
 
-            const focusable = modal.querySelectorAll(
+            var focusable = modal.querySelectorAll(
                 'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
             );
             if (focusable.length === 0) return;
 
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
 
             if (e.shiftKey) {
                 if (document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -974,17 +978,21 @@ const App = {
                 if (document.activeElement === last) { e.preventDefault(); first.focus(); }
             }
         };
-        document.addEventListener('keydown', onKey);
+        document.addEventListener('keydown', this._modalKeyHandler);
 
         // Move focus into the modal
-        const firstFocusable = modal.querySelector('button, [tabindex], input, [role="button"]');
+        var firstFocusable = modal.querySelector('button, [tabindex], input, [role="button"]');
         if (firstFocusable) { try { firstFocusable.focus(); } catch (_) {} }
     },
 
     // Close modal
     closeModal() {
-        const modal = document.getElementById('modal');
+        var modal = document.getElementById('modal');
         if (modal) modal.classList.add('hidden');
+        if (this._modalKeyHandler) {
+            document.removeEventListener('keydown', this._modalKeyHandler);
+            this._modalKeyHandler = null;
+        }
     },
 
     // Attach modal close handlers once (avoid listener leak on .modal-close / .modal-overlay)
