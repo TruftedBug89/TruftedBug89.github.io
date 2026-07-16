@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="css/placement-test.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/future-ui.css">
+    <link rel="stylesheet" href="css/ai-tutor.css">
 </head>
 <body class="theme-dark">
     <a class="skip-to-content" href="#main-content">Skip to learning studio</a>
@@ -300,6 +301,15 @@
                     <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu">← Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening Exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="listening-current">1</b> / <b id="listening-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="listening-content"></div>
+                    <div class="activity-sticky-bar" id="listening-sticky-bar" hidden>
+                        <button class="btn btn-secondary btn-icon" type="button" id="prev-listening-btn" aria-label="Previous">←</button>
+                        <button class="btn btn-secondary" type="button" id="skip-listening-btn">Skip →</button>
+                        <button class="btn btn-primary" type="button" id="check-listening-btn" hidden>Check</button>
+                        <button class="btn btn-primary" type="button" id="next-listening-btn" hidden>Next →</button>
+                        <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-listening-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
+                        <span class="sticky-spacer"></span>
+                        <span class="sticky-progress" id="listening-sticky-progress">1 / 10</span>
+                    </div>
                 </div>
             </section>
 
@@ -321,6 +331,15 @@
                     <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu">← Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading Exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="reading-current">1</b> / <b id="reading-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="reading-content"></div>
+                    <div class="activity-sticky-bar" id="reading-sticky-bar" hidden>
+                        <button class="btn btn-secondary btn-icon" type="button" id="prev-reading-btn" aria-label="Previous">←</button>
+                        <button class="btn btn-secondary" type="button" id="skip-reading-btn">Skip →</button>
+                        <button class="btn btn-primary" type="button" id="check-reading-btn" hidden>Check</button>
+                        <button class="btn btn-primary" type="button" id="next-reading-btn" hidden>Next →</button>
+                        <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-reading-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
+                        <span class="sticky-spacer"></span>
+                        <span class="sticky-progress" id="reading-sticky-progress">1 / 10</span>
+                    </div>
                 </div>
             </section>
 
@@ -341,6 +360,14 @@
                     <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu">← Pattern lab</button><div><span class="section-kicker">PRACTICE MODE</span><h2>Grammar drill</h2></div></div>
                     <div class="exercise-progress"><span><b id="grammar-current">1</b> / <b id="grammar-total">1</b></span></div>
                     <div id="grammar-practice-content"></div>
+                    <div class="activity-sticky-bar" id="grammar-sticky-bar" hidden>
+                        <button class="btn btn-secondary" type="button" id="prev-grammar-btn">← Prev</button>
+                        <button class="btn btn-primary" type="button" id="check-grammar-btn" hidden>Check</button>
+                        <button class="btn btn-primary" type="button" id="next-grammar-btn" hidden>Next →</button>
+                        <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-grammar-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
+                        <span class="sticky-spacer"></span>
+                        <span class="sticky-progress" id="grammar-sticky-progress">1 / 1</span>
+                    </div>
                 </div>
             </section>
 
@@ -358,6 +385,12 @@
                 <div id="speaking-exercise" class="exercise-shell hidden">
                     <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu">← Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking Exercise</h2></div></div>
                     <div id="speaking-content"></div>
+                    <div class="activity-sticky-bar" id="speaking-sticky-bar" hidden>
+                        <button class="btn btn-secondary" type="button" id="prev-speaking-btn">← Prev</button>
+                        <button class="btn btn-primary" type="button" id="next-speaking-btn">Next →</button>
+                        <span class="sticky-spacer"></span>
+                        <span class="sticky-progress" id="speaking-sticky-progress">1 / 1</span>
+                    </div>
                 </div>
             </section>
 
@@ -387,6 +420,7 @@
     </footer>
 
     <div id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></div>
+    <div id="cn-tooltip" class="cn-tooltip cn-tooltip--hidden" role="tooltip" aria-hidden="true"><div class="cn-tooltip__pinyin"></div><div class="cn-tooltip__meaning"></div></div>
     <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-overlay"></div><div class="modal-content" id="modal-body"></div></div>
     <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
@@ -409,6 +443,7 @@
     <script src="js/level-tracker.js"></script>
     <script src="js/recurring-rewards.js"></script>
     <script src="js/missions.js"></script>
+    <script src="js/deepseek-ai.js"></script>
     <script src="js/progress.js"></script>
     <script src="js/load-progress.js"></script>
 

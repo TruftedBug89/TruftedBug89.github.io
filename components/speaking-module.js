@@ -16,6 +16,8 @@ const SpeakingModule = {
         const ex = document.getElementById('speaking-exercise');
         if (menu) menu.classList.remove('hidden');
         if (ex) ex.classList.add('hidden');
+        var bar = document.getElementById('speaking-sticky-bar');
+        if (bar) bar.hidden = true;
 
         if (typeof InkAnimations !== 'undefined' && InkAnimations.exerciseCardReveal) {
             InkAnimations.exerciseCardReveal(menu);
@@ -57,6 +59,8 @@ const SpeakingModule = {
 
         document.getElementById('speaking-menu').classList.add('hidden');
         document.getElementById('speaking-exercise').classList.remove('hidden');
+
+        this._wireStickyBar();
 
         if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
             InkAnimations.slideInPanel(document.getElementById('speaking-exercise'));
@@ -110,6 +114,8 @@ const SpeakingModule = {
         }
 
         this.currentExercise = exercise;
+
+        this._updateStickyBar();
 
         const content = document.getElementById('speaking-content');
         content.innerHTML = this.getExerciseHTML(exercise);
@@ -442,6 +448,9 @@ const SpeakingModule = {
             onBack: () => SpeakingModule.showMenu(),
             onRetry: () => SpeakingModule.startExercise(capturedType)
         });
+
+        var bar = document.getElementById('speaking-sticky-bar');
+        if (bar) bar.hidden = true;
     },
 
     _getToneTips() {
@@ -558,6 +567,36 @@ const SpeakingModule = {
         document.getElementById('back-dialogue').addEventListener('click', function() {
             SpeakingModule.showMenu();
         });
+    },
+
+    _wireStickyBar() {
+        var bar = document.getElementById('speaking-sticky-bar');
+        if (!bar || bar._smWired) return;
+        bar._smWired = true;
+        bar.hidden = false;
+
+        var self = this;
+        document.getElementById('prev-speaking-btn').addEventListener('click', function () {
+            if (self.currentIndex > 0 && self.exercises.length) {
+                self.currentIndex--;
+                self.showCurrentExercise();
+            }
+        });
+        document.getElementById('next-speaking-btn').addEventListener('click', function () {
+            if (self.exercises.length) {
+                self.currentIndex++;
+                self.showCurrentExercise();
+            }
+        });
+    },
+
+    _updateStickyBar() {
+        var prog = document.getElementById('speaking-sticky-progress');
+        if (prog && this.exercises.length) {
+            prog.textContent = (this.currentIndex + 1) + ' / ' + this.exercises.length;
+        }
+        var prevBtn = document.getElementById('prev-speaking-btn');
+        if (prevBtn) prevBtn.disabled = this.currentIndex === 0;
     }
 };
 

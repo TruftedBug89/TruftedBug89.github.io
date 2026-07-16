@@ -31,6 +31,13 @@ const DailyStreak = {
         this.loadData();
         this.checkStreak();
         this.updateUI();
+
+        var self = this;
+        setTimeout(function () {
+            if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.shouldPromptOnStartup && DeepSeekTutor.shouldPromptOnStartup()) {
+                DeepSeekTutor.promptConfigIfNeeded();
+            }
+        }, 2800);
     },
 
     // Session-scoped storage key

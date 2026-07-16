@@ -694,13 +694,14 @@ select:focus,
     }
 
     .exercise-container {
-        padding: 0;
+        padding: 0 var(--spacing-sm);
     }
 
     /* Activity cards */
     .activity-card {
         padding: 16px;
-        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .audio-hero {

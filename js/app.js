@@ -74,6 +74,10 @@ const App = {
         } catch (e) { console.warn('VocabularyLearner init failed:', e); }
 
         try {
+            if (typeof DeepSeekTutor !== 'undefined') DeepSeekTutor.init();
+        } catch (e) { console.warn('DeepSeekTutor init failed:', e); }
+
+        try {
             if (typeof WordOfTheDay !== 'undefined') WordOfTheDay.init();
         } catch (e) { console.warn('WordOfTheDay init failed:', e); }
 
@@ -674,6 +678,9 @@ const App = {
             }
             if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
                 try { DataLoader.populateGlobals(); } catch (e) {}
+            }
+            if (typeof DeepSeekTutor !== 'undefined' && typeof DeepSeekTutor.init === 'function') {
+                try { DeepSeekTutor.init(); } catch (e) {}
             }
 
             // Re-run structural init if missed (these are idempotent)

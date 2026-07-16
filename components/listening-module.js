@@ -28,6 +28,8 @@ const ListeningModule = {
         const ex = document.getElementById('listening-exercise');
         if (menu) menu.classList.remove('hidden');
         if (ex) ex.classList.add('hidden');
+        var bar = document.getElementById('listening-sticky-bar');
+        if (bar) bar.hidden = true;
 
         // Setup exercise type cards
         this.setupTypeCards();
@@ -79,6 +81,8 @@ const ListeningModule = {
         const exerciseContainer = document.getElementById('listening-exercise');
         exerciseContainer.classList.remove('hidden');
 
+        this._wireStickyBar();
+
         if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
             InkAnimations.slideInPanel(exerciseContainer);
         }
@@ -110,6 +114,9 @@ const ListeningModule = {
         // Update progress
         document.getElementById('listening-current').textContent = this.currentIndex + 1;
         document.getElementById('listening-total').textContent = this.exercises.length;
+
+        this._updateStickyBar();
+        this._resetStickyButtons();
 
         // Show content based on type
         const content = document.getElementById('listening-content');
@@ -467,13 +474,16 @@ const ListeningModule = {
         // Check answer button (general purpose)
         const checkBtn = document.getElementById('check-listening-btn');
         if (checkBtn) {
-            checkBtn.addEventListener('click', () => {
-                if (this.currentType === 'dictation' || this.currentType === 'speed-listening') {
-                    this.checkDictation();
-                } else {
-                    this.showNextButton();
-                }
-            });
+            if (!checkBtn._checkHandler) {
+                checkBtn._checkHandler = () => {
+                    if (this.currentType === 'dictation' || this.currentType === 'speed-listening') {
+                        this.checkDictation();
+                    } else {
+                        this.showNextButton();
+                    }
+                };
+                checkBtn.addEventListener('click', checkBtn._checkHandler);
+            }
         }
 
         // Comprehension options
@@ -636,6 +646,7 @@ const ListeningModule = {
                 InkAnimations.shakeElement(input);
             }
             this._showLearningTip(feedback, this.currentType, exercise);
+            this._triggerAI();
         }
 
         input.disabled = true;
@@ -844,6 +855,7 @@ const ListeningModule = {
                 if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
                     InkAnimations.shakeElement(selectedOption);
                 }
+                this._triggerAI();
             }
             // Disable further clicks on this question
             document.querySelectorAll(`[data-question="${questionIndex}"]`).forEach(o => {
@@ -929,6 +941,7 @@ const ListeningModule = {
                     feedback.textContent = '❌ Not quite — try playing again to compare.';
                     feedback.className = 'answer-feedback incorrect';
                 }
+                this._triggerAI();
             }
             this._showLearningTip(feedback || selectedOption, this.currentType, this.currentExercise);
         }
@@ -1003,6 +1016,103 @@ const ListeningModule = {
                 if (ring) InkAnimations.scorePopup(ring, result.percentage);
             }, 150);
         }
+
+        const bar = document.getElementById('listening-sticky-bar');
+        if (bar) bar.hidden = true;
+    },
+
+    _wireStickyBar() {
+        const bar = document.getElementById('listening-sticky-bar');
+        if (!bar || bar._lmWired) return;
+        bar._lmWired = true;
+        bar.hidden = false;
+
+        var self = this;
+        document.getElementById('prev-listening-btn').addEventListener('click', function () {
+            if (self.currentIndex > 0) { self.currentIndex--; self.showCurrentExercise(); }
+        });
+
+        document.getElementById('skip-listening-btn').addEventListener('click', function () {
+            self.currentIndex++;
+            self.showCurrentExercise();
+        });
+
+        document.getElementById('ask-ai-listening-btn').addEventListener('click', function () {
+            if (typeof DeepSeekTutor !== 'undefined') {
+                DeepSeekTutor.forceNext();
+                DeepSeekTutor.explain(self._buildAIContext());
+            }
+        });
+    },
+
+    _updateStickyBar() {
+        const prog = document.getElementById('listening-sticky-progress');
+        if (prog) prog.textContent = (this.currentIndex + 1) + ' / ' + this.exercises.length;
+        var prevBtn = document.getElementById('prev-listening-btn');
+        if (prevBtn) prevBtn.disabled = this.currentIndex === 0;
+    },
+
+    _resetStickyButtons() {
+        var checkBtn = document.getElementById('check-listening-btn');
+        var nextBtn = document.getElementById('next-listening-btn');
+        var isScored = ['dictation', 'comprehension', 'minimal-pairs', 'speed-listening'].indexOf(this.currentType) !== -1;
+        if (checkBtn) { checkBtn.classList.toggle('hidden', !isScored); }
+        if (nextBtn) { nextBtn.classList.add('hidden'); }
+    },
+
+    _triggerAI() {
+        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
+            DeepSeekTutor.explain(this._buildAIContext());
+        }
+    },
+
+    _buildAIContext() {
+        var ex = this.currentExercise;
+        var ctx = { skill: 'listening', activityType: this.currentType };
+        if (!ex) return ctx;
+
+        switch (this.currentType) {
+            case 'dictation':
+            case 'speed-listening':
+                var inp = document.getElementById('dictation-input') || document.getElementById('speed-input');
+                ctx.userAnswer = inp ? inp.value : '';
+                ctx.question = 'Listen and type what you hear in Chinese';
+                ctx.correctAnswer = ex.chinese;
+                ctx.pinyin = ex.pinyin;
+                ctx.meaning = ex.meaning;
+                break;
+            case 'comprehension':
+                ctx.passage = ex.chinese;
+                ctx.pinyin = ex.pinyin;
+                if (ex.questions) {
+                    ex.questions.forEach(function (q, i) {
+                        var n = i + 1;
+                        ctx['question_' + n] = q.question;
+                        ctx['options_' + n] = q.options;
+                        ctx['correctIndex_' + n] = q.correct;
+                    });
+                }
+                break;
+            case 'minimal-pairs':
+                if (ex.pairs && ex.pairs[0]) {
+                    ctx.pairWord1 = ex.pairs[0].word1; ctx.pairPinyin1 = ex.pairs[0].pinyin1; ctx.tone1 = ex.pairs[0].tone1;
+                }
+                if (ex.pairs && ex.pairs[1]) {
+                    ctx.pairWord2 = ex.pairs[1].word2; ctx.pairPinyin2 = ex.pairs[1].pinyin2; ctx.tone2 = ex.pairs[1].tone2;
+                }
+                break;
+            case 'dialogue':
+                ctx.prompt = 'Listen to and understand a Chinese dialogue';
+                ctx.passage = (ex.turns || []).map(function (t) { return t.chinese; }).join(' | ');
+                break;
+            case 'shadowing':
+                ctx.prompt = 'Listen to the model, then repeat out loud matching the pace';
+                ctx.correctAnswer = ex.chinese;
+                ctx.pinyin = ex.pinyin;
+                ctx.meaning = ex.meaning;
+                break;
+        }
+        return ctx;
     }
 };
 

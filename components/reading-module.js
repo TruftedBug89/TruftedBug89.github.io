@@ -23,6 +23,8 @@ const ReadingModule = {
         const ex = document.getElementById('reading-exercise');
         if (menu) menu.classList.remove('hidden');
         if (ex) ex.classList.add('hidden');
+        var bar = document.getElementById('reading-sticky-bar');
+        if (bar) bar.hidden = true;
 
         // Setup exercise type cards
         this.setupTypeCards();
@@ -111,6 +113,8 @@ const ReadingModule = {
         document.getElementById('reading-menu').classList.add('hidden');
         document.getElementById('reading-exercise').classList.remove('hidden');
 
+        this._wireStickyBar();
+
         if (typeof InkAnimations !== 'undefined' && InkAnimations.slideInPanel) {
             InkAnimations.slideInPanel(document.getElementById('reading-exercise'));
         }
@@ -151,6 +155,9 @@ const ReadingModule = {
         // Update progress
         document.getElementById('reading-current').textContent = this.currentIndex + 1;
         document.getElementById('reading-total').textContent = this.exercises.length;
+
+        this._updateStickyBar();
+        this._resetStickyButtons();
 
         // Show content based on type
         const content = document.getElementById('reading-content');
@@ -745,6 +752,7 @@ const ReadingModule = {
                 InkAnimations.shakeElement(charItem);
                 InkAnimations.shakeElement(meaningItem);
             }
+            this._triggerAI();
             setTimeout(() => {
                 charItem.classList.remove('selected', 'incorrect');
                 meaningItem.classList.remove('selected', 'incorrect');
@@ -805,6 +813,7 @@ const ReadingModule = {
                     if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
                         InkAnimations.shakeElement(opt);
                     }
+                    this._triggerAI();
                 }
             }
             if (i === exercise.correct) {
@@ -850,6 +859,7 @@ const ReadingModule = {
                     if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
                         InkAnimations.shakeElement(opt);
                     }
+                    this._triggerAI();
                 }
             }
             if (i === question.correct) {
@@ -935,6 +945,7 @@ const ReadingModule = {
                     if (typeof InkAnimations !== 'undefined' && InkAnimations.shakeElement) {
                         InkAnimations.shakeElement(opt);
                     }
+                    this._triggerAI();
                 }
             }
             if (i === exercise.correct) {
@@ -966,6 +977,7 @@ const ReadingModule = {
                 : '❌ The correct order is: <strong lang="zh">' + Utils.escapeHtml(exercise.correct) + '</strong> — ' + Utils.escapeHtml(exercise.meaning || '');
         }
         if (isCorrect) this.score++;
+        else this._triggerAI();
         this.showNextButton();
     },
 
@@ -985,6 +997,7 @@ const ReadingModule = {
                 : '❌ Not quite. ' + Utils.escapeHtml(exercise.explanation || '');
         }
         if (isCorrect) this.score++;
+        else this._triggerAI();
         this.showNextButton();
     },
 
@@ -1237,6 +1250,9 @@ const ReadingModule = {
             onBack: () => ReadingModule.showMenu(),
             onRetry: () => ReadingModule.startExercise(capturedType)
         });
+
+        var bar = document.getElementById('reading-sticky-bar');
+        if (bar) bar.hidden = true;
     },
 
     // Character breakdown for character-match exercises
@@ -1497,6 +1513,129 @@ const ReadingModule = {
         const cpm = Math.round(passageChars / (timeLimit / 60));
         this._speedReadingData = null;
         return `⚡ ${passageChars} characters in ${timeLimit}s — ~${cpm} chars/min`;
+    },
+
+    _wireStickyBar() {
+        var bar = document.getElementById('reading-sticky-bar');
+        if (!bar || bar._rmWired) return;
+        bar._rmWired = true;
+        bar.hidden = false;
+
+        var self = this;
+        document.getElementById('prev-reading-btn').addEventListener('click', function () {
+            if (self.currentIndex > 0) { self.currentIndex--; self.showCurrentExercise(); }
+        });
+        document.getElementById('skip-reading-btn').addEventListener('click', function () {
+            self.currentIndex++;
+            self.showCurrentExercise();
+        });
+        var checkBtn = document.getElementById('check-reading-btn');
+        if (checkBtn) checkBtn.addEventListener('click', function () { self.showNextButton(); });
+        document.getElementById('ask-ai-reading-btn').addEventListener('click', function () {
+            if (typeof DeepSeekTutor !== 'undefined') {
+                DeepSeekTutor.forceNext();
+                DeepSeekTutor.explain(self._buildAIContext());
+            }
+        });
+    },
+
+    _updateStickyBar() {
+        var prog = document.getElementById('reading-sticky-progress');
+        if (prog) prog.textContent = (this.currentIndex + 1) + ' / ' + this.exercises.length;
+        var prevBtn = document.getElementById('prev-reading-btn');
+        if (prevBtn) prevBtn.disabled = this.currentIndex === 0;
+    },
+
+    _resetStickyButtons() {
+        var checkBtn = document.getElementById('check-reading-btn');
+        var nextBtn = document.getElementById('next-reading-btn');
+        if (checkBtn) checkBtn.classList.remove('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
+    },
+
+    _triggerAI() {
+        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
+            DeepSeekTutor.explain(this._buildAIContext());
+        }
+    },
+
+    _buildAIContext() {
+        var ex = this.currentExercise;
+        var ctx = { skill: 'reading', activityType: this.currentType };
+        if (!ex) return ctx;
+        switch (this.currentType) {
+            case 'character-match':
+                ctx.prompt = 'Match each Chinese character to its correct English meaning';
+                if (ex.pairs && ex.pairs.length) {
+                    ctx.options = ex.pairs.map(function (p) { return p.character + ' = ' + p.meaning; });
+                }
+                break;
+            case 'sentence-complete':
+                ctx.sentence = ex.sentence;
+                ctx.meaning = ex.meaning;
+                if (ex.options) ctx.options = ex.options.slice();
+                ctx.correctAnswer = ex.answer || (ex.options ? ex.options[ex.correct] : '');
+                break;
+            case 'passage-reading':
+            case 'contextual-reading':
+            case 'reading-inference':
+            case 'long-passages':
+                ctx.passage = ex.passage;
+                ctx.pinyin = ex.pinyin;
+                if (ex.questions) {
+                    ex.questions.forEach(function (q, i) {
+                        var n = i + 1;
+                        ctx['question_' + n] = q.question;
+                        ctx['options_' + n] = q.options.slice();
+                        ctx['correctIndex_' + n] = q.correct;
+                    });
+                }
+                break;
+            case 'context-clues':
+                ctx.sentence = ex.sentence;
+                ctx.unknownWord = ex.unknownWord;
+                if (ex.contextClues) ctx.contextClues = ex.contextClues.slice();
+                if (ex.options) ctx.options = ex.options.slice();
+                ctx.correctIndex = ex.correct;
+                ctx.explanation = ex.explanation;
+                break;
+            case 'sentence-reconstruction':
+                ctx.prompt = 'Reorder the words to form a correct Chinese sentence';
+                ctx.correctAnswer = ex.correct;
+                ctx.meaning = ex.meaning;
+                break;
+            case 'contextual-fill-blank':
+                ctx.sentence = ex.sentence;
+                ctx.context = ex.context;
+                if (ex.options) ctx.options = ex.options.slice();
+                ctx.correctIndex = ex.correct;
+                break;
+            case 'word-order':
+                ctx.prompt = 'Select the sentence with correct Chinese word order';
+                if (ex.options) ctx.options = ex.options.slice();
+                ctx.correctIndex = ex.correct;
+                ctx.explanation = ex.explanation;
+                break;
+            case 'speed-reading':
+            case 'speed-challenge':
+                ctx.passage = ex.passage;
+                ctx.timeLimit = ex.timeLimit;
+                if (ex.questions) {
+                    ex.questions.forEach(function (q, i) {
+                        var n = i + 1;
+                        ctx['question_' + n] = q.question;
+                        ctx['options_' + n] = q.options.slice();
+                        ctx['correctIndex_' + n] = q.correct;
+                    });
+                }
+                break;
+            case 'radical-learn':
+                ctx.prompt = 'Learn the radical and its component characters';
+                ctx.correctAnswer = ex.radical + ' (' + ex.radicalName + ')';
+                ctx.meaning = ex.radicalMeaning;
+                break;
+        }
+        return ctx;
     }
 };
 

@@ -668,6 +668,8 @@ const GrammarModule = {
         if (lessonEl) lessonEl.classList.add('hidden');
         if (practiceEl) practiceEl.classList.remove('hidden');
 
+        this._wireStickyBar();
+
         document.getElementById('grammar-total').textContent = lesson.practice.length;
 
         this.showCurrentPractice();
@@ -684,6 +686,9 @@ const GrammarModule = {
 
         var practice = this.currentPractice[this.practiceIndex];
         document.getElementById('grammar-current').textContent = this.practiceIndex + 1;
+
+        this._updateStickyBar();
+        this._resetStickyButtons();
 
         var self = this;
         var content = document.getElementById('grammar-practice-content');
@@ -811,6 +816,7 @@ const GrammarModule = {
                     InkAnimations.shakeElement(options[selectedIdx]);
                 }
             }
+            this._triggerAI();
             // Highlight correct answer
             for (var j = 0; j < options.length; j++) {
                 if (practice.options[j] === practice.answer) {
@@ -885,6 +891,9 @@ const GrammarModule = {
             onBack: function () { self.showMenu(); },
             onRetry: function () { self.startPractice(self.currentLesson); }
         });
+
+        var bar = document.getElementById('grammar-sticky-bar');
+        if (bar) bar.hidden = true;
     },
 
     // ============================================
@@ -907,6 +916,61 @@ const GrammarModule = {
             this.showLesson(next.id);
         }
         // If no next lesson found, menu is already rendered by the navigation flow
+    },
+
+    _wireStickyBar() {
+        var bar = document.getElementById('grammar-sticky-bar');
+        if (!bar || bar._gmWired) return;
+        bar._gmWired = true;
+        bar.hidden = false;
+
+        var self = this;
+        document.getElementById('prev-grammar-btn').addEventListener('click', function () {
+            if (self.practiceIndex > 0) { self.practiceIndex--; self.showCurrentPractice(); }
+        });
+        document.getElementById('ask-ai-grammar-btn').addEventListener('click', function () {
+            if (typeof DeepSeekTutor !== 'undefined') {
+                DeepSeekTutor.forceNext();
+                DeepSeekTutor.explain(self._buildAIContext());
+            }
+        });
+    },
+
+    _updateStickyBar() {
+        var prog = document.getElementById('grammar-sticky-progress');
+        if (prog) prog.textContent = (this.practiceIndex + 1) + ' / ' + this.currentPractice.length;
+        var prevBtn = document.getElementById('prev-grammar-btn');
+        if (prevBtn) prevBtn.disabled = this.practiceIndex === 0;
+    },
+
+    _resetStickyButtons() {
+        var checkBtn = document.getElementById('check-grammar-btn');
+        var nextBtn = document.getElementById('next-grammar-btn');
+        if (checkBtn) checkBtn.classList.remove('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
+    },
+
+    _triggerAI() {
+        if (typeof DeepSeekTutor !== 'undefined' && DeepSeekTutor.isConfigured()) {
+            DeepSeekTutor.explain(this._buildAIContext());
+        }
+    },
+
+    _buildAIContext() {
+        var lesson = this.currentLesson;
+        var practice = this.currentPractice ? this.currentPractice[this.practiceIndex] : null;
+        var ctx = { skill: 'grammar', activityType: 'grammar' };
+        if (lesson) {
+            ctx.pattern = lesson.pattern;
+            if (lesson.title) ctx.prompt = lesson.title + ' — ' + (lesson.titleMeaning || '');
+            if (lesson.explanation) ctx.explanation = lesson.explanation;
+        }
+        if (practice) {
+            ctx.question = practice.question;
+            if (practice.options) ctx.options = practice.options.slice();
+            ctx.correctAnswer = practice.answer;
+        }
+        return ctx;
     }
 };
 
