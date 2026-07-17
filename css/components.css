@@ -1512,3 +1512,53 @@
     height: 1px;
     background: var(--border-color);
 }
+
+/* Focus Timer */
+.floating-timer {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    backdrop-filter: blur(10px);
+}
+
+.floating-timer.hidden {
+    display: none;
+}
+
+.timer-drag-handle {
+    cursor: grab;
+    width: 100%;
+    text-align: center;
+    color: var(--text-muted);
+    user-select: none;
+    font-size: 1.2em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.timer-drag-handle:active {
+    cursor: grabbing;
+}
+
+.timer-display {
+    font-family: 'DM Mono', monospace;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 8px;
+}

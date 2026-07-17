@@ -66,6 +66,10 @@ const App = {
         } catch (e) { console.warn('AdvancedLearning init failed:', e); }
 
         try {
+            if (typeof FocusTimer !== 'undefined') FocusTimer.init();
+        } catch (e) { console.warn('FocusTimer init failed:', e); }
+
+        try {
             if (typeof LevelTracker !== 'undefined') LevelTracker.init();
         } catch (e) { console.warn('LevelTracker init failed:', e); }
 

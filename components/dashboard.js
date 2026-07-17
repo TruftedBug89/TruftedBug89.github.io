@@ -67,6 +67,7 @@ const Dashboard = {
             this.updateLevelInfo(levelInfo);
             this.updateDailyGoal(dailyGoal);
             this._renderWeeklyChart(weeklyStats);
+            this._renderHeatmap();
             this.updateRecentActivities(recentActivities);
             this.updateStreak(stats.streak);
             this._renderSkillsOverview();
@@ -616,6 +617,68 @@ const Dashboard = {
         if (todayXp > 0) return "You've earned " + todayXp + " XP today. Keep going.";
         if (streak > 0) return "Streak at " + streak + " days. Earn XP to extend it today.";
         return "Continue your Chinese learning journey";
+    },
+
+    _renderHeatmap() {
+        const heatmapEl = document.getElementById('activity-heatmap');
+        if (!heatmapEl) return;
+
+        let userData;
+        try { userData = StorageManager.getUserData(); } catch(e) { userData = {}; }
+        const dailyStats = userData.dailyStats || {};
+
+        const today = new Date();
+        const days = 30; // Show last 30 days
+        let html = '';
+
+        // Find max XP for scaling opacity
+        let maxDailyXp = 1;
+        for (let i = days - 1; i >= 0; i--) {
+            const d = new Date(today);
+            d.setDate(today.getDate() - i);
+            const dateStr = d.toISOString().split('T')[0];
+            const xp = dailyStats[dateStr] ? (dailyStats[dateStr].xp || 0) : 0;
+            if (xp > maxDailyXp) maxDailyXp = xp;
+        }
+
+        for (let i = days - 1; i >= 0; i--) {
+            const d = new Date(today);
+            d.setDate(today.getDate() - i);
+            const dateStr = d.toISOString().split('T')[0];
+            const xp = dailyStats[dateStr] ? (dailyStats[dateStr].xp || 0) : 0;
+
+            let bg = 'rgba(255,255,255,0.05)'; // Empty state
+            let title = dateStr + ': No activity';
+
+            if (xp > 0) {
+                // Scale opacity from 0.3 to 1.0 based on max XP
+                let opacity = 0.3 + (xp / maxDailyXp) * 0.7;
+                if (opacity > 1) opacity = 1;
+                bg = 'rgba(90, 171, 138, ' + opacity + ')'; // Using success color
+                title = dateStr + ': ' + xp + ' XP';
+            }
+
+            html += '<div class="heatmap-cell" style="width: 14px; height: 14px; border-radius: 3px; background: ' + bg + '; cursor: pointer;" title="' + title + '"></div>';
+        }
+
+        heatmapEl.innerHTML = html;
+
+        // Add subtle hover effect if desired (optional)
+        const cells = heatmapEl.querySelectorAll('.heatmap-cell');
+        cells.forEach(cell => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.transform = 'scale(1.2)';
+                cell.style.zIndex = '2';
+                cell.style.boxShadow = '0 2px 4px rgba(0,0,0,0.5)';
+            });
+            cell.addEventListener('mouseleave', () => {
+                cell.style.transform = '';
+                cell.style.zIndex = '';
+                cell.style.boxShadow = '';
+            });
+            // Also need transition property
+            cell.style.transition = 'transform 0.1s ease, box-shadow 0.1s ease';
+        });
     },
 
     // Render weekly activity chart

@@ -75,6 +75,12 @@ const ReadingModule = {
             return;
         }
 
+        // Reading Mode with Dictionary
+        if (type === 'reading-mode') {
+            this.showReadingMode();
+            return;
+        }
+
         // Check AdvancedReading first for advanced types
         var advancedTypes = ['sentence-reconstruction', 'contextual-reading', 'reading-inference', 'contextual-fill-blank', 'long-passages', 'word-order', 'speed-challenge'];
         var isAdvanced = advancedTypes.indexOf(type) !== -1;
@@ -1197,6 +1203,177 @@ const ReadingModule = {
         this.passageQuestionIndex = 0;
 
         this.showCurrentExercise();
+    },
+
+    // Reading Mode with Dictionary
+    showReadingMode() {
+        var menu = document.getElementById('reading-menu');
+        var ex = document.getElementById('reading-exercise');
+        if (menu) menu.classList.add('hidden');
+        if (ex) ex.classList.remove('hidden');
+        document.getElementById('reading-title').textContent = 'Reading Mode';
+
+        var html = `
+            <div class="reading-mode-container activity-card">
+                <div class="activity-prompt">
+                    <span class="activity-eyebrow">📖 Reading Mode</span>
+                    <h2 class="activity-title">Paste your Chinese text</h2>
+                    <p class="activity-subtitle">Paste any Chinese text below. We'll add a pop-up dictionary to help you read it.</p>
+                </div>
+                <div id="reading-mode-input-area">
+                    <textarea id="reading-mode-textarea" class="reading-mode-textarea" placeholder="Paste Chinese text here..." style="width: 100%; min-height: 150px; background: var(--bg-hover); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 1.1em; resize: vertical; margin-bottom: 16px;"></textarea>
+                    <div style="display: flex; gap: 12px;">
+                        <button class="btn btn-primary" id="process-reading-text" style="flex: 1;">Process Text</button>
+                        <button class="btn btn-secondary" id="clear-reading-text">Clear</button>
+                    </div>
+                </div>
+                <div id="reading-mode-output-area" class="hidden" style="margin-top: 24px;">
+                    <div id="reading-mode-processed-text" class="passage-body" lang="zh" style="line-height: 2; padding: 16px; background: var(--bg-surface); border-radius: 8px; font-size: 1.3em;"></div>
+                    <div style="display: flex; gap: 12px; margin-top: 16px;">
+                        <button class="btn btn-secondary" id="back-to-reading-input">Edit Text</button>
+                    </div>
+                </div>
+                <button class="btn" id="back-from-reading-mode" style="width: 100%; margin-top: 24px;">← Back to Menu</button>
+            </div>
+        `;
+
+        document.getElementById('reading-content').innerHTML = html;
+
+        var controls = document.querySelector('.exercise-controls');
+        if (controls) {
+            controls.querySelectorAll('button').forEach(function(b) { b.classList.add('hidden'); });
+        }
+
+        var stickyBar = document.getElementById('reading-sticky-bar');
+        if (stickyBar) stickyBar.hidden = true;
+
+        document.getElementById('back-from-reading-mode').addEventListener('click', function() {
+            ReadingModule.showMenu();
+        });
+
+        document.getElementById('clear-reading-text').addEventListener('click', function() {
+            document.getElementById('reading-mode-textarea').value = '';
+        });
+
+        document.getElementById('back-to-reading-input').addEventListener('click', function() {
+            document.getElementById('reading-mode-output-area').classList.add('hidden');
+            document.getElementById('reading-mode-input-area').classList.remove('hidden');
+        });
+
+        document.getElementById('process-reading-text').addEventListener('click', () => {
+            const text = document.getElementById('reading-mode-textarea').value.trim();
+            if (!text) {
+                Utils.showToast('Please enter some text to process.', 'warning');
+                return;
+            }
+            this.processReadingText(text);
+        });
+    },
+
+    processReadingText(text) {
+        document.getElementById('reading-mode-input-area').classList.add('hidden');
+        document.getElementById('reading-mode-output-area').classList.remove('hidden');
+
+        const outputContainer = document.getElementById('reading-mode-processed-text');
+
+        // Simple segmentation: split into characters (in a real app, use a proper segmenter)
+        // We will wrap each character in a span that can trigger the dictionary tooltip
+        let processedHtml = '';
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            // Check if it's a Chinese character (basic range check)
+            if (/[\u4e00-\u9fa5]/.test(char)) {
+                processedHtml += '<span class="reading-char" data-char="' + Utils.escapeAttr(char) + '" style="cursor: pointer; position: relative; display: inline-block;">' + Utils.escapeHtml(char) + '</span>';
+            } else if (char === '\n') {
+                processedHtml += '<br>';
+            } else {
+                processedHtml += Utils.escapeHtml(char);
+            }
+        }
+
+        outputContainer.innerHTML = processedHtml;
+
+        // Add click events to characters
+        const chars = outputContainer.querySelectorAll('.reading-char');
+        chars.forEach(charEl => {
+            charEl.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const char = charEl.dataset.char;
+                this.showDictionaryPopup(char, charEl);
+            });
+        });
+
+        // Hide tooltip on click outside
+        document.addEventListener('click', this._hideDictionaryPopup.bind(this));
+    },
+
+    showDictionaryPopup(char, element) {
+        // Find the dictionary entry
+        let entry = null;
+
+        // Search through available data sources
+        if (typeof window.Vocabulary !== 'undefined') {
+            for (let i = 1; i <= 5; i++) {
+                if (window.Vocabulary['hsk' + i]) {
+                    entry = window.Vocabulary['hsk' + i].find(item => item.character === char || (item.word && item.word === char));
+                    if (entry) break;
+                }
+            }
+        }
+
+        let pinyin = entry ? entry.pinyin : 'pinyin unknown';
+        let meaning = entry ? entry.meaning : 'meaning unknown';
+
+        // We'll use the existing cn-tooltip if available, otherwise create a local one
+        let tooltip = document.getElementById('cn-tooltip');
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.id = 'cn-tooltip';
+            tooltip.className = 'cn-tooltip cn-tooltip--hidden';
+            tooltip.innerHTML = '<div class="cn-tooltip__pinyin"></div><div class="cn-tooltip__meaning"></div>';
+            document.body.appendChild(tooltip);
+        }
+
+        tooltip.querySelector('.cn-tooltip__pinyin').textContent = pinyin;
+        tooltip.querySelector('.cn-tooltip__meaning').textContent = meaning;
+
+        const rect = element.getBoundingClientRect();
+
+        tooltip.classList.remove('cn-tooltip--hidden');
+
+        // Position tooltip
+        let top = rect.bottom + window.scrollY + 5;
+        let left = rect.left + window.scrollX;
+
+        // Adjust if it goes off screen
+        if (left + tooltip.offsetWidth > window.innerWidth) {
+            left = window.innerWidth - tooltip.offsetWidth - 10;
+        }
+
+        tooltip.style.top = top + 'px';
+        tooltip.style.left = left + 'px';
+
+        // Save reference to active element to remove highlight later
+        if (this._activeCharEl) {
+            this._activeCharEl.style.backgroundColor = '';
+        }
+        this._activeCharEl = element;
+        element.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+        element.style.borderRadius = '4px';
+    },
+
+    _hideDictionaryPopup(e) {
+        if (e && e.target && e.target.classList && e.target.classList.contains('reading-char')) {
+            return; // Don't hide if clicking on another character
+        }
+        const tooltip = document.getElementById('cn-tooltip');
+        if (tooltip && !tooltip.classList.contains('cn-tooltip--hidden')) {
+            tooltip.classList.add('cn-tooltip--hidden');
+        }
+        if (ReadingModule._activeCharEl) {
+            ReadingModule._activeCharEl.style.backgroundColor = '';
+            ReadingModule._activeCharEl = null;
+        }
     },
 
     // Progress dots for the current session

@@ -111,11 +111,11 @@ describe('07 — Analytics Engine', () => {
 
     AE.trackCompletion('reading', 'reading_quiz', 8, 10);
     let last = AE.eventBuffer[AE.eventBuffer.length - 1];
-    assert.equal(last.type, 'reading_quiz');
+    assert.equal(last.type, 'reading_exercise');
 
     AE.trackCompletion('listening', 'audio_test', 9, 10);
     last = AE.eventBuffer[AE.eventBuffer.length - 1];
-    assert.equal(last.type, 'audio_test');
+    assert.equal(last.type, 'listening_exercise');
   });
 
   it('trackAchievement buffers correctly', () => {
