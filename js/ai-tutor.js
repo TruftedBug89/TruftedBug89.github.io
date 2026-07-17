@@ -1,6 +1,6 @@
 // ============================================
 // ZHI Studio - AI Tutor (DeepSeek + Google Gemini)
-// * API keys + config live ONLY in sessionStorage / session cookies.
+// * API keys + config live ONLY in localStorage.
 // * Dynamic activity-aware prompts.
 // * Rate-limit fallback for Google models: 429 → next model.
 // ============================================
@@ -60,18 +60,18 @@ const AITutor = {
     // ============================================
     // STORAGE
     // ============================================
-    _readSession(name) {
-        try { const v = sessionStorage.getItem(name); if (v !== null) return v; } catch (e) {}
-        try { const m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)')); if (m) return decodeURIComponent(m[1]); } catch (e) {}
+    _readStorage(name) {
+        try { const v = localStorage.getItem(name); if (v !== null) return v; } catch (e) {}
+
         return null;
     },
-    _writeSession(name, value) {
-        try { sessionStorage.setItem(name, value); } catch (e) {}
-        try { document.cookie = name + '=' + encodeURIComponent(value) + ';path=/;SameSite=Strict'; } catch (e) {}
+    _writeStorage(name, value) {
+        try { localStorage.setItem(name, value); } catch (e) {}
+
     },
-    _clearSession(name) {
-        try { sessionStorage.removeItem(name); } catch (e) {}
-        try { document.cookie = name + '=;path=/;max-age=0;SameSite=Strict'; } catch (e) {}
+    _clearStorage(name) {
+        try { localStorage.removeItem(name); } catch (e) {}
+
     },
 
     // ============================================
@@ -81,13 +81,13 @@ const AITutor = {
 
     loadConfig() {
         var saved = null;
-        var raw = this._readSession(this.STORAGE_KEY);
+        var raw = this._readStorage(this.STORAGE_KEY);
         if (raw) { try { saved = JSON.parse(raw); } catch (e) { saved = null; } }
         this.config = Object.assign({}, this.DEFAULTS, saved || {});
         return this.config;
     },
 
-    saveConfig() { this._writeSession(this.STORAGE_KEY, JSON.stringify(this.config)); },
+    saveConfig() { this._writeStorage(this.STORAGE_KEY, JSON.stringify(this.config)); },
 
     getProvider() { return this.PROVIDERS[this.config.provider] || this.PROVIDERS.deepseek; },
 
@@ -99,8 +99,8 @@ const AITutor = {
 
     getDefaultModel() { var p = this.getProvider(); return p.defaultModel || this.config.model; },
 
-    markPrompted() { this._writeSession(this.SKIP_KEY, '1'); },
-    shouldPromptOnStartup() { return this._readSession(this.SKIP_KEY) === null; },
+    markPrompted() { this._writeStorage(this.SKIP_KEY, '1'); },
+    shouldPromptOnStartup() { return this._readStorage(this.SKIP_KEY) === null; },
     promptConfigIfNeeded() { if (this.shouldPromptOnStartup()) this.showConfig({ fromStartup: true }); },
 
     // ============================================
@@ -159,7 +159,7 @@ const AITutor = {
 
                 '<div class="ai-privacy">' +
                     '<span class="ai-privacy-icon">🛡️</span>' +
-                    '<div><b>Keys never leave your device.</b> Stored in session only (sessionStorage + session cookie), cleared on tab close. Never sent to this site\'s server. Calls go directly browser → API.</div>' +
+                    '<div><b>Keys never leave your device.</b> Stored locally in your browser (localStorage). Never sent to this site\'s server. Calls go directly browser → API.</div>' +
                 '</div>' +
 
                 '<div class="ai-row">' +
@@ -547,7 +547,7 @@ const AITutor = {
                 this.body.innerHTML = '';
                 var div = document.createElement('div');
                 div.className = 'ai-empty';
-                div.innerHTML = 'No API key set for this session.<br><br><button type="button" class="btn btn-primary" data-ai-open-config>Configure AI Tutor</button>';
+                div.innerHTML = 'No API key set.<br><br><button type="button" class="btn btn-primary" data-ai-open-config>Configure AI Tutor</button>';
                 this.body.appendChild(div);
                 div.querySelector('[data-ai-open-config]').addEventListener('click', function () { AITutor.showConfig({}); });
             }
@@ -569,7 +569,7 @@ const AITutor = {
             self._append(Utils.escapeHtml(text).replace(/\n/g, '<br>'));
         }).catch(function (err) {
             self._removeLoading();
-            self._append('<span style="color:#ff9b9b;">⚠ ' + Utils.escapeHtml(err.message || 'Request failed') + '</span><br><br><small style="color:rgba(255,255,255,0.45);">Check key, model, and provider in ⚙ settings. Keys stored in session only.</small>');
+            self._append('<span style="color:#ff9b9b;">⚠ ' + Utils.escapeHtml(err.message || 'Request failed') + '</span><br><br><small style="color:rgba(255,255,255,0.45);">Check key, model, and provider in ⚙ settings. Keys stored in browser only.</small>');
         }).finally(function () {
             self._busy = false;
             if (self.sendBtn) self.sendBtn.disabled = false;

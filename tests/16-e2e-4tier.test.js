@@ -661,6 +661,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       };
 
       setStudyProfile('speed');
+      storageSetCalls = 0; // Reset counter after setup
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.ProgressTracker.trackExercise('reading', 'ex1', 5, 5);
@@ -744,6 +745,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       };
 
       setStudyProfile('speed');
+      storageSetCalls = 0; // Reset counter after setup
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.ProgressTracker.trackExercise('listening', 'les1', 8, 10);
