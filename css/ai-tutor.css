@@ -352,3 +352,25 @@
 .ai-config-card .ai-config-actions {
     display: flex; gap: 12px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap;
 }
+.ai-config-card .ai-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ai-config-card .ai-row .ai-field {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .ai-config-card .ai-row {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+
+    .ai-config-card .ai-row .ai-field {
+        margin-bottom: 12px;
+    }
+}

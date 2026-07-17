@@ -460,6 +460,7 @@
         padding: 22px 18px !important;
         max-height: 85vh !important;
         max-height: 85dvh !important;
+        overflow-y: auto !important;
         border-radius: 18px !important;
     }
 
