@@ -420,7 +420,20 @@
     </footer>
 
     <div id="mobile-tabbar" class="mobile-tabbar" aria-label="Mobile navigation"></div>
-    <div id="cn-tooltip" class="cn-tooltip cn-tooltip--hidden" role="tooltip" aria-hidden="true"><div class="cn-tooltip__pinyin"></div><div class="cn-tooltip__meaning"></div></div>
+    <div id="cn-tooltip" class="cn-tooltip cn-tooltip--hidden" role="tooltip" aria-hidden="true">
+        <div class="cn-tooltip__header">
+            <div class="cn-tooltip__chars"></div>
+            <button class="cn-tooltip__audio" aria-label="Play pronunciation">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="cn-tooltip__pinyin"></div>
+        <div class="cn-tooltip__meaning"></div>
+    </div>
     <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-overlay"></div><div class="modal-content" id="modal-body"></div></div>
     <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
