@@ -9,6 +9,7 @@ const VocabularyLearner = {
     currentCard: null,
     isFlipped: false,
     isEasyMode: false,
+    hidePinyin: false,
     mode: 'front',
     _keydownHandler: null,
     _touchStartX: 0,
@@ -30,6 +31,7 @@ const VocabularyLearner = {
     
     // Initialize
     init() {
+        this.hidePinyin = Utils.storage.get('vocabHidePinyin', false);
         this.showLevelSelector();
     },
     
@@ -83,6 +85,18 @@ const VocabularyLearner = {
                 </div>
             </div>
 
+            <div class="easy-mode-toggle" style="margin-top:8px;">
+                <label class="easy-mode-label" for="hide-pinyin-checkbox">
+                    <span class="easy-mode-icon">拼</span>
+                    <span class="easy-mode-text">Hide Pinyin</span>
+                    <span class="easy-mode-desc">Hide pinyin on flashcard fronts</span>
+                </label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="hide-pinyin-checkbox" ${this.hidePinyin ? 'checked' : ''}>
+                    <span class="toggle-slider"></span>
+                </div>
+            </div>
+
             <div class="vocab-actions">
                 <button id="start-review-btn" class="btn btn-primary">▶ Start Review Session</button>
                 <button id="browse-words-btn" class="btn btn-secondary">📖 Browse All Words</button>
@@ -128,6 +142,14 @@ const VocabularyLearner = {
         if (easyCheckbox) {
             easyCheckbox.addEventListener('change', () => {
                 this.isEasyMode = easyCheckbox.checked;
+            });
+        }
+
+        const hidePinyinCheckbox = document.getElementById('hide-pinyin-checkbox');
+        if (hidePinyinCheckbox) {
+            hidePinyinCheckbox.addEventListener('change', () => {
+                this.hidePinyin = hidePinyinCheckbox.checked;
+                Utils.storage.set('vocabHidePinyin', this.hidePinyin);
             });
         }
 
@@ -355,6 +377,9 @@ const VocabularyLearner = {
         const hskBadge = wordData && wordData.hsk ? '<span class="hsk-card-badge">HSK ' + Utils.escapeHtml(wordData.hsk) + '</span>' : '';
         
         // Build front/back based on mode
+        var frontPinyinHtml = this.hidePinyin ? '' : '<div class="flashcard-pinyin pinyin-element">' + safePy + '</div>';
+        var backPinyinHtml = '<div class="flashcard-pinyin pinyin-element">' + safePy + '</div>';
+
         var frontContent = '';
         var backContent = '';
         
@@ -364,9 +389,10 @@ const VocabularyLearner = {
                             <div class="flashcard-character" lang="zh">' + safeChar + '</div>\
                             <button class="audio-btn" id="audio-play-btn" aria-label="Play audio" style="background:none;border:none;cursor:pointer;font-size:1.2em;padding:4px;" type="button">\ud83d\udd0a</button>\
                         </div>\
-                        <div class="flashcard-pinyin pinyin-element">' + safePy + '</div>\
+                        ' + frontPinyinHtml + '\
                         <div class="flashcard-hint">Click to reveal answer</div>';
             backContent = '\
+                        ' + (this.hidePinyin ? backPinyinHtml : '') + '\
                         <div class="flashcard-meaning">' + safeMeaning + '</div>\
                         ' + (card.back.examples && card.back.examples[0] ? '\
                             <div class="flashcard-example">\
@@ -417,14 +443,14 @@ const VocabularyLearner = {
         } else if (mode === 'typing') {
             frontContent = '\
                         <div class="flashcard-meaning" style="font-size:1.2em;">' + safeMeaning + '</div>\
-                        <div class="flashcard-pinyin pinyin-element">' + safePy + '</div>\
+                        ' + frontPinyinHtml + '\
                         <div class="flashcard-hint">Type the character</div>\
                         <div style="margin-top:16px;">\
                             <input type="text" id="typing-input" style="font-size:1.5em;text-align:center;width:150px;padding:8px;border:2px solid var(--color-primary);border-radius:8px;" placeholder="Type here..." autofocus lang="zh">\
                         </div>';
             backContent = '\
                         <div class="flashcard-character" lang="zh" style="font-size:2.5em;">' + safeChar + '</div>\
-                        <div class="flashcard-pinyin pinyin-element">' + safePy + '</div>\
+                        ' + backPinyinHtml + '\
                         <div class="flashcard-meaning">' + safeMeaning + '</div>';
         }
         
