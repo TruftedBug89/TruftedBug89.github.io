@@ -697,8 +697,8 @@
 .streak-calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-lg);
+    gap: 4px;
+    margin-top: var(--spacing-sm);
 }
 
 .streak-day {
@@ -804,7 +804,7 @@
     }
 
     .streak-calendar {
-        gap: 4px;
+        gap: 2px;
     }
 
     .streak-day {
