@@ -255,6 +255,24 @@
                             <div id="weekly-chart" class="weekly-chart"></div>
                             <div id="weekly-summary" class="weekly-summary"></div>
                         </div>
+
+                        <!-- Heatmap Section -->
+                        <div class="dashboard-section-header" style="margin-top: 24px;">
+                            <div><span class="section-kicker">ACTIVITY GRAPH</span><h2>30-Day Heatmap</h2></div>
+                            <span class="section-index">DAYS</span>
+                        </div>
+                        <div class="heatmap-wrap" style="padding-top: 12px; overflow-x: auto;">
+                            <div id="activity-heatmap" class="activity-heatmap" style="display: flex; gap: 4px;"></div>
+                            <div class="heatmap-legend" style="display: flex; gap: 4px; align-items: center; justify-content: flex-end; margin-top: 8px; font-size: 11px; color: var(--text-muted);">
+                                <span>Less</span>
+                                <div style="width: 12px; height: 12px; border-radius: 2px; background: rgba(255,255,255,0.05);"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 2px; background: var(--color-success); opacity: 0.3;"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 2px; background: var(--color-success); opacity: 0.6;"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 2px; background: var(--color-success); opacity: 0.8;"></div>
+                                <div style="width: 12px; height: 12px; border-radius: 2px; background: var(--color-success);"></div>
+                                <span>More</span>
+                            </div>
+                        </div>
                     </section>
                 </div>
 
@@ -325,6 +343,7 @@
                         <button class="exercise-type-card" data-type="context-clues" type="button"><span>语境</span><strong>Context clues</strong><small>Infer unfamiliar words</small></button>
                         <button class="exercise-type-card" data-type="cultural-notes" type="button"><span>文化</span><strong>Culture notes</strong><small>Language beyond the page</small></button>
                         <button class="exercise-type-card" data-type="hsk-reading" type="button"><span>HSK</span><strong>HSK reading</strong><small>Choose your level</small></button>
+                        <button class="exercise-type-card" data-type="reading-mode" type="button"><span>阅读</span><strong>Reading mode</strong><small>Paste and translate text</small></button>
                     </div>
                 </div>
                 <div id="reading-exercise" class="exercise-shell hidden">
@@ -459,6 +478,7 @@
     <script src="js/ai-tutor.js"></script>
     <script src="js/progress.js"></script>
     <script src="js/load-progress.js"></script>
+    <script src="components/focus-timer.js"></script>
 
     <script src="data/vocabulary.js"></script>
     <script src="data/vocabulary-extended.js"></script>
