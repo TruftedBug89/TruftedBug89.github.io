@@ -60,6 +60,7 @@ const CharacterTooltip = {
                 </div>
                 <div class="cn-tooltip__pinyin"></div>
                 <div class="cn-tooltip__meaning"></div>
+                <div class="cn-tooltip__segments"></div>
             `;
             document.body.appendChild(el);
         }
@@ -132,7 +133,7 @@ const CharacterTooltip = {
                 if (n.nodeType === 3) own += n.nodeValue;
             }
             var cjkRun = own.replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+/g, ' ').trim();
-            if (cjkRun && cjkRun.replace(/\s/g, '').length <= 12) return el;
+            if (cjkRun && cjkRun.replace(/\s/g, '').length <= 40) return el;
         }
         return null;
     },
@@ -175,29 +176,51 @@ const CharacterTooltip = {
     _entryFor(text) {
         if (!text) return null;
         var entry = this._dict[text];
-        if (entry) return { pinyin: entry.pinyin, meaning: entry.meaning, chars: text };
+        if (entry) return { isFullMatch: true, pinyin: entry.pinyin, meaning: entry.meaning, chars: text };
 
-        // Multi-character: join per-character pinyin/meaning.
+        // Multi-character: Forward Maximum Matching
         if (text.length > 1) {
-            var pinyins = [];
-            var meanings = [];
-            var any = false;
-            for (var i = 0; i < text.length; i++) {
-                var c = text[i];
-                if (!this._cjkRe.test(c)) continue;
-                var sub = this._dict[c];
-                if (sub) {
-                    any = true;
-                    pinyins.push(sub.pinyin || '');
-                    if (sub.meaning) meanings.push(sub.meaning);
-                } else {
-                    pinyins.push('?');
+            let segments = [];
+            let i = 0;
+            let any = false;
+
+            while (i < text.length) {
+                if (!this._cjkRe.test(text[i])) {
+                    i++;
+                    continue;
+                }
+
+                let matchFound = false;
+                for (let len = text.length - i; len > 0; len--) {
+                    let candidate = text.substring(i, i + len);
+                    let sub = this._dict[candidate];
+                    if (sub) {
+                        segments.push({
+                            chars: candidate,
+                            pinyin: sub.pinyin || '',
+                            meaning: sub.meaning || ''
+                        });
+                        any = true;
+                        i += len;
+                        matchFound = true;
+                        break;
+                    }
+                }
+
+                if (!matchFound) {
+                    segments.push({
+                        chars: text[i],
+                        pinyin: '?',
+                        meaning: ''
+                    });
+                    i++;
                 }
             }
+
             if (any) {
                 return {
-                    pinyin: pinyins.filter(Boolean).join(' '),
-                    meaning: meanings.join('; '),
+                    isFullMatch: false,
+                    segments: segments,
                     chars: text
                 };
             }
@@ -211,7 +234,7 @@ const CharacterTooltip = {
 
         // Strip non-CJK surrounding text (e.g. "你 → nǐ" wrappers).
         var cjkOnly = raw.replace(/[^\u4e00-\u9fff\u3400-\u4dbf\uf900-\ufaff]+/g, ' ').trim();
-        if (!cjkOnly || cjkOnly.replace(/\s/g, '').length > 24) return;
+        if (!cjkOnly || cjkOnly.replace(/\s/g, '').length > 40) return;
 
         var entry = this._entryFor(cjkOnly);
         if (!entry) return;
@@ -225,14 +248,57 @@ const CharacterTooltip = {
         var charsEl = tooltip.querySelector('.cn-tooltip__chars');
         var pinyinEl = tooltip.querySelector('.cn-tooltip__pinyin');
         var meaningEl = tooltip.querySelector('.cn-tooltip__meaning');
+        var segmentsEl = tooltip.querySelector('.cn-tooltip__segments');
         
         if (charsEl) charsEl.textContent = entry.chars;
-        if (pinyinEl) this._colorizePinyin(entry.pinyin, pinyinEl);
-        if (meaningEl) meaningEl.textContent = entry.meaning || '';
+
+        if (entry.isFullMatch) {
+            if (pinyinEl) { this._colorizePinyin(entry.pinyin, pinyinEl); pinyinEl.style.display = ''; }
+            if (meaningEl) { meaningEl.textContent = entry.meaning || ''; meaningEl.style.display = ''; }
+            if (segmentsEl) segmentsEl.style.display = 'none';
+        } else {
+            if (pinyinEl) pinyinEl.style.display = 'none';
+            if (meaningEl) meaningEl.style.display = 'none';
+            if (segmentsEl) {
+                this._renderSegments(entry.segments, segmentsEl);
+                segmentsEl.style.display = '';
+            }
+        }
 
         tooltip.classList.remove('cn-tooltip--hidden');
         tooltip.setAttribute('aria-hidden', 'false');
         this._positionFor(target);
+    },
+
+    _renderSegments(segments, container) {
+        container.innerHTML = '';
+        segments.forEach(seg => {
+            const row = document.createElement('div');
+            row.className = 'cn-tooltip__segment';
+
+            const charsDiv = document.createElement('div');
+            charsDiv.className = 'cn-tooltip__segment-chars';
+            charsDiv.textContent = seg.chars;
+
+            row.appendChild(charsDiv);
+
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'cn-tooltip__segment-details';
+
+            const pyDiv = document.createElement('div');
+            pyDiv.className = 'cn-tooltip__segment-pinyin';
+            this._colorizePinyin(seg.pinyin, pyDiv);
+
+            const mnDiv = document.createElement('div');
+            mnDiv.className = 'cn-tooltip__segment-meaning';
+            mnDiv.textContent = seg.meaning;
+
+            detailsDiv.appendChild(pyDiv);
+            detailsDiv.appendChild(mnDiv);
+            row.appendChild(detailsDiv);
+
+            container.appendChild(row);
+        });
     },
 
     _positionFor(target) {
