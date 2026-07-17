@@ -47,14 +47,64 @@ const CharacterTooltip = {
             el.className = 'cn-tooltip cn-tooltip--hidden';
             el.setAttribute('role', 'tooltip');
             el.setAttribute('aria-hidden', 'true');
-            el.innerHTML = '<div class="cn-tooltip__pinyin"></div><div class="cn-tooltip__meaning"></div>';
+            el.innerHTML = `
+                <div class="cn-tooltip__header">
+                    <div class="cn-tooltip__chars"></div>
+                    <button class="cn-tooltip__audio" aria-label="Play pronunciation">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="cn-tooltip__pinyin"></div>
+                <div class="cn-tooltip__meaning"></div>
+            `;
             document.body.appendChild(el);
         }
         this._tooltip = el;
 
+        // Bind audio button
+        var audioBtn = el.querySelector('.cn-tooltip__audio');
+        if (audioBtn) {
+            audioBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.AudioManager && typeof window.AudioManager.speak === 'function') {
+                    const chars = el.querySelector('.cn-tooltip__chars').textContent;
+                    if (chars) {
+                        window.AudioManager.speak(chars);
+                    }
+                }
+            });
+        }
+
         if (getComputedStyle(el).position === 'static') {
             el.style.position = 'absolute';
         }
+    },
+
+    _colorizePinyin(pinyinString, containerEl) {
+        if (!pinyinString || !containerEl) return;
+        containerEl.innerHTML = '';
+
+        const syllables = pinyinString.split(' ');
+        syllables.forEach((syl, index) => {
+            let tone = 5;
+            if (/[āēīōūǖ]/.test(syl)) tone = 1;
+            else if (/[áéíóúǘ]/.test(syl)) tone = 2;
+            else if (/[ǎěǐǒǔǚ]/.test(syl)) tone = 3;
+            else if (/[àèìòùǜ]/.test(syl)) tone = 4;
+
+            const span = document.createElement('span');
+            span.className = `cn-tooltip__tone-${tone}`;
+            span.textContent = syl;
+
+            containerEl.appendChild(span);
+            if (index < syllables.length - 1) {
+                containerEl.appendChild(document.createTextNode(' '));
+            }
+        });
     },
 
     _hasOwnCJK(node) {
@@ -172,9 +222,12 @@ const CharacterTooltip = {
         var tooltip = this._tooltip;
         if (!tooltip) return;
 
+        var charsEl = tooltip.querySelector('.cn-tooltip__chars');
         var pinyinEl = tooltip.querySelector('.cn-tooltip__pinyin');
         var meaningEl = tooltip.querySelector('.cn-tooltip__meaning');
-        if (pinyinEl) pinyinEl.textContent = entry.pinyin;
+
+        if (charsEl) charsEl.textContent = entry.chars;
+        if (pinyinEl) this._colorizePinyin(entry.pinyin, pinyinEl);
         if (meaningEl) meaningEl.textContent = entry.meaning || '';
 
         tooltip.classList.remove('cn-tooltip--hidden');
