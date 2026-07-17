@@ -399,6 +399,7 @@ commitTransaction() {
     // Check if exercise is completed
     isExerciseCompleted(module, exerciseId) {
         const data = this.getUserData();
+        if (!data || !data.progress || !data.progress[module]) return false;
         return data.progress[module].completed.includes(exerciseId);
     },
 
@@ -536,6 +537,7 @@ commitTransaction() {
     // Get progress percentage for a module
     getModuleProgress(module, totalItems) {
         const data = this.getUserData();
+        if (!data || !data.progress || !data.progress[module]) return 0;
         const completed = data.progress[module].completed.length;
         return Utils.percentage(completed, totalItems);
     },

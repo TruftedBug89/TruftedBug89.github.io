@@ -13,7 +13,7 @@ const Utils = {
             window.crypto.getRandomValues(bytes);
             return Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
         }
-        return Date.now().toString(36) + Math.random().toString(36).substr(2);
+        return Date.now().toString(36) + Math.random().toString(36).slice(2);
     },
 
     // Escape HTML special characters (prevents XSS when interpolating into innerHTML)
@@ -138,6 +138,7 @@ const Utils = {
 
     // Compare two strings ignoring whitespace
     compareStrings(str1, str2) {
+        str1 = String(str1 || ''); str2 = String(str2 || '');
         return str1.replace(/\s/g, '') === str2.replace(/\s/g, '');
     },
 

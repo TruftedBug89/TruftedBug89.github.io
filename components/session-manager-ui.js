@@ -113,6 +113,7 @@ const SessionManagerUI = {
         const exportBtn = modal.querySelector('[data-cm-action="export"]');
         if (exportBtn) exportBtn.addEventListener('click', () => {
             const blob = SessionManager.exportActiveSession();
+            if (!blob || !blob.session) { if (typeof Utils !== 'undefined') Utils.showToast('Export failed', 'error'); return; }
             const jsonStr = JSON.stringify(blob, null, 2);
             const url = URL.createObjectURL(new Blob([jsonStr], { type: 'application/json' }));
             const a = document.createElement('a');

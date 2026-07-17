@@ -871,7 +871,7 @@ const ProgressTracker = {
             hasPerfectScore: Object.values(listeningScores).some(s => s === 100) ||
                            Object.values(readingScores).some(s => s === 100),
             dailyGoalComplete,
-            reviewingWords: data.progress.vocabulary.reviewing.length,
+            reviewingWords: (data.progress?.vocabulary?.reviewing || []).length,
             longestStreak: data.longestStreak || data.streak,
             dailyGoalsMet: data.dailyGoalsMet || 0,
             comboMax: data.comboMax || 0

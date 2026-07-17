@@ -335,7 +335,9 @@ const SM2 = {
         const a = document.createElement('a');
         a.href = url;
         a.download = `${deckName}_deck.json`;
+        document.body.appendChild(a);
         a.click();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
     },
 
