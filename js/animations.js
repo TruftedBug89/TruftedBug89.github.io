@@ -270,20 +270,74 @@ var InkAnimations = (function() {
     /* === LOADING SCREEN === */
     function initLoadingAnimation() {
         window.InkAnimations = window.InkAnimations || {};
+
+        var loader = document.getElementById('loading-screen');
+        if (loader && window.gsap && !prefersReducedMotion) {
+            var seal = loader.querySelector('.loader-seal');
+            var chars = loader.querySelectorAll('.loading-logo .chinese-char');
+            var track = loader.querySelector('.loading-bar-track');
+            var sub = loader.querySelector('.loading-subtitle');
+
+            // Setup intro state
+            gsap.set(seal, { scale: 0.5, opacity: 0, rotation: -90 });
+            gsap.set(chars, { y: 30, opacity: 0 });
+            gsap.set([sub, track], { opacity: 0, y: 15 });
+            gsap.set(loader, { clipPath: 'circle(150% at 50% 50%)' }); // ensure visible
+
+            // Intro animation sequence
+            var introTl = gsap.timeline();
+            introTl.to(seal, { scale: 1, opacity: 1, rotation: 0, duration: 1.2, ease: 'elastic.out(1, 0.4)' })
+                   .to(chars, { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: 'back.out(1.5)' }, "-=0.8")
+                   .to([sub, track], { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }, "-=0.5");
+        }
+
         window.InkAnimations.hideLoader = function(callback) {
             var loader = document.getElementById('loading-screen');
             if (!loader) { if (callback) callback(); return; }
-            // Fill-bar width is owned by load-progress.js (app-ready → 100%). Don't tween it here.
-            if (gsap && !prefersReducedMotion) {
-                gsap.killTweensOf(loader);
-                gsap.to(loader, { opacity: 0, duration: 0.55, ease: 'power3.inOut', delay: 0.15, onComplete: function() {
+
+            if (window.gsap && !prefersReducedMotion) {
+                var seal = loader.querySelector('.loader-seal');
+                var chars = loader.querySelectorAll('.loading-logo .chinese-char');
+                var track = loader.querySelector('.loading-bar-track');
+                var sub = loader.querySelector('.loading-subtitle');
+
+                // Kill ongoing tweens
+                gsap.killTweensOf([loader, seal, chars, track, sub]);
+
+                var tl = gsap.timeline({ onComplete: function() {
                     loader.classList.add('fade-out');
+                    loader.style.display = 'none';
                     initNavEntrance();
+
+                    // Reveal dashboard gracefully
+                    var dashContent = document.querySelectorAll('.dashboard-hero > *, .stats-card, .action-card, .neo-panel');
+                    if (dashContent.length) {
+                        gsap.fromTo(dashContent,
+                            { y: 30, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.6, stagger: 0.04, ease: 'power3.out', clearProps: 'all' }
+                        );
+                    }
+
                     if (callback) callback();
                 }});
+
+                // Outro animation sequence
+                tl.to([track, sub], { opacity: 0, y: 10, duration: 0.3, ease: 'power2.in' })
+                  .to(chars, { y: -30, opacity: 0, duration: 0.4, stagger: 0.05, ease: 'back.in(1.5)' }, "-=0.1")
+                  .to(seal, { scale: 0, rotation: 180, opacity: 0, duration: 0.5, ease: 'back.in(1.5)' }, "-=0.2")
+                  .to(loader, {
+                      clipPath: 'circle(0% at 50% 50%)',
+                      scale: 1.1,
+                      duration: 0.8,
+                      ease: 'power3.inOut'
+                  }, "-=0.1");
             } else {
                 loader.classList.add('fade-out');
-                setTimeout(function() { initNavEntrance(); if (callback) callback(); }, 600);
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                    initNavEntrance();
+                    if (callback) callback();
+                }, 600);
             }
         };
     }

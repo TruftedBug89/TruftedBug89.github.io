@@ -86,7 +86,7 @@ button { -webkit-tap-highlight-color: transparent; }
 .future-sigil--one { top: 7%; right: -4%; transform: rotate(12deg); }
 .future-sigil--two { bottom: -13%; left: -4%; transform: rotate(-10deg); }
 
-.loading-screen, #loading-screen { z-index: 99999; background: #060812; overflow: hidden; }
+.loading-screen, #loading-screen { z-index: 99999; background: #060812; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; transform-origin: center center; }
 .loading-screen::before { content: ""; position: absolute; inset: 0; opacity: .4; background: linear-gradient(rgba(226, 237, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(226, 237, 255, .035) 1px, transparent 1px); background-size: 32px 32px; }
 .loader-seal { position: relative; z-index: 1; width: 62px; height: 62px; display: grid; place-items: center; margin-bottom: 18px; border: 1px solid rgba(250,74,67,.55); box-shadow: 0 0 32px rgba(250,74,67,.2), inset 0 0 20px rgba(250,74,67,.08); transform: rotate(45deg); }
 .loader-seal span { color: var(--zhi-red); font: 700 27px var(--font-cn); transform: rotate(-45deg); }
