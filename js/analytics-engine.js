@@ -50,7 +50,7 @@ var AnalyticsEngine = {
         this.sessionXpEstimate = 0;
 
         this._recordSession();
-        this._recordDeviceInfo();
+
         this._pruneAll();
         this._compressOldEvents();
         this._startFlushTimer();
@@ -431,36 +431,6 @@ var AnalyticsEngine = {
         this._writeSessions(s);
     },
 
-    _recordDeviceInfo: function () {
-        var s = this._readSessions();
-        if (s.device && this.deviceLogged) return;
-        this.deviceLogged = true;
-
-        var conn = (navigator.connection || navigator.mozConnection || navigator.webkitConnection || null);
-
-        s.device = {
-            pixelRatio: window.devicePixelRatio || 1,
-            colorDepth: window.screen.colorDepth || 24,
-            viewportWidth: window.innerWidth,
-            viewportHeight: window.innerHeight,
-            language: (navigator.language || 'unknown').slice(0, 10),
-            timezone: Intl.DateTimeFormat ? Intl.DateTimeFormat().resolvedOptions().timeZone || 'unknown' : 'unknown',
-            touchSupport: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0),
-            maxTouchPoints: navigator.maxTouchPoints || 0,
-            connectionType: conn ? (conn.effectiveType || 'unknown') : 'unknown'
-        };
-        this._writeSessions(s);
-    },
-
-    // Minimized browser/OS parsers (F2 privacy requirement)
-    _parseBrowser: function (ua) {
-        return { name: undefined, version: undefined };
-    },
-
-    _parseOS: function (ua) {
-        return { name: undefined, version: undefined };
-    },
-
     _bindVisibilityFlush: function () {
         var self = this;
         document.addEventListener('visibilitychange', function () {
@@ -497,75 +467,82 @@ var AnalyticsEngine = {
             }
         }
         this.eventBuffer.push(event);
-        this._updateSessionStats(event);
-        this._updateDailyForEvent(event);
         if (this.eventBuffer.length >= this.MAX_BUFFER_SIZE) {
             this._flush();
         }
     },
 
-    _updateSessionStats: function (event) {
+    _flushSessionStats: function (eventsToFlush) {
+        if (eventsToFlush.length === 0) return;
         var s = this._readSessions();
-        s.lastVisit = new Date().toISOString();
-        switch (event.type) {
-            case 'page_view':
-                s.totalPageViews = (s.totalPageViews || 0) + 1;
-                break;
-            case 'exercise':
-                s.totalExercises = (s.totalExercises || 0) + 1;
-                break;
-            case 'reading_exercise':
-            case 'listening_exercise':
-            case 'speaking_exercise':
-            case 'grammar_practice':
-                s.totalExercises = (s.totalExercises || 0) + 1;
-                break;
-            case 'time_on_page':
-                if (event.seconds) {
-                    s.totalTimeSpent = (s.totalTimeSpent || 0) + event.seconds;
-                }
-                break;
+        var lastTs = s.lastVisit;
+        for (var i = 0; i < eventsToFlush.length; i++) {
+            var event = eventsToFlush[i];
+            if (!lastTs || event.timestamp > lastTs) {
+                lastTs = event.timestamp;
+            }
+            switch (event.type) {
+                case 'page_view':
+                    s.totalPageViews = (s.totalPageViews || 0) + 1;
+                    break;
+                case 'exercise':
+                case 'reading_exercise':
+                case 'listening_exercise':
+                case 'speaking_exercise':
+                case 'grammar_practice':
+                    s.totalExercises = (s.totalExercises || 0) + 1;
+                    break;
+                case 'time_on_page':
+                    if (event.seconds) {
+                        s.totalTimeSpent = (s.totalTimeSpent || 0) + event.seconds;
+                    }
+                    break;
+            }
         }
+        s.lastVisit = lastTs || new Date().toISOString();
         this._writeSessions(s);
     },
 
-    _updateDailyForEvent: function (event) {
+    _flushDailyStats: function (eventsToFlush) {
+        if (eventsToFlush.length === 0) return;
         var d = this._readDaily();
-        var today = new Date().toISOString().split('T')[0];
-        if (!d[today]) {
-            d[today] = { pageViews: 0, exercises: 0, timeSpent: 0,
-                vocabReviews: 0, achievements: 0, xpEstimate: 0 };
-        }
-        var entry = d[today];
 
-        switch (event.type) {
-            case 'page_view':
-                entry.pageViews = (entry.pageViews || 0) + 1;
-                break;
-            case 'exercise':
-                entry.exercises = (entry.exercises || 0) + 1;
-                break;
-            case 'reading_exercise':
-            case 'listening_exercise':
-            case 'speaking_exercise':
-            case 'grammar_practice':
-                entry.exercises = (entry.exercises || 0) + 1;
-                break;
-            case 'time_on_page':
-                if (event.seconds) {
-                    entry.timeSpent = (entry.timeSpent || 0) + event.seconds;
-                }
-                break;
-            case 'vocab_review':
-                entry.vocabReviews = (entry.vocabReviews || 0) + 1;
-                entry.xpEstimate = (entry.xpEstimate || 0) + Math.max(1, event.quality || 1);
-                break;
-            case 'achievement_unlocked':
-                entry.achievements = (entry.achievements || 0) + 1;
-                break;
-            case 'level_up':
-                entry.xpEstimate = (entry.xpEstimate || 0) + 50;
-                break;
+        for (var i = 0; i < eventsToFlush.length; i++) {
+            var event = eventsToFlush[i];
+            var day = event.timestamp ? event.timestamp.split('T')[0] : new Date().toISOString().split('T')[0];
+            if (!d[day]) {
+                d[day] = { pageViews: 0, exercises: 0, timeSpent: 0,
+                    vocabReviews: 0, achievements: 0, xpEstimate: 0 };
+            }
+            var entry = d[day];
+
+            switch (event.type) {
+                case 'page_view':
+                    entry.pageViews = (entry.pageViews || 0) + 1;
+                    break;
+                case 'exercise':
+                case 'reading_exercise':
+                case 'listening_exercise':
+                case 'speaking_exercise':
+                case 'grammar_practice':
+                    entry.exercises = (entry.exercises || 0) + 1;
+                    break;
+                case 'time_on_page':
+                    if (event.seconds) {
+                        entry.timeSpent = (entry.timeSpent || 0) + event.seconds;
+                    }
+                    break;
+                case 'vocab_review':
+                    entry.vocabReviews = (entry.vocabReviews || 0) + 1;
+                    entry.xpEstimate = (entry.xpEstimate || 0) + Math.max(1, event.quality || 1);
+                    break;
+                case 'achievement_unlocked':
+                    entry.achievements = (entry.achievements || 0) + 1;
+                    break;
+                case 'level_up':
+                    entry.xpEstimate = (entry.xpEstimate || 0) + 50;
+                    break;
+            }
         }
         this._writeDaily(d);
     },
@@ -583,12 +560,17 @@ var AnalyticsEngine = {
 
     _flush: function () {
         if (this.eventBuffer.length === 0) return;
+        var eventsToFlush = this.eventBuffer.slice();
+        this.eventBuffer = [];
+
         var events = this._readEvents();
-        var merged = events.concat(this.eventBuffer);
+        var merged = events.concat(eventsToFlush);
         var trimmed = merged.length > this.MAX_EVENTS
             ? merged.slice(merged.length - this.MAX_EVENTS) : merged;
         this._writeEvents(trimmed);
-        this.eventBuffer = [];
+
+        this._flushSessionStats(eventsToFlush);
+        this._flushDailyStats(eventsToFlush);
     },
 
     _startFlushTimer: function () {

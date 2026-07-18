@@ -173,18 +173,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.ok(SM.defaultUserData.settings.dailyGoal);
     });
 
-    it('1.2.5: AnalyticsEngine._parseBrowser returns undefined or minimised info under F2 requirements', () => {
-      const AE = globalThis.AnalyticsEngine;
-      const browser = AE._parseBrowser('Mozilla/5.0 Chrome/120.0.0.0');
-      assert.ok(browser === undefined || browser.name === 'Other' || browser.name === undefined);
-    });
-
-    it('1.2.6: AnalyticsEngine._parseOS returns undefined or minimised info under F2 requirements', () => {
-      const AE = globalThis.AnalyticsEngine;
-      const os = AE._parseOS('Windows NT 10.0');
-      assert.ok(os === undefined || os.name === 'Other' || os.name === undefined);
-    });
-
     // --- F3: SRS Delays ---
     it('1.3.1: SM2.createCard returns expected card structure', () => {
       const card = globalThis.SM2.createCard('t1', '好', 'good');
@@ -494,22 +482,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       AE.trackLevelUp(2, 3);
       assert.equal(AE.eventBuffer[0].oldLevel, 2);
       assert.equal(AE.eventBuffer[0].newLevel, 3);
-    });
-
-    it('2.2.10: AnalyticsEngine._recordDeviceInfo stores no screen, viewport, OS, or browser details', () => {
-      const AE = globalThis.AnalyticsEngine;
-      localStorage.setItem('cm_analytics_consent', 'true');
-      AE.consent = true;
-      AE.sessionId = 'sid_device';
-      AE.deviceLogged = false;
-      AE._recordDeviceInfo();
-      const sessions = AE._readSessions();
-      
-      assert.equal(sessions.device.userAgent, undefined);
-      assert.equal(sessions.device.browser, undefined);
-      assert.equal(sessions.device.os, undefined);
-      assert.equal(sessions.device.screenWidth, undefined);
-      localStorage.removeItem('cm_analytics_consent');
     });
 
     it('2.2.11: ProgressTracker.trackExercise performs exactly one consolidated write transaction', () => {

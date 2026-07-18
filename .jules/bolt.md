@@ -1,0 +1,1 @@
+## 2024-05-18 - Batch LocalStorage Writes\n**Learning:** Synchronous writes to localStorage on frequent events (like analytics tracking) can cause performance bottlenecks. \n**Action:** Batch state changes in memory and write to localStorage periodically (e.g., using a flush interval and visibility API).
