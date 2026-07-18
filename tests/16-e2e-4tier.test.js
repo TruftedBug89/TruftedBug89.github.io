@@ -531,7 +531,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
     });
 
     it('2.2.12: StorageManager.addXP updates XP state in transactional user data', () => {
-      globalThis.StorageManager._data = JSON.parse(JSON.stringify(globalThis.StorageManager.defaultUserData));
+      globalThis.StorageManager.setUserData(JSON.parse(JSON.stringify(globalThis.StorageManager.defaultUserData)));
       globalThis.StorageManager.addXP(25);
       const data = globalThis.StorageManager.getUserData();
       assert.equal(data.xp, 25);
@@ -761,6 +761,8 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
     });
 
     it('4.1.3: Scenario 3: Returning user reviews overdue vocabulary cards, triggers 1.2x delay reward, and pushes clean analytics logs', () => {
+      setStudyProfile('standard'); // Ensure standard profile for this test
+
       const card = globalThis.SM2.createCard('c500', '水', 'water');
       card.interval = 10;
       card.repetitions = 2;

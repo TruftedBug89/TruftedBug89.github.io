@@ -675,18 +675,17 @@ var AnalyticsEngine = {
             }
         }
 
+        // Optimization: Convert summaries to hash map for O(1) lookup instead of O(n) scan
+        var summariesMap = {};
+        for (var si = 0; si < summaries.length; si++) {
+            summariesMap[summaries[si].date] = summaries[si];
+        }
+
         for (var dayKey in dayBuckets) {
             if (Object.prototype.hasOwnProperty.call(dayBuckets, dayKey)) {
-                var existingIdx = -1;
-                for (var si = 0; si < summaries.length; si++) {
-                    if (summaries[si].date === dayKey) {
-                        existingIdx = si;
-                        break;
-                    }
-                }
-                if (existingIdx >= 0) {
-                    var oldS = summaries[existingIdx];
-                    var newB = dayBuckets[dayKey];
+                var newB = dayBuckets[dayKey];
+                if (summariesMap[dayKey]) {
+                    var oldS = summariesMap[dayKey];
                     oldS.totalEvents += newB.totalEvents;
                     oldS.pageViews += newB.pageViews;
                     oldS.exercises += newB.exercises;
@@ -696,7 +695,8 @@ var AnalyticsEngine = {
                     oldS.timeSpent += newB.timeSpent;
                     oldS.xpEstimate += newB.xpEstimate;
                 } else {
-                    summaries.push(dayBuckets[dayKey]);
+                    summaries.push(newB);
+                    summariesMap[dayKey] = newB;
                 }
             }
         }
