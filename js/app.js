@@ -34,10 +34,10 @@ const App = {
         } catch (e) { console.warn('AnalyticsEngine init failed:', e); }
 
         try {
-            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
-                OfflineBanner.init();
+            if (typeof NetworkStatus !== 'undefined' && typeof NetworkStatus.init === 'function') {
+                NetworkStatus.init();
             }
-        } catch (e) { console.warn('OfflineBanner init failed:', e); }
+        } catch (e) { console.warn('NetworkStatus init failed:', e); }
 
         // Modal chrome close handlers — attach once, not per-open
         try { this._setupModalChrome(); } catch (e) { console.warn('_setupModalChrome failed:', e); }
@@ -677,8 +677,8 @@ const App = {
             if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
                 try { AnalyticsEngine.init(); } catch (e) {}
             }
-            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
-                try { OfflineBanner.init(); } catch (e) {}
+            if (typeof NetworkStatus !== 'undefined' && typeof NetworkStatus.init === 'function') {
+                try { NetworkStatus.init(); } catch (e) {}
             }
             if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
                 try { DataLoader.populateGlobals(); } catch (e) {}
