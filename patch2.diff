@@ -1,0 +1,13 @@
+--- index.html
++++ index.html
+@@ -355,8 +355,8 @@
+                     <div id="grammar-lessons-list" class="grammar-lessons-list"></div>
+                     <p id="grammar-no-results" class="hidden">No grammar patterns match that search yet.</p>
+                 </div>
+-                <div id="grammar-lesson" class="hidden">
++                <div id="grammar-lesson" class="exercise-shell hidden">
+                     <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu">← Pattern lab</button><div><span class="section-kicker">PATTERN LAB</span><h2 id="grammar-lesson-title">Pattern</h2></div></div>
+-                    <div id="grammar-content" style="padding: 20px;"></div>
++                    <div id="grammar-content" style="padding:20px;"></div>
+                 </div>
+                 <div id="grammar-practice" class="hidden">
