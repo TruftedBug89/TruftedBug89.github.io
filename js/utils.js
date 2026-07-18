@@ -55,7 +55,28 @@ const Utils = {
 
     // Pick random items from array
     randomItems(array, count) {
-        return this.shuffle(array).slice(0, count);
+        if (!array || !array.length) return [];
+        // Default to array.length if count is undefined
+        const requestedCount = count === undefined ? array.length : count;
+        const n = Math.min(requestedCount, array.length);
+
+        if (requestedCount === 1) return [this.randomItem(array)];
+
+        // ⚡ Bolt optimization: Avoid O(N) array copy/shuffle when picking a small subset
+        // Fallback to full shuffle only if we need > 50% of the items.
+        if (n > array.length / 2) return this.shuffle(array).slice(0, n);
+
+        // Fast O(K) selection using Set to track seen indices
+        const result = [];
+        const seen = new Set();
+        while (result.length < n) {
+            const idx = Math.floor(Math.random() * array.length);
+            if (!seen.has(idx)) {
+                seen.add(idx);
+                result.push(array[idx]);
+            }
+        }
+        return result;
     },
 
     // Pick one random item from array

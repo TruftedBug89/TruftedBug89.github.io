@@ -42,12 +42,31 @@ var DataLoader = (function () {
         };
         data.getRandom = function (n) {
             if (!n) n = 1;
-            var copy = words.slice();
-            for (var i = copy.length - 1; i > 0; i--) {
-                var j = Math.floor(Math.random() * (i + 1));
-                var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+            var count = Math.min(n, words.length);
+            if (n === 1) return words[Math.floor(Math.random() * words.length)];
+
+            // ⚡ Bolt optimization: Avoid O(N) array copy/shuffle when picking a small subset
+            // of a large dataset. Fallback to full shuffle only if we need > 50% of the items.
+            if (count > words.length / 2) {
+                var copy = words.slice();
+                for (var i = copy.length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+                }
+                return copy.slice(0, count);
             }
-            return n === 1 ? copy[0] : copy.slice(0, n);
+
+            // Fast O(K) selection using Set to track seen indices
+            var result = [];
+            var seen = new Set();
+            while (result.length < count) {
+                var idx = Math.floor(Math.random() * words.length);
+                if (!seen.has(idx)) {
+                    seen.add(idx);
+                    result.push(words[idx]);
+                }
+            }
+            return result;
         };
         data.getById = function (id) {
             for (var i = 0; i < words.length; i++) {
