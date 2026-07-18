@@ -33,13 +33,13 @@ var MobileShell = (function () {
             BottomSheet.open({
                 title: 'Menu',
                 rows: [
-                    { label: 'Achievements', icon: '🏆', action: 'achievements' },
-                    { label: 'Speaking', icon: '🎤', action: 'speaking' },
-                    { label: 'Grammar', icon: '🔤', action: 'grammar' },
+                    { label: i18n.t('settings.achievements'), icon: '🏆', action: 'achievements' },
+                    { label: i18n.t('settings.speaking'), icon: '🎤', action: 'speaking' },
+                    { label: i18n.t('settings.grammar'), icon: '🔤', action: 'grammar' },
                     { type: 'divider' },
-                    { label: 'Profile & Sessions', icon: '👤', action: 'profile' },
-                    { label: 'Keyboard Shortcuts', icon: '⌨️', action: 'shortcuts' },
-                    { label: 'Settings', icon: '⚙️', action: 'settings' }
+                    { label: i18n.t('settings.profile_and_sessions'), icon: '👤', action: 'profile' },
+                    { label: i18n.t('settings.keyboard_shortcuts'), icon: '⌨️', action: 'shortcuts' },
+                    { label: i18n.t('settings.settings'), icon: '⚙️', action: 'settings' }
                 ],
                 onAction: function (action) {
                     if (action === 'profile') {
