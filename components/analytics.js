@@ -156,7 +156,11 @@ const AnalyticsDashboard = {
             var bars = chartContainer.querySelectorAll('.chart-bar');
             bars.forEach(function(bar) {
                 var targetH = parseFloat(bar.getAttribute('data-target-height')) || 0;
-                window.gsap.to(bar, { height: targetH + '%', duration: 0.7, ease: 'power3.out', delay: 0.1 });
+                if (typeof Utils !== 'undefined' && Utils.isReducedMotion && Utils.isReducedMotion()) {
+                    window.gsap.set(bar, { height: targetH + '%' });
+                } else {
+                    window.gsap.to(bar, { height: targetH + '%', duration: 0.7, ease: 'power3.out', delay: 0.1 });
+                }
             });
         }
     },
