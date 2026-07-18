@@ -1,4 +1,5 @@
-const CACHE_NAME = 'chinese-master-v6';
+const VERSION = '7';
+const CACHE_NAME = 'chinese-master-v7';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -63,7 +64,7 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return Promise.allSettled(
-        PRECACHE_URLS.map(function(url) {
+        Array.from(new Set(PRECACHE_URLS)).map(function(url) {
           return cache.add(url).catch(function(err) {
             console.warn('SW: failed to precache ' + url, err);
           });
@@ -78,10 +79,19 @@ self.addEventListener('install', function(event) {
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
+      var oldCaches = keys.filter(function(key) { return key !== CACHE_NAME; });
+      var deleted = oldCaches.length > 0;
       return Promise.all(
-        keys.filter(function(key) { return key !== CACHE_NAME; })
-          .map(function(key) { return caches.delete(key); })
-      );
+        oldCaches.map(function(key) { return caches.delete(key); })
+      ).then(function() {
+        if (deleted) {
+          self.clients.matchAll({ includeUncontrolled: true }).then(function(clients) {
+            clients.forEach(function(client) {
+              client.postMessage({ type: 'NEW_VERSION' });
+            });
+          });
+        }
+      });
     }).then(function() {
       return self.clients.claim();
     })
@@ -103,10 +113,13 @@ self.addEventListener('fetch', function(event) {
       caches.match(event.request).then(function(cached) {
         var fetched = fetch(event.request).then(function(response) {
           if (response && response.status === 200 && !isLargeData(url.pathname)) {
-            var clone = response.clone();
-            caches.open(CACHE_NAME).then(function(cache) {
-              cache.put(event.request, clone);
-            });
+            // Ensure lazy caching only happens for vocabulary-hsk*.jsonl
+            if (url.pathname.indexOf('vocabulary-hsk') !== -1 && url.pathname.endsWith('.jsonl')) {
+              var clone = response.clone();
+              caches.open(CACHE_NAME).then(function(cache) {
+                cache.put(event.request, clone);
+              });
+            }
           }
           return response;
         });
