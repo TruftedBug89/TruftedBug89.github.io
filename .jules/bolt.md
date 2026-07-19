@@ -5,3 +5,7 @@
 ## 2024-05-18 - Batch LocalStorage Writes
 **Learning:** Synchronous writes to localStorage on frequent events (like analytics tracking) can cause performance bottlenecks.
 **Action:** Batch state changes in memory and write to localStorage periodically (e.g., using a flush interval and visibility API).
+
+## 2024-05-14 - Redundant localStorage Reads & parseJSONL Blocking
+**Learning:** `StorageManager.getUserData()` is called dozens of times per interaction. Since it was reading from `localStorage` synchronously parsing the JSON payload every time, this introduced a significant performance bottleneck. In addition, the `analytics-engine.js` summary processing has an O(n^2) nested loop when processing summaries which slows down over time as the user uses the application.
+**Action:** Introduce `_cachedUserData` and `_cachedSessionId` to `StorageManager` so it caches `getUserData` in memory. If `StorageManager.setUserData` is called, update the cache. Also, update `analytics-engine.js` summary loop to use a hash map lookup (O(n)).

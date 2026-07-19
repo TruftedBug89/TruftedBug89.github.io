@@ -7,6 +7,10 @@ const StorageManager = {
     _saveTimer: null,
     _QUEUE_MS: 400,
 
+    // Performance optimization: Cache user data to prevent synchronous disk IO
+    _cachedUserData: null,
+    _cachedSessionId: null,
+
     LEVEL_THRESHOLDS: [
         0, 100, 250, 500, 1000, 1750, 2750, 4000, 5500, 7500,
         10000, 13000, 16500, 20500, 25000, 30000, 35500, 41500, 48000, 55000,
@@ -113,6 +117,13 @@ const StorageManager = {
     // Get user data
     getUserData() {
         if (this._pendingData) return this._pendingData;
+
+        // Performance optimization: use in-memory cache if session hasn't changed
+        const sid = (typeof SessionManager !== 'undefined') ? SessionManager.getActiveSessionId() : null;
+        if (this._cachedUserData && this._cachedSessionId === sid) {
+            return this._cachedUserData;
+        }
+
         const data = Utils.storage.get(this._userDataKey());
         if (!data) return null;
         // Backfill any missing top-level fields (resilience against partial imports)
@@ -127,6 +138,11 @@ const StorageManager = {
             else for (const f of Object.keys(dp[m])) if (data.progress[m][f] === undefined) data.progress[m][f] = dp[m][f];
         }
         if (!data.settings || typeof data.settings !== 'object') data.settings = this._deepClone(this.defaultUserData.settings);
+
+        // Update cache
+        this._cachedSessionId = sid;
+        this._cachedUserData = data;
+
         return data;
     },
 
@@ -137,6 +153,12 @@ const StorageManager = {
             this._txDirty = true;
             return true;
         }
+
+        // Performance optimization: Update cache upon successful write
+        const sid = (typeof SessionManager !== 'undefined') ? SessionManager.getActiveSessionId() : null;
+        this._cachedSessionId = sid;
+        this._cachedUserData = data;
+
         return this._persist(data);
     },
 
@@ -464,6 +486,9 @@ commitTransaction() {
             this.setUserData(this._pendingData);
             this._pendingData = null;
         }
+
+        // Clear cache to force next read to fetch fresh state, just in case
+        this._cachedUserData = null;
     },
 
     // Get recent activities
