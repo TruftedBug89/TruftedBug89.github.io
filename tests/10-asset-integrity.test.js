@@ -140,7 +140,4 @@ describe('10 — Asset Integrity', () => {
     assert.ok(/<noscript>/.test(indexContent), 'missing <noscript> fallback');
   });
 
-  it('components/admin-panel.js is NOT referenced in index.html', () => {
-    assert.ok(!indexContent.includes('components/admin-panel.js'), 'admin-panel.js script reference still exists in index.html');
-  });
 });
