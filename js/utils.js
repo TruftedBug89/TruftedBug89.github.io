@@ -3,6 +3,12 @@
 // ============================================
 
 const Utils = {
+
+    // Check if the user prefers reduced motion
+    isReducedMotion() {
+        if (typeof window === 'undefined' || !window.matchMedia) return false;
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    },
     // Generate unique ID (cryptographically random where available)
     generateId() {
         if (window.crypto && typeof window.crypto.randomUUID === 'function') {
@@ -273,7 +279,10 @@ const Utils = {
                 var dist = 200 + Math.random() * 500;
                 var dx = Math.cos(angle * Math.PI / 180) * dist;
                 var dy = Math.sin(angle * Math.PI / 180) * dist - 100;
-                gsap.fromTo(el, { x: 0, y: 0, opacity: 1, scale: 0.3, rotation: 0 }, {
+                if (Utils.isReducedMotion()) {
+                    gsap.set(el, { x: dx, y: dy, opacity: 0, scale: 1.4, rotation: (Math.random() - 0.5) * 720 });
+                } else {
+                    gsap.fromTo(el, { x: 0, y: 0, opacity: 1, scale: 0.3, rotation: 0 }, {
                     x: dx, y: dy,
                     opacity: 0,
                     scale: 1.4,
@@ -282,6 +291,7 @@ const Utils = {
                     ease: 'power2.out',
                     delay: Math.random() * 0.4
                 });
+                }
             } else {
                 el.style.animation = 'confettiFall ' + (2.5 + Math.random() * 2) + 's ease-in forwards';
                 el.style.animationDelay = Math.random() * 0.5 + 's';
@@ -299,7 +309,10 @@ const Utils = {
             if (hasGSAP) {
                 var sa = (Math.random() - 0.5) * 360;
                 var sd = 80 + Math.random() * 250;
-                gsap.fromTo(sp, { x: 0, y: 0, opacity: 1, scale: 1 }, {
+                if (Utils.isReducedMotion()) {
+                    gsap.set(sp, { x: Math.cos(sa * Math.PI / 180) * sd, y: Math.sin(sa * Math.PI / 180) * sd - 60, opacity: 0, scale: 0 });
+                } else {
+                    gsap.fromTo(sp, { x: 0, y: 0, opacity: 1, scale: 1 }, {
                     x: Math.cos(sa * Math.PI / 180) * sd,
                     y: Math.sin(sa * Math.PI / 180) * sd - 60,
                     opacity: 0, scale: 0,
@@ -307,6 +320,7 @@ const Utils = {
                     ease: 'power3.out',
                     delay: 0.15 + Math.random() * 0.3
                 });
+                }
             }
         }
 
@@ -381,13 +395,17 @@ const Utils = {
         if (!element) return;
         if (typeof gsap !== 'undefined') {
             var gsapStart = parseInt(element.textContent) || 0;
-            gsap.fromTo(element, { textContent: gsapStart }, {
+            if (Utils.isReducedMotion()) {
+                element.textContent = target;
+            } else {
+                gsap.fromTo(element, { textContent: gsapStart }, {
                 textContent: target,
                 duration: duration / 1000,
                 ease: 'power3.out',
                 snap: { textContent: 1 },
                 onUpdate: function() { element.textContent = Math.round(element.textContent); }
             });
+            }
             return;
         }
         const start = parseInt(element.textContent) || 0;

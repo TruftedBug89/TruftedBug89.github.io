@@ -298,7 +298,11 @@ const Achievements = {
         setTimeout(() => {
             if (panel.parentNode) {
                 if (typeof gsap !== 'undefined') {
-                    gsap.to(panel, { opacity: 0, x: 60, duration: 0.4, ease: 'power2.in', onComplete: () => panel.remove() });
+                    if (typeof Utils !== 'undefined' && Utils.isReducedMotion && Utils.isReducedMotion()) {
+                        panel.remove();
+                    } else {
+                        gsap.to(panel, { opacity: 0, x: 60, duration: 0.4, ease: 'power2.in', onComplete: () => panel.remove() });
+                    }
                 } else {
                     panel.remove();
                 }
