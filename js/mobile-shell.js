@@ -51,8 +51,8 @@ var MobileShell = (function () {
                             App.showShortcutHelp();
                         }
                     } else if (action === 'settings') {
-                        if (typeof App !== 'undefined' && typeof App.showShortcutHelp === 'function') {
-                            App.showShortcutHelp();
+                        if (typeof DataManager !== 'undefined') {
+                            DataManager.openSettings();
                         }
                     } else if (typeof App !== 'undefined' && typeof App.navigateTo === 'function') {
                         App.navigateTo(action);
