@@ -73,9 +73,7 @@ const App = {
             if (typeof LevelTracker !== 'undefined') LevelTracker.init();
         } catch (e) { console.warn('LevelTracker init failed:', e); }
 
-        try {
-            if (typeof VocabularyLearner !== 'undefined') VocabularyLearner.init();
-        } catch (e) { console.warn('VocabularyLearner init failed:', e); }
+
 
         try {
             if (typeof AITutor !== 'undefined') AITutor.init();
@@ -367,8 +365,13 @@ const App = {
             }
 
             // Launch adaptive placement test
-            if (module === 'placement' && typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
-                PlacementTest.showIntro();
+            if (module === 'placement') {
+                var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
+                loadPromise.then(() => {
+                    if (typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
+                        PlacementTest.showIntro();
+                    }
+                });
             }
 
             // Trigger module enter after lazy content populated (only for different module)
@@ -421,68 +424,84 @@ const App = {
 
     // Reset sub-view containers when entering a module fresh
     resetModuleSubviews(module) {
-        try {
-            if (module === 'listening') {
-                const menu = document.getElementById('listening-menu');
-                const ex = document.getElementById('listening-exercise');
-                if (menu) menu.classList.remove('hidden');
-                if (ex) ex.classList.add('hidden');
-            } else if (module === 'reading') {
-                const menu = document.getElementById('reading-menu');
-                const ex = document.getElementById('reading-exercise');
-                if (menu) menu.classList.remove('hidden');
-                if (ex) ex.classList.add('hidden');
-            } else if (module === 'grammar') {
-                const menu = document.getElementById('grammar-menu');
-                const lesson = document.getElementById('grammar-lesson');
-                const practice = document.getElementById('grammar-practice');
-                const search = document.getElementById('grammar-search');
-                if (menu) menu.classList.remove('hidden');
-                if (lesson) lesson.classList.add('hidden');
-                if (practice) practice.classList.add('hidden');
-                if (search) search.value = '';
-                if (typeof GrammarModule !== 'undefined' && GrammarModule._renderProgress) {
-                    GrammarModule._renderProgress();
-                }
-            } else if (module === 'speaking') {
-                const menu = document.getElementById('speaking-menu');
-                const ex = document.getElementById('speaking-exercise');
-                if (menu) menu.classList.remove('hidden');
-                if (ex) ex.classList.add('hidden');
-            } else if (module === 'vocabulary') {
-                if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) {
-                    const container = document.getElementById('vocabulary-learner');
-                    if (container && !container.querySelector('.level-selector')) {
-                        VocabularyLearner.showLevelSelector();
+        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
+        loadPromise.then(() => {
+            try {
+                if (module === 'listening') {
+                    const menu = document.getElementById('listening-menu');
+                    const ex = document.getElementById('listening-exercise');
+                    if (menu) menu.classList.remove('hidden');
+                    if (ex) ex.classList.add('hidden');
+                } else if (module === 'reading') {
+                    const menu = document.getElementById('reading-menu');
+                    const ex = document.getElementById('reading-exercise');
+                    if (menu) menu.classList.remove('hidden');
+                    if (ex) ex.classList.add('hidden');
+                } else if (module === 'grammar') {
+                    const menu = document.getElementById('grammar-menu');
+                    const lesson = document.getElementById('grammar-lesson');
+                    const practice = document.getElementById('grammar-practice');
+                    const search = document.getElementById('grammar-search');
+                    if (menu) menu.classList.remove('hidden');
+                    if (lesson) lesson.classList.add('hidden');
+                    if (practice) practice.classList.add('hidden');
+                    if (search) search.value = '';
+                    if (typeof GrammarModule !== 'undefined' && GrammarModule._renderProgress) {
+                        GrammarModule._renderProgress();
+                    }
+                } else if (module === 'speaking') {
+                    const menu = document.getElementById('speaking-menu');
+                    const ex = document.getElementById('speaking-exercise');
+                    if (menu) menu.classList.remove('hidden');
+                    if (ex) ex.classList.add('hidden');
+                } else if (module === 'vocabulary') {
+                    if (typeof VocabularyLearner !== 'undefined') {
+                        // Make sure VocabularyLearner is initialized when its component loads
+                        if (typeof VocabularyLearner.init === 'function' && !VocabularyLearner._initialized) {
+                            VocabularyLearner.init();
+                            VocabularyLearner._initialized = true;
+                        }
+                        if (VocabularyLearner.showLevelSelector) {
+                            const container = document.getElementById('vocabulary-learner');
+                            if (container && !container.querySelector('.level-selector')) {
+                                VocabularyLearner.showLevelSelector();
+                            }
+                        }
+                    }
+                } else if (module === 'achievements') {
+                    if (typeof Achievements !== 'undefined' && Achievements.render) {
+                        Achievements.render();
                     }
                 }
-            } else if (module === 'achievements') {
-                if (typeof Achievements !== 'undefined' && Achievements.render) {
-                    Achievements.render();
-                }
+            } catch (e) {
+                console.warn('resetModuleSubviews error:', module, e);
             }
-        } catch (e) {
-            console.warn('resetModuleSubviews error:', module, e);
-        }
+        });
     },
 
     // Populate module content (idempotent - safe to call multiple times)
     populateModule(module) {
-        try {
-            if (module === 'grammar' && typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) {
-                GrammarModule.showMenu();
-            } else if (module === 'listening' && typeof ListeningModule !== 'undefined' && ListeningModule.setupTypeCards) {
-                ListeningModule.setupTypeCards();
-            } else if (module === 'reading' && typeof ReadingModule !== 'undefined' && ReadingModule.setupTypeCards) {
-                ReadingModule.setupTypeCards();
-            } else if (module === 'speaking' && typeof SpeakingModule !== 'undefined' && SpeakingModule.setupTypeCards) {
-                SpeakingModule.setupTypeCards();
-            } else if (module === 'achievements' && typeof Achievements !== 'undefined' && Achievements.render) {
-                Achievements.render();
+        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
+
+        loadPromise.then(() => {
+            try {
+                if (module === 'grammar' && typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) {
+                    GrammarModule.showMenu();
+                } else if (module === 'listening' && typeof ListeningModule !== 'undefined' && ListeningModule.setupTypeCards) {
+                    ListeningModule.setupTypeCards();
+                } else if (module === 'reading' && typeof ReadingModule !== 'undefined' && ReadingModule.setupTypeCards) {
+                    ReadingModule.setupTypeCards();
+                } else if (module === 'speaking' && typeof SpeakingModule !== 'undefined' && SpeakingModule.setupTypeCards) {
+                    SpeakingModule.setupTypeCards();
+                } else if (module === 'achievements' && typeof Achievements !== 'undefined' && Achievements.render) {
+                    Achievements.render();
+                } else if (module === 'analytics' && typeof AnalyticsDashboard !== 'undefined' && typeof AnalyticsDashboard.render === 'function') {
+                    AnalyticsDashboard.render();
+                }
+            } catch (e) {
+                console.warn('populateModule error:', module, e);
             }
-        } catch (e) {
-            console.warn('populateModule error:', module, e);
-        }
+        });
     },
 
     // Handle quick actions
@@ -522,23 +541,27 @@ const App = {
 
     // Show module menu
     showModuleMenu(module) {
-        switch(module) {
-            case 'listening':
-                if (typeof ListeningModule !== 'undefined' && ListeningModule.showMenu) ListeningModule.showMenu();
-                break;
-            case 'reading':
-                if (typeof ReadingModule !== 'undefined' && ReadingModule.showMenu) ReadingModule.showMenu();
-                break;
-            case 'vocabulary':
-                if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) VocabularyLearner.showLevelSelector();
-                break;
-            case 'grammar':
-                if (typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) GrammarModule.showMenu();
-                break;
-            case 'speaking':
-                if (typeof SpeakingModule !== 'undefined' && SpeakingModule.showMenu) SpeakingModule.showMenu();
-                break;
-        }
+        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
+
+        loadPromise.then(() => {
+            switch(module) {
+                case 'listening':
+                    if (typeof ListeningModule !== 'undefined' && ListeningModule.showMenu) ListeningModule.showMenu();
+                    break;
+                case 'reading':
+                    if (typeof ReadingModule !== 'undefined' && ReadingModule.showMenu) ReadingModule.showMenu();
+                    break;
+                case 'vocabulary':
+                    if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) VocabularyLearner.showLevelSelector();
+                    break;
+                case 'grammar':
+                    if (typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) GrammarModule.showMenu();
+                    break;
+                case 'speaking':
+                    if (typeof SpeakingModule !== 'undefined' && SpeakingModule.showMenu) SpeakingModule.showMenu();
+                    break;
+            }
+        });
     },
 
     // Load user preferences

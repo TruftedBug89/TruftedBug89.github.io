@@ -8,6 +8,17 @@ var LazyLoader = (function () {
     'use strict';
 
     // Map of module id → array of data file paths (relative to root)
+    var componentFiles = {
+        vocabulary: ['components/vocabulary-learner.js'],
+        listening: ['components/listening-module.js'],
+        reading: ['components/reading-module.js'],
+        grammar: ['components/grammar-module.js'],
+        speaking: ['components/speaking-module.js'],
+        achievements: ['components/achievements.js'],
+        analytics: ['components/analytics.js'],
+        placement: ['components/placement-test.js']
+    };
+
     var moduleFiles = {
         vocabulary: [
             'data/vocabulary-extended.js',
@@ -88,6 +99,7 @@ var LazyLoader = (function () {
     var loaded = {};      // file path → true once loaded
     var loading = {};     // file path → Promise while in flight
     var moduleReady = {}; // module id → Promise that resolves when all module files are loaded
+    var componentReady = {}; // module id → Promise that resolves when component scripts are loaded
 
     function loadFile(path) {
         if (loaded[path]) return Promise.resolve();
@@ -126,6 +138,27 @@ var LazyLoader = (function () {
         return moduleReady[moduleId];
     }
 
+    /**
+     * Dynamically loads a component's JavaScript file on demand based on the module ID.
+     * Uses the componentFiles mapping to resolve the correct file path.
+     * Returns a Promise that resolves when the component script has successfully loaded.
+     *
+     * @param {string} moduleId - The ID of the module (e.g., 'vocabulary', 'grammar').
+     * @returns {Promise<void>} A promise that resolves when the component is ready.
+     */
+    function loadComponent(moduleId) {
+        if (componentReady[moduleId]) return componentReady[moduleId];
+        if (!componentFiles[moduleId]) return Promise.resolve(); // No component to load for this module
+
+        var files = componentFiles[moduleId];
+        componentReady[moduleId] = Promise.all(files.map(loadFile)).then(function () {
+            if (typeof App !== 'undefined' && App.DEBUG) {
+                console.log('LazyLoader: component for "' + moduleId + '" ready (' + files.length + ' files)');
+            }
+        });
+        return componentReady[moduleId];
+    }
+
     function isLoaded(path) {
         return !!loaded[path];
     }
@@ -136,6 +169,8 @@ var LazyLoader = (function () {
 
     return {
         loadModule: loadModule,
+        loadComponent: loadComponent,
+        componentFiles: componentFiles,
         isLoaded: isLoaded,
         isModuleReady: isModuleReady,
         moduleFiles: moduleFiles
