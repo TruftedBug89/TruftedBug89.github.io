@@ -64,30 +64,21 @@ const SessionManager = {
     },
 
     _writeCookie(sid) {
-        // SameSite=Lax protects against CSRF-style cross-site requests.
-        // Secure requires HTTPS; on plain http (e.g. localhost dev) browsers
-        // silently drop Secure, so we attempt it but degrade gracefully.
-        const isLocal = location.protocol === 'http:' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1');
-        const secure = isLocal ? '' : '; Secure';
-        document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(sid)}; Max-Age=${this.COOKIE_MAX_AGE}; Path=/; SameSite=Lax${secure}`;
+        // SECURITY ENHANCEMENT:
+        // By design, this application is fully local and has no backend server.
+        // We strictly use localStorage instead of cookies (document.cookie) to store the session ID.
+        // This prevents the browser from automatically transmitting the session ID to any
+        // third-party servers during asset fetching or accidental network requests,
+        // maintaining strict local-only privacy.
+        Utils.storage.set(this.COOKIE_NAME, sid);
     },
 
     _readCookie(name) {
-        const prefix = name + '=';
-        const parts = document.cookie.split(';');
-        for (let i = 0; i < parts.length; i++) {
-            const c = parts[i].trim();
-            if (c.indexOf(prefix) === 0) {
-                return decodeURIComponent(c.substring(prefix.length));
-            }
-        }
-        return null;
+        return Utils.storage.get(name, null);
     },
 
     _clearCookie() {
-        const isLocal = location.protocol === 'http:' && (location.hostname === 'localhost' || location.hostname === '127.0.0.1');
-        const secure = isLocal ? '' : '; Secure';
-        document.cookie = `${this.COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
+        Utils.storage.remove(this.COOKIE_NAME);
     },
 
     // ---------- Session registry ----------
