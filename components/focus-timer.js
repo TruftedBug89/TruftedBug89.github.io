@@ -19,7 +19,7 @@ const FocusTimer = {
                     <span id="timer-mins">25</span>:<span id="timer-secs">00</span>
                 </div>
                 <div class="timer-controls">
-                    <button id="timer-play-pause" class="btn btn-primary btn-icon" aria-label="Start timer">▶</button>
+                    <button id="timer-play-pause" class="btn btn-primary btn-icon" aria-label="Play timer">▶</button>
                     <button id="timer-reset" class="btn btn-secondary btn-icon" aria-label="Reset timer">↻</button>
                     <button id="timer-close" class="btn btn-secondary btn-icon" aria-label="Close timer">✕</button>
                 </div>
@@ -53,7 +53,7 @@ const FocusTimer = {
             playBtn.addEventListener('click', () => {
                 this.isPlaying = !this.isPlaying;
                 playBtn.textContent = this.isPlaying ? '⏸' : '▶';
-                playBtn.setAttribute('aria-label', this.isPlaying ? 'Pause timer' : 'Start timer');
+                playBtn.setAttribute('aria-label', this.isPlaying ? 'Pause timer' : 'Play timer');
                 if (this.isPlaying) {
                     this.start();
                 } else {
@@ -78,7 +78,7 @@ const FocusTimer = {
                 this.isPlaying = false;
                 if(playBtn) {
                     playBtn.textContent = '▶';
-                    playBtn.setAttribute('aria-label', 'Start timer');
+                    playBtn.setAttribute('aria-label', 'Play timer');
                 }
             });
         }
@@ -96,7 +96,7 @@ const FocusTimer = {
                 const playBtn = document.getElementById('timer-play-pause');
                 if(playBtn) {
                     playBtn.textContent = '▶';
-                    playBtn.setAttribute('aria-label', 'Start timer');
+                    playBtn.setAttribute('aria-label', 'Play timer');
                 }
                 Utils.playSound('success'); // Assuming there's a sound utility
                 Utils.showToast('Focus session complete!', 'success');
@@ -118,7 +118,7 @@ const FocusTimer = {
         const playBtn = document.getElementById('timer-play-pause');
         if(playBtn) {
             playBtn.textContent = '▶';
-            playBtn.setAttribute('aria-label', 'Start timer');
+            playBtn.setAttribute('aria-label', 'Play timer');
         }
         this.updateDisplay();
     },
