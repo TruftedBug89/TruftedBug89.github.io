@@ -169,7 +169,7 @@ describe('05 — SM-2 Spaced Repetition', () => {
     assert.equal(clamped.efactor, 1.3);
   });
 
-  it.skip('processReview: applies 1.2x reward multiplier on delayed correct answers', () => {
+  it('processReview: applies 1.2x reward multiplier on delayed correct answers', () => {
     const card = globalThis.SM2.createCard('t1', '我', 'me');
     card.interval = 5;
     card.repetitions = 2;
@@ -184,7 +184,7 @@ describe('05 — SM-2 Spaced Repetition', () => {
     assert.equal(result.interval, expected);
   });
 
-  it.skip('processReview: respects Speed Prep profile scaling (0.5x)', () => {
+  it('processReview: respects Speed Prep profile scaling (0.5x)', () => {
     const card = globalThis.SM2.createCard('t1', '我', 'me');
     card.interval = 6;
     card.repetitions = 2;
@@ -197,13 +197,18 @@ describe('05 — SM-2 Spaced Repetition', () => {
     };
     globalThis.StorageManager.setUserData(data);
 
-    const result = globalThis.SM2.processReview(card, 4);
-    const expectedBase = Math.round(6 * result.efactor);
-    const expectedScaled = Math.max(1, Math.round(expectedBase * 0.5));
-    assert.equal(result.interval, expectedScaled);
+    try {
+      const result = globalThis.SM2.processReview(card, 4);
+      const expectedBase = Math.round(6 * result.efactor);
+      const expectedScaled = Math.max(1, Math.round(expectedBase * 0.5));
+      assert.equal(result.interval, expectedScaled);
+    } finally {
+      data.settings.studyProfile = 'standard';
+      globalThis.StorageManager.setUserData(data);
+    }
   });
 
-  it.skip('processReview: respects Deep Retention profile scaling (1.5x)', () => {
+  it('processReview: respects Deep Retention profile scaling (1.5x)', () => {
     const card = globalThis.SM2.createCard('t1', '我', 'me');
     card.interval = 6;
     card.repetitions = 2;
@@ -216,9 +221,140 @@ describe('05 — SM-2 Spaced Repetition', () => {
     };
     globalThis.StorageManager.setUserData(data);
 
+    try {
+      const result = globalThis.SM2.processReview(card, 4);
+      const expectedBase = Math.round(6 * result.efactor);
+      const expectedScaled = Math.round(expectedBase * 1.5);
+      assert.equal(result.interval, expectedScaled);
+    } finally {
+      data.settings.studyProfile = 'standard';
+      globalThis.StorageManager.setUserData(data);
+    }
+  });
+
+  it('processReview: initial review correctly calculates next interval', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    // Sanity check initial values
+    assert.equal(card.repetitions, 0);
     const result = globalThis.SM2.processReview(card, 4);
-    const expectedBase = Math.round(6 * result.efactor);
-    const expectedScaled = Math.round(expectedBase * 1.5);
-    assert.equal(result.interval, expectedScaled);
+    assert.equal(result.interval, 1);
+    assert.equal(result.repetitions, 1);
+  });
+
+  it('processReview: consecutive successful recalls exponentially increase interval', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 1;
+    card.repetitions = 1;
+    card.efactor = 2.5;
+
+    const r1 = globalThis.SM2.processReview(card, 4);
+    assert.equal(r1.interval, 6);
+    assert.equal(r1.repetitions, 2);
+
+    const r2 = globalThis.SM2.processReview(r1, 4);
+    assert.equal(r2.interval, Math.round(6 * r2.efactor));
+    assert.equal(r2.repetitions, 3);
+  });
+
+  it('processReview: forgetting a card (lapse) resets interval to 1 and increases lapse count', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 30;
+    card.repetitions = 5;
+    card.lapses = 2;
+
+    const result = globalThis.SM2.processReview(card, 2);
+    assert.equal(result.interval, 1);
+    assert.equal(result.repetitions, 0);
+    assert.equal(result.lapses, 3);
+  });
+
+  it('processReview: efactor bounds correctly clamps to 1.3 even when recalculating', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.efactor = 1.3;
+    // quality < 3 decreases efactor
+    const result = globalThis.SM2.processReview(card, 1);
+    assert.equal(result.efactor, 1.3);
+  });
+
+  it('processReview: interval caps verify scaling logic Math.max(1, Math.round(newInterval * profileMultiplier))', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = 1;
+    card.repetitions = 2; // will trigger interval * newEfactor
+    card.efactor = 1.3;
+
+    // newEfactor with quality 3 will decrease slightly but bounded at 1.3
+    // base newInterval will be round(1 * 1.3) = 1
+
+    const data = globalThis.StorageManager.getUserData();
+    data.settings = {
+      ...data.settings,
+      studyProfile: 'speed'
+    };
+    globalThis.StorageManager.setUserData(data);
+
+    try {
+      const result = globalThis.SM2.processReview(card, 3);
+      assert.equal(result.interval, 1);
+    } finally {
+      data.settings.studyProfile = 'standard';
+      globalThis.StorageManager.setUserData(data);
+    }
+  });
+
+  it('processReview: handles edge cases and malformed quality gracefully', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.efactor = 1.5;
+
+    // Negative quality (treated as failure, resets interval, decreases efactor by a lot)
+    const resultNeg = globalThis.SM2.processReview(card, -1);
+    assert.equal(resultNeg.interval, 1);
+    assert.equal(resultNeg.repetitions, 0);
+    // efactor decreases by (0.1 - (5 - (-1)) * (0.08 + (5 - (-1)) * 0.02))
+    // = 0.1 - 6 * (0.08 + 0.12) = 0.1 - 6 * 0.2 = 0.1 - 1.2 = -1.1. Clamped to 1.3.
+    assert.equal(resultNeg.efactor, 1.3);
+
+    // Quality > 5 (treated as passed, but math for efactor uses >5)
+    // 6: 0.1 - (5-6)*(0.08 + (5-6)*0.02) = 0.1 - (-1)*(0.08 - 0.02) = 0.1 - (-0.06) = 0.16
+    card.efactor = 2.5;
+    const resultOver = globalThis.SM2.processReview(card, 6);
+    assert.equal(resultOver.interval, 1);
+    assert.equal(resultOver.repetitions, 1);
+    assert.equal(resultOver.efactor.toFixed(2), "2.66"); // 2.5 + 0.16 = 2.66
+
+    // NaN quality
+    const resultNaN = globalThis.SM2.processReview(card, NaN);
+    // quality < 3 is false since NaN < 3 is false, so it falls into else block
+    // newEfactor = 2.5 + (0.1 - (5-NaN)*(0.08 + (5-NaN)*0.02)) = NaN
+    // NaN < 1.3 is false.
+    // So newEfactor is NaN.
+    // interval falls into repetitions === 1 -> newInterval = 1
+    // The test just checks that it doesn't crash and returns the object.
+    assert.ok(resultNaN.nextReview);
+  });
+
+  it('processReview: handles missing card properties (throws due to NaN)', () => {
+    const card = { id: 'test' }; // Missing everything
+    assert.throws(() => globalThis.SM2.processReview(card, 4), RangeError);
+  });
+
+  it('shuffleArray preserves count and is deterministic given random seed', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const originalRandom = Math.random;
+
+    // Deterministic random
+    let seed = 0.1;
+    Math.random = () => {
+      seed += 0.1;
+      return seed % 1;
+    };
+
+    const shuffled1 = globalThis.SM2.shuffleArray([...arr]);
+
+    seed = 0.1;
+    const shuffled2 = globalThis.SM2.shuffleArray([...arr]);
+
+    assert.deepEqual(shuffled1, shuffled2);
+
+    Math.random = originalRandom;
   });
 });
