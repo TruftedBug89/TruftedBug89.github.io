@@ -1,3 +1,3 @@
-## 2024-03-24 - Avoiding O(N) Shuffles for O(K) Subsets
-**Learning:** Found a widespread pattern where a few random items are picked from a large collection (e.g. `getRandom(10)` from 5000+ words). Using `this.shuffle(array).slice(0, count)` forces an $O(N)$ allocation, full array copy, and full array shuffle just to pick 10 items.
-**Action:** Replace full array shuffle with an $O(K)$ subset selection using a `Set` to track picked indices when $K$ is small relative to $N$.
+## 2024-05-24 - Avoid synchronous localStorage inside tight loops
+**Learning:** `_updateSessionStats` and `_updateDailyForEvent` in `analytics-engine.js` were making synchronous `localStorage` writes per event track. This blocks the main thread on an expensive I/O operation whenever an event fires.
+**Action:** Move I/O writes into periodic flushing methods (like `_flush`), operate purely in memory using the existing arrays/objects when buffering events, and only save back to `localStorage` once at the very end of the batch flush.

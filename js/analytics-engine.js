@@ -497,8 +497,6 @@ var AnalyticsEngine = {
             }
         }
         this.eventBuffer.push(event);
-        this._updateSessionStats(event);
-        this._updateDailyForEvent(event);
         if (this.eventBuffer.length >= this.MAX_BUFFER_SIZE) {
             this._flush();
         }
@@ -588,6 +586,74 @@ var AnalyticsEngine = {
         var trimmed = merged.length > this.MAX_EVENTS
             ? merged.slice(merged.length - this.MAX_EVENTS) : merged;
         this._writeEvents(trimmed);
+
+        var s = this._readSessions();
+        var d = this._readDaily();
+        var today = new Date().toISOString().split('T')[0];
+
+        s.lastVisit = new Date().toISOString();
+
+        for (var i = 0; i < this.eventBuffer.length; i++) {
+            var event = this.eventBuffer[i];
+
+            // Inline _updateSessionStats
+            switch (event.type) {
+                case 'page_view':
+                    s.totalPageViews = (s.totalPageViews || 0) + 1;
+                    break;
+                case 'exercise':
+                case 'reading_exercise':
+                case 'listening_exercise':
+                case 'speaking_exercise':
+                case 'grammar_practice':
+                    s.totalExercises = (s.totalExercises || 0) + 1;
+                    break;
+                case 'time_on_page':
+                    if (event.seconds) {
+                        s.totalTimeSpent = (s.totalTimeSpent || 0) + event.seconds;
+                    }
+                    break;
+            }
+
+            // Inline _updateDailyForEvent
+            if (!d[today]) {
+                d[today] = { pageViews: 0, exercises: 0, timeSpent: 0,
+                    vocabReviews: 0, achievements: 0, xpEstimate: 0 };
+            }
+            var entry = d[today];
+
+            switch (event.type) {
+                case 'page_view':
+                    entry.pageViews = (entry.pageViews || 0) + 1;
+                    break;
+                case 'exercise':
+                case 'reading_exercise':
+                case 'listening_exercise':
+                case 'speaking_exercise':
+                case 'grammar_practice':
+                    entry.exercises = (entry.exercises || 0) + 1;
+                    break;
+                case 'time_on_page':
+                    if (event.seconds) {
+                        entry.timeSpent = (entry.timeSpent || 0) + event.seconds;
+                    }
+                    break;
+                case 'vocab_review':
+                    entry.vocabReviews = (entry.vocabReviews || 0) + 1;
+                    entry.xpEstimate = (entry.xpEstimate || 0) + Math.max(1, event.quality || 1);
+                    break;
+                case 'achievement_unlocked':
+                    entry.achievements = (entry.achievements || 0) + 1;
+                    break;
+                case 'level_up':
+                    entry.xpEstimate = (entry.xpEstimate || 0) + 50;
+                    break;
+            }
+        }
+
+        this._writeSessions(s);
+        this._writeDaily(d);
+
         this.eventBuffer = [];
     },
 
