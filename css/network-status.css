@@ -1,0 +1,57 @@
+/* ============================================
+   Network Status Styles
+   ============================================ */
+.network-status-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    z-index: 10002;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.network-status-toast--visible {
+    transform: translate(-50%, 0);
+}
+
+.network-status-toast--warning {
+    background: #f59e0b; /* From offline-banner.css */
+    color: #1a1410;
+}
+
+.network-status-toast--success {
+    background: var(--color-success);
+    color: #ffffff;
+}
+
+.network-status-toast--update {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-hover);
+}
+
+.network-status-toast__btn {
+    background: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.network-status-toast__btn:hover {
+    background: var(--color-accent-dark);
+}

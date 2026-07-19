@@ -47,7 +47,7 @@ Object.defineProperty(globalThis, 'screen', {
 });
 globalThis.speechSynthesis = { cancel() {}, getVoices() { return []; } };
 globalThis.MutationObserver = class { observe() {} disconnect() {} };
-globalThis.OfflineBanner = undefined;
+globalThis.NetworkStatus = undefined;
 globalThis.Utils = {
   storage: (() => { const s = {}; return { get(k, d) { return s.hasOwnProperty(k) ? s[k] : (d !== undefined ? d : null); }, set(k, v) { s[k] = v; } }; })(),
   generateId() { return 'test-' + Math.random().toString(36).slice(2); },
@@ -156,7 +156,7 @@ globalThis.ScrollTrigger = { refresh() {} };
 globalThis.MobileShell = { init() {} };
 globalThis.MobileTabBar = { setActive() {} };
 globalThis.ErrorLogger = { install() {} };
-globalThis.OfflineBanner = { init() {} };
+globalThis.NetworkStatus = { init() {} };
 globalThis.App = undefined;
 
 function createLocalStorageMock() {
