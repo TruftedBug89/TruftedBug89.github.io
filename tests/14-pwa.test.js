@@ -42,7 +42,7 @@ describe('14 — PWA Readiness', () => {
   it('has schema.org structured data', () => {
     const content = fs.readFileSync(path.join(ROOT_DIR, 'index.html'), 'utf8');
     assert.ok(/application\/ld\+json/.test(content), 'missing JSON-LD structured data');
-    assert.ok(/"@type":\s*"WebApplication"/.test(content), 'schema.org type not WebApplication');
+    assert.ok(/"WebApplication"/.test(content), 'schema.org type does not include WebApplication');
   });
 
   it('has canonical URL', () => {

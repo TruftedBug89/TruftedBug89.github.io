@@ -2,13 +2,24 @@
     "@context": "https://schema.org",
     "@graph": [
         {
-            "@type": "WebApplication",
+            "@type": [
+                "WebApplication",
+                "SoftwareApplication",
+                "EducationalApplication",
+                "LearningResource"
+            ],
             "@id": "https://truftedbug89.github.io/#app",
             "name": "中文大师 — Chinese Master",
             "description": "Free Chinese learning tool with HSK 1-5 vocabulary, listening, reading, grammar, speaking, and spaced-repetition flashcards. Works offline.",
             "applicationCategory": "EducationalApplication",
             "operatingSystem": "Any",
             "browserRequirements": "Requires JavaScript",
+            "teaches": "Chinese",
+            "educationalLevel": "HSK 1-5",
+            "inLanguage": [
+                "zh",
+                "en"
+            ],
             "offers": {
                 "@type": "Offer",
                 "price": "0",

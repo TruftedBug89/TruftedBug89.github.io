@@ -394,10 +394,14 @@ const GrammarModule = {
                 list.querySelectorAll('.grammar-lesson-item').forEach(function (item) {
                     var gsapItem = item;
                     gsapItem.addEventListener('mouseenter', function () {
-                        gsap.to(gsapItem, { scale: 1.03, duration: 0.25, ease: 'power2.out' });
+                        if (!(typeof Utils !== 'undefined' && Utils.isReducedMotion && Utils.isReducedMotion())) {
+                            gsap.to(gsapItem, { scale: 1.03, duration: 0.25, ease: 'power2.out' });
+                        }
                     });
                     gsapItem.addEventListener('mouseleave', function () {
-                        gsap.to(gsapItem, { scale: 1, duration: 0.25, ease: 'power2.out' });
+                        if (!(typeof Utils !== 'undefined' && Utils.isReducedMotion && Utils.isReducedMotion())) {
+                            gsap.to(gsapItem, { scale: 1, duration: 0.25, ease: 'power2.out' });
+                        }
                     });
                 });
             } catch (gse) { /* gsap unavailable or broken */ }

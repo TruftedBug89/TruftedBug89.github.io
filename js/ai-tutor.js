@@ -154,7 +154,7 @@ const AITutor = {
 
         var html =
             '<div class="ai-config-card activity-card">' +
-                '<h2>AI Tutor Settings</h2>' +
+                '<h2>' + i18n.t('settings.ai_tutor_settings') + '</h2>' +
                 '<p class="ai-config-sub">AI explanations when you miss an activity. Your keys stay in this browser tab only.</p>' +
 
                 '<div class="ai-privacy">' +
@@ -441,7 +441,7 @@ const AITutor = {
                 '<div class="ai-seal">AI</div>' +
                 '<div class="ai-title"><strong>AI TUTOR</strong><small>local key · on-device</small></div>' +
                 '<div class="ai-actions">' +
-                    '<button type="button" class="ai-icon-btn" data-ai-action="settings" title="Settings" aria-label="AI settings">⚙</button>' +
+                    '<button type="button" class="ai-icon-btn" data-ai-action="settings" title="' + i18n.t('settings.settings') + '" aria-label="' + i18n.t('settings.settings') + '">⚙</button>' +
                     '<button type="button" class="ai-icon-btn" data-ai-action="hide" title="Hide panel" aria-label="Hide panel">←</button>' +
                     '<button type="button" class="ai-icon-btn" data-ai-action="close" title="Close" aria-label="Close">×</button>' +
                 '</div>' +

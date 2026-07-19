@@ -6,6 +6,7 @@ const Dashboard = {
     // Initialize dashboard
     init() {
         this._goalRingAnimated = false;
+        if (typeof i18n !== 'undefined') i18n.localizePage();
         this._setGreeting();
         this.update();
         this._checkBackupReminder();
@@ -33,9 +34,9 @@ const Dashboard = {
         var greetingEl = document.getElementById('greeting');
         if (!greetingEl) return;
         var hour = new Date().getHours();
-        var text = hour < 12 ? '\u65e9\u4e0a\u597d \u00b7 Good morning'
-            : hour < 18 ? '\u4e0b\u5348\u597d \u00b7 Good afternoon'
-            : '\u665a\u4e0a\u597d \u00b7 Good evening';
+        var text = hour < 12 ? i18n.t('dashboard.greeting_morning')
+            : hour < 18 ? i18n.t('dashboard.greeting_afternoon')
+            : i18n.t('dashboard.greeting_evening');
         greetingEl.textContent = text;
     },
 

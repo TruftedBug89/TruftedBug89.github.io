@@ -496,7 +496,11 @@ const PlacementTest = {
             }
             var emoji = container.querySelector('.placement-result-emoji');
             if (emoji && window.gsap) {
-                window.gsap.fromTo(emoji, { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.7, ease: 'back.out(2)', delay: 0.2 });
+                if (typeof Utils !== 'undefined' && Utils.isReducedMotion && Utils.isReducedMotion()) {
+                    window.gsap.set(emoji, { scale: 1, rotation: 0 });
+                } else {
+                    window.gsap.fromTo(emoji, { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.7, ease: 'back.out(2)', delay: 0.2 });
+                }
             }
         }
 
