@@ -80,11 +80,12 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
       var oldCaches = keys.filter(function(key) { return key !== CACHE_NAME; });
-      var deleted = oldCaches.length > 0;
+      var hasOldAppCache = oldCaches.some(function(key) { return key.indexOf('chinese-master-') === 0; });
+
       return Promise.all(
         oldCaches.map(function(key) { return caches.delete(key); })
       ).then(function() {
-        if (deleted) {
+        if (hasOldAppCache) {
           self.clients.matchAll({ includeUncontrolled: true }).then(function(clients) {
             clients.forEach(function(client) {
               client.postMessage({ type: 'NEW_VERSION' });
@@ -107,19 +108,16 @@ self.addEventListener('fetch', function(event) {
 
   if (event.request.method !== 'GET') return;
 
-  // Intercept data requests (e.g. vocabulary-hsk*.jsonl) and dynamically/lazily cache them upon fetch
+  // Intercept data requests and dynamically/lazily cache them upon fetch
   if (url.pathname.indexOf('/data/') !== -1) {
     event.respondWith(
       caches.match(event.request).then(function(cached) {
         var fetched = fetch(event.request).then(function(response) {
           if (response && response.status === 200 && !isLargeData(url.pathname)) {
-            // Ensure lazy caching only happens for vocabulary-hsk*.jsonl
-            if (url.pathname.indexOf('vocabulary-hsk') !== -1 && url.pathname.endsWith('.jsonl')) {
-              var clone = response.clone();
-              caches.open(CACHE_NAME).then(function(cache) {
-                cache.put(event.request, clone);
-              });
-            }
+            var clone = response.clone();
+            caches.open(CACHE_NAME).then(function(cache) {
+              cache.put(event.request, clone);
+            });
           }
           return response;
         });

@@ -88,11 +88,8 @@ describe('12 — Service Worker Validation', () => {
     assert.ok(/new Set\(PRECACHE_URLS\)/.test(swContent), 'missing Set deduplication for PRECACHE_URLS');
   });
 
-  it('notifies clients of new version via postMessage', () => {
+  it('notifies clients of new version via postMessage when old cache exists', () => {
+    assert.ok(/hasOldAppCache/.test(swContent) || /indexOf\(['"]chinese-master-['"]\)/.test(swContent), 'missing check for old app cache before postMessage');
     assert.ok(/postMessage\(\{\s*type:\s*['"]NEW_VERSION['"]\s*\}\)/.test(swContent), 'missing NEW_VERSION postMessage in activate handler');
-  });
-
-  it('restricts lazy caching to vocabulary-hsk jsonl files', () => {
-    assert.ok(/indexOf\(['"]vocabulary-hsk['"]\)/.test(swContent) && /endsWith\(['"]\.jsonl['"]\)/.test(swContent), 'lazy caching should be restricted to vocabulary-hsk*.jsonl');
   });
 });
