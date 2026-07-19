@@ -3,6 +3,12 @@
 // ============================================
 
 const Utils = {
+
+    // Check if the user prefers reduced motion
+    isReducedMotion() {
+        if (typeof window === 'undefined' || !window.matchMedia) return false;
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    },
     // Generate unique ID (cryptographically random where available)
     generateId() {
         if (window.crypto && typeof window.crypto.randomUUID === 'function') {
@@ -55,7 +61,28 @@ const Utils = {
 
     // Pick random items from array
     randomItems(array, count) {
-        return this.shuffle(array).slice(0, count);
+        if (!array || !array.length) return [];
+        // Default to array.length if count is undefined
+        const requestedCount = count === undefined ? array.length : count;
+        const n = Math.min(requestedCount, array.length);
+
+        if (requestedCount === 1) return [this.randomItem(array)];
+
+        // ⚡ Bolt optimization: Avoid O(N) array copy/shuffle when picking a small subset
+        // Fallback to full shuffle only if we need > 50% of the items.
+        if (n > array.length / 2) return this.shuffle(array).slice(0, n);
+
+        // Fast O(K) selection using Set to track seen indices
+        const result = [];
+        const seen = new Set();
+        while (result.length < n) {
+            const idx = Math.floor(Math.random() * array.length);
+            if (!seen.has(idx)) {
+                seen.add(idx);
+                result.push(array[idx]);
+            }
+        }
+        return result;
     },
 
     // Pick one random item from array
@@ -252,7 +279,10 @@ const Utils = {
                 var dist = 200 + Math.random() * 500;
                 var dx = Math.cos(angle * Math.PI / 180) * dist;
                 var dy = Math.sin(angle * Math.PI / 180) * dist - 100;
-                gsap.fromTo(el, { x: 0, y: 0, opacity: 1, scale: 0.3, rotation: 0 }, {
+                if (Utils.isReducedMotion()) {
+                    gsap.set(el, { x: dx, y: dy, opacity: 0, scale: 1.4, rotation: (Math.random() - 0.5) * 720 });
+                } else {
+                    gsap.fromTo(el, { x: 0, y: 0, opacity: 1, scale: 0.3, rotation: 0 }, {
                     x: dx, y: dy,
                     opacity: 0,
                     scale: 1.4,
@@ -261,6 +291,7 @@ const Utils = {
                     ease: 'power2.out',
                     delay: Math.random() * 0.4
                 });
+                }
             } else {
                 el.style.animation = 'confettiFall ' + (2.5 + Math.random() * 2) + 's ease-in forwards';
                 el.style.animationDelay = Math.random() * 0.5 + 's';
@@ -278,7 +309,10 @@ const Utils = {
             if (hasGSAP) {
                 var sa = (Math.random() - 0.5) * 360;
                 var sd = 80 + Math.random() * 250;
-                gsap.fromTo(sp, { x: 0, y: 0, opacity: 1, scale: 1 }, {
+                if (Utils.isReducedMotion()) {
+                    gsap.set(sp, { x: Math.cos(sa * Math.PI / 180) * sd, y: Math.sin(sa * Math.PI / 180) * sd - 60, opacity: 0, scale: 0 });
+                } else {
+                    gsap.fromTo(sp, { x: 0, y: 0, opacity: 1, scale: 1 }, {
                     x: Math.cos(sa * Math.PI / 180) * sd,
                     y: Math.sin(sa * Math.PI / 180) * sd - 60,
                     opacity: 0, scale: 0,
@@ -286,6 +320,7 @@ const Utils = {
                     ease: 'power3.out',
                     delay: 0.15 + Math.random() * 0.3
                 });
+                }
             }
         }
 
@@ -360,13 +395,17 @@ const Utils = {
         if (!element) return;
         if (typeof gsap !== 'undefined') {
             var gsapStart = parseInt(element.textContent) || 0;
-            gsap.fromTo(element, { textContent: gsapStart }, {
+            if (Utils.isReducedMotion()) {
+                element.textContent = target;
+            } else {
+                gsap.fromTo(element, { textContent: gsapStart }, {
                 textContent: target,
                 duration: duration / 1000,
                 ease: 'power3.out',
                 snap: { textContent: 1 },
                 onUpdate: function() { element.textContent = Math.round(element.textContent); }
             });
+            }
             return;
         }
         const start = parseInt(element.textContent) || 0;

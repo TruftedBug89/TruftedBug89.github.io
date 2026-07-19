@@ -1,3 +1,3 @@
-## 2024-05-14 - Redundant localStorage Reads & parseJSONL Blocking
-**Learning:** `StorageManager.getUserData()` is called dozens of times per interaction. Since it was reading from `localStorage` synchronously parsing the JSON payload every time, this introduced a significant performance bottleneck. In addition, the `analytics-engine.js` summary processing has an O(n^2) nested loop when processing summaries which slows down over time as the user uses the application.
-**Action:** Introduce `_cachedUserData` and `_cachedSessionId` to `StorageManager` so it caches `getUserData` in memory. If `StorageManager.setUserData` is called, update the cache. Also, update `analytics-engine.js` summary loop to use a hash map lookup (O(n)).
+## 2024-03-24 - Avoiding O(N) Shuffles for O(K) Subsets
+**Learning:** Found a widespread pattern where a few random items are picked from a large collection (e.g. `getRandom(10)` from 5000+ words). Using `this.shuffle(array).slice(0, count)` forces an $O(N)$ allocation, full array copy, and full array shuffle just to pick 10 items.
+**Action:** Replace full array shuffle with an $O(K)$ subset selection using a `Set` to track picked indices when $K$ is small relative to $N$.

@@ -21,7 +21,7 @@ const PRECACHE_URLS = [
   '/css/consent-ui.css',
   '/css/mobile-shell.css',
   '/css/mobile-tabbar.css',
-  '/css/offline-banner.css',
+  '/css/network-status.css',
   '/css/pinyin-toggle.css',
   '/css/placement-test.css',
   '/css/loading.css',
@@ -73,6 +73,12 @@ self.addEventListener('install', function(event) {
       return self.skipWaiting();
     })
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener('activate', function(event) {

@@ -34,10 +34,10 @@ const App = {
         } catch (e) { console.warn('AnalyticsEngine init failed:', e); }
 
         try {
-            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
-                OfflineBanner.init();
+            if (typeof NetworkStatus !== 'undefined' && typeof NetworkStatus.init === 'function') {
+                NetworkStatus.init();
             }
-        } catch (e) { console.warn('OfflineBanner init failed:', e); }
+        } catch (e) { console.warn('NetworkStatus init failed:', e); }
 
         // Modal chrome close handlers — attach once, not per-open
         try { this._setupModalChrome(); } catch (e) { console.warn('_setupModalChrome failed:', e); }
@@ -677,8 +677,8 @@ const App = {
             if (typeof AnalyticsEngine !== 'undefined' && typeof AnalyticsEngine.init === 'function') {
                 try { AnalyticsEngine.init(); } catch (e) {}
             }
-            if (typeof OfflineBanner !== 'undefined' && typeof OfflineBanner.init === 'function') {
-                try { OfflineBanner.init(); } catch (e) {}
+            if (typeof NetworkStatus !== 'undefined' && typeof NetworkStatus.init === 'function') {
+                try { NetworkStatus.init(); } catch (e) {}
             }
             if (typeof DataLoader !== 'undefined' && typeof DataLoader.populateGlobals === 'function') {
                 try { DataLoader.populateGlobals(); } catch (e) {}
@@ -1021,14 +1021,14 @@ const App = {
         if (!nav) return;
 
         var items = [
-            { id: 'dashboard',   label: 'Home',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>' },
-            { id: 'listening',   label: 'Listen',  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M9 17a5 5 0 005-5V5a5 5 0 00-5-5"/><path d="M14 17a8 8 0 008-8V5"/></svg>' },
-            { id: 'reading',      label: 'Read',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' },
-            { id: 'vocabulary',   label: 'Vocab',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' },
-            { id: 'grammar',      label: 'Grammar', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
-            { id: 'speaking',     label: 'Speak',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' },
-            { id: 'achievements', label: 'Goals',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>' },
-            { id: 'placement',   label: 'Test',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>' }
+            { id: 'dashboard',   label: i18n.t('nav.home'),    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>' },
+            { id: 'listening',   label: i18n.t('nav.listen'),  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2z"/><path d="M9 17a5 5 0 005-5V5a5 5 0 00-5-5"/><path d="M14 17a8 8 0 008-8V5"/></svg>' },
+            { id: 'reading',      label: i18n.t('nav.read'),    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' },
+            { id: 'vocabulary',   label: i18n.t('nav.vocab'),   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="6" x2="12" y2="18"/><line x1="8" y1="12" x2="16" y2="12"/></svg>' },
+            { id: 'grammar',      label: i18n.t('nav.grammar'), icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>' },
+            { id: 'speaking',     label: i18n.t('nav.speak'),   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' },
+            { id: 'achievements', label: i18n.t('nav.goals'),   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>' },
+            { id: 'placement',   label: i18n.t('nav.test'),    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>' }
         ];
 
         var html =

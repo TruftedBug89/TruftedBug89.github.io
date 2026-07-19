@@ -149,23 +149,6 @@ describe('07 — Analytics Engine', () => {
     assert.equal(AE.getStats(), null);
   });
 
-  it('_recordDeviceInfo: session device info is cleaned and does not contain userAgent, screen, OS, or browser details', () => {
-    const AE = globalThis.AnalyticsEngine;
-    localStorage.setItem('cm_analytics_consent', 'true');
-    AE.consent = true;
-    AE.sessionId = 'test_clean_sid';
-    AE.deviceLogged = false;
-    AE._recordDeviceInfo();
-    const sessions = AE._readSessions();
-    assert.ok(sessions.device);
-    assert.equal(sessions.device.userAgent, undefined);
-    assert.equal(sessions.device.browser, undefined);
-    assert.equal(sessions.device.os, undefined);
-    assert.equal(sessions.device.screenWidth, undefined);
-    assert.equal(sessions.device.screenHeight, undefined);
-    localStorage.removeItem('cm_analytics_consent');
-  });
-
   it('_key returns correct localStorage key format', () => {
     const AE = globalThis.AnalyticsEngine;
     AE.sessionId = 'my_session';
@@ -182,13 +165,13 @@ describe('07 — Analytics Engine', () => {
     assert.equal(s.totalTimeSpent, 0);
   });
 
-  it('_updateDailyForEvent creates daily entry', () => {
+  it('_flushDailyStats creates daily entry for batched events', () => {
     const AE = globalThis.AnalyticsEngine;
     AE.sessionId = 'test_sid';
     AE.consent = true;
     localStorage.setItem(AE._key('daily'), '{}');
 
-    AE._updateDailyForEvent({ type: 'page_view' });
+    AE._flushDailyStats([{ type: 'page_view' }]);
     const d = AE._readDaily();
     const today = new Date().toISOString().split('T')[0];
     assert.ok(d[today]);

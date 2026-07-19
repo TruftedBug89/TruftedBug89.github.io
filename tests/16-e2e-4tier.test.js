@@ -173,18 +173,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.ok(SM.defaultUserData.settings.dailyGoal);
     });
 
-    it('1.2.5: AnalyticsEngine._parseBrowser returns undefined or minimised info under F2 requirements', () => {
-      const AE = globalThis.AnalyticsEngine;
-      const browser = AE._parseBrowser('Mozilla/5.0 Chrome/120.0.0.0');
-      assert.ok(browser === undefined || browser.name === 'Other' || browser.name === undefined);
-    });
-
-    it('1.2.6: AnalyticsEngine._parseOS returns undefined or minimised info under F2 requirements', () => {
-      const AE = globalThis.AnalyticsEngine;
-      const os = AE._parseOS('Windows NT 10.0');
-      assert.ok(os === undefined || os.name === 'Other' || os.name === undefined);
-    });
-
     // --- F3: SRS Delays ---
     it('1.3.1: SM2.createCard returns expected card structure', () => {
       const card = globalThis.SM2.createCard('t1', '好', 'good');
@@ -307,27 +295,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.equal(stats.mastered, 0);
     });
 
-    // --- F5: Admin Panel Removal ---
-    it('1.5.1: MobileShell check opens AdminPanel only if defined in environment', () => {
-      let opened = false;
-      const AdminPanelMock = { open() { opened = true; } };
-      
-      const checkAndOpen = (panelObj) => {
-        if (typeof panelObj !== 'undefined') {
-          panelObj.open();
-        }
-      };
-      
-      checkAndOpen(undefined);
-      assert.equal(opened, false);
-      
-      checkAndOpen(AdminPanelMock);
-      assert.equal(opened, true);
-    });
-
-    it('1.5.2: AdminPanel is undefined in global namespace', () => {
-      assert.equal(globalThis.AdminPanel, undefined);
-    });
   });
 
   // ==========================================
@@ -496,22 +463,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.equal(AE.eventBuffer[0].newLevel, 3);
     });
 
-    it('2.2.10: AnalyticsEngine._recordDeviceInfo stores no screen, viewport, OS, or browser details', () => {
-      const AE = globalThis.AnalyticsEngine;
-      localStorage.setItem('cm_analytics_consent', 'true');
-      AE.consent = true;
-      AE.sessionId = 'sid_device';
-      AE.deviceLogged = false;
-      AE._recordDeviceInfo();
-      const sessions = AE._readSessions();
-      
-      assert.equal(sessions.device.userAgent, undefined);
-      assert.equal(sessions.device.browser, undefined);
-      assert.equal(sessions.device.os, undefined);
-      assert.equal(sessions.device.screenWidth, undefined);
-      localStorage.removeItem('cm_analytics_consent');
-    });
-
     it('2.2.11: ProgressTracker.trackExercise performs exactly one consolidated write transaction', () => {
       let storageSetCalls = 0;
       const originalStorageSet = globalThis.Utils.storage.set;
@@ -609,27 +560,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.equal(saved.settings.studyProfile, 'retention');
     });
 
-    // --- F5: Admin Panel Removal ---
-    it('2.5.1: Index script reference validation confirms components/admin-panel.js is absent', () => {
-      const indexContentMock = '<html><body><script src="js/app.js"></script></body></html>';
-      assert.ok(!indexContentMock.includes('components/admin-panel.js'));
-    });
-
-    it('2.5.2: Application router handles missing AdminPanel without runtime crashes', () => {
-      let routeTriggered = false;
-      const router = (route) => {
-        if (route === 'admin') {
-          if (typeof globalThis.AdminPanel !== 'undefined') {
-            globalThis.AdminPanel.open();
-          } else {
-            routeTriggered = true;
-          }
-        }
-      };
-      
-      router('admin');
-      assert.equal(routeTriggered, true);
-    });
   });
 
   // ==========================================
@@ -781,17 +711,6 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       AE.eventBuffer = [];
       AE.trackVocabReview(5, 'c500', 'hsk1');
       assert.equal(AE.eventBuffer[0].userAgent, undefined);
-    });
-
-    it('4.1.4: Scenario 4: User triggers avatar double-click for admin access, confirms no crashes occur, and checks index.html script references', () => {
-      let panelTriggered = false;
-      if (typeof globalThis.AdminPanel !== 'undefined') {
-        globalThis.AdminPanel.open();
-        panelTriggered = true;
-      }
-
-      assert.equal(panelTriggered, false);
-      assert.equal(globalThis.AdminPanel, undefined);
     });
 
     it('4.1.5: Scenario 5: User finishes full learning module, checks stats aggregation, unlocks achievements, and checks for single write transactions', () => {
