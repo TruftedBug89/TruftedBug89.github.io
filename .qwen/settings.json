@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "jules": {
+      "command": "py",
+      "args": [
+        "C:\\Users\\lavvo\\Documents\\opencode-mcp-for-jules\\server.py"
+      ]
+    }
+  },
+  "$version": 4
+}

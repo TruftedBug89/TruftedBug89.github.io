@@ -1,0 +1,312 @@
+diff --git a/.jules/bolt.md b/.jules/bolt.md
+new file mode 100644
+index 0000000..4d3b648
+--- /dev/null
++++ b/.jules/bolt.md
+@@ -0,0 +1,3 @@
++## 2024-07-18 - Lazy Loading Heavy Vanilla JS Components
++**Learning:** In a vanilla JS architecture, large UI components that aren't critical to the initial paint can be effectively lazy-loaded by dynamically injecting `<script>` tags on demand. This shrinks the initial payload size. However, converting a synchronous component initialization flow to an asynchronous one requires careful attention to the execution order (e.g., ensuring `init()` is called before `render()` inside the `.then()` chain) to avoid race conditions.
++**Action:** When migrating synchronous component setups to lazy-loaded patterns, wrap all dependent UI setup logic (e.g., in routing functions like `populateModule` or `showMenu`) inside the `loadPromise.then()` block, and ensure idempotent initialization routines (`if (!initialized) init();`) are correctly sequenced within that block.
+diff --git a/index.html b/index.html
+index 1ff5476..e386f22 100644
+--- a/index.html
++++ b/index.html
+@@ -507,16 +507,8 @@ <h2>Today’s launchpad</h2>
+     <script src="components/mobile-tabbar.js"></script>
+     <script src="js/mobile-shell.js"></script>
+     <script src="components/dashboard.js"></script>
+-    <script src="components/grammar-module.js"></script>
+-    <script src="components/listening-module.js"></script>
+-    <script src="components/reading-module.js"></script>
+-    <script src="components/speaking-module.js"></script>
+-    <script src="components/vocabulary-learner.js"></script>
+-    <script src="components/achievements.js"></script>
+-    <script src="components/analytics.js"></script>
+     <script src="data/placement-bank.js"></script>
+     <script src="js/lazy-loader.js"></script>
+-    <script src="components/placement-test.js"></script>
+     <script src="js/future-ui.js"></script>
+     <script src="js/app.js"></script>
+     <script src="js/register-sw.js"></script>
+diff --git a/js/app.js b/js/app.js
+index b9fe911..e10300d 100644
+--- a/js/app.js
++++ b/js/app.js
+@@ -73,9 +73,7 @@ const App = {
+             if (typeof LevelTracker !== 'undefined') LevelTracker.init();
+         } catch (e) { console.warn('LevelTracker init failed:', e); }
+ 
+-        try {
+-            if (typeof VocabularyLearner !== 'undefined') VocabularyLearner.init();
+-        } catch (e) { console.warn('VocabularyLearner init failed:', e); }
++
+ 
+         try {
+             if (typeof AITutor !== 'undefined') AITutor.init();
+@@ -367,8 +365,13 @@ const App = {
+             }
+ 
+             // Launch adaptive placement test
+-            if (module === 'placement' && typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
+-                PlacementTest.showIntro();
++            if (module === 'placement') {
++                var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
++                loadPromise.then(() => {
++                    if (typeof PlacementTest !== 'undefined' && PlacementTest.showIntro) {
++                        PlacementTest.showIntro();
++                    }
++                });
+             }
+ 
+             // Trigger module enter after lazy content populated (only for different module)
+@@ -421,68 +424,84 @@ const App = {
+ 
+     // Reset sub-view containers when entering a module fresh
+     resetModuleSubviews(module) {
+-        try {
+-            if (module === 'listening') {
+-                const menu = document.getElementById('listening-menu');
+-                const ex = document.getElementById('listening-exercise');
+-                if (menu) menu.classList.remove('hidden');
+-                if (ex) ex.classList.add('hidden');
+-            } else if (module === 'reading') {
+-                const menu = document.getElementById('reading-menu');
+-                const ex = document.getElementById('reading-exercise');
+-                if (menu) menu.classList.remove('hidden');
+-                if (ex) ex.classList.add('hidden');
+-            } else if (module === 'grammar') {
+-                const menu = document.getElementById('grammar-menu');
+-                const lesson = document.getElementById('grammar-lesson');
+-                const practice = document.getElementById('grammar-practice');
+-                const search = document.getElementById('grammar-search');
+-                if (menu) menu.classList.remove('hidden');
+-                if (lesson) lesson.classList.add('hidden');
+-                if (practice) practice.classList.add('hidden');
+-                if (search) search.value = '';
+-                if (typeof GrammarModule !== 'undefined' && GrammarModule._renderProgress) {
+-                    GrammarModule._renderProgress();
+-                }
+-            } else if (module === 'speaking') {
+-                const menu = document.getElementById('speaking-menu');
+-                const ex = document.getElementById('speaking-exercise');
+-                if (menu) menu.classList.remove('hidden');
+-                if (ex) ex.classList.add('hidden');
+-            } else if (module === 'vocabulary') {
+-                if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) {
+-                    const container = document.getElementById('vocabulary-learner');
+-                    if (container && !container.querySelector('.level-selector')) {
+-                        VocabularyLearner.showLevelSelector();
++        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
++        loadPromise.then(() => {
++            try {
++                if (module === 'listening') {
++                    const menu = document.getElementById('listening-menu');
++                    const ex = document.getElementById('listening-exercise');
++                    if (menu) menu.classList.remove('hidden');
++                    if (ex) ex.classList.add('hidden');
++                } else if (module === 'reading') {
++                    const menu = document.getElementById('reading-menu');
++                    const ex = document.getElementById('reading-exercise');
++                    if (menu) menu.classList.remove('hidden');
++                    if (ex) ex.classList.add('hidden');
++                } else if (module === 'grammar') {
++                    const menu = document.getElementById('grammar-menu');
++                    const lesson = document.getElementById('grammar-lesson');
++                    const practice = document.getElementById('grammar-practice');
++                    const search = document.getElementById('grammar-search');
++                    if (menu) menu.classList.remove('hidden');
++                    if (lesson) lesson.classList.add('hidden');
++                    if (practice) practice.classList.add('hidden');
++                    if (search) search.value = '';
++                    if (typeof GrammarModule !== 'undefined' && GrammarModule._renderProgress) {
++                        GrammarModule._renderProgress();
++                    }
++                } else if (module === 'speaking') {
++                    const menu = document.getElementById('speaking-menu');
++                    const ex = document.getElementById('speaking-exercise');
++                    if (menu) menu.classList.remove('hidden');
++                    if (ex) ex.classList.add('hidden');
++                } else if (module === 'vocabulary') {
++                    if (typeof VocabularyLearner !== 'undefined') {
++                        // Make sure VocabularyLearner is initialized when its component loads
++                        if (typeof VocabularyLearner.init === 'function' && !VocabularyLearner._initialized) {
++                            VocabularyLearner.init();
++                            VocabularyLearner._initialized = true;
++                        }
++                        if (VocabularyLearner.showLevelSelector) {
++                            const container = document.getElementById('vocabulary-learner');
++                            if (container && !container.querySelector('.level-selector')) {
++                                VocabularyLearner.showLevelSelector();
++                            }
++                        }
++                    }
++                } else if (module === 'achievements') {
++                    if (typeof Achievements !== 'undefined' && Achievements.render) {
++                        Achievements.render();
+                     }
+                 }
+-            } else if (module === 'achievements') {
+-                if (typeof Achievements !== 'undefined' && Achievements.render) {
+-                    Achievements.render();
+-                }
++            } catch (e) {
++                console.warn('resetModuleSubviews error:', module, e);
+             }
+-        } catch (e) {
+-            console.warn('resetModuleSubviews error:', module, e);
+-        }
++        });
+     },
+ 
+     // Populate module content (idempotent - safe to call multiple times)
+     populateModule(module) {
+-        try {
+-            if (module === 'grammar' && typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) {
+-                GrammarModule.showMenu();
+-            } else if (module === 'listening' && typeof ListeningModule !== 'undefined' && ListeningModule.setupTypeCards) {
+-                ListeningModule.setupTypeCards();
+-            } else if (module === 'reading' && typeof ReadingModule !== 'undefined' && ReadingModule.setupTypeCards) {
+-                ReadingModule.setupTypeCards();
+-            } else if (module === 'speaking' && typeof SpeakingModule !== 'undefined' && SpeakingModule.setupTypeCards) {
+-                SpeakingModule.setupTypeCards();
+-            } else if (module === 'achievements' && typeof Achievements !== 'undefined' && Achievements.render) {
+-                Achievements.render();
++        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
++
++        loadPromise.then(() => {
++            try {
++                if (module === 'grammar' && typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) {
++                    GrammarModule.showMenu();
++                } else if (module === 'listening' && typeof ListeningModule !== 'undefined' && ListeningModule.setupTypeCards) {
++                    ListeningModule.setupTypeCards();
++                } else if (module === 'reading' && typeof ReadingModule !== 'undefined' && ReadingModule.setupTypeCards) {
++                    ReadingModule.setupTypeCards();
++                } else if (module === 'speaking' && typeof SpeakingModule !== 'undefined' && SpeakingModule.setupTypeCards) {
++                    SpeakingModule.setupTypeCards();
++                } else if (module === 'achievements' && typeof Achievements !== 'undefined' && Achievements.render) {
++                    Achievements.render();
++                } else if (module === 'analytics' && typeof AnalyticsDashboard !== 'undefined' && typeof AnalyticsDashboard.render === 'function') {
++                    AnalyticsDashboard.render();
++                }
++            } catch (e) {
++                console.warn('populateModule error:', module, e);
+             }
+-        } catch (e) {
+-            console.warn('populateModule error:', module, e);
+-        }
++        });
+     },
+ 
+     // Handle quick actions
+@@ -522,23 +541,27 @@ const App = {
+ 
+     // Show module menu
+     showModuleMenu(module) {
+-        switch(module) {
+-            case 'listening':
+-                if (typeof ListeningModule !== 'undefined' && ListeningModule.showMenu) ListeningModule.showMenu();
+-                break;
+-            case 'reading':
+-                if (typeof ReadingModule !== 'undefined' && ReadingModule.showMenu) ReadingModule.showMenu();
+-                break;
+-            case 'vocabulary':
+-                if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) VocabularyLearner.showLevelSelector();
+-                break;
+-            case 'grammar':
+-                if (typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) GrammarModule.showMenu();
+-                break;
+-            case 'speaking':
+-                if (typeof SpeakingModule !== 'undefined' && SpeakingModule.showMenu) SpeakingModule.showMenu();
+-                break;
+-        }
++        var loadPromise = typeof LazyLoader !== 'undefined' ? LazyLoader.loadComponent(module) : Promise.resolve();
++
++        loadPromise.then(() => {
++            switch(module) {
++                case 'listening':
++                    if (typeof ListeningModule !== 'undefined' && ListeningModule.showMenu) ListeningModule.showMenu();
++                    break;
++                case 'reading':
++                    if (typeof ReadingModule !== 'undefined' && ReadingModule.showMenu) ReadingModule.showMenu();
++                    break;
++                case 'vocabulary':
++                    if (typeof VocabularyLearner !== 'undefined' && VocabularyLearner.showLevelSelector) VocabularyLearner.showLevelSelector();
++                    break;
++                case 'grammar':
++                    if (typeof GrammarModule !== 'undefined' && GrammarModule.showMenu) GrammarModule.showMenu();
++                    break;
++                case 'speaking':
++                    if (typeof SpeakingModule !== 'undefined' && SpeakingModule.showMenu) SpeakingModule.showMenu();
++                    break;
++            }
++        });
+     },
+ 
+     // Load user preferences
+diff --git a/js/lazy-loader.js b/js/lazy-loader.js
+index 0c07551..7b4793a 100644
+--- a/js/lazy-loader.js
++++ b/js/lazy-loader.js
+@@ -8,6 +8,17 @@ var LazyLoader = (function () {
+     'use strict';
+ 
+     // Map of module id → array of data file paths (relative to root)
++    var componentFiles = {
++        vocabulary: ['components/vocabulary-learner.js'],
++        listening: ['components/listening-module.js'],
++        reading: ['components/reading-module.js'],
++        grammar: ['components/grammar-module.js'],
++        speaking: ['components/speaking-module.js'],
++        achievements: ['components/achievements.js'],
++        analytics: ['components/analytics.js'],
++        placement: ['components/placement-test.js']
++    };
++
+     var moduleFiles = {
+         vocabulary: [
+             'data/vocabulary-extended.js',
+@@ -88,6 +99,7 @@ var LazyLoader = (function () {
+     var loaded = {};      // file path → true once loaded
+     var loading = {};     // file path → Promise while in flight
+     var moduleReady = {}; // module id → Promise that resolves when all module files are loaded
++    var componentReady = {}; // module id → Promise that resolves when component scripts are loaded
+ 
+     function loadFile(path) {
+         if (loaded[path]) return Promise.resolve();
+@@ -126,6 +138,27 @@ var LazyLoader = (function () {
+         return moduleReady[moduleId];
+     }
+ 
++    /**
++     * Dynamically loads a component's JavaScript file on demand based on the module ID.
++     * Uses the componentFiles mapping to resolve the correct file path.
++     * Returns a Promise that resolves when the component script has successfully loaded.
++     *
++     * @param {string} moduleId - The ID of the module (e.g., 'vocabulary', 'grammar').
++     * @returns {Promise<void>} A promise that resolves when the component is ready.
++     */
++    function loadComponent(moduleId) {
++        if (componentReady[moduleId]) return componentReady[moduleId];
++        if (!componentFiles[moduleId]) return Promise.resolve(); // No component to load for this module
++
++        var files = componentFiles[moduleId];
++        componentReady[moduleId] = Promise.all(files.map(loadFile)).then(function () {
++            if (typeof App !== 'undefined' && App.DEBUG) {
++                console.log('LazyLoader: component for "' + moduleId + '" ready (' + files.length + ' files)');
++            }
++        });
++        return componentReady[moduleId];
++    }
++
+     function isLoaded(path) {
+         return !!loaded[path];
+     }
+@@ -136,6 +169,8 @@ var LazyLoader = (function () {
+ 
+     return {
+         loadModule: loadModule,
++        loadComponent: loadComponent,
++        componentFiles: componentFiles,
+         isLoaded: isLoaded,
+         isModuleReady: isModuleReady,
+         moduleFiles: moduleFiles
