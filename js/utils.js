@@ -173,30 +173,45 @@ const Utils = {
     similarity(s1, s2) {
         const len1 = s1.length;
         const len2 = s2.length;
-        const matrix = [];
 
-        for (let i = 0; i <= len1; i++) {
-            matrix[i] = [i];
+        // ⚡ Bolt optimization: Use two 1D arrays instead of an N x M 2D matrix.
+        // Reduces space complexity from O(N*M) to O(min(N, M)), saving memory
+        // allocations and reducing GC pauses when comparing longer sentences.
+        if (len1 === 0) return len2 === 0 ? 1 : 0;
+        if (len2 === 0) return 0;
+
+        // Swap strings to ensure we allocate the smaller array
+        if (len1 < len2) {
+            return this.similarity(s2, s1);
         }
 
+        let prevRow = new Array(len2 + 1);
+        let currRow = new Array(len2 + 1);
+
         for (let j = 0; j <= len2; j++) {
-            matrix[0][j] = j;
+            prevRow[j] = j;
         }
 
         for (let i = 1; i <= len1; i++) {
+            currRow[0] = i;
             for (let j = 1; j <= len2; j++) {
                 const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j] + 1,
-                    matrix[i][j - 1] + 1,
-                    matrix[i - 1][j - 1] + cost
+                currRow[j] = Math.min(
+                    currRow[j - 1] + 1,
+                    prevRow[j] + 1,
+                    prevRow[j - 1] + cost
                 );
             }
+            // Swap references to reuse arrays without reallocating
+            const temp = prevRow;
+            prevRow = currRow;
+            currRow = temp;
         }
 
         const maxLen = Math.max(len1, len2);
-        if (maxLen === 0) return 1;
-        return 1 - matrix[len1][len2] / maxLen;
+        if (maxLen === 0) return 1; // Handled by early return above, but kept for safety
+        // prevRow now contains the final distance because of the final swap in the loop
+        return 1 - prevRow[len2] / maxLen;
     },
 
     // Check answer with tolerance
