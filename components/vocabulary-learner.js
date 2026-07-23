@@ -1022,7 +1022,9 @@ const VocabularyLearner = {
         // Wire up search
         const searchEl = document.getElementById('word-search');
         if (searchEl) {
-            searchEl.addEventListener('input', (e) => this.filterWords(e.target.value));
+            // ⚡ Bolt optimization: Debounce search input to reduce DOM manipulations and reflows
+            const debouncedSearch = Utils.debounce((query) => this.filterWords(query), 300);
+            searchEl.addEventListener('input', (e) => debouncedSearch(e.target.value));
         }
 
         // Tap any card to hear it (CSP-safe addEventListener + keyboard)
