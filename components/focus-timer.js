@@ -32,7 +32,7 @@ const FocusTimer = {
         const dashboardHero = document.querySelector('.neo-hero__actions');
         if (dashboardHero) {
             dashboardHero.insertAdjacentHTML('beforeend', `
-                <button class="neo-ghost-button" type="button" id="toggle-focus-timer">
+                <button class="neo-ghost-button" type="button" id="toggle-focus-timer" aria-expanded="false">
                     ⏱️ Focus Timer
                 </button>
             `);
@@ -44,7 +44,10 @@ const FocusTimer = {
         if (toggleBtn) {
             toggleBtn.addEventListener('click', () => {
                 const timer = document.getElementById('floating-timer');
-                if (timer) timer.classList.toggle('hidden');
+                if (timer) {
+                    const isHidden = timer.classList.toggle('hidden');
+                    toggleBtn.setAttribute('aria-expanded', !isHidden);
+                }
             });
         }
 
@@ -73,7 +76,10 @@ const FocusTimer = {
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
                 const timer = document.getElementById('floating-timer');
-                if (timer) timer.classList.add('hidden');
+                if (timer) {
+                    timer.classList.add('hidden');
+                    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+                }
                 this.pause();
                 this.isPlaying = false;
                 if(playBtn) {
