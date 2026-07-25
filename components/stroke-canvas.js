@@ -39,7 +39,7 @@
                 <div class="stroke-canvas-wrapper">
                     <div class="stroke-canvas-grid"></div>
                     <div class="stroke-canvas-guide" id="stroke-guide-char">${this.currentChar}</div>
-                    <canvas id="stroke-drawing-canvas"></canvas>
+                    <canvas id="stroke-drawing-canvas" role="img" aria-label="Interactive character stroke practice area"></canvas>
                 </div>
 
                 <div class="stroke-controls">

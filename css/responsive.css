@@ -1125,7 +1125,7 @@ select:focus,
 /* =============================================
    DESKTOP NAV FIX
    ============================================= */
-@media (min-width: 769px) {
+@media (min-width: 845px) {
     .mobile-nav-toggle {
         display: none;
     }

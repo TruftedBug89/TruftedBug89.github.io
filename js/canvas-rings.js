@@ -18,8 +18,14 @@
                 container._ringAnimId = null;
             }
 
+            container.setAttribute('role', 'progressbar');
+            container.setAttribute('aria-valuenow', Math.round(value));
+            container.setAttribute('aria-valuemin', '0');
+            container.setAttribute('aria-valuemax', '100');
+            container.setAttribute('aria-label', (label || 'Progress') + ' ring');
+
             container.innerHTML = `
-                <canvas></canvas>
+                <canvas role="img" aria-hidden="true"></canvas>
                 <div class="radial-canvas-content">
                     <div class="radial-canvas-value">${Math.round(value)}%</div>
                     ${label ? `<div class="radial-canvas-label">${label}</div>` : ''}

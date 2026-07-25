@@ -35,6 +35,7 @@
             this.canvas = document.createElement('canvas');
             this.canvas.id = 'canvas-ui-bg';
             this.canvas.className = 'canvas-ui-bg';
+            this.canvas.setAttribute('aria-hidden', 'true');
             document.body.prepend(this.canvas);
 
             this.ctx = this.canvas.getContext('2d');

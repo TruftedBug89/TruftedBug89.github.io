@@ -62,7 +62,7 @@
                         <span class="tone-btn__label">4th (Falling 51)</span>
                     </button>
                 </div>
-                <canvas class="tone-canvas-view" id="tone-canvas-view"></canvas>
+                <canvas class="tone-canvas-view" id="tone-canvas-view" role="img" aria-label="Mandarin tone pitch contour graph"></canvas>
             `;
             targetEl.appendChild(this.card);
 
