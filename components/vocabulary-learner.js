@@ -1017,6 +1017,7 @@ const VocabularyLearner = {
                     </div>
                 `).join('')}
             </div>
+            <div id="vocab-stroke-canvas-mount" style="margin-top:24px;"></div>
         `;
 
         // Wire up search
@@ -1034,6 +1035,9 @@ const VocabularyLearner = {
                 if (char && typeof AudioManager !== 'undefined') {
                     AudioManager.speak(char);
                 }
+                if (char && typeof StrokeCanvas !== 'undefined' && StrokeCanvas.setChar) {
+                    StrokeCanvas.setChar(char);
+                }
             });
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -1048,6 +1052,12 @@ const VocabularyLearner = {
         const browserGrid = document.getElementById('word-grid');
         if (browserGrid && typeof InkAnimations !== 'undefined' && InkAnimations.entranceStagger) {
             InkAnimations.entranceStagger(browserGrid);
+        }
+
+        const strokeMount = document.getElementById('vocab-stroke-canvas-mount');
+        if (strokeMount && typeof StrokeCanvas !== 'undefined') {
+            const firstChar = words[0] ? words[0].character : '水';
+            StrokeCanvas.mount(strokeMount, firstChar);
         }
 
         const backBtn = container.querySelector('[data-cm-action="back-levels-3"]');

@@ -13,6 +13,14 @@ const Dashboard = {
         if (typeof InkAnimations !== 'undefined' && InkAnimations.textSplitReveal) {
             InkAnimations.textSplitReveal('.greeting');
         }
+        this._mountCanvasStudio();
+    },
+
+    _mountCanvasStudio() {
+        const mountEl = document.getElementById('tone-canvas-mount');
+        if (mountEl && !mountEl.children.length && typeof ToneVisualizer !== 'undefined') {
+            ToneVisualizer.mount(mountEl);
+        }
     },
 
     _checkBackupReminder() {

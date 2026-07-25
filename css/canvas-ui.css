@@ -1,0 +1,329 @@
+/* ==========================================
+   CANVAS UI & REDESIGN DESIGN SYSTEM
+   ========================================== */
+
+/* Fullscreen Backdrop Canvas */
+.canvas-ui-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.85;
+    transition: opacity 0.4s ease;
+}
+
+/* Interactive Canvas UI Controls Badge */
+.canvas-ui-controls {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(18, 18, 26, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 6px 14px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(108, 92, 231, 0.15);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.canvas-ui-controls:hover {
+    border-color: rgba(108, 92, 231, 0.4);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 28px rgba(108, 92, 231, 0.3);
+    transform: translateY(-2px);
+}
+
+.canvas-ui-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a0a0c0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.canvas-ui-badge__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00b894;
+    box-shadow: 0 0 10px #00b894;
+    animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.canvas-ui-btn {
+    background: transparent;
+    border: none;
+    color: #e0e0ff;
+    font-size: 0.82rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.canvas-ui-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Creative Tone Visualizer Canvas Container */
+.tone-canvas-card {
+    background: rgba(18, 18, 28, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tone-canvas-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff7675, #fdcb6e, #00b894, #6c5ce7);
+}
+
+.tone-canvas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tone-canvas-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tone-canvas-subtitle {
+    font-size: 0.82rem;
+    color: #a0a0c0;
+}
+
+.tone-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.tone-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 8px;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tone-btn[data-tone="1"] { border-color: rgba(253, 203, 110, 0.4); }
+.tone-btn[data-tone="2"] { border-color: rgba(0, 184, 148, 0.4); }
+.tone-btn[data-tone="3"] { border-color: rgba(108, 92, 231, 0.4); }
+.tone-btn[data-tone="4"] { border-color: rgba(255, 118, 117, 0.4); }
+
+.tone-btn:hover, .tone-btn.active {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tone-btn[data-tone="1"]:hover, .tone-btn[data-tone="1"].active {
+    background: rgba(253, 203, 110, 0.18);
+    box-shadow: 0 8px 24px rgba(253, 203, 110, 0.25);
+}
+.tone-btn[data-tone="2"]:hover, .tone-btn[data-tone="2"].active {
+    background: rgba(0, 184, 148, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 184, 148, 0.25);
+}
+.tone-btn[data-tone="3"]:hover, .tone-btn[data-tone="3"].active {
+    background: rgba(108, 92, 231, 0.18);
+    box-shadow: 0 8px 24px rgba(108, 92, 231, 0.25);
+}
+.tone-btn[data-tone="4"]:hover, .tone-btn[data-tone="4"].active {
+    background: rgba(255, 118, 117, 0.18);
+    box-shadow: 0 8px 24px rgba(255, 118, 117, 0.25);
+}
+
+.tone-btn__mark {
+    font-size: 1.4rem;
+}
+.tone-btn__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+.tone-canvas-view {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    background: rgba(10, 10, 16, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: block;
+}
+
+/* Character Stroke Drawing Canvas Component */
+.stroke-canvas-wrapper {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background: rgba(15, 15, 24, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.stroke-canvas-wrapper canvas {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.stroke-canvas-guide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    color: rgba(255, 255, 255, 0.06);
+    font-family: 'Noto Sans SC', serif;
+    pointer-events: none;
+    user-select: none;
+}
+
+.stroke-canvas-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.stroke-canvas-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.stroke-canvas-grid::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.06);
+}
+
+.stroke-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+/* Radial Progress Canvas Ring */
+.radial-canvas-ring {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radial-canvas-ring canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radial-canvas-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.radial-canvas-value {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.radial-canvas-label {
+    font-size: 0.68rem;
+    color: #a0a0c0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+}
+
+/* Glassmorphic Polish Utilities */
+.glass-panel {
+    background: rgba(18, 18, 28, 0.68);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 20px rgba(108, 92, 231, 0.15);
+}
+
+@media (max-width: 768px) {
+    .canvas-ui-controls {
+        bottom: 76px;
+        right: 16px;
+        padding: 4px 10px;
+    }
+    .tone-buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,5 +1,5 @@
-const VERSION = '7';
-const CACHE_NAME = 'chinese-master-v7';
+const VERSION = '8';
+const CACHE_NAME = 'chinese-master-v8';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -27,6 +27,11 @@ const PRECACHE_URLS = [
   '/css/placement-test.css',
   '/css/loading.css',
   '/css/future-ui.css',
+  '/css/canvas-ui.css',
+  '/js/canvas-ui.js',
+  '/components/tone-visualizer.js',
+  '/components/stroke-canvas.js',
+  '/js/canvas-rings.js',
   '/js/utils.js',
   '/js/storage.js',
   '/js/session.js',
