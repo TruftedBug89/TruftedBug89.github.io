@@ -310,8 +310,9 @@ const VocabularyLearner = {
                 { character: word.character, pinyin: word.pinyin },
                 { meaning: word.meaning, examples: word.examples || [] }
             ); });
-            var confirmStudy = window.confirm('No cards due for review. Study 10 new cards instead?');
-            if (!confirmStudy) { return; }
+            if (typeof Utils !== 'undefined' && Utils.showToast) {
+                Utils.showToast('No overdue cards! Starting 10 new vocabulary cards.', 'info');
+            }
             SM2.saveCards(deckName, fallbackCards);
             var fallbackSession = SM2.generateSession(fallbackCards, { maxNew: 10, maxReview: 0 });
             this.sessionCards = fallbackSession.cards;
@@ -584,6 +585,7 @@ const VocabularyLearner = {
         
         // Add keyboard hotkeys
         var handler = function(e) {
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) return;
             // Keys 1-5: rate card (only when flipped)
             if (e.key >= '1' && e.key <= '5') {
                 if (VocabularyLearner.isFlipped) {
