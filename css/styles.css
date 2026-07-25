@@ -247,11 +247,13 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 260px;
-    padding: var(--spacing-2xl);
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    max-width: calc(100% - 240px);
+    padding: var(--spacing-xl);
     min-height: 100vh;
     min-height: 100dvh;
-    max-width: calc(100vw - 260px);
+    box-sizing: border-box;
     transition: margin-left var(--transition-normal);
     position: relative;
     z-index: 1;

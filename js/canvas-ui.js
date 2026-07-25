@@ -198,6 +198,9 @@
                 <button type="button" class="canvas-ui-btn" id="btn-canvas-toggle-mode" aria-label="Toggle Canvas Background Theme">
                     ✨ Flow
                 </button>
+                <button type="button" class="canvas-ui-btn" id="btn-ai-options" aria-label="Add or Modify AI Options">
+                    🤖 AI Options
+                </button>
             `;
             document.body.appendChild(controls);
 
@@ -213,6 +216,15 @@
                     } else {
                         this.mode = 'flow';
                         modeBtn.textContent = '✨ Flow';
+                    }
+                });
+            }
+
+            const aiBtn = controls.querySelector('#btn-ai-options');
+            if (aiBtn) {
+                aiBtn.addEventListener('click', () => {
+                    if (typeof AITutor !== 'undefined' && AITutor.showConfig) {
+                        AITutor.showConfig({});
                     }
                 });
             }

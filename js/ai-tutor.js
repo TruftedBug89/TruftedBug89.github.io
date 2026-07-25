@@ -100,8 +100,8 @@ const AITutor = {
     getDefaultModel() { var p = this.getProvider(); return p.defaultModel || this.config.model; },
 
     markPrompted() { this._writeStorage(this.SKIP_KEY, '1'); },
-    shouldPromptOnStartup() { return this._readStorage(this.SKIP_KEY) === null; },
-    promptConfigIfNeeded() { if (this.shouldPromptOnStartup()) this.showConfig({ fromStartup: true }); },
+    shouldPromptOnStartup() { return false; },
+    promptConfigIfNeeded() { /* AI Tutor remains a button until triggered */ },
 
     // ============================================
     // CONFIG MODAL

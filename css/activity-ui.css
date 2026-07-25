@@ -2365,3 +2365,35 @@
     display: none;
 }
 
+/* ===== MINIMAL CHILL ACTIVITY MICRO-INTERACTIONS ===== */
+.listening-option, .option-card, .exercise-type-card, .matching-card, .flashcard, .btn, .choice-btn {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+                background 0.25s ease, 
+                border-color 0.25s ease, 
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.listening-option:hover, .option-card:hover, .exercise-type-card:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(53, 223, 177, 0.12);
+}
+
+.listening-option:active, .option-card:active, .exercise-type-card:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.listening-option.selected, .option-card.selected {
+    box-shadow: 0 0 20px rgba(250, 74, 67, 0.25), inset 0 0 12px rgba(250, 74, 67, 0.1);
+}
+
+.listening-option.correct, .option-card.correct {
+    box-shadow: 0 0 24px rgba(53, 223, 177, 0.35), inset 0 0 16px rgba(53, 223, 177, 0.15);
+    animation: chillPulse 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes chillPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
