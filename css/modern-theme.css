@@ -329,11 +329,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
 /* === MAIN CONTENT === */
 .main-content {
-    flex: 1; margin-left: 260px;
-    padding: var(--spacing-2xl);
+    flex: 1; margin-left: 240px;
+    padding: var(--spacing-xl);
     min-height: 100vh; min-height: 100dvh;
     position: relative; z-index: 1;
-    max-width: calc(100vw - 260px);
+    max-width: calc(100% - 240px);
 }
 
 /* === MODULE VISIBILITY === */
@@ -1312,16 +1312,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     color: var(--text-primary);
 }
 .modal-close {
-    position: absolute; top: var(--spacing-md); right: var(--spacing-md);
-    background: none; border: none;
+    position: sticky; top: 8px; right: 8px;
+    z-index: 10; float: right;
+    background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 24px; cursor: pointer;
-    width: 36px; height: 36px;
+    width: 44px; height: 44px; min-width: 44px; min-height: 44px;
     display: flex; align-items: center; justify-content: center;
     border-radius: var(--radius-full);
     transition: all 0.2s ease;
     color: var(--text-secondary);
 }
-.modal-close:hover { background: rgba(148, 163, 184, 0.06); color: var(--text-primary); }
+.modal-close:hover { background: rgba(148, 163, 184, 0.15); color: var(--text-primary); }
 
 /* === TOAST === */
 .toast-container {
@@ -1341,11 +1342,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 
 /* === SITE FOOTER === */
 .site-footer {
-    margin-left: 260px;
+    margin-left: 240px;
     margin-top: var(--spacing-3xl);
     padding: var(--spacing-lg) var(--spacing-2xl) var(--spacing-xl);
     border-top: 1px solid rgba(148, 163, 184, 0.06);
-    max-width: calc(100vw - 260px);
+    max-width: calc(100% - 240px);
 }
 .footer-content {
     display: flex; justify-content: center; gap: var(--spacing-xl);

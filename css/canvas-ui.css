@@ -331,8 +331,9 @@
 
 @media (max-width: 844px) {
     .canvas-ui-controls {
-        bottom: 76px;
+        bottom: calc(76px + env(safe-area-inset-bottom, 0px));
         right: 16px;
+        z-index: 350;
         padding: 4px 10px;
     }
     .tone-buttons-grid {

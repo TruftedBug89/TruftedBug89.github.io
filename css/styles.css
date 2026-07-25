@@ -1090,7 +1090,8 @@ body {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    min-width: 300px;
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
 }
 
 .toast.success {
