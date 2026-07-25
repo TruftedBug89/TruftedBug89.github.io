@@ -2,7 +2,8 @@
  * ==========================================
  * CANVAS RADIAL PROGRESS RINGS COMPONENT
  * ==========================================
- * Renders high-precision glowing radial progress rings on HTML5 canvas.
+ * Renders high-precision glowing radial progress rings on HTML5 canvas with
+ * clean rAF lifecycle management, DPR scaling, and exact lerp convergence.
  */
 (function (global) {
     'use strict';
@@ -10,6 +11,12 @@
     class CanvasRingsManager {
         renderRing(container, value = 0, color = '#6c5ce7', label = '') {
             if (!container) return;
+
+            // Cancel any previous rAF loop on this container
+            if (container._ringAnimId) {
+                cancelAnimationFrame(container._ringAnimId);
+                container._ringAnimId = null;
+            }
 
             container.innerHTML = `
                 <canvas></canvas>
@@ -21,20 +28,24 @@
 
             const canvas = container.querySelector('canvas');
             const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
             const size = container.clientWidth || 120;
             const dpr = window.devicePixelRatio || 1;
 
             canvas.width = size * dpr;
             canvas.height = size * dpr;
-            ctx.scale(dpr, dpr);
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
             const center = size / 2;
-            const radius = size / 2 - 8;
+            const radius = Math.max(size / 2 - 8, 4);
             const startAngle = -Math.PI / 2;
             let currentPct = 0;
+            const targetVal = Math.max(0, Math.min(100, value));
 
-            const animate = () => {
-                currentPct += (value - currentPct) * 0.1;
+            const drawFrame = (pct) => {
                 ctx.clearRect(0, 0, size, size);
 
                 // Background track ring
@@ -44,23 +55,42 @@
                 ctx.lineWidth = 8;
                 ctx.stroke();
 
-                // Active progress arc
-                const endAngle = startAngle + (Math.PI * 2 * (currentPct / 100));
-                ctx.beginPath();
-                ctx.arc(center, center, radius, startAngle, endAngle);
-                ctx.strokeStyle = color;
-                ctx.lineWidth = 8;
-                ctx.lineCap = 'round';
-                ctx.shadowColor = color;
-                ctx.shadowBlur = 12;
-                ctx.stroke();
-
-                if (Math.abs(value - currentPct) > 0.5) {
-                    requestAnimationFrame(animate);
+                // Active progress arc (only draw if > 0 to avoid WebKit round cap dot artifact)
+                if (pct > 0) {
+                    const endAngle = startAngle + (Math.PI * 2 * (pct / 100));
+                    ctx.beginPath();
+                    ctx.arc(center, center, radius, startAngle, endAngle);
+                    ctx.strokeStyle = color;
+                    ctx.lineWidth = 8;
+                    ctx.lineCap = 'round';
+                    ctx.stroke();
                 }
             };
 
+            const animate = () => {
+                const diff = targetVal - currentPct;
+                if (Math.abs(diff) < 0.1) {
+                    currentPct = targetVal;
+                    drawFrame(currentPct);
+                    container._ringAnimId = null;
+                    return;
+                }
+
+                currentPct += diff * 0.12;
+                drawFrame(currentPct);
+                container._ringAnimId = requestAnimationFrame(animate);
+            };
+
             animate();
+        }
+
+        unmount(container) {
+            if (!container) return;
+            if (container._ringAnimId) {
+                cancelAnimationFrame(container._ringAnimId);
+                container._ringAnimId = null;
+            }
+            container.innerHTML = '';
         }
 
         renderAll() {

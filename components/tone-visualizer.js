@@ -165,9 +165,28 @@
                 osc.connect(gain);
                 gain.connect(this.audioCtx.destination);
 
+                osc.onended = () => {
+                    try {
+                        osc.disconnect();
+                        gain.disconnect();
+                    } catch (ignore) {}
+                };
+
                 osc.start(now);
                 osc.stop(now + duration + 0.05);
             } catch (ignore) {}
+        }
+
+        unmount() {
+            if (this.animId) cancelAnimationFrame(this.animId);
+            if (this.currentOsc) {
+                try { this.currentOsc.stop(); } catch (ignore) {}
+            }
+            if (this.card && this.card.parentNode) {
+                this.card.parentNode.removeChild(this.card);
+            }
+            this.container = null;
+            this.card = null;
         }
 
         drawStaticFrame() {

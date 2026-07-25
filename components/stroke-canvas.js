@@ -201,6 +201,13 @@
             this.strokes = [];
             this.points = [];
         }
+
+        unmount() {
+            this.clear();
+            this.container = null;
+            this.canvas = null;
+            this.ctx = null;
+        }
     }
 
     global.StrokeCanvas = new StrokeCanvasComponent();
