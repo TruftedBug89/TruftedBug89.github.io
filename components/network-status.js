@@ -48,7 +48,8 @@ const NetworkStatus = {
         this.toast.className = `network-status-toast network-status-toast--${type}`;
         this.toast.setAttribute('role', 'status');
         this.toast.setAttribute('aria-live', 'polite');
-        this.toast.innerHTML = `<span>${message}</span>`;
+        this.toast.innerHTML = '<span></span>';
+        this.toast.querySelector('span').textContent = message;
 
         document.body.appendChild(this.toast);
 
