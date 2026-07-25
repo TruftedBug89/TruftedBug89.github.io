@@ -1,5 +1,5 @@
-const VERSION = '8';
-const CACHE_NAME = 'chinese-master-v8';
+const VERSION = '9';
+const CACHE_NAME = 'chinese-master-v9';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -9,6 +9,9 @@ const LARGE_DATA_FILES = [
 
 const PRECACHE_URLS = [
   '/',
+  '/assets/hero-zen-studio.jpg',
+  '/assets/vocab-mastery-card.jpg',
+  '/assets/culture-dialogue-bg.jpg',
   '/css/themes.css',
   '/css/modern-theme.css',
   '/css/styles.css',

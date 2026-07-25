@@ -52,9 +52,12 @@ const VocabularyLearner = {
             ? (userData.progress.vocabulary.mastered || []).length : 0;
 
         container.innerHTML = `
-            <div class="vocab-header">
-                <h2>📚 Vocabulary Learner</h2>
-                <p>Learn Chinese words with spaced repetition · ${Utils.escapeHtml(mastered)} mastered</p>
+            <div class="vocab-seal-banner">
+                <img src="assets/vocab-mastery-card.jpg" alt="Vocabulary Mastery Jade Seal" class="vocab-seal-img">
+                <div>
+                    <h2 style="font-size:1.4rem; font-weight:800; color:#fff; margin:0 0 6px 0;">📚 Vocabulary Learner & SRS Engine</h2>
+                    <p style="color:#a0a0c0; margin:0; font-size:0.9rem;">Master Chinese words with SM-2 spaced repetition · ${Utils.escapeHtml(mastered)} words mastered</p>
+                </div>
             </div>
 
             <div class="level-selector">
