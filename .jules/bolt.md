@@ -17,3 +17,7 @@
 ## 2024-09-08 - String Similarity Levenshtein Matrix Memory Overhead
 **Learning:** Computing Levenshtein distance by allocating an $N \times M$ 2D array creates severe memory pressure and triggers garbage collection pauses, especially when used frequently or on longer sentences, due to allocating $N$ separate sub-arrays in JavaScript.
 **Action:** Optimize space complexity from $O(N \times M)$ to $O(\min(N, M))$ by using only two 1-D arrays (`prevRow` and `currRow`) and swapping their references on each outer loop iteration. Swap strings early so the smaller string defines the column width.
+
+## 2026-07-23 - Debouncing Search Inputs
+**Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
+**Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.

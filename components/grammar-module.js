@@ -153,10 +153,12 @@ const GrammarModule = {
             searchInput.value = '';
             if (!this._searchWired) {
                 this._searchWired = true;
-                searchInput.addEventListener('input', function () {
+                // ⚡ Bolt optimization: Debounce search input to reduce DOM manipulations and reflows
+                var debouncedSearch = Utils.debounce(function () {
                     GrammarModule.search = searchInput.value;
                     GrammarModule._renderList();
-                });
+                }, 300);
+                searchInput.addEventListener('input', debouncedSearch);
             }
         }
 
