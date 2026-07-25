@@ -13,3 +13,7 @@
 ## 2024-07-18 - Lazy Loading Heavy Vanilla JS Components
 **Learning:** In a vanilla JS architecture, large UI components that aren't critical to the initial paint can be effectively lazy-loaded by dynamically injecting `<script>` tags on demand. This shrinks the initial payload size. However, converting a synchronous component initialization flow to an asynchronous one requires careful attention to the execution order (e.g., ensuring `init()` is called before `render()` inside the `.then()` chain) to avoid race conditions.
 **Action:** When migrating synchronous component setups to lazy-loaded patterns, wrap all dependent UI setup logic (e.g., in routing functions like `populateModule` or `showMenu`) inside the `loadPromise.then()` block, and ensure idempotent initialization routines (`if (!initialized) init();`) are correctly sequenced within that block.
+
+## 2024-09-08 - String Similarity Levenshtein Matrix Memory Overhead
+**Learning:** Computing Levenshtein distance by allocating an $N \times M$ 2D array creates severe memory pressure and triggers garbage collection pauses, especially when used frequently or on longer sentences, due to allocating $N$ separate sub-arrays in JavaScript.
+**Action:** Optimize space complexity from $O(N \times M)$ to $O(\min(N, M))$ by using only two 1-D arrays (`prevRow` and `currRow`) and swapping their references on each outer loop iteration. Swap strings early so the smaller string defines the column width.
