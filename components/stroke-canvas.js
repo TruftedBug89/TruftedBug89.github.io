@@ -10,7 +10,7 @@
 
     class StrokeCanvasComponent {
         constructor() {
-            this.wrapper = null;
+            this.container = null;
             this.canvas = null;
             this.ctx = null;
             this.isDrawing = false;
@@ -21,13 +21,14 @@
 
         mount(targetEl, initialChar = '水') {
             if (!targetEl) return;
+            this.container = targetEl;
             this.currentChar = initialChar;
 
-            const container = document.createElement('div');
-            container.className = 'glass-panel';
-            container.style.padding = '24px';
-            container.style.marginTop = '24px';
-            container.innerHTML = `
+            const card = document.createElement('div');
+            card.className = 'glass-panel';
+            card.style.padding = '24px';
+            card.style.marginTop = '24px';
+            card.innerHTML = `
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
                     <div>
                         <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0;">✍️ Interactive Canvas Stroke Studio</h3>
@@ -42,43 +43,52 @@
                 </div>
 
                 <div class="stroke-controls">
+                    <button type="button" class="btn btn-secondary btn-sm" id="btn-stroke-undo">↩️ Undo</button>
                     <button type="button" class="btn btn-secondary btn-sm" id="btn-stroke-clear">🧹 Clear Ink</button>
                     <button type="button" class="btn btn-secondary btn-sm" id="btn-stroke-toggle-guide">👁️ Toggle Guide</button>
                 </div>
             `;
 
-            targetEl.appendChild(container);
+            targetEl.appendChild(card);
 
-            this.canvas = container.querySelector('#stroke-drawing-canvas');
+            this.canvas = card.querySelector('#stroke-drawing-canvas');
             this.ctx = this.canvas.getContext('2d');
             this.resizeCanvas();
-            this.bindEvents(container);
+            this.bindEvents(card);
         }
 
         setChar(char) {
             this.currentChar = char;
-            const guide = document.getElementById('stroke-guide-char');
+            const guide = this.container ? this.container.querySelector('#stroke-guide-char') : null;
             if (guide) guide.textContent = char;
             this.clear();
         }
 
         resizeCanvas() {
-            if (!this.canvas) return;
+            if (!this.canvas || !this.ctx) return;
             const rect = this.canvas.getBoundingClientRect();
             const dpr = window.devicePixelRatio || 1;
             this.canvas.width = (rect.width || 240) * dpr;
             this.canvas.height = (rect.height || 240) * dpr;
-            this.ctx.scale(dpr, dpr);
+            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            this.redrawStrokes();
         }
 
-        bindEvents(container) {
-            window.addEventListener('resize', () => this.resizeCanvas());
+        bindEvents(card) {
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => this.resizeCanvas(), 100);
+            });
 
-            const clearBtn = container.querySelector('#btn-stroke-clear');
+            const clearBtn = card.querySelector('#btn-stroke-clear');
             if (clearBtn) clearBtn.addEventListener('click', () => this.clear());
 
-            const guideBtn = container.querySelector('#btn-stroke-toggle-guide');
-            const guideEl = container.querySelector('#stroke-guide-char');
+            const undoBtn = card.querySelector('#btn-stroke-undo');
+            if (undoBtn) undoBtn.addEventListener('click', () => this.undo());
+
+            const guideBtn = card.querySelector('#btn-stroke-toggle-guide');
+            const guideEl = card.querySelector('#stroke-guide-char');
             if (guideBtn && guideEl) {
                 guideBtn.addEventListener('click', () => {
                     guideEl.style.display = guideEl.style.display === 'none' ? 'block' : 'none';
@@ -97,39 +107,32 @@
             };
 
             const startDraw = (e) => {
+                if (e.touches && e.touches.length > 1) return;
                 this.isDrawing = true;
                 this.points = [getPos(e)];
             };
 
             const draw = (e) => {
                 if (!this.isDrawing) return;
-                e.preventDefault();
+                if (e.preventDefault && e.cancelable) e.preventDefault();
 
                 const p = getPos(e);
                 this.points.push(p);
 
-                if (this.points.length > 2) {
+                if (this.points.length >= 2) {
                     const p1 = this.points[this.points.length - 2];
                     const p2 = this.points[this.points.length - 1];
-
-                    this.ctx.save();
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(p1.x, p1.y);
-                    this.ctx.lineTo(p2.x, p2.y);
-                    this.ctx.strokeStyle = '#00b894';
-                    this.ctx.lineWidth = 6;
-                    this.ctx.lineCap = 'round';
-                    this.ctx.lineJoin = 'round';
-                    this.ctx.shadowColor = '#00b894';
-                    this.ctx.shadowBlur = 8;
-                    this.ctx.stroke();
-                    this.ctx.restore();
+                    this.renderSegment(p1, p2);
                 }
             };
 
             const stopDraw = () => {
                 if (this.isDrawing) {
                     this.isDrawing = false;
+                    if (this.points.length === 1) {
+                        const p = this.points[0];
+                        this.renderDot(p);
+                    }
                     this.strokes.push([...this.points]);
                     this.points = [];
                 }
@@ -139,13 +142,60 @@
             this.canvas.addEventListener('mousemove', draw);
             window.addEventListener('mouseup', stopDraw);
 
-            this.canvas.addEventListener('touchstart', startDraw);
-            this.canvas.addEventListener('touchmove', draw);
+            this.canvas.addEventListener('touchstart', startDraw, { passive: true });
+            this.canvas.addEventListener('touchmove', draw, { passive: false });
             window.addEventListener('touchend', stopDraw);
         }
 
+        renderSegment(p1, p2) {
+            if (!this.ctx) return;
+            this.ctx.save();
+            this.ctx.beginPath();
+            this.ctx.moveTo(p1.x, p1.y);
+            this.ctx.lineTo(p2.x, p2.y);
+            this.ctx.strokeStyle = '#00b894';
+            this.ctx.lineWidth = 6;
+            this.ctx.lineCap = 'round';
+            this.ctx.lineJoin = 'round';
+            this.ctx.stroke();
+            this.ctx.restore();
+        }
+
+        renderDot(p) {
+            if (!this.ctx) return;
+            this.ctx.save();
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+            this.ctx.fillStyle = '#00b894';
+            this.ctx.fill();
+            this.ctx.restore();
+        }
+
+        redrawStrokes() {
+            if (!this.canvas || !this.ctx) return;
+            const rect = this.canvas.getBoundingClientRect();
+            this.ctx.clearRect(0, 0, rect.width || 240, rect.height || 240);
+
+            this.strokes.forEach(pts => {
+                if (pts.length === 1) {
+                    this.renderDot(pts[0]);
+                } else {
+                    for (let i = 0; i < pts.length - 1; i++) {
+                        this.renderSegment(pts[i], pts[i + 1]);
+                    }
+                }
+            });
+        }
+
+        undo() {
+            if (this.strokes.length > 0) {
+                this.strokes.pop();
+                this.redrawStrokes();
+            }
+        }
+
         clear() {
-            if (!this.canvas) return;
+            if (!this.canvas || !this.ctx) return;
             const rect = this.canvas.getBoundingClientRect();
             this.ctx.clearRect(0, 0, rect.width || 240, rect.height || 240);
             this.strokes = [];

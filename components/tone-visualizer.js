@@ -9,79 +9,88 @@
     'use strict';
 
     const TONES_DATA = {
-        1: { name: '1st Tone · High Flat (阴平)', mark: 'ā', color: '#fdcb6e', points: [0.8, 0.8, 0.8, 0.8], freqStart: 320, freqEnd: 320 },
-        2: { name: '2nd Tone · Rising (阳平)', mark: 'á', color: '#00b894', points: [0.35, 0.45, 0.65, 0.85], freqStart: 220, freqEnd: 330 },
-        3: { name: '3rd Tone · Dip & Rise (上声)', mark: 'ǎ', color: '#6c5ce7', points: [0.4, 0.2, 0.15, 0.75], freqStart: 240, freqEnd: 310 },
-        4: { name: '4th Tone · Falling (去声)', mark: 'à', color: '#ff7675', points: [0.9, 0.6, 0.35, 0.15], freqStart: 360, freqEnd: 180 }
+        1: { name: '1st Tone · High Flat 阴平 (55)', mark: 'ā', color: '#fdcb6e', points: [0.8, 0.8, 0.8, 0.8], freqStart: 320, freqEnd: 320 },
+        2: { name: '2nd Tone · Rising 阳平 (35)', mark: 'á', color: '#00b894', points: [0.35, 0.45, 0.65, 0.85], freqStart: 220, freqEnd: 330 },
+        3: { name: '3rd Tone · Dip & Rise 上声 (214)', mark: 'ǎ', color: '#6c5ce7', points: [0.4, 0.2, 0.15, 0.75], freqStart: 240, freqEnd: 310 },
+        4: { name: '4th Tone · Falling 去声 (51)', mark: 'à', color: '#ff7675', points: [0.9, 0.6, 0.35, 0.15], freqStart: 360, freqEnd: 180 }
     };
 
     class ToneVisualizerComponent {
         constructor() {
             this.container = null;
+            this.card = null;
             this.canvas = null;
             this.ctx = null;
             this.activeTone = 1;
             this.animProgress = 0;
             this.animId = null;
             this.audioCtx = null;
+            this.currentOsc = null;
         }
 
         mount(targetEl) {
             if (!targetEl) return;
+            this.container = targetEl;
 
-            const card = document.createElement('div');
-            card.className = 'tone-canvas-card';
-            card.innerHTML = `
+            this.card = document.createElement('div');
+            this.card.className = 'tone-canvas-card';
+            this.card.innerHTML = `
                 <div class="tone-canvas-header">
                     <div>
                         <div class="tone-canvas-title">
-                            <span>🎵 Tone Pitch Canvas</span>
+                            <span>🎵 Mandarin Tone Pitch Canvas</span>
                         </div>
                         <div class="tone-canvas-subtitle" id="tone-canvas-label">${TONES_DATA[1].name}</div>
                     </div>
+                    <button type="button" class="btn btn-secondary btn-sm" id="btn-tone-replay">🔁 Replay Tone</button>
                 </div>
                 <div class="tone-buttons-grid">
                     <button type="button" class="tone-btn active" data-tone="1">
                         <span class="tone-btn__mark">ā</span>
-                        <span class="tone-btn__label">1st (Flat)</span>
+                        <span class="tone-btn__label">1st (Flat 55)</span>
                     </button>
                     <button type="button" class="tone-btn" data-tone="2">
                         <span class="tone-btn__mark">á</span>
-                        <span class="tone-btn__label">2nd (Rising)</span>
+                        <span class="tone-btn__label">2nd (Rising 35)</span>
                     </button>
                     <button type="button" class="tone-btn" data-tone="3">
                         <span class="tone-btn__mark">ǎ</span>
-                        <span class="tone-btn__label">3rd (Dip-Rise)</span>
+                        <span class="tone-btn__label">3rd (Dip-Rise 214)</span>
                     </button>
                     <button type="button" class="tone-btn" data-tone="4">
                         <span class="tone-btn__mark">à</span>
-                        <span class="tone-btn__label">4th (Falling)</span>
+                        <span class="tone-btn__label">4th (Falling 51)</span>
                     </button>
                 </div>
                 <canvas class="tone-canvas-view" id="tone-canvas-view"></canvas>
             `;
-            targetEl.appendChild(card);
+            targetEl.appendChild(this.card);
 
-            this.canvas = card.querySelector('#tone-canvas-view');
+            this.canvas = this.card.querySelector('#tone-canvas-view');
             this.ctx = this.canvas.getContext('2d');
             this.resizeCanvas();
-            this.bindEvents(card);
+            this.bindEvents();
             this.selectTone(1);
         }
 
         resizeCanvas() {
-            if (!this.canvas) return;
+            if (!this.canvas || !this.ctx) return;
             const rect = this.canvas.getBoundingClientRect();
             const dpr = window.devicePixelRatio || 1;
             this.canvas.width = (rect.width || 400) * dpr;
             this.canvas.height = (rect.height || 180) * dpr;
-            this.ctx.scale(dpr, dpr);
+            this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            this.drawStaticFrame();
         }
 
-        bindEvents(card) {
-            window.addEventListener('resize', () => this.resizeCanvas());
+        bindEvents() {
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => this.resizeCanvas(), 100);
+            });
 
-            const btns = card.querySelectorAll('.tone-btn');
+            const btns = this.card.querySelectorAll('.tone-btn');
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     btns.forEach(b => b.classList.remove('active'));
@@ -91,13 +100,21 @@
                     this.playAudioTone(tone);
                 });
             });
+
+            const replayBtn = this.card.querySelector('#btn-tone-replay');
+            if (replayBtn) {
+                replayBtn.addEventListener('click', () => {
+                    this.selectTone(this.activeTone);
+                    this.playAudioTone(this.activeTone);
+                });
+            }
         }
 
         selectTone(toneNum) {
             this.activeTone = toneNum;
             const data = TONES_DATA[toneNum];
 
-            const labelEl = document.getElementById('tone-canvas-label');
+            const labelEl = this.card ? this.card.querySelector('#tone-canvas-label') : null;
             if (labelEl) labelEl.textContent = data.name;
 
             this.animProgress = 0;
@@ -106,6 +123,11 @@
 
         playAudioTone(toneNum) {
             try {
+                if (this.currentOsc) {
+                    try { this.currentOsc.stop(); } catch (ignore) {}
+                    this.currentOsc = null;
+                }
+
                 const data = TONES_DATA[toneNum];
                 if (!this.audioCtx) {
                     const AC = window.AudioContext || window.webkitAudioContext;
@@ -116,6 +138,7 @@
 
                 const osc = this.audioCtx.createOscillator();
                 const gain = this.audioCtx.createGain();
+                this.currentOsc = osc;
 
                 osc.type = 'sine';
                 const now = this.audioCtx.currentTime;
@@ -147,60 +170,72 @@
             } catch (ignore) {}
         }
 
-        animateCurve() {
-            if (this.animId) cancelAnimationFrame(this.animId);
-
+        drawStaticFrame() {
+            if (!this.canvas || !this.ctx) return;
             const rect = this.canvas.getBoundingClientRect();
             const w = rect.width || 400;
             const h = rect.height || 180;
             const data = TONES_DATA[this.activeTone];
 
-            const draw = () => {
-                this.ctx.clearRect(0, 0, w, h);
+            this.ctx.clearRect(0, 0, w, h);
 
-                // Grid pitch lines
-                this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
-                this.ctx.lineWidth = 1;
-                for (let i = 1; i <= 5; i++) {
-                    const y = h - (h * 0.18 * i);
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(30, y);
-                    this.ctx.lineTo(w - 20, y);
-                    this.ctx.stroke();
+            // Grid pitch lines
+            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.06)';
+            this.ctx.lineWidth = 1;
+            for (let i = 1; i <= 5; i++) {
+                const y = h - (h * 0.18 * i);
+                this.ctx.beginPath();
+                this.ctx.moveTo(30, y);
+                this.ctx.lineTo(w - 20, y);
+                this.ctx.stroke();
 
-                    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-                    this.ctx.font = '10px sans-serif';
-                    this.ctx.fillText(`P${i}`, 10, y + 3);
+                this.ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+                this.ctx.font = "10px 'DM Mono', monospace";
+                this.ctx.fillText(`P${i}`, 10, y + 3);
+            }
+
+            // Draw Tone Curve
+            const pts = data.points;
+            const startX = 40;
+            const endX = w - 30;
+            const stepX = (endX - startX) / (pts.length - 1);
+
+            this.ctx.beginPath();
+            for (let i = 0; i < pts.length; i++) {
+                const px = startX + stepX * i;
+                const py = h - (pts[i] * h * 0.75 + h * 0.1);
+
+                if (i === 0) {
+                    this.ctx.moveTo(px, py);
+                } else {
+                    const prevX = startX + stepX * (i - 1);
+                    const prevY = h - (pts[i - 1] * h * 0.75 + h * 0.1);
+                    const cpX = (prevX + px) / 2;
+                    this.ctx.quadraticCurveTo(cpX, prevY, px, py);
                 }
+            }
 
-                // Draw Tone Curve
-                this.animProgress = Math.min(this.animProgress + 0.04, 1.0);
+            this.ctx.strokeStyle = data.color;
+            this.ctx.lineWidth = 4;
+            this.ctx.stroke();
+        }
+
+        animateCurve() {
+            if (this.animId) cancelAnimationFrame(this.animId);
+
+            const draw = () => {
+                this.drawStaticFrame();
+
+                const rect = this.canvas.getBoundingClientRect();
+                const w = rect.width || 400;
+                const h = rect.height || 180;
+                const data = TONES_DATA[this.activeTone];
                 const pts = data.points;
                 const startX = 40;
                 const endX = w - 30;
                 const stepX = (endX - startX) / (pts.length - 1);
 
-                this.ctx.beginPath();
-                for (let i = 0; i < pts.length; i++) {
-                    const px = startX + stepX * i;
-                    const py = h - (pts[i] * h * 0.75 + h * 0.1);
-
-                    if (i === 0) {
-                        this.ctx.moveTo(px, py);
-                    } else {
-                        const prevX = startX + stepX * (i - 1);
-                        const prevY = h - (pts[i - 1] * h * 0.75 + h * 0.1);
-                        const cpX = (prevX + px) / 2;
-                        this.ctx.quadraticCurveTo(cpX, prevY, px, py);
-                    }
-                }
-
-                this.ctx.strokeStyle = data.color;
-                this.ctx.lineWidth = 4;
-                this.ctx.shadowColor = data.color;
-                this.ctx.shadowBlur = 12;
-                this.ctx.stroke();
-                this.ctx.shadowBlur = 0;
+                this.animProgress = Math.min(this.animProgress + 0.04, 1.0);
 
                 // Moving particle head along the curve
                 const currentIdx = Math.min(Math.floor(this.animProgress * (pts.length - 1)), pts.length - 2);
@@ -216,10 +251,7 @@
                 this.ctx.beginPath();
                 this.ctx.arc(headX, headY, 7, 0, Math.PI * 2);
                 this.ctx.fillStyle = '#ffffff';
-                this.ctx.shadowColor = data.color;
-                this.ctx.shadowBlur = 16;
                 this.ctx.fill();
-                this.ctx.shadowBlur = 0;
 
                 if (this.animProgress < 1.0) {
                     this.animId = requestAnimationFrame(draw);

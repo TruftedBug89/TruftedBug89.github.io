@@ -9,6 +9,7 @@
     'use strict';
 
     const CHARACTERS = ['字', '学', '知', '龙', '凤', '和', '道', '智', '福', '明', '德', '心', '美', '声', '义', '书', '爱', '力', '天', '地'];
+    const MATRIX_CHARS = '01字学知龙凤和道智福明';
 
     class CanvasEngine {
         constructor() {
@@ -20,10 +21,12 @@
             this.particles = [];
             this.trail = [];
             this.ripples = [];
-            this.pointer = { x: -1000, y: -1000, active: false, speed: 0, lastX: 0, lastY: 0 };
+            this.matrixDrops = [];
+            this.pointer = { x: -1000, y: -1000, active: false, speed: 0, lastX: -1000, lastY: -1000 };
             this.mode = 'flow'; // 'flow', 'ink', 'matrix'
             this.animId = null;
             this.isPaused = false;
+            this.prefersReducedMotion = false;
         }
 
         init() {
@@ -35,14 +38,29 @@
             document.body.prepend(this.canvas);
 
             this.ctx = this.canvas.getContext('2d');
+            if (!this.ctx) return;
+
+            this.checkMotionPreference();
             this.resize();
             this.bindEvents();
             this.createParticles();
+            this.createMatrixDrops();
             this.createControlsBadge();
             this.animate();
         }
 
+        checkMotionPreference() {
+            if (window.matchMedia) {
+                const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+                this.prefersReducedMotion = mediaQuery.matches;
+                mediaQuery.addEventListener('change', (e) => {
+                    this.prefersReducedMotion = e.matches;
+                });
+            }
+        }
+
         resize() {
+            if (!this.canvas || !this.ctx) return;
             this.dpr = window.devicePixelRatio || 1;
             this.width = window.innerWidth;
             this.height = window.innerHeight;
@@ -52,7 +70,14 @@
             this.canvas.style.width = this.width + 'px';
             this.canvas.style.height = this.height + 'px';
 
-            this.ctx.scale(this.dpr, this.dpr);
+            this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+
+            // Clamp particles to new canvas bounds
+            this.particles.forEach(p => {
+                if (p.x > this.width) p.x = Math.random() * this.width;
+                if (p.y > this.height) p.y = Math.random() * this.height;
+            });
+            this.createMatrixDrops();
         }
 
         createParticles() {
@@ -76,44 +101,85 @@
             }
         }
 
-        bindEvents() {
-            window.addEventListener('resize', () => this.resize());
+        createMatrixDrops() {
+            const columns = Math.floor(this.width / 24);
+            this.matrixDrops = [];
+            for (let i = 0; i < columns; i++) {
+                this.matrixDrops.push({
+                    x: i * 24,
+                    y: Math.random() * -1000,
+                    speed: 2 + Math.random() * 4,
+                    char: MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)]
+                });
+            }
+        }
 
-            window.addEventListener('mousemove', (e) => {
-                const dx = e.clientX - this.pointer.lastX;
-                const dy = e.clientY - this.pointer.lastY;
+        bindEvents() {
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => this.resize(), 100);
+            });
+
+            const updatePointer = (clientX, clientY) => {
+                if (this.pointer.lastX < 0) {
+                    this.pointer.lastX = clientX;
+                    this.pointer.lastY = clientY;
+                }
+                const dx = clientX - this.pointer.lastX;
+                const dy = clientY - this.pointer.lastY;
                 this.pointer.speed = Math.sqrt(dx * dx + dy * dy);
-                this.pointer.x = e.clientX;
-                this.pointer.y = e.clientY;
-                this.pointer.lastX = e.clientX;
-                this.pointer.lastY = e.clientY;
+                this.pointer.x = clientX;
+                this.pointer.y = clientY;
+                this.pointer.lastX = clientX;
+                this.pointer.lastY = clientY;
                 this.pointer.active = true;
 
-                if (this.pointer.speed > 2) {
+                if (this.pointer.speed > 2 && !this.prefersReducedMotion) {
                     this.trail.push({
-                        x: e.clientX,
-                        y: e.clientY,
+                        x: clientX,
+                        y: clientY,
                         radius: Math.min(this.pointer.speed * 0.5 + 4, 18),
-                        alpha: 0.4,
                         life: 1.0
                     });
                     if (this.trail.length > 25) this.trail.shift();
                 }
-            });
+            };
+
+            window.addEventListener('mousemove', (e) => updatePointer(e.clientX, e.clientY));
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches && e.touches[0]) {
+                    updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            }, { passive: true });
 
             window.addEventListener('mouseleave', () => {
                 this.pointer.active = false;
+                this.pointer.lastX = -1000;
+                this.pointer.lastY = -1000;
+            });
+            window.addEventListener('touchend', () => {
+                this.pointer.active = false;
+                this.pointer.lastX = -1000;
+                this.pointer.lastY = -1000;
             });
 
-            window.addEventListener('click', (e) => {
+            const triggerRipple = (x, y) => {
+                if (this.prefersReducedMotion) return;
                 this.ripples.push({
-                    x: e.clientX,
-                    y: e.clientY,
+                    x, y,
                     radius: 10,
                     maxRadius: 160 + Math.random() * 80,
                     alpha: 0.7
                 });
-            });
+            };
+
+            window.addEventListener('click', (e) => triggerRipple(e.clientX, e.clientY));
+            window.addEventListener('touchstart', (e) => {
+                if (e.touches && e.touches[0]) {
+                    triggerRipple(e.touches[0].clientX, e.touches[0].clientY);
+                }
+            }, { passive: true });
         }
 
         createControlsBadge() {
@@ -121,12 +187,14 @@
 
             const controls = document.createElement('div');
             controls.className = 'canvas-ui-controls';
+            controls.setAttribute('role', 'region');
+            controls.setAttribute('aria-label', 'Canvas Background Controls');
             controls.innerHTML = `
                 <div class="canvas-ui-badge">
                     <span class="canvas-ui-badge__dot"></span>
                     <span>Canvas UI</span>
                 </div>
-                <button type="button" class="canvas-ui-btn" id="btn-canvas-toggle-mode" title="Switch Canvas Theme Mode">
+                <button type="button" class="canvas-ui-btn" id="btn-canvas-toggle-mode" aria-label="Toggle Canvas Background Theme">
                     ✨ Flow
                 </button>
             `;
@@ -150,9 +218,29 @@
         }
 
         animate() {
-            if (this.isPaused) return;
+            if (this.isPaused || !this.ctx) return;
 
             this.ctx.clearRect(0, 0, this.width, this.height);
+
+            if (this.prefersReducedMotion) {
+                this.animId = requestAnimationFrame(() => this.animate());
+                return;
+            }
+
+            // Render Matrix Mode
+            if (this.mode === 'matrix') {
+                this.ctx.fillStyle = 'rgba(0, 255, 136, 0.15)';
+                this.ctx.font = "14px 'DM Mono', monospace";
+                for (let i = 0; i < this.matrixDrops.length; i++) {
+                    const drop = this.matrixDrops[i];
+                    this.ctx.fillText(drop.char, drop.x, drop.y);
+                    drop.y += drop.speed;
+                    if (drop.y > this.height) {
+                        drop.y = Math.random() * -100;
+                        drop.char = MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
+                    }
+                }
+            }
 
             // 1. Draw ripples
             for (let i = this.ripples.length - 1; i >= 0; i--) {
