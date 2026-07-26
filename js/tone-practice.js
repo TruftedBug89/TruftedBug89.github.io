@@ -136,8 +136,8 @@ const TonePractice = {
                 <div class="tone-quiz">
                     ${quiz.map((q, i) => `
                         <div class="tone-question" data-index="${i}">
-                            <div class="tone-character">${q.question}</div>
-                            <div class="tone-pinyin">${q.pinyin}</div>
+                            <div class="tone-character">${Utils.escapeHtml(q.question)}</div>
+                            <div class="tone-pinyin">${Utils.escapeHtml(q.pinyin)}</div>
                             <div class="tone-options">
                                 ${self.tones.slice(0, 4).map(t => `
                                     <button class="tone-btn" data-tone="${t.number}" data-correct="${q.correctTone}" style="background: ${t.color}">
