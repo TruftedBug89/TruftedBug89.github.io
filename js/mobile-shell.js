@@ -163,7 +163,8 @@ var MobileShell = (function () {
             }
         });
 
-        window.addEventListener('resize', function () {
+        // ⚡ Bolt optimization: Debounce resize events to prevent excessive reflows and battery drain
+        window.addEventListener('resize', Utils.debounce(function () {
             var wasPhone = isPhone;
             isPhone = checkPhone();
             if (!wasPhone && isPhone) {
@@ -173,7 +174,7 @@ var MobileShell = (function () {
                     MobileTabBar.init();
                 }
             }
-        });
+        }, 150));
 
         setTimeout(updateTopbar, 800);
     }
