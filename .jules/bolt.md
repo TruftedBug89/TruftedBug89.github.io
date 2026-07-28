@@ -21,3 +21,7 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+
+## 2024-10-24 - Debounce vs Throttle for Continuous Events
+**Learning:** Applying `Utils.debounce` to continuous events like `scroll` (for tooltips) or `input` (for autosizing textareas) causes visual lag and jerky UI behavior because the callback only fires after the user *stops* the action.
+**Action:** Only use `Utils.debounce` for events where the final state is what matters (like `window.resize` or search query typing). For continuous visual updates during an action, use `Utils.throttle` or `requestAnimationFrame`.
