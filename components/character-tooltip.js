@@ -163,8 +163,16 @@ const CharacterTooltip = {
             }
         }, { passive: true });
 
+        // ⚡ Bolt optimization: Throttle scroll event using requestAnimationFrame to prevent layout thrashing
+        var scrollTicking = false;
         document.addEventListener('scroll', function () {
-            if (self._activeTarget) self._positionFor(self._activeTarget);
+            if (!scrollTicking && self._activeTarget) {
+                window.requestAnimationFrame(function () {
+                    if (self._activeTarget) self._positionFor(self._activeTarget);
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
         }, { passive: true });
 
         if (this._tooltip) {

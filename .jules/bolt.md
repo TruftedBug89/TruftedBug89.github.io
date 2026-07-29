@@ -21,3 +21,7 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+
+## 2024-10-15 - Throttling High-Frequency Browser Events
+**Learning:** High-frequency events like `resize`, `scroll`, and continuous `input` updates (e.g., autosizing a textarea) can trigger excessive layout calculations and DOM reflows synchronously on the main thread, causing frame drops and unresponsive UI.
+**Action:** When binding high-frequency browser events, wrap `resize` callbacks with the `Utils.debounce` function (e.g., `Utils.debounce(fn, 150)`) to prevent excessive reflows. Avoid using `debounce` for continuous UI updates like `scroll` or autosizing `input` as it causes lag/jerkiness; use `requestAnimationFrame` to throttle those updates to the browser's display refresh rate.
