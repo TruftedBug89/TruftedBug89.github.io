@@ -21,3 +21,7 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+
+## 2026-08-01 - Debouncing Resize Events
+**Learning:** Frequent window resize events trigger reflows, causing performance bottlenecks, especially when redrawing canvases. Manual `setTimeout` tracking can be error prone and difficult to read.
+**Action:** Always wrap `resize` event listeners with `Utils.debounce` (or `Utils.throttle`) to delay rendering until resizing pauses.

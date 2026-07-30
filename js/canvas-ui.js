@@ -116,11 +116,9 @@
         }
 
         bindEvents() {
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => this.resize(), 100);
-            });
+            // ⚡ Bolt optimization: Debounce resize events to prevent reflows
+            const debouncedResize = Utils.debounce(() => this.resize(), 150);
+            window.addEventListener('resize', debouncedResize);
 
             const updatePointer = (clientX, clientY) => {
                 if (this.pointer.lastX < 0) {
