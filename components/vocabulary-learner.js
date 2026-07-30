@@ -394,7 +394,7 @@ const VocabularyLearner = {
                             <button class="audio-btn" id="audio-play-btn" aria-label="Play audio" style="background:none;border:none;cursor:pointer;font-size:1.2em;padding:4px;" type="button">\ud83d\udd0a</button>\
                         </div>\
                         ' + frontPinyinHtml + '\
-                        <div class="flashcard-hint">Click to reveal answer</div>';
+                        <div class="flashcard-hint">Click or press space to reveal answer</div>';
             backContent = '\
                         ' + (this.hidePinyin ? backPinyinHtml : '') + '\
                         <div class="flashcard-meaning">' + safeMeaning + '</div>\
@@ -406,7 +406,7 @@ const VocabularyLearner = {
         } else if (mode === 'back') {
             frontContent = '\
                         <div class="flashcard-meaning" style="font-size:1.5em;">' + safeMeaning + '</div>\
-                        <div class="flashcard-hint">Click to reveal character</div>';
+                        <div class="flashcard-hint">Click or press space to reveal character</div>';
             backContent = '\
                         <div class="flashcard-character" lang="zh" style="font-size:2.5em;">' + safeChar + '</div>\
                         <div class="flashcard-pinyin pinyin-element">' + safePy + '</div>\
