@@ -5,3 +5,7 @@
 ## 2026-07-18 - Focus Timer Dynamic ARIA Labels
 **Learning:** Icon-only buttons in dynamically injected components (like floating focus timers) are completely invisible to screen readers without ARIA labels. State-toggling buttons (like play/pause) must dynamically update their `aria-label` to reflect the *next* available action, not just the current state.
 **Action:** When injecting UI components with icon-only controls, always include `aria-label` attributes. For toggle buttons, bind the `aria-label` update to the same logic that updates the visual icon or text.
+
+## 2025-02-12 - Missing ARIA Labels on Inputs
+**Learning:** Dynamically injected inputs in this app's vanilla JS components often lack ARIA labels, even when placeholders are present. This is a common accessibility issue pattern in the codebase.
+**Action:** When working on UI components that dynamically generate form inputs, ensure explicit `aria-label` attributes are included, particularly when there are no associated `<label>` elements.
