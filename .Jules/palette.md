@@ -8,3 +8,7 @@
 ## 2026-07-26 - Form Inputs ARIA Labels
 **Learning:** Text inputs and sliders without `<label>` elements rely entirely on placeholders or context, which is insufficient for screen readers. Explicit `<label>` elements or `aria-label` attributes must be provided. Wait, I should not overwrite existing explicit label elements!
 **Action:** When creating form controls without visible `<label>` elements, ensure `aria-label` is applied directly to the control.
+
+## 2026-07-30 - Keyboard Shortcuts Accessibility
+**Learning:** Some elements in the UI (like flashcards) have keyboard shortcuts (like Space or Enter) built-in to toggle them, but this functionality isn't always visually communicated to the user.
+**Action:** When adding or reviewing keyboard shortcuts for interactive elements, always ensure there is a visual cue or hint text letting the user know they can use the keyboard (e.g. "Click or press space...").
