@@ -25,3 +25,7 @@
 ## 2024-10-15 - Throttling High-Frequency Browser Events
 **Learning:** High-frequency events like `resize`, `scroll`, and continuous `input` updates (e.g., autosizing a textarea) can trigger excessive layout calculations and DOM reflows synchronously on the main thread, causing frame drops and unresponsive UI.
 **Action:** When binding high-frequency browser events, wrap `resize` callbacks with the `Utils.debounce` function (e.g., `Utils.debounce(fn, 150)`) to prevent excessive reflows. Avoid using `debounce` for continuous UI updates like `scroll` or autosizing `input` as it causes lag/jerkiness; use `requestAnimationFrame` to throttle those updates to the browser's display refresh rate.
+
+## 2026-08-01 - Debouncing Resize Events
+**Learning:** Frequent window resize events trigger reflows, causing performance bottlenecks, especially when redrawing canvases. Manual `setTimeout` tracking can be error prone and difficult to read.
+**Action:** Always wrap `resize` event listeners with `Utils.debounce` (or `Utils.throttle`) to delay rendering until resizing pauses.

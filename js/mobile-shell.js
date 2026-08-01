@@ -175,6 +175,7 @@ var MobileShell = (function () {
                 }
             }
         }, 150));
+>>>>>>> pr36
 
         setTimeout(updateTopbar, 800);
     }

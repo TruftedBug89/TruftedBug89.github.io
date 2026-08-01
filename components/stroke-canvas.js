@@ -75,11 +75,9 @@
         }
 
         bindEvents(card) {
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => this.resizeCanvas(), 100);
-            });
+            // ⚡ Bolt optimization: Debounce resize events to prevent reflows
+            const debouncedResize = Utils.debounce(() => this.resizeCanvas(), 150);
+            window.addEventListener('resize', debouncedResize);
 
             const clearBtn = card.querySelector('#btn-stroke-clear');
             if (clearBtn) clearBtn.addEventListener('click', () => this.clear());
