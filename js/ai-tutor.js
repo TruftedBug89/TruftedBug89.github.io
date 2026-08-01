@@ -478,7 +478,17 @@ const AITutor = {
         this.input.addEventListener('input', AITutor._autosizeInput.bind(AITutor));
     },
 
-    _autosizeInput() { var el = this.input; if (el) { el.style.height = 'auto'; el.style.height = Math.min(120, el.scrollHeight) + 'px'; } },
+    // ⚡ Bolt optimization: Throttle input autosizing with rAF to batch layout calculations
+    _autosizeInput() {
+        if (this._autosizeRaf) cancelAnimationFrame(this._autosizeRaf);
+        this._autosizeRaf = requestAnimationFrame(() => {
+            var el = this.input;
+            if (el) {
+                el.style.height = 'auto';
+                el.style.height = Math.min(120, el.scrollHeight) + 'px';
+            }
+        });
+    },
 
     show() {
         if (!this.panel) this._buildPanel();
