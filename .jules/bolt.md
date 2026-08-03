@@ -29,3 +29,7 @@
 ## 2026-08-01 - Debouncing Resize Events
 **Learning:** Frequent window resize events trigger reflows, causing performance bottlenecks, especially when redrawing canvases. Manual `setTimeout` tracking can be error prone and difficult to read.
 **Action:** Always wrap `resize` event listeners with `Utils.debounce` (or `Utils.throttle`) to delay rendering until resizing pauses.
+
+## 2024-11-20 - Layout Thrashing in high-frequency mousemove events
+**Learning:** Calling `getBoundingClientRect()` within a high-frequency `mousemove` handler triggers synchronous layout recalculations (reflows) on every frame. When this is combined with GSAP transforms actively animating the same elements (e.g., a 3D tilt effect or magnetic button), it not only causes severe performance degradation but also creates a feedback loop resulting in visual jitter.
+**Action:** When binding GSAP layout-dependent animations to `mousemove`, cache the `getBoundingClientRect()` measurements during the `mouseenter` event. Use the cached measurements during `mousemove` to avoid layout thrashing, and clear the cache on `mouseleave`.

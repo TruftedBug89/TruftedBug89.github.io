@@ -12,3 +12,7 @@
 ## 2026-07-30 - Keyboard Shortcuts Accessibility
 **Learning:** Some elements in the UI (like flashcards) have keyboard shortcuts (like Space or Enter) built-in to toggle them, but this functionality isn't always visually communicated to the user.
 **Action:** When adding or reviewing keyboard shortcuts for interactive elements, always ensure there is a visual cue or hint text letting the user know they can use the keyboard (e.g. "Click or press space...").
+
+## 2024-05-18 - Placeholder-only Inputs ARIA Labels
+**Learning:** Textareas and inputs that rely solely on `placeholder` attributes without an associated `<label>` (like dynamically injected reading mode textareas) are not accessible to screen readers.
+**Action:** When creating form controls without explicitly associated visible `<label>` elements, always add an `aria-label` attribute directly to the control. Do not add redundant `aria-label`s to inputs that already have a properly linked `for=` label.
