@@ -450,11 +450,16 @@ var InkAnimations = (function() {
             var parent = card.parentElement;
             if (parent && !parent.style.perspective) { parent.style.perspective = '800px'; }
             card.style.transformStyle = 'preserve-3d';
+            // ⚡ Bolt optimization: Cache bounding rect to prevent layout thrashing and jitter during GSAP transforms
+            var rect = null;
             card.addEventListener('mouseenter', function() {
+                rect = card.getBoundingClientRect();
                 gsap.to(card, { boxShadow: '0 20px 50px rgba(0,0,0,0.4)', duration: 0.3 });
             });
             card.addEventListener('mousemove', function(e) {
-                var rect = card.getBoundingClientRect();
+                if (!rect) {
+                    rect = card.getBoundingClientRect();
+                }
                 var x = (e.clientX - rect.left) / rect.width - 0.5;
                 var y = (e.clientY - rect.top) / rect.height - 0.5;
                 qY(x * 8);
@@ -462,6 +467,7 @@ var InkAnimations = (function() {
                 qZ(12);
             });
             card.addEventListener('mouseleave', function() {
+                rect = null;
                 qY(0); qX(0); qZ(0);
                 gsap.to(card, { boxShadow: 'none', duration: 0.5 });
             });
@@ -483,14 +489,22 @@ var InkAnimations = (function() {
                 qX = gsap.quickTo(btn, 'x', { duration: 0.5, ease: 'power3.out' });
                 qY = gsap.quickTo(btn, 'y', { duration: 0.5, ease: 'power3.out' });
             } catch(e) { return; }
+            // ⚡ Bolt optimization: Cache bounding rect on enter to prevent layout thrashing on every mousemove
+            var rect = null;
+            btn.addEventListener('mouseenter', function() {
+                rect = btn.getBoundingClientRect();
+            });
             btn.addEventListener('mousemove', function(e) {
-                var rect = btn.getBoundingClientRect();
+                if (!rect) {
+                    rect = btn.getBoundingClientRect();
+                }
                 var dx = e.clientX - (rect.left + rect.width / 2);
                 var dy = e.clientY - (rect.top + rect.height / 2);
                 qX(dx * 0.25);
                 qY(dy * 0.25);
             });
             btn.addEventListener('mouseleave', function() {
+                rect = null;
                 qX(0); qY(0);
             });
         });
