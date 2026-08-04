@@ -231,12 +231,29 @@
         animate() {
             if (this.isPaused || !this.ctx) return;
 
-            this.ctx.clearRect(0, 0, this.width, this.height);
+            this.prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             if (this.prefersReducedMotion) {
-                this.animId = requestAnimationFrame(() => this.animate());
+                // If reduced motion is requested, just render a static frame based on the mode and return, don't loop
+                this.ctx.clearRect(0, 0, this.width, this.height);
+                if (this.mode === 'matrix') {
+                    this.ctx.fillStyle = 'rgba(0, 255, 0, 0.5)';
+                    this.ctx.font = '14px monospace';
+                    for (let i = 0; i < this.columns; i++) {
+                        this.ctx.fillText(String.fromCharCode(0x30A0 + Math.random() * 96), i * 14, 100 + Math.random() * this.height);
+                    }
+                } else if (this.mode === 'constellations') {
+                    this.ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    for (let i = 0; i < this.points.length; i++) {
+                        this.ctx.beginPath();
+                        this.ctx.arc(this.points[i].x, this.points[i].y, this.points[i].radius, 0, Math.PI * 2);
+                        this.ctx.fill();
+                    }
+                }
                 return;
             }
+
+            this.ctx.clearRect(0, 0, this.width, this.height);
 
             // Render Matrix Mode
             if (this.mode === 'matrix') {

@@ -422,7 +422,9 @@ const Dashboard = {
 
         // Animate category fills from 0 → target on next frame
         var fills = content.querySelectorAll('.category-fill');
-        if (fills.length && typeof requestAnimationFrame !== 'undefined') {
+        var prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (fills.length && typeof requestAnimationFrame !== 'undefined' && !prefersReducedMotion) {
             var self = this;
             this._skillsRafId = requestAnimationFrame(function() {
                 self._skillsRafId = null;
@@ -430,6 +432,11 @@ const Dashboard = {
                     var t = f.getAttribute('data-target') || '0';
                     f.style.width = t + '%';
                 });
+            });
+        } else if (fills.length && prefersReducedMotion) {
+            fills.forEach(function(f) {
+                var t = f.getAttribute('data-target') || '0';
+                f.style.width = t + '%';
             });
         }
     },

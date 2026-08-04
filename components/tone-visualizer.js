@@ -240,6 +240,14 @@
         animateCurve() {
             if (this.animId) cancelAnimationFrame(this.animId);
 
+            var prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                this.curveProgress = 1;
+                this.drawStaticFrame();
+                this.isPlaying = false;
+                return;
+            }
+
             const draw = () => {
                 this.drawStaticFrame();
 
