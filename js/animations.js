@@ -982,15 +982,15 @@ var InkAnimations = (function() {
     window.InkAnimations.celebrateMissionComplete = function(mission) {
         if (!gsap) return;
         if (prefersReducedMotion) {
-            try { Utils.showToast((mission.icon || '🎯') + ' Mission Complete! +' + mission.reward + ' XP', 'success'); } catch (_) {}
+            try { Utils.showToast((Utils.escapeHtml(mission.icon || '🎯')) + ' Mission Complete! +' + Utils.escapeHtml(mission.reward) + ' XP', 'success'); } catch (_) {}
             return;
         }
         var overlay = document.createElement('div');
         overlay.style.cssText = 'position:fixed;inset:0;z-index:99998;pointer-events:none;display:flex;align-items:center;justify-content:center;';
         overlay.innerHTML = '<div class="mission-celebrate" style="text-align:center;opacity:0;">' +
-            '<div style="font-size:48px;margin-bottom:8px;">' + (mission.icon || '🎯') + '</div>' +
+            '<div style="font-size:48px;margin-bottom:8px;">' + Utils.escapeHtml(mission.icon || '🎯') + '</div>' +
             '<div style="color:#ffd86b;font-size:20px;font-weight:700;">Mission Complete!</div>' +
-            '<div style="color:#5aab8a;font-size:16px;margin-top:4px;">+' + mission.reward + ' XP</div>' +
+            '<div style="color:#5aab8a;font-size:16px;margin-top:4px;">+' + Utils.escapeHtml(mission.reward) + ' XP</div>' +
             '</div>';
         document.body.appendChild(overlay);
         var card = overlay.querySelector('.mission-celebrate');
