@@ -1,5 +1,5 @@
-const VERSION = '9';
-const CACHE_NAME = 'chinese-master-v9';
+const VERSION = '10';
+const CACHE_NAME = 'chinese-master-v10';
 const LARGE_DATA_FILES = [
   'reading-mega', 'hsk-quadruple', 'reading-charmatch-extra',
   'reading-passage-extra', 'dialogues-mega', 'listening-comprehension-extra',
@@ -65,7 +65,44 @@ const PRECACHE_URLS = [
   '/legal/terms.html',
   '/manifest.json',
   '/robots.txt',
-  '/structured-data.json'
+  '/structured-data.json',
+  '/favicon.svg',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/icon-maskable-192.png',
+  '/icons/icon-maskable-512.png',
+  '/screenshots/desktop.png',
+  '/screenshots/mobile.png',
+  '/css/ai-tutor.css',
+  '/js/i18n.js',
+  '/js/ai-tutor.js',
+  '/components/focus-timer.js',
+  '/data/vocabulary.js',
+  '/data/vocabulary-extended.js',
+  '/data/vocabulary-mega.js',
+  '/data/hsk1.js',
+  '/data/hsk2.js',
+  '/data/hsk3.js',
+  '/data/hsk4.js',
+  '/data/hsk5.js',
+  '/data/grammar.js',
+  '/data/listening.js',
+  '/data/reading.js',
+  '/data/dialogues.js',
+  '/data/cultural.js',
+  '/data/speaking.js',
+  '/data/real-world-phrases.js',
+  '/components/bottom-sheet.js',
+  '/components/character-tooltip.js',
+  '/components/word-of-the-day.js',
+  '/components/consent-ui.js',
+  '/components/network-status.js',
+  '/components/session-manager-ui.js',
+  '/components/data-manager.js',
+  '/components/mobile-tabbar.js',
+  '/components/dashboard.js',
+  '/data/placement-bank.js',
+  '/js/lazy-loader.js',
 ];
 
 self.addEventListener('install', function(event) {
@@ -93,7 +130,7 @@ self.addEventListener('message', (event) => {
 self.addEventListener('activate', function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
-      var oldCaches = keys.filter(function(key) { return key !== CACHE_NAME; });
+      var oldCaches = keys.filter(function(key) { return key.startsWith('chinese-master-') && key !== CACHE_NAME; });
       var deleted = oldCaches.length > 0;
       return Promise.all(
         oldCaches.map(function(key) { return caches.delete(key); })
@@ -145,7 +182,13 @@ self.addEventListener('fetch', function(event) {
 
   event.respondWith(
     fetch(event.request).catch(function() {
-      return caches.match(event.request);
+      return caches.match(event.request).then(function(cached) {
+        if (cached) return cached;
+        if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
+          return caches.match('/');
+        }
+        return new Response('', { status: 404, statusText: 'Offline' });
+      });
     })
   );
 });
