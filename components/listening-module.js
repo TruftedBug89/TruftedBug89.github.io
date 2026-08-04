@@ -89,14 +89,14 @@ const ListeningModule = {
 
         // Update title
         const titles = {
-            'dictation': 'Dictation Exercise',
-            'comprehension': 'Comprehension Exercise',
-            'minimal-pairs': 'Minimal Pairs',
-            'dialogue': 'Dialogue Practice',
-            'speed-listening': 'Speed Listening',
-            'shadowing': 'Shadowing Practice'
+            'dictation': 'Dictation exercise',
+            'comprehension': 'Comprehension exercise',
+            'minimal-pairs': 'Minimal pairs',
+            'dialogue': 'Dialogue practice',
+            'speed-listening': 'Speed listening',
+            'shadowing': 'Shadowing practice'
         };
-        document.getElementById('listening-title').textContent = titles[type] || 'Listening Exercise';
+        document.getElementById('listening-title').textContent = titles[type] || 'Listening exercise';
 
         this.showCurrentExercise();
     },
