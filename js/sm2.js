@@ -238,15 +238,34 @@ const SM2 = {
         return newArray;
     },
 
+    _deckCache: {},
+    _saveTimers: {},
+
     // Save cards to storage (per-session)
     saveCards(deckName, cards) {
         const key = this._deckKey(deckName);
-        Utils.storage.set(key, cards);
+        this._deckCache[key] = cards;
+
+        if (this._saveTimers[key]) return;
+        var self = this;
+        this._saveTimers[key] = setTimeout(function () {
+            self._saveTimers[key] = null;
+            var c = self._deckCache[key];
+            if (c) {
+                Utils.storage.set(key, c);
+            }
+        }, 500);
     },
 
     // Load cards from storage (per-session)
     loadCards(deckName) {
-        return Utils.storage.get(this._deckKey(deckName), []);
+        const key = this._deckKey(deckName);
+        if (this._deckCache[key]) {
+            return this._deckCache[key];
+        }
+        var c = Utils.storage.get(key, []);
+        this._deckCache[key] = c;
+        return c;
     },
 
     // Session-scoped deck key

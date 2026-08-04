@@ -804,38 +804,47 @@ const ProgressTracker = {
 
     // Track vocabulary learning
     trackVocabulary(wordId, status) {
-        StorageManager.addVocabularyWord(wordId, status);
-        
         let xp = 0;
-        if (status === 'learned') {
-            xp = this.xpRewards.vocabulary.learned;
-        } else if (status === 'reviewing') {
-            xp = this.xpRewards.vocabulary.reviewed;
-        } else if (status === 'mastered') {
-            xp = this.xpRewards.vocabulary.mastered;
-        }
+        var _tx = false;
+        try {
+            if (typeof StorageManager !== 'undefined' && typeof StorageManager.beginTransaction === 'function') {
+                StorageManager.beginTransaction();
+                _tx = true;
+            }
 
-        if (typeof RecurringRewards !== 'undefined' && RecurringRewards.getMultiplier) {
-            xp = Math.round(xp * RecurringRewards.getMultiplier());
-        }
-        
-        StorageManager.addXP(xp);
-        StorageManager.updateDailyStats('vocabulary', 1);
-        StorageManager.updateDailyStats('xp', xp);
+            StorageManager.addVocabularyWord(wordId, status);
 
-        if (xp > 0 && typeof InkAnimations !== 'undefined' && InkAnimations.floatXP) {
-            var targetEl = document.querySelector('.flashcard-container .flashcard') ||
-                          document.querySelector('#module-vocabulary.active') ||
-                          document.body;
-            InkAnimations.floatXP(targetEl, xp);
-        }
+            if (status === 'learned') {
+                xp = this.xpRewards.vocabulary.learned;
+            } else if (status === 'reviewing') {
+                xp = this.xpRewards.vocabulary.reviewed;
+            } else if (status === 'mastered') {
+                xp = this.xpRewards.vocabulary.mastered;
+            }
 
-        if (typeof Missions !== 'undefined' && Missions.recordActivity) {
-            Missions.recordActivity('vocabulary', { status, xp });
+            if (typeof RecurringRewards !== 'undefined' && RecurringRewards.getMultiplier) {
+                xp = Math.round(xp * RecurringRewards.getMultiplier());
+            }
+
+            StorageManager.addXP(xp);
+            StorageManager.updateDailyStats('vocabulary', 1);
+            StorageManager.updateDailyStats('xp', xp);
+
+            if (xp > 0 && typeof InkAnimations !== 'undefined' && InkAnimations.floatXP) {
+                var targetEl = document.querySelector('.flashcard-container .flashcard') ||
+                              document.querySelector('#module-vocabulary.active') ||
+                              document.body;
+                InkAnimations.floatXP(targetEl, xp);
+            }
+
+            if (typeof Missions !== 'undefined' && Missions.recordActivity) {
+                Missions.recordActivity('vocabulary', { status, xp });
+            }
+
+            this.checkAchievements();
+        } finally {
+            if (_tx && typeof StorageManager.commitTransaction === 'function') StorageManager.commitTransaction();
         }
-        
-        this.checkAchievements();
-        
         return { xp };
     },
 

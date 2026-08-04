@@ -442,7 +442,9 @@ const Utils = {
         get(key, defaultValue = null) {
             try {
                 const item = localStorage.getItem(`chineseMaster_${key}`);
-                return item ? JSON.parse(item) : defaultValue;
+                if (!item) return defaultValue;
+                const parsed = JSON.parse(item);
+                return parsed !== null ? parsed : defaultValue;
             } catch (e) {
                 return defaultValue;
             }

@@ -108,7 +108,15 @@ const DataManager = {
 
     importData(jsonString) {
         try {
-            const dataObj = JSON.parse(jsonString);
+            let dataObj;
+            try {
+                dataObj = JSON.parse(jsonString);
+            } catch (e) {
+                if (typeof Utils !== 'undefined') {
+                    Utils.showToast('Invalid JSON file.', 'error');
+                }
+                return false;
+            }
 
             if (!this.isValidBackup(dataObj)) {
                 if (typeof Utils !== 'undefined') {
