@@ -1,7 +1,7 @@
 {
   "name": "ZHI Studio — Learn Chinese",
   "short_name": "ZHI Studio",
-  "description": "A fluid, offline-first studio for Chinese vocabulary, listening, reading, grammar, speaking, and spaced-repetition practice.",
+  "description": "A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
