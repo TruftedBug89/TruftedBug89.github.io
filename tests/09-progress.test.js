@@ -146,4 +146,80 @@ describe('09 — Progress Tracker', () => {
     assert.ok(summary.achievements);
     assert.ok(summary.achievements.total > 0);
   });
+
+  it('trackExercise handles negative scores gracefully', () => {
+    const P = globalThis.ProgressTracker;
+    globalThis.StorageManager._data = JSON.parse(JSON.stringify(StorageManager.defaultUserData));
+
+    const result = P.trackExercise('listening', 'ex-neg', -5, 10);
+    assert.ok(result.xp >= 0);
+    assert.equal(result.percentage, -50);
+    assert.equal(result.isPerfect, false);
+  });
+
+  it('trackExercise handles zero total correctly', () => {
+    const P = globalThis.ProgressTracker;
+    globalThis.StorageManager._data = JSON.parse(JSON.stringify(StorageManager.defaultUserData));
+
+    const result = P.trackExercise('reading', 'ex-zero', 0, 0);
+    assert.equal(result.percentage, 0);
+    assert.equal(result.isPerfect, false);
+  });
+
+  it('trackExercise handles score greater than total', () => {
+    const P = globalThis.ProgressTracker;
+    globalThis.StorageManager._data = JSON.parse(JSON.stringify(StorageManager.defaultUserData));
+
+    const result = P.trackExercise('grammar', 'ex-over', 15, 10);
+    assert.equal(result.percentage, 150);
+    assert.equal(result.isPerfect, false);
+  });
+
+  it('calculateStreak handles negative streak values in data gracefully', () => {
+    const P = globalThis.ProgressTracker;
+    const userData = globalThis.StorageManager.getUserData();
+    userData.streak = -5;
+    globalThis.StorageManager.setUserData(userData);
+
+    const streak = P.calculateStreak();
+    assert.equal(streak, -5);
+  });
+
+  it('getDailyGoalProgress handles missing goal state safely', () => {
+    const P = globalThis.ProgressTracker;
+    const userData = globalThis.StorageManager.getUserData();
+    const originalGoal = userData.settings.dailyGoal;
+
+    // Simulate missing goal completely
+    userData.settings.dailyGoal = { listening: 0, reading: 0, vocabulary: 0 };
+    globalThis.StorageManager.setUserData(userData);
+
+    const prog = P.getDailyGoalProgress();
+    assert.equal(prog.listening.progress, 0);
+    assert.equal(prog.reading.progress, 0);
+    assert.equal(prog.vocabulary.progress, 0);
+    assert.equal(prog.overall, 0);
+
+    // Restore
+    userData.settings.dailyGoal = originalGoal;
+    globalThis.StorageManager.setUserData(userData);
+  });
+
+  it('checkAchievements does not throw if user settings are missing', () => {
+    const P = globalThis.ProgressTracker;
+    const userData = globalThis.StorageManager.getUserData();
+    const originalSettings = userData.settings;
+
+    // Remove settings
+    userData.settings = null;
+    globalThis.StorageManager.setUserData(userData);
+
+    assert.doesNotThrow(() => {
+      P.checkAchievements();
+    });
+
+    // Restore
+    userData.settings = originalSettings;
+    globalThis.StorageManager.setUserData(userData);
+  });
 });
