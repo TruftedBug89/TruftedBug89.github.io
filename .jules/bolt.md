@@ -33,3 +33,7 @@
 ## 2024-11-20 - Layout Thrashing in high-frequency mousemove events
 **Learning:** Calling `getBoundingClientRect()` within a high-frequency `mousemove` handler triggers synchronous layout recalculations (reflows) on every frame. When this is combined with GSAP transforms actively animating the same elements (e.g., a 3D tilt effect or magnetic button), it not only causes severe performance degradation but also creates a feedback loop resulting in visual jitter.
 **Action:** When binding GSAP layout-dependent animations to `mousemove`, cache the `getBoundingClientRect()` measurements during the `mouseenter` event. Use the cached measurements during `mousemove` to avoid layout thrashing, and clear the cache on `mouseleave`.
+
+## 2024-11-20 - Throttling Slider Input Layout Thrashing
+**Learning:** Attaching heavy layout mutations or DOM iterations (like updating multiple presets) directly to continuous `input` events on range sliders causes synchronous reflows on every tick, leading to lag and frame drops on dragging.
+**Action:** Throttle high-frequency `input` handlers that manipulate the DOM by wrapping the logic inside `requestAnimationFrame` and canceling the previous frame if it's still pending.
