@@ -52,6 +52,7 @@ button, input, select, textarea { font: inherit; }
 button { -webkit-tap-highlight-color: transparent; }
 ::selection { color: var(--zhi-void); background: var(--zhi-jade); }
 :focus-visible { outline: 2px solid var(--zhi-jade); outline-offset: 3px; }
+[role="button"]:focus-visible, [tabindex="0"]:focus-visible { outline: 2px solid var(--zhi-jade); outline-offset: 3px; }
 
 /* Custom premium scrollbar styling */
 ::-webkit-scrollbar {

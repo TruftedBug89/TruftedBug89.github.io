@@ -12,7 +12,7 @@ const DataManager = {
                     <button type="button" class="btn btn-secondary" data-cm-action="import-data" style="width: 100%;">📥 Import Data Backup</button>
                     <button type="button" class="btn btn-secondary" data-cm-action="close-settings" style="width: 100%; margin-top: 12px;">Close</button>
                 </div>
-                <input type="file" id="import-file-input" accept=".json" style="display: none;" />
+                <input type="file" id="import-file-input" accept=".json" aria-label="Import data backup" style="display: none;" />
             </div>
         `);
 

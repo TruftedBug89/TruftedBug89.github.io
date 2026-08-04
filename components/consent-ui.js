@@ -87,7 +87,7 @@ const ConsentUI = {
             '    <button type="button" class="cm-consent__link" data-consent-action="config" aria-expanded="false" aria-controls="cookie-config-panel">Configurar</button>',
             '  </div>',
             '  <div class="cm-consent__footer">',
-            '    <a href="#" class="cm-consent__policy-link" data-consent-action="policy" role="button">Pol\u00EDtica de Cookies</a>',
+            '    <button type="button" class="cm-consent__policy-link" data-consent-action="policy">Pol\u00EDtica de Cookies</button>',
             '  </div>',
             '</div>',
             '<div class="cm-consent__config" id="cookie-config-panel" hidden>',
