@@ -1029,8 +1029,8 @@ const App = {
         this._modalChromeReady = true;
         var closeBtn = modal.querySelector('.modal-close');
         var overlay = modal.querySelector('.modal-overlay');
-        if (closeBtn) closeBtn.addEventListener('click', function() { modal.classList.add('hidden'); });
-        if (overlay) overlay.addEventListener('click', function() { modal.classList.add('hidden'); });
+        if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
+        if (overlay) overlay.addEventListener('click', () => App.closeModal());
     },
 
     // Get current module
