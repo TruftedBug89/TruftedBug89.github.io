@@ -117,9 +117,9 @@
                         <p class="greeting-subtitle" id="hero-subtitle" data-i18n="dashboard.subtitle">A little momentum becomes fluency. Let’s make today count.</p>
                         <div class="neo-hero__actions">
                             <button class="btn btn-primary neo-launch" type="button" data-quick-start="vocab-review">
-                                <span>Start focus session</span><b>→</b>
+                                <span>Start focus session</span><b aria-hidden="true">→</b>
                             </button>
-                            <button class="neo-ghost-button" type="button" data-quick-start="placement-test">Calibrate level <span>↗</span></button>
+                            <button class="neo-ghost-button" type="button" data-quick-start="placement-test">Calibrate level <span aria-hidden="true">↗</span></button>
                         </div>
                     </div>
 
@@ -210,19 +210,19 @@
                     <div class="action-cards">
                         <button type="button" class="action-card action-card--listening" data-action="listening-challenge">
                             <span class="action-card__number">01</span><span class="action-icon">耳</span>
-                            <span><strong>Listen</strong><small>Decode real sounds</small></span><b>→</b>
+                            <span><strong>Listen</strong><small>Decode real sounds</small></span><b aria-hidden="true">→</b>
                         </button>
                         <button type="button" class="action-card action-card--vocab" data-action="vocab-review">
                             <span class="action-card__number">02</span><span class="action-icon">字</span>
-                            <span><strong>Recall</strong><small>Train your memory</small></span><b>→</b>
+                            <span><strong>Recall</strong><small>Train your memory</small></span><b aria-hidden="true">→</b>
                         </button>
                         <button type="button" class="action-card action-card--reading" data-action="reading-quiz">
                             <span class="action-card__number">03</span><span class="action-icon">文</span>
-                            <span><strong>Read</strong><small>Meet Chinese in context</small></span><b>→</b>
+                            <span><strong>Read</strong><small>Meet Chinese in context</small></span><b aria-hidden="true">→</b>
                         </button>
                         <button type="button" class="action-card action-card--grammar" data-action="grammar-practice">
                             <span class="action-card__number">04</span><span class="action-icon">构</span>
-                            <span><strong>Build</strong><small>Make patterns instinctive</small></span><b>→</b>
+                            <span><strong>Build</strong><small>Make patterns instinctive</small></span><b aria-hidden="true">→</b>
                         </button>
                     </div>
                 </section>
@@ -258,7 +258,7 @@
                         <p class="panel-copy">Your spaced repetition queue is ready when you are.</p>
                         <div id="review-stats" class="review-stats-grid"></div>
                         <div class="panel-actions">
-                            <button type="button" class="btn btn-primary" id="start-smart-review">Launch review <span>→</span></button>
+                            <button type="button" class="btn btn-primary" id="start-smart-review">Launch review <span aria-hidden="true">→</span></button>
                             <button type="button" class="btn btn-secondary" id="view-mistakes">Inspect weak spots</button>
                         </div>
                     </section>
@@ -343,14 +343,14 @@
                     </div>
                 </div>
                 <div id="listening-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu">← Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening Exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu"><span aria-hidden="true">←</span> Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening Exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="listening-current">1</b> / <b id="listening-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="listening-content"></div>
                     <div class="activity-sticky-bar" id="listening-sticky-bar" hidden>
                         <button class="btn btn-secondary btn-icon" type="button" id="prev-listening-btn" aria-label="Previous">←</button>
-                        <button class="btn btn-secondary" type="button" id="skip-listening-btn">Skip →</button>
+                        <button class="btn btn-secondary" type="button" id="skip-listening-btn">Skip <span aria-hidden="true">→</span></button>
                         <button class="btn btn-primary" type="button" id="check-listening-btn" hidden>Check</button>
-                        <button class="btn btn-primary" type="button" id="next-listening-btn" hidden>Next →</button>
+                        <button class="btn btn-primary" type="button" id="next-listening-btn" hidden>Next <span aria-hidden="true">→</span></button>
                         <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-listening-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
                         <span class="sticky-spacer"></span>
                         <span class="sticky-progress" id="listening-sticky-progress">1 / 10</span>
@@ -382,14 +382,14 @@
                     </div>
                 </div>
                 <div id="reading-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu">← Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading Exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu"><span aria-hidden="true">←</span> Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading Exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="reading-current">1</b> / <b id="reading-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="reading-content"></div>
                     <div class="activity-sticky-bar" id="reading-sticky-bar" hidden>
                         <button class="btn btn-secondary btn-icon" type="button" id="prev-reading-btn" aria-label="Previous">←</button>
-                        <button class="btn btn-secondary" type="button" id="skip-reading-btn">Skip →</button>
+                        <button class="btn btn-secondary" type="button" id="skip-reading-btn">Skip <span aria-hidden="true">→</span></button>
                         <button class="btn btn-primary" type="button" id="check-reading-btn" hidden>Check</button>
-                        <button class="btn btn-primary" type="button" id="next-reading-btn" hidden>Next →</button>
+                        <button class="btn btn-primary" type="button" id="next-reading-btn" hidden>Next <span aria-hidden="true">→</span></button>
                         <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-reading-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
                         <span class="sticky-spacer"></span>
                         <span class="sticky-progress" id="reading-sticky-progress">1 / 10</span>
@@ -410,17 +410,17 @@
                     <p id="grammar-no-results" class="hidden">No grammar patterns match that search yet.</p>
                 </div>
                 <div id="grammar-lesson" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu">← Pattern lab</button><div><span class="section-kicker">PATTERN LAB</span><h2 id="grammar-lesson-title">Pattern</h2></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu"><span aria-hidden="true">←</span> Pattern lab</button><div><span class="section-kicker">PATTERN LAB</span><h2 id="grammar-lesson-title">Pattern</h2></div></div>
                     <div id="grammar-content" style="padding:20px;"></div>
                 </div>
                 <div id="grammar-practice" class="hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu">← Pattern lab</button><div><span class="section-kicker">PRACTICE MODE</span><h2>Grammar drill</h2></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="grammar-menu"><span aria-hidden="true">←</span> Pattern lab</button><div><span class="section-kicker">PRACTICE MODE</span><h2>Grammar drill</h2></div></div>
                     <div class="exercise-progress"><span><b id="grammar-current">1</b> / <b id="grammar-total">1</b></span></div>
                     <div id="grammar-practice-content"></div>
                     <div class="activity-sticky-bar" id="grammar-sticky-bar" hidden>
-                        <button class="btn btn-secondary" type="button" id="prev-grammar-btn">← Prev</button>
+                        <button class="btn btn-secondary" type="button" id="prev-grammar-btn"><span aria-hidden="true">←</span> Prev</button>
                         <button class="btn btn-primary" type="button" id="check-grammar-btn" hidden>Check</button>
-                        <button class="btn btn-primary" type="button" id="next-grammar-btn" hidden>Next →</button>
+                        <button class="btn btn-primary" type="button" id="next-grammar-btn" hidden>Next <span aria-hidden="true">→</span></button>
                         <button class="btn btn-secondary btn-icon" type="button" id="ask-ai-grammar-btn" title="Ask AI tutor" aria-label="Ask AI tutor">AI</button>
                         <span class="sticky-spacer"></span>
                         <span class="sticky-progress" id="grammar-sticky-progress">1 / 1</span>
@@ -440,11 +440,11 @@
                     </div>
                 </div>
                 <div id="speaking-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu">← Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking Exercise</h2></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu"><span aria-hidden="true">←</span> Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking Exercise</h2></div></div>
                     <div id="speaking-content"></div>
                     <div class="activity-sticky-bar" id="speaking-sticky-bar" hidden>
-                        <button class="btn btn-secondary" type="button" id="prev-speaking-btn">← Prev</button>
-                        <button class="btn btn-primary" type="button" id="next-speaking-btn">Next →</button>
+                        <button class="btn btn-secondary" type="button" id="prev-speaking-btn"><span aria-hidden="true">←</span> Prev</button>
+                        <button class="btn btn-primary" type="button" id="next-speaking-btn">Next <span aria-hidden="true">→</span></button>
                         <span class="sticky-spacer"></span>
                         <span class="sticky-progress" id="speaking-sticky-progress">1 / 1</span>
                     </div>
