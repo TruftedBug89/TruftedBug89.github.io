@@ -1,5 +1,10 @@
 # Chinese Master
 
+> [!NOTE]
+> **Project Status:** 🟢 **Working / Functional**  
+> *This status must not be changed by AI unless explicitly instructed by the repository owner.*
+
+
 > Free, open-source Chinese language learning application. Everything runs locally in your browser — no account, no server, no tracking.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
