@@ -29,3 +29,6 @@
 ## 2026-08-01 - Debouncing Resize Events
 **Learning:** Frequent window resize events trigger reflows, causing performance bottlenecks, especially when redrawing canvases. Manual `setTimeout` tracking can be error prone and difficult to read.
 **Action:** Always wrap `resize` event listeners with `Utils.debounce` (or `Utils.throttle`) to delay rendering until resizing pauses.
+## 2024-10-18 - Throttle High-Frequency Mousemove Events
+**Learning:** `mousemove` event listeners attached to interactive elements (like cards and buttons for parallax or tilt effects) trigger frequently. Calling `getBoundingClientRect()` synchronously inside these handlers blocks the main thread and causes layout thrashing, leading to dropped frames during UI interactions.
+**Action:** When binding high-frequency events like `mousemove` that require layout measurements, use `requestAnimationFrame` to decouple the layout calculations from the rapid event emission. Wrap the callback logic in a `_ticking` guard pattern to ensure only one frame request is pending at a time.

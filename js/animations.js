@@ -453,13 +453,19 @@ var InkAnimations = (function() {
             card.addEventListener('mouseenter', function() {
                 gsap.to(card, { boxShadow: '0 20px 50px rgba(0,0,0,0.4)', duration: 0.3 });
             });
+            var _ticking = false;
             card.addEventListener('mousemove', function(e) {
-                var rect = card.getBoundingClientRect();
-                var x = (e.clientX - rect.left) / rect.width - 0.5;
-                var y = (e.clientY - rect.top) / rect.height - 0.5;
-                qY(x * 8);
-                qX(-y * 8);
-                qZ(12);
+                if (_ticking) return;
+                _ticking = true;
+                requestAnimationFrame(function () {
+                    var rect = card.getBoundingClientRect();
+                    var x = (e.clientX - rect.left) / rect.width - 0.5;
+                    var y = (e.clientY - rect.top) / rect.height - 0.5;
+                    qY(x * 8);
+                    qX(-y * 8);
+                    qZ(12);
+                    _ticking = false;
+                });
             });
             card.addEventListener('mouseleave', function() {
                 qY(0); qX(0); qZ(0);
@@ -483,12 +489,18 @@ var InkAnimations = (function() {
                 qX = gsap.quickTo(btn, 'x', { duration: 0.5, ease: 'power3.out' });
                 qY = gsap.quickTo(btn, 'y', { duration: 0.5, ease: 'power3.out' });
             } catch(e) { return; }
+            var _ticking = false;
             btn.addEventListener('mousemove', function(e) {
-                var rect = btn.getBoundingClientRect();
-                var dx = e.clientX - (rect.left + rect.width / 2);
-                var dy = e.clientY - (rect.top + rect.height / 2);
-                qX(dx * 0.25);
-                qY(dy * 0.25);
+                if (_ticking) return;
+                _ticking = true;
+                requestAnimationFrame(function () {
+                    var rect = btn.getBoundingClientRect();
+                    var dx = e.clientX - (rect.left + rect.width / 2);
+                    var dy = e.clientY - (rect.top + rect.height / 2);
+                    qX(dx * 0.25);
+                    qY(dy * 0.25);
+                    _ticking = false;
+                });
             });
             btn.addEventListener('mouseleave', function() {
                 qX(0); qY(0);
