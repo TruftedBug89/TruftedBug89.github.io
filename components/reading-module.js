@@ -1260,11 +1260,12 @@ const ReadingModule = {
         });
 
         document.getElementById('process-reading-text').addEventListener('click', () => {
-            const text = document.getElementById('reading-mode-textarea').value.trim();
+            let text = document.getElementById('reading-mode-textarea').value.trim();
             if (!text) {
                 Utils.showToast('Please enter some text to process.', 'warning');
                 return;
             }
+            text = text.substring(0, 5000);
             this.processReadingText(text);
         });
     },
