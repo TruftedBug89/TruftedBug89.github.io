@@ -358,56 +358,102 @@ var AnalyticsEngine = {
         return 'analytics_' + this.sessionId + '_' + kind;
     },
 
+    _cache: {},
+    _cachePendingWrites: {},
+    _cacheTimer: null,
+
+    // Optimization: Defer localStorage writes using a timeout to batch updates and prevent I/O blocking.
+    _scheduleWrite: function (key) {
+        if (!this._cachePendingWrites[key]) {
+            this._cachePendingWrites[key] = true;
+            if (!this._cacheTimer) {
+                var self = this;
+                this._cacheTimer = setTimeout(function () {
+                    self._flushCache();
+                }, 100);
+            }
+        }
+    },
+
+    _flushCache: function () {
+        if (!this._cacheTimer && Object.keys(this._cachePendingWrites).length === 0) return;
+        if (this._cacheTimer) clearTimeout(this._cacheTimer);
+        for (var k in this._cachePendingWrites) {
+            if (Object.prototype.hasOwnProperty.call(this._cachePendingWrites, k)) {
+                try {
+                    localStorage.setItem(k, JSON.stringify(this._cache[k]));
+                } catch (e) {
+                    this._handleStorageError(e);
+                }
+            }
+        }
+        this._cachePendingWrites = {};
+        this._cacheTimer = null;
+    },
+
     _readSessions: function () {
+
+        var k = this._key('sessions');
+        if (this._cache[k]) return this._cache[k];
         try {
-            var raw = localStorage.getItem(this._key('sessions'));
-            return raw ? JSON.parse(raw) : this._emptySession();
-        } catch (e) { return this._emptySession(); }
+            var raw = localStorage.getItem(k);
+            this._cache[k] = raw ? JSON.parse(raw) : this._emptySession();
+        } catch (e) { this._cache[k] = this._emptySession(); }
+        return this._cache[k];
     },
 
     _writeSessions: function (data) {
-        try {
-            localStorage.setItem(this._key('sessions'), JSON.stringify(data));
-        } catch (e) { this._handleStorageError(e); }
+        var k = this._key('sessions');
+        this._cache[k] = data;
+        this._scheduleWrite(k);
     },
 
     _readEvents: function () {
+        var k = this._key('events');
+        if (this._cache[k]) return this._cache[k];
         try {
-            var raw = localStorage.getItem(this._key('events'));
-            return raw ? JSON.parse(raw) : [];
-        } catch (e) { return []; }
+            var raw = localStorage.getItem(k);
+            this._cache[k] = raw ? JSON.parse(raw) : [];
+        } catch (e) { this._cache[k] = []; }
+        return this._cache[k];
     },
 
     _writeEvents: function (events) {
-        try {
-            localStorage.setItem(this._key('events'), JSON.stringify(events));
-        } catch (e) { this._handleStorageError(e); }
+        var k = this._key('events');
+        this._cache[k] = events;
+        this._scheduleWrite(k);
     },
 
     _readDaily: function () {
+        var k = this._key('daily');
+        if (this._cache[k]) return this._cache[k];
         try {
-            var raw = localStorage.getItem(this._key('daily'));
-            return raw ? JSON.parse(raw) : {};
-        } catch (e) { return {}; }
+            var raw = localStorage.getItem(k);
+            this._cache[k] = raw ? JSON.parse(raw) : {};
+        } catch (e) { this._cache[k] = {}; }
+        return this._cache[k];
     },
 
     _writeDaily: function (data) {
-        try {
-            localStorage.setItem(this._key('daily'), JSON.stringify(data));
-        } catch (e) { this._handleStorageError(e); }
+        var k = this._key('daily');
+        this._cache[k] = data;
+        this._scheduleWrite(k);
     },
 
     _readSummaries: function () {
+        var k = this._key('summaries');
+        if (this._cache[k]) return this._cache[k];
         try {
-            var raw = localStorage.getItem(this._key('summaries'));
-            return raw ? JSON.parse(raw) : [];
-        } catch (e) { return []; }
+            var raw = localStorage.getItem(k);
+            this._cache[k] = raw ? JSON.parse(raw) : [];
+        } catch (e) { this._cache[k] = []; }
+        return this._cache[k];
     },
 
     _writeSummaries: function (data) {
-        try {
-            localStorage.setItem(this._key('summaries'), JSON.stringify(data));
-        } catch (e) { this._handleStorageError(e); }
+        var k = this._key('summaries');
+        this._cache[k] = data;
+        this._scheduleWrite(k);
     },
 
     _emptySession: function () {
@@ -434,9 +480,14 @@ var AnalyticsEngine = {
     _bindVisibilityFlush: function () {
         var self = this;
         document.addEventListener('visibilitychange', function () {
-            if (document.hidden && self.eventBuffer.length > 0) {
-                self._flush();
+            if (document.hidden) {
+                if (self.eventBuffer.length > 0) self._flush();
+                self._flushCache();
             }
+        });
+        window.addEventListener('pagehide', function () {
+            if (self.eventBuffer.length > 0) self._flush();
+            self._flushCache();
         });
     },
 
