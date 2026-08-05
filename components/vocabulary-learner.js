@@ -1007,7 +1007,7 @@ const VocabularyLearner = {
             </div>
 
             <div class="browser-search">
-                <input type="text" id="word-search" placeholder="Search characters, pinyin, or meaning..." maxlength="60">
+                <input type="text" id="word-search" placeholder="Search characters, pinyin, or meaning..." aria-label="Search vocabulary words" maxlength="60">
             </div>
 
             <div class="browser-grid" id="word-grid">
