@@ -581,8 +581,16 @@ const ListeningModule = {
                 p.classList.toggle('active', parseFloat(p.dataset.speed) === parseFloat(v));
             });
         };
+        // ⚡ Bolt optimization: Throttle speed slider input updates with rAF to batch layout calculations
+        // Impact: prevents UI freezing/frame drops during continuous drag interactions by aligning DOM reflows with display refresh rate.
+        let _speedSliderRaf;
         if (speedSlider) {
-            speedSlider.addEventListener('input', (e) => setSpeed(parseFloat(e.target.value).toFixed(1)));
+            speedSlider.addEventListener('input', (e) => {
+                if (_speedSliderRaf) cancelAnimationFrame(_speedSliderRaf);
+                _speedSliderRaf = requestAnimationFrame(() => {
+                    setSpeed(parseFloat(e.target.value).toFixed(1));
+                });
+            });
         }
         document.querySelectorAll('.speed-preset').forEach(p => {
             p.addEventListener('click', () => setSpeed(parseFloat(p.dataset.speed).toFixed(1)));
