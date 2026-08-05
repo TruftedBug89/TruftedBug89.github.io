@@ -168,19 +168,27 @@ const StorageManager = {
     // in-memory working copy and only commit() performs one Utils.storage.set.
     _txActive: false,
     _txDirty: false,
+    _txDepth: 0,
 
     beginTransaction() {
         if (this._saveTimer) {
             clearTimeout(this._saveTimer);
             this._saveTimer = null;
         }
-        this._txActive = true;
-        this._txDirty = false;
+        this._txDepth++;
+        if (this._txDepth === 1) {
+            this._txActive = true;
+            this._txDirty = false;
+        }
     },
 
-commitTransaction() {
+    commitTransaction() {
         if (!this._txActive) return;
+        this._txDepth--;
+        if (this._txDepth > 0) return;
+
         this._txActive = false;
+        this._txDepth = 0;
         const dirty = this._txDirty;
         this._txDirty = false;
         if (dirty && this._pendingData) {

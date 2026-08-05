@@ -478,7 +478,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
 
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
 
     it('2.2.12: StorageManager.addXP updates XP state in transactional user data', () => {
@@ -601,7 +601,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
 
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
       assert.equal(globalThis.StorageManager.getUserData().settings.studyProfile, 'speed');
     });
 
@@ -687,7 +687,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
       
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
 
     it('4.1.3: Scenario 3: Returning user reviews overdue vocabulary cards, triggers 1.2x delay reward, and pushes clean analytics logs', () => {
@@ -728,7 +728,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
       
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
   });
 });
