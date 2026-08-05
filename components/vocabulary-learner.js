@@ -446,7 +446,7 @@ const VocabularyLearner = {
                         ' + frontPinyinHtml + '\
                         <div class="flashcard-hint">Type the character</div>\
                         <div style="margin-top:16px;">\
-                            <input type="text" id="typing-input" style="font-size:1.5em;text-align:center;width:150px;padding:8px;border:2px solid var(--color-primary);border-radius:8px;" placeholder="Type here..." autofocus lang="zh">\
+                            <input type="text" id="typing-input" aria-label="Type the Chinese character" style="font-size:1.5em;text-align:center;width:150px;padding:8px;border:2px solid var(--color-primary);border-radius:8px;" placeholder="Type here..." autofocus lang="zh">\
                         </div>';
             backContent = '\
                         <div class="flashcard-character" lang="zh" style="font-size:2.5em;">' + safeChar + '</div>\
@@ -1002,7 +1002,7 @@ const VocabularyLearner = {
             </div>
 
             <div class="browser-search">
-                <input type="text" id="word-search" placeholder="Search characters, pinyin, or meaning..." maxlength="60">
+                <input type="text" id="word-search" aria-label="Search vocabulary" placeholder="Search characters, pinyin, or meaning..." maxlength="60">
             </div>
 
             <div class="browser-grid" id="word-grid">

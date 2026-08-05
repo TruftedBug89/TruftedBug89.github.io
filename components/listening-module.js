@@ -178,6 +178,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="dictation-input"
+                        aria-label="Dictation input"
                         placeholder="Type the Chinese characters..."
                         autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
                 </div>
@@ -382,6 +383,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="speed-input"
+                        aria-label="Speed reading input"
                         placeholder="Type the sentence..."
                         autocomplete="off" autocapitalize="off" spellcheck="false">
                 </div>
