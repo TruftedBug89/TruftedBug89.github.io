@@ -184,7 +184,6 @@ const SM2 = {
             maxNew = 10,
             maxReview = 50,
             includeNew = true,
-            includeLearning = true,
             includeReview = true,
             forceNew = false
         } = options;

@@ -30,7 +30,6 @@ const App = {
 
     // Initialize the app
     init() {
-        if (this.DEBUG) console.log('Initializing Chinese Master App...');
         var _initStart = Date.now();
 
         // Set dynamic footer year
@@ -156,7 +155,6 @@ const App = {
         } catch (e) { console.warn('app-ready event failed:', e); }
 
         this.isInitialized = true;
-        if (this.DEBUG) console.log('App initialized. Total vocab:', this.getTotalVocab());
 
         // Always hide loading screen
         this.hideLoadingScreen();
@@ -246,12 +244,6 @@ const App = {
             'Phrases': typeof RealWorldPhrases !== 'undefined' ? RealWorldPhrases.totalCount : 0,
             'HSK Reading': typeof HSKReadingMassive !== 'undefined' ? HSKReadingMassive.totalCount : 0
         };
-        
-        console.log('=== DATASET STATISTICS ===');
-        Object.entries(stats).forEach(([name, count]) => {
-            console.log(`${name}: ${count} items`);
-        });
-        console.log('========================');
     },
 
     // Set up event listeners
@@ -610,7 +602,6 @@ const App = {
         const loadingScreen = document.getElementById('loading-screen');
         const mainNav = document.getElementById('main-nav');
         const mobileToggle = document.getElementById('mobile-nav-toggle');
-        const mobileOverlay = document.getElementById('mobile-nav-overlay');
         
         // On mobile (≤844px), keep nav hidden (tab bar owns nav); on desktop, show it
         if (window.innerWidth > 844) {

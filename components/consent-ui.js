@@ -250,10 +250,8 @@ const ConsentUI = {
     },
 
     reopenForPreferences() {
-        var prevConsent = null;
         var prevAnalytics = null;
         try {
-            prevConsent = localStorage.getItem(this.CM_CONSENT_KEY);
             prevAnalytics = localStorage.getItem(this.CM_ANALYTICS_KEY);
             localStorage.removeItem(this.CM_CONSENT_KEY);
             localStorage.removeItem(this.CM_ANALYTICS_KEY);

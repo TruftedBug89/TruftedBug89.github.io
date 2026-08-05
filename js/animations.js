@@ -21,11 +21,7 @@ var InkAnimations = (function() {
     var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var _toastObserver = null;
     var _modalObserver = null;
-    var _storedDelayedCalls = [];
     var _trackedTweens = [];
-    var _trackedScrollTriggers = [];
-
-    function _trackTween(t) { if (t) { _trackedTweens.push(t); } return t; }
 
     /* Lenis smooth-scroll — desktop + pointer + motion-allowed only.
        Touch devices keep native scrolling (Lenis auto-disables anyway). */

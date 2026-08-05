@@ -509,7 +509,6 @@ commitTransaction() {
             today: { listening: 0, reading: 0, vocabulary: 0, xp: 0, timeSpent: 0 },
             weekly: { xp: 0, listening: 0, reading: 0, vocabulary: 0 }
         };
-        const today = Utils.date.today();
         const dailyStats = this.getDailyStats();
 
         // Calculate weekly stats

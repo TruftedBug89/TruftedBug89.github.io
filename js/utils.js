@@ -121,7 +121,7 @@ const Utils = {
     // Debounce function
     debounce(func, wait) {
         let timeout;
-        return function executedFunction(...args) {
+        return function debouncedFunction(...args) {
             const later = () => {
                 clearTimeout(timeout);
                 func(...args);
@@ -134,7 +134,7 @@ const Utils = {
     // Throttle function
     throttle(func, limit) {
         let inThrottle;
-        return function executedFunction(...args) {
+        return function throttledFunction(...args) {
             if (!inThrottle) {
                 func(...args);
                 inThrottle = true;
@@ -259,8 +259,6 @@ const Utils = {
     // Show confetti effect (GSAP-powered burst)
     showConfetti(opts) {
         opts = opts || {};
-        var originX = opts.x != null ? opts.x : 0.5;
-        var originY = opts.y != null ? opts.y : 0.4;
         var count = opts.count || 80;
         var spread = opts.spread || 360;
 

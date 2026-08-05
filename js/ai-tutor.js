@@ -569,7 +569,7 @@ const AITutor = {
         this.show();
         if (this.body) this.body.innerHTML = '';
         this._appendContext(context);
-        var loading = this._showLoading();
+        this._showLoading();
         this._busy = true;
         if (this.sendBtn) this.sendBtn.disabled = true;
         var self = this;
@@ -596,7 +596,7 @@ const AITutor = {
         AITutor._append(Utils.escapeHtml(text), 'ai-user');
         AITutor.input.value = '';
         AITutor._autosizeInput();
-        var loading = AITutor._showLoading();
+        AITutor._showLoading();
         AITutor._busy = true;
         if (AITutor.sendBtn) AITutor.sendBtn.disabled = true;
         var msg = AITutor.buildFollowUp(text);

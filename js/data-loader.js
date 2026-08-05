@@ -228,9 +228,6 @@ var DataLoader = (function () {
         });
 
         readyPromise = Promise.allSettled(promises).then(function () {
-            if (typeof App !== 'undefined' && App.DEBUG) {
-                console.log('DataLoader: active globals populated for level ' + activeLvl);
-            }
         });
         return readyPromise;
     }

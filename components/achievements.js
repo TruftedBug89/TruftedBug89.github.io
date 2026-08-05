@@ -184,7 +184,6 @@ const Achievements = {
             // X more to unlock
             let progressHtml = '';
             if (!achievement.unlocked) {
-                const remainingCount = total - idx;
                 const tierUnlocked = achievements.filter((a, i) => a.unlocked && i <= idx).length;
                 const tierTotal = idx + 1;
                 progressHtml = `<div class="achievement-tier-progress" style="margin-top:8px;">
