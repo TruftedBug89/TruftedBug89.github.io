@@ -21,3 +21,6 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+## 2026-07-25 - StorageManager Transaction Wrappers
+**Learning:** Missing transaction wrappers in `StorageManager` can cause severe synchronous `localStorage` bottlenecks during high-frequency updates, such as rapid flashcard reviews in `trackVocabulary`. Multiple calls to `setUserData` synchronously block the main thread.
+**Action:** Always verify that batchable, high-frequency operations are wrapped in `StorageManager.beginTransaction()` and `StorageManager.commitTransaction()` to combine multiple state mutations into a single `localStorage` I/O operation.
