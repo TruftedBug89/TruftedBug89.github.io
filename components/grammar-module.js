@@ -209,7 +209,6 @@ const GrammarModule = {
         container.innerHTML = this.HSK_LEVELS.map(function (level) {
             var isActive = self.activeLevel === level;
             var cls = 'grammar-chip' + (isActive ? ' active' : '');
-            var clean = level.toLowerCase().replace(/\s+/g, '-');
             return '<button class="' + cls + '" data-level="' + Utils.escapeAttr(level) + '" type="button">' + Utils.escapeHtml(level) + '</button>';
         }).join('');
     },

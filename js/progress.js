@@ -906,9 +906,6 @@ const ProgressTracker = {
 
     // Get achievement progress
     getAchievementProgress() {
-        const stats = StorageManager.getStatistics();
-        const data = StorageManager.getUserData();
-        
         return this.achievements.map(achievement => ({
             ...achievement,
             unlocked: StorageManager.hasAchievement(achievement.id)

@@ -749,19 +749,6 @@ const VocabularyLearner = {
             detailsHtml += `<div class="detail-badge hsk-badge">HSK ${Utils.escapeHtml(wordData.hsk)}</div>`;
         }
         
-        // Frequency rank — disabled until dataset is available
-        // if (wordData && wordData.frequency) {
-        //     detailsHtml += `<div class="detail-badge freq-badge">Top ${Utils.escapeHtml(wordData.frequency)} most common</div>`;
-        // }
-        
-        // Radical/component breakdown — disabled until dataset is available
-        // if (wordData && wordData.radicals && wordData.radicals.length) {
-        //     detailsHtml += `<div class="detail-section">
-        //         <div class="detail-label">Character Breakdown</div>
-        //         <div class="detail-radicals">${wordData.radicals.map(r => `<span class="radical-chip"><span class="radical-char">${Utils.escapeHtml(r.char)}</span><span class="radical-name">${Utils.escapeHtml(r.name)}</span></span>`).join('')}</div>
-        //     </div>`;
-        // }
-        
         // Example sentences - check HSK1Examples first, then card data
         var examples = [];
         if (wordData && typeof HSK1Examples !== 'undefined') {

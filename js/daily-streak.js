@@ -32,7 +32,6 @@ const DailyStreak = {
         this.checkStreak();
         this.updateUI();
 
-        var self = this;
         setTimeout(function () {
             if (typeof AITutor !== 'undefined' && AITutor.shouldPromptOnStartup && AITutor.shouldPromptOnStartup()) {
                 AITutor.promptConfigIfNeeded();

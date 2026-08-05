@@ -87,7 +87,6 @@ const ReadingModule = {
 
         var exercises;
         if (isAdvanced && typeof AdvancedReading !== 'undefined' && AdvancedReading.getAll) {
-            var allAdvanced = AdvancedReading.getAll();
             var typeMap = {
                 'sentence-reconstruction': 'sentenceReconstruction',
                 'contextual-reading': 'contextualReading',

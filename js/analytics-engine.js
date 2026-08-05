@@ -584,7 +584,6 @@ var AnalyticsEngine = {
     // ---- Compression ----
 
     _compressOldEvents: function () {
-        var now = new Date();
         var compressBefore = new Date();
         compressBefore.setDate(compressBefore.getDate() - this.COMPRESS_DAYS);
         var compressISO = compressBefore.toISOString();
