@@ -1221,7 +1221,7 @@ const ReadingModule = {
                     <p class="activity-subtitle">Paste any Chinese text below. We'll add a pop-up dictionary to help you read it.</p>
                 </div>
                 <div id="reading-mode-input-area">
-                    <textarea id="reading-mode-textarea" class="reading-mode-textarea" placeholder="Paste Chinese text here..." style="width: 100%; min-height: 150px; background: var(--bg-hover); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 1.1em; resize: vertical; margin-bottom: 16px;"></textarea>
+                    <textarea id="reading-mode-textarea" class="reading-mode-textarea" placeholder="Paste Chinese text here..." style="width: 100%; min-height: 150px; background: var(--bg-hover); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 1.1em; resize: vertical; margin-bottom: 16px;" aria-label="Chinese text to process"></textarea>
                     <div style="display: flex; gap: 12px;">
                         <button class="btn btn-primary" id="process-reading-text" style="flex: 1;">Process Text</button>
                         <button class="btn btn-secondary" id="clear-reading-text">Clear</button>

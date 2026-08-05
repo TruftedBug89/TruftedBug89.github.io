@@ -297,7 +297,7 @@ const Missions = {
             if (m.claimed) {
                 html += '<span class="mission-claimed">✓</span>';
             } else if (done) {
-                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(m.id) + '">+' + m.reward + '</button>';
+                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(m.id) + '" aria-label="Claim ' + m.reward + ' XP reward">+' + m.reward + '</button>';
             } else {
                 html += '<span class="mission-xp">+' + m.reward + ' XP</span>';
             }
@@ -320,7 +320,7 @@ const Missions = {
             if (weekly.claimed) {
                 html += '<span class="mission-claimed">✓</span>';
             } else if (wDone) {
-                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(weekly.id) + '">+' + weekly.reward + '</button>';
+                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(weekly.id) + '" aria-label="Claim ' + weekly.reward + ' XP reward">+' + weekly.reward + '</button>';
             } else {
                 html += '<span class="mission-xp">+' + weekly.reward + ' XP</span>';
             }
