@@ -310,7 +310,7 @@ var AnalyticsEngine = {
                     var raw = localStorage.getItem(key);
                     if (!raw) continue;
                     var data = JSON.parse(raw);
-                    if (data && typeof data === 'object') {
+                    if (data !== null && typeof data === 'object') {
                         data.sessionId = sid;
                         result.push(data);
                     }
@@ -325,22 +325,34 @@ var AnalyticsEngine = {
             var sessions = null;
             try {
                 var r = localStorage.getItem('analytics_' + sessionId + '_sessions');
-                if (r) sessions = JSON.parse(r);
+                if (r) {
+                    var parsedR = JSON.parse(r);
+                    if (parsedR !== null) sessions = parsedR;
+                }
             } catch (e) { /* ignore */ }
             var events = [];
             try {
                 var re = localStorage.getItem('analytics_' + sessionId + '_events');
-                if (re) events = JSON.parse(re);
+                if (re) {
+                    var parsedRe = JSON.parse(re);
+                    if (parsedRe !== null) events = parsedRe;
+                }
             } catch (e) { /* ignore */ }
             var daily = {};
             try {
                 var rd = localStorage.getItem('analytics_' + sessionId + '_daily');
-                if (rd) daily = JSON.parse(rd);
+                if (rd) {
+                    var parsedRd = JSON.parse(rd);
+                    if (parsedRd !== null) daily = parsedRd;
+                }
             } catch (e) { /* ignore */ }
             var summaries = [];
             try {
                 var rs = localStorage.getItem('analytics_' + sessionId + '_summaries');
-                if (rs) summaries = JSON.parse(rs);
+                if (rs) {
+                    var parsedRs = JSON.parse(rs);
+                    if (parsedRs !== null) summaries = parsedRs;
+                }
             } catch (e) { /* ignore */ }
             return {
                 sessionId: sessionId,
@@ -361,7 +373,9 @@ var AnalyticsEngine = {
     _readSessions: function () {
         try {
             var raw = localStorage.getItem(this._key('sessions'));
-            return raw ? JSON.parse(raw) : this._emptySession();
+            if (!raw) return this._emptySession();
+            var p = JSON.parse(raw);
+            return p !== null ? p : this._emptySession();
         } catch (e) { return this._emptySession(); }
     },
 
@@ -374,7 +388,9 @@ var AnalyticsEngine = {
     _readEvents: function () {
         try {
             var raw = localStorage.getItem(this._key('events'));
-            return raw ? JSON.parse(raw) : [];
+            if (!raw) return [];
+            var p = JSON.parse(raw);
+            return p !== null ? p : [];
         } catch (e) { return []; }
     },
 
@@ -384,23 +400,41 @@ var AnalyticsEngine = {
         } catch (e) { this._handleStorageError(e); }
     },
 
+    _dailySaveTimer: null,
+    _dailyPendingData: null,
+
     _readDaily: function () {
+        if (this._dailyPendingData) return this._dailyPendingData;
         try {
             var raw = localStorage.getItem(this._key('daily'));
-            return raw ? JSON.parse(raw) : {};
+            if (!raw) return {};
+            var p = JSON.parse(raw);
+            return p !== null ? p : {};
         } catch (e) { return {}; }
     },
 
     _writeDaily: function (data) {
-        try {
-            localStorage.setItem(this._key('daily'), JSON.stringify(data));
-        } catch (e) { this._handleStorageError(e); }
+        this._dailyPendingData = data;
+        if (this._dailySaveTimer) return;
+        var self = this;
+        this._dailySaveTimer = setTimeout(function () {
+            self._dailySaveTimer = null;
+            var d = self._dailyPendingData;
+            self._dailyPendingData = null;
+            if (d) {
+                try {
+                    localStorage.setItem(self._key('daily'), JSON.stringify(d));
+                } catch (e) { self._handleStorageError(e); }
+            }
+        }, 1000);
     },
 
     _readSummaries: function () {
         try {
             var raw = localStorage.getItem(this._key('summaries'));
-            return raw ? JSON.parse(raw) : [];
+            if (!raw) return [];
+            var p = JSON.parse(raw);
+            return p !== null ? p : [];
         } catch (e) { return []; }
     },
 
