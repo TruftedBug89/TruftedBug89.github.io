@@ -22,7 +22,7 @@ var AnalyticsEngine = {
     COMPRESS_DAYS: 30,
     MAX_EVENTS: 15000,
 
-    // ---- Initialisation ----
+    // ---- Initialization ----
 
     init: function () {
         try {

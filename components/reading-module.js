@@ -127,23 +127,23 @@ const ReadingModule = {
 
         // Update title
         var titles = {
-            'character-match': 'Character Matching',
-            'sentence-complete': 'Sentence Completion',
-            'passage-reading': 'Passage Reading',
-            'speed-reading': 'Speed Reading',
-            'radical-learn': 'Radical Learning',
-            'context-clues': 'Context Clues',
-            'sentence-reconstruction': 'Sentence Reconstruction',
-            'contextual-reading': 'Contextual Reading',
-            'reading-inference': 'Reading Inference',
-            'contextual-fill-blank': 'Contextual Fill-in-Blank',
-            'long-passages': 'Long Passage Reading',
-            'word-order': 'Word Order',
-            'speed-challenge': 'Speed Challenge',
-            'cultural-notes': 'Cultural Notes',
-            'useful-phrases': 'Useful Phrases'
+            'character-match': 'Character matching',
+            'sentence-complete': 'Sentence completion',
+            'passage-reading': 'Passage reading',
+            'speed-reading': 'Speed reading',
+            'radical-learn': 'Radical learning',
+            'context-clues': 'Context clues',
+            'sentence-reconstruction': 'Sentence reconstruction',
+            'contextual-reading': 'Contextual reading',
+            'reading-inference': 'Reading inference',
+            'contextual-fill-blank': 'Contextual fill-in-blank',
+            'long-passages': 'Long passage reading',
+            'word-order': 'Word order',
+            'speed-challenge': 'Speed challenge',
+            'cultural-notes': 'Cultural notes',
+            'useful-phrases': 'Useful phrases'
         };
-        document.getElementById('reading-title').textContent = titles[type] || 'Reading Exercise';
+        document.getElementById('reading-title').textContent = titles[type] || 'Reading exercise';
 
         this.showCurrentExercise();
     },
@@ -1014,7 +1014,7 @@ const ReadingModule = {
         var ex = document.getElementById('reading-exercise');
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
-        document.getElementById('reading-title').textContent = 'Cultural Notes';
+        document.getElementById('reading-title').textContent = 'Cultural notes';
 
         var notes = (typeof CulturalData !== 'undefined' && CulturalData.notes) ? CulturalData.notes : [];
         if (!notes.length) {
@@ -1069,7 +1069,7 @@ const ReadingModule = {
         var ex = document.getElementById('reading-exercise');
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
-        document.getElementById('reading-title').textContent = 'Useful Phrases';
+        document.getElementById('reading-title').textContent = 'Useful phrases';
 
         var phrases = (typeof RealWorldPhrases !== 'undefined' && RealWorldPhrases.getAll) ? RealWorldPhrases.getAll() : [];
         if (!phrases.length) {
@@ -1130,7 +1130,7 @@ const ReadingModule = {
         var ex = document.getElementById('reading-exercise');
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
-        document.getElementById('reading-title').textContent = 'HSK Level Reading';
+        document.getElementById('reading-title').textContent = 'HSK level reading';
 
         var html = '<div class="hsk-reading-select">' +
             '<p class="activity-subtitle">Select your HSK level for leveled reading practice</p>' +
@@ -1192,7 +1192,7 @@ const ReadingModule = {
         }
 
         var levelNames = { hsk1: 'HSK 1', hsk2: 'HSK 2', hsk3: 'HSK 3', hsk4: 'HSK 4', hsk5: 'HSK 5' };
-        document.getElementById('reading-title').textContent = levelNames[level] + ' Reading';
+        document.getElementById('reading-title').textContent = levelNames[level] + ' reading';
 
         // Store as session exercises (passage-reading style)
         this.exercises = passages;
@@ -1211,7 +1211,7 @@ const ReadingModule = {
         var ex = document.getElementById('reading-exercise');
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
-        document.getElementById('reading-title').textContent = 'Reading Mode';
+        document.getElementById('reading-title').textContent = 'Reading mode';
 
         var html = `
             <div class="reading-mode-container activity-card">
