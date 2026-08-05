@@ -87,7 +87,7 @@ const CharacterTooltip = {
 
     _colorizePinyin(pinyinString, containerEl) {
         if (!pinyinString || !containerEl) return;
-        containerEl.innerHTML = '';
+        containerEl.textContent = '';
         
         const syllables = pinyinString.split(' ');
         syllables.forEach((syl, index) => {
@@ -271,7 +271,7 @@ const CharacterTooltip = {
     },
 
     _renderSegments(segments, container) {
-        container.innerHTML = '';
+        container.textContent = '';
         segments.forEach(seg => {
             const row = document.createElement('div');
             row.className = 'cn-tooltip__segment';

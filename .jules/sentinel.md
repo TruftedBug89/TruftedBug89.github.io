@@ -7,3 +7,7 @@
 **Vulnerability:** XSS (Cross-Site Scripting) vulnerability in `components/network-status.js`. The `_showToast` function injected dynamically created messages directly into the DOM using `this.toast.innerHTML`.
 **Learning:** Even internal utility functions like toast notifications must treat all inputs as potentially untrusted or malicious, especially in a localized app where network responses or imported data may eventually feed into them.
 **Prevention:** Always use `textContent` instead of `innerHTML` when displaying plain text to completely prevent DOM-based XSS, as it treats all input strictly as text, neutralizing any HTML tags.
+## 2024-05-28 - Plain Text DOM XSS Prevention
+**Vulnerability:** Use of innerHTML for plain text assignments in UI components.
+**Learning:** Found plain text feedback messages assigned via innerHTML in reading and listening modules.
+**Prevention:** Replaced innerHTML with textContent to ensure no HTML tags can ever be injected, preventing DOM-based XSS.

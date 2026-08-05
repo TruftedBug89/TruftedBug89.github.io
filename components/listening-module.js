@@ -621,7 +621,7 @@ const ListeningModule = {
         const result = Utils.checkAnswer(input.value, exercise.chinese);
 
         if (result === 'exact') {
-            feedback.innerHTML = '✅ Excellent! Spot on.';
+            feedback.textContent = '✅ Excellent! Spot on.';
             feedback.className = 'answer-feedback correct';
             input.classList.add('correct');
             this.score++;
@@ -632,12 +632,12 @@ const ListeningModule = {
             this._updateScoreDisplay();
             this._showLearningTip(feedback, this.currentType, exercise);
         } else if (result === 'close') {
-            feedback.innerHTML = '🟡 So close — double-check tones and characters.';
+            feedback.textContent = '🟡 So close — double-check tones and characters.';
             feedback.className = 'answer-feedback close';
             input.classList.add('close');
             this._showLearningTip(feedback, this.currentType, exercise);
         } else {
-            feedback.innerHTML = '❌ Not quite. The answer is below — study it then continue.';
+            feedback.textContent = '❌ Not quite. The answer is below — study it then continue.';
             feedback.className = 'answer-feedback incorrect';
             input.classList.add('incorrect');
             this._revealDictationAnswer();

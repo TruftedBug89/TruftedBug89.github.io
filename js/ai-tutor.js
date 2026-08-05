@@ -214,7 +214,7 @@ const AITutor = {
             var providerKey = modalBody.querySelector('#ds-provider').value;
             var newProv = self.PROVIDERS[providerKey] || self.PROVIDERS.deepseek;
             var chips = modalBody.querySelector('.ai-model-presets');
-            chips.innerHTML = '';
+            chips.textContent = '';
             newProv.models.forEach(function (m) {
                 var chip = document.createElement('button');
                 chip.type = 'button';
@@ -498,7 +498,7 @@ const AITutor = {
         this.panel.classList.remove('open');
         this.panel.hidden = true;
         if (this.handle) this.handle.classList.remove('show');
-        if (this.body) this.body.innerHTML = '';
+        if (this.body) this.body.textContent = '';
     },
 
     _append(html, cls) {
@@ -544,7 +544,7 @@ const AITutor = {
         if (!this.getApiKey()) {
             this.show();
             if (this.body) {
-                this.body.innerHTML = '';
+                this.body.textContent = '';
                 var div = document.createElement('div');
                 div.className = 'ai-empty';
                 div.innerHTML = 'No API key set.<br><br><button type="button" class="btn btn-primary" data-ai-open-config>Configure AI Tutor</button>';
@@ -557,7 +557,7 @@ const AITutor = {
         this._forceNext = false;
         this._lastContext = context || {};
         this.show();
-        if (this.body) this.body.innerHTML = '';
+        if (this.body) this.body.textContent = '';
         this._appendContext(context);
         var loading = this._showLoading();
         this._busy = true;

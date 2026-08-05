@@ -1127,7 +1127,7 @@ App.confirmModal = function (opts) {
 
         const cleanup = () => {
             modal.classList.add('hidden');
-            modalBody.innerHTML = '';
+            modalBody.textContent = '';
         };
 
         const yesBtn = modalBody.querySelector('[data-cm-action="confirm-yes"]');

@@ -829,10 +829,10 @@ const ReadingModule = {
 
         if (feedback) {
             if (isCorrect) {
-                feedback.innerHTML = '✅ Excellent choice!';
+                feedback.textContent = '✅ Excellent choice!';
                 feedback.className = 'answer-feedback correct';
             } else {
-                feedback.innerHTML = `❌ The correct word is highlighted in green.`;
+                feedback.textContent = `❌ The correct word is highlighted in green.`;
                 feedback.className = 'answer-feedback incorrect';
             }
         }
@@ -999,9 +999,9 @@ const ReadingModule = {
         });
         if (feedback) {
             feedback.style.display = 'block';
-            feedback.innerHTML = isCorrect
-                ? '✅ Correct! ' + Utils.escapeHtml(exercise.explanation || '')
-                : '❌ Not quite. ' + Utils.escapeHtml(exercise.explanation || '');
+            feedback.textContent = isCorrect
+                ? '✅ Correct! ' + (exercise.explanation || '')
+                : '❌ Not quite. ' + (exercise.explanation || '');
         }
         if (isCorrect) this.score++;
         else this._triggerAI();

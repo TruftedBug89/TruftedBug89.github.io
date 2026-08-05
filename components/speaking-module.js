@@ -164,7 +164,7 @@ const SpeakingModule = {
 
         var content = document.getElementById('speaking-content');
         if (typeof TonePractice !== 'undefined') {
-            content.innerHTML = '';
+            content.textContent = '';
             // TonePractice expects a container ID, we render inside speaking-content
             var quiz = TonePractice.generateQuiz(10);
             var html = '\
