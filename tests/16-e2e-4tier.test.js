@@ -652,15 +652,17 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.equal(globalThis.AdminPanel, undefined);
     });
 
-    it('3.1.2: Cross F2 & F4: Progress tracking under Speed Prep uses consolidated write and scales learning parameters', () => {
+        it('3.1.2: Cross F2 & F4: Progress tracking under Speed Prep uses consolidated write and scales learning parameters', () => {
       let storageSetCalls = 0;
       const originalStorageSet = globalThis.Utils.storage.set;
+
+      setStudyProfile('speed'); // Move this out of tracking
+
       globalThis.Utils.storage.set = (k, v) => {
         storageSetCalls++;
         return originalStorageSet(k, v);
       };
 
-      setStudyProfile('speed');
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.ProgressTracker.trackExercise('reading', 'ex1', 5, 5);
@@ -735,15 +737,17 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.ok(globalThis.StorageManager.getUserData());
     });
 
-    it('4.1.2: Scenario 2: Active user updates profile to Speed Prep, studies cards, and saves progress via transactional writes', () => {
+        it('4.1.2: Scenario 2: Active user updates profile to Speed Prep, studies cards, and saves progress via transactional writes', () => {
       let storageSetCalls = 0;
       const originalStorageSet = globalThis.Utils.storage.set;
+
+      setStudyProfile('speed'); // Move out
+
       globalThis.Utils.storage.set = (k, v) => {
         storageSetCalls++;
         return originalStorageSet(k, v);
       };
 
-      setStudyProfile('speed');
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.ProgressTracker.trackExercise('listening', 'les1', 8, 10);

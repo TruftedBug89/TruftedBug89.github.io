@@ -147,15 +147,15 @@ var AnalyticsEngine = {
         var extra = {};
 
         if (eType.indexOf('reading') >= 0 || eType === 'reading' || eType.indexOf('read') >= 0) {
-            eventType = 'reading_exercise';
+            eventType = eType === 'reading_quiz' ? 'reading_quiz' : 'reading_exercise';
         } else if (eType.indexOf('listening') >= 0 || eType === 'listening' || eType.indexOf('audio') >= 0) {
-            eventType = 'listening_exercise';
+            eventType = eType === 'audio_test' ? 'audio_test' : 'listening_exercise';
         } else if (eType.indexOf('speaking') >= 0 || eType === 'speaking' || eType.indexOf('speech') >= 0) {
             eventType = 'speaking_exercise';
         } else if (eType.indexOf('grammar') >= 0) {
             eventType = 'grammar_practice';
         } else {
-            eventType = 'reading_exercise';
+            eventType = eType;
             extra._deduced = true;
         }
 
