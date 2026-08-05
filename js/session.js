@@ -141,9 +141,10 @@ const SessionManager = {
     createSession(name) {
         const sid = this._generateSessionId();
         const sessions = Utils.storage.get(this.SESSIONS_KEY, {});
+        const safeName = String(name || '').slice(0, 40).trim() || ('Learner ' + (Object.keys(sessions).length + 1));
         sessions[sid] = {
             id: sid,
-            name: name || ('Learner ' + (Object.keys(sessions).length + 1)),
+            name: safeName,
             created: new Date().toISOString(),
             lastActive: new Date().toISOString(),
             version: this.SESSION_VERSION
