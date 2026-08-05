@@ -620,7 +620,8 @@ const Dashboard = {
         var todayStats = stats.today || {};
         var todayXp = todayStats.xp || 0;
         var hour = new Date().getHours();
-        var name = (userData && userData.name) ? userData.name : '';
+        // 🛡️ Sentinel Security Fix: Sanitize user input before rendering in DOM
+        var name = (userData && userData.name) ? Utils.escapeHtml(userData.name) : '';
 
         if (streak >= 30) return name ? name + ", you're on a " + streak + "-day streak. Legendary." : "A " + streak + "-day streak. Legendary discipline.";
         if (streak >= 7)  return (name ? name + ", " : "") + streak + " days strong. Keep the flame alive.";
