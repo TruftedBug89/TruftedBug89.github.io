@@ -1009,10 +1009,7 @@ const HSK2 = {
     ],
     get count() { return this.words.length; },
     getByCategory(cat) { return this.words.filter(w => w.category === cat); },
-    getRandom(n) {
-        const shuffled = [...this.words].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, n);
-    },
+    getRandom(n) { return Utils.randomItems(this.words, n); },
     getById(id) { return this.words.find(w => w.id === id); }
 };
 window.HSK2 = HSK2;

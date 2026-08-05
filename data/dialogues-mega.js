@@ -11335,10 +11335,7 @@ const DialoguesMega = {
         return this.scenarios.filter(s => s.difficulty === difficulty);
     },
 
-    getRandom(count = 5) {
-        const shuffled = [...this.scenarios].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, count);
-    },
+    getRandom(count = 5) { return Utils.randomItems(this.scenarios, count); },
 
     get totalCount() {
         return this.scenarios.length;

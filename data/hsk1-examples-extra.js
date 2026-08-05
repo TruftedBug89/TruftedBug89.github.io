@@ -1710,7 +1710,7 @@
         if (HSK1Examples.getRandomExample) {
             HSK1Examples.getRandomExample = function(c) {
                 var arr = existing[c] || [];
-                return arr.length > 0 ? arr[Math.floor(Math.random() * arr.length)] : null;
+                return arr.length > 0 ? Utils.randomItem(arr) : null;
             };
         }
         console.log('HSK1Examples-extra: Added examples for ' + keys.length + ' character keys (' + newKeyCount + ' new keys), ' + totalExamples + ' total new example sentences.');

@@ -372,7 +372,7 @@ const HSK1Examples = {
     getRandomExample(character) {
         const examples = this.getExamples(character);
         if (examples.length === 0) return null;
-        return examples[Math.floor(Math.random() * examples.length)];
+        return Utils.randomItem(examples);
     }
 };
 
