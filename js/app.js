@@ -966,6 +966,8 @@ const App = {
         const modalBody = document.getElementById('modal-body');
         if (!modal || !modalBody) return;
 
+        this._previousActiveElement = document.activeElement;
+
         modalBody.innerHTML = content;
         modal.classList.remove('hidden');
 
@@ -1019,6 +1021,10 @@ const App = {
         if (this._modalKeyHandler) {
             document.removeEventListener('keydown', this._modalKeyHandler);
             this._modalKeyHandler = null;
+        }
+        if (this._previousActiveElement && typeof this._previousActiveElement.focus === 'function') {
+            try { this._previousActiveElement.focus(); } catch (e) {}
+            this._previousActiveElement = null;
         }
     },
 
@@ -1106,6 +1112,7 @@ App.confirmModal = function (opts) {
     } = opts || {};
 
     return new Promise((resolve) => {
+        const previousActiveElement = document.activeElement;
         const modal = document.getElementById('modal');
         const modalBody = document.getElementById('modal-body');
         const safeTitle = Utils.escapeHtml(title);
@@ -1128,6 +1135,9 @@ App.confirmModal = function (opts) {
         const cleanup = () => {
             modal.classList.add('hidden');
             modalBody.innerHTML = '';
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                try { previousActiveElement.focus(); } catch (e) {}
+            }
         };
 
         const yesBtn = modalBody.querySelector('[data-cm-action="confirm-yes"]');

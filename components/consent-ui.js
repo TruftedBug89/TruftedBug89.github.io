@@ -87,7 +87,7 @@ const ConsentUI = {
             '    <button type="button" class="cm-consent__link" data-consent-action="config" aria-expanded="false" aria-controls="cookie-config-panel">Configurar</button>',
             '  </div>',
             '  <div class="cm-consent__footer">',
-            '    <a href="#" class="cm-consent__policy-link" data-consent-action="policy" role="button">Pol\u00EDtica de Cookies</a>',
+            '    <a href="#" class="cm-consent__policy-link" data-consent-action="policy" role="button" tabindex="0">Pol\u00EDtica de Cookies</a>',
             '  </div>',
             '</div>',
             '<div class="cm-consent__config" id="cookie-config-panel" hidden>',
@@ -206,9 +206,13 @@ const ConsentUI = {
     },
 
     _trapFocus(banner) {
+        var self = this;
         banner.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 e.preventDefault();
+                if (self._configOpen) {
+                    self._toggleConfig();
+                }
                 return;
             }
 

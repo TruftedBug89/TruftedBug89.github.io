@@ -204,11 +204,15 @@
     }
 
     .hero-greeting .greeting {
-        font-size: 20px !important;
+        font-size: 1.4rem !important;
+        line-height: 1.2;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .greeting-subtitle {
-        font-size: 13px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4;
     }
 
     .hero-metrics {
