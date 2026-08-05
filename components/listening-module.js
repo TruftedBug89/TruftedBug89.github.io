@@ -328,7 +328,7 @@ const ListeningModule = {
                 </div>
 
                 <div class="dialogue-actions">
-                    <button class="icon-btn" id="reveal-meanings">👁 Show meanings</button>
+                    <button class="icon-btn" id="reveal-meanings" aria-expanded="false">👁 Show meanings</button>
                     <button class="icon-btn" id="play-each-btn">🔊 Hear each line</button>
                 </div>
 
@@ -543,6 +543,7 @@ const ListeningModule = {
                 });
                 const culturalNote = document.getElementById('cultural-note');
                 if (culturalNote) culturalNote.style.display = 'block';
+                dialogueRevealBtn.setAttribute('aria-expanded', 'true');
                 this.showNextButton();
             });
         }

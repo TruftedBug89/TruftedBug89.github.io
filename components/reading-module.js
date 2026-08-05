@@ -332,7 +332,7 @@ const ReadingModule = {
                         <div style="margin-top:4px;">${safePinyin}</div>
                     </div>
                     <div class="dialogue-actions" style="margin-top:14px;">
-                        <button class="icon-btn" id="show-passage-pinyin">👁 Show pinyin</button>
+                        <button class="icon-btn" id="show-passage-pinyin" aria-expanded="false">👁 Show pinyin</button>
                         <button class="icon-btn" id="play-passage-btn">🔊 Listen</button>
                     </div>
                 </div>
@@ -625,8 +625,9 @@ const ReadingModule = {
             showPinyinBtn.addEventListener('click', () => {
                 const pinyin = document.getElementById('passage-pinyin');
                 if (pinyin) {
-                    pinyin.classList.toggle('hidden');
-                    showPinyinBtn.textContent = pinyin.classList.contains('hidden') ? '👁 Show pinyin' : '🙈 Hide pinyin';
+                    const isHidden = pinyin.classList.toggle('hidden');
+                    showPinyinBtn.textContent = isHidden ? '👁 Show pinyin' : '🙈 Hide pinyin';
+                    showPinyinBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
                 }
             });
         }

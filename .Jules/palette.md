@@ -1,3 +1,4 @@
 ## 2024-05-18 - Dynamic ARIA Labels for Icon Buttons
 **Learning:** Static ARIA labels are insufficient for toggle buttons (like play/pause). The label must change dynamically with the component state so screen reader users understand the *current* action available.
 **Action:** Always update `aria-label` in JavaScript alongside visual state changes (like changing icons) for interactive toggle buttons.
+## 2026-03-01 - Dynamic ARIA expanded for toggle/reveal buttons\n**Learning:** Buttons that toggle or reveal content (like showing pinyin or meanings) must use `aria-expanded` and update it dynamically to communicate their state to screen readers.\n**Action:** Always add `aria-expanded="false"` initially and update it to "true" (and back to "false" if togglable) when the content state changes.
