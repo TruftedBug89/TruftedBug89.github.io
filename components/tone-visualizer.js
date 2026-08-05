@@ -45,19 +45,19 @@
                     <button type="button" class="btn btn-secondary btn-sm" id="btn-tone-replay">🔁 Replay Tone</button>
                 </div>
                 <div class="tone-buttons-grid">
-                    <button type="button" class="tone-btn active" data-tone="1">
+                    <button type="button" class="tone-btn active" data-tone="1" aria-pressed="true">
                         <span class="tone-btn__mark">ā</span>
                         <span class="tone-btn__label">1st (Flat 55)</span>
                     </button>
-                    <button type="button" class="tone-btn" data-tone="2">
+                    <button type="button" class="tone-btn" data-tone="2" aria-pressed="false">
                         <span class="tone-btn__mark">á</span>
                         <span class="tone-btn__label">2nd (Rising 35)</span>
                     </button>
-                    <button type="button" class="tone-btn" data-tone="3">
+                    <button type="button" class="tone-btn" data-tone="3" aria-pressed="false">
                         <span class="tone-btn__mark">ǎ</span>
                         <span class="tone-btn__label">3rd (Dip-Rise 214)</span>
                     </button>
-                    <button type="button" class="tone-btn" data-tone="4">
+                    <button type="button" class="tone-btn" data-tone="4" aria-pressed="false">
                         <span class="tone-btn__mark">à</span>
                         <span class="tone-btn__label">4th (Falling 51)</span>
                     </button>
@@ -93,8 +93,12 @@
             const btns = this.card.querySelectorAll('.tone-btn');
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    btns.forEach(b => b.classList.remove('active'));
+                    btns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
                     btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
                     const tone = parseInt(btn.dataset.tone, 10);
                     this.selectTone(tone);
                     this.playAudioTone(tone);

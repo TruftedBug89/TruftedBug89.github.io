@@ -365,11 +365,11 @@ const ListeningModule = {
                 </div>
 
                 <div class="speed-presets" id="speed-presets">
-                    <button class="speed-preset" data-speed="0.5">0.5× 🐢</button>
-                    <button class="speed-preset" data-speed="0.8">0.8×</button>
-                    <button class="speed-preset active" data-speed="1.0">1.0×</button>
-                    <button class="speed-preset" data-speed="1.2">1.2×</button>
-                    <button class="speed-preset" data-speed="1.5">1.5× ⚡</button>
+                    <button class="speed-preset" data-speed="0.5" aria-pressed="false">0.5× 🐢</button>
+                    <button class="speed-preset" data-speed="0.8" aria-pressed="false">0.8×</button>
+                    <button class="speed-preset active" data-speed="1.0" aria-pressed="true">1.0×</button>
+                    <button class="speed-preset" data-speed="1.2" aria-pressed="false">1.2×</button>
+                    <button class="speed-preset" data-speed="1.5" aria-pressed="false">1.5× ⚡</button>
                 </div>
 
                 <input type="range" class="speed-slider" id="speed-slider" min="0.5" max="1.5" step="0.1" value="1.0">
@@ -576,7 +576,9 @@ const ListeningModule = {
             if (speedValue) speedValue.textContent = v;
             if (speedSlider) speedSlider.value = v;
             document.querySelectorAll('.speed-preset').forEach(p => {
-                p.classList.toggle('active', parseFloat(p.dataset.speed) === parseFloat(v));
+                const isActive = parseFloat(p.dataset.speed) === parseFloat(v);
+                p.classList.toggle('active', isActive);
+                p.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
         };
         if (speedSlider) {
