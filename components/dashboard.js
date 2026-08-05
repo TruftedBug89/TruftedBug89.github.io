@@ -657,14 +657,14 @@ const Dashboard = {
             const xp = dailyStats[dateStr] ? (dailyStats[dateStr].xp || 0) : 0;
 
             let bg = 'rgba(255,255,255,0.05)'; // Empty state
-            let title = dateStr + ': No activity';
+            let title = Utils.escapeHtml(dateStr + ': No activity');
 
             if (xp > 0) {
                 // Scale opacity from 0.3 to 1.0 based on max XP
                 let opacity = 0.3 + (xp / maxDailyXp) * 0.7;
                 if (opacity > 1) opacity = 1;
                 bg = 'rgba(90, 171, 138, ' + opacity + ')'; // Using success color
-                title = dateStr + ': ' + xp + ' XP';
+                title = Utils.escapeHtml(dateStr + ': ' + xp + ' XP');
             }
 
             html += '<div class="heatmap-cell" style="width: 14px; height: 14px; border-radius: 3px; background: ' + bg + '; cursor: pointer;" title="' + title + '"></div>';
@@ -706,7 +706,7 @@ const Dashboard = {
             var isToday = i === todayIndex;
             var cls = isToday ? 'active' : (day.xp > 0 ? 'has-activity' : 'inactive');
             var valueLabel = day.xp > 0 ? day.xp : '';
-            var titleTxt = Utils.escapeHtml(day.day) + ': ' + day.xp + ' XP' + (isToday ? ' (today)' : '');
+            var titleTxt = Utils.escapeHtml(day.day + ': ' + day.xp + ' XP' + (isToday ? ' (today)' : ''));
             return '<div class="weekly-bar-wrap">' +
                 '<div class="weekly-bar-value">' + valueLabel + '</div>' +
                 '<div class="weekly-bar ' + cls + '" style="height:' + heightPct + '%" title="' + titleTxt + '"></div>' +
