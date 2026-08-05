@@ -9,6 +9,24 @@ const App = {
     DEBUG: false, // set true to surface diagnostic logs in console
     _navInProgress: false,
     _navQueue: [],
+    _errorBuffer: [],
+    _maxErrors: 50,
+
+    logError(errStr) {
+        const timestamp = new Date().toISOString();
+        const entry = `[${timestamp}] ${errStr}`;
+        this._errorBuffer.push(entry);
+        if (this._errorBuffer.length > this._maxErrors) {
+            this._errorBuffer.shift();
+        }
+        if (this.DEBUG) {
+            console.error('[App Error]', entry);
+        }
+    },
+
+    getErrors() {
+        return [...this._errorBuffer];
+    },
 
     // Initialize the app
     init() {
@@ -97,7 +115,9 @@ const App = {
                 var loginResult = RecurringRewards.checkLogin();
                 if (loginResult) {
                     setTimeout(function() {
-                        RecurringRewards.showLoginRewardPopup(loginResult);
+                        if (typeof RecurringRewards !== 'undefined') {
+                            RecurringRewards.showLoginRewardPopup(loginResult);
+                        }
                     }, 2000);
                 }
             }
@@ -179,14 +199,21 @@ const App = {
     // Surface uncaught errors to the user instead of failing silently
     _installGlobalErrorHandlers() {
         window.addEventListener('error', (e) => {
+            const errStr = (e.error && e.error.stack) ? e.error.stack : (e.error || e.message || 'Unknown error');
+            this.logError(`Uncaught error: ${errStr}`);
             if (this.DEBUG) console.error('Uncaught error:', e.error || e.message);
-            try { Utils.showToast('Something went wrong — your progress is safe.', 'warning'); } catch (_) {}
+            if (typeof Utils !== 'undefined' && Utils.showToast) {
+                try { Utils.showToast('Something went wrong — your progress is safe.', 'warning'); } catch (_) {}
+            }
         });
         window.addEventListener('unhandledrejection', (e) => {
             // Speech synthesis rejections are common and non-fatal — swallow quietly
             const reason = e && e.reason;
             const msg = (reason && (reason.message || String(reason))) || '';
             if (/speech|synthesis|audio|abort/i.test(msg)) return;
+
+            const errStr = (reason && reason.stack) ? reason.stack : msg;
+            this.logError(`Unhandled rejection: ${errStr}`);
             if (this.DEBUG) console.error('Unhandled rejection:', reason);
         });
     },
@@ -243,7 +270,9 @@ const App = {
 
         // Profile switcher
         const profileBtn = document.getElementById('profile-btn');
-        if (profileBtn) profileBtn.addEventListener('click', () => SessionManagerUI.open());
+        if (profileBtn) profileBtn.addEventListener('click', () => {
+            if (typeof SessionManagerUI !== 'undefined') SessionManagerUI.open();
+        });
 
         // Quick action cards
         document.querySelectorAll('.action-card').forEach(card => {
@@ -566,6 +595,7 @@ const App = {
 
     // Load user preferences
     loadPreferences() {
+        if (typeof StorageManager === 'undefined') return;
         const userData = StorageManager.getUserData();
 
         // Update user name
@@ -821,6 +851,7 @@ const App = {
             </div>
         `);
         const modal = document.getElementById('modal');
+        if (!modal) return;
         const closeBtn = modal.querySelector('[data-cm-action="close-help"]');
         if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
     },
@@ -1108,10 +1139,18 @@ App.confirmModal = function (opts) {
     return new Promise((resolve) => {
         const modal = document.getElementById('modal');
         const modalBody = document.getElementById('modal-body');
-        const safeTitle = Utils.escapeHtml(title);
-        const safeMessage = Utils.escapeHtml(message);
-        const safeConfirm = Utils.escapeHtml(confirmLabel);
-        const safeCancel = Utils.escapeHtml(cancelLabel);
+        if (!modal || !modalBody) { resolve(false); return; }
+
+        const _escape = (typeof Utils !== 'undefined' && Utils.escapeHtml) ? Utils.escapeHtml : (str) => {
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+            }[tag]));
+        };
+
+        const safeTitle = _escape(title);
+        const safeMessage = _escape(message);
+        const safeConfirm = _escape(confirmLabel);
+        const safeCancel = _escape(cancelLabel);
         modalBody.innerHTML = `
             <div class="activity-card" style="text-align:center; max-width:440px;">
                 <h2 style="margin:0 0 10px; color:var(--text-primary);">${safeTitle}</h2>
