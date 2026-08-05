@@ -127,7 +127,7 @@ var BottomSheet = (function () {
             if (r.type === 'divider') {
                 html += '<div class="sheet-divider"></div>';
             } else if (r.type === 'section') {
-                html += '<div class="sheet-section-label">' + r.label + '</div>';
+                html += '<div class="sheet-section-label">' + Utils.escapeHtml(r.label) + '</div>';
             } else {
                 var cls = r.danger ? ' sheet-row danger' : ' sheet-row';
                 var arrow = r.arrow === false ? '' : '<span class="sheet-row-arrow" aria-hidden="true">›</span>';
@@ -139,9 +139,9 @@ var BottomSheet = (function () {
                         iconHtml = '<span class="sheet-row-icon" aria-hidden="true">' + r.icon + '</span>';
                     }
                 }
-                html += '<button type="button" class="' + cls + '" data-sheet-action="' + (r.action || '') + '">' +
+                html += '<button type="button" class="' + cls + '" data-sheet-action="' + Utils.escapeAttr(r.action || '') + '">' +
                     iconHtml +
-                    '<span class="sheet-row-label">' + r.label + '</span>' +
+                    '<span class="sheet-row-label">' + Utils.escapeHtml(r.label) + '</span>' +
                     arrow +
                     '</button>';
             }
@@ -164,8 +164,8 @@ var BottomSheet = (function () {
 
             var headerHtml = '<div class="sheet-grabber"></div>';
             if (title) {
-                headerHtml += '<div class="sheet-header"><h2>' + title + '</h2>' +
-                    (subtitle ? '<p>' + subtitle + '</p>' : '') +
+                headerHtml += '<div class="sheet-header"><h2>' + Utils.escapeHtml(title) + '</h2>' +
+                    (subtitle ? '<p>' + Utils.escapeHtml(subtitle) + '</p>' : '') +
                     '</div>';
             } else {
                 headerHtml += '<div class="sheet-grabber" style="padding-bottom:16px"></div>';
