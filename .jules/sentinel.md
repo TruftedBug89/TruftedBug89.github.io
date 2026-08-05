@@ -1,0 +1,4 @@
+## 2024-07-19 - [Added Content Security Policy]
+**Vulnerability:** The application was missing a Content Security Policy (CSP), which is a key defense-in-depth mechanism against Cross-Site Scripting (XSS) and code injection attacks. Although `Utils.escapeHtml` is widely used, there were multiple places where `.innerHTML` was used to insert dynamically generated content, increasing the risk surface.
+**Learning:** This is a local-first, offline-first application that only makes external connections for the optional AI Tutor (`api.deepseek.com`, `generativelanguage.googleapis.com`). Therefore, a highly restrictive CSP can be used effectively without breaking functionality.
+**Prevention:** A strict CSP `<meta>` tag was added to `index.html` allowing `script-src 'self'` and specifying allowed hosts for fonts and API connections, drastically reducing the impact of any potential XSS vulnerability that might exist or be introduced in the future.
