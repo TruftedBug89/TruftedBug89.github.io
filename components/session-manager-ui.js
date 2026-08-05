@@ -71,8 +71,18 @@ const SessionManagerUI = {
                 const meta = SessionManager.getSessionMeta(sid);
                 const name = window.prompt('New name for this learner:', meta?.name || '');
                 if (name !== null) {
-                    SessionManager.renameSession(sid, name);
-                    SessionManagerUI.open();
+                    const trimmedName = String(name).replace(/<[^>]*>?/gm, '').trim();
+                    if (!trimmedName) return;
+                    if (trimmedName.length > 40) {
+                        if (typeof Utils !== 'undefined') Utils.showToast('Name is too long (max 40 characters)', 'warning');
+                        return;
+                    }
+                    const success = SessionManager.renameSession(sid, trimmedName);
+                    if (!success) {
+                        if (typeof Utils !== 'undefined') Utils.showToast('A learner with this name already exists', 'warning');
+                    } else {
+                        SessionManagerUI.open();
+                    }
                 }
             });
         });
@@ -100,11 +110,19 @@ const SessionManagerUI = {
         if (newBtn) newBtn.addEventListener('click', () => {
             const name = window.prompt('Name for the new learner:');
             if (name !== null) {
-                const sid = SessionManager.createSession(name);
+                const trimmedName = String(name).replace(/<[^>]*>?/gm, '').trim();
+                if (!trimmedName) return;
+                if (trimmedName.length > 40) {
+                    if (typeof Utils !== 'undefined') Utils.showToast('Name is too long (max 40 characters)', 'warning');
+                    return;
+                }
+                const sid = SessionManager.createSession(trimmedName);
                 if (sid) {
                     SessionManager.switchSession(sid);
                     App.closeModal();
                     location.reload();
+                } else {
+                    if (typeof Utils !== 'undefined') Utils.showToast('A learner with this name already exists', 'warning');
                 }
             }
         });
