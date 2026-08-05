@@ -21,3 +21,7 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+
+## 2026-08-04 - Autosize Textareas Need Synchronous Reflows
+**Learning:** Debouncing the 'input' event listener for an autosizing textarea creates a severe UX regression because the text scrolls out of view before the resize triggers.
+**Action:** Never debounce autosizing textareas; they require synchronous layout recalculations to feel responsive.

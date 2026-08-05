@@ -163,9 +163,9 @@ const CharacterTooltip = {
             }
         }, { passive: true });
 
-        document.addEventListener('scroll', function () {
+        document.addEventListener('scroll', Utils.debounce(function () {
             if (self._activeTarget) self._positionFor(self._activeTarget);
-        }, { passive: true });
+        }, 100), { passive: true });
 
         if (this._tooltip) {
             this._tooltip.addEventListener('mouseenter', function () { clearTimeout(self._hideTimer); });
