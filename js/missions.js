@@ -295,9 +295,9 @@ const Missions = {
             html += '</div>';
             html += '<div class="mission-reward">';
             if (m.claimed) {
-                html += '<span class="mission-claimed">✓</span>';
+                html += '<span class="mission-claimed" aria-label="Claimed" title="Claimed">✓</span>';
             } else if (done) {
-                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(m.id) + '">+' + m.reward + '</button>';
+                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(m.id) + '" aria-label="Claim ' + m.reward + ' XP" title="Claim ' + m.reward + ' XP">+' + m.reward + '</button>';
             } else {
                 html += '<span class="mission-xp">+' + m.reward + ' XP</span>';
             }
@@ -318,9 +318,9 @@ const Missions = {
             html += '</div>';
             html += '<div class="mission-reward">';
             if (weekly.claimed) {
-                html += '<span class="mission-claimed">✓</span>';
+                html += '<span class="mission-claimed" aria-label="Claimed" title="Claimed">✓</span>';
             } else if (wDone) {
-                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(weekly.id) + '">+' + weekly.reward + '</button>';
+                html += '<button class="btn-mission-claim" data-mission-id="' + Utils.escapeAttr(weekly.id) + '" aria-label="Claim ' + weekly.reward + ' XP" title="Claim ' + weekly.reward + ' XP">+' + weekly.reward + '</button>';
             } else {
                 html += '<span class="mission-xp">+' + weekly.reward + ' XP</span>';
             }
