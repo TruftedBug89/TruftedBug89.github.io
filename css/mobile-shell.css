@@ -140,8 +140,9 @@
     .main-content {
         margin-left: 0 !important;
         padding: 12px 14px;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 16px));
+        padding-bottom: calc(94px + env(safe-area-inset-bottom, 16px));
         max-width: 100% !important;
+        box-sizing: border-box !important;
         transition: none;
     }
 
@@ -205,6 +206,8 @@
 
     .hero-greeting .greeting {
         font-size: 20px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
     }
 
     .greeting-subtitle {
