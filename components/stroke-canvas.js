@@ -93,8 +93,11 @@
                 });
             }
 
+            // ⚡ Bolt optimization: Cache bounding rect on stroke start to prevent layout thrashing during drawing
+            let cachedRect = null;
+
             const getPos = (e) => {
-                const rect = this.canvas.getBoundingClientRect();
+                const rect = cachedRect || this.canvas.getBoundingClientRect();
                 const clientX = e.touches ? e.touches[0].clientX : e.clientX;
                 const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                 return {
@@ -107,6 +110,7 @@
             const startDraw = (e) => {
                 if (e.touches && e.touches.length > 1) return;
                 this.isDrawing = true;
+                cachedRect = this.canvas.getBoundingClientRect();
                 this.points = [getPos(e)];
             };
 
@@ -127,6 +131,7 @@
             const stopDraw = () => {
                 if (this.isDrawing) {
                     this.isDrawing = false;
+                    cachedRect = null;
                     if (this.points.length === 1) {
                         const p = this.points[0];
                         this.renderDot(p);
