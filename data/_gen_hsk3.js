@@ -257,7 +257,7 @@ const HSK3 = {
 
     getByHSK(level) { return this.words.filter(w => w.hsk === level); },
     getByCategory(category) { return this.words.filter(w => w.category === category); },
-    getRandom(count = 10) { const s = [...this.words]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]]; } return s.slice(0, count); }
+    getRandom(count = 10) { return Utils.randomItems(this.words, count); }
 };
 
 window.HSK3 = HSK3;

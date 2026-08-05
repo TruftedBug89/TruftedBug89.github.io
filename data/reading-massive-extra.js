@@ -225,7 +225,7 @@ const ReadingMassiveExtra = {
     // Get random passage
     getRandom(level = null) {
         let passages = level ? this.getByHSK(level) : this.passages;
-        return passages[Math.floor(Math.random() * passages.length)];
+        return Utils.randomItem(passages);
     },
 
     // Get total count
