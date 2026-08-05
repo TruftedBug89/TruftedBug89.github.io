@@ -33,3 +33,8 @@
 ## 2024-11-20 - Layout Thrashing in high-frequency mousemove events
 **Learning:** Calling `getBoundingClientRect()` within a high-frequency `mousemove` handler triggers synchronous layout recalculations (reflows) on every frame. When this is combined with GSAP transforms actively animating the same elements (e.g., a 3D tilt effect or magnetic button), it not only causes severe performance degradation but also creates a feedback loop resulting in visual jitter.
 **Action:** When binding GSAP layout-dependent animations to `mousemove`, cache the `getBoundingClientRect()` measurements during the `mouseenter` event. Use the cached measurements during `mousemove` to avoid layout thrashing, and clear the cache on `mouseleave`.
+
+## 2024-05-18 - Prevent Duplicate Listeners in Event Delegation
+**Optimization:** Event listeners were being added via `querySelectorAll().forEach()` within render functions (`setupControls()`).
+**Learning:** Moving from loop-based binding to event delegation on a parent container is faster and safer for dynamic elements. However, if the container is persistent and the `setupControls` function is called multiple times (e.g. per exercise), you must guard the delegation logic to run only once.
+**Action:** Always use a state flag (like `this.eventsBound`) to check if the delegated listener has already been attached to the parent container.

@@ -4,6 +4,8 @@
 
 const ReadingModule = {
     // Current state
+    eventsBound: false,
+    contextEventsBound: false,
     currentType: null,
     currentExercise: null,
     exercises: [],
@@ -562,62 +564,64 @@ const ReadingModule = {
         let selectedCharacter = null;
         let selectedMeaning = null;
 
-        document.querySelectorAll('.character-item').forEach(item => {
-            item.addEventListener('click', () => {
-                if (item.classList.contains('matched')) return;
-                document.querySelectorAll('.character-item').forEach(i => i.classList.remove('selected'));
-                item.classList.add('selected');
-                selectedCharacter = item.dataset.character;
-                if (selectedMeaning) {
-                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                    selectedCharacter = null;
-                    selectedMeaning = null;
-                }
-            });
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
-            });
-        });
+        this._selectedCharacter = selectedCharacter;
+        this._selectedMeaning = selectedMeaning;
 
-        document.querySelectorAll('.meaning-item').forEach(item => {
-            item.addEventListener('click', () => {
-                if (item.classList.contains('matched')) return;
-                document.querySelectorAll('.meaning-item').forEach(i => i.classList.remove('selected'));
-                item.classList.add('selected');
-                selectedMeaning = item.dataset.meaning;
-                if (selectedCharacter) {
-                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                    selectedCharacter = null;
-                    selectedMeaning = null;
-                }
-            });
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
-            });
-        });
+        if (!this.eventsBound) {
+            const exerciseContent = document.getElementById('reading-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const charItem = e.target.closest('.character-item');
+                    const meaningItem = e.target.closest('.meaning-item');
+                    const sentenceOpt = e.target.closest('.sentence-option');
+                    const passageOpt = e.target.closest('.passage-option');
 
-        // Sentence completion
-        document.querySelectorAll('.sentence-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const index = parseInt(option.dataset.index);
-                this.checkSentenceComplete(index, exercise);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                    const ex = this.currentExercise;
+                    if (!ex) return;
 
-        // Passage reading
-        document.querySelectorAll('.passage-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const questionIndex = parseInt(option.dataset.question);
-                const optionIndex = parseInt(option.dataset.option);
-                this.checkPassageAnswer(questionIndex, optionIndex, exercise);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                    if (charItem) {
+                        if (charItem.classList.contains('matched')) return;
+                        document.querySelector('.character-item.selected')?.classList.remove('selected');
+                        charItem.classList.add('selected');
+                        this._selectedCharacter = charItem.dataset.character;
+                        if (this._selectedMeaning) {
+                            this.checkMatch(this._selectedCharacter, this._selectedMeaning, ex);
+                            this._selectedCharacter = null;
+                            this._selectedMeaning = null;
+                        }
+                    } else if (meaningItem) {
+                        if (meaningItem.classList.contains('matched')) return;
+                        document.querySelector('.meaning-item.selected')?.classList.remove('selected');
+                        meaningItem.classList.add('selected');
+                        this._selectedMeaning = meaningItem.dataset.meaning;
+                        if (this._selectedCharacter) {
+                            this.checkMatch(this._selectedCharacter, this._selectedMeaning, ex);
+                            this._selectedCharacter = null;
+                            this._selectedMeaning = null;
+                        }
+                    } else if (sentenceOpt) {
+                        const index = parseInt(sentenceOpt.dataset.index);
+                        this.checkSentenceComplete(index, ex);
+                    } else if (passageOpt) {
+                        const questionIndex = parseInt(passageOpt.dataset.question);
+                        const optionIndex = parseInt(passageOpt.dataset.option);
+                        this.checkPassageAnswer(questionIndex, optionIndex, ex);
+                    }
+                });
+
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target;
+                        if (el.classList.contains('character-item') || el.classList.contains('meaning-item') ||
+                            el.classList.contains('sentence-option') || el.classList.contains('passage-option')) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.eventsBound = true;
+        }
 
         // Passage: show pinyin
         const showPinyinBtn = document.getElementById('show-passage-pinyin');
@@ -646,19 +650,35 @@ const ReadingModule = {
         }
 
         // Context clues / fill-blank / word-order (generic option click)
-        document.querySelectorAll('.context-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const index = parseInt(option.dataset.index);
-                if (this.currentType === 'word-order') {
-                    this.checkWordOrder(index, exercise);
-                } else {
-                    this.checkContextClue(index, exercise);
-                }
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+        if (!this.contextEventsBound) {
+            const exerciseContent = document.getElementById('reading-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const contextOpt = e.target.closest('.context-option');
+                    if (contextOpt) {
+                        const index = parseInt(contextOpt.dataset.index);
+                        const ex = this.currentExercise;
+                        if (ex) {
+                            if (this.currentType === 'word-order') {
+                                this.checkWordOrder(index, ex);
+                            } else {
+                                this.checkContextClue(index, ex);
+                            }
+                        }
+                    }
+                });
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target.closest('.context-option');
+                        if (el) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.contextEventsBound = true;
+        }
 
         // Sentence reconstruction
         var reconAnswer = document.getElementById('recon-answer');

@@ -4,6 +4,7 @@
 
 const ListeningModule = {
     // Current state
+    eventsBound: false,
     currentType: null,
     currentExercise: null,
     exercises: [],
@@ -488,27 +489,34 @@ const ListeningModule = {
             }
         }
 
-        // Comprehension options
-        document.querySelectorAll('.listening-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const questionIndex = option.dataset.question;
-                const optionIndex = option.dataset.option;
-                this.selectOption(questionIndex, optionIndex);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+        // Comprehension options & Minimal pairs
+        if (!this.eventsBound) {
+            const exerciseContent = document.getElementById('listening-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const listOpt = e.target.closest('.listening-option');
+                    const pairOpt = e.target.closest('.minimal-pair-card');
+                    if (listOpt) {
+                        const questionIndex = listOpt.dataset.question;
+                        const optionIndex = listOpt.dataset.option;
+                        this.selectOption(questionIndex, optionIndex);
+                    } else if (pairOpt) {
+                        this.selectPairOption(pairOpt.dataset.word);
+                    }
+                });
 
-        // Minimal pairs
-        document.querySelectorAll('.minimal-pair-card').forEach(option => {
-            option.addEventListener('click', () => {
-                this.selectPairOption(option.dataset.word);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target;
+                        if (el.classList.contains('listening-option') || el.classList.contains('minimal-pair-card')) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.eventsBound = true;
+        }
 
         const playPair1 = document.getElementById('play-pair-1');
         const playPair2 = document.getElementById('play-pair-2');

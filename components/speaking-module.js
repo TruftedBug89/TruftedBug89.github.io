@@ -423,7 +423,7 @@ const SpeakingModule = {
         // Highlight active tone
         const target = document.querySelector(`[data-tone="${toneNum}"]`);
         if (target) {
-            document.querySelectorAll('.tone-number').forEach(t => t.classList.remove('active'));
+            document.querySelector('.tone-number.active')?.classList.remove('active');
             target.classList.add('active');
             if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
                 InkAnimations.counterBounce(target);
