@@ -21,3 +21,19 @@
 ## 2026-07-23 - Debouncing Search Inputs
 **Learning:** Frequent DOM rendering triggered by input events on search bars causes unnecessary reflows and performance bottlenecks.
 **Action:** Always wrap input event listeners for search functions with a debounce utility (e.g., `Utils.debounce`) to delay rendering until the user pauses typing.
+
+## 2024-10-15 - Throttling High-Frequency Browser Events
+**Learning:** High-frequency events like `resize`, `scroll`, and continuous `input` updates (e.g., autosizing a textarea) can trigger excessive layout calculations and DOM reflows synchronously on the main thread, causing frame drops and unresponsive UI.
+**Action:** When binding high-frequency browser events, wrap `resize` callbacks with the `Utils.debounce` function (e.g., `Utils.debounce(fn, 150)`) to prevent excessive reflows. Avoid using `debounce` for continuous UI updates like `scroll` or autosizing `input` as it causes lag/jerkiness; use `requestAnimationFrame` to throttle those updates to the browser's display refresh rate.
+
+## 2026-08-01 - Debouncing Resize Events
+**Learning:** Frequent window resize events trigger reflows, causing performance bottlenecks, especially when redrawing canvases. Manual `setTimeout` tracking can be error prone and difficult to read.
+**Action:** Always wrap `resize` event listeners with `Utils.debounce` (or `Utils.throttle`) to delay rendering until resizing pauses.
+
+## 2024-11-20 - Layout Thrashing in high-frequency mousemove events
+**Learning:** Calling `getBoundingClientRect()` within a high-frequency `mousemove` handler triggers synchronous layout recalculations (reflows) on every frame. When this is combined with GSAP transforms actively animating the same elements (e.g., a 3D tilt effect or magnetic button), it not only causes severe performance degradation but also creates a feedback loop resulting in visual jitter.
+**Action:** When binding GSAP layout-dependent animations to `mousemove`, cache the `getBoundingClientRect()` measurements during the `mouseenter` event. Use the cached measurements during `mousemove` to avoid layout thrashing, and clear the cache on `mouseleave`.
+
+## 2024-11-20 - Throttling Slider Input Layout Thrashing
+**Learning:** Attaching heavy layout mutations or DOM iterations (like updating multiple presets) directly to continuous `input` events on range sliders causes synchronous reflows on every tick, leading to lag and frame drops on dragging.
+**Action:** Throttle high-frequency `input` handlers that manipulate the DOM by wrapping the logic inside `requestAnimationFrame` and canceling the previous frame if it's still pending.

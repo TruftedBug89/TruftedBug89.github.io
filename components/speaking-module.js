@@ -68,11 +68,11 @@ const SpeakingModule = {
 
         // Update title
         const titles = {
-            'pronunciation': 'Pronunciation Practice',
-            'shadowing-practice': 'Shadowing Practice',
-            'sentence-reading': 'Sentence Reading'
+            'pronunciation': 'Pronunciation practice',
+            'shadowing-practice': 'Shadowing practice',
+            'sentence-reading': 'Sentence reading'
         };
-        document.getElementById('speaking-title').textContent = titles[type] || 'Speaking Exercise';
+        document.getElementById('speaking-title').textContent = titles[type] || 'Speaking exercise';
 
         this.showCurrentExercise();
     },
@@ -160,7 +160,7 @@ const SpeakingModule = {
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
 
-        document.getElementById('speaking-title').textContent = 'Tone Practice';
+        document.getElementById('speaking-title').textContent = 'Tone practice';
 
         var content = document.getElementById('speaking-content');
         if (typeof TonePractice !== 'undefined') {
@@ -437,7 +437,7 @@ const SpeakingModule = {
         const capturedType = this.currentType;
 
         App.showCompletionModal({
-            title: 'Speaking Practice Complete!',
+            title: 'Speaking practice complete!',
             score: totalExercises,
             total: totalExercises,
             percentage: 100,
@@ -509,7 +509,7 @@ const SpeakingModule = {
         var ex = document.getElementById('speaking-exercise');
         if (menu) menu.classList.add('hidden');
         if (ex) ex.classList.remove('hidden');
-        document.getElementById('speaking-title').textContent = 'Dialogue Practice';
+        document.getElementById('speaking-title').textContent = 'Dialogue practice';
 
         var scenarios = [];
         if (typeof DialoguesData !== 'undefined' && DialoguesData.scenarios) {

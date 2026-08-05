@@ -372,7 +372,6 @@ const PlacementTest = {
         var levelMeta = PlacementBank.levels[finalLevel];
         var accuracy = Math.round((this.correctCount / this.TOTAL_QUESTIONS) * 100);
         var durationSec = Math.round((Date.now() - this.startTime) / 1000);
-        var durationMin = Math.round(durationSec / 60);
 
         var result = {
             level: finalLevel,

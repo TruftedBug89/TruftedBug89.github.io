@@ -89,14 +89,14 @@ const ListeningModule = {
 
         // Update title
         const titles = {
-            'dictation': 'Dictation Exercise',
-            'comprehension': 'Comprehension Exercise',
-            'minimal-pairs': 'Minimal Pairs',
-            'dialogue': 'Dialogue Practice',
-            'speed-listening': 'Speed Listening',
-            'shadowing': 'Shadowing Practice'
+            'dictation': 'Dictation exercise',
+            'comprehension': 'Comprehension exercise',
+            'minimal-pairs': 'Minimal pairs',
+            'dialogue': 'Dialogue practice',
+            'speed-listening': 'Speed listening',
+            'shadowing': 'Shadowing practice'
         };
-        document.getElementById('listening-title').textContent = titles[type] || 'Listening Exercise';
+        document.getElementById('listening-title').textContent = titles[type] || 'Listening exercise';
 
         this.showCurrentExercise();
     },
@@ -178,6 +178,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="dictation-input"
+                        aria-label="Type what you hear"
                         placeholder="Type the Chinese characters..."
                         autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
                 </div>
@@ -372,7 +373,7 @@ const ListeningModule = {
                     <button class="speed-preset" data-speed="1.5">1.5× ⚡</button>
                 </div>
 
-                <input type="range" class="speed-slider" id="speed-slider" min="0.5" max="1.5" step="0.1" value="1.0">
+                <input type="range" class="speed-slider" id="speed-slider" aria-label="Audio playback speed" min="0.5" max="1.5" step="0.1" value="1.0">
                 <div class="speed-marks"><span>Slow</span><span>Normal</span><span>Fast</span></div>
 
                 <div class="audio-hero" style="margin-top:24px;">
@@ -382,6 +383,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="speed-input"
+                        aria-label="Type what you hear"
                         placeholder="Type the sentence..."
                         autocomplete="off" autocapitalize="off" spellcheck="false">
                 </div>
@@ -579,8 +581,16 @@ const ListeningModule = {
                 p.classList.toggle('active', parseFloat(p.dataset.speed) === parseFloat(v));
             });
         };
+        // ⚡ Bolt optimization: Throttle speed slider input updates with rAF to batch layout calculations
+        // Impact: prevents UI freezing/frame drops during continuous drag interactions by aligning DOM reflows with display refresh rate.
+        let _speedSliderRaf;
         if (speedSlider) {
-            speedSlider.addEventListener('input', (e) => setSpeed(parseFloat(e.target.value).toFixed(1)));
+            speedSlider.addEventListener('input', (e) => {
+                if (_speedSliderRaf) cancelAnimationFrame(_speedSliderRaf);
+                _speedSliderRaf = requestAnimationFrame(() => {
+                    setSpeed(parseFloat(e.target.value).toFixed(1));
+                });
+            });
         }
         document.querySelectorAll('.speed-preset').forEach(p => {
             p.addEventListener('click', () => setSpeed(parseFloat(p.dataset.speed).toFixed(1)));

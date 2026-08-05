@@ -357,4 +357,67 @@ describe('05 — SM-2 Spaced Repetition', () => {
 
     Math.random = originalRandom;
   });
+
+  it('processReview: interval caps correctly even with negative initial interval', () => {
+    const card = globalThis.SM2.createCard('t1', '我', 'me');
+    card.interval = -10;
+    card.repetitions = 2;
+    card.efactor = 2.5;
+
+    const result = globalThis.SM2.processReview(card, 4);
+    assert.equal(result.interval, 1);
+  });
+
+  it('importDeck sanitizes negative intervals and repetitions', () => {
+    globalThis.SM2.importDeck('import-test-neg', JSON.stringify([
+      { id: 'i1', interval: -5, repetitions: -2, lapses: -10 }
+    ]));
+    const loaded = globalThis.SM2.loadCards('import-test-neg');
+    assert.equal(loaded[0].interval, 0);
+    assert.equal(loaded[0].repetitions, 0);
+    assert.equal(loaded[0].lapses, 0);
+  });
+
+  it('importDeck caps very large inputs for string fields', () => {
+    const largeString = 'a'.repeat(1000);
+    globalThis.SM2.importDeck('import-test-large', JSON.stringify([
+      {
+        id: largeString,
+        front: { character: largeString, pinyin: largeString },
+        back: { meaning: largeString, examples: [largeString, largeString] }
+      }
+    ]));
+    const loaded = globalThis.SM2.loadCards('import-test-large');
+    assert.equal(loaded[0].id.length, 64);
+    assert.equal(loaded[0].front.character.length, 200);
+    assert.equal(loaded[0].front.pinyin.length, 200);
+    assert.equal(loaded[0].back.meaning.length, 400);
+    assert.equal(loaded[0].back.examples[0].length, 400);
+    assert.equal(loaded[0].back.examples[1].length, 400);
+  });
+
+  it('importDeck assigns default values for missing fields', () => {
+    globalThis.SM2.importDeck('import-test-missing', JSON.stringify([{ id: 'm1' }]));
+    const loaded = globalThis.SM2.loadCards('import-test-missing');
+    const card = loaded[0];
+    assert.equal(card.id, 'm1');
+    assert.equal(card.front.character, '');
+    assert.equal(card.back.meaning, '');
+    assert.equal(card.efactor, 2.5);
+    assert.equal(card.interval, 0);
+    assert.equal(card.repetitions, 0);
+    assert.equal(card.lapses, 0);
+  });
+
+  it('generateSession defaults and options work correctly for edge cases', () => {
+    const cards = [
+      globalThis.SM2.createCard('c1', 'a', 'a'), // new
+      { ...globalThis.SM2.createCard('c2', 'b', 'b'), repetitions: 1, nextReview: new Date(Date.now() - 10000).toISOString() }, // due review
+    ];
+
+    // Custom options
+    const s2 = globalThis.SM2.generateSession(cards, { maxNew: 0, includeReview: true });
+    assert.equal(s2.cards.length, 1);
+    assert.equal(s2.cards[0].id, 'c2');
+  });
 });

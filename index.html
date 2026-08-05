@@ -12,20 +12,23 @@
     <meta name="apple-mobile-web-app-title" content="ZHI Studio">
     <link rel="canonical" href="https://truftedbug89.github.io/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="manifest" href="manifest.json">
-    <title>ZHI Studio · Learn Chinese</title>
+    <title>ZHI Studio — Learn Chinese</title>
 
-    <meta property="og:title" content="ZHI Studio · Learn Chinese">
-    <meta property="og:description" content="A fluid Chinese learning studio for HSK vocabulary, listening, reading, grammar, and speaking.">
+    <meta property="og:title" content="ZHI Studio — Learn Chinese">
+    <meta property="og:description" content="A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://truftedbug89.github.io/">
     <meta property="og:site_name" content="ZHI Studio">
-    <meta property="og:image" content="https://truftedbug89.github.io/favicon.svg">
+    <meta property="og:image" content="https://truftedbug89.github.io/screenshots/desktop.png">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ZHI Studio · Learn Chinese">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZHI Studio — Learn Chinese">
     <meta name="twitter:description" content="A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.">
-    <meta name="twitter:image" content="https://truftedbug89.github.io/favicon.svg">
+    <meta name="twitter:image" content="https://truftedbug89.github.io/screenshots/desktop.png">
+
+    <!-- Terminology Standard: 'practice' (not practise), 'exercise' (not Exercise), 'Initialization' (not Initialisation) -->
 
     <script type="application/ld+json">
     {
@@ -192,7 +195,7 @@
                         <img src="assets/hero-zen-studio.jpg" alt="Cyber Zen Calligraphy Studio" class="visual-showcase-img">
                         <div class="visual-showcase-overlay">
                             <span class="visual-showcase-tag">✨ CYBER ZEN STUDIO</span>
-                            <h3 class="visual-showcase-title">Interactive Chinese Learning Environment</h3>
+                            <h2 class="visual-showcase-title">Interactive Chinese Learning Environment</h2>
                             <p class="visual-showcase-desc">60fps HTML-in-Canvas particle dynamics, audio tone contour graph, and stroke order drawing studio.</p>
                         </div>
                     </div>
@@ -343,7 +346,7 @@
                     </div>
                 </div>
                 <div id="listening-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu">← Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening Exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="listening-menu">← Lab menu</button><div><span class="section-kicker">AUDIO LAB</span><h2 id="listening-title">Listening exercise</h2></div><div class="exercise-score">XP <b id="listening-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="listening-current">1</b> / <b id="listening-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="listening-content"></div>
                     <div class="activity-sticky-bar" id="listening-sticky-bar" hidden>
@@ -365,7 +368,7 @@
                         <img src="assets/culture-dialogue-bg.jpg" alt="Cultural Bamboo Moon Gate" class="visual-showcase-img">
                         <div class="visual-showcase-overlay">
                             <span class="visual-showcase-tag">🎋 CULTURAL LANDSCAPE</span>
-                            <h3 class="visual-showcase-title">High-Context Reading & Dialogue Scenarios</h3>
+                            <h2 class="visual-showcase-title">High-Context Reading & Dialogue Scenarios</h2>
                             <p class="visual-showcase-desc">Immerse yourself in native passages, radical breakdown labs, and speed reading drills.</p>
                         </div>
                     </div>
@@ -382,7 +385,7 @@
                     </div>
                 </div>
                 <div id="reading-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu">← Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading Exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="reading-menu">← Text lab</button><div><span class="section-kicker">TEXT LAB</span><h2 id="reading-title">Reading exercise</h2></div><div class="exercise-score">XP <b id="reading-score">0</b></div></div>
                     <div class="exercise-progress"><span><b id="reading-current">1</b> / <b id="reading-total">10</b></span><div class="progress-dots"></div></div>
                     <div id="reading-content"></div>
                     <div class="activity-sticky-bar" id="reading-sticky-bar" hidden>
@@ -440,7 +443,7 @@
                     </div>
                 </div>
                 <div id="speaking-exercise" class="exercise-shell hidden">
-                    <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu">← Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking Exercise</h2></div></div>
+                    <div class="exercise-header"><button type="button" class="back-btn" data-back="speaking-menu">← Voice lab</button><div><span class="section-kicker">VOICE LAB</span><h2 id="speaking-title">Speaking exercise</h2></div></div>
                     <div id="speaking-content"></div>
                     <div class="activity-sticky-bar" id="speaking-sticky-bar" hidden>
                         <button class="btn btn-secondary" type="button" id="prev-speaking-btn">← Prev</button>
@@ -469,7 +472,7 @@
 
     <footer class="app-footer">
         <div class="footer-content">
-            <div><span class="footer-mark" lang="zh">知</span><span class="footer-text">ZHI STUDIO · <span id="footer-year">2026</span></span></div>
+            <div><span class="footer-mark" lang="zh">知</span><span class="footer-text">ZHI STUDIO · <span id="footer-year"></span></span></div>
             <nav class="footer-links" aria-label="Legal">
                 <a href="legal/privacy.html">Privacy</a><a href="legal/terms.html">Terms</a><a href="legal/cookies.html">Cookies</a>
             </nav>

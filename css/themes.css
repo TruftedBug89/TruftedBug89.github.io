@@ -17,11 +17,11 @@
     /* Text — clean whites */
     --text-primary:    #f8fafc;  /* Pure white */
     --text-secondary:  #cbd5e1;  /* Light gray */
-    --text-muted:      #64748b;  /* Slate gray — WCAG AA compliant */
+    --text-muted:      #94a3b8;  /* Slate gray — WCAG AA compliant */
 
     /* Semantic accent colors */
-    --color-primary:       #e85555;   /* Darkened coral — WCAG AA with white */
-    --color-primary-dark:  #d94444;
+    --color-primary:       #f07171;   /* Darkened coral — WCAG AA with white */
+    --color-primary-dark:  #e85555;
     --color-primary-light: #fca5a5;
     --color-secondary:     #a78bfa;   /* Soft lavender */
     --color-secondary-dark:#8b5cf6;
@@ -31,10 +31,10 @@
     --color-success-dark:  #059669;
     --color-warning:       #f59e0b;   /* Amber */
     --color-warning-dark:  #d97706;
-    --color-danger:        #f43f5e;   /* Rose */
-    --color-danger-dark:   #e11d48;
-    --color-info:          #3b82f6;   /* Bright blue */
-    --color-info-dark:     #2563eb;
+    --color-danger:        #fb6882;   /* Rose */
+    --color-danger-dark:   #f43f5e;
+    --color-info:          #60a5fa;   /* Bright blue */
+    --color-info-dark:     #3b82f6;
 
     /* Borders — subtle slate */
     --border-color:  rgba(148, 163, 184, 0.1);
@@ -388,4 +388,16 @@ body, .theme-dark {
     padding: 0; margin: -1px; overflow: hidden;
     clip: rect(0,0,0,0); white-space: nowrap;
     border: 0;
+}
+
+/* === ACCESSIBLE REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

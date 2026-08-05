@@ -478,7 +478,17 @@ const AITutor = {
         this.input.addEventListener('input', AITutor._autosizeInput.bind(AITutor));
     },
 
-    _autosizeInput() { var el = this.input; if (el) { el.style.height = 'auto'; el.style.height = Math.min(120, el.scrollHeight) + 'px'; } },
+    // ⚡ Bolt optimization: Throttle input autosizing with rAF to batch layout calculations
+    _autosizeInput() {
+        if (this._autosizeRaf) cancelAnimationFrame(this._autosizeRaf);
+        this._autosizeRaf = requestAnimationFrame(() => {
+            var el = this.input;
+            if (el) {
+                el.style.height = 'auto';
+                el.style.height = Math.min(120, el.scrollHeight) + 'px';
+            }
+        });
+    },
 
     show() {
         if (!this.panel) this._buildPanel();
@@ -559,7 +569,7 @@ const AITutor = {
         this.show();
         if (this.body) this.body.innerHTML = '';
         this._appendContext(context);
-        var loading = this._showLoading();
+        this._showLoading();
         this._busy = true;
         if (this.sendBtn) this.sendBtn.disabled = true;
         var self = this;
@@ -586,7 +596,7 @@ const AITutor = {
         AITutor._append(Utils.escapeHtml(text), 'ai-user');
         AITutor.input.value = '';
         AITutor._autosizeInput();
-        var loading = AITutor._showLoading();
+        AITutor._showLoading();
         AITutor._busy = true;
         if (AITutor.sendBtn) AITutor.sendBtn.disabled = true;
         var msg = AITutor.buildFollowUp(text);

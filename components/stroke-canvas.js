@@ -75,11 +75,9 @@
         }
 
         bindEvents(card) {
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => this.resizeCanvas(), 100);
-            });
+            // ⚡ Bolt optimization: Debounce resize events to prevent reflows
+            const debouncedResize = Utils.debounce(() => this.resizeCanvas(), 150);
+            window.addEventListener('resize', debouncedResize);
 
             const clearBtn = card.querySelector('#btn-stroke-clear');
             if (clearBtn) clearBtn.addEventListener('click', () => this.clear());
@@ -95,8 +93,11 @@
                 });
             }
 
+            // ⚡ Bolt optimization: Cache bounding rect on stroke start to prevent layout thrashing during drawing
+            let cachedRect = null;
+
             const getPos = (e) => {
-                const rect = this.canvas.getBoundingClientRect();
+                const rect = cachedRect || this.canvas.getBoundingClientRect();
                 const clientX = e.touches ? e.touches[0].clientX : e.clientX;
                 const clientY = e.touches ? e.touches[0].clientY : e.clientY;
                 return {
@@ -109,6 +110,7 @@
             const startDraw = (e) => {
                 if (e.touches && e.touches.length > 1) return;
                 this.isDrawing = true;
+                cachedRect = this.canvas.getBoundingClientRect();
                 this.points = [getPos(e)];
             };
 
@@ -129,6 +131,7 @@
             const stopDraw = () => {
                 if (this.isDrawing) {
                     this.isDrawing = false;
+                    cachedRect = null;
                     if (this.points.length === 1) {
                         const p = this.points[0];
                         this.renderDot(p);

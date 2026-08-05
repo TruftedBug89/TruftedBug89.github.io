@@ -142,6 +142,10 @@
 }
 
 .cm-consent__policy-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
     font-size: 12px;
     color: var(--text-muted, #64748b);
     text-decoration: underline;

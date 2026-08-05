@@ -131,9 +131,6 @@ var LazyLoader = (function () {
 
         var files = moduleFiles[moduleId];
         moduleReady[moduleId] = Promise.all(files.map(loadFile)).then(function () {
-            if (typeof App !== 'undefined' && App.DEBUG) {
-                console.log('LazyLoader: module "' + moduleId + '" ready (' + files.length + ' files)');
-            }
         });
         return moduleReady[moduleId];
     }
@@ -152,9 +149,6 @@ var LazyLoader = (function () {
 
         var files = componentFiles[moduleId];
         componentReady[moduleId] = Promise.all(files.map(loadFile)).then(function () {
-            if (typeof App !== 'undefined' && App.DEBUG) {
-                console.log('LazyLoader: component for "' + moduleId + '" ready (' + files.length + ' files)');
-            }
         });
         return componentReady[moduleId];
     }

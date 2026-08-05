@@ -87,7 +87,12 @@
                 container._ringAnimId = requestAnimationFrame(animate);
             };
 
-            animate();
+            var prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                drawFrame(targetVal);
+            } else {
+                animate();
+            }
         }
 
         unmount(container) {

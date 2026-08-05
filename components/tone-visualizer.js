@@ -84,11 +84,9 @@
         }
 
         bindEvents() {
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => this.resizeCanvas(), 100);
-            });
+            // ⚡ Bolt optimization: Debounce resize events to prevent reflows
+            const debouncedResize = Utils.debounce(() => this.resizeCanvas(), 150);
+            window.addEventListener('resize', debouncedResize);
 
             const btns = this.card.querySelectorAll('.tone-btn');
             btns.forEach(btn => {
@@ -241,6 +239,14 @@
 
         animateCurve() {
             if (this.animId) cancelAnimationFrame(this.animId);
+
+            var prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (prefersReducedMotion) {
+                this.curveProgress = 1;
+                this.drawStaticFrame();
+                this.isPlaying = false;
+                return;
+            }
 
             const draw = () => {
                 this.drawStaticFrame();
