@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="ZHI Studio mobile — a fast, lightweight Chinese learning app for vocabulary, listening, reading and grammar.">
+    <meta name="theme-color" content="#080b16">
+    <meta name="color-scheme" content="dark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ZHI Mobile">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>ZHI Studio · Mobile</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="app">
+        <header id="topbar" class="topbar">
+            <div class="topbar-brand"><span class="brand-seal">知</span><span class="brand-name">ZHI STUDIO</span><span class="brand-tag">MOBILE</span></div>
+            <div class="topbar-chips">
+                <span class="chip" id="chip-streak" title="Day streak">🔥 <b>0</b></span>
+                <span class="chip" id="chip-level" title="Level">Lv<b>1</b></span>
+            </div>
+        </header>
+
+        <main id="views" class="views">
+            <section id="view-home" class="view" aria-label="Home"></section>
+            <section id="view-practice" class="view" aria-label="Practice"></section>
+            <section id="view-progress" class="view" aria-label="Progress"></section>
+            <section id="view-settings" class="view" aria-label="Settings"></section>
+        </main>
+
+        <nav id="tabbar" class="tabbar" aria-label="Main navigation">
+            <button class="tab" data-view="home" aria-label="Home" aria-selected="true"><span class="tab-ico">🏠</span><span class="tab-label">Home</span></button>
+            <button class="tab" data-view="practice" aria-label="Practice" aria-selected="false"><span class="tab-ico">✏️</span><span class="tab-label">Practice</span></button>
+            <button class="tab" data-view="progress" aria-label="Progress" aria-selected="false"><span class="tab-ico">📈</span><span class="tab-label">Progress</span></button>
+            <button class="tab" data-view="settings" aria-label="Settings" aria-selected="false"><span class="tab-ico">⚙️</span><span class="tab-label">Settings</span></button>
+        </nav>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+    <script>
+        // Lightweight service worker (mobile scope only — desktop app untouched)
+        if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+            navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+        }
+    </script>
+</body>
+</html>

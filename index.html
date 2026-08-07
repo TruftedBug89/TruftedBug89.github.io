@@ -3,6 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <script>
+        // ZHI Studio — send phones to the lightweight mobile app (/mobile/).
+        // Desktop users and installed apps are never affected.
+        (function () {
+            try {
+                if (location.search.indexOf('desktop=1') !== -1 || location.hash === '#desktop') return;
+                if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return;
+                var touch = 'ontouchstart' in window || (navigator.maxTouchPoints || 0) > 0;
+                var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+                var narrow = window.matchMedia && window.matchMedia('(max-width: 844px)').matches;
+                var tiny = window.matchMedia && window.matchMedia('(max-width: 520px)').matches;
+                if (tiny || (narrow && (touch || coarse))) {
+                    location.replace('mobile/');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <meta name="description" content="A fluid, offline-first Chinese learning studio for vocabulary, listening, reading, grammar, speaking, and HSK preparation.">
     <meta name="theme-color" content="#0a0a0f">
     <meta name="color-scheme" content="dark">
