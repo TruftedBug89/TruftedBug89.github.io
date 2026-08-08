@@ -162,7 +162,7 @@ describe('15 — Animations Wiring', () => {
 
   it('sw.js precaches lenis.min.js + loading.css + placement-test.css and bumped cache version', () => {
     const swContent = fs.readFileSync(path.join(ROOT_DIR, 'sw.js'), 'utf8');
-    assert.ok(/chinese-master-v[3-9]/.test(swContent), 'CACHE_NAME not bumped to v3+');
+    assert.ok(/chinese-master-v(?:[3-9]|\d{2,})/.test(swContent), 'CACHE_NAME not bumped to v3+');
     for (const u of ['/vendor/lenis.min.js', '/css/loading.css', '/css/placement-test.css']) {
       assert.ok(swContent.indexOf(u) > -1, `sw.js does not precache ${u}`);
     }
