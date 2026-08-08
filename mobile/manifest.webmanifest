@@ -1,0 +1,26 @@
+{
+  "name": "ZHI Studio — Learn Chinese (Mobile)",
+  "short_name": "ZHI Mobile",
+  "description": "Fast, lightweight Chinese practice for vocabulary, listening, reading and grammar on your phone.",
+  "start_url": "/mobile/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080b16",
+  "theme_color": "#080b16",
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Vocabulary", "url": "/mobile/#practice" },
+    { "name": "Listening", "url": "/mobile/#practice" },
+    { "name": "Reading", "url": "/mobile/#practice" },
+    { "name": "Grammar", "url": "/mobile/#practice" }
+  ]
+}

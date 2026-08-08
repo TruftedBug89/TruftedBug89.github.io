@@ -40,6 +40,21 @@
 
 **Fully Local** — All data in localStorage. No external APIs. No accounts. No analytics trackers.
 
+## Mobile App (`/mobile/`)
+
+Phones and small screens are automatically sent to a **lightweight companion app** at `mobile/` — the desktop site is untouched and keeps every feature.
+
+- **Fast start** — ~60 KB of code on first paint; no GSAP, no external fonts, no image-heavy hero
+- **4 core skills** — Vocabulary (HSK 1–5 flashcards + quiz), Listening (dictation, comprehension, minimal pairs, dialogues), Reading (characters, sentences, context clues, passages), Grammar (lessons + example drills)
+- **Lazy data** — only the data file you open is downloaded (e.g. `data/hsk1.js`), not the 5 MB desktop bundle
+- **Offline PWA** — own service worker (`mobile/sw.js`) caches the shell and small data files
+- **Progress** — XP, levels, streaks, per-skill accuracy and session history in `localStorage` (separate from the desktop app's storage)
+- **Accessible** — works without a network, respects `prefers-reduced-motion`, 48px+ touch targets
+
+Escape hatches: add `?desktop=1` (or `#desktop`) to the site URL to force the desktop version; the mobile app's Settings has an "Open the full desktop version" link.
+
+Self-test: `mobile/?selftest=1` runs 30+ in-browser checks (data loading, question generation, quiz engine, scoring, storage, rendering).
+
 ## Quick Start
 
 Open `index.html` in any modern browser. No build step, no server needed.
