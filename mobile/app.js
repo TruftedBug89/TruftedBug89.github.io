@@ -482,6 +482,11 @@
         for (var i = 0; i < tabs.length; i++) {
             tabs[i].setAttribute('aria-selected', String(tabs[i].getAttribute('data-view') === name));
         }
+        // Views are display:none unless .active — show the current one (fix: blank content area)
+        var views = document.querySelectorAll('.view');
+        for (var v = 0; v < views.length; v++) {
+            views[v].classList.toggle('active', views[v].id === 'view-' + name);
+        }
         stopSpeak();
         renderScreen();
         try { history.replaceState(null, '', '#' + name); } catch (e) {}
@@ -1247,6 +1252,14 @@
         assert('streak continues', store.data.streak.count === 4);
         recordActivity();
         assert('streak not double counted', store.data.streak.count === 4);
+
+        // view visibility (regression: .view stays display:none unless .active)
+        switchTab('home');
+        assert('home view active', document.getElementById('view-home').classList.contains('active'));
+        switchTab('practice');
+        assert('practice view active', document.getElementById('view-practice').classList.contains('active'));
+        assert('home view hidden when inactive', !document.getElementById('view-home').classList.contains('active'));
+        switchTab('home');
 
         // data loading (real files over http)
         var chain = Promise.resolve();
