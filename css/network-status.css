@@ -34,24 +34,3 @@
     background: var(--color-success);
     color: #ffffff;
 }
-
-.network-status-toast--update {
-    background: var(--bg-card);
-    border: 1px solid var(--bg-hover);
-}
-
-.network-status-toast__btn {
-    background: var(--color-accent);
-    color: #ffffff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.network-status-toast__btn:hover {
-    background: var(--color-accent-dark);
-}
