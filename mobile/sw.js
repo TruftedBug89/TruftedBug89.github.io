@@ -3,7 +3,7 @@
    Scope: /mobile/ only. The desktop app's own
    service worker is untouched.
    ============================================ */
-const VERSION = '2';
+const VERSION = '3';
 const CACHE = 'zhi-mobile-v' + VERSION;
 const BASE = self.location.href.replace(/sw\.js.*$/, '');
 

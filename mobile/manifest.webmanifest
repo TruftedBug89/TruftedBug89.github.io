@@ -18,9 +18,11 @@
     { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "shortcuts": [
-    { "name": "Vocabulary", "url": "/mobile/#practice" },
-    { "name": "Listening", "url": "/mobile/#practice" },
-    { "name": "Reading", "url": "/mobile/#practice" },
-    { "name": "Grammar", "url": "/mobile/#practice" }
+    { "name": "Vocabulary", "url": "/mobile/#vocab" },
+    { "name": "Listening", "url": "/mobile/#listening" },
+    { "name": "Reading", "url": "/mobile/#reading" },
+    { "name": "Speaking", "url": "/mobile/#speaking" },
+    { "name": "Dialogues", "url": "/mobile/#dialogues" },
+    { "name": "Placement Test", "url": "/mobile/#placement" }
   ]
 }

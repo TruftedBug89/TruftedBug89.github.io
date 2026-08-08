@@ -23,7 +23,9 @@
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-html, body { margin: 0; padding: 0; height: 100%; }
+html, * { -webkit-tap-highlight-color: transparent; }
+button { touch-action: manipulation; }
+body { margin: 0; padding: 0; height: 100%; }
 
 body {
     background: var(--bg);
@@ -388,3 +390,36 @@ input[type="range"] { width: 140px; accent-color: var(--jade); }
 @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
 }
+
+/* ---------- enriched dashboard / progress ---------- */
+.lvl-card .lvl-meta { margin-top: 8px; font-size: 12px; color: var(--faint); font-weight: 600; }
+.week-bars { display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; padding: 6px 2px 0; }
+.wk-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.wk-bar-wrap { height: 40px; display: flex; align-items: flex-end; width: 100%; }
+.wk-bar { width: 100%; max-width: 26px; border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, var(--jade), #2b8f7c); min-height: 4px; }
+.wk-bar[data-empty] { background: var(--panel-2); border: 1px solid var(--line); }
+.wk-label { font-size: 10px; color: var(--faint); font-weight: 700; }
+.ach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ach { border: 1px solid var(--line); border-radius: 14px; padding: 10px 6px; text-align: center; position: relative; background: var(--panel); }
+.ach .ach-ico { display: block; font-size: 22px; margin-bottom: 4px; }
+.ach .ach-name { font-size: 10.5px; font-weight: 700; color: var(--muted); display: block; line-height: 1.25; }
+.ach.unlocked { border-color: rgba(53, 223, 177, 0.45); background: rgba(53, 223, 177, 0.07); }
+.ach.unlocked .ach-name { color: var(--jade); }
+.ach.locked { opacity: 0.55; }
+.ach.locked .ach-ico { filter: grayscale(1); }
+.ach .ach-lock { position: absolute; top: 4px; right: 6px; font-size: 10px; }
+.ach.more { border-style: dashed; display: grid; place-items: center; font-size: 16px; font-weight: 800; color: var(--faint); min-height: 62px; }
+.linklike { background: none; border: none; color: var(--jade); font: inherit; font-weight: 700; text-decoration: underline; padding: 0; cursor: pointer; }
+
+/* ---------- speaking tip / cultural / phrases ---------- */
+.speak-tip p { margin: 0; }
+.note-icon { font-size: 40px; text-align: center; margin-bottom: 10px; }
+.note-body { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+.note-sig { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); color: var(--gold); font-size: 13.5px; line-height: 1.6; }
+.card-meta { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--jade); font-size: 13px; font-weight: 600; }
+.phrase-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 2px; border-bottom: 1px solid var(--line); }
+.phrase-row:last-child { border-bottom: none; }
+.phrase-play { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: rgba(53, 223, 177, 0.12); border: 1px solid rgba(53, 223, 177, 0.35); font-size: 17px; display: grid; place-items: center; }
+.phrase-body .cn { font-family: var(--font-cn); font-size: 17px; font-weight: 600; }
+.phrase-body .py { color: var(--jade); font-size: 12.5px; font-weight: 600; margin-top: 1px; }
+.phrase-body .en { color: var(--muted); font-size: 13px; margin-top: 2px; }
