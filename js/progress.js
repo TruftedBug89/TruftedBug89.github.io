@@ -804,16 +804,12 @@ const ProgressTracker = {
 
     // Track vocabulary learning
     trackVocabulary(wordId, status) {
-        let xp = 0;
-        var _tx = false;
+        const _tx = (typeof StorageManager !== 'undefined' && StorageManager.beginTransaction);
+        if (_tx) StorageManager.beginTransaction();
         try {
-            if (typeof StorageManager !== 'undefined' && typeof StorageManager.beginTransaction === 'function') {
-                StorageManager.beginTransaction();
-                _tx = true;
-            }
-
             StorageManager.addVocabularyWord(wordId, status);
 
+            let xp = 0;
             if (status === 'learned') {
                 xp = this.xpRewards.vocabulary.learned;
             } else if (status === 'reviewing') {
@@ -842,10 +838,11 @@ const ProgressTracker = {
             }
 
             this.checkAchievements();
+
+            return { xp };
         } finally {
-            if (_tx && typeof StorageManager.commitTransaction === 'function') StorageManager.commitTransaction();
+            if (_tx) StorageManager.commitTransaction();
         }
-        return { xp };
     },
 
     // Check and award achievements

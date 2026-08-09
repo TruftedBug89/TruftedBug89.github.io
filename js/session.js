@@ -139,11 +139,23 @@ const SessionManager = {
     },
 
     createSession(name) {
-        const sid = this._generateSessionId();
+        let safeName = String(name || '').replace(/<[^>]*>?/gm, '').trim().slice(0, 40);
         const sessions = Utils.storage.get(this.SESSIONS_KEY, {});
+        if (!safeName) {
+            safeName = 'Learner ' + (Object.keys(sessions).length + 1);
+        }
+        // Duplicate check
+        const lowerName = safeName.toLowerCase();
+        for (const key in sessions) {
+            if (sessions[key].name.toLowerCase() === lowerName) {
+                return null; // Name already exists
+            }
+        }
+
+        const sid = this._generateSessionId();
         sessions[sid] = {
             id: sid,
-            name: name || ('Learner ' + (Object.keys(sessions).length + 1)),
+            name: safeName,
             created: new Date().toISOString(),
             lastActive: new Date().toISOString(),
             version: this.SESSION_VERSION
@@ -153,8 +165,20 @@ const SessionManager = {
     },
 
     renameSession(sid, name) {
-        const safeName = String(name || '').slice(0, 40).trim() || 'Learner';
+        let safeName = String(name || '').replace(/<[^>]*>?/gm, '').trim().slice(0, 40);
+        if (!safeName) safeName = 'Learner';
+        const sessions = Utils.storage.get(this.SESSIONS_KEY, {});
+
+        // Duplicate check
+        const lowerName = safeName.toLowerCase();
+        for (const key in sessions) {
+            if (key !== sid && sessions[key].name.toLowerCase() === lowerName) {
+                return false; // Name already exists
+            }
+        }
+
         this._updateSessionMeta(sid, { name: safeName });
+        return true;
     },
 
     deleteSession(sid) {

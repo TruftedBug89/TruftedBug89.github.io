@@ -13,6 +13,9 @@
     max-width: 820px;
     margin: 0 auto;
     animation: fadeInUp 0.35s ease both;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .activity-card + .activity-card {
@@ -21,7 +24,6 @@
 
 .activity-prompt {
     text-align: center;
-    margin-bottom: 24px;
 }
 
 .activity-eyebrow {
@@ -156,7 +158,6 @@
 
 .dictation-input-wrap {
     position: relative;
-    margin-top: 16px;
 }
 
 .dictation-input {
@@ -431,7 +432,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
-    margin-bottom: 24px;
 }
 
 .minimal-pair-card {
@@ -2087,7 +2087,6 @@
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin: 22px 0;
 }
 
 .tone-display .tone-number {

@@ -140,8 +140,9 @@
     .main-content {
         margin-left: 0 !important;
         padding: 12px 14px;
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 16px));
+        padding-bottom: calc(94px + env(safe-area-inset-bottom, 16px));
         max-width: 100% !important;
+        box-sizing: border-box !important;
         transition: none;
     }
 
@@ -204,11 +205,15 @@
     }
 
     .hero-greeting .greeting {
-        font-size: 20px !important;
+        font-size: 1.4rem !important;
+        line-height: 1.2;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
     }
 
     .greeting-subtitle {
-        font-size: 13px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.4;
     }
 
     .hero-metrics {

@@ -87,7 +87,7 @@ const CharacterTooltip = {
 
     _colorizePinyin(pinyinString, containerEl) {
         if (!pinyinString || !containerEl) return;
-        containerEl.innerHTML = '';
+        containerEl.textContent = '';
         
         const syllables = pinyinString.split(' ');
         syllables.forEach((syl, index) => {
@@ -163,17 +163,9 @@ const CharacterTooltip = {
             }
         }, { passive: true });
 
-        // ⚡ Bolt optimization: Throttle scroll event using requestAnimationFrame to prevent layout thrashing
-        var scrollTicking = false;
-        document.addEventListener('scroll', function () {
-            if (!scrollTicking && self._activeTarget) {
-                window.requestAnimationFrame(function () {
-                    if (self._activeTarget) self._positionFor(self._activeTarget);
-                    scrollTicking = false;
-                });
-                scrollTicking = true;
-            }
-        }, { passive: true });
+        document.addEventListener('scroll', Utils.debounce(function () {
+            if (self._activeTarget) self._positionFor(self._activeTarget);
+        }, 100), { passive: true });
 
         if (this._tooltip) {
             this._tooltip.addEventListener('mouseenter', function () { clearTimeout(self._hideTimer); });
@@ -279,7 +271,7 @@ const CharacterTooltip = {
     },
 
     _renderSegments(segments, container) {
-        container.innerHTML = '';
+        container.textContent = '';
         segments.forEach(seg => {
             const row = document.createElement('div');
             row.className = 'cn-tooltip__segment';

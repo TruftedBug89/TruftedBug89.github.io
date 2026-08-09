@@ -37,7 +37,7 @@ const WordOfTheDay = {
 
         var word = this._getDailyWord();
         if (!word) {
-            container.innerHTML = '';
+            container.textContent = '';
             return;
         }
 

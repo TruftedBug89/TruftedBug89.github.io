@@ -478,7 +478,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
 
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
 
     it('2.2.12: StorageManager.addXP updates XP state in transactional user data', () => {
@@ -584,16 +584,17 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.equal(globalThis.AdminPanel, undefined);
     });
 
-    it('3.1.2: Cross F2 & F4: Progress tracking under Speed Prep uses consolidated write and scales learning parameters', () => {
+        it('3.1.2: Cross F2 & F4: Progress tracking under Speed Prep uses consolidated write and scales learning parameters', () => {
       let storageSetCalls = 0;
       const originalStorageSet = globalThis.Utils.storage.set;
+
+      setStudyProfile('speed'); // Move this out of tracking
+
       globalThis.Utils.storage.set = (k, v) => {
         storageSetCalls++;
         return originalStorageSet(k, v);
       };
 
-      setStudyProfile('speed');
-      storageSetCalls = 0; // reset after setStudyProfile
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.StorageManager.beginTransaction();
@@ -601,7 +602,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
 
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
       assert.equal(globalThis.StorageManager.getUserData().settings.studyProfile, 'speed');
     });
 
@@ -670,16 +671,17 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       assert.ok(globalThis.StorageManager.getUserData());
     });
 
-    it('4.1.2: Scenario 2: Active user updates profile to Speed Prep, studies cards, and saves progress via transactional writes', () => {
+        it('4.1.2: Scenario 2: Active user updates profile to Speed Prep, studies cards, and saves progress via transactional writes', () => {
       let storageSetCalls = 0;
       const originalStorageSet = globalThis.Utils.storage.set;
+
+      setStudyProfile('speed'); // Move out
+
       globalThis.Utils.storage.set = (k, v) => {
         storageSetCalls++;
         return originalStorageSet(k, v);
       };
 
-      setStudyProfile('speed');
-      storageSetCalls = 0; // reset after setStudyProfile
       globalThis.Missions = { recordActivity() {} };
 
       globalThis.StorageManager.beginTransaction();
@@ -687,7 +689,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
       
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
 
     it('4.1.3: Scenario 3: Returning user reviews overdue vocabulary cards, triggers 1.2x delay reward, and pushes clean analytics logs', () => {
@@ -728,7 +730,7 @@ describe('16 — 4-Tier E2E & Unit Test Suite', () => {
       globalThis.StorageManager.commitTransaction();
       
       globalThis.Utils.storage.set = originalStorageSet;
-      assert.ok(storageSetCalls >= 1, 'Should call storage at least once');
+      assert.equal(storageSetCalls, 1, 'Should call storage exactly once');
     });
   });
 });

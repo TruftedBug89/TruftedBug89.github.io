@@ -4,6 +4,7 @@
 
 const ListeningModule = {
     // Current state
+    eventsBound: false,
     currentType: null,
     currentExercise: null,
     exercises: [],
@@ -178,7 +179,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="dictation-input"
-                        aria-label="Type what you hear"
+                        aria-label="Dictation input"
                         placeholder="Type the Chinese characters..."
                         autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
                 </div>
@@ -329,7 +330,7 @@ const ListeningModule = {
                 </div>
 
                 <div class="dialogue-actions">
-                    <button class="icon-btn" id="reveal-meanings">👁 Show meanings</button>
+                    <button class="icon-btn" id="reveal-meanings" aria-expanded="false">👁 Show meanings</button>
                     <button class="icon-btn" id="play-each-btn">🔊 Hear each line</button>
                 </div>
 
@@ -366,11 +367,11 @@ const ListeningModule = {
                 </div>
 
                 <div class="speed-presets" id="speed-presets">
-                    <button class="speed-preset" data-speed="0.5">0.5× 🐢</button>
-                    <button class="speed-preset" data-speed="0.8">0.8×</button>
-                    <button class="speed-preset active" data-speed="1.0">1.0×</button>
-                    <button class="speed-preset" data-speed="1.2">1.2×</button>
-                    <button class="speed-preset" data-speed="1.5">1.5× ⚡</button>
+                    <button class="speed-preset" data-speed="0.5" aria-pressed="false">0.5× 🐢</button>
+                    <button class="speed-preset" data-speed="0.8" aria-pressed="false">0.8×</button>
+                    <button class="speed-preset active" data-speed="1.0" aria-pressed="true">1.0×</button>
+                    <button class="speed-preset" data-speed="1.2" aria-pressed="false">1.2×</button>
+                    <button class="speed-preset" data-speed="1.5" aria-pressed="false">1.5× ⚡</button>
                 </div>
 
                 <input type="range" class="speed-slider" id="speed-slider" aria-label="Audio playback speed" min="0.5" max="1.5" step="0.1" value="1.0">
@@ -383,7 +384,7 @@ const ListeningModule = {
 
                 <div class="dictation-input-wrap">
                     <input type="text" class="dictation-input" id="speed-input"
-                        aria-label="Type what you hear"
+                        aria-label="Speed reading input"
                         placeholder="Type the sentence..."
                         autocomplete="off" autocapitalize="off" spellcheck="false">
                 </div>
@@ -488,27 +489,34 @@ const ListeningModule = {
             }
         }
 
-        // Comprehension options
-        document.querySelectorAll('.listening-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const questionIndex = option.dataset.question;
-                const optionIndex = option.dataset.option;
-                this.selectOption(questionIndex, optionIndex);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+        // Comprehension options & minimal pairs (delegated — bind once)
+        if (!this.eventsBound) {
+            const exerciseContent = document.getElementById('listening-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const listOpt = e.target.closest('.listening-option');
+                    const pairOpt = e.target.closest('.minimal-pair-card');
+                    if (listOpt) {
+                        const questionIndex = listOpt.dataset.question;
+                        const optionIndex = listOpt.dataset.option;
+                        this.selectOption(questionIndex, optionIndex);
+                    } else if (pairOpt) {
+                        this.selectPairOption(pairOpt.dataset.word);
+                    }
+                });
 
-        // Minimal pairs
-        document.querySelectorAll('.minimal-pair-card').forEach(option => {
-            option.addEventListener('click', () => {
-                this.selectPairOption(option.dataset.word);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target.closest('.listening-option, .minimal-pair-card');
+                        if (el) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.eventsBound = true;
+        }
 
         const playPair1 = document.getElementById('play-pair-1');
         const playPair2 = document.getElementById('play-pair-2');
@@ -545,6 +553,7 @@ const ListeningModule = {
                 });
                 const culturalNote = document.getElementById('cultural-note');
                 if (culturalNote) culturalNote.style.display = 'block';
+                dialogueRevealBtn.setAttribute('aria-expanded', 'true');
                 this.showNextButton();
             });
         }
@@ -578,7 +587,9 @@ const ListeningModule = {
             if (speedValue) speedValue.textContent = v;
             if (speedSlider) speedSlider.value = v;
             document.querySelectorAll('.speed-preset').forEach(p => {
-                p.classList.toggle('active', parseFloat(p.dataset.speed) === parseFloat(v));
+                const isActive = parseFloat(p.dataset.speed) === parseFloat(v);
+                p.classList.toggle('active', isActive);
+                p.setAttribute('aria-pressed', isActive ? 'true' : 'false');
             });
         };
         // ⚡ Bolt optimization: Throttle speed slider input updates with rAF to batch layout calculations
@@ -631,7 +642,7 @@ const ListeningModule = {
         const result = Utils.checkAnswer(input.value, exercise.chinese);
 
         if (result === 'exact') {
-            feedback.innerHTML = '✅ Excellent! Spot on.';
+            feedback.textContent = '✅ Excellent! Spot on.';
             feedback.className = 'answer-feedback correct';
             input.classList.add('correct');
             this.score++;
@@ -642,12 +653,12 @@ const ListeningModule = {
             this._updateScoreDisplay();
             this._showLearningTip(feedback, this.currentType, exercise);
         } else if (result === 'close') {
-            feedback.innerHTML = '🟡 So close — double-check tones and characters.';
+            feedback.textContent = '🟡 So close — double-check tones and characters.';
             feedback.className = 'answer-feedback close';
             input.classList.add('close');
             this._showLearningTip(feedback, this.currentType, exercise);
         } else {
-            feedback.innerHTML = '❌ Not quite. The answer is below — study it then continue.';
+            feedback.textContent = '❌ Not quite. The answer is below — study it then continue.';
             feedback.className = 'answer-feedback incorrect';
             input.classList.add('incorrect');
             this._revealDictationAnswer();

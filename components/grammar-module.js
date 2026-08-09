@@ -287,7 +287,7 @@ const GrammarModule = {
         var filtered = this._getFilteredLessons();
 
         if (!filtered.length) {
-            list.innerHTML = '';
+            list.textContent = '';
             if (noResults) noResults.classList.remove('hidden');
             return;
         }

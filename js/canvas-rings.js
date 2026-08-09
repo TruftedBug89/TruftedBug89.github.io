@@ -101,7 +101,7 @@
                 cancelAnimationFrame(container._ringAnimId);
                 container._ringAnimId = null;
             }
-            container.innerHTML = '';
+            container.textContent = '';
         }
 
         renderAll() {

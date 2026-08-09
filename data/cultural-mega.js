@@ -4515,10 +4515,7 @@ const CulturalMega = {
         return this.notes.filter(n => n.category === category);
     },
 
-    getRandom(count = 5) {
-        const shuffled = [...this.notes].sort(() => Math.random() - 0.5);
-        return shuffled.slice(0, count);
-    },
+    getRandom(count = 5) { return Utils.randomItems(this.notes, count); },
 
     get categories() {
         return [...new Set(this.notes.map(n => n.category))];

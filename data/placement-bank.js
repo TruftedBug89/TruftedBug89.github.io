@@ -111,7 +111,7 @@ const PlacementBank = {
             // All used — allow repeats from this level
             available = pool;
         }
-        return available[Math.floor(Math.random() * available.length)];
+        return Utils.randomItem(available);
     },
 
     // Get total question count across all levels

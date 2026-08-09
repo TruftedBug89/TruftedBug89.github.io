@@ -988,6 +988,8 @@ const App = {
         const modalBody = document.getElementById('modal-body');
         if (!modal || !modalBody) return;
 
+        this._previousActiveElement = document.activeElement;
+
         modalBody.innerHTML = content;
         modal.classList.remove('hidden');
 
@@ -1042,6 +1044,10 @@ const App = {
             document.removeEventListener('keydown', this._modalKeyHandler);
             this._modalKeyHandler = null;
         }
+        if (this._previousActiveElement && typeof this._previousActiveElement.focus === 'function') {
+            try { this._previousActiveElement.focus(); } catch (e) {}
+            this._previousActiveElement = null;
+        }
     },
 
     // Attach modal close handlers once (avoid listener leak on .modal-close / .modal-overlay)
@@ -1051,8 +1057,8 @@ const App = {
         this._modalChromeReady = true;
         var closeBtn = modal.querySelector('.modal-close');
         var overlay = modal.querySelector('.modal-overlay');
-        if (closeBtn) closeBtn.addEventListener('click', function() { modal.classList.add('hidden'); });
-        if (overlay) overlay.addEventListener('click', function() { modal.classList.add('hidden'); });
+        if (closeBtn) closeBtn.addEventListener('click', () => App.closeModal());
+        if (overlay) overlay.addEventListener('click', () => App.closeModal());
     },
 
     // Get current module
@@ -1128,6 +1134,7 @@ App.confirmModal = function (opts) {
     } = opts || {};
 
     return new Promise((resolve) => {
+        const previousActiveElement = document.activeElement;
         const modal = document.getElementById('modal');
         const modalBody = document.getElementById('modal-body');
         if (!modal || !modalBody) { resolve(false); return; }
@@ -1157,7 +1164,11 @@ App.confirmModal = function (opts) {
 
         const cleanup = () => {
             modal.classList.add('hidden');
+            modalBody.textContent = '';
             modalBody.innerHTML = '';
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                try { previousActiveElement.focus(); } catch (e) {}
+            }
         };
 
         const yesBtn = modalBody.querySelector('[data-cm-action="confirm-yes"]');

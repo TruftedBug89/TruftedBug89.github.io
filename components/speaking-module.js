@@ -164,7 +164,7 @@ const SpeakingModule = {
 
         var content = document.getElementById('speaking-content');
         if (typeof TonePractice !== 'undefined') {
-            content.innerHTML = '';
+            content.textContent = '';
             // TonePractice expects a container ID, we render inside speaking-content
             var quiz = TonePractice.generateQuiz(10);
             var html = '\
@@ -423,7 +423,7 @@ const SpeakingModule = {
         // Highlight active tone
         const target = document.querySelector(`[data-tone="${toneNum}"]`);
         if (target) {
-            document.querySelectorAll('.tone-number').forEach(t => t.classList.remove('active'));
+            document.querySelector('.tone-number.active')?.classList.remove('active');
             target.classList.add('active');
             if (typeof InkAnimations !== 'undefined' && InkAnimations.counterBounce) {
                 InkAnimations.counterBounce(target);

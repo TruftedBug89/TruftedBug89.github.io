@@ -4,6 +4,8 @@
 
 const ReadingModule = {
     // Current state
+    eventsBound: false,
+    contextEventsBound: false,
     currentType: null,
     currentExercise: null,
     exercises: [],
@@ -331,7 +333,7 @@ const ReadingModule = {
                         <div style="margin-top:4px;">${safePinyin}</div>
                     </div>
                     <div class="dialogue-actions" style="margin-top:14px;">
-                        <button class="icon-btn" id="show-passage-pinyin">👁 Show pinyin</button>
+                        <button class="icon-btn" id="show-passage-pinyin" aria-expanded="false">👁 Show pinyin</button>
                         <button class="icon-btn" id="play-passage-btn">🔊 Listen</button>
                     </div>
                 </div>
@@ -561,62 +563,64 @@ const ReadingModule = {
         let selectedCharacter = null;
         let selectedMeaning = null;
 
-        document.querySelectorAll('.character-item').forEach(item => {
-            item.addEventListener('click', () => {
-                if (item.classList.contains('matched')) return;
-                document.querySelectorAll('.character-item').forEach(i => i.classList.remove('selected'));
-                item.classList.add('selected');
-                selectedCharacter = item.dataset.character;
-                if (selectedMeaning) {
-                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                    selectedCharacter = null;
-                    selectedMeaning = null;
-                }
-            });
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
-            });
-        });
+        this._selectedCharacter = selectedCharacter;
+        this._selectedMeaning = selectedMeaning;
 
-        document.querySelectorAll('.meaning-item').forEach(item => {
-            item.addEventListener('click', () => {
-                if (item.classList.contains('matched')) return;
-                document.querySelectorAll('.meaning-item').forEach(i => i.classList.remove('selected'));
-                item.classList.add('selected');
-                selectedMeaning = item.dataset.meaning;
-                if (selectedCharacter) {
-                    this.checkMatch(selectedCharacter, selectedMeaning, exercise);
-                    selectedCharacter = null;
-                    selectedMeaning = null;
-                }
-            });
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
-            });
-        });
+        if (!this.eventsBound) {
+            const exerciseContent = document.getElementById('reading-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const charItem = e.target.closest('.character-item');
+                    const meaningItem = e.target.closest('.meaning-item');
+                    const sentenceOpt = e.target.closest('.sentence-option');
+                    const passageOpt = e.target.closest('.passage-option');
 
-        // Sentence completion
-        document.querySelectorAll('.sentence-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const index = parseInt(option.dataset.index);
-                this.checkSentenceComplete(index, exercise);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                    const ex = this.currentExercise;
+                    if (!ex) return;
 
-        // Passage reading
-        document.querySelectorAll('.passage-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const questionIndex = parseInt(option.dataset.question);
-                const optionIndex = parseInt(option.dataset.option);
-                this.checkPassageAnswer(questionIndex, optionIndex, exercise);
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+                    if (charItem) {
+                        if (charItem.classList.contains('matched')) return;
+                        document.querySelector('.character-item.selected')?.classList.remove('selected');
+                        charItem.classList.add('selected');
+                        this._selectedCharacter = charItem.dataset.character;
+                        if (this._selectedMeaning) {
+                            this.checkMatch(this._selectedCharacter, this._selectedMeaning, ex);
+                            this._selectedCharacter = null;
+                            this._selectedMeaning = null;
+                        }
+                    } else if (meaningItem) {
+                        if (meaningItem.classList.contains('matched')) return;
+                        document.querySelector('.meaning-item.selected')?.classList.remove('selected');
+                        meaningItem.classList.add('selected');
+                        this._selectedMeaning = meaningItem.dataset.meaning;
+                        if (this._selectedCharacter) {
+                            this.checkMatch(this._selectedCharacter, this._selectedMeaning, ex);
+                            this._selectedCharacter = null;
+                            this._selectedMeaning = null;
+                        }
+                    } else if (sentenceOpt) {
+                        const index = parseInt(sentenceOpt.dataset.index);
+                        this.checkSentenceComplete(index, ex);
+                    } else if (passageOpt) {
+                        const questionIndex = parseInt(passageOpt.dataset.question);
+                        const optionIndex = parseInt(passageOpt.dataset.option);
+                        this.checkPassageAnswer(questionIndex, optionIndex, ex);
+                    }
+                });
+
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target;
+                        if (el.classList.contains('character-item') || el.classList.contains('meaning-item') ||
+                            el.classList.contains('sentence-option') || el.classList.contains('passage-option')) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.eventsBound = true;
+        }
 
         // Passage: show pinyin
         const showPinyinBtn = document.getElementById('show-passage-pinyin');
@@ -624,8 +628,9 @@ const ReadingModule = {
             showPinyinBtn.addEventListener('click', () => {
                 const pinyin = document.getElementById('passage-pinyin');
                 if (pinyin) {
-                    pinyin.classList.toggle('hidden');
-                    showPinyinBtn.textContent = pinyin.classList.contains('hidden') ? '👁 Show pinyin' : '🙈 Hide pinyin';
+                    const isHidden = pinyin.classList.toggle('hidden');
+                    showPinyinBtn.textContent = isHidden ? '👁 Show pinyin' : '🙈 Hide pinyin';
+                    showPinyinBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
                 }
             });
         }
@@ -645,19 +650,35 @@ const ReadingModule = {
         }
 
         // Context clues / fill-blank / word-order (generic option click)
-        document.querySelectorAll('.context-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const index = parseInt(option.dataset.index);
-                if (this.currentType === 'word-order') {
-                    this.checkWordOrder(index, exercise);
-                } else {
-                    this.checkContextClue(index, exercise);
-                }
-            });
-            option.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); option.click(); }
-            });
-        });
+        if (!this.contextEventsBound) {
+            const exerciseContent = document.getElementById('reading-content');
+            if (exerciseContent) {
+                exerciseContent.addEventListener('click', (e) => {
+                    const contextOpt = e.target.closest('.context-option');
+                    if (contextOpt) {
+                        const index = parseInt(contextOpt.dataset.index);
+                        const ex = this.currentExercise;
+                        if (ex) {
+                            if (this.currentType === 'word-order') {
+                                this.checkWordOrder(index, ex);
+                            } else {
+                                this.checkContextClue(index, ex);
+                            }
+                        }
+                    }
+                });
+                exerciseContent.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        const el = e.target.closest('.context-option');
+                        if (el) {
+                            e.preventDefault();
+                            el.click();
+                        }
+                    }
+                });
+            }
+            this.contextEventsBound = true;
+        }
 
         // Sentence reconstruction
         var reconAnswer = document.getElementById('recon-answer');
@@ -828,10 +849,10 @@ const ReadingModule = {
 
         if (feedback) {
             if (isCorrect) {
-                feedback.innerHTML = '✅ Excellent choice!';
+                feedback.textContent = '✅ Excellent choice!';
                 feedback.className = 'answer-feedback correct';
             } else {
-                feedback.innerHTML = `❌ The correct word is highlighted in green.`;
+                feedback.textContent = '❌ The correct word is highlighted in green.';
                 feedback.className = 'answer-feedback incorrect';
             }
         }
@@ -998,9 +1019,9 @@ const ReadingModule = {
         });
         if (feedback) {
             feedback.style.display = 'block';
-            feedback.innerHTML = isCorrect
-                ? '✅ Correct! ' + Utils.escapeHtml(exercise.explanation || '')
-                : '❌ Not quite. ' + Utils.escapeHtml(exercise.explanation || '');
+            feedback.textContent = isCorrect
+                ? '✅ Correct! ' + (exercise.explanation || '')
+                : '❌ Not quite. ' + (exercise.explanation || '');
         }
         if (isCorrect) this.score++;
         else this._triggerAI();
@@ -1078,8 +1099,7 @@ const ReadingModule = {
         }
 
         // Show random selection of 15
-        var shuffled = phrases.slice().sort(function() { return Math.random() - 0.5; });
-        var display = shuffled.slice(0, 15);
+        var display = Utils.randomItems(phrases, 15);
 
         var html = '<div class="phrases-browse">' +
             '<p class="activity-subtitle" style="text-align:center;margin-bottom:16px;">Tap to hear pronunciation</p>';
@@ -1220,7 +1240,7 @@ const ReadingModule = {
                     <p class="activity-subtitle">Paste any Chinese text below. We'll add a pop-up dictionary to help you read it.</p>
                 </div>
                 <div id="reading-mode-input-area">
-                    <textarea id="reading-mode-textarea" class="reading-mode-textarea" aria-label="Paste Chinese text here" placeholder="Paste Chinese text here..." style="width: 100%; min-height: 150px; background: var(--bg-hover); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 1.1em; resize: vertical; margin-bottom: 16px;"></textarea>
+                    <textarea id="reading-mode-textarea" aria-label="Chinese text input" class="reading-mode-textarea" placeholder="Paste Chinese text here..." style="width: 100%; min-height: 150px; background: var(--bg-hover); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; font-size: 1.1em; resize: vertical; margin-bottom: 16px;"></textarea>
                     <div style="display: flex; gap: 12px;">
                         <button class="btn btn-primary" id="process-reading-text" style="flex: 1;">Process Text</button>
                         <button class="btn btn-secondary" id="clear-reading-text">Clear</button>
@@ -1260,11 +1280,12 @@ const ReadingModule = {
         });
 
         document.getElementById('process-reading-text').addEventListener('click', () => {
-            const text = document.getElementById('reading-mode-textarea').value.trim();
+            let text = document.getElementById('reading-mode-textarea').value.trim();
             if (!text) {
                 Utils.showToast('Please enter some text to process.', 'warning');
                 return;
             }
+            text = text.substring(0, 5000);
             this.processReadingText(text);
         });
     },
