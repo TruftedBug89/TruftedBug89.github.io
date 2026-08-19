@@ -1,10 +1,44 @@
-/.opencode
-/tools
+# AI Agents, Assistants & IDE State
+.commandcode/
+commandcode/
+.prime-agent/
+prime-agent/
+primeagent/
+.claude/
+.claude-code/
+claude-code/
+.gemini/
+.agent/
+agent/
+.opencode/
+opencode/
+.cursor/
+.cursorrules
+.cline/
+.roo/
+.chatgpt/
+.aider*
+.agy/
+.antigravity/
+.jules/
+.Jules/
+.qwen/
+.deepseek/
+.copilot/
+.continue/
+.windsurf/
+brain/
+.system_generated/
+*.agent.log
+/+agents
 /.agents
 AGENTS.md
+opencode.json
 
-# AI agent state
-/.deepseek/
+# Scratch, test & review output
+inspect_out.txt
+test16_output.txt
+*.diff
 
 # Dependencies
 node_modules/
@@ -17,6 +51,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 Desktop.ini
+desktop.ini
 
 # Editor
 .vscode/
@@ -36,5 +71,3 @@ npm-debug.log*
 # Temp
 *.tmp
 *.bak
-/+agents
-opencode.json
