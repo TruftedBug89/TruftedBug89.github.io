@@ -1,6 +1,6 @@
 # Original User Request
 
-## Initial Request — 2026-07-11T05:05:02Z
+## Initial Request - 2026-07-11T05:05:02Z
 
 Optimize, clean up, and upgrade the Chinese Master (TruftedBug89.github.io) local-first vanilla JavaScript web application.
 
@@ -20,8 +20,8 @@ Integrity mode: development
 ### R3. Adaptive Spaced Repetition (SRS) Algorithm & Profiles
 - **Adaptive Forgetting Curve**: Refactor the SRS engine in `js/sm2.js` (or equivalent) to reward users who answer correctly after a delay (when actual days elapsed > scheduled interval). Recalculate ease factor and interval using the actual elapsed days and a reward multiplier (1.2x).
 - **Study Profiles**: Implement a selectable profile toggle:
-  - **Speed Prep**: Shortens intervals for quick exam cramming.
-  - **Deep Retention**: Stretches intervals for long-term memory.
+- **Speed Prep**: Shortens intervals for quick exam cramming.
+- **Deep Retention**: Stretches intervals for long-term memory.
 - Provide a simple UI setting/toggle in the dashboard or settings component to switch between these profiles.
 
 ### R4. Complete Removal of Admin Panel

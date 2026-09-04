@@ -1,55 +1,55 @@
 # Chinese Master
 
 > [!NOTE]
-> **Project Status:** 🟢 **Working / Functional**  
+> **Project Status:** 🟢 **Working / Functional** 
 > *This status must not be changed by AI unless explicitly instructed by the repository owner.*
 
 
-> Free, open-source Chinese language learning application. Everything runs locally in your browser — no account, no server, no tracking.
+> Free, open-source Chinese language learning application. Everything runs locally in your browser - no account, no server, no tracking.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## Features
 
-**HSK 1-5 Vocabulary** — Spaced repetition (SM-2 algorithm), flashcards, stroke order reference
+**HSK 1-5 Vocabulary** - Spaced repetition (SM-2 algorithm), flashcards, stroke order reference
 
-**Listening** — Dictation, comprehension, speed listening, minimal pair drills, shadowing, dialogue practice
+**Listening** - Dictation, comprehension, speed listening, minimal pair drills, shadowing, dialogue practice
 
-**Reading** — Character matching, sentence reconstruction, passage comprehension, radicals, speed reading
+**Reading** - Character matching, sentence reconstruction, passage comprehension, radicals, speed reading
 
-**Grammar** — Structured lessons with exercises across all HSK levels
+**Grammar** - Structured lessons with exercises across all HSK levels
 
-**Speaking** — Pronunciation practice, tone drills, shadowing, sentence reading
+**Speaking** - Pronunciation practice, tone drills, shadowing, sentence reading
 
-**Cultural Notes** — Festivals, food, etiquette, business, history, social norms
+**Cultural Notes** - Festivals, food, etiquette, business, history, social norms
 
-**Real-World Phrases** — Practical sentences for travel, daily life, business
+**Real-World Phrases** - Practical sentences for travel, daily life, business
 
-**Progress System** — 30 levels, XP, streaks, achievements, missions, combo tracking
+**Progress System** - 30 levels, XP, streaks, achievements, missions, combo tracking
 
-**Multi-Session** — Create and switch between learning profiles
+**Multi-Session** - Create and switch between learning profiles
 
-**Analytics Dashboard** — Learning velocity, mistake patterns, category performance (all local)
+**Analytics Dashboard** - Learning velocity, mistake patterns, category performance (all local)
 
-**PWA-Ready** — Offline support via service worker, installable on mobile/desktop
+**PWA-Ready** - Offline support via service worker, installable on mobile/desktop
 
-**Dark Theme** — Midnight Ocean design with coral, lavender, and teal accents
+**Dark Theme** - Midnight Ocean design with coral, lavender, and teal accents
 
-**Mobile-First** — Responsive layout with bottom tab bar on small screens
+**Mobile-First** - Responsive layout with bottom tab bar on small screens
 
-**Fully Local** — All data in localStorage. No external APIs. No accounts. No analytics trackers.
+**Fully Local** - All data in localStorage. No external APIs. No accounts. No analytics trackers.
 
 ## Mobile App (`/mobile/`)
 
-Phones and small screens are automatically sent to a **lightweight companion app** at `mobile/` — the desktop site is untouched and keeps every feature.
+Phones and small screens are automatically sent to a **lightweight companion app** at `mobile/` - the desktop site is untouched and keeps every feature.
 
-- **Fast start** — ~60 KB of code on first paint; no GSAP, no external fonts, no image-heavy hero
-- **4 core skills** — Vocabulary (HSK 1–5 flashcards + quiz), Listening (dictation, comprehension, minimal pairs, dialogues), Reading (characters, sentences, context clues, passages), Grammar (lessons + example drills)
-- **Lazy data** — only the data file you open is downloaded (e.g. `data/hsk1.js`), not the 5 MB desktop bundle
-- **Offline PWA** — own service worker (`mobile/sw.js`) caches the shell and small data files
-- **Progress** — XP, levels, streaks, per-skill accuracy and session history in `localStorage` (separate from the desktop app's storage)
-- **Accessible** — works without a network, respects `prefers-reduced-motion`, 48px+ touch targets
+- **Fast start** - ~60 KB of code on first paint; no GSAP, no external fonts, no image-heavy hero
+- **4 core skills** - Vocabulary (HSK 1–5 flashcards + quiz), Listening (dictation, comprehension, minimal pairs, dialogues), Reading (characters, sentences, context clues, passages), Grammar (lessons + example drills)
+- **Lazy data** - only the data file you open is downloaded (e.g. `data/hsk1.js`), not the 5 MB desktop bundle
+- **Offline PWA** - own service worker (`mobile/sw.js`) caches the shell and small data files
+- **Progress** - XP, levels, streaks, per-skill accuracy and session history in `localStorage` (separate from the desktop app's storage)
+- **Accessible** - works without a network, respects `prefers-reduced-motion`, 48px+ touch targets
 
 Escape hatches: add `?desktop=1` (or `#desktop`) to the site URL to force the desktop version; the mobile app's Settings has an "Open the full desktop version" link.
 
@@ -76,55 +76,55 @@ npx serve .
 Zero configuration. Edit any file and refresh.
 
 ```
-├── css/           Stylesheets (~16 files)
-├── js/            Core application logic (~20 files)
-├── components/    UI components (~16 files)
-├── data/          Learning content (~100 files)
-├── vendor/        GSAP animation library
-├── legal/         Privacy, terms, cookie policy
-├── tests/         Pre-production test suite (node --test)
-├── index.html     Entry point
-├── manifest.json  PWA manifest
-├── sw.js          Service worker
+├── css/ Stylesheets (~16 files)
+├── js/ Core application logic (~20 files)
+├── components/ UI components (~16 files)
+├── data/ Learning content (~100 files)
+├── vendor/ GSAP animation library
+├── legal/ Privacy, terms, cookie policy
+├── tests/ Pre-production test suite (node --test)
+├── index.html Entry point
+├── manifest.json PWA manifest
+├── sw.js Service worker
 └── robots.txt
 ```
 
 **Key architecture decisions:**
-- No framework — vanilla JavaScript with global namespace pattern
-- No build step — `<script>` tags in dependency order
+- No framework - vanilla JavaScript with global namespace pattern
+- No build step - `<script>` tags in dependency order
 - localStorage for all data persistence
 - JSONL files for vocabulary (loaded via DataLoader)
 - GSAP for animations (bundled in vendor/)
 
 ## Data Structure
 
-**Vocabulary** — JSONL files (`data/vocabulary-hsk1.jsonl` through `hsk5.jsonl`):
+**Vocabulary** - JSONL files (`data/vocabulary-hsk1.jsonl` through `hsk5.jsonl`):
 ```json
 {"id":"h1_001","character":"我","pinyin":"wǒ","meaning":"I, me","category":"pronouns","hsk":1}
 ```
 
-**Grammar** — JavaScript objects with lessons and exercises:
+**Grammar** - JavaScript objects with lessons and exercises:
 ```js
 { id: "gx_001", title: "Basic Word Order", explanation: "...", examples: [...], exercises: [...] }
 ```
 
-**Listening** — Various exercise types (dictation, comprehension, dialogue, speed):
+**Listening** - Various exercise types (dictation, comprehension, dialogue, speed):
 ```js
 { id: "l101", chinese: "...", pinyin: "...", meaning: "...", category: "Greetings" }
 ```
 
-**Reading** — Character match, sentence reconstruction, passage comprehension, radicals.
+**Reading** - Character match, sentence reconstruction, passage comprehension, radicals.
 
 Run `cd tests && node --test` for dataset validation and pre-production checks.
 
 ## Tech Stack
 
 - **Vanilla JavaScript** (ES6+)
-- **GSAP 3** — Animation library
-- **CSS Custom Properties** — Theming
-- **Service Worker** — Offline caching
-- **Web Speech API** — Pronunciation audio
-- **localStorage** — Data persistence
+- **GSAP 3** - Animation library
+- **CSS Custom Properties** - Theming
+- **Service Worker** - Offline caching
+- **Web Speech API** - Pronunciation audio
+- **localStorage** - Data persistence
 
 ## Browser Support
 
@@ -142,6 +142,6 @@ All data stays on your device. No personal information is collected.
 
 ## License
 
-MIT — see [LICENSE](LICENSE) file.
+MIT - see [LICENSE](LICENSE) file.
 
-Built with  for everyone learning Chinese.
+Built with for everyone learning Chinese.
